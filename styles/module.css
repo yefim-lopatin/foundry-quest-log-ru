@@ -1,0 +1,1900 @@
+.foundry-quest-log-ru-counter.reputation-container {
+  display: flex;
+  gap: 0.2em;
+  width: -moz-min-content;
+  width: min-content;
+  max-width: 100%;
+}
+.foundry-quest-log-ru-counter.reputation-container:has(.is-fontawesome) {
+  flex-wrap: wrap;
+  width: auto;
+}
+.foundry-quest-log-ru-counter.reputation-container:has(.reputation-bar) {
+  width: 100%;
+  border: 1px solid;
+  position: relative;
+  align-items: center;
+  box-shadow: 0 0 5px black inset;
+}
+.foundry-quest-log-ru-counter.reputation-container .reputation-bar-text {
+  position: absolute;
+  pointer-events: none;
+  text-shadow: 0 0 1px, 0 0 1px, 0 0 1px, 0 0 1px, 0 0 1px, 0 0 1px, 0 0 1px, 0 0 1px, 0 0 1px, 0 0 1px, 0 0 1px;
+  font-weight: bold;
+  padding: 0 0.3rem;
+}
+.foundry-quest-log-ru-counter.reputation-container .reputation-bar-text.overlay-text {
+  text-shadow: none;
+  filter: invert(1);
+}
+.foundry-quest-log-ru-counter.reputation-container .reputation-bar {
+  height: 1.5em;
+  pointer-events: none;
+  border-right: 1px solid;
+  box-shadow: 0 0 5px black inset;
+}
+.foundry-quest-log-ru-counter.reputation-container .reputation-point {
+  height: 1em;
+  width: 1.3em;
+  font-size: 1em;
+  pointer-events: none;
+  border: 1px solid;
+  box-shadow: 0 0 1px, 0 0 3px black inset;
+  border-radius: 4px;
+}
+.foundry-quest-log-ru-counter.reputation-container .reputation-point::before, .foundry-quest-log-ru-counter.reputation-container .reputation-point::after {
+  color: var(--reputation-color);
+}
+.foundry-quest-log-ru-counter.reputation-container .reputation-point.is-fontawesome {
+  border: none;
+  box-shadow: none;
+  text-shadow: 0 0 1px black;
+}
+.foundry-quest-log-ru-counter.reputation-container .reputation-point.is-fontawesome:not(.active) {
+  opacity: 0.2;
+}
+
+:root {
+  --foundry-quest-log-ru-background: #1b130deb;
+  --foundry-quest-log-ru-background-color: #1b130deb;
+  --foundry-quest-log-ru-hidden-color: #ff00ff;
+  --foundry-quest-log-ru-failed-color: #ff0000;
+  --foundry-quest-log-ru-font-size: 2rem;
+  --foundry-quest-log-ru-font-family: "Times New Roman";
+  --foundry-quest-log-ru-header-font-family: "Times New Roman";
+  --foundry-quest-log-ru-text-0: #f5deb3;
+  --foundry-quest-log-ru-text-1: #f5deb3;
+  --foundry-quest-log-ru-text-2: #f5deb3;
+  --foundry-quest-log-ru-text-3: #f5deb3;
+  --foundry-quest-log-ru-text-4: #f5deb3;
+  --foundry-quest-log-ru-notification-creature: #4bae55c4;
+  --foundry-quest-log-ru-notification-magic: #694baec4;
+  --foundry-quest-log-ru-notification-item: #ae4b4bc4;
+  --foundry-quest-log-ru-notification-event: #ae854bc4;
+  --foundry-quest-log-ru-notification-time: #4bae9fc4;
+  --foundry-quest-log-ru-notification-npc: #94ae4bc4;
+  --foundry-quest-log-ru-notification-location: #4b6aaec4;
+  --foundry-quest-log-ru-invert: 0;
+}
+
+.mermaid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foundry-quest-log-ru-hide-folder {
+  display: none !important;
+}
+
+#foundry-quest-log-ru-theme-config {
+  z-index: 9999 !important;
+}
+
+.chat-message:has(.foundry-quest-log-ru-message),
+.foundry-quest-log-ru-welcome-screen,
+#foundry-quest-log-ru-marker-config,
+#timeline-config,
+.foundry-quest-log-ru-dialog,
+#tab-config,
+#foundry-quest-log-ru-theme-config {
+  background: var(--foundry-quest-log-ru-background) !important;
+  color: var(--foundry-quest-log-ru-text-1) !important;
+  font-family: var(--foundry-quest-log-ru-font-family), serif;
+}
+.chat-message:has(.foundry-quest-log-ru-message).foundry-quest-log-ru-welcome-maps .dialog-content,
+.foundry-quest-log-ru-welcome-screen.foundry-quest-log-ru-welcome-maps .dialog-content,
+#foundry-quest-log-ru-marker-config.foundry-quest-log-ru-welcome-maps .dialog-content,
+#timeline-config.foundry-quest-log-ru-welcome-maps .dialog-content,
+.foundry-quest-log-ru-dialog.foundry-quest-log-ru-welcome-maps .dialog-content,
+#tab-config.foundry-quest-log-ru-welcome-maps .dialog-content,
+#foundry-quest-log-ru-theme-config.foundry-quest-log-ru-welcome-maps .dialog-content {
+  text-align: left;
+  line-height: calc(var(--foundry-quest-log-ru-font-size) * 2.5);
+}
+.chat-message:has(.foundry-quest-log-ru-message) .era-event-switch,
+.foundry-quest-log-ru-welcome-screen .era-event-switch,
+#foundry-quest-log-ru-marker-config .era-event-switch,
+#timeline-config .era-event-switch,
+.foundry-quest-log-ru-dialog .era-event-switch,
+#tab-config .era-event-switch,
+#foundry-quest-log-ru-theme-config .era-event-switch {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chat-message:has(.foundry-quest-log-ru-message) .era-event-switch span,
+.foundry-quest-log-ru-welcome-screen .era-event-switch span,
+#foundry-quest-log-ru-marker-config .era-event-switch span,
+#timeline-config .era-event-switch span,
+.foundry-quest-log-ru-dialog .era-event-switch span,
+#tab-config .era-event-switch span,
+#foundry-quest-log-ru-theme-config .era-event-switch span {
+  padding: 0.5rem 1rem;
+  font-size: large;
+  background-color: var(--foundry-quest-log-ru-background-color);
+  border: 1px solid var(--foundry-quest-log-ru-text-4);
+  cursor: pointer;
+  pointer-events: all;
+  width: 20%;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.chat-message:has(.foundry-quest-log-ru-message) .era-event-switch span:first-child,
+.foundry-quest-log-ru-welcome-screen .era-event-switch span:first-child,
+#foundry-quest-log-ru-marker-config .era-event-switch span:first-child,
+#timeline-config .era-event-switch span:first-child,
+.foundry-quest-log-ru-dialog .era-event-switch span:first-child,
+#tab-config .era-event-switch span:first-child,
+#foundry-quest-log-ru-theme-config .era-event-switch span:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.chat-message:has(.foundry-quest-log-ru-message) .era-event-switch span:last-child,
+.foundry-quest-log-ru-welcome-screen .era-event-switch span:last-child,
+#foundry-quest-log-ru-marker-config .era-event-switch span:last-child,
+#timeline-config .era-event-switch span:last-child,
+.foundry-quest-log-ru-dialog .era-event-switch span:last-child,
+#tab-config .era-event-switch span:last-child,
+#foundry-quest-log-ru-theme-config .era-event-switch span:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.chat-message:has(.foundry-quest-log-ru-message) .era-event-switch span.selected,
+.foundry-quest-log-ru-welcome-screen .era-event-switch span.selected,
+#foundry-quest-log-ru-marker-config .era-event-switch span.selected,
+#timeline-config .era-event-switch span.selected,
+.foundry-quest-log-ru-dialog .era-event-switch span.selected,
+#tab-config .era-event-switch span.selected,
+#foundry-quest-log-ru-theme-config .era-event-switch span.selected {
+  background-color: var(--foundry-quest-log-ru-text-4);
+  color: var(--foundry-quest-log-ru-background-color);
+}
+.chat-message:has(.foundry-quest-log-ru-message) .era-event-switch span:hover,
+.foundry-quest-log-ru-welcome-screen .era-event-switch span:hover,
+#foundry-quest-log-ru-marker-config .era-event-switch span:hover,
+#timeline-config .era-event-switch span:hover,
+.foundry-quest-log-ru-dialog .era-event-switch span:hover,
+#tab-config .era-event-switch span:hover,
+#foundry-quest-log-ru-theme-config .era-event-switch span:hover {
+  filter: brightness(1.3);
+}
+.chat-message:has(.foundry-quest-log-ru-message).page-template-dialog .window-content .dialog-content,
+.foundry-quest-log-ru-welcome-screen.page-template-dialog .window-content .dialog-content,
+#foundry-quest-log-ru-marker-config.page-template-dialog .window-content .dialog-content,
+#timeline-config.page-template-dialog .window-content .dialog-content,
+.foundry-quest-log-ru-dialog.page-template-dialog .window-content .dialog-content,
+#tab-config.page-template-dialog .window-content .dialog-content,
+#foundry-quest-log-ru-theme-config.page-template-dialog .window-content .dialog-content {
+  text-align: left;
+  font-size: 1rem;
+}
+.chat-message:has(.foundry-quest-log-ru-message).page-template-dialog .dialog-buttons,
+.foundry-quest-log-ru-welcome-screen.page-template-dialog .dialog-buttons,
+#foundry-quest-log-ru-marker-config.page-template-dialog .dialog-buttons,
+#timeline-config.page-template-dialog .dialog-buttons,
+.foundry-quest-log-ru-dialog.page-template-dialog .dialog-buttons,
+#tab-config.page-template-dialog .dialog-buttons,
+#foundry-quest-log-ru-theme-config.page-template-dialog .dialog-buttons {
+  gap: 0.3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.chat-message:has(.foundry-quest-log-ru-message).page-template-dialog .dialog-buttons button,
+.foundry-quest-log-ru-welcome-screen.page-template-dialog .dialog-buttons button,
+#foundry-quest-log-ru-marker-config.page-template-dialog .dialog-buttons button,
+#timeline-config.page-template-dialog .dialog-buttons button,
+.foundry-quest-log-ru-dialog.page-template-dialog .dialog-buttons button,
+#tab-config.page-template-dialog .dialog-buttons button,
+#foundry-quest-log-ru-theme-config.page-template-dialog .dialog-buttons button {
+  background: transparent;
+  color: var(--foundry-quest-log-ru-text-1);
+  border-color: var(--foundry-quest-log-ru-text-4);
+  text-align: left;
+}
+.chat-message:has(.foundry-quest-log-ru-message).page-template-dialog .dialog-buttons button:hover, .chat-message:has(.foundry-quest-log-ru-message).page-template-dialog .dialog-buttons button:focus,
+.foundry-quest-log-ru-welcome-screen.page-template-dialog .dialog-buttons button:hover,
+.foundry-quest-log-ru-welcome-screen.page-template-dialog .dialog-buttons button:focus,
+#foundry-quest-log-ru-marker-config.page-template-dialog .dialog-buttons button:hover,
+#foundry-quest-log-ru-marker-config.page-template-dialog .dialog-buttons button:focus,
+#timeline-config.page-template-dialog .dialog-buttons button:hover,
+#timeline-config.page-template-dialog .dialog-buttons button:focus,
+.foundry-quest-log-ru-dialog.page-template-dialog .dialog-buttons button:hover,
+.foundry-quest-log-ru-dialog.page-template-dialog .dialog-buttons button:focus,
+#tab-config.page-template-dialog .dialog-buttons button:hover,
+#tab-config.page-template-dialog .dialog-buttons button:focus,
+#foundry-quest-log-ru-theme-config.page-template-dialog .dialog-buttons button:hover,
+#foundry-quest-log-ru-theme-config.page-template-dialog .dialog-buttons button:focus {
+  box-shadow: 0 0 5px var(--foundry-quest-log-ru-text-4);
+}
+.chat-message:has(.foundry-quest-log-ru-message) h1,
+.chat-message:has(.foundry-quest-log-ru-message) h2,
+.chat-message:has(.foundry-quest-log-ru-message) h3,
+.chat-message:has(.foundry-quest-log-ru-message) h4,
+.chat-message:has(.foundry-quest-log-ru-message) h5,
+.chat-message:has(.foundry-quest-log-ru-message) h6,
+.foundry-quest-log-ru-welcome-screen h1,
+.foundry-quest-log-ru-welcome-screen h2,
+.foundry-quest-log-ru-welcome-screen h3,
+.foundry-quest-log-ru-welcome-screen h4,
+.foundry-quest-log-ru-welcome-screen h5,
+.foundry-quest-log-ru-welcome-screen h6,
+#foundry-quest-log-ru-marker-config h1,
+#foundry-quest-log-ru-marker-config h2,
+#foundry-quest-log-ru-marker-config h3,
+#foundry-quest-log-ru-marker-config h4,
+#foundry-quest-log-ru-marker-config h5,
+#foundry-quest-log-ru-marker-config h6,
+#timeline-config h1,
+#timeline-config h2,
+#timeline-config h3,
+#timeline-config h4,
+#timeline-config h5,
+#timeline-config h6,
+.foundry-quest-log-ru-dialog h1,
+.foundry-quest-log-ru-dialog h2,
+.foundry-quest-log-ru-dialog h3,
+.foundry-quest-log-ru-dialog h4,
+.foundry-quest-log-ru-dialog h5,
+.foundry-quest-log-ru-dialog h6,
+#tab-config h1,
+#tab-config h2,
+#tab-config h3,
+#tab-config h4,
+#tab-config h5,
+#tab-config h6,
+#foundry-quest-log-ru-theme-config h1,
+#foundry-quest-log-ru-theme-config h2,
+#foundry-quest-log-ru-theme-config h3,
+#foundry-quest-log-ru-theme-config h4,
+#foundry-quest-log-ru-theme-config h5,
+#foundry-quest-log-ru-theme-config h6 {
+  border: none;
+}
+.chat-message:has(.foundry-quest-log-ru-message) h2,
+.foundry-quest-log-ru-welcome-screen h2,
+#foundry-quest-log-ru-marker-config h2,
+#timeline-config h2,
+.foundry-quest-log-ru-dialog h2,
+#tab-config h2,
+#foundry-quest-log-ru-theme-config h2 {
+  text-align: center;
+}
+.chat-message:has(.foundry-quest-log-ru-message) hr,
+.foundry-quest-log-ru-welcome-screen hr,
+#foundry-quest-log-ru-marker-config hr,
+#timeline-config hr,
+.foundry-quest-log-ru-dialog hr,
+#tab-config hr,
+#foundry-quest-log-ru-theme-config hr {
+  border-color: var(--foundry-quest-log-ru-text-4);
+}
+.chat-message:has(.foundry-quest-log-ru-message) button,
+.foundry-quest-log-ru-welcome-screen button,
+#foundry-quest-log-ru-marker-config button,
+#timeline-config button,
+.foundry-quest-log-ru-dialog button,
+#tab-config button,
+#foundry-quest-log-ru-theme-config button {
+  background: transparent;
+  color: var(--foundry-quest-log-ru-text-1);
+  border-color: var(--foundry-quest-log-ru-text-4);
+}
+.chat-message:has(.foundry-quest-log-ru-message) button:hover, .chat-message:has(.foundry-quest-log-ru-message) button:focus,
+.foundry-quest-log-ru-welcome-screen button:hover,
+.foundry-quest-log-ru-welcome-screen button:focus,
+#foundry-quest-log-ru-marker-config button:hover,
+#foundry-quest-log-ru-marker-config button:focus,
+#timeline-config button:hover,
+#timeline-config button:focus,
+.foundry-quest-log-ru-dialog button:hover,
+.foundry-quest-log-ru-dialog button:focus,
+#tab-config button:hover,
+#tab-config button:focus,
+#foundry-quest-log-ru-theme-config button:hover,
+#foundry-quest-log-ru-theme-config button:focus {
+  box-shadow: 0 0 5px var(--foundry-quest-log-ru-text-4);
+}
+.chat-message:has(.foundry-quest-log-ru-message) header,
+.foundry-quest-log-ru-welcome-screen header,
+#foundry-quest-log-ru-marker-config header,
+#timeline-config header,
+.foundry-quest-log-ru-dialog header,
+#tab-config header,
+#foundry-quest-log-ru-theme-config header {
+  color: var(--foundry-quest-log-ru-text-2);
+  opacity: 0.3;
+}
+.chat-message:has(.foundry-quest-log-ru-message) .window-content,
+.foundry-quest-log-ru-welcome-screen .window-content,
+#foundry-quest-log-ru-marker-config .window-content,
+#timeline-config .window-content,
+.foundry-quest-log-ru-dialog .window-content,
+#tab-config .window-content,
+#foundry-quest-log-ru-theme-config .window-content {
+  background: var(--foundry-quest-log-ru-background);
+  color: var(--foundry-quest-log-ru-text-1);
+  text-align: center;
+}
+.chat-message:has(.foundry-quest-log-ru-message) .window-content .hotkey,
+.foundry-quest-log-ru-welcome-screen .window-content .hotkey,
+#foundry-quest-log-ru-marker-config .window-content .hotkey,
+#timeline-config .window-content .hotkey,
+.foundry-quest-log-ru-dialog .window-content .hotkey,
+#tab-config .window-content .hotkey,
+#foundry-quest-log-ru-theme-config .window-content .hotkey {
+  background: var(--foundry-quest-log-ru-text-1);
+  color: var(--foundry-quest-log-ru-background);
+  padding: 0.1rem 0.5rem;
+  border-radius: 5px;
+  border: 1px solid var(--foundry-quest-log-ru-text-4);
+}
+.chat-message:has(.foundry-quest-log-ru-message) .window-content .dialog-content,
+.foundry-quest-log-ru-welcome-screen .window-content .dialog-content,
+#foundry-quest-log-ru-marker-config .window-content .dialog-content,
+#timeline-config .window-content .dialog-content,
+.foundry-quest-log-ru-dialog .window-content .dialog-content,
+#tab-config .window-content .dialog-content,
+#foundry-quest-log-ru-theme-config .window-content .dialog-content {
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.foundry-quest-log-ru-time:hover {
+  text-shadow: none;
+  cursor: default;
+}
+
+#foundry-quest-log-ru-notification-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  font-size: var(--foundry-quest-log-ru-font-size);
+  padding: calc(var(--foundry-quest-log-ru-font-size) * 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--foundry-quest-log-ru-font-size) * 0.5);
+  pointer-events: none;
+}
+#foundry-quest-log-ru-notification-container .foundry-quest-log-ru-notification {
+  background: var(--foundry-quest-log-ru-background);
+  color: var(--foundry-quest-log-ru-text-1);
+  border: 1px solid var(--foundry-quest-log-ru-text-4);
+  box-shadow: 0 0 5px var(--foundry-quest-log-ru-text-4);
+  padding: 0rem var(--foundry-quest-log-ru-font-size);
+  border-radius: 5px;
+  height: calc(var(--foundry-quest-log-ru-font-size) * 2.5);
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  pointer-events: all;
+  font-family: var(--foundry-quest-log-ru-font-family), serif;
+}
+#foundry-quest-log-ru-notification-container .foundry-quest-log-ru-notification .foundry-quest-log-ru-notification-quest-name {
+  font-weight: bold;
+  padding: 0 0.5ch;
+}
+#foundry-quest-log-ru-notification-container .foundry-quest-log-ru-notification i {
+  pointer-events: none;
+  left: 100%;
+  color: var(--foundry-quest-log-ru-text-4);
+  text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 5px var(--foundry-quest-log-ru-text-1), 0 0 7px var(--foundry-quest-log-ru-text-1), 0 0 10px var(--foundry-quest-log-ru-text-1), 0 0 15px var(--foundry-quest-log-ru-text-1);
+  filter: saturate(2) brightness(1.5);
+  transform: rotate(10deg) scale(1.5);
+  margin-right: var(--foundry-quest-log-ru-font-size);
+}
+
+#timeline-config label,
+#timeline-config p {
+  text-align: left;
+}
+
+#foundry-quest-log-ru-marker-config,
+#timeline-config,
+#tab-config {
+  font-family: var(--foundry-quest-log-ru-font-family), serif;
+}
+#foundry-quest-log-ru-marker-config fieldset,
+#timeline-config fieldset,
+#tab-config fieldset {
+  border: 1px solid;
+  border-radius: 5px;
+  margin-bottom: 0.3rem;
+}
+#foundry-quest-log-ru-marker-config .quest-icons,
+#timeline-config .quest-icons,
+#tab-config .quest-icons {
+  padding: 0.3rem 0;
+  gap: 0.3rem;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+#foundry-quest-log-ru-marker-config .quest-icons i,
+#timeline-config .quest-icons i,
+#tab-config .quest-icons i {
+  font-size: 1.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#foundry-quest-log-ru-marker-config .quest-icons i:hover,
+#timeline-config .quest-icons i:hover,
+#tab-config .quest-icons i:hover {
+  filter: drop-shadow(0 0 3px var(--foundry-quest-log-ru-text-4));
+  cursor: pointer;
+}
+#foundry-quest-log-ru-marker-config input,
+#foundry-quest-log-ru-marker-config textarea,
+#foundry-quest-log-ru-marker-config select,
+#timeline-config input,
+#timeline-config textarea,
+#timeline-config select,
+#tab-config input,
+#tab-config textarea,
+#tab-config select {
+  background: var(--foundry-quest-log-ru-background);
+  color: var(--foundry-quest-log-ru-text-1);
+  border: 1px solid var(--foundry-quest-log-ru-text-4);
+  box-shadow: 0 0 5px var(--foundry-quest-log-ru-text-4);
+  padding: 0.3rem;
+  border-radius: 5px;
+}
+#foundry-quest-log-ru-marker-config input option,
+#foundry-quest-log-ru-marker-config textarea option,
+#foundry-quest-log-ru-marker-config select option,
+#timeline-config input option,
+#timeline-config textarea option,
+#timeline-config select option,
+#tab-config input option,
+#tab-config textarea option,
+#tab-config select option {
+  background: var(--foundry-quest-log-ru-background);
+}
+
+#tooltip.foundry-quest-log-ru-marker-tooltip,
+.locked-tooltip.foundry-quest-log-ru-marker-tooltip {
+  background: var(--foundry-quest-log-ru-background);
+  color: var(--foundry-quest-log-ru-text-1);
+  border: 1px solid var(--foundry-quest-log-ru-text-4);
+  box-shadow: 0 0 5px var(--foundry-quest-log-ru-text-4);
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: var(--foundry-quest-log-ru-font-family), serif;
+}
+#tooltip.foundry-quest-log-ru-marker-tooltip p,
+.locked-tooltip.foundry-quest-log-ru-marker-tooltip p {
+  filter: brightness(0.75);
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.notification.lore {
+  background: var(--foundry-quest-log-ru-background);
+  border: 1px solid var(--foundry-quest-log-ru-text-4);
+}
+.notification.lore::before {
+  content: "\f5db";
+}
+.notification.creature {
+  background: var(--foundry-quest-log-ru-notification-creature);
+  border: 1px solid var(--foundry-quest-log-ru-notification-creature);
+}
+.notification.creature::before {
+  content: "\f6d5";
+}
+.notification.npc {
+  background: var(--foundry-quest-log-ru-notification-npc);
+  border: 1px solid var(--foundry-quest-log-ru-notification-npc);
+}
+.notification.npc::before {
+  content: "\f007";
+}
+.notification.location {
+  background: var(--foundry-quest-log-ru-notification-location);
+  border: 1px solid var(--foundry-quest-log-ru-notification-location);
+}
+.notification.location::before {
+  content: "\f3c5";
+}
+.notification.magic {
+  background: var(--foundry-quest-log-ru-notification-magic);
+  border: 1px solid var(--foundry-quest-log-ru-notification-magic);
+}
+.notification.magic::before {
+  content: "\e2ca";
+}
+.notification.item {
+  background: var(--foundry-quest-log-ru-notification-item);
+  border: 1px solid var(--foundry-quest-log-ru-notification-item);
+}
+.notification.item::before {
+  content: "\f3a5";
+}
+.notification.event {
+  background: var(--foundry-quest-log-ru-notification-event);
+  border: 1px solid var(--foundry-quest-log-ru-notification-event);
+}
+.notification.event::before {
+  content: "\f0ac";
+}
+.notification.time {
+  background: var(--foundry-quest-log-ru-notification-time);
+  border: 1px solid var(--foundry-quest-log-ru-notification-time);
+}
+.notification.time::before {
+  content: "\f254";
+}
+
+.parchment-note-1 {
+  -o-border-image: url("../assets/parchment1.webp");
+     border-image: url("../assets/parchment1.webp");
+}
+
+.parchment-note-2 {
+  -o-border-image: url("../assets/parchment2.webp");
+     border-image: url("../assets/parchment2.webp");
+}
+
+.parchment-note-3 {
+  -o-border-image: url("../assets/parchment3.webp");
+     border-image: url("../assets/parchment3.webp");
+}
+
+.parchment-note-4 {
+  -o-border-image: url("../assets/parchment4.webp");
+     border-image: url("../assets/parchment4.webp");
+}
+
+.parchment-book-1 {
+  -o-border-image: url("../assets/book1.webp");
+     border-image: url("../assets/book1.webp");
+}
+
+.parchment-book-2 {
+  -o-border-image: url("../assets/book2.webp");
+     border-image: url("../assets/book2.webp");
+}
+
+.parchment-note-1,
+.parchment-note-2,
+.parchment-note-3,
+.parchment-note-4,
+.parchment-book-1,
+.parchment-book-2 {
+  filter: sepia(0.6);
+  border-width: 3rem;
+  border-style: solid;
+  border-image-slice: 20% fill;
+  color: var(--color-text-dark-2);
+}
+
+.parchment-scroll-1 {
+  border-width: 3rem;
+  border-style: solid;
+  -o-border-image: url("../assets/scroll1.webp");
+     border-image: url("../assets/scroll1.webp");
+  border-image-slice: 20% fill;
+  color: var(--color-text-dark-2);
+}
+
+p.initial::first-letter {
+  initial-letter: 3;
+  margin-right: 0.3ch;
+  text-align: center;
+}
+
+.foundry-quest-log-ru-content-link,
+.foundry-quest-log-ru-ttm {
+  background: #DDD;
+  padding: 1px 4px;
+  border: 1px solid var(--color-border-dark-tertiary);
+  border-radius: 2px;
+  white-space: nowrap;
+  word-break: break-all;
+}
+.foundry-quest-log-ru-content-link i,
+.foundry-quest-log-ru-ttm i {
+  color: var(--color-text-dark-inactive);
+  margin-right: 0.25em;
+  pointer-events: none;
+}
+
+.foundry-quest-log-ru-pointer-tooltip,
+.foundry-quest-log-ru-ruler-anchor {
+  color: var(--foundry-quest-log-ru-text-1);
+  font-family: var(--foundry-quest-log-ru-font-family), serif;
+  text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 5px var(--foundry-quest-log-ru-background);
+}
+
+.chat-message:has(#foundry-quest-log-ru-image-override).chat-message:has(#foundry-quest-log-ru-image-override) img {
+  padding: 38px 38px 0px 0px;
+  background-image: url("../assets/icons/exclamation2.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 0px;
+  height: 0px;
+}
+
+#foundry-quest-log-ru-ttm {
+  width: calc(100% - var(--sidebar-width));
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7098039216);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+#foundry-quest-log-ru-ttm img,
+#foundry-quest-log-ru-ttm video {
+  pointer-events: none;
+  border: none;
+}
+#foundry-quest-log-ru-ttm.minimized {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  border-radius: 50%;
+  z-index: 1000;
+  overflow: hidden;
+  box-shadow: 0 0 5px black;
+  border: 2px solid var(--foundry-quest-log-ru-text-4);
+}
+#foundry-quest-log-ru-ttm.minimized h1 {
+  display: none;
+}
+#foundry-quest-log-ru-ttm.minimized img,
+#foundry-quest-log-ru-ttm.minimized video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#foundry-quest-log-ru-ttm h1 {
+  position: absolute;
+  bottom: 10vh;
+  color: var(--foundry-quest-log-ru-text-1);
+  font-size: 5vw;
+  font-family: var(--foundry-quest-log-ru-font-family), serif;
+  text-shadow: 0 0 5px var(--foundry-quest-log-ru-background-color), 0 0 5px var(--foundry-quest-log-ru-background-color), 0 0 5px var(--foundry-quest-log-ru-background-color), 0 0 5px var(--foundry-quest-log-ru-background-color), 0 0 5px var(--foundry-quest-log-ru-background-color);
+  border: none;
+}
+
+#interface:has(#sidebar.collapsed) #foundry-quest-log-ru-ttm:not(.minimized) {
+  width: 100%;
+}
+
+#foundry-quest-log-ru {
+  background: var(--foundry-quest-log-ru-background);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  color: var(--foundry-quest-log-ru-text-1);
+  filter: invert(var(--foundry-quest-log-ru-invert));
+  font-family: var(--foundry-quest-log-ru-font-family);
+  height: 100%;
+  transition: color 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+#foundry-quest-log-ru #sq-timeline {
+  --timeline-event-spacing: 30%;
+  --timeline-bar-middle-width: 30px;
+  --timeline-event-dot-border: calc(var(--timeline-bar-middle-width) / 3);
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-scrollbar {
+  width: 5.5px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  z-index: -5;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-scrollbar .timeline-scrollbar-dot {
+  position: absolute;
+  border: 2px solid black;
+  border-radius: 50%;
+  pointer-events: all;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-scrollbar .timeline-scrollbar-box-shadow {
+  height: 100%;
+  width: 100%;
+  filter: blur(2px);
+}
+#foundry-quest-log-ru #sq-timeline main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+#foundry-quest-log-ru #sq-timeline main section {
+  height: 100%;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 10fr var(--timeline-bar-middle-width) 10fr;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#foundry-quest-log-ru #sq-timeline main section > div {
+  height: 100%;
+}
+#foundry-quest-log-ru #sq-timeline main section .timeline-event-duration {
+  width: calc(var(--timeline-event-dot-border) * 0.5);
+  background-color: var(--foundry-quest-log-ru-background-color);
+  border-radius: calc(var(--timeline-event-dot-border) * 0.8);
+  box-shadow: 0 0 5px var(--foundry-quest-log-ru-background-color);
+  position: absolute;
+  pointer-events: none;
+}
+#foundry-quest-log-ru #sq-timeline main section .event-dot {
+  position: absolute;
+  width: var(--timeline-event-dot-border);
+  height: var(--timeline-event-dot-border);
+  background-color: var(--foundry-quest-log-ru-background-color);
+  border-radius: 50%;
+  box-shadow: 0 0 5px var(--foundry-quest-log-ru-background-color);
+  transform: translateY(-50%);
+}
+#foundry-quest-log-ru #sq-timeline main section .event-dot.icon {
+  width: var(--timeline-bar-middle-width);
+  border: none;
+  height: var(--timeline-bar-middle-width);
+  border-radius: 0;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  box-shadow: none;
+  background-color: transparent;
+  filter: drop-shadow(0 0 3px black);
+  top: calc(-1 * var(--timeline-bar-middle-width) / 2);
+  transform: translateY(-50%) scale(2);
+}
+#foundry-quest-log-ru #sq-timeline main section .timeline-left {
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+}
+#foundry-quest-log-ru #sq-timeline main section .timeline-left .event-dot {
+  right: calc(-1 * (var(--timeline-bar-middle-width) / 2 + var(--timeline-event-dot-border)));
+}
+#foundry-quest-log-ru #sq-timeline main section .timeline-left .event-dot.icon {
+  right: calc(-1 * (var(--timeline-bar-middle-width)));
+}
+#foundry-quest-log-ru #sq-timeline main section .timeline-left .timeline-event {
+  right: 0;
+  padding-right: var(--timeline-event-spacing);
+}
+#foundry-quest-log-ru #sq-timeline main section .timeline-right {
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+}
+#foundry-quest-log-ru #sq-timeline main section .timeline-right .event-dot {
+  left: calc(-1 * (var(--timeline-bar-middle-width) / 2 + var(--timeline-event-dot-border)));
+}
+#foundry-quest-log-ru #sq-timeline main section .timeline-right .event-dot.icon {
+  left: calc(-1 * (var(--timeline-bar-middle-width)));
+}
+#foundry-quest-log-ru #sq-timeline main section .timeline-right .timeline-event {
+  left: 0;
+  padding-left: var(--timeline-event-spacing);
+}
+#foundry-quest-log-ru #sq-timeline main section .timeline-center {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 4;
+  pointer-events: none;
+}
+#foundry-quest-log-ru #sq-timeline main section .timeline-center .timeline-bar-shadow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: scaleX(1.01);
+  opacity: 0.5;
+  filter: blur(5px);
+  z-index: -1;
+}
+#foundry-quest-log-ru #sq-timeline nav {
+  position: absolute;
+  bottom: 0;
+  background-color: var(--foundry-quest-log-ru-background-color);
+  border: 1px solid;
+  border-radius: 5px;
+  justify-self: center;
+  z-index: 9;
+}
+#foundry-quest-log-ru #sq-timeline nav i {
+  cursor: pointer;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era {
+  border: 1px solid var(--foundry-quest-log-ru-background-color);
+  transform: translateY(-50%);
+  z-index: 1;
+  min-width: 300px;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era .era-name {
+  white-space: nowrap;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-event {
+  width: 100%;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-event .timeline-border-wrapper {
+  width: 100%;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era,
+#foundry-quest-log-ru #sq-timeline .timeline-event {
+  position: absolute;
+  background-color: var(--foundry-quest-log-ru-background-color);
+  pointer-events: all;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era.on-top,
+#foundry-quest-log-ru #sq-timeline .timeline-event.on-top {
+  z-index: 10;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era .timeline-config-icon,
+#foundry-quest-log-ru #sq-timeline .timeline-event .timeline-config-icon {
+  top: 0;
+  right: 0;
+  position: absolute;
+  padding: 0.3rem;
+  opacity: 0;
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 999;
+  transition: opacity 0.3s ease-in-out;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era.secret .timeline-border-wrapper,
+#foundry-quest-log-ru #sq-timeline .timeline-event.secret .timeline-border-wrapper {
+  outline: 2px solid var(--foundry-quest-log-ru-hidden-color);
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era:has(.timeline-border-wrapper),
+#foundry-quest-log-ru #sq-timeline .timeline-event:has(.timeline-border-wrapper) {
+  background-color: transparent;
+  border-top: 2px solid var(--era-color);
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era:first-child,
+#foundry-quest-log-ru #sq-timeline .timeline-event:first-child {
+  transform: translateY(0);
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era.flipped,
+#foundry-quest-log-ru #sq-timeline .timeline-event.flipped {
+  transform: translateY(-100%);
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era.flipped:has(.timeline-border-wrapper),
+#foundry-quest-log-ru #sq-timeline .timeline-event.flipped:has(.timeline-border-wrapper) {
+  border-bottom: 2px solid var(--era-color);
+  border-top: none;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era .timeline-border-wrapper,
+#foundry-quest-log-ru #sq-timeline .timeline-event .timeline-border-wrapper {
+  background-color: var(--foundry-quest-log-ru-background-color);
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era .timeline-content,
+#foundry-quest-log-ru #sq-timeline .timeline-event .timeline-content {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  max-height: 20vh;
+  overflow: auto;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era .timeline-content.collapsed,
+#foundry-quest-log-ru #sq-timeline .timeline-event .timeline-content.collapsed {
+  display: none;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era header,
+#foundry-quest-log-ru #sq-timeline .timeline-event header {
+  padding: 0.5rem 1rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era header:hover .timeline-config-icon,
+#foundry-quest-log-ru #sq-timeline .timeline-event header:hover .timeline-config-icon {
+  opacity: 1;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era header .era-name,
+#foundry-quest-log-ru #sq-timeline .timeline-era header span,
+#foundry-quest-log-ru #sq-timeline .timeline-event header .era-name,
+#foundry-quest-log-ru #sq-timeline .timeline-event header span {
+  pointer-events: none;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era header.has-content,
+#foundry-quest-log-ru #sq-timeline .timeline-event header.has-content {
+  padding-bottom: 1.2rem;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era header .content-collapse,
+#foundry-quest-log-ru #sq-timeline .timeline-event header .content-collapse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--foundry-quest-log-ru-background-color);
+  cursor: pointer;
+  pointer-events: all;
+  position: absolute;
+  width: 100%;
+  transform: translateX(-1rem);
+  bottom: 0;
+  transition: filter 0.3s ease-in-out;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era header .content-collapse:hover,
+#foundry-quest-log-ru #sq-timeline .timeline-event header .content-collapse:hover {
+  filter: brightness(1.3);
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era header .background-overlay,
+#foundry-quest-log-ru #sq-timeline .timeline-event header .background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--foundry-quest-log-ru-background-color);
+  opacity: 0.5;
+  pointer-events: none;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era header .era-name,
+#foundry-quest-log-ru #sq-timeline .timeline-event header .era-name {
+  text-align: center;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era header .era-name::after,
+#foundry-quest-log-ru #sq-timeline .timeline-event header .era-name::after {
+  display: none;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era header span,
+#foundry-quest-log-ru #sq-timeline .timeline-event header span {
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: small;
+  opacity: 0.7;
+  display: flex;
+  gap: 0.3rem;
+  justify-content: center;
+  align-items: center;
+}
+#foundry-quest-log-ru #sq-timeline .timeline-era header span.event-era,
+#foundry-quest-log-ru #sq-timeline .timeline-event header span.event-era {
+  pointer-events: all;
+  cursor: pointer;
+}
+#foundry-quest-log-ru .achievements-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+#foundry-quest-log-ru .achievements-wrapper .achievement-item {
+  --achievement-color: var(--foundry-quest-log-ru-text-4);
+  position: relative;
+  min-width: 500px;
+  max-width: 500px;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: var(--foundry-quest-log-ru-background-color);
+  padding: 1rem;
+  border: 1px solid var(--achievement-color);
+  border-radius: 5px;
+}
+#foundry-quest-log-ru .achievements-wrapper .achievement-item #delete {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+  opacity: 0.2;
+  transition: all 0.2s ease-in-out;
+}
+#foundry-quest-log-ru .achievements-wrapper .achievement-item #delete:hover {
+  opacity: 1;
+}
+#foundry-quest-log-ru .achievements-wrapper .achievement-item.awarded {
+  box-shadow: 0 0 5px var(--achievement-color), inset 0 0 10px var(--achievement-color);
+}
+#foundry-quest-log-ru .achievements-wrapper .achievement-item.awarded header > img {
+  border: 1px solid var(--achievement-color);
+  box-shadow: 0 0 5px var(--achievement-color);
+}
+#foundry-quest-log-ru .achievements-wrapper .achievement-item header {
+  display: flex;
+  gap: 0.5rem;
+}
+#foundry-quest-log-ru .achievements-wrapper .achievement-item header img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#foundry-quest-log-ru .achievements-wrapper .achievement-item header .header-contents {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#foundry-quest-log-ru .achievements-wrapper .achievement-item header .header-contents h1 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+#foundry-quest-log-ru .achievements-wrapper .achievement-item header .user-ownership {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+#foundry-quest-log-ru .achievements-wrapper .achievement-item header .user-ownership .user-image-wrapper {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+#foundry-quest-log-ru .achievements-wrapper .achievement-item header .user-ownership .user-image-wrapper:not(.owner):not(.observer) {
+  border-color: var(--foundry-quest-log-ru-hidden-color);
+}
+#foundry-quest-log-ru .achievements-wrapper .achievement-item header .user-ownership .user-image-wrapper:not(.owner):not(.observer) img {
+  filter: grayscale(1);
+}
+#foundry-quest-log-ru .achievements-wrapper .achievement-item header .user-ownership .user-image-wrapper.observer:not(.owner) img {
+  filter: grayscale(1);
+}
+#foundry-quest-log-ru .achievements-wrapper .achievement-item header .user-ownership .user-image-wrapper.owner {
+  border-color: var(--achievement-color);
+  box-shadow: 0 0 5px var(--achievement-color);
+}
+#foundry-quest-log-ru .achievements-wrapper .achievement-item header .user-ownership .user-image-wrapper img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid var(--achievement-color);
+}
+#foundry-quest-log-ru .achievements-wrapper .achievement-item .achievements-content p:last-of-type {
+  margin-bottom: 0;
+}
+#foundry-quest-log-ru #context-menu {
+  position: relative;
+  background: transparent;
+  border-color: var(--foundry-quest-log-ru-text-color);
+  color: var(--foundry-quest-log-ru-text-color);
+  padding: calc(var(--foundry-quest-log-ru-font-size) * 0.1);
+  font-size: calc(var(--foundry-quest-log-ru-font-size) * 0.7);
+  text-shadow: none;
+}
+#foundry-quest-log-ru #context-menu .context-item:hover {
+  color: var(--foundry-quest-log-ru-text-color);
+  text-shadow: 0 0 5px;
+}
+#foundry-quest-log-ru #move {
+  background: transparent;
+  width: unset;
+}
+#foundry-quest-log-ru #history {
+  gap: 1rem;
+  padding: 0.3rem;
+  align-items: center;
+  border-bottom: 1px solid;
+  flex-wrap: nowrap;
+  overflow: auto;
+}
+#foundry-quest-log-ru #history .history-item,
+#foundry-quest-log-ru #history i {
+  flex: 0;
+  white-space: nowrap;
+  font-size: calc(var(--foundry-quest-log-ru-font-size) * 0.7);
+}
+#foundry-quest-log-ru #history .history-item {
+  padding: 0.2rem;
+  transition: all 0.2s ease-in-out;
+}
+#foundry-quest-log-ru #history .history-item:hover {
+  text-shadow: 0 0 5px var(--foundry-quest-log-ru-text-1);
+  cursor: pointer;
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-map-image.prevent-icon-interaction .foundry-quest-log-ru-marker {
+  pointer-events: none;
+}
+#foundry-quest-log-ru.prevent-auto-hide .quest-checkbox.secret.secret {
+  opacity: 1;
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-image-journal {
+  max-height: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-image-journal img {
+  height: 80%;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+#foundry-quest-log-ru section.secret:not(.revealed) {
+  color: var(--foundry-quest-log-ru-hidden-color);
+}
+#foundry-quest-log-ru .quest-contents {
+  height: 100%;
+}
+#foundry-quest-log-ru .quest-contents img {
+  cursor: pointer;
+}
+#foundry-quest-log-ru .quest-contents.journal-page-content {
+  font-family: var(--foundry-quest-log-ru-font-family);
+}
+#foundry-quest-log-ru .search-highlight {
+  position: relative;
+}
+#foundry-quest-log-ru .search-highlight::after {
+  content: "";
+  position: absolute;
+  background-color: var(--foundry-quest-log-ru-text-1);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  border-radius: 5px;
+  pointer-events: none;
+}
+#foundry-quest-log-ru .global-search-results {
+  background: var(--foundry-quest-log-ru-background);
+  padding: 1rem;
+  border: 1px solid var(--foundry-quest-log-ru-text-1);
+  z-index: 1;
+  max-height: 50vh;
+  overflow-y: auto;
+  margin-left: -3rem;
+  margin-top: -1rem;
+}
+#foundry-quest-log-ru .global-search-results li {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  position: relative;
+}
+#foundry-quest-log-ru .global-search-results li::after {
+  content: "";
+  position: absolute;
+  background-color: var(--foundry-quest-log-ru-text-1);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+}
+#foundry-quest-log-ru .global-search-results li:hover::after {
+  opacity: 0.2;
+}
+#foundry-quest-log-ru .global-search-results li .highlight {
+  position: relative;
+}
+#foundry-quest-log-ru .global-search-results li .highlight::after {
+  content: "";
+  background-color: var(--foundry-quest-log-ru-text-1);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+#foundry-quest-log-ru li.completed {
+  text-decoration: line-through;
+}
+#foundry-quest-log-ru .hide-completed li.completed:not(.sub-quest) {
+  display: none;
+}
+#foundry-quest-log-ru img,
+#foundry-quest-log-ru .foundry-quest-log-ru-map-image,
+#foundry-quest-log-ru .notification,
+#foundry-quest-log-ru .parchment-note-1,
+#foundry-quest-log-ru .parchment-note-2,
+#foundry-quest-log-ru .parchment-note-3,
+#foundry-quest-log-ru .parchment-note-4,
+#foundry-quest-log-ru .parchment-book-1,
+#foundry-quest-log-ru .parchment-book-2,
+#foundry-quest-log-ru .parchment-scroll-1 {
+  filter: invert(var(--foundry-quest-log-ru-invert));
+}
+#foundry-quest-log-ru h1,
+#foundry-quest-log-ru h2,
+#foundry-quest-log-ru h3,
+#foundry-quest-log-ru h4,
+#foundry-quest-log-ru h5,
+#foundry-quest-log-ru h6,
+#foundry-quest-log-ru .item {
+  font-family: var(--foundry-quest-log-ru-header-font-family), serif;
+  font-weight: bold;
+}
+#foundry-quest-log-ru .not-match {
+  display: none;
+}
+#foundry-quest-log-ru .windowed {
+  height: 100%;
+  max-height: 100%;
+}
+#foundry-quest-log-ru .windowed .content {
+  padding: calc(var(--foundry-quest-log-ru-font-size) * 2.5) calc(var(--foundry-quest-log-ru-font-size) * 2.5);
+}
+#foundry-quest-log-ru .window-content {
+  background: transparent;
+  padding: 0;
+  color: var(--foundry-quest-log-ru-text-1);
+}
+#foundry-quest-log-ru .content-link,
+#foundry-quest-log-ru .foundry-quest-log-ru-content-link {
+  background: transparent;
+  background: transparent;
+  border: none;
+  text-decoration: underline;
+  color: var(--foundry-quest-log-ru-text-3);
+  filter: saturate(0.7);
+  transition: all 0.2s ease-in-out;
+}
+#foundry-quest-log-ru .content-link i,
+#foundry-quest-log-ru .foundry-quest-log-ru-content-link i {
+  color: var(--foundry-quest-log-ru-text-3);
+}
+#foundry-quest-log-ru .content-link:hover,
+#foundry-quest-log-ru .foundry-quest-log-ru-content-link:hover {
+  filter: saturate(1);
+  text-shadow: none;
+}
+#foundry-quest-log-ru input:not([type=range]),
+#foundry-quest-log-ru textarea {
+  background: transparent;
+  color: var(--foundry-quest-log-ru-text-1);
+  border: 1px solid var(--foundry-quest-log-ru-text-1);
+  border-radius: 0;
+  padding: 0.3rem;
+}
+#foundry-quest-log-ru input:not([type=range]):focus, #foundry-quest-log-ru input:not([type=range]):active,
+#foundry-quest-log-ru textarea:focus,
+#foundry-quest-log-ru textarea:active {
+  box-shadow: 0 0 5px var(--foundry-quest-log-ru-text-4);
+}
+#foundry-quest-log-ru input[type=text],
+#foundry-quest-log-ru input[type=search] {
+  height: calc(var(--foundry-quest-log-ru-font-size) * 1.3);
+  opacity: 0.3;
+  transition: all 0.2s ease-in-out;
+}
+#foundry-quest-log-ru input[type=text]:focus, #foundry-quest-log-ru input[type=text]:active,
+#foundry-quest-log-ru input[type=search]:focus,
+#foundry-quest-log-ru input[type=search]:active {
+  opacity: 1;
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-marker {
+  z-index: 1;
+  text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 5px black;
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-marker video {
+  filter: drop-shadow(0 0 2px black);
+  width: calc(var(--foundry-quest-log-ru-font-size) * 1.3);
+  height: calc(var(--foundry-quest-log-ru-font-size) * 1.3);
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-marker i {
+  width: var(--foundry-quest-log-ru-font-size);
+  height: var(--foundry-quest-log-ru-font-size);
+  text-align: center;
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-marker i.marker-image {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 2px black);
+  width: calc(var(--foundry-quest-log-ru-font-size) * 1.3);
+  height: calc(var(--foundry-quest-log-ru-font-size) * 1.3);
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-marker i.emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+}
+#foundry-quest-log-ru #windowed-mode {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  font-size: calc(var(--foundry-quest-log-ru-font-size) * 1.5);
+  margin: var(--foundry-quest-log-ru-font-size);
+  border-radius: 50%;
+  background-color: var(--foundry-quest-log-ru-text-1);
+  width: calc(var(--foundry-quest-log-ru-font-size) * 2);
+  height: calc(var(--foundry-quest-log-ru-font-size) * 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  transform: translateY(-200%);
+  color: var(--foundry-quest-log-ru-background-color);
+}
+#foundry-quest-log-ru #windowed-mode:hover {
+  opacity: 1 !important;
+  transform: translateY(0);
+}
+#foundry-quest-log-ru .sheet-tabs:hover #windowed-mode {
+  opacity: 0.1;
+  transform: translateY(0);
+}
+#foundry-quest-log-ru option {
+  background: var(--foundry-quest-log-ru-background);
+}
+#foundry-quest-log-ru details.quest-category > summary {
+  list-style-type: none;
+  filter: brightness(1.2);
+  font-size: calc(var(--foundry-quest-log-ru-font-size) * 1.2);
+}
+#foundry-quest-log-ru details.quest-category > summary:hover .add-quest {
+  opacity: 0.2;
+}
+#foundry-quest-log-ru details.quest-category > summary .add-quest {
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  cursor: pointer;
+  font-size: var(--foundry-quest-log-ru-font-size);
+}
+#foundry-quest-log-ru details.quest-category > summary .add-quest:hover {
+  opacity: 1;
+  text-shadow: 0 0 5px var(--foundry-quest-log-ru-text-1);
+}
+#foundry-quest-log-ru .quest-selected,
+#foundry-quest-log-ru .quest-header,
+#foundry-quest-log-ru .map-selected {
+  filter: brightness(1.2);
+}
+#foundry-quest-log-ru .quest-selected.secret::after,
+#foundry-quest-log-ru .quest-header.secret::after,
+#foundry-quest-log-ru .map-selected.secret::after {
+  background: radial-gradient(ellipse at 0%, var(--foundry-quest-log-ru-hidden-color) 0%, transparent 70%, transparent 100%);
+}
+#foundry-quest-log-ru .quest-selected::after,
+#foundry-quest-log-ru .quest-header::after,
+#foundry-quest-log-ru .map-selected::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  top: 85%;
+  width: 100%;
+  height: 15%;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 0%, var(--foundry-quest-log-ru-text-1) 0%, transparent 70%, transparent 100%);
+  opacity: 0.35;
+  border-radius: 50%;
+}
+#foundry-quest-log-ru .quest-selected:has(nav)::after,
+#foundry-quest-log-ru .quest-header:has(nav)::after,
+#foundry-quest-log-ru .map-selected:has(nav)::after {
+  display: none;
+}
+#foundry-quest-log-ru details.quest-category > summary:before {
+  font-family: "FontAwesome";
+  content: "\f0d7";
+  position: absolute;
+  left: -2rem;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+  transform: rotate(-90deg);
+}
+#foundry-quest-log-ru details.quest-category[open] > summary:before {
+  transform: rotate(0deg);
+}
+#foundry-quest-log-ru h1,
+#foundry-quest-log-ru h2,
+#foundry-quest-log-ru h3,
+#foundry-quest-log-ru h4,
+#foundry-quest-log-ru h5,
+#foundry-quest-log-ru h6 {
+  color: var(--foundry-quest-log-ru-text-0);
+  border-color: inherit;
+  position: relative;
+  border: none;
+}
+#foundry-quest-log-ru h1::after,
+#foundry-quest-log-ru h2::after,
+#foundry-quest-log-ru h3::after,
+#foundry-quest-log-ru h4::after,
+#foundry-quest-log-ru h5::after,
+#foundry-quest-log-ru h6::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  top: 85%;
+  width: 100%;
+  height: 15%;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 0%, var(--foundry-quest-log-ru-text-0) 0%, transparent 70%, transparent 100%);
+  opacity: 0.35;
+  border-radius: 50%;
+}
+#foundry-quest-log-ru ::-webkit-scrollbar-thumb {
+  background: var(--foundry-quest-log-ru-text-1);
+  border: none;
+  border-radius: 0;
+}
+#foundry-quest-log-ru ::-webkit-scrollbar-track {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+#foundry-quest-log-ru input[type=range] {
+  width: 20%;
+}
+#foundry-quest-log-ru input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: var(--foundry-quest-log-ru-text-2);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px thin black;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.568);
+}
+#foundry-quest-log-ru input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background: var(--foundry-quest-log-ru-text-3);
+  border: none;
+  filter: brightness(0.8);
+}
+#foundry-quest-log-ru nav.tabs,
+#foundry-quest-log-ru nav#timeline-nav {
+  font-size: calc(var(--foundry-quest-log-ru-font-size) * 1.5);
+  padding: var(--foundry-quest-log-ru-font-size);
+  height: calc(var(--foundry-quest-log-ru-font-size) * 3.5);
+  border-bottom: 1px solid var(--foundry-quest-log-ru-text-1);
+}
+#foundry-quest-log-ru nav.tabs:has(a > i),
+#foundry-quest-log-ru nav#timeline-nav:has(a > i) {
+  height: calc(var(--foundry-quest-log-ru-font-size) * 4.5);
+}
+#foundry-quest-log-ru nav.tabs a,
+#foundry-quest-log-ru nav#timeline-nav a {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  color: var(--foundry-quest-log-ru-text-1);
+}
+#foundry-quest-log-ru nav.tabs a i,
+#foundry-quest-log-ru nav#timeline-nav a i {
+  font-size: calc(var(--foundry-quest-log-ru-font-size) * 2.5);
+}
+#foundry-quest-log-ru nav.tabs a::after,
+#foundry-quest-log-ru nav#timeline-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  top: 85%;
+  width: 200%;
+  height: 15%;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, var(--foundry-quest-log-ru-text-1) 0%, transparent 70%, transparent 100%);
+  opacity: 0;
+  transform: translateX(-25%);
+  transition: all 0.2s ease-in-out;
+}
+#foundry-quest-log-ru nav.tabs a:hover,
+#foundry-quest-log-ru nav.tabs a.active,
+#foundry-quest-log-ru nav#timeline-nav a:hover,
+#foundry-quest-log-ru nav#timeline-nav a.active {
+  text-shadow: 0 0 3px var(--foundry-quest-log-ru-text-1);
+  color: var(--foundry-quest-log-ru-text-1);
+}
+#foundry-quest-log-ru nav.tabs a:hover::after,
+#foundry-quest-log-ru nav.tabs a.active::after,
+#foundry-quest-log-ru nav#timeline-nav a:hover::after,
+#foundry-quest-log-ru nav#timeline-nav a.active::after {
+  opacity: 0.35;
+}
+#foundry-quest-log-ru .quest-category-summary.selected-deleteme::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  top: 85%;
+  width: 100%;
+  height: 15%;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 0%, var(--foundry-quest-log-ru-text-1) 0%, transparent 70%, transparent 100%);
+  opacity: 0.15;
+  border-radius: 50%;
+}
+#foundry-quest-log-ru .map-item {
+  filter: brightness(1.2);
+  font-size: calc(var(--foundry-quest-log-ru-font-size) * 1.2);
+}
+#foundry-quest-log-ru .map-item:hover {
+  text-shadow: 0 0 5px;
+}
+#foundry-quest-log-ru .map-item .quest-checkbox.secret {
+  left: calc(var(--foundry-quest-log-ru-font-size) * -1.5);
+  width: calc(var(--foundry-quest-log-ru-font-size) * 1.5);
+  height: calc(var(--foundry-quest-log-ru-font-size) * 1.5);
+}
+#foundry-quest-log-ru .quest-item,
+#foundry-quest-log-ru .timeline-item {
+  cursor: pointer;
+  margin: calc(var(--foundry-quest-log-ru-font-size) * 0.3) 0;
+}
+#foundry-quest-log-ru .quest-item.is-era,
+#foundry-quest-log-ru .timeline-item.is-era {
+  filter: brightness(1.2) !important;
+  font-size: calc(var(--foundry-quest-log-ru-font-size) * 1.5);
+}
+#foundry-quest-log-ru .quest-item.has-details,
+#foundry-quest-log-ru .timeline-item.has-details {
+  pointer-events: none;
+}
+#foundry-quest-log-ru .quest-item .multi-quest,
+#foundry-quest-log-ru .timeline-item .multi-quest {
+  pointer-events: none;
+}
+#foundry-quest-log-ru .quest-item .multi-quest summary,
+#foundry-quest-log-ru .timeline-item .multi-quest summary {
+  pointer-events: all;
+}
+#foundry-quest-log-ru .quest-item .multi-quest summary::marker,
+#foundry-quest-log-ru .timeline-item .multi-quest summary::marker {
+  font-size: calc(var(--foundry-quest-log-ru-font-size) * 0.75);
+}
+#foundry-quest-log-ru .quest-item .multi-quest ul,
+#foundry-quest-log-ru .timeline-item .multi-quest ul {
+  padding: 0 var(--foundry-quest-log-ru-font-size);
+  margin-top: 0;
+}
+#foundry-quest-log-ru .quest-item .multi-quest li,
+#foundry-quest-log-ru .timeline-item .multi-quest li {
+  pointer-events: all;
+  filter: brightness(0.8);
+  font-size: calc(var(--foundry-quest-log-ru-font-size) * 0.85);
+}
+#foundry-quest-log-ru .quest-item .multi-quest li:hover,
+#foundry-quest-log-ru .timeline-item .multi-quest li:hover {
+  text-shadow: 0 0 5px;
+}
+#foundry-quest-log-ru .quest-item summary:hover,
+#foundry-quest-log-ru .timeline-item summary:hover {
+  text-shadow: 0 0 5px;
+}
+#foundry-quest-log-ru .quest-item.no-details:hover,
+#foundry-quest-log-ru .timeline-item.no-details:hover {
+  text-shadow: 0 0 5px;
+}
+#foundry-quest-log-ru .quest-item .quest-checkbox.secret,
+#foundry-quest-log-ru .timeline-item .quest-checkbox.secret {
+  left: calc(var(--foundry-quest-log-ru-font-size) * -1.5);
+}
+#foundry-quest-log-ru .journal-toc {
+  cursor: pointer;
+}
+#foundry-quest-log-ru .journal-toc:hover {
+  text-shadow: 0 0 5px;
+}
+#foundry-quest-log-ru .journal-container,
+#foundry-quest-log-ru .journal-toc-list {
+  overflow: auto;
+}
+#foundry-quest-log-ru .journal-toc-list {
+  padding-top: 3rem;
+}
+#foundry-quest-log-ru .personal-journal-list {
+  position: relative;
+}
+#foundry-quest-log-ru .unread-quest {
+  position: absolute;
+  pointer-events: none;
+  left: 100%;
+  color: var(--foundry-quest-log-ru-text-4);
+  text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 5px var(--foundry-quest-log-ru-text-1), 0 0 7px var(--foundry-quest-log-ru-text-1), 0 0 10px var(--foundry-quest-log-ru-text-1), 0 0 15px var(--foundry-quest-log-ru-text-1);
+  filter: saturate(2) brightness(2.5);
+  transform: rotate(10deg);
+}
+#foundry-quest-log-ru .sub-quest .quest-checkbox {
+  width: calc(var(--foundry-quest-log-ru-font-size) * 1);
+  height: calc(var(--foundry-quest-log-ru-font-size) * 1);
+}
+#foundry-quest-log-ru .sub-quest .quest-checkbox.secret {
+  left: calc(var(--foundry-quest-log-ru-font-size) * -1);
+}
+#foundry-quest-log-ru .quest-checkbox {
+  position: absolute;
+  left: calc(var(--foundry-quest-log-ru-font-size) * -1.5);
+  transform: scale(0.7);
+  width: calc(var(--foundry-quest-log-ru-font-size) * 1.25);
+  height: calc(var(--foundry-quest-log-ru-font-size) * 1.25);
+  border: 2px solid var(--foundry-quest-log-ru-text-1);
+  display: flex;
+  cursor: pointer;
+  pointer-events: all;
+}
+#foundry-quest-log-ru .quest-checkbox.failed {
+  border-color: var(--foundry-quest-log-ru-failed-color);
+}
+#foundry-quest-log-ru .quest-checkbox.failed .quest-checkbox-marker {
+  background: var(--foundry-quest-log-ru-failed-color);
+}
+#foundry-quest-log-ru .quest-checkbox.secret {
+  opacity: 0;
+  left: calc(var(--foundry-quest-log-ru-font-size) * -2.5);
+  border-color: var(--foundry-quest-log-ru-hidden-color);
+  transition: opacity 0.2s ease-in-out;
+  font-size: 1.2rem;
+  color: var(--foundry-quest-log-ru-background-color);
+}
+#foundry-quest-log-ru .quest-checkbox.secret:hover {
+  opacity: 1;
+}
+#foundry-quest-log-ru .quest-checkbox.secret .quest-checkbox-marker {
+  background: var(--foundry-quest-log-ru-hidden-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#foundry-quest-log-ru .quest-checkbox .quest-checkbox-marker {
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  filter: contrast(0.8);
+  background: var(--foundry-quest-log-ru-text-1);
+  pointer-events: none;
+  transition: transform 0.1s ease-in-out;
+  transform: scale(0);
+}
+#foundry-quest-log-ru .quest-checkbox.checked .quest-checkbox-marker {
+  transform: scale(1);
+}
+#foundry-quest-log-ru .quest-checkbox:hover .quest-checkbox-marker {
+  transform: scale(1);
+}
+#foundry-quest-log-ru li {
+  position: relative;
+}
+#foundry-quest-log-ru li.checked {
+  text-decoration: line-through;
+  filter: brightness(0.5);
+}
+#foundry-quest-log-ru li.secret {
+  color: var(--foundry-quest-log-ru-hidden-color);
+}
+#foundry-quest-log-ru li.failed {
+  color: var(--foundry-quest-log-ru-failed-color);
+}
+#foundry-quest-log-ru .content {
+  font-size: var(--foundry-quest-log-ru-font-size);
+  padding: calc(var(--foundry-quest-log-ru-font-size) * 2.5) calc(var(--foundry-quest-log-ru-font-size) * 6);
+  max-height: calc(100% - var(--foundry-quest-log-ru-font-size) * 3.5);
+  height: calc(100% - var(--foundry-quest-log-ru-font-size) * 3.5);
+  position: relative;
+  max-width: 100%;
+}
+#foundry-quest-log-ru .content .tab {
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+}
+#foundry-quest-log-ru ul,
+#foundry-quest-log-ru ol {
+  list-style: none;
+}
+#foundry-quest-log-ru .tab[data-tab=lore] .quest-details ul,
+#foundry-quest-log-ru .tab[data-tab=lore] .quest-details ol,
+#foundry-quest-log-ru .tab[data-tab=my-journal] .quest-details ul,
+#foundry-quest-log-ru .tab[data-tab=my-journal] .quest-details ol,
+#foundry-quest-log-ru .tab[data-tab=party-journal] .quest-details ul,
+#foundry-quest-log-ru .tab[data-tab=party-journal] .quest-details ol,
+#foundry-quest-log-ru .journal-container ul,
+#foundry-quest-log-ru .journal-container ol,
+#foundry-quest-log-ru .foundry-quest-log-ru-modal ul,
+#foundry-quest-log-ru .foundry-quest-log-ru-modal ol {
+  list-style: revert;
+}
+#foundry-quest-log-ru .tab[data-tab=timeline] .quest-list {
+  padding-left: 0;
+}
+#foundry-quest-log-ru .tab[data-tab=timeline] .quest-list ul {
+  padding-left: 0;
+}
+#foundry-quest-log-ru .tab[data-tab=timeline] .quest-list ul .timeline-item:not(.is-era) {
+  margin-left: calc(var(--foundry-quest-log-ru-font-size) * 1.5);
+}
+#foundry-quest-log-ru #edit-my-journal,
+#foundry-quest-log-ru #edit-shared-journal {
+  position: sticky;
+  left: 100vw;
+  padding-right: 2rem;
+  top: 1rem;
+  cursor: pointer;
+  z-index: 1;
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 100%;
+  padding-bottom: 2rem;
+  gap: 1rem;
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-grid.compact {
+  grid-template-columns: 1fr 4fr;
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-grid.hidden-list {
+  grid-template-columns: 1fr;
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .map-controls i {
+  cursor: pointer;
+  overflow: visible;
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .map-controls i:hover {
+  text-shadow: 0 0 5px var(--foundry-quest-log-ru-text-1);
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-controls,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-list-controls,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .map-controls {
+  position: absolute;
+  width: calc(100% - 2rem);
+  right: 2rem;
+  top: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-controls #add-category,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-controls #add-map,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-controls #add-lore-category,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-list-controls #add-category,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-list-controls #add-map,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-list-controls #add-lore-category,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .map-controls #add-category,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .map-controls #add-map,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .map-controls #add-lore-category {
+  position: relative;
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-controls #add-category .fa-plus,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-controls #add-map .fa-plus,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-controls #add-lore-category .fa-plus,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-list-controls #add-category .fa-plus,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-list-controls #add-map .fa-plus,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-list-controls #add-lore-category .fa-plus,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .map-controls #add-category .fa-plus,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .map-controls #add-map .fa-plus,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .map-controls #add-lore-category .fa-plus {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  font-size: calc(var(--foundry-quest-log-ru-font-size) * 0.45);
+  color: var(--foundry-quest-log-ru-background-color);
+  background: var(--foundry-quest-log-ru-text-1);
+  border: calc(var(--foundry-quest-log-ru-font-size) * 0.06) solid;
+  padding: 2px;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--foundry-quest-log-ru-font-size) * 0.65);
+  height: calc(var(--foundry-quest-log-ru-font-size) * 0.65);
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-controls.foundry-quest-log-ru-hidden,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-list-controls.foundry-quest-log-ru-hidden,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .map-controls.foundry-quest-log-ru-hidden {
+  display: none;
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-controls .quest-control,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-list-controls .quest-control,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .map-controls .quest-control {
+  cursor: pointer;
+  overflow: visible;
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-controls .quest-control:hover,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-list-controls .quest-control:hover,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .map-controls .quest-control:hover {
+  text-shadow: 0 0 5px var(--foundry-quest-log-ru-text-1);
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-grid #move {
+  height: var(--foundry-quest-log-ru-font-size);
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--foundry-quest-log-ru-text-1);
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-list,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .maps-list,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .journal-toc-list {
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-list,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-details,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .maps-list,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .map-details {
+  position: relative;
+  overflow-y: auto;
+  height: 100%;
+  max-height: 100%;
+  padding: 3rem;
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-list.map-details,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .quest-details.map-details,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .maps-list.map-details,
+#foundry-quest-log-ru .foundry-quest-log-ru-grid .map-details.map-details {
+  padding: 0;
+}
+#foundry-quest-log-ru .font-controls {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  padding: 1rem;
+  font-size: xx-large;
+  opacity: 0.4;
+  transition: all 0.2s ease-in-out;
+}
+#foundry-quest-log-ru .font-controls:hover {
+  opacity: 1;
+}
+#foundry-quest-log-ru .font-controls i {
+  cursor: pointer;
+}
+#foundry-quest-log-ru .font-controls i:hover {
+  text-shadow: 0 0 5px var(--foundry-quest-log-ru-text-1);
+}
+#foundry-quest-log-ru .font-controls #font-size-decrease {
+  font-size: large;
+}
+#foundry-quest-log-ru .foundry-quest-log-ru-modal {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  z-index: 10;
+  position: absolute;
+  padding: 2rem 15%;
+  background: var(--foundry-quest-log-ru-background);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  overflow: auto;
+  cursor: default;
+}/*# sourceMappingURL=module.css.map */

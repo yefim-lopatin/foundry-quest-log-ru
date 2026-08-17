@@ -23,10 +23,15 @@ const files = [
   "LICENSE",
   "NOTICE.md",
   "CHANGELOG.md",
-  "lang",
+  "NOTICE-assets.txt",
+  "index.js",
+  "index.js.map",
+  "languages",
   "scripts",
   "styles",
   "templates",
+  "assets",
+  "storage",
 ];
 
 for (const file of files) cpSync(join(root, file), join(packageRoot, file), { recursive: true });
