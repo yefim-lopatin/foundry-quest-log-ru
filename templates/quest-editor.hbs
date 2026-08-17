@@ -1,0 +1,85 @@
+<form class="fqlr-editor-form">
+  <div class="fqlr-editor-grid">
+    <label class="fqlr-field fqlr-field-wide">
+      <span>{{localize "FQLR.Fields.Name"}} <strong aria-hidden="true">*</strong></span>
+      <input type="text" name="name" value="{{quest.name}}" maxlength="160" required autofocus>
+    </label>
+
+    <label class="fqlr-field">
+      <span>{{localize "FQLR.Fields.Category"}}</span>
+      <input type="text" name="category" value="{{quest.category}}" list="fqlr-category-options" maxlength="120">
+      <datalist id="fqlr-category-options">
+        {{#each categories}}<option value="{{this}}"></option>{{/each}}
+      </datalist>
+    </label>
+
+    <label class="fqlr-field">
+      <span>{{localize "FQLR.Fields.Status"}}</span>
+      <select name="status">
+        {{#each statuses}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+      </select>
+    </label>
+
+    <label class="fqlr-field">
+      <span>{{localize "FQLR.Fields.Giver"}}</span>
+      <input type="text" name="giver" value="{{quest.giver}}" maxlength="160">
+    </label>
+
+    <label class="fqlr-field">
+      <span>{{localize "FQLR.Fields.Location"}}</span>
+      <input type="text" name="location" value="{{quest.location}}" maxlength="160">
+    </label>
+
+    <label class="fqlr-toggle fqlr-field-wide">
+      <input type="checkbox" name="visible" {{#if quest.visible}}checked{{/if}}>
+      <span><strong>{{localize "FQLR.Visibility.Players"}}</strong><small>{{localize "FQLR.Visibility.PlayersHint"}}</small></span>
+    </label>
+
+    <label class="fqlr-field fqlr-field-wide">
+      <span>{{localize "FQLR.Fields.Description"}}</span>
+      <textarea name="description" rows="6" maxlength="20000">{{quest.description}}</textarea>
+      <small>{{localize "FQLR.Editor.EnrichmentHint"}}</small>
+    </label>
+  </div>
+
+  <section class="fqlr-editor-objectives">
+    <div class="fqlr-section-heading">
+      <div>
+        <h2>{{localize "FQLR.Fields.Objectives"}}</h2>
+        <p>{{localize "FQLR.Editor.ObjectivesHint"}}</p>
+      </div>
+      <button type="button" data-action="addObjective"><i class="fa-solid fa-plus"></i> {{localize "FQLR.Buttons.AddObjective"}}</button>
+    </div>
+
+    <div class="fqlr-objective-editor-list">
+      {{#each quest.objectives}}
+        <div class="fqlr-objective-editor" data-objective-id="{{id}}">
+          <input type="text" name="objectiveText" value="{{text}}" maxlength="500" placeholder="{{localize "FQLR.Editor.ObjectivePlaceholder"}}">
+          <label><input type="checkbox" name="objectiveCompleted" {{#if completed}}checked{{/if}}> {{localize "FQLR.Objective.Completed"}}</label>
+          <label><input type="checkbox" name="objectiveSecret" {{#if secret}}checked{{/if}}> {{localize "FQLR.Objective.Secret"}}</label>
+          <button type="button" class="fqlr-danger-button" data-action="removeObjective" data-objective-id="{{id}}" data-tooltip="{{localize "FQLR.Buttons.RemoveObjective"}}">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      {{/each}}
+    </div>
+  </section>
+
+  <div class="fqlr-editor-grid">
+    <label class="fqlr-field fqlr-field-wide">
+      <span>{{localize "FQLR.Fields.Rewards"}}</span>
+      <textarea name="rewards" rows="3" maxlength="20000">{{quest.rewards}}</textarea>
+    </label>
+
+    <label class="fqlr-field fqlr-field-wide fqlr-gm-field">
+      <span><i class="fa-solid fa-user-secret"></i> {{localize "FQLR.Fields.GmNotes"}}</span>
+      <textarea name="gmNotes" rows="4" maxlength="20000">{{quest.gmNotes}}</textarea>
+      <small>{{localize "FQLR.Editor.GmNotesHint"}}</small>
+    </label>
+  </div>
+
+  <footer class="fqlr-form-footer">
+    <button type="button" data-action="cancel"><i class="fa-solid fa-xmark"></i> {{localize "FQLR.Buttons.Cancel"}}</button>
+    <button type="submit" class="fqlr-primary-button"><i class="fa-solid fa-floppy-disk"></i> {{localize "FQLR.Buttons.Save"}}</button>
+  </footer>
+</form>
