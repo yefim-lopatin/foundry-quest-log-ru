@@ -1,0 +1,143 @@
+<form action="submit">
+
+    <div class="form-group">
+        <label for="title">{{localize "Name"}}</label>
+        <input type="text" name="title" id="title" value="{{title}}" placeholder="{{localize " Name"}}">
+    </div>
+
+    <div class="form-group">
+        <label for="label">{{localize "foundry-quest-log-ru.timeline-config.label"}}</label>
+        <input type="text" name="label" id="label" value="{{label}}">
+        <p class="notes">{{localize "foundry-quest-log-ru.timeline-config.labelNote"}}</p>
+    </div>
+
+    <div class="form-group">
+        <label for="banner">{{localize "foundry-quest-log-ru.timeline-config.banner"}}</label>
+        <div class="form-fields">
+            <input type="text" name="banner" id="banner" value="{{banner}}" placeholder="path/to/image.jpg">
+            {{filePicker type="imagevideo" target="banner"}}
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="description">{{localize "foundry-quest-log-ru.timeline-config.description"}}</label>
+        <button type="button" id="edit-contents"><i class="fa-duotone fa-feather"></i> {{localize
+            "foundry-quest-log-ru.timeline-config.description"}}</button>
+    </div>
+
+    <fieldset class="event-fieldset">
+        <legend>{{localize "foundry-quest-log-ru.timeline-config.event"}}</legend>
+
+
+        <div class="form-group">
+            <label for="">{{localize "foundry-quest-log-ru.timeline-config.hidden"}}</label>
+            <input type="checkbox" name="hidden" id="hidden" {{#if hidden}}checked{{/if}}>
+        </div>
+
+        <div class="form-group">
+            <label for="year">{{localize "foundry-quest-log-ru.timeline-config.year"}}</label>
+            <input type="number" name="year" id="year" value="{{year}}" placeholder="">
+        </div>
+
+        <div class="form-group">
+            <label for="duration">{{localize "foundry-quest-log-ru.timeline-config.duration"}}</label>
+            <input type="number" name="duration" id="duration" value="{{duration}}" placeholder="">
+        </div>
+
+        <div class="form-group">
+            <label for="">{{localize "foundry-quest-log-ru.timeline-config.icon"}}</label>
+            <div class="form-fields">
+                <input type="text" name="icon" id="icon" value="{{icon}}" placeholder="path/to/image.jpg">
+                {{filePicker type="imagevideo" target="icon"}}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="flipped">{{localize "foundry-quest-log-ru.timeline-config.flipped"}}</label>
+            <input type="checkbox" name="flipped" id="flipped" {{#if flipped}}checked{{/if}}>
+        </div>
+
+        <div class="form-group">
+            <label for="offset">{{localize "foundry-quest-log-ru.timeline-config.offset"}}</label>
+            <input type="number" name="offset" id="offset" value="{{offset}}" placeholder="">
+        </div>
+
+    </fieldset>
+
+
+    <div class="era-event-switch">
+        <span class="{{#unless isEra}}selected{{/unless}}" data-type="event">{{localize
+            "foundry-quest-log-ru.timeline-config.event"}}</span>
+        <span class="{{#if isEra}}selected{{/if}}" data-type="era">{{localize
+            "foundry-quest-log-ru.timeline-config.era"}}</span>
+    </div>
+
+    <fieldset class="era-fieldset">
+        <legend>{{localize "foundry-quest-log-ru.timeline-config.era"}}</legend>
+        <div class="form-group">
+            <label for="eraStart">{{localize "foundry-quest-log-ru.timeline-config.eraStart"}}</label>
+            <input type="number" name="eraStart" id="eraStart" value="{{eraStart}}" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="eraEnd">{{localize "foundry-quest-log-ru.timeline-config.eraEnd"}}</label>
+            <input type="number" name="eraEnd" id="eraEnd" value="{{eraEnd}}" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="color">{{localize "TILE.Tint"}}</label>
+            {{colorPicker name="color" value=color default="#ff0000"}}
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>{{localize "foundry-quest-log-ru.timeline-config.general"}}</legend>
+        <p class="notes">{{localize "foundry-quest-log-ru.timeline-config.generalNote"}}</p>
+        <div class="form-group">
+            <label for="negativeAbb">{{localize "foundry-quest-log-ru.timeline-config.negativeAbb"}}</label>
+            <input type="text" name="negativeAbb" value="{{negativeAbb}}" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="showMinus">{{localize "foundry-quest-log-ru.timeline-config.showMinus"}}</label>
+            <input type="checkbox" name="showMinus" id="showMinus" {{#if showMinus}}checked{{/if}}>
+        </div>
+
+        <div class="form-group">
+            <label for="positiveAbb">{{localize "foundry-quest-log-ru.timeline-config.positiveAbb"}}</label>
+            <input type="text" name="positiveAbb" value="{{positiveAbb}}" placeholder="">
+        </div>
+
+        <div class="form-group">
+            <label for="timeScale">{{localize "foundry-quest-log-ru.timeline-config.timeScale"}}</label>
+            <input type="number" name="timeScale" value="{{timeScale}}" placeholder="">
+        </div>
+
+        <div class="form-group">
+            <label for="dynamicTimeScale">{{localize "foundry-quest-log-ru.timeline-config.dynamicTimeScale"}}</label>
+            <input type="checkbox" name="dynamicTimeScale" id="dynamicTimeScale" {{#if dynamicTimeScale}}checked{{/if}}>
+            <p class="notes">{{localize "foundry-quest-log-ru.timeline-config.dynamicTimeScaleNote"}}</p>
+        </div>
+
+        <div class="form-group">
+            <label for="content">{{localize "foundry-quest-log-ru.timeline-config.content"}}</label>
+            <select name="content">
+                {{selectOptions contentChoices selected=content localize=true}}
+            </select>
+        </div>
+
+    </fieldset>
+
+    <div class="form-group">
+        <label for="ignoreDataValidation">{{localize "foundry-quest-log-ru.timeline-config.ignoreDataValidation"}}</label>
+        <input type="checkbox" name="ignoreDataValidation" id="ignoreDataValidation" {{#if
+            ignoreDataValidation}}checked{{/if}}>
+        <p class="notes">{{localize "foundry-quest-log-ru.timeline-config.ignoreDataValidationNote"}}</p>
+    </div>
+
+    <footer class="flexrow">
+        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> {{localize
+            "Save"}}</button>
+
+        <button type="button" id="delete"><i class="fa-solid fa-trash"></i> {{localize "Delete"}}</button>
+
+    </footer>
+</form>

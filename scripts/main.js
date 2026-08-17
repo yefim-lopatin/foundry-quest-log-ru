@@ -1,101 +1,86 @@
-import { MODULE_ID } from "./constants.js";
-import { QuestLogApp } from "./quest-log-app.js";
-import { QuestStore } from "./store.js";
+import { initConfig } from "./config.js";
+import { registerSettings, registerOnReadySettings, setSetting } from "./settings.js";
+import { createDefaultStructure, showWelcomeScreen } from "./helpers.js";
+import { SimpleQuest, setWindowedMode } from "./app/app.js";
+import { initJournalTemplates } from "./journalTemplates.js";
+import { registerTours } from "./tours.js";
+import { Socket } from "./lib/socket.js";
+import { setTTM } from "./app/theaterOfTheMind.js";
+import { applyTOCOverride } from "./overrides.js";
+import {setMermaidHooks} from "./mindmap.js";
+import {initEnrichers} from "./enrichers.js";
+import {initAutoImport} from "./autoImport.js";
 
-let questStore;
-let questLogApp;
+export const MODULE_ID = "foundry-quest-log-ru";
 
-function openQuestLog() {
-  if (!questStore) return;
-  questLogApp ??= new QuestLogApp(questStore);
-  questLogApp.render({ force: true });
-}
+initJournalTemplates();
 
-function registerSettings() {
-  game.settings.register(MODULE_ID, "folderName", {
-    name: "FQLR.Settings.FolderName.Name",
-    hint: "FQLR.Settings.FolderName.Hint",
-    scope: "world",
-    config: true,
-    restricted: true,
-    type: String,
-    default: "Квестовый журнал — данные",
-  });
+Hooks.on("setup", () => {
+    registerSettings();
+    initConfig();
 
-  game.settings.register(MODULE_ID, "chatNotifications", {
-    name: "FQLR.Settings.ChatNotifications.Name",
-    hint: "FQLR.Settings.ChatNotifications.Hint",
-    scope: "world",
-    config: true,
-    restricted: true,
-    type: Boolean,
-    default: true,
-  });
-}
-
-function registerKeybindings() {
-  game.keybindings.register(MODULE_ID, "openQuestLog", {
-    name: "FQLR.Keybindings.Open.Name",
-    hint: "FQLR.Keybindings.Open.Hint",
-    editable: [{ key: "KeyQ", modifiers: ["Shift"] }],
-    restricted: false,
-    precedence: globalThis.CONST.KEYBINDING_PRECEDENCE.NORMAL,
-    onDown: () => {
-      openQuestLog();
-      return true;
-    },
-  });
-}
-
-function registerInterfaceHooks() {
-  Hooks.on("getSceneControlButtons", (controls) => {
-    const group = controls.notes ?? controls.tokens ?? controls.token;
-    if (!group?.tools || group.tools[MODULE_ID]) return;
-    group.tools[MODULE_ID] = {
-      name: MODULE_ID,
-      title: game.i18n.localize("FQLR.Title"),
-      icon: "fa-solid fa-scroll",
-      order: 999,
-      visible: true,
-      button: true,
-      onChange: openQuestLog,
-    };
-  });
-
-  Hooks.on("renderJournalDirectory", (_application, element) => {
-    const actions = element.querySelector(".header-actions.action-buttons, .directory-header .header-actions");
-    if (!actions || actions.querySelector(`[data-module-id="${MODULE_ID}"]`)) return;
-
-    const button = document.createElement("button");
-    button.type = "button";
-    button.dataset.moduleId = MODULE_ID;
-    const icon = document.createElement("i");
-    icon.className = "fa-solid fa-scroll";
-    button.append(icon, ` ${game.i18n.localize("FQLR.Title")}`);
-    button.addEventListener("click", openQuestLog);
-    actions.append(button);
-  });
-}
-
-Hooks.once("init", () => {
-  registerSettings();
-  registerKeybindings();
-  registerInterfaceHooks();
+    Socket.register("openToPage", ({ uuid }) => {
+        ui.simpleQuest.openToPage(uuid);
+    });
 });
 
-Hooks.once("ready", () => {
-  questStore = new QuestStore();
-  questStore.initialize();
-  questLogApp = new QuestLogApp(questStore);
+Hooks.on("init", () => {
+    game.keybindings.register(MODULE_ID, "toggleSimpleQuest", {
+        name: `${MODULE_ID}.hotkeys.toggleSimpleQuest.name`,
+        editable: [{ key: "KeyJ" }],
+        restricted: false,
+        precedence: CONST.KEYBINDING_PRECEDENCE.PRIORITY,
+        onDown: () => {
+            ui.simpleQuest.toggle();
+        },
+    });
+    setMermaidHooks();
+    applyTOCOverride();
+});
 
-  game.modules.get(MODULE_ID).api = Object.freeze({
-    open: openQuestLog,
-    getQuests: () => questStore.getQuests(),
-  });
+Hooks.on("ready", () => {
+    registerTours();
+    registerOnReadySettings();
+    showWelcomeScreen();
+    setTTM();
+    initAutoImport();
+    const isFirstConnectedGM = game.users.find((u) => u.isGM && u.active) === game.user;
+    if (isFirstConnectedGM) {
+        createDefaultStructure();
+    }
+    setWindowedMode();
+    ui.simpleQuest = new SimpleQuest();
 
-  Hooks.on(`${MODULE_ID}.dataChanged`, () => {
-    if (questLogApp.rendered) questLogApp.render({ force: true });
-  });
+    document.addEventListener("mouseup", (e) => {
+        const isLeft = e.button === 0;
+        const isRight = e.button === 2;
+        isLeft && e.target.classList.contains("foundry-quest-log-ru-content-link") && ui.simpleQuest.openToPage(e.target.dataset.uuid, e.target.dataset.anchor);
+        game.user.isGM && isLeft && e.target.classList.contains("foundry-quest-log-ru-ttm") && setSetting("ttmSrc", { src: e.target.dataset.src, title: e.target.dataset.title });
 
-  console.info(`${MODULE_ID} | Модуль готов`);
+        if ((isRight || isLeft) && e.target.classList.contains("foundry-quest-log-ru-counter")) {
+            const uuid = e.target.dataset.uuid;
+            const id = e.target.dataset.id;
+            const page = fromUuidSync(uuid);
+            if (!page.isOwner) return;
+            const flag = page.getFlag(MODULE_ID, "counters") ?? {};
+            const value = flag[id] ?? 0;
+            const count = parseInt(e.target.dataset.count);
+            const newValue = (isLeft ? value + 1 : value - 1) % (count + 1);
+            flag[id] = Math.max(e.target.dataset.min ?? 0, newValue);
+            page.setFlag(MODULE_ID, "counters", flag);
+        }
+    });
+
+    if (game.user.isGM) {
+        Hooks.once("renderJournalTextPageSheet", () => {
+            const tour = game.tours.get(MODULE_ID + ".journal-page");
+            if (tour.status === Tour.STATUS.UNSTARTED) {
+                tour.start();
+            }
+        });
+    }
+});
+
+Hooks.once("setup", () => {
+    initEnrichers();
 });

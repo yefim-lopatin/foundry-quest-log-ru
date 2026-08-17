@@ -1,8 +1,8 @@
 {
   "id": "foundry-quest-log-ru",
   "title": "Квестовый журнал",
-  "description": "Русскоязычный системно-независимый журнал квестов для мастера и игроков.",
-  "version": "1.0.0",
+  "description": "Полноценный русскоязычный журнал Simple Quest: квесты, Lore, карты, Timeline, достижения и личные/групповые заметки.",
+  "version": "2.0.0",
   "authors": [
     {
       "name": "Yefim Lopatin",
@@ -15,24 +15,26 @@
     "maximum": "14"
   },
   "esmodules": [
-    "scripts/main.js"
+    "scripts/compat-v14.js",
+    "index.js"
   ],
   "styles": [
-    "styles/quest-log.css"
+    "styles/module.css"
   ],
   "languages": [
     {
       "lang": "ru",
       "name": "Русский",
-      "path": "lang/ru.json"
+      "path": "languages/ru.json"
     }
   ],
   "socket": true,
+  "persistentStorage": true,
   "url": "https://github.com/yefim-lopatin/foundry-quest-log-ru",
   "manifest": "https://github.com/yefim-lopatin/foundry-quest-log-ru/releases/latest/download/module.json",
   "download": "https://github.com/yefim-lopatin/foundry-quest-log-ru/releases/latest/download/foundry-quest-log-ru.zip",
   "readme": "https://github.com/yefim-lopatin/foundry-quest-log-ru/blob/main/README.md",
   "bugs": "https://github.com/yefim-lopatin/foundry-quest-log-ru/issues",
-  "license": "https://github.com/yefim-lopatin/foundry-quest-log-ru/blob/main/LICENSE",
+  "license": "MIT",
   "protected": false
 }
