@@ -1,0 +1,179 @@
+<section class="fqlr-shell">
+  <header class="fqlr-toolbar">
+    <div class="fqlr-heading">
+      <span class="fqlr-kicker">{{localize "FQLR.Header.Kicker"}}</span>
+      <h1>{{localize "FQLR.Title"}}</h1>
+    </div>
+
+    <div class="fqlr-statistics" aria-label="{{localize "FQLR.Header.Statistics"}}">
+      <span class="fqlr-stat fqlr-status-active"><strong>{{stats.active}}</strong> {{localize "FQLR.Status.Active"}}</span>
+      <span class="fqlr-stat fqlr-status-completed"><strong>{{stats.completed}}</strong> {{localize "FQLR.Status.Completed"}}</span>
+      <span class="fqlr-stat fqlr-status-failed"><strong>{{stats.failed}}</strong> {{localize "FQLR.Status.Failed"}}</span>
+    </div>
+
+    {{#if isGM}}
+      <button type="button" class="fqlr-primary-button" data-action="createQuest">
+        <i class="fa-solid fa-plus"></i> {{localize "FQLR.Buttons.Create"}}
+      </button>
+    {{/if}}
+  </header>
+
+  <div class="fqlr-filters">
+    <label class="fqlr-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="search" data-role="search" value="{{searchQuery}}" placeholder="{{localize "FQLR.Filters.Search"}}">
+    </label>
+    <select data-role="statusFilter" aria-label="{{localize "FQLR.Filters.Status"}}">
+      {{#each statusOptions}}
+        <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+      {{/each}}
+    </select>
+    <select data-role="categoryFilter" aria-label="{{localize "FQLR.Filters.Category"}}">
+      {{#each categoryOptions}}
+        <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  {{#unless hasSnapshot}}
+    <div class="fqlr-notice">
+      <i class="fa-solid fa-wifi"></i>
+      <div>
+        <strong>{{localize "FQLR.Player.WaitingTitle"}}</strong>
+        <p>{{localize "FQLR.Player.WaitingText"}}</p>
+      </div>
+      <button type="button" data-action="requestSnapshot">{{localize "FQLR.Buttons.Refresh"}}</button>
+    </div>
+  {{/unless}}
+
+  <div class="fqlr-layout">
+    <aside class="fqlr-list" aria-label="{{localize "FQLR.List.AriaLabel"}}">
+      {{#each quests}}
+        <button type="button" class="fqlr-quest-row {{#if selected}}is-selected{{/if}}" data-action="selectQuest" data-quest-id="{{id}}">
+          <span class="fqlr-row-topline">
+            <span class="fqlr-category">{{category}}</span>
+            {{#if ../isGM}}
+              {{#unless visible}}<i class="fa-solid fa-eye-slash" data-tooltip="{{localize "FQLR.Visibility.Hidden"}}"></i>{{/unless}}
+            {{/if}}
+          </span>
+          <strong>{{name}}</strong>
+          <span class="fqlr-row-bottomline">
+            <span class="fqlr-status-badge is-{{status}}">{{statusLabel}}</span>
+            {{#if progress.total}}
+              <span>{{progress.completed}}/{{progress.total}}</span>
+            {{/if}}
+          </span>
+          {{#if progress.total}}
+            <span class="fqlr-progress"><span style="width: {{progress.percent}}%"></span></span>
+          {{/if}}
+        </button>
+      {{else}}
+        <div class="fqlr-empty-list">
+          <i class="fa-regular fa-compass"></i>
+          <p>{{localize "FQLR.List.Empty"}}</p>
+        </div>
+      {{/each}}
+    </aside>
+
+    <main class="fqlr-details">
+      {{#if selectedQuest}}
+        <header class="fqlr-details-header">
+          <div>
+            <span class="fqlr-category">{{selectedQuest.category}}</span>
+            <h2>{{selectedQuest.name}}</h2>
+            <span class="fqlr-status-badge is-{{selectedQuest.status}}">{{selectedQuest.statusLabel}}</span>
+          </div>
+          <div class="fqlr-actions">
+            <button type="button" data-action="shareQuest" data-quest-id="{{selectedQuest.id}}" data-tooltip="{{localize "FQLR.Buttons.Share"}}">
+              <i class="fa-solid fa-message"></i>
+            </button>
+            {{#if isGM}}
+              <button type="button" data-action="openJournal" data-quest-id="{{selectedQuest.id}}" data-tooltip="{{localize "FQLR.Buttons.OpenJournal"}}">
+                <i class="fa-solid fa-book-open"></i>
+              </button>
+              <button type="button" data-action="editQuest" data-quest-id="{{selectedQuest.id}}" data-tooltip="{{localize "FQLR.Buttons.Edit"}}">
+                <i class="fa-solid fa-pen"></i>
+              </button>
+              <button type="button" class="fqlr-danger-button" data-action="deleteQuest" data-quest-id="{{selectedQuest.id}}" data-tooltip="{{localize "FQLR.Buttons.Delete"}}">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            {{/if}}
+          </div>
+        </header>
+
+        {{#if selectedQuest.hasMetadata}}
+          <dl class="fqlr-metadata">
+            {{#if selectedQuest.giver}}
+              <div><dt>{{localize "FQLR.Fields.Giver"}}</dt><dd>{{selectedQuest.giver}}</dd></div>
+            {{/if}}
+            {{#if selectedQuest.location}}
+              <div><dt>{{localize "FQLR.Fields.Location"}}</dt><dd>{{selectedQuest.location}}</dd></div>
+            {{/if}}
+          </dl>
+        {{/if}}
+
+        {{#if selectedQuest.hasDescription}}
+          <section class="fqlr-section">
+            <h3>{{localize "FQLR.Fields.Description"}}</h3>
+            <div class="fqlr-prose">{{{selectedQuest.enrichedDescription}}}</div>
+          </section>
+        {{/if}}
+
+        <section class="fqlr-section">
+          <div class="fqlr-section-heading">
+            <h3>{{localize "FQLR.Fields.Objectives"}}</h3>
+            {{#if selectedQuest.progress.total}}
+              <span>{{selectedQuest.progress.completed}} / {{selectedQuest.progress.total}}</span>
+            {{/if}}
+          </div>
+          <ol class="fqlr-objectives">
+            {{#each selectedQuest.objectives}}
+              <li class="{{#if completed}}is-completed{{/if}}">
+                <i class="{{#if completed}}fa-solid fa-circle-check{{else}}fa-regular fa-circle{{/if}}"></i>
+                <div>{{{enrichedText}}}</div>
+                {{#if secret}}<span class="fqlr-secret-badge"><i class="fa-solid fa-eye-slash"></i> {{localize "FQLR.Objective.Secret"}}</span>{{/if}}
+              </li>
+            {{else}}
+              <li class="fqlr-muted">{{localize "FQLR.Objective.Empty"}}</li>
+            {{/each}}
+          </ol>
+        </section>
+
+        {{#if selectedQuest.hasRewards}}
+          <section class="fqlr-section fqlr-rewards">
+            <h3><i class="fa-solid fa-gift"></i> {{localize "FQLR.Fields.Rewards"}}</h3>
+            <div class="fqlr-prose">{{{selectedQuest.enrichedRewards}}}</div>
+          </section>
+        {{/if}}
+
+        {{#if selectedQuest.hasGmNotes}}
+          <section class="fqlr-section fqlr-gm-notes">
+            <h3><i class="fa-solid fa-user-secret"></i> {{localize "FQLR.Fields.GmNotes"}}</h3>
+            <div class="fqlr-prose">{{{selectedQuest.enrichedGmNotes}}}</div>
+          </section>
+        {{/if}}
+
+        {{#if isGM}}
+          <footer class="fqlr-details-footer">
+            {{#if selectedQuest.canComplete}}
+              <button type="button" class="fqlr-primary-button" data-action="toggleCompleted" data-quest-id="{{selectedQuest.id}}">
+                <i class="fa-solid fa-check"></i> {{localize "FQLR.Buttons.Complete"}}
+              </button>
+            {{/if}}
+            {{#if selectedQuest.canReopen}}
+              <button type="button" data-action="toggleCompleted" data-quest-id="{{selectedQuest.id}}">
+                <i class="fa-solid fa-rotate-left"></i> {{localize "FQLR.Buttons.Reopen"}}
+              </button>
+            {{/if}}
+          </footer>
+        {{/if}}
+      {{else}}
+        <div class="fqlr-empty-details">
+          <i class="fa-solid fa-scroll"></i>
+          <h2>{{localize "FQLR.Details.EmptyTitle"}}</h2>
+          <p>{{localize "FQLR.Details.EmptyText"}}</p>
+        </div>
+      {{/if}}
+    </main>
+  </div>
+</section>
