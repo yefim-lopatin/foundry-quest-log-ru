@@ -19,7 +19,7 @@ function leafCount(value) {
 
 test("manifest настроен для Foundry 14.367 и не конфликтует с Simple Quest", () => {
   assert.equal(manifest.id, "foundry-quest-log-ru");
-  assert.equal(manifest.version, "2.3.2");
+  assert.equal(manifest.version, "2.3.3");
   assert.deepEqual(manifest.compatibility, { minimum: "14", verified: "14.367", maximum: "14" });
   assert.deepEqual(manifest.esmodules, ["scripts/compat-v14.js", "index.js"]);
   assert.equal(manifest.persistentStorage, true);
@@ -117,10 +117,12 @@ test("звуки квестов встроены и привязаны к соб
     "assets/audio/quest-complete.ogg",
   ]) assert.ok(existsSync(resolve(root, file)), file);
   assert.match(settingsSource, /completeQuestSoundEffect[\s\S]*?quest-complete\.ogg/);
+  assert.match(settingsSource, /migrateQuestSoundSettings[\s\S]*?questSoundDefaultsMigrated/);
   assert.match(helpersSource, /isCompleted[\s\S]*?completeQuestSoundEffect/);
   assert.match(appSource, /questFlags\?\.hidden === false/);
   assert.match(appSource, /if \(!checked\) update\[`flags\.\$\{MODULE_ID\}\.lastUpdated`\] = Date\.now\(\);/);
   assert.match(appSource, /questFlags\?\.completed === true/);
   assert.match(mainSource, /showQuestNotification\(page, true\)/);
+  assert.match(mainSource, /migrateQuestSoundSettings\(\)/);
   assert.match(bundle, /quest-complete\.ogg/);
 });

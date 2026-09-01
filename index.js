@@ -476,6 +476,12 @@
         type: Boolean,
         default: true
       },
+      questSoundDefaultsMigrated: {
+        scope: "world",
+        config: false,
+        type: Boolean,
+        default: false
+      },
       newQuestSoundEffect: {
         name: `${MODULE_ID}.settings.newQuestSoundEffect.name`,
         hint: `${MODULE_ID}.settings.newQuestSoundEffect.hint`,
@@ -763,6 +769,17 @@
   }
   async function setSetting(key, value) {
     return await game.settings.set(MODULE_ID, key, value);
+  }
+  async function migrateQuestSoundSettings() {
+    if (getSetting("questSoundDefaultsMigrated")) return;
+    const defaults2 = {
+      newQuestSoundEffect: `modules/${MODULE_ID}/assets/audio/quest-new.ogg`,
+      updateQuestSoundEffect: `modules/${MODULE_ID}/assets/audio/quest-update.ogg`
+    };
+    for (const [key, value] of Object.entries(defaults2)) {
+      if (!getSetting(key)) await setSetting(key, value);
+    }
+    await setSetting("questSoundDefaultsMigrated", true);
   }
   function getDefaultSetting(key) {
     return game.settings.settings.get(MODULE_ID + "." + key).default;
@@ -7687,6 +7704,7 @@
   Hooks.on("ready", () => {
     registerTours();
     registerOnReadySettings();
+    migrateQuestSoundSettings();
     showWelcomeScreen();
     setTTM();
     initAutoImport();

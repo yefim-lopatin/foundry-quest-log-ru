@@ -1,5 +1,5 @@
 import { initConfig } from "./config.js";
-import { getSetting, registerSettings, registerOnReadySettings, setSetting } from "./settings.js";
+import { getSetting, migrateQuestSoundSettings, registerSettings, registerOnReadySettings, setSetting } from "./settings.js";
 import { createDefaultStructure, showQuestNotification, showWelcomeScreen } from "./helpers.js";
 import { SimpleQuest, setWindowedMode } from "./app/app.js";
 import { initJournalTemplates } from "./journalTemplates.js";
@@ -44,6 +44,7 @@ Hooks.on("init", () => {
 Hooks.on("ready", () => {
     registerTours();
     registerOnReadySettings();
+    migrateQuestSoundSettings();
     showWelcomeScreen();
     setTTM();
     initAutoImport();

@@ -217,6 +217,12 @@ export function registerSettings() {
             type: Boolean,
             default: true,
         },
+        questSoundDefaultsMigrated: {
+            scope: "world",
+            config: false,
+            type: Boolean,
+            default: false,
+        },
         newQuestSoundEffect: {
             name: `${MODULE_ID}.settings.newQuestSoundEffect.name`,
             hint: `${MODULE_ID}.settings.newQuestSoundEffect.hint`,
@@ -517,6 +523,19 @@ export function getSetting(key) {
 
 export async function setSetting(key, value) {
     return await game.settings.set(MODULE_ID, key, value);
+}
+
+export async function migrateQuestSoundSettings() {
+    if (getSetting("questSoundDefaultsMigrated")) return;
+
+    const defaults = {
+        newQuestSoundEffect: `modules/${MODULE_ID}/assets/audio/quest-new.ogg`,
+        updateQuestSoundEffect: `modules/${MODULE_ID}/assets/audio/quest-update.ogg`,
+    };
+    for (const [key, value] of Object.entries(defaults)) {
+        if (!getSetting(key)) await setSetting(key, value);
+    }
+    await setSetting("questSoundDefaultsMigrated", true);
 }
 
 export function getDefaultSetting(key) {
