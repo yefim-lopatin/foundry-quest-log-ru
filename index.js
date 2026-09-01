@@ -1910,7 +1910,7 @@
       return { imgX: parseFloat(position.left), imgY: parseFloat(position.top), width: parseFloat(position.width), height: parseFloat(position.height) };
     }
     _addMarker(event) {
-      if (!this.page.isOwner || this._lockPins || this._rulerAnchor._enabled) return;
+      if (!(this.page.isOwner || game.user.isGM) || this._lockPins || this._rulerAnchor._enabled) return;
       const isLeftClick = event.button === 0;
       if (!isLeftClick) return;
       const isShiftDown = event.shiftKey;
@@ -1980,7 +1980,7 @@
         markerLabel.style.pointerEvents = "none";
         if (globalLabelColor) markerLabel.style.color = globalLabelColor;
         if (markerData.displayLabel) marker.appendChild(markerLabel);
-        if (page.isOwner && !this._lockPins) {
+        if ((page.isOwner || game.user.isGM) && !this._lockPins) {
           let moveTime = 0;
           marker.addEventListener("mousedown", (e) => {
             e.stopPropagation();
@@ -6461,7 +6461,7 @@
       const unitPart = measureFlag.match(/[a-z]+/)?.[0] ?? "mi";
       mapImage._measureUnits = unitPart;
       mapImage._measure = numericPart;
-      if (page.isOwner) {
+      if (page.isOwner || game.user.isGM) {
         const buttonContainer = document.createElement("div");
         buttonContainer.classList.add("map-controls");
         mapContainer.append(buttonContainer);
@@ -6508,7 +6508,11 @@
           lockPins.dataset.tooltip = "foundry-quest-log-ru.simple-quest.tooltip.lock-pins";
           lockPins.dataset.tooltipDirection = "UP";
           lockPins.addEventListener("click", async (e) => {
-            page.setFlag(MODULE_ID, "pinsLocked", !pinsLocked);
+            const nextLocked = !mapImage._lockPins;
+            mapImage._lockPins = nextLocked;
+            lockPins.classList.toggle("fa-location-pin-slash", nextLocked);
+            lockPins.classList.toggle("fa-location-pin", !nextLocked);
+            await page.setFlag(MODULE_ID, "pinsLocked", nextLocked);
           });
           const showPlayersButton = document.createElement("i");
           showPlayersButton.classList.add("fa-duotone");
@@ -6645,6 +6649,8 @@
           const all = html.querySelector(`input[name="allPlayers"]`).checked;
           const allUsers = users.map((u) => u.id);
           const selected = Array.from(html.querySelectorAll(`input[name="players"]:checked`)).map((i) => i.value);
+          const page = fromUuidSync(uuid);
+          if (page && ui.simpleQuest.isSimpleQuestPage(uuid) === "quests") showQuestNotification(page, true);
           Socket.openToPage({ uuid }, { users: all ? allUsers : selected });
         },
         close: () => {
@@ -6856,17 +6862,16 @@
       });
       Hooks.on("updateJournalEntryPage", (document2, updates) => {
         ui.simpleQuest.refresh();
-        const isPlayer = !game.user.isGM;
-        if (isPlayer && updates?.ownership?.default >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER) {
+        if (updates?.ownership?.default >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER) {
           const isLore = ui.simpleQuest.isSimpleQuestPage(document2.uuid) === "lore";
           isLore && showQuestNotification(document2, true, true);
         }
         if (updates?.ownership?.[game.user.id] >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER || updates?.ownership?.default >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER) {
           const isAchievements = ui.simpleQuest.isSimpleQuestPage(document2.uuid) === "achievements";
-          isPlayer && isAchievements && showQuestNotification(document2, true, false, true);
+          isAchievements && showQuestNotification(document2, true, false, true);
         }
         const questFlags = updates?.flags?.[MODULE_ID];
-        if (isPlayer && (questFlags?.hidden === false || questFlags?.lastUpdated || questFlags?.completed === true)) {
+        if (questFlags?.hidden === false || questFlags?.lastUpdated || questFlags?.completed === true) {
           const isQuest = ui.simpleQuest.isSimpleQuestPage(document2.uuid) === "quests";
           const isNewQuest = questFlags?.hidden === false;
           isQuest && showQuestNotification(document2, isNewQuest, false, false, questFlags?.completed === true);
@@ -6879,7 +6884,7 @@
         ui.simpleQuest.openToPage(uuid);
       });
       Hooks.on("createChatMessage", async (document2, updates) => {
-        if (!game.user.isGM && document2.flags?.[MODULE_ID]?.simpleQuestMessage) {
+        if (document2.flags?.[MODULE_ID]?.simpleQuestMessage) {
           const page = await fromUuid(document2.flags[MODULE_ID].simpleQuestMessage);
           showQuestNotification(page, true);
         }
@@ -7683,7 +7688,7 @@
     initConfig();
     Socket.register("openToPage", ({ uuid }) => {
       const page = fromUuidSync(uuid);
-      const isNewQuest = !game.user.isGM && page && ui.simpleQuest.isSimpleQuestPage(uuid) === "quests" && ui.simpleQuest.hasPermission(uuid);
+      const isNewQuest = page && ui.simpleQuest.isSimpleQuestPage(uuid) === "quests" && ui.simpleQuest.hasPermission(uuid);
       ui.simpleQuest.openToPage(uuid);
       if (isNewQuest) showQuestNotification(page, true);
     });

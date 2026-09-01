@@ -1224,7 +1224,7 @@ export class SimpleQuest extends Application {
         const unitPart = measureFlag.match(/[a-z]+/)?.[0] ?? "mi";
         mapImage._measureUnits = unitPart;
         mapImage._measure = numericPart;
-        if (page.isOwner) {
+        if (page.isOwner || game.user.isGM) {
             const buttonContainer = document.createElement("div");
             buttonContainer.classList.add("map-controls");
             mapContainer.append(buttonContainer);
@@ -1277,7 +1277,11 @@ export class SimpleQuest extends Application {
                 lockPins.dataset.tooltip = "foundry-quest-log-ru.simple-quest.tooltip.lock-pins";
                 lockPins.dataset.tooltipDirection = "UP";
                 lockPins.addEventListener("click", async (e) => {
-                    page.setFlag(MODULE_ID, "pinsLocked", !pinsLocked);
+                    const nextLocked = !mapImage._lockPins;
+                    mapImage._lockPins = nextLocked;
+                    lockPins.classList.toggle("fa-location-pin-slash", nextLocked);
+                    lockPins.classList.toggle("fa-location-pin", !nextLocked);
+                    await page.setFlag(MODULE_ID, "pinsLocked", nextLocked);
                 });
 
                 const showPlayersButton = document.createElement("i");
@@ -1427,6 +1431,8 @@ export class SimpleQuest extends Application {
                 const allUsers = users.map((u) => u.id);
                 const selected = Array.from(html.querySelectorAll(`input[name="players"]:checked`)).map((i) => i.value);
 
+                const page = fromUuidSync(uuid);
+                if (page && ui.simpleQuest.isSimpleQuestPage(uuid) === "quests") showQuestNotification(page, true);
                 Socket.openToPage({ uuid: uuid }, { users: all ? allUsers : selected });
             },
             close: () => {},
@@ -1672,17 +1678,16 @@ export class SimpleQuest extends Application {
         });
         Hooks.on("updateJournalEntryPage", (document, updates) => {
             ui.simpleQuest.refresh();
-            const isPlayer = !game.user.isGM;
-            if (isPlayer && updates?.ownership?.default >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER) {
+            if (updates?.ownership?.default >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER) {
                 const isLore = ui.simpleQuest.isSimpleQuestPage(document.uuid) === "lore";
                 isLore && showQuestNotification(document, true, true);
             }
             if (updates?.ownership?.[game.user.id] >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER || updates?.ownership?.default >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER) {
                 const isAchievements = ui.simpleQuest.isSimpleQuestPage(document.uuid) === "achievements";
-                isPlayer && isAchievements && showQuestNotification(document, true, false, true);
+                isAchievements && showQuestNotification(document, true, false, true);
             }
             const questFlags = updates?.flags?.[MODULE_ID];
-            if (isPlayer && (questFlags?.hidden === false || questFlags?.lastUpdated || questFlags?.completed === true)) {
+            if (questFlags?.hidden === false || questFlags?.lastUpdated || questFlags?.completed === true) {
                 const isQuest = ui.simpleQuest.isSimpleQuestPage(document.uuid) === "quests";
                 const isNewQuest = questFlags?.hidden === false;
                 isQuest && showQuestNotification(document, isNewQuest, false, false, questFlags?.completed === true);
@@ -1697,7 +1702,7 @@ export class SimpleQuest extends Application {
         });
 
         Hooks.on("createChatMessage", async (document, updates) => {
-            if (!game.user.isGM && document.flags?.[MODULE_ID]?.simpleQuestMessage) {
+            if (document.flags?.[MODULE_ID]?.simpleQuestMessage) {
                 const page = await fromUuid(document.flags[MODULE_ID].simpleQuestMessage);
                 showQuestNotification(page, true);
             }

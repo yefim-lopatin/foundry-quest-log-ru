@@ -703,7 +703,7 @@ export class MapImage {
     }
 
     _addMarker(event) {
-        if (!this.page.isOwner || this._lockPins || this._rulerAnchor._enabled) return;
+        if (!(this.page.isOwner || game.user.isGM) || this._lockPins || this._rulerAnchor._enabled) return;
         const isLeftClick = event.button === 0;
         if (!isLeftClick) return;
         const isShiftDown = event.shiftKey;
@@ -779,7 +779,7 @@ export class MapImage {
 
             if (markerData.displayLabel) marker.appendChild(markerLabel);
 
-            if (page.isOwner && !this._lockPins) {
+            if ((page.isOwner || game.user.isGM) && !this._lockPins) {
                 let moveTime = 0;
                 //add listener for right click down
                 marker.addEventListener("mousedown", (e) => {

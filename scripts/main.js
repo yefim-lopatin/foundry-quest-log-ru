@@ -21,7 +21,7 @@ Hooks.on("setup", () => {
 
     Socket.register("openToPage", ({ uuid }) => {
         const page = fromUuidSync(uuid);
-        const isNewQuest = !game.user.isGM && page && ui.simpleQuest.isSimpleQuestPage(uuid) === "quests" && ui.simpleQuest.hasPermission(uuid);
+        const isNewQuest = page && ui.simpleQuest.isSimpleQuestPage(uuid) === "quests" && ui.simpleQuest.hasPermission(uuid);
         ui.simpleQuest.openToPage(uuid);
         if (isNewQuest) showQuestNotification(page, true);
     });

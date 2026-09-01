@@ -19,7 +19,7 @@ function leafCount(value) {
 
 test("manifest настроен для Foundry 14.367 и не конфликтует с Simple Quest", () => {
   assert.equal(manifest.id, "foundry-quest-log-ru");
-  assert.equal(manifest.version, "2.3.3");
+  assert.equal(manifest.version, "2.3.5");
   assert.deepEqual(manifest.compatibility, { minimum: "14", verified: "14.367", maximum: "14" });
   assert.deepEqual(manifest.esmodules, ["scripts/compat-v14.js", "index.js"]);
   assert.equal(manifest.persistentStorage, true);
@@ -122,7 +122,16 @@ test("звуки квестов встроены и привязаны к соб
   assert.match(appSource, /questFlags\?\.hidden === false/);
   assert.match(appSource, /if \(!checked\) update\[`flags\.\$\{MODULE_ID\}\.lastUpdated`\] = Date\.now\(\);/);
   assert.match(appSource, /questFlags\?\.completed === true/);
+  assert.doesNotMatch(appSource, /const isPlayer = !game\.user\.isGM/);
   assert.match(mainSource, /showQuestNotification\(page, true\)/);
+  assert.doesNotMatch(mainSource, /const isNewQuest = !game\.user\.isGM/);
   assert.match(mainSource, /migrateQuestSoundSettings\(\)/);
   assert.match(bundle, /quest-complete\.ogg/);
+});
+
+test("маркеры карты можно разблокировать без повторного открытия карты", () => {
+  const mapSource = readFileSync(resolve(root, "scripts/mapImage.js"), "utf8");
+  assert.match(appSource, /mapImage\._lockPins = nextLocked/);
+  assert.match(mapSource, /\(this\.page\.isOwner \|\| game\.user\.isGM\)/);
+  assert.match(mapSource, /\(page\.isOwner \|\| game\.user\.isGM\) && !this\._lockPins/);
 });
