@@ -1668,17 +1668,19 @@ export class SimpleQuest extends Application {
         });
         Hooks.on("updateJournalEntryPage", (document, updates) => {
             ui.simpleQuest.refresh();
-            if (updates?.ownership?.default >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER) {
+            const isPlayer = !game.user.isGM;
+            if (isPlayer && updates?.ownership?.default >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER) {
                 const isLore = ui.simpleQuest.isSimpleQuestPage(document.uuid) === "lore";
                 isLore && showQuestNotification(document, true, true);
             }
             if (updates?.ownership?.[game.user.id] >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER || updates?.ownership?.default >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER) {
                 const isAchievements = ui.simpleQuest.isSimpleQuestPage(document.uuid) === "achievements";
-                !game.user.isGM && isAchievements && showQuestNotification(document, true, false, true);
+                isPlayer && isAchievements && showQuestNotification(document, true, false, true);
             }
-            if (updates?.flags?.[MODULE_ID]?.lastUpdated) {
+            const questFlags = updates?.flags?.[MODULE_ID];
+            if (isPlayer && (questFlags?.lastUpdated || questFlags?.completed === true)) {
                 const isQuest = ui.simpleQuest.isSimpleQuestPage(document.uuid) === "quests";
-                isQuest && showQuestNotification(document);
+                isQuest && showQuestNotification(document, false, false, false, questFlags?.completed === true);
             }
         });
 

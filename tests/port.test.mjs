@@ -19,7 +19,7 @@ function leafCount(value) {
 
 test("manifest настроен для Foundry 14.367 и не конфликтует с Simple Quest", () => {
   assert.equal(manifest.id, "foundry-quest-log-ru");
-  assert.equal(manifest.version, "2.2.1");
+  assert.equal(manifest.version, "2.3.0");
   assert.deepEqual(manifest.compatibility, { minimum: "14", verified: "14.367", maximum: "14" });
   assert.deepEqual(manifest.esmodules, ["scripts/compat-v14.js", "index.js"]);
   assert.equal(manifest.persistentStorage, true);
@@ -108,4 +108,17 @@ test("присутствуют шаблоны, assets и v14-совместим�
   assert.match(mindmap, /Mermaid недоступен/);
   const assets = readdirSync(resolve(root, "assets"), { recursive: true }).filter((file) => file.endsWith(".webp"));
   assert.ok(assets.length >= 100, `assets: ${assets.length}`);
+});
+
+test("звуки квестов встроены и привязаны к событиям", () => {
+  for (const file of [
+    "assets/audio/quest-new.ogg",
+    "assets/audio/quest-update.ogg",
+    "assets/audio/quest-complete.ogg",
+  ]) assert.ok(existsSync(resolve(root, file)), file);
+  assert.match(settingsSource, /completeQuestSoundEffect[\s\S]*?quest-complete\.ogg/);
+  assert.match(helpersSource, /isCompleted[\s\S]*?completeQuestSoundEffect/);
+  assert.match(appSource, /questFlags\?\.completed === true/);
+  assert.match(mainSource, /showQuestNotification\(page, true\)/);
+  assert.match(bundle, /quest-complete\.ogg/);
 });

@@ -1,6 +1,6 @@
 import { initConfig } from "./config.js";
 import { getSetting, registerSettings, registerOnReadySettings, setSetting } from "./settings.js";
-import { createDefaultStructure, showWelcomeScreen } from "./helpers.js";
+import { createDefaultStructure, showQuestNotification, showWelcomeScreen } from "./helpers.js";
 import { SimpleQuest, setWindowedMode } from "./app/app.js";
 import { initJournalTemplates } from "./journalTemplates.js";
 import { registerTours } from "./tours.js";
@@ -20,7 +20,10 @@ Hooks.on("setup", () => {
     initConfig();
 
     Socket.register("openToPage", ({ uuid }) => {
+        const page = fromUuidSync(uuid);
+        const isNewQuest = !game.user.isGM && page && ui.simpleQuest.isSimpleQuestPage(uuid) === "quests" && ui.simpleQuest.hasPermission(uuid);
         ui.simpleQuest.openToPage(uuid);
+        if (isNewQuest) showQuestNotification(page, true);
     });
 });
 

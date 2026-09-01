@@ -45,9 +45,15 @@ for (const path of [...(manifest.esmodules ?? []), ...(manifest.styles ?? []), .
 
 const files = walk(root);
 const forbiddenExtensions = new Set([".ldb", ".log", ".mp3", ".ogg", ".wav"]);
+const allowedAudio = new Set([
+  "assets/audio/quest-new.ogg",
+  "assets/audio/quest-update.ogg",
+  "assets/audio/quest-complete.ogg",
+]);
 for (const file of files) {
-  if (forbiddenExtensions.has(extname(file).toLowerCase())) {
-    errors.push(`Запрещённый бинарный или исходный ресурс: ${relative(root, file)}`);
+  const relativePath = relative(root, file);
+  if (forbiddenExtensions.has(extname(file).toLowerCase()) && !allowedAudio.has(relativePath)) {
+    errors.push(`Запрещённый бинарный или исходный ресурс: ${relativePath}`);
   }
 }
 
@@ -87,6 +93,7 @@ if (/hyphens\s*:\s*auto/i.test(css)) errors.push("CSS: запрещено hyphen
 if (/overflow-wrap\s*:\s*anywhere/i.test(css)) errors.push("CSS: запрещено overflow-wrap: anywhere");
 
 const requiredFiles = ["README.md", "LICENSE", "NOTICE.md", "CHANGELOG.md", "module.json", "index.js", "languages/ru.json", "styles/module.css", "assets/license.txt"];
+requiredFiles.push(...allowedAudio);
 for (const file of requiredFiles) {
   const path = join(root, file);
   if (!existsSync(path) || statSync(path).size === 0) errors.push(`Отсутствует обязательный файл ${file}`);

@@ -483,7 +483,7 @@
         config: true,
         type: String,
         filePicker: "audio",
-        default: ""
+        default: `modules/${MODULE_ID}/assets/audio/quest-new.ogg`
       },
       updateQuestSoundEffect: {
         name: `${MODULE_ID}.settings.updateQuestSoundEffect.name`,
@@ -492,7 +492,16 @@
         config: true,
         type: String,
         filePicker: "audio",
-        default: ""
+        default: `modules/${MODULE_ID}/assets/audio/quest-update.ogg`
+      },
+      completeQuestSoundEffect: {
+        name: `${MODULE_ID}.settings.completeQuestSoundEffect.name`,
+        hint: `${MODULE_ID}.settings.completeQuestSoundEffect.hint`,
+        scope: "world",
+        config: true,
+        type: String,
+        filePicker: "audio",
+        default: `modules/${MODULE_ID}/assets/audio/quest-complete.ogg`
       },
       openJournalPinsAsModals: {
         name: `${MODULE_ID}.settings.openJournalPinsAsModals.name`,
@@ -1135,10 +1144,12 @@
     if (!j) return;
     j.createEmbeddedDocuments("JournalEntryPage", [DEMO_QUEST]);
   }
-  function showQuestNotification(page, newQuest = false, isLore = false, isAchievement = false) {
+  function showQuestNotification(page, newQuest = false, isLore = false, isAchievement = false, isCompleted = false) {
     if (!getSetting("showQuestNotifications")) return;
     const isHidden = page.getFlag(MODULE_ID, "hidden");
     if (isHidden) return;
+    const sound = isCompleted ? getSetting("completeQuestSoundEffect") : newQuest ? getSetting("newQuestSoundEffect") : getSetting("updateQuestSoundEffect");
+    if (sound) foundry.audio.AudioHelper.play({ src: sound, volume: game.settings.get("core", "globalInterfaceVolume"), loop: false });
     const existing = document.querySelector(`.foundry-quest-log-ru-notification[data-uuid="${page.uuid}"]`);
     if (existing) return;
     const notificationContainer = document.getElementById("foundry-quest-log-ru-notification-container") || document.createElement("div");
@@ -1149,8 +1160,6 @@
     notification.classList.add("foundry-quest-log-ru-notification");
     const questName = `<span class="foundry-quest-log-ru-notification-quest-name">${page.name}</span>`;
     if (newQuest) {
-      const sound = getSetting("newQuestSoundEffect");
-      if (sound) foundry.audio.AudioHelper.play({ src: sound, volume: game.settings.get("core", "globalInterfaceVolume"), loop: false });
       if (isLore) {
         notification.innerHTML = `<i class="fas fa-scroll-old"></i> ${game.i18n.localize(`${MODULE_ID}.shareLore.chatMessage`) + " " + questName}`;
       } else if (isAchievement) {
@@ -1159,8 +1168,6 @@
         notification.innerHTML = `<i class="fas fa-exclamation"></i> ${game.i18n.localize(`${MODULE_ID}.shareQuest.chatMessage`) + " " + questName}`;
       }
     } else {
-      const sound = getSetting("updateQuestSoundEffect");
-      if (sound) foundry.audio.AudioHelper.play({ src: sound, volume: game.settings.get("core", "globalInterfaceVolume"), loop: false });
       notification.innerHTML = `<i class="fas fa-exclamation"></i> ${game.i18n.localize(`${MODULE_ID}.questNotification.text`).replace("%q", questName)}`;
     }
     notificationContainer.appendChild(notification);
@@ -6828,17 +6835,19 @@
       });
       Hooks.on("updateJournalEntryPage", (document2, updates) => {
         ui.simpleQuest.refresh();
-        if (updates?.ownership?.default >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER) {
+        const isPlayer = !game.user.isGM;
+        if (isPlayer && updates?.ownership?.default >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER) {
           const isLore = ui.simpleQuest.isSimpleQuestPage(document2.uuid) === "lore";
           isLore && showQuestNotification(document2, true, true);
         }
         if (updates?.ownership?.[game.user.id] >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER || updates?.ownership?.default >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER) {
           const isAchievements = ui.simpleQuest.isSimpleQuestPage(document2.uuid) === "achievements";
-          !game.user.isGM && isAchievements && showQuestNotification(document2, true, false, true);
+          isPlayer && isAchievements && showQuestNotification(document2, true, false, true);
         }
-        if (updates?.flags?.[MODULE_ID]?.lastUpdated) {
+        const questFlags = updates?.flags?.[MODULE_ID];
+        if (isPlayer && (questFlags?.lastUpdated || questFlags?.completed === true)) {
           const isQuest = ui.simpleQuest.isSimpleQuestPage(document2.uuid) === "quests";
-          isQuest && showQuestNotification(document2);
+          isQuest && showQuestNotification(document2, false, false, false, questFlags?.completed === true);
         }
       });
       document.addEventListener("click", async (e) => {
@@ -7651,7 +7660,10 @@
     registerSettings();
     initConfig();
     Socket.register("openToPage", ({ uuid }) => {
+      const page = fromUuidSync(uuid);
+      const isNewQuest = !game.user.isGM && page && ui.simpleQuest.isSimpleQuestPage(uuid) === "quests" && ui.simpleQuest.hasPermission(uuid);
       ui.simpleQuest.openToPage(uuid);
+      if (isNewQuest) showQuestNotification(page, true);
     });
   });
   Hooks.on("init", () => {

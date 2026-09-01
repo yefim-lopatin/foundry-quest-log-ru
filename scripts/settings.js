@@ -224,7 +224,7 @@ export function registerSettings() {
             config: true,
             type: String,
             filePicker: "audio",
-            default: "",
+            default: `modules/${MODULE_ID}/assets/audio/quest-new.ogg`,
         },
         updateQuestSoundEffect: {
             name: `${MODULE_ID}.settings.updateQuestSoundEffect.name`,
@@ -233,7 +233,16 @@ export function registerSettings() {
             config: true,
             type: String,
             filePicker: "audio",
-            default: "",
+            default: `modules/${MODULE_ID}/assets/audio/quest-update.ogg`,
+        },
+        completeQuestSoundEffect: {
+            name: `${MODULE_ID}.settings.completeQuestSoundEffect.name`,
+            hint: `${MODULE_ID}.settings.completeQuestSoundEffect.hint`,
+            scope: "world",
+            config: true,
+            type: String,
+            filePicker: "audio",
+            default: `modules/${MODULE_ID}/assets/audio/quest-complete.ogg`,
         },
         openJournalPinsAsModals: {
             name: `${MODULE_ID}.settings.openJournalPinsAsModals.name`,

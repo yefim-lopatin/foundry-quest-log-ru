@@ -190,10 +190,13 @@ export function createDemoQuest() {
     j.createEmbeddedDocuments("JournalEntryPage", [DEMO_QUEST]);
 }
 
-export function showQuestNotification(page, newQuest = false, isLore = false, isAchievement = false) {
+export function showQuestNotification(page, newQuest = false, isLore = false, isAchievement = false, isCompleted = false) {
     if (!getSetting("showQuestNotifications")) return;
     const isHidden = page.getFlag(MODULE_ID, "hidden");
     if (isHidden) return;
+
+    const sound = isCompleted ? getSetting("completeQuestSoundEffect") : newQuest ? getSetting("newQuestSoundEffect") : getSetting("updateQuestSoundEffect");
+    if (sound) foundry.audio.AudioHelper.play({ src: sound, volume: game.settings.get("core", "globalInterfaceVolume"), loop: false });
 
     const existing = document.querySelector(`.foundry-quest-log-ru-notification[data-uuid="${page.uuid}"]`);
     if (existing) return;
@@ -208,8 +211,6 @@ export function showQuestNotification(page, newQuest = false, isLore = false, is
     notification.classList.add("foundry-quest-log-ru-notification");
     const questName = `<span class="foundry-quest-log-ru-notification-quest-name">${page.name}</span>`;
     if (newQuest) {
-        const sound = getSetting("newQuestSoundEffect");
-        if (sound) foundry.audio.AudioHelper.play({src: sound, volume: game.settings.get("core", "globalInterfaceVolume"), loop: false});
         if (isLore) {
             notification.innerHTML = `<i class="fas fa-scroll-old"></i> ${game.i18n.localize(`${MODULE_ID}.shareLore.chatMessage`) + " " + questName}`;
         } else if (isAchievement) {
@@ -218,8 +219,6 @@ export function showQuestNotification(page, newQuest = false, isLore = false, is
             notification.innerHTML = `<i class="fas fa-exclamation"></i> ${game.i18n.localize(`${MODULE_ID}.shareQuest.chatMessage`) + " " + questName}`;
         }
     } else {
-        const sound = getSetting("updateQuestSoundEffect");
-        if (sound) foundry.audio.AudioHelper.play({ src: sound, volume: game.settings.get("core", "globalInterfaceVolume"), loop: false });
         notification.innerHTML = `<i class="fas fa-exclamation"></i> ${game.i18n.localize(`${MODULE_ID}.questNotification.text`).replace("%q", questName)}`;
     }
     notificationContainer.appendChild(notification);
