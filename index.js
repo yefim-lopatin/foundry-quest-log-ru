@@ -7386,6 +7386,17 @@ async function syncRusthengeMaps() {
 
 // scripts/main.js
 var MODULE_ID = "foundry-quest-log-ru";
+function toggleJournal() {
+  try {
+    ui.simpleQuest ??= new SimpleQuest();
+    ui.simpleQuest.toggle();
+    return true;
+  } catch (error) {
+    console.error(`${MODULE_ID} | \u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0442\u043A\u0440\u044B\u0442\u044C \u0436\u0443\u0440\u043D\u0430\u043B`, error);
+    ui.notifications?.error(game.i18n.localize(`${MODULE_ID}.notifications.openFailed`));
+    return false;
+  }
+}
 initJournalTemplates();
 Hooks.on("setup", () => {
   registerSettings();
@@ -7400,9 +7411,8 @@ Hooks.on("init", () => {
     editable: [{ key: "KeyJ" }],
     restricted: false,
     precedence: CONST.KEYBINDING_PRECEDENCE.PRIORITY,
-    onDown: () => {
-      ui.simpleQuest.toggle();
-    }
+    repeat: false,
+    onDown: toggleJournal
   });
   setMermaidHooks();
   applyTOCOverride();
@@ -7456,7 +7466,8 @@ Hooks.once("setup", () => {
   initEnrichers();
 });
 export {
-  MODULE_ID
+  MODULE_ID,
+  toggleJournal
 };
 /**!
  * Sortable 1.15.0

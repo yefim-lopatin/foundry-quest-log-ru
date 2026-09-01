@@ -293,6 +293,7 @@
     "notifications": {
       "defaultStructureCreated": "PF2e Journal: создана стартовая структура папок и журналов.",
       "playerJournalUpdated": "PF2e Journal: обновлен журнал игрока.",
+      "openFailed": "PF2e Journal: журнал не удалось открыть. Подробности есть в консоли браузера.",
       "noPage": "PF2e Journal: выберите страницу для удаления."
     },
     "resetFow": {

@@ -34,10 +34,12 @@ const packageJson = readJson(join(root, "package.json"));
 
 if (manifest.id !== "foundry-quest-log-ru") errors.push("module.json: неверный id");
 if (manifest.version !== packageJson.version) errors.push("Версии module.json и package.json не совпадают");
-if (manifest.compatibility?.verified !== "14.366") errors.push("module.json: verified должен быть 14.366");
+if (manifest.compatibility?.verified !== "14.367") errors.push("module.json: verified должен быть 14.367");
 if (manifest.compatibility?.maximum !== "14") errors.push("module.json: maximum должен ограничивать выпуск v14");
 if (manifest.persistentStorage !== true) errors.push("module.json: persistentStorage должен быть true");
 if (!(manifest.esmodules ?? []).includes("index.js")) errors.push("module.json: отсутствует основной index.js");
+const pf2eRelationship = manifest.relationships?.systems?.find((relationship) => relationship.id === "pf2e");
+if (pf2eRelationship?.compatibility?.verified !== "8.4.1") errors.push("module.json: требуется PF2e 8.4.1");
 
 for (const path of [...(manifest.esmodules ?? []), ...(manifest.styles ?? []), ...(manifest.languages ?? []).map((item) => item.path)]) {
   if (!existsSync(join(root, path))) errors.push(`module.json: отсутствует ${path}`);

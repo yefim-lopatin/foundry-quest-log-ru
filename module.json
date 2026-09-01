@@ -2,7 +2,7 @@
   "id": "foundry-quest-log-ru",
   "title": "PF2e Journal",
   "description": "Русскоязычный журнал PF2e с готовым стартовым набором для приключения «Растхендж»: квесты, лор, карты и хронология.",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "authors": [
     {
       "name": "Yefim Lopatin",
@@ -11,7 +11,7 @@
   ],
   "compatibility": {
     "minimum": "14",
-    "verified": "14.366",
+    "verified": "14.367",
     "maximum": "14"
   },
   "esmodules": [
@@ -28,6 +28,19 @@
       "path": "languages/ru.json"
     }
   ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "pf2e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "8.4.1",
+          "verified": "8.4.1",
+          "maximum": "8.999.999"
+        }
+      }
+    ]
+  },
   "socket": true,
   "persistentStorage": true,
   "url": "https://github.com/yefim-lopatin/foundry-quest-log-ru",

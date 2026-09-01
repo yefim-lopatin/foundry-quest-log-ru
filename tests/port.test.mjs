@@ -14,11 +14,12 @@ function leafCount(value) {
   return Object.values(value).reduce((n, item) => n + (item && typeof item === "object" ? leafCount(item) : 1), 0);
 }
 
-test("manifest настроен для Foundry 14.366 и не конфликтует с Simple Quest", () => {
+test("manifest настроен для Foundry 14.367 и PF2e 8.4.1", () => {
   assert.equal(manifest.id, "foundry-quest-log-ru");
   assert.equal(manifest.title, "PF2e Journal");
-  assert.equal(manifest.version, "2.1.0");
-  assert.deepEqual(manifest.compatibility, { minimum: "14", verified: "14.366", maximum: "14" });
+  assert.equal(manifest.version, "2.1.1");
+  assert.deepEqual(manifest.compatibility, { minimum: "14", verified: "14.367", maximum: "14" });
+  assert.deepEqual(manifest.relationships.systems, [{ id: "pf2e", type: "system", compatibility: { minimum: "8.4.1", verified: "8.4.1", maximum: "8.999.999" } }]);
   assert.deepEqual(manifest.esmodules, ["scripts/compat-v14.js", "index.js"]);
   assert.equal(manifest.persistentStorage, true);
   assert.ok(!manifest.esmodules.includes("scripts/main.js"));
@@ -60,6 +61,15 @@ test("стартовый набор «Растхендж» содержит кв
     "syncRusthengeMaps",
     "modules/pf2e-rusthenge/",
   ]) assert.match(rusthengePreset, new RegExp(marker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), marker);
+});
+
+test("клавиша J открывает журнал и сообщает об ошибке вместо молчаливого сбоя", () => {
+  const source = readFileSync(resolve(root, "scripts/main.js"), "utf8");
+  assert.match(source, /export function toggleJournal\(\)/);
+  assert.match(source, /ui\.simpleQuest \?\?= new SimpleQuest\(\)/);
+  assert.match(source, /onDown: toggleJournal/);
+  assert.match(source, /return true/);
+  assert.equal(locale[manifest.id].notifications.openFailed.includes("не удалось открыть"), true);
 });
 
 test("присутствуют шаблоны, assets и v14-совместимость", () => {

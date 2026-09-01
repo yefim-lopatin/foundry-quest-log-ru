@@ -14,6 +14,18 @@ import { installRusthengePreset, syncRusthengeMaps } from "./rusthengePreset.js"
 
 export const MODULE_ID = "foundry-quest-log-ru";
 
+export function toggleJournal() {
+    try {
+        ui.simpleQuest ??= new SimpleQuest();
+        ui.simpleQuest.toggle();
+        return true;
+    } catch (error) {
+        console.error(`${MODULE_ID} | Не удалось открыть журнал`, error);
+        ui.notifications?.error(game.i18n.localize(`${MODULE_ID}.notifications.openFailed`));
+        return false;
+    }
+}
+
 initJournalTemplates();
 
 Hooks.on("setup", () => {
@@ -31,9 +43,8 @@ Hooks.on("init", () => {
         editable: [{ key: "KeyJ" }],
         restricted: false,
         precedence: CONST.KEYBINDING_PRECEDENCE.PRIORITY,
-        onDown: () => {
-            ui.simpleQuest.toggle();
-        },
+        repeat: false,
+        onDown: toggleJournal,
     });
     setMermaidHooks();
     applyTOCOverride();
