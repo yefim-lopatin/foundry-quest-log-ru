@@ -1435,7 +1435,7 @@
       if (this._fowMaskImage) return this.updateFoWSVGWithImage();
       const oldSVG = this.image.querySelector("svg");
       if (oldSVG) oldSVG.remove();
-      const polygon = this._exploredPolygon;
+      const polygon = this._getValidFogPolygons();
       if (!polygon) return;
       const svgContainer = document.createElementNS("http://www.w3.org/2000/svg", "svg");
       svgContainer.style.width = "100%";
@@ -1472,7 +1472,7 @@
     updateFoWSVGWithImage() {
       const oldSVG = this.image.querySelector("svg");
       if (oldSVG) oldSVG.remove();
-      const polygon = this._exploredPolygon;
+      const polygon = this._getValidFogPolygons();
       if (!polygon) return;
       const svgContainer = document.createElementNS("http://www.w3.org/2000/svg", "svg");
       svgContainer.style.width = "100%";
@@ -1517,6 +1517,18 @@
       svgContainer.appendChild(svgImage);
       this._svgFow = svgContainer;
       this.setFOWBlur();
+    }
+    _getValidFogPolygons() {
+      if (!Array.isArray(this._exploredPolygon)) return [];
+      return this._exploredPolygon.map((polygon) => {
+        if (!Array.isArray(polygon?.path)) return null;
+        const path = polygon.path.map((point) => {
+          const X = Number(point?.X ?? point?.x);
+          const Y = Number(point?.Y ?? point?.y);
+          return Number.isFinite(X) && Number.isFinite(Y) ? { X, Y } : null;
+        }).filter(Boolean);
+        return path.length >= 3 ? { ...polygon, path } : null;
+      }).filter(Boolean);
     }
     setFOWBlur() {
       if (!this._svgFow) return;
@@ -1916,10 +1928,10 @@
       const isShiftDown = event.shiftKey;
       if (isShiftDown || this._movingMarker) return;
       const imageBoundingRect = this.image.getBoundingClientRect();
-      const x = event.pageX - imageBoundingRect.left;
-      const y = event.pageY - imageBoundingRect.top;
-      const xPercent = x / imageBoundingRect.width;
-      const yPercent = y / imageBoundingRect.height;
+      const x = event.clientX - imageBoundingRect.left;
+      const y = event.clientY - imageBoundingRect.top;
+      const xPercent = Math.max(0, Math.min(1, x / imageBoundingRect.width));
+      const yPercent = Math.max(0, Math.min(1, y / imageBoundingRect.height));
       this.mousePercent = { x: xPercent, y: yPercent };
       new MarkerConfig(this, this.page).render(true);
     }
@@ -5915,7 +5927,7 @@
           const uuid = e.currentTarget.dataset.uuid;
           const page = await fromUuid(uuid);
           const playerPermission = this.getDefaultUserPermission(page) >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER;
-          page.update({
+          await page.update({
             ownership: {
               default: playerPermission ? CONST.DOCUMENT_OWNERSHIP_LEVELS.NONE : CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER
             }

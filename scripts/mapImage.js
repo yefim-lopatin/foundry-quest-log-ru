@@ -115,7 +115,7 @@ export class MapImage {
         const oldSVG = this.image.querySelector("svg");
         if (oldSVG) oldSVG.remove();
         //convert clipper polygon to SVG polygon
-        const polygon = this._exploredPolygon;
+        const polygon = this._getValidFogPolygons();
         if (!polygon) return;
         //the clipper polygon can have multiple paths and holes
         const svgContainer = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -162,7 +162,7 @@ export class MapImage {
         const oldSVG = this.image.querySelector("svg");
         if (oldSVG) oldSVG.remove();
         //convert clipper polygon to SVG polygon
-        const polygon = this._exploredPolygon;
+        const polygon = this._getValidFogPolygons();
         if (!polygon) return;
         //the clipper polygon can have multiple paths and holes
         const svgContainer = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -220,6 +220,23 @@ export class MapImage {
 
         this._svgFow = svgContainer;
         this.setFOWBlur();
+    }
+
+    _getValidFogPolygons() {
+        if (!Array.isArray(this._exploredPolygon)) return [];
+        return this._exploredPolygon
+            .map((polygon) => {
+                if (!Array.isArray(polygon?.path)) return null;
+                const path = polygon.path
+                    .map((point) => {
+                        const X = Number(point?.X ?? point?.x);
+                        const Y = Number(point?.Y ?? point?.y);
+                        return Number.isFinite(X) && Number.isFinite(Y) ? { X, Y } : null;
+                    })
+                    .filter(Boolean);
+                return path.length >= 3 ? { ...polygon, path } : null;
+            })
+            .filter(Boolean);
     }
 
     setFOWBlur() {
@@ -709,10 +726,10 @@ export class MapImage {
         const isShiftDown = event.shiftKey;
         if (isShiftDown || this._movingMarker) return;
         const imageBoundingRect = this.image.getBoundingClientRect();
-        const x = event.pageX - imageBoundingRect.left;
-        const y = event.pageY - imageBoundingRect.top;
-        const xPercent = x / imageBoundingRect.width;
-        const yPercent = y / imageBoundingRect.height;
+        const x = event.clientX - imageBoundingRect.left;
+        const y = event.clientY - imageBoundingRect.top;
+        const xPercent = Math.max(0, Math.min(1, x / imageBoundingRect.width));
+        const yPercent = Math.max(0, Math.min(1, y / imageBoundingRect.height));
         this.mousePercent = { x: xPercent, y: yPercent };
         new MarkerConfig(this, this.page).render(true);
     }

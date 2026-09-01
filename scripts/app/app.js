@@ -579,7 +579,7 @@ export class SimpleQuest extends Application {
                 const uuid = e.currentTarget.dataset.uuid;
                 const page = await fromUuid(uuid);
                 const playerPermission = this.getDefaultUserPermission(page) >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER;
-                page.update({
+                await page.update({
                     ownership: {
                         default: playerPermission ? CONST.DOCUMENT_OWNERSHIP_LEVELS.NONE : CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER,
                     },
