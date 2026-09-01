@@ -5433,7 +5433,7 @@
       this.refresh = foundry.utils.debounce(this.refresh.bind(this), 30);
     }
     static get APP_ID() {
-      return this.name.split(/(?=[A-Z])/).join("-").toLowerCase();
+      return "simple-quest";
     }
     get APP_ID() {
       return this.constructor.APP_ID;

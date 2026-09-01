@@ -93,10 +93,7 @@ export class SimpleQuest extends Application {
     }
 
     static get APP_ID() {
-        return this.name
-            .split(/(?=[A-Z])/)
-            .join("-")
-            .toLowerCase();
+        return "simple-quest";
     }
 
     get APP_ID() {

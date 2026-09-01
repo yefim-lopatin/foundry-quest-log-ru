@@ -8,6 +8,7 @@ const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const manifest = JSON.parse(readFileSync(resolve(root, "module.json"), "utf8"));
 const locale = JSON.parse(readFileSync(resolve(root, "languages/ru.json"), "utf8"));
 const bundle = readFileSync(resolve(root, "index.js"), "utf8");
+const appSource = readFileSync(resolve(root, "scripts/app/app.js"), "utf8");
 
 function leafCount(value) {
   return Object.values(value).reduce((n, item) => n + (item && typeof item === "object" ? leafCount(item) : 1), 0);
@@ -15,7 +16,7 @@ function leafCount(value) {
 
 test("manifest настроен для Foundry 14.367 и не конфликтует с Simple Quest", () => {
   assert.equal(manifest.id, "foundry-quest-log-ru");
-  assert.equal(manifest.version, "2.1.0");
+  assert.equal(manifest.version, "2.1.1");
   assert.deepEqual(manifest.compatibility, { minimum: "14", verified: "14.367", maximum: "14" });
   assert.deepEqual(manifest.esmodules, ["scripts/compat-v14.js", "index.js"]);
   assert.equal(manifest.persistentStorage, true);
@@ -46,6 +47,11 @@ test("бандл содержит функциональные подсисте�
     "exportManagedJournals",
     "foundry-quest-log-ru",
   ]) assert.match(bundle, new RegExp(marker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), marker);
+});
+
+test("основное окно использует существующий шаблон simple-quest", () => {
+  assert.match(appSource, /static get APP_ID\(\) \{\s*return "simple-quest";\s*\}/);
+  assert.doesNotMatch(bundle, /__simple-quest\.hbs/);
 });
 
 test("присутствуют шаблоны, assets и v14-совместимость", () => {
