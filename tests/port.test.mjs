@@ -19,7 +19,7 @@ function leafCount(value) {
 
 test("manifest настроен для Foundry 14.367 и не конфликтует с Simple Quest", () => {
   assert.equal(manifest.id, "foundry-quest-log-ru");
-  assert.equal(manifest.version, "2.2.0");
+  assert.equal(manifest.version, "2.2.1");
   assert.deepEqual(manifest.compatibility, { minimum: "14", verified: "14.367", maximum: "14" });
   assert.deepEqual(manifest.esmodules, ["scripts/compat-v14.js", "index.js"]);
   assert.equal(manifest.persistentStorage, true);
@@ -63,6 +63,11 @@ test("обучение выключено по умолчанию и учиты�
   assert.match(helpersSource, /showWelcomeMaps\(force = false\) \{\s*if \(!getSetting\("enableTutorial"\) && !force\) return;/);
   assert.match(appSource, /checkTour\(tab, tourId\) \{\s*if \(!getSetting\("enableTutorial"\)\) return;/);
   assert.match(mainSource, /renderJournalTextPage[\s\S]*?if \(!getSetting\("enableTutorial"\)\) return;/);
+});
+
+test("хлебные крошки выключены по умолчанию", () => {
+  assert.match(settingsSource, /showHistory[\s\S]*?default: false[\s\S]*?onChange: refreshQuestLog/);
+  assert.equal(locale[manifest.id].settings.showHistory.name, "Показывать хлебные крошки");
 });
 
 test("разделы журнала можно отключать настройками", () => {

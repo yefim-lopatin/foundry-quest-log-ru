@@ -308,7 +308,8 @@
         scope: "world",
         config: true,
         type: Boolean,
-        default: true
+        default: false,
+        onChange: refreshQuestLog
       },
       hideCheckboxAutoHide: {
         name: `${MODULE_ID}.settings.hideCheckboxAutoHide.name`,
