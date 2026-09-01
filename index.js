@@ -1164,7 +1164,7 @@
   function showQuestNotification(page, newQuest = false, isLore = false, isAchievement = false, isCompleted = false) {
     if (!getSetting("showQuestNotifications")) return;
     const isHidden = page.getFlag(MODULE_ID, "hidden");
-    if (isHidden) return;
+    if (isHidden && !isLore) return;
     const sound = isCompleted ? getSetting("completeQuestSoundEffect") : newQuest ? getSetting("newQuestSoundEffect") : getSetting("updateQuestSoundEffect");
     if (sound) foundry.audio.AudioHelper.play({ src: sound, volume: game.settings.get("core", "globalInterfaceVolume"), loop: false });
     const existing = document.querySelector(`.foundry-quest-log-ru-notification[data-uuid="${page.uuid}"]`);
@@ -2439,7 +2439,7 @@
     }
     async _updateObject(event, formData) {
       event.preventDefault();
-      formData = expandObject(formData);
+      formData = foundry.utils.expandObject(formData);
       if (!this.edit) {
         formData.x = this.mapImage.mousePercent.x;
         formData.y = this.mapImage.mousePercent.y;

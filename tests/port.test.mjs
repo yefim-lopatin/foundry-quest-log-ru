@@ -19,7 +19,7 @@ function leafCount(value) {
 
 test("manifest настроен для Foundry 14.367 и не конфликтует с Simple Quest", () => {
   assert.equal(manifest.id, "foundry-quest-log-ru");
-  assert.equal(manifest.version, "2.3.6");
+  assert.equal(manifest.version, "2.3.7");
   assert.deepEqual(manifest.compatibility, { minimum: "14", verified: "14.367", maximum: "14" });
   assert.deepEqual(manifest.esmodules, ["scripts/compat-v14.js", "index.js"]);
   assert.equal(manifest.persistentStorage, true);
@@ -137,4 +137,9 @@ test("маркеры карты можно разблокировать без �
   assert.match(mapSource, /_getValidFogPolygons\(\)/);
   assert.match(mapSource, /Number\.isFinite\(X\) && Number\.isFinite\(Y\)/);
   assert.match(mapSource, /event\.clientX - imageBoundingRect\.left/);
+  assert.match(mapSource, /foundry\.utils\.expandObject\(formData\)/);
+});
+
+test("уведомления Lore не блокируются флагом скрытой страницы", () => {
+  assert.match(helpersSource, /isHidden && !isLore/);
 });

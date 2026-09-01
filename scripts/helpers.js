@@ -193,7 +193,7 @@ export function createDemoQuest() {
 export function showQuestNotification(page, newQuest = false, isLore = false, isAchievement = false, isCompleted = false) {
     if (!getSetting("showQuestNotifications")) return;
     const isHidden = page.getFlag(MODULE_ID, "hidden");
-    if (isHidden) return;
+    if (isHidden && !isLore) return;
 
     const sound = isCompleted ? getSetting("completeQuestSoundEffect") : newQuest ? getSetting("newQuestSoundEffect") : getSetting("updateQuestSoundEffect");
     if (sound) foundry.audio.AudioHelper.play({ src: sound, volume: game.settings.get("core", "globalInterfaceVolume"), loop: false });

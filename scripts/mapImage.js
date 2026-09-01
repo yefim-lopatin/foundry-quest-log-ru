@@ -1286,7 +1286,7 @@ class MarkerConfig extends FormApplication {
 
     async _updateObject(event, formData) {
         event.preventDefault();
-        formData = expandObject(formData);
+        formData = foundry.utils.expandObject(formData);
         if (!this.edit) {
             formData.x = this.mapImage.mousePercent.x;
             formData.y = this.mapImage.mousePercent.y;

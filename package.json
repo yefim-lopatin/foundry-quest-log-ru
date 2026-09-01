@@ -1,6 +1,6 @@
 {
   "name": "foundry-quest-log-ru",
-  "version": "2.3.6",
+  "version": "2.3.7",
   "private": true,
   "type": "module",
   "description": "Русскоязычный квестовый журнал для Foundry VTT v14",
