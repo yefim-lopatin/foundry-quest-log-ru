@@ -13,6 +13,8 @@ const DEFAULT_TAB_NAMES = {
     "party-journal": "foundry-quest-log-ru.simple-quest.tabs.party-journal",
 };
 
+const refreshQuestLog = () => ui.simpleQuest?.render(true);
+
 export function registerSettings() {
     game.settings.registerMenu(MODULE_ID, "tabConfig", {
         name: `${MODULE_ID}.settings.tabConfig.name`,
@@ -33,6 +35,14 @@ export function registerSettings() {
     });
 
     const settings = {
+        enableTutorial: {
+            name: `${MODULE_ID}.settings.enableTutorial.name`,
+            hint: `${MODULE_ID}.settings.enableTutorial.hint`,
+            scope: "client",
+            config: true,
+            type: Boolean,
+            default: false,
+        },
         showHistory: {
             name: `${MODULE_ID}.settings.showHistory.name`,
             hint: `${MODULE_ID}.settings.showHistory.hint`,
@@ -239,6 +249,7 @@ export function registerSettings() {
             config: true,
             type: Boolean,
             default: true,
+            onChange: refreshQuestLog,
         },
         enablePartyJournal: {
             name: `${MODULE_ID}.settings.enablePartyJournal.name`,
@@ -247,6 +258,7 @@ export function registerSettings() {
             config: true,
             type: Boolean,
             default: true,
+            onChange: refreshQuestLog,
         },
         enableMyJournal: {
             name: `${MODULE_ID}.settings.enableMyJournal.name`,
@@ -255,6 +267,7 @@ export function registerSettings() {
             config: true,
             type: Boolean,
             default: true,
+            onChange: refreshQuestLog,
         },
         enableMaps: {
             name: `${MODULE_ID}.settings.enableMaps.name`,
@@ -263,6 +276,7 @@ export function registerSettings() {
             config: true,
             type: Boolean,
             default: true,
+            onChange: refreshQuestLog,
         },
         enableLore: {
             name: `${MODULE_ID}.settings.enableLore.name`,
@@ -271,6 +285,7 @@ export function registerSettings() {
             config: true,
             type: Boolean,
             default: true,
+            onChange: refreshQuestLog,
         },
         enableTimeline: {
             name: `${MODULE_ID}.settings.enableTimeline.name`,
@@ -279,6 +294,7 @@ export function registerSettings() {
             config: true,
             type: Boolean,
             default: true,
+            onChange: refreshQuestLog,
         },
         enableAchievements: {
             name: `${MODULE_ID}.settings.enableAchievements.name`,
@@ -287,6 +303,7 @@ export function registerSettings() {
             config: true,
             type: Boolean,
             default: true,
+            onChange: refreshQuestLog,
         },
         imagePageMask: {
             name: `${MODULE_ID}.settings.imagePageMask.name`,

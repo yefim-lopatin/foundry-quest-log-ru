@@ -1,5 +1,5 @@
 import { initConfig } from "./config.js";
-import { registerSettings, registerOnReadySettings, setSetting } from "./settings.js";
+import { getSetting, registerSettings, registerOnReadySettings, setSetting } from "./settings.js";
 import { createDefaultStructure, showWelcomeScreen } from "./helpers.js";
 import { SimpleQuest, setWindowedMode } from "./app/app.js";
 import { initJournalTemplates } from "./journalTemplates.js";
@@ -73,6 +73,7 @@ Hooks.on("ready", () => {
 
     if (game.user.isGM) {
         Hooks.once("renderJournalTextPageSheet", () => {
+            if (!getSetting("enableTutorial")) return;
             const tour = game.tours.get(MODULE_ID + ".journal-page");
             if (tour.status === Tour.STATUS.UNSTARTED) {
                 tour.start();

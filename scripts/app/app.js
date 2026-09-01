@@ -113,6 +113,15 @@ export class SimpleQuest extends Application {
     }
 
     static get defaultOptions() {
+        const initial = [
+            ["quests", "enableQuests"],
+            ["lore", "enableLore"],
+            ["timeline", "enableTimeline"],
+            ["map", "enableMaps"],
+            ["achievements", "enableAchievements"],
+            ["my-journal", "enableMyJournal"],
+            ["party-journal", "enablePartyJournal"],
+        ].find(([, setting]) => getSetting(setting))?.[0] ?? "quests";
         return foundry.utils.mergeObject(super.defaultOptions, {
             id: this.APP_ID,
             template: `modules/${MODULE_ID}/templates/${this.APP_ID}.hbs`,
@@ -122,7 +131,7 @@ export class SimpleQuest extends Application {
             width: isPopOut ? window.innerWidth * 0.6 : window.innerWidth,
             height: isPopOut ? window.innerHeight * 0.8 : window.innerHeight,
             title: game.i18n.localize(`${MODULE_ID}.${this.APP_ID}.title`),
-            tabs: [{ navSelector: ".tabs", contentSelector: ".content", initial: "quests" }],
+            tabs: [{ navSelector: ".tabs", contentSelector: ".content", initial }],
             scrollY: [".quest-list", ".quest-contents", ".maps-list"],
         });
     }
@@ -729,6 +738,7 @@ export class SimpleQuest extends Application {
     }
 
     checkTour(tab, tourId) {
+        if (!getSetting("enableTutorial")) return;
         if (this._skipFirstTourCheck) {
             delete this._skipFirstTourCheck;
             return;

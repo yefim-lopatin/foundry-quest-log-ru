@@ -275,6 +275,7 @@
     "my-journal": "foundry-quest-log-ru.simple-quest.tabs.my-journal",
     "party-journal": "foundry-quest-log-ru.simple-quest.tabs.party-journal"
   };
+  var refreshQuestLog = () => ui.simpleQuest?.render(true);
   function registerSettings() {
     game.settings.registerMenu(MODULE_ID, "tabConfig", {
       name: `${MODULE_ID}.settings.tabConfig.name`,
@@ -293,6 +294,14 @@
       restricted: true
     });
     const settings = {
+      enableTutorial: {
+        name: `${MODULE_ID}.settings.enableTutorial.name`,
+        hint: `${MODULE_ID}.settings.enableTutorial.hint`,
+        scope: "client",
+        config: true,
+        type: Boolean,
+        default: false
+      },
       showHistory: {
         name: `${MODULE_ID}.settings.showHistory.name`,
         hint: `${MODULE_ID}.settings.showHistory.hint`,
@@ -498,7 +507,8 @@
         scope: "world",
         config: true,
         type: Boolean,
-        default: true
+        default: true,
+        onChange: refreshQuestLog
       },
       enablePartyJournal: {
         name: `${MODULE_ID}.settings.enablePartyJournal.name`,
@@ -506,7 +516,8 @@
         scope: "world",
         config: true,
         type: Boolean,
-        default: true
+        default: true,
+        onChange: refreshQuestLog
       },
       enableMyJournal: {
         name: `${MODULE_ID}.settings.enableMyJournal.name`,
@@ -514,7 +525,8 @@
         scope: "world",
         config: true,
         type: Boolean,
-        default: true
+        default: true,
+        onChange: refreshQuestLog
       },
       enableMaps: {
         name: `${MODULE_ID}.settings.enableMaps.name`,
@@ -522,7 +534,8 @@
         scope: "world",
         config: true,
         type: Boolean,
-        default: true
+        default: true,
+        onChange: refreshQuestLog
       },
       enableLore: {
         name: `${MODULE_ID}.settings.enableLore.name`,
@@ -530,7 +543,8 @@
         scope: "world",
         config: true,
         type: Boolean,
-        default: true
+        default: true,
+        onChange: refreshQuestLog
       },
       enableTimeline: {
         name: `${MODULE_ID}.settings.enableTimeline.name`,
@@ -538,7 +552,8 @@
         scope: "world",
         config: true,
         type: Boolean,
-        default: true
+        default: true,
+        onChange: refreshQuestLog
       },
       enableAchievements: {
         name: `${MODULE_ID}.settings.enableAchievements.name`,
@@ -546,7 +561,8 @@
         scope: "world",
         config: true,
         type: Boolean,
-        default: true
+        default: true,
+        onChange: refreshQuestLog
       },
       imagePageMask: {
         name: `${MODULE_ID}.settings.imagePageMask.name`,
@@ -1077,6 +1093,7 @@
     return loreFolder;
   }
   function showWelcomeScreen(force = false) {
+    if (!getSetting("enableTutorial")) return;
     const welcomeMessage = getSetting("welcomeMessage");
     if (welcomeMessage && !force) return;
     Dialog.prompt({
@@ -1091,6 +1108,7 @@
     });
   }
   function showWelcomeMaps(force = false) {
+    if (!getSetting("enableTutorial") && !force) return;
     const welcomeMaps = getSetting("welcomeMaps");
     if (welcomeMaps && !force) return;
     Dialog.prompt({
@@ -5449,6 +5467,15 @@
       return activePage.parent;
     }
     static get defaultOptions() {
+      const initial = [
+        ["quests", "enableQuests"],
+        ["lore", "enableLore"],
+        ["timeline", "enableTimeline"],
+        ["map", "enableMaps"],
+        ["achievements", "enableAchievements"],
+        ["my-journal", "enableMyJournal"],
+        ["party-journal", "enablePartyJournal"]
+      ].find(([, setting]) => getSetting(setting))?.[0] ?? "quests";
       return foundry.utils.mergeObject(super.defaultOptions, {
         id: this.APP_ID,
         template: `modules/${MODULE_ID}/templates/${this.APP_ID}.hbs`,
@@ -5458,7 +5485,7 @@
         width: isPopOut ? window.innerWidth * 0.6 : window.innerWidth,
         height: isPopOut ? window.innerHeight * 0.8 : window.innerHeight,
         title: game.i18n.localize(`${MODULE_ID}.${this.APP_ID}.title`),
-        tabs: [{ navSelector: ".tabs", contentSelector: ".content", initial: "quests" }],
+        tabs: [{ navSelector: ".tabs", contentSelector: ".content", initial }],
         scrollY: [".quest-list", ".quest-contents", ".maps-list"]
       });
     }
@@ -6001,6 +6028,7 @@
       ];
     }
     checkTour(tab, tourId) {
+      if (!getSetting("enableTutorial")) return;
       if (this._skipFirstTourCheck) {
         delete this._skipFirstTourCheck;
         return;
@@ -7088,11 +7116,12 @@
 
   // scripts/tours.js
   function registerTours() {
+    const showTutorial = game.settings.get(MODULE_ID, "enableTutorial");
     game.tours.register(MODULE_ID, "interface", new foundry.nue.Tour({
       title: `${MODULE_ID}.tours.interface.name`,
       description: `${MODULE_ID}.tours.interface.description`,
       canBeResumed: false,
-      display: true,
+      display: showTutorial,
       steps: [
         {
           id: `${MODULE_ID}.tours.interface.1`,
@@ -7126,7 +7155,7 @@
       title: `${MODULE_ID}.tours.lore-tab.name`,
       description: `${MODULE_ID}.tours.lore-tab.description`,
       canBeResumed: false,
-      display: true,
+      display: showTutorial,
       steps: [
         {
           id: `${MODULE_ID}.tours.lore-tab.1`,
@@ -7155,7 +7184,7 @@
       title: `${MODULE_ID}.tours.map-tab.name`,
       description: `${MODULE_ID}.tours.map-tab.description`,
       canBeResumed: false,
-      display: true,
+      display: showTutorial,
       steps: [
         {
           id: `${MODULE_ID}.tours.map-tab.1`,
@@ -7205,7 +7234,7 @@
       title: `${MODULE_ID}.tours.my-journal-tab.name`,
       description: `${MODULE_ID}.tours.my-journal-tab.description`,
       canBeResumed: false,
-      display: true,
+      display: showTutorial,
       steps: [
         {
           id: `${MODULE_ID}.tours.my-journal-tab.1`,
@@ -7234,7 +7263,7 @@
       title: `${MODULE_ID}.tours.party-journal-tab.name`,
       description: `${MODULE_ID}.tours.party-journal-tab.description`,
       canBeResumed: false,
-      display: true,
+      display: showTutorial,
       steps: [
         {
           id: `${MODULE_ID}.tours.party-journal-tab.1`,
@@ -7263,7 +7292,7 @@
       title: `${MODULE_ID}.tours.journal-page.name`,
       description: `${MODULE_ID}.tours.journal-page.description`,
       canBeResumed: false,
-      display: true,
+      display: showTutorial,
       steps: [
         {
           id: `${MODULE_ID}.tours.journal-page.1`,
@@ -7285,7 +7314,7 @@
       title: `${MODULE_ID}.tours.timeline-tab.name`,
       description: `${MODULE_ID}.tours.timeline-tab.description`,
       canBeResumed: false,
-      display: true,
+      display: showTutorial,
       steps: [
         {
           id: `${MODULE_ID}.tours.timeline-tab.1`,
@@ -7669,6 +7698,7 @@
     });
     if (game.user.isGM) {
       Hooks.once("renderJournalTextPageSheet", () => {
+        if (!getSetting("enableTutorial")) return;
         const tour = game.tours.get(MODULE_ID + ".journal-page");
         if (tour.status === Tour.STATUS.UNSTARTED) {
           tour.start();

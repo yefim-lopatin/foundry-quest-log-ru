@@ -30,7 +30,7 @@
   {{/if}}
   <section id="foundry-quest-log-ru-tabs" class="content">
     <!-- Quests Tab -->
-    <div class="tab{{#unless showCompleted}} hide-completed{{/unless}}" data-tab="quests">
+    <div class="tab{{#unless showCompleted}} hide-completed{{/unless}}" data-tab="quests" {{#unless enableQuests}}style="display: none;"{{/unless}}>
       <div class="foundry-quest-log-ru-grid">
         <div class="quest-list">
           <div class="quest-list-controls">
@@ -128,7 +128,7 @@
 
     <!-- Lore Tab -->
 
-    <div class="tab" data-tab="lore">
+    <div class="tab" data-tab="lore" {{#unless enableLore}}style="display: none;"{{/unless}}>
       <div class="foundry-quest-log-ru-grid">
         <div class="quest-list">
           <div class="quest-list-controls">
@@ -212,7 +212,7 @@
 
     <!-- Timeline Tab -->
 
-    <div class="tab" data-tab="timeline">
+    <div class="tab" data-tab="timeline" {{#unless enableTimeline}}style="display: none;"{{/unless}}>
       <div class="foundry-quest-log-ru-grid compact">
         <div class="quest-list">
           <div class="quest-list-controls">
@@ -242,7 +242,7 @@
 
     <!-- Map Tab -->
 
-    <div class="tab" data-tab="map" id="map">
+    <div class="tab" data-tab="map" id="map" {{#unless enableMaps}}style="display: none;"{{/unless}}>
       <div class="foundry-quest-log-ru-grid {{#unless popOut}}compact{{/unless}}">
         <div class="maps-list">
           {{#if mapsJournal}}
@@ -279,7 +279,7 @@
     </div>
 
     <!-- Achievements Tab -->
-    <div class="tab" data-tab="achievements" id="achievements">
+    <div class="tab" data-tab="achievements" id="achievements" {{#unless enableAchievements}}style="display: none;"{{/unless}}>
       <div class="foundry-quest-log-ru-grid hidden-list">
         <div class="quest-details achievements-list {{#if matchJournalStyle}}journal-entry dnd5e2-journal{{/if}}">
           <div class="quest-controls">
@@ -320,7 +320,7 @@
     </div>
 
     <!-- My Journal Tab -->
-    <div class="tab" data-tab="my-journal" id="my-journal">
+    <div class="tab" data-tab="my-journal" id="my-journal" {{#unless enableMyJournal}}style="display: none;"{{/unless}}>
       <div class="foundry-quest-log-ru-grid">
         <div class="quest-list">
           <div class="quest-list-controls">
@@ -388,7 +388,7 @@
     </div>
 
     <!-- Party Journal Tab -->
-    <div class="tab" data-tab="party-journal" id="party-journal">
+    <div class="tab" data-tab="party-journal" id="party-journal" {{#unless enablePartyJournal}}style="display: none;"{{/unless}}>
       <div class="foundry-quest-log-ru-grid">
         <div class="quest-list">
           <div class="quest-list-controls">

@@ -4,12 +4,13 @@ import {MODULE_ID} from "./main.js";
 const l = (key) => game.i18n.localize(key);
 
 export function registerTours() {
+    const showTutorial = game.settings.get(MODULE_ID, "enableTutorial");
     
     game.tours.register(MODULE_ID, "interface", new foundry.nue.Tour({
         title: `${MODULE_ID}.tours.interface.name`,
         description: `${MODULE_ID}.tours.interface.description`,
         canBeResumed: false,
-        display: true,
+        display: showTutorial,
         steps: [
             {
                 id: `${MODULE_ID}.tours.interface.1`,
@@ -44,7 +45,7 @@ export function registerTours() {
         title: `${MODULE_ID}.tours.lore-tab.name`,
         description: `${MODULE_ID}.tours.lore-tab.description`,
         canBeResumed: false,
-        display: true,
+        display: showTutorial,
         steps: [
             {
                 id: `${MODULE_ID}.tours.lore-tab.1`,
@@ -76,7 +77,7 @@ export function registerTours() {
         title: `${MODULE_ID}.tours.map-tab.name`,
         description: `${MODULE_ID}.tours.map-tab.description`,
         canBeResumed: false,
-        display: true,
+        display: showTutorial,
         steps: [
             {
                 id: `${MODULE_ID}.tours.map-tab.1`,
@@ -131,7 +132,7 @@ export function registerTours() {
         title: `${MODULE_ID}.tours.my-journal-tab.name`,
         description: `${MODULE_ID}.tours.my-journal-tab.description`,
         canBeResumed: false,
-        display: true,
+        display: showTutorial,
         steps: [
             {
                 id: `${MODULE_ID}.tours.my-journal-tab.1`,
@@ -161,7 +162,7 @@ export function registerTours() {
         title: `${MODULE_ID}.tours.party-journal-tab.name`,
         description: `${MODULE_ID}.tours.party-journal-tab.description`,
         canBeResumed: false,
-        display: true,
+        display: showTutorial,
         steps: [
             {
                 id: `${MODULE_ID}.tours.party-journal-tab.1`,
@@ -193,7 +194,7 @@ export function registerTours() {
         title: `${MODULE_ID}.tours.journal-page.name`,
         description: `${MODULE_ID}.tours.journal-page.description`,
         canBeResumed: false,
-        display: true,
+        display: showTutorial,
         steps: [
             {
                 id: `${MODULE_ID}.tours.journal-page.1`,
@@ -218,7 +219,7 @@ export function registerTours() {
         title: `${MODULE_ID}.tours.timeline-tab.name`,
         description: `${MODULE_ID}.tours.timeline-tab.description`,
         canBeResumed: false,
-        display: true,
+        display: showTutorial,
         steps: [
             {
                 id: `${MODULE_ID}.tours.timeline-tab.1`,

@@ -147,6 +147,7 @@ export async function createLoreFolder() {
 }
 
 export function showWelcomeScreen(force = false) {
+    if (!getSetting("enableTutorial")) return;
     const welcomeMessage = getSetting("welcomeMessage");
     if (welcomeMessage && !force) return;
     Dialog.prompt({
@@ -162,6 +163,7 @@ export function showWelcomeScreen(force = false) {
 }
 
 export function showWelcomeMaps(force = false) {
+    if (!getSetting("enableTutorial") && !force) return;
     const welcomeMaps = getSetting("welcomeMaps");
     if (welcomeMaps && !force) return;
     Dialog.prompt({
