@@ -34,7 +34,7 @@ const packageJson = readJson(join(root, "package.json"));
 
 if (manifest.id !== "foundry-quest-log-ru") errors.push("module.json: неверный id");
 if (manifest.version !== packageJson.version) errors.push("Версии module.json и package.json не совпадают");
-if (manifest.compatibility?.verified !== "14.366") errors.push("module.json: verified должен быть 14.366");
+if (manifest.compatibility?.verified !== "14.367") errors.push("module.json: verified должен быть 14.367");
 if (manifest.compatibility?.maximum !== "14") errors.push("module.json: maximum должен ограничивать выпуск v14");
 if (manifest.persistentStorage !== true) errors.push("module.json: persistentStorage должен быть true");
 if (!(manifest.esmodules ?? []).includes("index.js")) errors.push("module.json: отсутствует основной index.js");

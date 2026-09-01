@@ -4,6 +4,8 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const esbuild = join(root, "node_modules/.bin", process.platform === "win32" ? "esbuild.cmd" : "esbuild");
+execFileSync(esbuild, ["scripts/main.js", "--bundle", "--format=iife", "--platform=browser", "--sourcemap", "--outfile=index.js"], { cwd: root, stdio: "inherit" });
 const manifest = JSON.parse(readFileSync(join(root, "module.json"), "utf8"));
 const moduleId = manifest.id;
 const dist = join(root, "dist");

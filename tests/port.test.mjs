@@ -13,10 +13,10 @@ function leafCount(value) {
   return Object.values(value).reduce((n, item) => n + (item && typeof item === "object" ? leafCount(item) : 1), 0);
 }
 
-test("manifest настроен для Foundry 14.366 и не конфликтует с Simple Quest", () => {
+test("manifest настроен для Foundry 14.367 и не конфликтует с Simple Quest", () => {
   assert.equal(manifest.id, "foundry-quest-log-ru");
-  assert.equal(manifest.version, "2.0.0");
-  assert.deepEqual(manifest.compatibility, { minimum: "14", verified: "14.366", maximum: "14" });
+  assert.equal(manifest.version, "2.1.0");
+  assert.deepEqual(manifest.compatibility, { minimum: "14", verified: "14.367", maximum: "14" });
   assert.deepEqual(manifest.esmodules, ["scripts/compat-v14.js", "index.js"]);
   assert.equal(manifest.persistentStorage, true);
   assert.ok(!manifest.esmodules.includes("scripts/main.js"));
@@ -42,6 +42,8 @@ test("бандл содержит функциональные подсисте�
     "@COUNT",
     "@REPUTATION",
     "SimpleQuestAutoImport",
+    "importManagedJournals",
+    "exportManagedJournals",
     "foundry-quest-log-ru",
   ]) assert.match(bundle, new RegExp(marker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), marker);
 });
@@ -53,6 +55,8 @@ test("присутствуют шаблоны, assets и v14-совместим�
     "scripts/mapImage.js",
     "scripts/app/timeline.js",
     "scripts/enrichers.js",
+    "scripts/importExport.js",
+    "scripts/importExportData.js",
     "templates/simple-quest.hbs",
     "templates/timeline.hbs",
     "styles/module.css",

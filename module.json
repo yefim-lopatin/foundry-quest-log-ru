@@ -2,7 +2,7 @@
   "id": "foundry-quest-log-ru",
   "title": "Квестовый журнал",
   "description": "Полноценный русскоязычный журнал Simple Quest: квесты, Lore, карты, Timeline, достижения и личные/групповые заметки.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "authors": [
     {
       "name": "Yefim Lopatin",
@@ -11,7 +11,7 @@
   ],
   "compatibility": {
     "minimum": "14",
-    "verified": "14.366",
+    "verified": "14.367",
     "maximum": "14"
   },
   "esmodules": [

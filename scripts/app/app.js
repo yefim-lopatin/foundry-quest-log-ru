@@ -7,6 +7,7 @@ import { TabConfig } from "./tabConfig.js";
 import { ThemeConfig } from "./themeConfig.js";
 import { Socket } from "../lib/socket.js";
 import {Timeline} from "./timeline.js";
+import { exportManagedJournals, importManagedJournals } from "../importExport.js";
 
 const getHistory = () => {
     return game.user.getFlag(MODULE_ID, "history") ?? [];
@@ -131,6 +132,20 @@ export class SimpleQuest extends Application {
 
     _getHeaderButtons() {
         const buttons = super._getHeaderButtons();
+        if (game.user.isGM) {
+            buttons.unshift({
+                class: "import-journals",
+                icon: "fas fa-file-import",
+                onclick: () => importManagedJournals(),
+                title: game.i18n.localize(`${MODULE_ID}.${this.APP_ID}.importJournals`),
+            });
+            buttons.unshift({
+                class: "export-journals",
+                icon: "fas fa-file-export",
+                onclick: () => exportManagedJournals(),
+                title: game.i18n.localize(`${MODULE_ID}.${this.APP_ID}.exportJournals`),
+            });
+        }
         buttons.unshift({
             class: "windowed-mode",
             icon: "fas fa-expand",
