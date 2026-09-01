@@ -1,3 +1,7467 @@
-/*! For license information please see index.js.LICENSE.txt */
-var t={d:(r,o)=>{for(var a in o)t.o(o,a)&&!t.o(r,a)&&Object.defineProperty(r,a,{enumerable:!0,get:o[a]})},o:(t,r)=>Object.prototype.hasOwnProperty.call(t,r)};function _typeof(t){return _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},_typeof(t)}function _regeneratorRuntime(){_regeneratorRuntime=function _regeneratorRuntime(){return t};var t={},r=Object.prototype,o=r.hasOwnProperty,a=Object.defineProperty||function(t,r,o){t[r]=o.value},i="function"==typeof Symbol?Symbol:{},l=i.iterator||"@@iterator",c=i.asyncIterator||"@@asyncIterator",u=i.toStringTag||"@@toStringTag";function define(t,r,o){return Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}),t[r]}try{define({},"")}catch(t){define=function define(t,r,o){return t[r]=o}}function wrap(t,r,o,i){var l=r&&r.prototype instanceof Generator?r:Generator,c=Object.create(l.prototype),u=new Context(i||[]);return a(c,"_invoke",{value:makeInvokeMethod(t,o,u)}),c}function tryCatch(t,r,o){try{return{type:"normal",arg:t.call(r,o)}}catch(t){return{type:"throw",arg:t}}}t.wrap=wrap;var p={};function Generator(){}function GeneratorFunction(){}function GeneratorFunctionPrototype(){}var d={};define(d,l,(function(){return this}));var h=Object.getPrototypeOf,m=h&&h(h(values([])));m&&m!==r&&o.call(m,l)&&(d=m);var g=GeneratorFunctionPrototype.prototype=Generator.prototype=Object.create(d);function defineIteratorMethods(t){["next","throw","return"].forEach((function(r){define(t,r,(function(t){return this._invoke(r,t)}))}))}function AsyncIterator(t,r){function invoke(a,i,l,c){var u=tryCatch(t[a],t,i);if("throw"!==u.type){var p=u.arg,d=p.value;return d&&"object"==_typeof(d)&&o.call(d,"__await")?r.resolve(d.__await).then((function(t){invoke("next",t,l,c)}),(function(t){invoke("throw",t,l,c)})):r.resolve(d).then((function(t){p.value=t,l(p)}),(function(t){return invoke("throw",t,l,c)}))}c(u.arg)}var i;a(this,"_invoke",{value:function value(t,o){function callInvokeWithMethodAndArg(){return new r((function(r,a){invoke(t,o,r,a)}))}return i=i?i.then(callInvokeWithMethodAndArg,callInvokeWithMethodAndArg):callInvokeWithMethodAndArg()}})}function makeInvokeMethod(t,r,o){var a="suspendedStart";return function(i,l){if("executing"===a)throw new Error("Generator is already running");if("completed"===a){if("throw"===i)throw l;return doneResult()}for(o.method=i,o.arg=l;;){var c=o.delegate;if(c){var u=maybeInvokeDelegate(c,o);if(u){if(u===p)continue;return u}}if("next"===o.method)o.sent=o._sent=o.arg;else if("throw"===o.method){if("suspendedStart"===a)throw a="completed",o.arg;o.dispatchException(o.arg)}else"return"===o.method&&o.abrupt("return",o.arg);a="executing";var d=tryCatch(t,r,o);if("normal"===d.type){if(a=o.done?"completed":"suspendedYield",d.arg===p)continue;return{value:d.arg,done:o.done}}"throw"===d.type&&(a="completed",o.method="throw",o.arg=d.arg)}}}function maybeInvokeDelegate(t,r){var o=r.method,a=t.iterator[o];if(void 0===a)return r.delegate=null,"throw"===o&&t.iterator.return&&(r.method="return",r.arg=void 0,maybeInvokeDelegate(t,r),"throw"===r.method)||"return"!==o&&(r.method="throw",r.arg=new TypeError("The iterator does not provide a '"+o+"' method")),p;var i=tryCatch(a,t.iterator,r.arg);if("throw"===i.type)return r.method="throw",r.arg=i.arg,r.delegate=null,p;var l=i.arg;return l?l.done?(r[t.resultName]=l.value,r.next=t.nextLoc,"return"!==r.method&&(r.method="next",r.arg=void 0),r.delegate=null,p):l:(r.method="throw",r.arg=new TypeError("iterator result is not an object"),r.delegate=null,p)}function pushTryEntry(t){var r={tryLoc:t[0]};1 in t&&(r.catchLoc=t[1]),2 in t&&(r.finallyLoc=t[2],r.afterLoc=t[3]),this.tryEntries.push(r)}function resetTryEntry(t){var r=t.completion||{};r.type="normal",delete r.arg,t.completion=r}function Context(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(pushTryEntry,this),this.reset(!0)}function values(t){if(t){var r=t[l];if(r)return r.call(t);if("function"==typeof t.next)return t;if(!isNaN(t.length)){var a=-1,i=function next(){for(;++a<t.length;)if(o.call(t,a))return next.value=t[a],next.done=!1,next;return next.value=void 0,next.done=!0,next};return i.next=i}}return{next:doneResult}}function doneResult(){return{value:void 0,done:!0}}return GeneratorFunction.prototype=GeneratorFunctionPrototype,a(g,"constructor",{value:GeneratorFunctionPrototype,configurable:!0}),a(GeneratorFunctionPrototype,"constructor",{value:GeneratorFunction,configurable:!0}),GeneratorFunction.displayName=define(GeneratorFunctionPrototype,u,"GeneratorFunction"),t.isGeneratorFunction=function(t){var r="function"==typeof t&&t.constructor;return!!r&&(r===GeneratorFunction||"GeneratorFunction"===(r.displayName||r.name))},t.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,GeneratorFunctionPrototype):(t.__proto__=GeneratorFunctionPrototype,define(t,u,"GeneratorFunction")),t.prototype=Object.create(g),t},t.awrap=function(t){return{__await:t}},defineIteratorMethods(AsyncIterator.prototype),define(AsyncIterator.prototype,c,(function(){return this})),t.AsyncIterator=AsyncIterator,t.async=function(r,o,a,i,l){void 0===l&&(l=Promise);var c=new AsyncIterator(wrap(r,o,a,i),l);return t.isGeneratorFunction(o)?c:c.next().then((function(t){return t.done?t.value:c.next()}))},defineIteratorMethods(g),define(g,u,"Generator"),define(g,l,(function(){return this})),define(g,"toString",(function(){return"[object Generator]"})),t.keys=function(t){var r=Object(t),o=[];for(var a in r)o.push(a);return o.reverse(),function next(){for(;o.length;){var t=o.pop();if(t in r)return next.value=t,next.done=!1,next}return next.done=!0,next}},t.values=values,Context.prototype={constructor:Context,reset:function reset(t){if(this.prev=0,this.next=0,this.sent=this._sent=void 0,this.done=!1,this.delegate=null,this.method="next",this.arg=void 0,this.tryEntries.forEach(resetTryEntry),!t)for(var r in this)"t"===r.charAt(0)&&o.call(this,r)&&!isNaN(+r.slice(1))&&(this[r]=void 0)},stop:function stop(){this.done=!0;var t=this.tryEntries[0].completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function dispatchException(t){if(this.done)throw t;var r=this;function handle(o,a){return l.type="throw",l.arg=t,r.next=o,a&&(r.method="next",r.arg=void 0),!!a}for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a],l=i.completion;if("root"===i.tryLoc)return handle("end");if(i.tryLoc<=this.prev){var c=o.call(i,"catchLoc"),u=o.call(i,"finallyLoc");if(c&&u){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0);if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}else if(c){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0)}else{if(!u)throw new Error("try statement without catch or finally");if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}}}},abrupt:function abrupt(t,r){for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a];if(i.tryLoc<=this.prev&&o.call(i,"finallyLoc")&&this.prev<i.finallyLoc){var l=i;break}}l&&("break"===t||"continue"===t)&&l.tryLoc<=r&&r<=l.finallyLoc&&(l=null);var c=l?l.completion:{};return c.type=t,c.arg=r,l?(this.method="next",this.next=l.finallyLoc,p):this.complete(c)},complete:function complete(t,r){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&r&&(this.next=r),p},finish:function finish(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.finallyLoc===t)return this.complete(o.completion,o.afterLoc),resetTryEntry(o),p}},catch:function _catch(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.tryLoc===t){var a=o.completion;if("throw"===a.type){var i=a.arg;resetTryEntry(o)}return i}}throw new Error("illegal catch attempt")},delegateYield:function delegateYield(t,r,o){return this.delegate={iterator:values(t),resultName:r,nextLoc:o},"next"===this.method&&(this.arg=void 0),p}},t}function ownKeys(t,r){var o=Object.keys(t);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(t);r&&(a=a.filter((function(r){return Object.getOwnPropertyDescriptor(t,r).enumerable}))),o.push.apply(o,a)}return o}function _objectSpread(t){for(var r=1;r<arguments.length;r++){var o=null!=arguments[r]?arguments[r]:{};r%2?ownKeys(Object(o),!0).forEach((function(r){_defineProperty(t,r,o[r])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(o)):ownKeys(Object(o)).forEach((function(r){Object.defineProperty(t,r,Object.getOwnPropertyDescriptor(o,r))}))}return t}function _defineProperty(t,r,o){return(r=_toPropertyKey(r))in t?Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}):t[r]=o,t}function asyncGeneratorStep(t,r,o,a,i,l,c){try{var u=t[l](c),p=u.value}catch(t){return void o(t)}u.done?r(p):Promise.resolve(p).then(a,i)}function _asyncToGenerator(t){return function(){var r=this,o=arguments;return new Promise((function(a,i){var l=t.apply(r,o);function _next(t){asyncGeneratorStep(l,a,i,_next,_throw,"next",t)}function _throw(t){asyncGeneratorStep(l,a,i,_next,_throw,"throw",t)}_next(void 0)}))}}function _defineProperties(t,r){for(var o=0;o<r.length;o++){var a=r[o];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(t,_toPropertyKey(a.key),a)}}function _toPropertyKey(t){var r=function _toPrimitive(t,r){if("object"!==_typeof(t)||null===t)return t;var o=t[Symbol.toPrimitive];if(void 0!==o){var a=o.call(t,r||"default");if("object"!==_typeof(a))return a;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===r?String:Number)(t)}(t,"string");return"symbol"===_typeof(r)?r:String(r)}function _get(){return _get="undefined"!=typeof Reflect&&Reflect.get?Reflect.get.bind():function _get(t,r,o){var a=function _superPropBase(t,r){for(;!Object.prototype.hasOwnProperty.call(t,r)&&null!==(t=_getPrototypeOf(t)););return t}(t,r);if(a){var i=Object.getOwnPropertyDescriptor(a,r);return i.get?i.get.call(arguments.length<3?t:o):i.value}},_get.apply(this,arguments)}function _setPrototypeOf(t,r){return _setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(t,r){return t.__proto__=r,t},_setPrototypeOf(t,r)}function _createSuper(t){var r=function _isNativeReflectConstruct(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(t){return!1}}();return function _createSuperInternal(){var o,a=_getPrototypeOf(t);if(r){var i=_getPrototypeOf(this).constructor;o=Reflect.construct(a,arguments,i)}else o=a.apply(this,arguments);return function _possibleConstructorReturn(t,r){if(r&&("object"===_typeof(r)||"function"==typeof r))return r;if(void 0!==r)throw new TypeError("Derived constructors may only return object or undefined");return function _assertThisInitialized(t){if(void 0===t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}(t)}(this,o)}}function _getPrototypeOf(t){return _getPrototypeOf=Object.setPrototypeOf?Object.getPrototypeOf.bind():function _getPrototypeOf(t){return t.__proto__||Object.getPrototypeOf(t)},_getPrototypeOf(t)}t.d({},{c:()=>Xe});var r=function(t){!function _inherits(t,r){if("function"!=typeof r&&null!==r)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(r&&r.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),Object.defineProperty(t,"prototype",{writable:!1}),r&&_setPrototypeOf(t,r)}(TabConfig,FormApplication);var r,o,a=_createSuper(TabConfig);function TabConfig(){return function _classCallCheck(t,r){if(!(t instanceof r))throw new TypeError("Cannot call a class as a function")}(this,TabConfig),a.call(this)}return function _createClass(t,r,o){return r&&_defineProperties(t.prototype,r),o&&_defineProperties(t,o),Object.defineProperty(t,"prototype",{writable:!1}),t}(TabConfig,[{key:"APP_ID",get:function get(){return this.constructor.APP_ID}},{key:"getData",value:(o=_asyncToGenerator(_regeneratorRuntime().mark((function _callee(){return _regeneratorRuntime().wrap((function _callee$(t){for(;;)switch(t.prev=t.next){case 0:return t.abrupt("return",_objectSpread({},getTabNames()));case 1:case"end":return t.stop()}}),_callee)}))),function getData(){return o.apply(this,arguments)})},{key:"_updateObject",value:(r=_asyncToGenerator(_regeneratorRuntime().mark((function _callee2(t,r){return _regeneratorRuntime().wrap((function _callee2$(t){for(;;)switch(t.prev=t.next){case 0:return r=foundry.utils.expandObject(r),t.abrupt("return",setSetting("tabNames",r));case 2:case"end":return t.stop()}}),_callee2)}))),function _updateObject(t,o){return r.apply(this,arguments)})}],[{key:"APP_ID",get:function get(){return this.name.split(/(?=[A-Z])/).join("-").toLowerCase()}},{key:"defaultOptions",get:function get(){return foundry.utils.mergeObject(_get(_getPrototypeOf(TabConfig),"defaultOptions",this),{id:this.APP_ID,template:"modules/".concat(Xe,"/templates/").concat(this.APP_ID,".hbs"),popOut:!0,minimizable:!0,title:game.i18n.localize("".concat(Xe,".").concat(this.APP_ID,".title")),closeOnSubmit:!0,width:400})}}]),TabConfig}();function themeConfig_typeof(t){return themeConfig_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},themeConfig_typeof(t)}function themeConfig_regeneratorRuntime(){themeConfig_regeneratorRuntime=function _regeneratorRuntime(){return t};var t={},r=Object.prototype,o=r.hasOwnProperty,a=Object.defineProperty||function(t,r,o){t[r]=o.value},i="function"==typeof Symbol?Symbol:{},l=i.iterator||"@@iterator",c=i.asyncIterator||"@@asyncIterator",u=i.toStringTag||"@@toStringTag";function define(t,r,o){return Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}),t[r]}try{define({},"")}catch(t){define=function define(t,r,o){return t[r]=o}}function wrap(t,r,o,i){var l=r&&r.prototype instanceof Generator?r:Generator,c=Object.create(l.prototype),u=new Context(i||[]);return a(c,"_invoke",{value:makeInvokeMethod(t,o,u)}),c}function tryCatch(t,r,o){try{return{type:"normal",arg:t.call(r,o)}}catch(t){return{type:"throw",arg:t}}}t.wrap=wrap;var p={};function Generator(){}function GeneratorFunction(){}function GeneratorFunctionPrototype(){}var d={};define(d,l,(function(){return this}));var h=Object.getPrototypeOf,m=h&&h(h(values([])));m&&m!==r&&o.call(m,l)&&(d=m);var g=GeneratorFunctionPrototype.prototype=Generator.prototype=Object.create(d);function defineIteratorMethods(t){["next","throw","return"].forEach((function(r){define(t,r,(function(t){return this._invoke(r,t)}))}))}function AsyncIterator(t,r){function invoke(a,i,l,c){var u=tryCatch(t[a],t,i);if("throw"!==u.type){var p=u.arg,d=p.value;return d&&"object"==themeConfig_typeof(d)&&o.call(d,"__await")?r.resolve(d.__await).then((function(t){invoke("next",t,l,c)}),(function(t){invoke("throw",t,l,c)})):r.resolve(d).then((function(t){p.value=t,l(p)}),(function(t){return invoke("throw",t,l,c)}))}c(u.arg)}var i;a(this,"_invoke",{value:function value(t,o){function callInvokeWithMethodAndArg(){return new r((function(r,a){invoke(t,o,r,a)}))}return i=i?i.then(callInvokeWithMethodAndArg,callInvokeWithMethodAndArg):callInvokeWithMethodAndArg()}})}function makeInvokeMethod(t,r,o){var a="suspendedStart";return function(i,l){if("executing"===a)throw new Error("Generator is already running");if("completed"===a){if("throw"===i)throw l;return doneResult()}for(o.method=i,o.arg=l;;){var c=o.delegate;if(c){var u=maybeInvokeDelegate(c,o);if(u){if(u===p)continue;return u}}if("next"===o.method)o.sent=o._sent=o.arg;else if("throw"===o.method){if("suspendedStart"===a)throw a="completed",o.arg;o.dispatchException(o.arg)}else"return"===o.method&&o.abrupt("return",o.arg);a="executing";var d=tryCatch(t,r,o);if("normal"===d.type){if(a=o.done?"completed":"suspendedYield",d.arg===p)continue;return{value:d.arg,done:o.done}}"throw"===d.type&&(a="completed",o.method="throw",o.arg=d.arg)}}}function maybeInvokeDelegate(t,r){var o=r.method,a=t.iterator[o];if(void 0===a)return r.delegate=null,"throw"===o&&t.iterator.return&&(r.method="return",r.arg=void 0,maybeInvokeDelegate(t,r),"throw"===r.method)||"return"!==o&&(r.method="throw",r.arg=new TypeError("The iterator does not provide a '"+o+"' method")),p;var i=tryCatch(a,t.iterator,r.arg);if("throw"===i.type)return r.method="throw",r.arg=i.arg,r.delegate=null,p;var l=i.arg;return l?l.done?(r[t.resultName]=l.value,r.next=t.nextLoc,"return"!==r.method&&(r.method="next",r.arg=void 0),r.delegate=null,p):l:(r.method="throw",r.arg=new TypeError("iterator result is not an object"),r.delegate=null,p)}function pushTryEntry(t){var r={tryLoc:t[0]};1 in t&&(r.catchLoc=t[1]),2 in t&&(r.finallyLoc=t[2],r.afterLoc=t[3]),this.tryEntries.push(r)}function resetTryEntry(t){var r=t.completion||{};r.type="normal",delete r.arg,t.completion=r}function Context(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(pushTryEntry,this),this.reset(!0)}function values(t){if(t){var r=t[l];if(r)return r.call(t);if("function"==typeof t.next)return t;if(!isNaN(t.length)){var a=-1,i=function next(){for(;++a<t.length;)if(o.call(t,a))return next.value=t[a],next.done=!1,next;return next.value=void 0,next.done=!0,next};return i.next=i}}return{next:doneResult}}function doneResult(){return{value:void 0,done:!0}}return GeneratorFunction.prototype=GeneratorFunctionPrototype,a(g,"constructor",{value:GeneratorFunctionPrototype,configurable:!0}),a(GeneratorFunctionPrototype,"constructor",{value:GeneratorFunction,configurable:!0}),GeneratorFunction.displayName=define(GeneratorFunctionPrototype,u,"GeneratorFunction"),t.isGeneratorFunction=function(t){var r="function"==typeof t&&t.constructor;return!!r&&(r===GeneratorFunction||"GeneratorFunction"===(r.displayName||r.name))},t.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,GeneratorFunctionPrototype):(t.__proto__=GeneratorFunctionPrototype,define(t,u,"GeneratorFunction")),t.prototype=Object.create(g),t},t.awrap=function(t){return{__await:t}},defineIteratorMethods(AsyncIterator.prototype),define(AsyncIterator.prototype,c,(function(){return this})),t.AsyncIterator=AsyncIterator,t.async=function(r,o,a,i,l){void 0===l&&(l=Promise);var c=new AsyncIterator(wrap(r,o,a,i),l);return t.isGeneratorFunction(o)?c:c.next().then((function(t){return t.done?t.value:c.next()}))},defineIteratorMethods(g),define(g,u,"Generator"),define(g,l,(function(){return this})),define(g,"toString",(function(){return"[object Generator]"})),t.keys=function(t){var r=Object(t),o=[];for(var a in r)o.push(a);return o.reverse(),function next(){for(;o.length;){var t=o.pop();if(t in r)return next.value=t,next.done=!1,next}return next.done=!0,next}},t.values=values,Context.prototype={constructor:Context,reset:function reset(t){if(this.prev=0,this.next=0,this.sent=this._sent=void 0,this.done=!1,this.delegate=null,this.method="next",this.arg=void 0,this.tryEntries.forEach(resetTryEntry),!t)for(var r in this)"t"===r.charAt(0)&&o.call(this,r)&&!isNaN(+r.slice(1))&&(this[r]=void 0)},stop:function stop(){this.done=!0;var t=this.tryEntries[0].completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function dispatchException(t){if(this.done)throw t;var r=this;function handle(o,a){return l.type="throw",l.arg=t,r.next=o,a&&(r.method="next",r.arg=void 0),!!a}for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a],l=i.completion;if("root"===i.tryLoc)return handle("end");if(i.tryLoc<=this.prev){var c=o.call(i,"catchLoc"),u=o.call(i,"finallyLoc");if(c&&u){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0);if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}else if(c){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0)}else{if(!u)throw new Error("try statement without catch or finally");if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}}}},abrupt:function abrupt(t,r){for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a];if(i.tryLoc<=this.prev&&o.call(i,"finallyLoc")&&this.prev<i.finallyLoc){var l=i;break}}l&&("break"===t||"continue"===t)&&l.tryLoc<=r&&r<=l.finallyLoc&&(l=null);var c=l?l.completion:{};return c.type=t,c.arg=r,l?(this.method="next",this.next=l.finallyLoc,p):this.complete(c)},complete:function complete(t,r){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&r&&(this.next=r),p},finish:function finish(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.finallyLoc===t)return this.complete(o.completion,o.afterLoc),resetTryEntry(o),p}},catch:function _catch(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.tryLoc===t){var a=o.completion;if("throw"===a.type){var i=a.arg;resetTryEntry(o)}return i}}throw new Error("illegal catch attempt")},delegateYield:function delegateYield(t,r,o){return this.delegate={iterator:values(t),resultName:r,nextLoc:o},"next"===this.method&&(this.arg=void 0),p}},t}function themeConfig_asyncGeneratorStep(t,r,o,a,i,l,c){try{var u=t[l](c),p=u.value}catch(t){return void o(t)}u.done?r(p):Promise.resolve(p).then(a,i)}function themeConfig_asyncToGenerator(t){return function(){var r=this,o=arguments;return new Promise((function(a,i){var l=t.apply(r,o);function _next(t){themeConfig_asyncGeneratorStep(l,a,i,_next,_throw,"next",t)}function _throw(t){themeConfig_asyncGeneratorStep(l,a,i,_next,_throw,"throw",t)}_next(void 0)}))}}function themeConfig_defineProperties(t,r){for(var o=0;o<r.length;o++){var a=r[o];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(t,(i=a.key,l=void 0,l=function themeConfig_toPrimitive(t,r){if("object"!==themeConfig_typeof(t)||null===t)return t;var o=t[Symbol.toPrimitive];if(void 0!==o){var a=o.call(t,r||"default");if("object"!==themeConfig_typeof(a))return a;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===r?String:Number)(t)}(i,"string"),"symbol"===themeConfig_typeof(l)?l:String(l)),a)}var i,l}function themeConfig_get(){return themeConfig_get="undefined"!=typeof Reflect&&Reflect.get?Reflect.get.bind():function _get(t,r,o){var a=function themeConfig_superPropBase(t,r){for(;!Object.prototype.hasOwnProperty.call(t,r)&&null!==(t=themeConfig_getPrototypeOf(t)););return t}(t,r);if(a){var i=Object.getOwnPropertyDescriptor(a,r);return i.get?i.get.call(arguments.length<3?t:o):i.value}},themeConfig_get.apply(this,arguments)}function themeConfig_setPrototypeOf(t,r){return themeConfig_setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(t,r){return t.__proto__=r,t},themeConfig_setPrototypeOf(t,r)}function themeConfig_createSuper(t){var r=function themeConfig_isNativeReflectConstruct(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(t){return!1}}();return function _createSuperInternal(){var o,a=themeConfig_getPrototypeOf(t);if(r){var i=themeConfig_getPrototypeOf(this).constructor;o=Reflect.construct(a,arguments,i)}else o=a.apply(this,arguments);return function themeConfig_possibleConstructorReturn(t,r){if(r&&("object"===themeConfig_typeof(r)||"function"==typeof r))return r;if(void 0!==r)throw new TypeError("Derived constructors may only return object or undefined");return function themeConfig_assertThisInitialized(t){if(void 0===t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}(t)}(this,o)}}function themeConfig_getPrototypeOf(t){return themeConfig_getPrototypeOf=Object.setPrototypeOf?Object.getPrototypeOf.bind():function _getPrototypeOf(t){return t.__proto__||Object.getPrototypeOf(t)},themeConfig_getPrototypeOf(t)}var o={default:{backgroundColor:"#1b130d",textColor:"#f5deb3",secretColor:"#ff00ff",failedColor:"#ff0000",fontFamily:"Times New Roman"},redDragon:{backgroundColor:"#1b130d",textColor:"#e6415a",secretColor:"#0091ff",failedColor:"#ff7b00",fontFamily:"Signika",headerOnlyFont:"Modesto Condensed"},whiteDragon:{backgroundColor:"#f1ebe8",textColor:"#1c1c1c",secretColor:"#0091ff",failedColor:"#ff0000",fontFamily:"Signika",headerOnlyFont:"Modesto Condensed"},"D&D":{backgroundColor:'url("/systems/dnd5e/ui/texture1.webp") no-repeat top center / 150% auto, #f1ebe8 url("/systems/dnd5e/ui/texture2.webp") no-repeat bottom center / 150% auto',textColor:"#1c1c1c",secretColor:"#0091ff",failedColor:"#ff0000",fontFamily:"Roboto Condensed",headerOnlyFont:"Modesto Condensed"},typewriter:{backgroundColor:"#d9ccc4",textColor:"#1c1c1c",secretColor:"#834b16",failedColor:"#ff0000",fontFamily:"Courier New"},postApocalypticWasteland:{backgroundColor:"#5c5c5c",textColor:"#bfbfbf",secretColor:"#008080",failedColor:"#cc3300",fontFamily:"Courier New"},cyberpunkCity:{backgroundColor:"#000000",textColor:"#00ffcc",secretColor:"#ff66b2",failedColor:"#ff3300",fontFamily:"Modesto Condensed"},galacticAdventure:{backgroundColor:"#0e0e0e",textColor:"#ffffff",secretColor:"#00ffcc",failedColor:"#ff0000",fontFamily:"Signika",headerOnlyFont:"Bruno Ace"},steampunkWorkshop:{backgroundColor:"#2b2b2b",textColor:"#b98946",secretColor:"#00ccff",failedColor:"#a52a2a",fontFamily:"Modesto Condensed"},dystopianFuture:{backgroundColor:"#333333",textColor:"#ff6666",secretColor:"#00ccff",failedColor:"#990000",fontFamily:"Currier New"},virtualRealityOasis:{backgroundColor:"#111111",textColor:"#00ffcc",secretColor:"#ff00ff",failedColor:"#ff3300",fontFamily:"Modesto Condensed"},mysticForest:{backgroundColor:"#003300",textColor:"#99cc66",secretColor:"#9933ff",failedColor:"#cc0000",fontFamily:"Amiri"},vintageFilmNoir:{backgroundColor:"#000000",textColor:"#ffffff",secretColor:"#9900cc",failedColor:"#cc0000",fontFamily:"Signika",headerOnlyFont:"Courier New"},sciFiConsole:{backgroundColor:"#000000",textColor:"#00ffcc",secretColor:"#ff66b2",failedColor:"#ff3300",fontFamily:"Courier"},futuristicTech:{backgroundColor:"#1a1a1a",textColor:"#99cc66",secretColor:"#3366ff",failedColor:"#cc0000",fontFamily:"Roboto"},alienInvasion:{backgroundColor:"#0a0a0a",textColor:"#00ccff",secretColor:"#ff00ff",failedColor:"#ff3300",fontFamily:"Signika"},ancientScrolls:{backgroundColor:"#f5e6cc",textColor:"#663300",secretColor:"#9933ff",failedColor:"#cc0000",fontFamily:"Times"},steampunkAdventure:{backgroundColor:"#2b2b2b",textColor:"#ffd700",secretColor:"#00ccff",failedColor:"#a52a2a",fontFamily:"Roboto Slab"}},a=function(t){!function themeConfig_inherits(t,r){if("function"!=typeof r&&null!==r)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(r&&r.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),Object.defineProperty(t,"prototype",{writable:!1}),r&&themeConfig_setPrototypeOf(t,r)}(ThemeConfig,FormApplication);var r,a,i,l=themeConfig_createSuper(ThemeConfig);function ThemeConfig(){var t;return function themeConfig_classCallCheck(t,r){if(!(t instanceof r))throw new TypeError("Cannot call a class as a function")}(this,ThemeConfig),t=l.call(this),ui.simpleQuest.render(!0),setSetting("themeConfigShown",!0),t}return function themeConfig_createClass(t,r,o){return r&&themeConfig_defineProperties(t.prototype,r),o&&themeConfig_defineProperties(t,o),Object.defineProperty(t,"prototype",{writable:!1}),t}(ThemeConfig,[{key:"APP_ID",get:function get(){return this.constructor.APP_ID}},{key:"activateListeners",value:function activateListeners(t){var r=this;themeConfig_get(themeConfig_getPrototypeOf(ThemeConfig.prototype),"activateListeners",this).call(this,t),(t=t[0]).querySelectorAll("button").forEach((function(t){t.addEventListener("click",(function(t){var o=t.target.dataset.theme;r.setTheme(o)}))}))}},{key:"setTheme",value:(i=themeConfig_asyncToGenerator(themeConfig_regeneratorRuntime().mark((function _callee(t){var r,a,i,l;return themeConfig_regeneratorRuntime().wrap((function _callee$(c){for(;;)switch(c.prev=c.next){case 0:void 0===(r=o[t]).headerOnlyFont&&(r.headerOnlyFont="default"),a=0,i=Object.keys(r);case 3:if(!(a<i.length)){c.next=10;break}return l=i[a],c.next=7,setSetting(l,r[l]);case 7:a++,c.next=3;break;case 10:this.setPosition({height:"auto"});case 11:case"end":return c.stop()}}),_callee,this)}))),function setTheme(t){return i.apply(this,arguments)})},{key:"getData",value:(a=themeConfig_asyncToGenerator(themeConfig_regeneratorRuntime().mark((function _callee2(){var t=this;return themeConfig_regeneratorRuntime().wrap((function _callee2$(r){for(;;)switch(r.prev=r.next){case 0:return r.abrupt("return",{themes:Object.keys(o).map((function(r){return{id:r,label:game.i18n.localize("".concat(Xe,".").concat(t.APP_ID,".themes.").concat(r))}}))});case 1:case"end":return r.stop()}}),_callee2)}))),function getData(){return a.apply(this,arguments)})},{key:"_updateObject",value:(r=themeConfig_asyncToGenerator(themeConfig_regeneratorRuntime().mark((function _callee3(t,r){return themeConfig_regeneratorRuntime().wrap((function _callee3$(t){for(;;)switch(t.prev=t.next){case 0:case"end":return t.stop()}}),_callee3)}))),function _updateObject(t,o){return r.apply(this,arguments)})}],[{key:"APP_ID",get:function get(){return this.name.split(/(?=[A-Z])/).join("-").toLowerCase()}},{key:"defaultOptions",get:function get(){return foundry.utils.mergeObject(themeConfig_get(themeConfig_getPrototypeOf(ThemeConfig),"defaultOptions",this),{id:Xe+"-"+this.APP_ID,template:"modules/".concat(Xe,"/templates/").concat(this.APP_ID,".hbs"),popOut:!0,minimizable:!0,title:game.i18n.localize("".concat(Xe,".").concat(this.APP_ID,".title")),closeOnSubmit:!0,width:400})}}]),ThemeConfig}();function theaterOfTheMind_typeof(t){return theaterOfTheMind_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},theaterOfTheMind_typeof(t)}function theaterOfTheMind_regeneratorRuntime(){theaterOfTheMind_regeneratorRuntime=function _regeneratorRuntime(){return t};var t={},r=Object.prototype,o=r.hasOwnProperty,a=Object.defineProperty||function(t,r,o){t[r]=o.value},i="function"==typeof Symbol?Symbol:{},l=i.iterator||"@@iterator",c=i.asyncIterator||"@@asyncIterator",u=i.toStringTag||"@@toStringTag";function define(t,r,o){return Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}),t[r]}try{define({},"")}catch(t){define=function define(t,r,o){return t[r]=o}}function wrap(t,r,o,i){var l=r&&r.prototype instanceof Generator?r:Generator,c=Object.create(l.prototype),u=new Context(i||[]);return a(c,"_invoke",{value:makeInvokeMethod(t,o,u)}),c}function tryCatch(t,r,o){try{return{type:"normal",arg:t.call(r,o)}}catch(t){return{type:"throw",arg:t}}}t.wrap=wrap;var p={};function Generator(){}function GeneratorFunction(){}function GeneratorFunctionPrototype(){}var d={};define(d,l,(function(){return this}));var h=Object.getPrototypeOf,m=h&&h(h(values([])));m&&m!==r&&o.call(m,l)&&(d=m);var g=GeneratorFunctionPrototype.prototype=Generator.prototype=Object.create(d);function defineIteratorMethods(t){["next","throw","return"].forEach((function(r){define(t,r,(function(t){return this._invoke(r,t)}))}))}function AsyncIterator(t,r){function invoke(a,i,l,c){var u=tryCatch(t[a],t,i);if("throw"!==u.type){var p=u.arg,d=p.value;return d&&"object"==theaterOfTheMind_typeof(d)&&o.call(d,"__await")?r.resolve(d.__await).then((function(t){invoke("next",t,l,c)}),(function(t){invoke("throw",t,l,c)})):r.resolve(d).then((function(t){p.value=t,l(p)}),(function(t){return invoke("throw",t,l,c)}))}c(u.arg)}var i;a(this,"_invoke",{value:function value(t,o){function callInvokeWithMethodAndArg(){return new r((function(r,a){invoke(t,o,r,a)}))}return i=i?i.then(callInvokeWithMethodAndArg,callInvokeWithMethodAndArg):callInvokeWithMethodAndArg()}})}function makeInvokeMethod(t,r,o){var a="suspendedStart";return function(i,l){if("executing"===a)throw new Error("Generator is already running");if("completed"===a){if("throw"===i)throw l;return doneResult()}for(o.method=i,o.arg=l;;){var c=o.delegate;if(c){var u=maybeInvokeDelegate(c,o);if(u){if(u===p)continue;return u}}if("next"===o.method)o.sent=o._sent=o.arg;else if("throw"===o.method){if("suspendedStart"===a)throw a="completed",o.arg;o.dispatchException(o.arg)}else"return"===o.method&&o.abrupt("return",o.arg);a="executing";var d=tryCatch(t,r,o);if("normal"===d.type){if(a=o.done?"completed":"suspendedYield",d.arg===p)continue;return{value:d.arg,done:o.done}}"throw"===d.type&&(a="completed",o.method="throw",o.arg=d.arg)}}}function maybeInvokeDelegate(t,r){var o=r.method,a=t.iterator[o];if(void 0===a)return r.delegate=null,"throw"===o&&t.iterator.return&&(r.method="return",r.arg=void 0,maybeInvokeDelegate(t,r),"throw"===r.method)||"return"!==o&&(r.method="throw",r.arg=new TypeError("The iterator does not provide a '"+o+"' method")),p;var i=tryCatch(a,t.iterator,r.arg);if("throw"===i.type)return r.method="throw",r.arg=i.arg,r.delegate=null,p;var l=i.arg;return l?l.done?(r[t.resultName]=l.value,r.next=t.nextLoc,"return"!==r.method&&(r.method="next",r.arg=void 0),r.delegate=null,p):l:(r.method="throw",r.arg=new TypeError("iterator result is not an object"),r.delegate=null,p)}function pushTryEntry(t){var r={tryLoc:t[0]};1 in t&&(r.catchLoc=t[1]),2 in t&&(r.finallyLoc=t[2],r.afterLoc=t[3]),this.tryEntries.push(r)}function resetTryEntry(t){var r=t.completion||{};r.type="normal",delete r.arg,t.completion=r}function Context(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(pushTryEntry,this),this.reset(!0)}function values(t){if(t){var r=t[l];if(r)return r.call(t);if("function"==typeof t.next)return t;if(!isNaN(t.length)){var a=-1,i=function next(){for(;++a<t.length;)if(o.call(t,a))return next.value=t[a],next.done=!1,next;return next.value=void 0,next.done=!0,next};return i.next=i}}return{next:doneResult}}function doneResult(){return{value:void 0,done:!0}}return GeneratorFunction.prototype=GeneratorFunctionPrototype,a(g,"constructor",{value:GeneratorFunctionPrototype,configurable:!0}),a(GeneratorFunctionPrototype,"constructor",{value:GeneratorFunction,configurable:!0}),GeneratorFunction.displayName=define(GeneratorFunctionPrototype,u,"GeneratorFunction"),t.isGeneratorFunction=function(t){var r="function"==typeof t&&t.constructor;return!!r&&(r===GeneratorFunction||"GeneratorFunction"===(r.displayName||r.name))},t.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,GeneratorFunctionPrototype):(t.__proto__=GeneratorFunctionPrototype,define(t,u,"GeneratorFunction")),t.prototype=Object.create(g),t},t.awrap=function(t){return{__await:t}},defineIteratorMethods(AsyncIterator.prototype),define(AsyncIterator.prototype,c,(function(){return this})),t.AsyncIterator=AsyncIterator,t.async=function(r,o,a,i,l){void 0===l&&(l=Promise);var c=new AsyncIterator(wrap(r,o,a,i),l);return t.isGeneratorFunction(o)?c:c.next().then((function(t){return t.done?t.value:c.next()}))},defineIteratorMethods(g),define(g,u,"Generator"),define(g,l,(function(){return this})),define(g,"toString",(function(){return"[object Generator]"})),t.keys=function(t){var r=Object(t),o=[];for(var a in r)o.push(a);return o.reverse(),function next(){for(;o.length;){var t=o.pop();if(t in r)return next.value=t,next.done=!1,next}return next.done=!0,next}},t.values=values,Context.prototype={constructor:Context,reset:function reset(t){if(this.prev=0,this.next=0,this.sent=this._sent=void 0,this.done=!1,this.delegate=null,this.method="next",this.arg=void 0,this.tryEntries.forEach(resetTryEntry),!t)for(var r in this)"t"===r.charAt(0)&&o.call(this,r)&&!isNaN(+r.slice(1))&&(this[r]=void 0)},stop:function stop(){this.done=!0;var t=this.tryEntries[0].completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function dispatchException(t){if(this.done)throw t;var r=this;function handle(o,a){return l.type="throw",l.arg=t,r.next=o,a&&(r.method="next",r.arg=void 0),!!a}for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a],l=i.completion;if("root"===i.tryLoc)return handle("end");if(i.tryLoc<=this.prev){var c=o.call(i,"catchLoc"),u=o.call(i,"finallyLoc");if(c&&u){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0);if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}else if(c){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0)}else{if(!u)throw new Error("try statement without catch or finally");if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}}}},abrupt:function abrupt(t,r){for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a];if(i.tryLoc<=this.prev&&o.call(i,"finallyLoc")&&this.prev<i.finallyLoc){var l=i;break}}l&&("break"===t||"continue"===t)&&l.tryLoc<=r&&r<=l.finallyLoc&&(l=null);var c=l?l.completion:{};return c.type=t,c.arg=r,l?(this.method="next",this.next=l.finallyLoc,p):this.complete(c)},complete:function complete(t,r){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&r&&(this.next=r),p},finish:function finish(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.finallyLoc===t)return this.complete(o.completion,o.afterLoc),resetTryEntry(o),p}},catch:function _catch(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.tryLoc===t){var a=o.completion;if("throw"===a.type){var i=a.arg;resetTryEntry(o)}return i}}throw new Error("illegal catch attempt")},delegateYield:function delegateYield(t,r,o){return this.delegate={iterator:values(t),resultName:r,nextLoc:o},"next"===this.method&&(this.arg=void 0),p}},t}function theaterOfTheMind_asyncGeneratorStep(t,r,o,a,i,l,c){try{var u=t[l](c),p=u.value}catch(t){return void o(t)}u.done?r(p):Promise.resolve(p).then(a,i)}function theaterOfTheMind_asyncToGenerator(t){return function(){var r=this,o=arguments;return new Promise((function(a,i){var l=t.apply(r,o);function _next(t){theaterOfTheMind_asyncGeneratorStep(l,a,i,_next,_throw,"next",t)}function _throw(t){theaterOfTheMind_asyncGeneratorStep(l,a,i,_next,_throw,"throw",t)}_next(void 0)}))}}function theaterOfTheMind_defineProperties(t,r){for(var o=0;o<r.length;o++){var a=r[o];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(t,(i=a.key,l=void 0,l=function theaterOfTheMind_toPrimitive(t,r){if("object"!==theaterOfTheMind_typeof(t)||null===t)return t;var o=t[Symbol.toPrimitive];if(void 0!==o){var a=o.call(t,r||"default");if("object"!==theaterOfTheMind_typeof(a))return a;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===r?String:Number)(t)}(i,"string"),"symbol"===theaterOfTheMind_typeof(l)?l:String(l)),a)}var i,l}function theaterOfTheMind_get(){return theaterOfTheMind_get="undefined"!=typeof Reflect&&Reflect.get?Reflect.get.bind():function _get(t,r,o){var a=function theaterOfTheMind_superPropBase(t,r){for(;!Object.prototype.hasOwnProperty.call(t,r)&&null!==(t=theaterOfTheMind_getPrototypeOf(t)););return t}(t,r);if(a){var i=Object.getOwnPropertyDescriptor(a,r);return i.get?i.get.call(arguments.length<3?t:o):i.value}},theaterOfTheMind_get.apply(this,arguments)}function theaterOfTheMind_setPrototypeOf(t,r){return theaterOfTheMind_setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(t,r){return t.__proto__=r,t},theaterOfTheMind_setPrototypeOf(t,r)}function theaterOfTheMind_createSuper(t){var r=function theaterOfTheMind_isNativeReflectConstruct(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(t){return!1}}();return function _createSuperInternal(){var o,a=theaterOfTheMind_getPrototypeOf(t);if(r){var i=theaterOfTheMind_getPrototypeOf(this).constructor;o=Reflect.construct(a,arguments,i)}else o=a.apply(this,arguments);return function theaterOfTheMind_possibleConstructorReturn(t,r){if(r&&("object"===theaterOfTheMind_typeof(r)||"function"==typeof r))return r;if(void 0!==r)throw new TypeError("Derived constructors may only return object or undefined");return theaterOfTheMind_assertThisInitialized(t)}(this,o)}}function theaterOfTheMind_assertThisInitialized(t){if(void 0===t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}function theaterOfTheMind_getPrototypeOf(t){return theaterOfTheMind_getPrototypeOf=Object.setPrototypeOf?Object.getPrototypeOf.bind():function _getPrototypeOf(t){return t.__proto__||Object.getPrototypeOf(t)},theaterOfTheMind_getPrototypeOf(t)}var i=function(t){!function theaterOfTheMind_inherits(t,r){if("function"!=typeof r&&null!==r)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(r&&r.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),Object.defineProperty(t,"prototype",{writable:!1}),r&&theaterOfTheMind_setPrototypeOf(t,r)}(TheaterOfTheMind,Application);var r,o,a=theaterOfTheMind_createSuper(TheaterOfTheMind);function TheaterOfTheMind(t){var r,o;return function theaterOfTheMind_classCallCheck(t,r){if(!(t instanceof r))throw new TypeError("Cannot call a class as a function")}(this,TheaterOfTheMind),(o=a.call(this)).src=t.src,o.ttmTitle=t.title,o.isVideo=o.src.toLowerCase().endsWith(".mp4")||o.src.toLowerCase().endsWith(".webm"),null===(r=ui.theaterOfTheMind)||void 0===r||r.close(),ui.theaterOfTheMind=theaterOfTheMind_assertThisInitialized(o),o}return function theaterOfTheMind_createClass(t,r,o){return r&&theaterOfTheMind_defineProperties(t.prototype,r),o&&theaterOfTheMind_defineProperties(t,o),Object.defineProperty(t,"prototype",{writable:!1}),t}(TheaterOfTheMind,[{key:"APP_ID",get:function get(){return this.constructor.APP_ID}},{key:"getData",value:(o=theaterOfTheMind_asyncToGenerator(theaterOfTheMind_regeneratorRuntime().mark((function _callee(){return theaterOfTheMind_regeneratorRuntime().wrap((function _callee$(t){for(;;)switch(t.prev=t.next){case 0:return t.abrupt("return",{src:this.src,isVideo:this.isVideo,title:this.ttmTitle});case 1:case"end":return t.stop()}}),_callee,this)}))),function getData(){return o.apply(this,arguments)})},{key:"activateListeners",value:function activateListeners(t){var r;theaterOfTheMind_get(theaterOfTheMind_getPrototypeOf(TheaterOfTheMind.prototype),"activateListeners",this).call(this,t),t=null!==(r=t[0])&&void 0!==r?r:t,document.querySelector("#interface").appendChild(t),t.onclick=function(){return t.classList.toggle("minimized")},game.user.isGM&&(t.oncontextmenu=function(t){return setSetting("ttmSrc",null)})}},{key:"close",value:(r=theaterOfTheMind_asyncToGenerator(theaterOfTheMind_regeneratorRuntime().mark((function _callee2(){return theaterOfTheMind_regeneratorRuntime().wrap((function _callee2$(t){for(;;)switch(t.prev=t.next){case 0:return ui.theaterOfTheMind=null,t.abrupt("return",theaterOfTheMind_get(theaterOfTheMind_getPrototypeOf(TheaterOfTheMind.prototype),"close",this).call(this));case 2:case"end":return t.stop()}}),_callee2,this)}))),function close(){return r.apply(this,arguments)})}],[{key:"APP_ID",get:function get(){return this.name.split(/(?=[A-Z])/).join("-").toLowerCase()}},{key:"defaultOptions",get:function get(){return foundry.utils.mergeObject(theaterOfTheMind_get(theaterOfTheMind_getPrototypeOf(TheaterOfTheMind),"defaultOptions",this),{id:this.APP_ID,template:"modules/".concat(Xe,"/templates/").concat(this.APP_ID,".hbs"),popOut:!1,minimizable:!1,title:game.i18n.localize("".concat(Xe,".").concat(this.APP_ID,".title"))})}}]),TheaterOfTheMind}();function setTTM(t){var r,o;if(null===(r=t=t||getSetting("ttmSrc"))||void 0===r||!r.src)return null===(o=ui.theaterOfTheMind)||void 0===o?void 0:o.close();new i(t).render(!0)}function settings_regeneratorRuntime(){settings_regeneratorRuntime=function _regeneratorRuntime(){return t};var t={},r=Object.prototype,o=r.hasOwnProperty,a=Object.defineProperty||function(t,r,o){t[r]=o.value},i="function"==typeof Symbol?Symbol:{},l=i.iterator||"@@iterator",c=i.asyncIterator||"@@asyncIterator",u=i.toStringTag||"@@toStringTag";function define(t,r,o){return Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}),t[r]}try{define({},"")}catch(t){define=function define(t,r,o){return t[r]=o}}function wrap(t,r,o,i){var l=r&&r.prototype instanceof Generator?r:Generator,c=Object.create(l.prototype),u=new Context(i||[]);return a(c,"_invoke",{value:makeInvokeMethod(t,o,u)}),c}function tryCatch(t,r,o){try{return{type:"normal",arg:t.call(r,o)}}catch(t){return{type:"throw",arg:t}}}t.wrap=wrap;var p={};function Generator(){}function GeneratorFunction(){}function GeneratorFunctionPrototype(){}var d={};define(d,l,(function(){return this}));var h=Object.getPrototypeOf,m=h&&h(h(values([])));m&&m!==r&&o.call(m,l)&&(d=m);var g=GeneratorFunctionPrototype.prototype=Generator.prototype=Object.create(d);function defineIteratorMethods(t){["next","throw","return"].forEach((function(r){define(t,r,(function(t){return this._invoke(r,t)}))}))}function AsyncIterator(t,r){function invoke(a,i,l,c){var u=tryCatch(t[a],t,i);if("throw"!==u.type){var p=u.arg,d=p.value;return d&&"object"==settings_typeof(d)&&o.call(d,"__await")?r.resolve(d.__await).then((function(t){invoke("next",t,l,c)}),(function(t){invoke("throw",t,l,c)})):r.resolve(d).then((function(t){p.value=t,l(p)}),(function(t){return invoke("throw",t,l,c)}))}c(u.arg)}var i;a(this,"_invoke",{value:function value(t,o){function callInvokeWithMethodAndArg(){return new r((function(r,a){invoke(t,o,r,a)}))}return i=i?i.then(callInvokeWithMethodAndArg,callInvokeWithMethodAndArg):callInvokeWithMethodAndArg()}})}function makeInvokeMethod(t,r,o){var a="suspendedStart";return function(i,l){if("executing"===a)throw new Error("Generator is already running");if("completed"===a){if("throw"===i)throw l;return doneResult()}for(o.method=i,o.arg=l;;){var c=o.delegate;if(c){var u=maybeInvokeDelegate(c,o);if(u){if(u===p)continue;return u}}if("next"===o.method)o.sent=o._sent=o.arg;else if("throw"===o.method){if("suspendedStart"===a)throw a="completed",o.arg;o.dispatchException(o.arg)}else"return"===o.method&&o.abrupt("return",o.arg);a="executing";var d=tryCatch(t,r,o);if("normal"===d.type){if(a=o.done?"completed":"suspendedYield",d.arg===p)continue;return{value:d.arg,done:o.done}}"throw"===d.type&&(a="completed",o.method="throw",o.arg=d.arg)}}}function maybeInvokeDelegate(t,r){var o=r.method,a=t.iterator[o];if(void 0===a)return r.delegate=null,"throw"===o&&t.iterator.return&&(r.method="return",r.arg=void 0,maybeInvokeDelegate(t,r),"throw"===r.method)||"return"!==o&&(r.method="throw",r.arg=new TypeError("The iterator does not provide a '"+o+"' method")),p;var i=tryCatch(a,t.iterator,r.arg);if("throw"===i.type)return r.method="throw",r.arg=i.arg,r.delegate=null,p;var l=i.arg;return l?l.done?(r[t.resultName]=l.value,r.next=t.nextLoc,"return"!==r.method&&(r.method="next",r.arg=void 0),r.delegate=null,p):l:(r.method="throw",r.arg=new TypeError("iterator result is not an object"),r.delegate=null,p)}function pushTryEntry(t){var r={tryLoc:t[0]};1 in t&&(r.catchLoc=t[1]),2 in t&&(r.finallyLoc=t[2],r.afterLoc=t[3]),this.tryEntries.push(r)}function resetTryEntry(t){var r=t.completion||{};r.type="normal",delete r.arg,t.completion=r}function Context(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(pushTryEntry,this),this.reset(!0)}function values(t){if(t){var r=t[l];if(r)return r.call(t);if("function"==typeof t.next)return t;if(!isNaN(t.length)){var a=-1,i=function next(){for(;++a<t.length;)if(o.call(t,a))return next.value=t[a],next.done=!1,next;return next.value=void 0,next.done=!0,next};return i.next=i}}return{next:doneResult}}function doneResult(){return{value:void 0,done:!0}}return GeneratorFunction.prototype=GeneratorFunctionPrototype,a(g,"constructor",{value:GeneratorFunctionPrototype,configurable:!0}),a(GeneratorFunctionPrototype,"constructor",{value:GeneratorFunction,configurable:!0}),GeneratorFunction.displayName=define(GeneratorFunctionPrototype,u,"GeneratorFunction"),t.isGeneratorFunction=function(t){var r="function"==typeof t&&t.constructor;return!!r&&(r===GeneratorFunction||"GeneratorFunction"===(r.displayName||r.name))},t.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,GeneratorFunctionPrototype):(t.__proto__=GeneratorFunctionPrototype,define(t,u,"GeneratorFunction")),t.prototype=Object.create(g),t},t.awrap=function(t){return{__await:t}},defineIteratorMethods(AsyncIterator.prototype),define(AsyncIterator.prototype,c,(function(){return this})),t.AsyncIterator=AsyncIterator,t.async=function(r,o,a,i,l){void 0===l&&(l=Promise);var c=new AsyncIterator(wrap(r,o,a,i),l);return t.isGeneratorFunction(o)?c:c.next().then((function(t){return t.done?t.value:c.next()}))},defineIteratorMethods(g),define(g,u,"Generator"),define(g,l,(function(){return this})),define(g,"toString",(function(){return"[object Generator]"})),t.keys=function(t){var r=Object(t),o=[];for(var a in r)o.push(a);return o.reverse(),function next(){for(;o.length;){var t=o.pop();if(t in r)return next.value=t,next.done=!1,next}return next.done=!0,next}},t.values=values,Context.prototype={constructor:Context,reset:function reset(t){if(this.prev=0,this.next=0,this.sent=this._sent=void 0,this.done=!1,this.delegate=null,this.method="next",this.arg=void 0,this.tryEntries.forEach(resetTryEntry),!t)for(var r in this)"t"===r.charAt(0)&&o.call(this,r)&&!isNaN(+r.slice(1))&&(this[r]=void 0)},stop:function stop(){this.done=!0;var t=this.tryEntries[0].completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function dispatchException(t){if(this.done)throw t;var r=this;function handle(o,a){return l.type="throw",l.arg=t,r.next=o,a&&(r.method="next",r.arg=void 0),!!a}for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a],l=i.completion;if("root"===i.tryLoc)return handle("end");if(i.tryLoc<=this.prev){var c=o.call(i,"catchLoc"),u=o.call(i,"finallyLoc");if(c&&u){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0);if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}else if(c){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0)}else{if(!u)throw new Error("try statement without catch or finally");if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}}}},abrupt:function abrupt(t,r){for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a];if(i.tryLoc<=this.prev&&o.call(i,"finallyLoc")&&this.prev<i.finallyLoc){var l=i;break}}l&&("break"===t||"continue"===t)&&l.tryLoc<=r&&r<=l.finallyLoc&&(l=null);var c=l?l.completion:{};return c.type=t,c.arg=r,l?(this.method="next",this.next=l.finallyLoc,p):this.complete(c)},complete:function complete(t,r){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&r&&(this.next=r),p},finish:function finish(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.finallyLoc===t)return this.complete(o.completion,o.afterLoc),resetTryEntry(o),p}},catch:function _catch(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.tryLoc===t){var a=o.completion;if("throw"===a.type){var i=a.arg;resetTryEntry(o)}return i}}throw new Error("illegal catch attempt")},delegateYield:function delegateYield(t,r,o){return this.delegate={iterator:values(t),resultName:r,nextLoc:o},"next"===this.method&&(this.arg=void 0),p}},t}function settings_typeof(t){return settings_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},settings_typeof(t)}function _slicedToArray(t,r){return function _arrayWithHoles(t){if(Array.isArray(t))return t}(t)||function _iterableToArrayLimit(t,r){var o=null==t?null:"undefined"!=typeof Symbol&&t[Symbol.iterator]||t["@@iterator"];if(null!=o){var a,i,l,c,u=[],p=!0,d=!1;try{if(l=(o=o.call(t)).next,0===r){if(Object(o)!==o)return;p=!1}else for(;!(p=(a=l.call(o)).done)&&(u.push(a.value),u.length!==r);p=!0);}catch(t){d=!0,i=t}finally{try{if(!p&&null!=o.return&&(c=o.return(),Object(c)!==c))return}finally{if(d)throw i}}return u}}(t,r)||function _unsupportedIterableToArray(t,r){if(!t)return;if("string"==typeof t)return _arrayLikeToArray(t,r);var o=Object.prototype.toString.call(t).slice(8,-1);"Object"===o&&t.constructor&&(o=t.constructor.name);if("Map"===o||"Set"===o)return Array.from(t);if("Arguments"===o||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(o))return _arrayLikeToArray(t,r)}(t,r)||function _nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function _arrayLikeToArray(t,r){(null==r||r>t.length)&&(r=t.length);for(var o=0,a=new Array(r);o<r;o++)a[o]=t[o];return a}function settings_asyncGeneratorStep(t,r,o,a,i,l,c){try{var u=t[l](c),p=u.value}catch(t){return void o(t)}u.done?r(p):Promise.resolve(p).then(a,i)}function settings_ownKeys(t,r){var o=Object.keys(t);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(t);r&&(a=a.filter((function(r){return Object.getOwnPropertyDescriptor(t,r).enumerable}))),o.push.apply(o,a)}return o}function settings_objectSpread(t){for(var r=1;r<arguments.length;r++){var o=null!=arguments[r]?arguments[r]:{};r%2?settings_ownKeys(Object(o),!0).forEach((function(r){settings_defineProperty(t,r,o[r])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(o)):settings_ownKeys(Object(o)).forEach((function(r){Object.defineProperty(t,r,Object.getOwnPropertyDescriptor(o,r))}))}return t}function settings_defineProperty(t,r,o){return(r=function settings_toPropertyKey(t){var r=function settings_toPrimitive(t,r){if("object"!==settings_typeof(t)||null===t)return t;var o=t[Symbol.toPrimitive];if(void 0!==o){var a=o.call(t,r||"default");if("object"!==settings_typeof(a))return a;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===r?String:Number)(t)}(t,"string");return"symbol"===settings_typeof(r)?r:String(r)}(r))in t?Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}):t[r]=o,t}var l={quests:"foundry-quest-log-ru.simple-quest.tabs.quests",map:"foundry-quest-log-ru.simple-quest.tabs.map",timeline:"foundry-quest-log-ru.simple-quest.tabs.timeline",lore:"foundry-quest-log-ru.simple-quest.tabs.lore",achievements:"foundry-quest-log-ru.simple-quest.tabs.achievements","my-journal":"foundry-quest-log-ru.simple-quest.tabs.my-journal","party-journal":"foundry-quest-log-ru.simple-quest.tabs.party-journal"};function getSetting(t){return game.settings.get(Xe,t)}function setSetting(t,r){return _setSetting.apply(this,arguments)}function _setSetting(){return _setSetting=function settings_asyncToGenerator(t){return function(){var r=this,o=arguments;return new Promise((function(a,i){var l=t.apply(r,o);function _next(t){settings_asyncGeneratorStep(l,a,i,_next,_throw,"next",t)}function _throw(t){settings_asyncGeneratorStep(l,a,i,_next,_throw,"throw",t)}_next(void 0)}))}}(settings_regeneratorRuntime().mark((function _callee(t,r){return settings_regeneratorRuntime().wrap((function _callee$(o){for(;;)switch(o.prev=o.next){case 0:return o.next=2,game.settings.set(Xe,t,r);case 2:return o.abrupt("return",o.sent);case 3:case"end":return o.stop()}}),_callee)}))),_setSetting.apply(this,arguments)}function getDefaultSetting(t){return game.settings.settings.get(Xe+"."+t).default}function getTabNames(){for(var t=getSetting("tabNames"),r=0,o=Object.entries(l);r<o.length;r++){var a=_slicedToArray(o[r],2),i=a[0],c=a[1];t[i]||(t[i]=c)}return t}function registerSettingsArray(t){for(var r=0,o=Object.entries(t);r<o.length;r++){var a=_slicedToArray(o[r],2),i=a[0],l=a[1];game.settings.register(Xe,i,l)}}function colorPicker(t,r){var o=document.createElement("input");o.setAttribute("type","color"),o.setAttribute("data-edit",Xe+"."+t),o.value=game.settings.get(Xe,t)||game.settings.settings.get(Xe+"."+t).default;var a=r.querySelector('input[name="'.concat(Xe,".").concat(t,'"]'));a.value||(a.value=o.value),a.classList.add("color"),a.after(o)}function _toConsumableArray(t){return function _arrayWithoutHoles(t){if(Array.isArray(t))return config_arrayLikeToArray(t)}(t)||function _iterableToArray(t){if("undefined"!=typeof Symbol&&null!=t[Symbol.iterator]||null!=t["@@iterator"])return Array.from(t)}(t)||function config_unsupportedIterableToArray(t,r){if(!t)return;if("string"==typeof t)return config_arrayLikeToArray(t,r);var o=Object.prototype.toString.call(t).slice(8,-1);"Object"===o&&t.constructor&&(o=t.constructor.name);if("Map"===o||"Set"===o)return Array.from(t);if("Arguments"===o||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(o))return config_arrayLikeToArray(t,r)}(t)||function _nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function config_arrayLikeToArray(t,r){(null==r||r>t.length)&&(r=t.length);for(var o=0,a=new Array(r);o<r;o++)a[o]=t[o];return a}function helpers_typeof(t){return helpers_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},helpers_typeof(t)}function helpers_defineProperty(t,r,o){return(r=function helpers_toPropertyKey(t){var r=function helpers_toPrimitive(t,r){if("object"!==helpers_typeof(t)||null===t)return t;var o=t[Symbol.toPrimitive];if(void 0!==o){var a=o.call(t,r||"default");if("object"!==helpers_typeof(a))return a;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===r?String:Number)(t)}(t,"string");return"symbol"===helpers_typeof(r)?r:String(r)}(r))in t?Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}):t[r]=o,t}function helpers_regeneratorRuntime(){helpers_regeneratorRuntime=function _regeneratorRuntime(){return t};var t={},r=Object.prototype,o=r.hasOwnProperty,a=Object.defineProperty||function(t,r,o){t[r]=o.value},i="function"==typeof Symbol?Symbol:{},l=i.iterator||"@@iterator",c=i.asyncIterator||"@@asyncIterator",u=i.toStringTag||"@@toStringTag";function define(t,r,o){return Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}),t[r]}try{define({},"")}catch(t){define=function define(t,r,o){return t[r]=o}}function wrap(t,r,o,i){var l=r&&r.prototype instanceof Generator?r:Generator,c=Object.create(l.prototype),u=new Context(i||[]);return a(c,"_invoke",{value:makeInvokeMethod(t,o,u)}),c}function tryCatch(t,r,o){try{return{type:"normal",arg:t.call(r,o)}}catch(t){return{type:"throw",arg:t}}}t.wrap=wrap;var p={};function Generator(){}function GeneratorFunction(){}function GeneratorFunctionPrototype(){}var d={};define(d,l,(function(){return this}));var h=Object.getPrototypeOf,m=h&&h(h(values([])));m&&m!==r&&o.call(m,l)&&(d=m);var g=GeneratorFunctionPrototype.prototype=Generator.prototype=Object.create(d);function defineIteratorMethods(t){["next","throw","return"].forEach((function(r){define(t,r,(function(t){return this._invoke(r,t)}))}))}function AsyncIterator(t,r){function invoke(a,i,l,c){var u=tryCatch(t[a],t,i);if("throw"!==u.type){var p=u.arg,d=p.value;return d&&"object"==helpers_typeof(d)&&o.call(d,"__await")?r.resolve(d.__await).then((function(t){invoke("next",t,l,c)}),(function(t){invoke("throw",t,l,c)})):r.resolve(d).then((function(t){p.value=t,l(p)}),(function(t){return invoke("throw",t,l,c)}))}c(u.arg)}var i;a(this,"_invoke",{value:function value(t,o){function callInvokeWithMethodAndArg(){return new r((function(r,a){invoke(t,o,r,a)}))}return i=i?i.then(callInvokeWithMethodAndArg,callInvokeWithMethodAndArg):callInvokeWithMethodAndArg()}})}function makeInvokeMethod(t,r,o){var a="suspendedStart";return function(i,l){if("executing"===a)throw new Error("Generator is already running");if("completed"===a){if("throw"===i)throw l;return doneResult()}for(o.method=i,o.arg=l;;){var c=o.delegate;if(c){var u=maybeInvokeDelegate(c,o);if(u){if(u===p)continue;return u}}if("next"===o.method)o.sent=o._sent=o.arg;else if("throw"===o.method){if("suspendedStart"===a)throw a="completed",o.arg;o.dispatchException(o.arg)}else"return"===o.method&&o.abrupt("return",o.arg);a="executing";var d=tryCatch(t,r,o);if("normal"===d.type){if(a=o.done?"completed":"suspendedYield",d.arg===p)continue;return{value:d.arg,done:o.done}}"throw"===d.type&&(a="completed",o.method="throw",o.arg=d.arg)}}}function maybeInvokeDelegate(t,r){var o=r.method,a=t.iterator[o];if(void 0===a)return r.delegate=null,"throw"===o&&t.iterator.return&&(r.method="return",r.arg=void 0,maybeInvokeDelegate(t,r),"throw"===r.method)||"return"!==o&&(r.method="throw",r.arg=new TypeError("The iterator does not provide a '"+o+"' method")),p;var i=tryCatch(a,t.iterator,r.arg);if("throw"===i.type)return r.method="throw",r.arg=i.arg,r.delegate=null,p;var l=i.arg;return l?l.done?(r[t.resultName]=l.value,r.next=t.nextLoc,"return"!==r.method&&(r.method="next",r.arg=void 0),r.delegate=null,p):l:(r.method="throw",r.arg=new TypeError("iterator result is not an object"),r.delegate=null,p)}function pushTryEntry(t){var r={tryLoc:t[0]};1 in t&&(r.catchLoc=t[1]),2 in t&&(r.finallyLoc=t[2],r.afterLoc=t[3]),this.tryEntries.push(r)}function resetTryEntry(t){var r=t.completion||{};r.type="normal",delete r.arg,t.completion=r}function Context(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(pushTryEntry,this),this.reset(!0)}function values(t){if(t){var r=t[l];if(r)return r.call(t);if("function"==typeof t.next)return t;if(!isNaN(t.length)){var a=-1,i=function next(){for(;++a<t.length;)if(o.call(t,a))return next.value=t[a],next.done=!1,next;return next.value=void 0,next.done=!0,next};return i.next=i}}return{next:doneResult}}function doneResult(){return{value:void 0,done:!0}}return GeneratorFunction.prototype=GeneratorFunctionPrototype,a(g,"constructor",{value:GeneratorFunctionPrototype,configurable:!0}),a(GeneratorFunctionPrototype,"constructor",{value:GeneratorFunction,configurable:!0}),GeneratorFunction.displayName=define(GeneratorFunctionPrototype,u,"GeneratorFunction"),t.isGeneratorFunction=function(t){var r="function"==typeof t&&t.constructor;return!!r&&(r===GeneratorFunction||"GeneratorFunction"===(r.displayName||r.name))},t.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,GeneratorFunctionPrototype):(t.__proto__=GeneratorFunctionPrototype,define(t,u,"GeneratorFunction")),t.prototype=Object.create(g),t},t.awrap=function(t){return{__await:t}},defineIteratorMethods(AsyncIterator.prototype),define(AsyncIterator.prototype,c,(function(){return this})),t.AsyncIterator=AsyncIterator,t.async=function(r,o,a,i,l){void 0===l&&(l=Promise);var c=new AsyncIterator(wrap(r,o,a,i),l);return t.isGeneratorFunction(o)?c:c.next().then((function(t){return t.done?t.value:c.next()}))},defineIteratorMethods(g),define(g,u,"Generator"),define(g,l,(function(){return this})),define(g,"toString",(function(){return"[object Generator]"})),t.keys=function(t){var r=Object(t),o=[];for(var a in r)o.push(a);return o.reverse(),function next(){for(;o.length;){var t=o.pop();if(t in r)return next.value=t,next.done=!1,next}return next.done=!0,next}},t.values=values,Context.prototype={constructor:Context,reset:function reset(t){if(this.prev=0,this.next=0,this.sent=this._sent=void 0,this.done=!1,this.delegate=null,this.method="next",this.arg=void 0,this.tryEntries.forEach(resetTryEntry),!t)for(var r in this)"t"===r.charAt(0)&&o.call(this,r)&&!isNaN(+r.slice(1))&&(this[r]=void 0)},stop:function stop(){this.done=!0;var t=this.tryEntries[0].completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function dispatchException(t){if(this.done)throw t;var r=this;function handle(o,a){return l.type="throw",l.arg=t,r.next=o,a&&(r.method="next",r.arg=void 0),!!a}for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a],l=i.completion;if("root"===i.tryLoc)return handle("end");if(i.tryLoc<=this.prev){var c=o.call(i,"catchLoc"),u=o.call(i,"finallyLoc");if(c&&u){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0);if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}else if(c){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0)}else{if(!u)throw new Error("try statement without catch or finally");if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}}}},abrupt:function abrupt(t,r){for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a];if(i.tryLoc<=this.prev&&o.call(i,"finallyLoc")&&this.prev<i.finallyLoc){var l=i;break}}l&&("break"===t||"continue"===t)&&l.tryLoc<=r&&r<=l.finallyLoc&&(l=null);var c=l?l.completion:{};return c.type=t,c.arg=r,l?(this.method="next",this.next=l.finallyLoc,p):this.complete(c)},complete:function complete(t,r){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&r&&(this.next=r),p},finish:function finish(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.finallyLoc===t)return this.complete(o.completion,o.afterLoc),resetTryEntry(o),p}},catch:function _catch(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.tryLoc===t){var a=o.completion;if("throw"===a.type){var i=a.arg;resetTryEntry(o)}return i}}throw new Error("illegal catch attempt")},delegateYield:function delegateYield(t,r,o){return this.delegate={iterator:values(t),resultName:r,nextLoc:o},"next"===this.method&&(this.arg=void 0),p}},t}function helpers_asyncGeneratorStep(t,r,o,a,i,l,c){try{var u=t[l](c),p=u.value}catch(t){return void o(t)}u.done?r(p):Promise.resolve(p).then(a,i)}function helpers_asyncToGenerator(t){return function(){var r=this,o=arguments;return new Promise((function(a,i){var l=t.apply(r,o);function _next(t){helpers_asyncGeneratorStep(l,a,i,_next,_throw,"next",t)}function _throw(t){helpers_asyncGeneratorStep(l,a,i,_next,_throw,"throw",t)}_next(void 0)}))}}function _createDefaultStructure(){return _createDefaultStructure=helpers_asyncToGenerator(helpers_regeneratorRuntime().mark((function _callee(){var t,r,o,a,i,l,p,d,h,m,g,y,v,b,_,w,S,x,k,E;return helpers_regeneratorRuntime().wrap((function _callee$(T){for(;;)switch(T.prev=T.next){case 0:if(t=getSetting("folderName"),!(r=Array.from(game.folders).find((function(r){return r.name===t&&"JournalEntry"===r.type})))){T.next=4;break}return T.abrupt("return",createPlayerJournal(r));case 4:return T.next=6,Folder.create({name:t,color:"#03bafc",sorting:"m",type:"JournalEntry",folder:null});case 6:return o=T.sent,T.next=9,createLoreFolder();case 9:a=T.sent,i=game.i18n.localize("".concat(Xe,".default-structure.in-progress")),l=game.i18n.localize("".concat(Xe,".default-structure.completed")),p=game.i18n.localize("".concat(Xe,".default-structure.failed")),d=0,h=[i,l,p];case 15:if(!(d<h.length)){T.next=26;break}return m=h[d],T.next=19,JournalEntry.create({name:m,folder:o.id,ownership:{default:0}});case 19:if(g=T.sent,m!==i){T.next=23;break}return T.next=23,g.createEmbeddedDocuments("JournalEntryPage",[c]);case 23:d++,T.next=15;break;case 26:y=game.i18n.localize("".concat(Xe,".default-structure.locations")),v=game.i18n.localize("".concat(Xe,".default-structure.npcs")),b=game.i18n.localize("".concat(Xe,".default-structure.organizations")),_=game.i18n.localize("".concat(Xe,".default-structure.history")),w=game.i18n.localize("".concat(Xe,".default-structure.bestiary")),S=0,x=[y,v,b,_,w];case 33:if(!(S<x.length)){T.next=44;break}return k=x[S],T.next=37,JournalEntry.create({name:k,folder:a.id,ownership:{default:0}});case 37:if(E=T.sent,k!==y){T.next=41;break}return T.next=41,E.createEmbeddedDocuments("JournalEntryPage",[u]);case 41:S++,T.next=33;break;case 44:return T.next=46,createPlayerJournal(o);case 46:ui.notifications.info(game.i18n.localize("".concat(Xe,".notifications.defaultStructureCreated")));case 47:case"end":return T.stop()}}),_callee)}))),_createDefaultStructure.apply(this,arguments)}function createPlayerJournal(t){return _createPlayerJournal.apply(this,arguments)}function _createPlayerJournal(){return(_createPlayerJournal=helpers_asyncToGenerator(helpers_regeneratorRuntime().mark((function _callee2(t){var r,o,a,i,l,c,u,p,d,h,m,g;return helpers_regeneratorRuntime().wrap((function _callee2$(y){for(;;)switch(y.prev=y.next){case 0:if(r=getSetting("partyJournalName"),o=Array.from(game.folders).find((function(o){return o.name===r&&"JournalEntry"===o.type&&o.folder===t}))){y.next=6;break}return y.next=5,Folder.create({name:r,type:"JournalEntry",color:"#1fa87f",sorting:"m",folder:t});case 5:o=y.sent;case 6:a=!1,i=Array.from(game.users),l=Array.from(game.journal).find((function(o){return o.name===r&&o.folder===t})),c=!1,u=helpers_regeneratorRuntime().mark((function _loop(){var t,r,i;return helpers_regeneratorRuntime().wrap((function _loop$(u){for(;;)switch(u.prev=u.next){case 0:if(t=d[p],r=Array.from(game.folders).find((function(r){return r.name===t.name&&"JournalEntry"===r.type&&r.folder===o}))){u.next=13;break}return a=!0,u.next=6,Folder.create({name:t.name,type:"JournalEntry",color:t.color,sorting:"m",folder:o.id});case 6:if(r=u.sent,!l){u.next=13;break}return i=l.pages.getName(t.name),u.next=11,JournalEntry.create({name:"Default",folder:r,ownership:helpers_defineProperty({default:0},t.id,CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER),pages:[i.toObject()]});case 11:u.sent,c=!0;case 13:case"end":return u.stop()}}),_loop)})),p=0,d=i;case 12:if(!(p<d.length)){y.next=17;break}return y.delegateYield(u(),"t0",14);case 14:p++,y.next=12;break;case 17:if(h=getSetting("sharedJournalName"),m=Array.from(game.folders).find((function(t){return t.name===h&&"JournalEntry"===t.type&&t.folder===o}))){y.next=29;break}return a=!0,y.next=23,Folder.create({name:h,type:"JournalEntry",sorting:"m",folder:o.id});case 23:if(m=y.sent,!l){y.next=29;break}return g=l.pages.getName(h),y.next=28,JournalEntry.create({name:"Default",folder:m,ownership:{default:CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER},pages:[g.toObject()]});case 28:y.sent;case 29:c&&(l.update({folder:null}),ui.notifications.info("Simple Quest: Old Party and Player Journals were migrated to the new structure. You can delete the old journal now. It has been moved to the Root folder. You can delete it after checking that the migration was successful.",{permanent:!0})),a&&ui.notifications.info(game.i18n.localize("".concat(Xe,".notifications.playerJournalUpdated")));case 31:case"end":return y.stop()}}),_callee2)})))).apply(this,arguments)}function createLoreFolder(){return _createLoreFolder.apply(this,arguments)}function _createLoreFolder(){return(_createLoreFolder=helpers_asyncToGenerator(helpers_regeneratorRuntime().mark((function _callee3(){var t,r;return helpers_regeneratorRuntime().wrap((function _callee3$(o){for(;;)switch(o.prev=o.next){case 0:if(t=getSetting("loreFolderName"),r=Array.from(game.folders).find((function(r){return r.name===t&&"JournalEntry"===r.type}))){o.next=6;break}return o.next=5,Folder.create({name:t,type:"JournalEntry",color:"#a85d1f",sorting:"m"});case 5:r=o.sent;case 6:return o.abrupt("return",r);case 7:case"end":return o.stop()}}),_callee3)})))).apply(this,arguments)}function showWelcomeMaps(){var t=arguments.length>0&&void 0!==arguments[0]&&arguments[0];getSetting("welcomeMaps")&&!t||Dialog.prompt({title:game.i18n.localize("".concat(Xe,".welcomeMaps.title")),content:game.i18n.localize("".concat(Xe,".welcomeMaps.content")),options:{width:600},callback:function callback(){setSetting("welcomeMaps",!0)},render:function render(t){t[0].closest(".app").classList.add("foundry-quest-log-ru-welcome-screen"),t[0].closest(".app").classList.add("foundry-quest-log-ru-welcome-maps")},close:function close(){}})}function showQuestNotification(t){var r=arguments.length>1&&void 0!==arguments[1]&&arguments[1],o=arguments.length>2&&void 0!==arguments[2]&&arguments[2],a=arguments.length>3&&void 0!==arguments[3]&&arguments[3];if(getSetting("showQuestNotifications")&&(!t.getFlag(Xe,"hidden")&&!document.querySelector('.foundry-quest-log-ru-notification[data-uuid="'.concat(t.uuid,'"]')))){var i=document.getElementById("foundry-quest-log-ru-notification-container")||document.createElement("div");i.id="foundry-quest-log-ru-notification-container",document.body.appendChild(i);var l=document.createElement("div");l.dataset.uuid=t.uuid,l.classList.add("foundry-quest-log-ru-notification");var c='<span class="foundry-quest-log-ru-notification-quest-name">'.concat(t.name,"</span>");if(r){var u=getSetting("newQuestSoundEffect");u&&foundry.audio.AudioHelper.play({src:u,volume:game.settings.get("core","globalInterfaceVolume"),loop:!1}),l.innerHTML=o?'<i class="fas fa-scroll-old"></i> '.concat(game.i18n.localize("".concat(Xe,".shareLore.chatMessage"))+" "+c):a?'<i class="fas fa-trophy"></i> '.concat(game.i18n.localize("".concat(Xe,".shareAchievement.chatMessage"))+" "+c):'<i class="fas fa-exclamation"></i> '.concat(game.i18n.localize("".concat(Xe,".shareQuest.chatMessage"))+" "+c)}else{var p=getSetting("updateQuestSoundEffect");p&&foundry.audio.AudioHelper.play({src:p,volume:game.settings.get("core","globalInterfaceVolume"),loop:!1}),l.innerHTML='<i class="fas fa-exclamation"></i> '.concat(game.i18n.localize("".concat(Xe,".questNotification.text")).replace("%q",c))}i.appendChild(l);var d=2.5*getSetting("fontSize")+"rem";l.animate([{opacity:0,height:"0rem"},{opacity:1,height:d}],{duration:500,easing:"ease-in-out"});var h=!1,m=function dismiss(){h||(h=!0,l.animate([{opacity:1,height:d},{opacity:0,height:"0rem"}],{duration:500,easing:"ease-in-out"}).onfinish=function(){i.removeChild(l),0===i.children.length&&i.remove()})};l.onmouseup=function(r){m(),0===r.button&&ui.simpleQuest.openToPage(t.uuid)},setTimeout((function(){m()}),r?1e4:5e3)}}var c={name:"Welcome to Simple Quest!","text.content":'<p>Welcome to Simple Quest! This demo quest is designed to highlight the straightforwardness and capabilities of Simple Quest, which seamlessly integrates with Core Foundry Journals. You\'ll get started in no time!</p>\n    <h2>Getting Started</h2>\n    <p>Simple Quest operates on Core Foundry Journals, eliminating the need to learn new tools or interfaces. The following objectives demonstrate the ease of use:</p>\n    <ul>\n        <li>This is my initial objective.</li>\n        <li>Woah! A second objective!</li>\n    </ul>\n    <p>To maintain clarity, Simple Quest utilizes the first characters of list elements to store checked status. Avoid using identical names for objectives to prevent confusion.</p>\n    <h2>Navigating the Quests Tab</h2>\n    <p>Create organized sub-quests by adding headers (1 or 2) to your quests. This is useful for breaking down extensive quests. Lists can also be nested as shown here.</p>\n    <ul>\n        <li>\n            <p><strong>Quests List:</strong></p>\n            <ul>\n                <li>On the left side of the interface, you\'ll find the quests list.</li>\n                <li>This displays all quest categories and the quests within them.</li>\n                <li>Quest Categories represent "Journals" and individual quests are "Journal Pages"</li>\n                <li>Hover over the left side of a Quest title to reveal a button for hiding/unhiding it from players.</li>\n                <li>Hover over a Quest Category name to find the "Add Quest" button.</li>\n            </ul>\n        </li>\n        <li>\n            <p><strong>Quest Details:</strong></p>\n            <ul>\n                <li>The section you\'re currently reading is the Quest Details, providing a comprehensive view of your quest.</li>\n                <li>Top right corner houses quest controls; hover over them for tooltips explaining their functions.</li>\n            </ul>\n        </li>\n        <li>\n            <p><strong>Interacting with Lists:</strong></p>\n            <ul>\n                <li>Left-click a checkbox to mark the objective as complete.</li>\n                <li>Right-click to mark it as failed.</li>\n                <li>Hover over the left side of the checkbox to reveal the hide/unhide option, making the objective hidden from players.</li>\n            </ul>\n        </li>\n    </ul>\n    <h2>Quest Notifications</h2>\n    <p>Some actions will make the quest have a notification (exclamation point) icon next to it\'s name to make the user take notice that the quest was updated:</p>\n    <ul>\n        <li>\n            <p>Un-hiding (but not hiding) an objective</p>\n        </li>\n        <li>\n            <p>CheckingUnchecking an objective</p>\n        </li>\n        <li>\n            <p>Creating the quest for the first time</p>\n        </li>\n        <li>\n            <p>Manually enabling the notification with the exclamation mark button in the quest controls</p>\n        </li>\n    </ul>\n    <h2>Customizing</h2>\n    <ul>\n        <li>\n            <p><strong>Quest Layout:</strong></p>\n            <ul>\n                <li>Add more categories with the Add category button on the top right of the quest list.</li>\n                <li>You can reorder categories by drag and dropping.</li>\n                <li>Example: Add an "Available" category for quests players can pick up from a tavern board.</li>\n                <li>Adjust the font size using buttons at the Bottom Right of the Simple Quest interface.</li>\n                <li>Explore the Module Settings for more customizations.</li>\n            </ul>\n        </li>\n        <li>\n            <p><strong>Closing Simple Quest:</strong></p>\n            <ul>\n                <li>Press J, ESC, or click the close button in the top right side (visible on hover) to exit Simple Quest.</li>\n            </ul>\n        </li>\n    </ul>'},u={name:"Welcome to the Lore tab!","text.content":'<table style="width:100%;border:none;background:transparent">\n    <tbody><tr style="background:transparent">\n            <td style="width:50%;padding:0;margin:0">\n                <img style="-webkit-mask-size: 100% 100%; -webkit-mask-image: url(\'modules/foundry-quest-log-ru/assets/mask/mask4.webp\'); object-fit: cover; border: none; border-radius: 5px; width: 100%; aspect-ratio: 1/1" src="https://source.unsplash.com/random">\n            </td>\n            <td style="padding:2rem;font-size:1.5rem">\n                <p><strong>Region: </strong>Demo</p>\n                <p><strong>Population: </strong>6969</p>\n                <p><strong>Founded: </strong>420 a.d.</p>\n                <p><strong>Government: </strong>Location</p>\n            </td>\n</tr><tr style="background:transparent">\n            <td colspan="2">\n                <ul>\n                    <li>\n                        <p>In the <strong>Lore</strong> tab you can create organized information for your World.</p>\n                    </li>\n                    <li>\n                        <p>If you already have Lore organized in regular foundry journals, you can simply move them to the <strong>Lore</strong> folder created by simple quest in you journal sidebar.</p>\n                    </li>\n                    <li>\n                        <p>Try editing this Lore or create a new one to test out the <strong>Page Template</strong> feature of <strong>Simple Quest </strong>which was used to create this example page.</p>\n                    </li>\n                    <li>\n                        <p>You can delete Lore categories and Lore entries from your regular journal sidebar, inside the Lore folder</p>\n                    </li>\n                    <li>\n                        <p>Remember that the Lore tab has a quick button to hide (purple) and reveal entries. Simply hover over the Left Side of a Lore entry name on the left sidebar to reveal the button</p>\n                    </li>\n                </ul>\n            </td>\n</tr></tbody>\n</table>'};function mapImage_typeof(t){return mapImage_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},mapImage_typeof(t)}function mapImage_get(){return mapImage_get="undefined"!=typeof Reflect&&Reflect.get?Reflect.get.bind():function _get(t,r,o){var a=function mapImage_superPropBase(t,r){for(;!Object.prototype.hasOwnProperty.call(t,r)&&null!==(t=mapImage_getPrototypeOf(t)););return t}(t,r);if(a){var i=Object.getOwnPropertyDescriptor(a,r);return i.get?i.get.call(arguments.length<3?t:o):i.value}},mapImage_get.apply(this,arguments)}function mapImage_setPrototypeOf(t,r){return mapImage_setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(t,r){return t.__proto__=r,t},mapImage_setPrototypeOf(t,r)}function mapImage_createSuper(t){var r=function mapImage_isNativeReflectConstruct(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(t){return!1}}();return function _createSuperInternal(){var o,a=mapImage_getPrototypeOf(t);if(r){var i=mapImage_getPrototypeOf(this).constructor;o=Reflect.construct(a,arguments,i)}else o=a.apply(this,arguments);return function mapImage_possibleConstructorReturn(t,r){if(r&&("object"===mapImage_typeof(r)||"function"==typeof r))return r;if(void 0!==r)throw new TypeError("Derived constructors may only return object or undefined");return function mapImage_assertThisInitialized(t){if(void 0===t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}(t)}(this,o)}}function mapImage_getPrototypeOf(t){return mapImage_getPrototypeOf=Object.setPrototypeOf?Object.getPrototypeOf.bind():function _getPrototypeOf(t){return t.__proto__||Object.getPrototypeOf(t)},mapImage_getPrototypeOf(t)}function mapImage_ownKeys(t,r){var o=Object.keys(t);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(t);r&&(a=a.filter((function(r){return Object.getOwnPropertyDescriptor(t,r).enumerable}))),o.push.apply(o,a)}return o}function mapImage_objectSpread(t){for(var r=1;r<arguments.length;r++){var o=null!=arguments[r]?arguments[r]:{};r%2?mapImage_ownKeys(Object(o),!0).forEach((function(r){mapImage_defineProperty(t,r,o[r])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(o)):mapImage_ownKeys(Object(o)).forEach((function(r){Object.defineProperty(t,r,Object.getOwnPropertyDescriptor(o,r))}))}return t}function mapImage_defineProperty(t,r,o){return(r=mapImage_toPropertyKey(r))in t?Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}):t[r]=o,t}function mapImage_slicedToArray(t,r){return function mapImage_arrayWithHoles(t){if(Array.isArray(t))return t}(t)||function mapImage_iterableToArrayLimit(t,r){var o=null==t?null:"undefined"!=typeof Symbol&&t[Symbol.iterator]||t["@@iterator"];if(null!=o){var a,i,l,c,u=[],p=!0,d=!1;try{if(l=(o=o.call(t)).next,0===r){if(Object(o)!==o)return;p=!1}else for(;!(p=(a=l.call(o)).done)&&(u.push(a.value),u.length!==r);p=!0);}catch(t){d=!0,i=t}finally{try{if(!p&&null!=o.return&&(c=o.return(),Object(c)!==c))return}finally{if(d)throw i}}return u}}(t,r)||mapImage_unsupportedIterableToArray(t,r)||function mapImage_nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function mapImage_regeneratorRuntime(){mapImage_regeneratorRuntime=function _regeneratorRuntime(){return t};var t={},r=Object.prototype,o=r.hasOwnProperty,a=Object.defineProperty||function(t,r,o){t[r]=o.value},i="function"==typeof Symbol?Symbol:{},l=i.iterator||"@@iterator",c=i.asyncIterator||"@@asyncIterator",u=i.toStringTag||"@@toStringTag";function define(t,r,o){return Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}),t[r]}try{define({},"")}catch(t){define=function define(t,r,o){return t[r]=o}}function wrap(t,r,o,i){var l=r&&r.prototype instanceof Generator?r:Generator,c=Object.create(l.prototype),u=new Context(i||[]);return a(c,"_invoke",{value:makeInvokeMethod(t,o,u)}),c}function tryCatch(t,r,o){try{return{type:"normal",arg:t.call(r,o)}}catch(t){return{type:"throw",arg:t}}}t.wrap=wrap;var p={};function Generator(){}function GeneratorFunction(){}function GeneratorFunctionPrototype(){}var d={};define(d,l,(function(){return this}));var h=Object.getPrototypeOf,m=h&&h(h(values([])));m&&m!==r&&o.call(m,l)&&(d=m);var g=GeneratorFunctionPrototype.prototype=Generator.prototype=Object.create(d);function defineIteratorMethods(t){["next","throw","return"].forEach((function(r){define(t,r,(function(t){return this._invoke(r,t)}))}))}function AsyncIterator(t,r){function invoke(a,i,l,c){var u=tryCatch(t[a],t,i);if("throw"!==u.type){var p=u.arg,d=p.value;return d&&"object"==mapImage_typeof(d)&&o.call(d,"__await")?r.resolve(d.__await).then((function(t){invoke("next",t,l,c)}),(function(t){invoke("throw",t,l,c)})):r.resolve(d).then((function(t){p.value=t,l(p)}),(function(t){return invoke("throw",t,l,c)}))}c(u.arg)}var i;a(this,"_invoke",{value:function value(t,o){function callInvokeWithMethodAndArg(){return new r((function(r,a){invoke(t,o,r,a)}))}return i=i?i.then(callInvokeWithMethodAndArg,callInvokeWithMethodAndArg):callInvokeWithMethodAndArg()}})}function makeInvokeMethod(t,r,o){var a="suspendedStart";return function(i,l){if("executing"===a)throw new Error("Generator is already running");if("completed"===a){if("throw"===i)throw l;return doneResult()}for(o.method=i,o.arg=l;;){var c=o.delegate;if(c){var u=maybeInvokeDelegate(c,o);if(u){if(u===p)continue;return u}}if("next"===o.method)o.sent=o._sent=o.arg;else if("throw"===o.method){if("suspendedStart"===a)throw a="completed",o.arg;o.dispatchException(o.arg)}else"return"===o.method&&o.abrupt("return",o.arg);a="executing";var d=tryCatch(t,r,o);if("normal"===d.type){if(a=o.done?"completed":"suspendedYield",d.arg===p)continue;return{value:d.arg,done:o.done}}"throw"===d.type&&(a="completed",o.method="throw",o.arg=d.arg)}}}function maybeInvokeDelegate(t,r){var o=r.method,a=t.iterator[o];if(void 0===a)return r.delegate=null,"throw"===o&&t.iterator.return&&(r.method="return",r.arg=void 0,maybeInvokeDelegate(t,r),"throw"===r.method)||"return"!==o&&(r.method="throw",r.arg=new TypeError("The iterator does not provide a '"+o+"' method")),p;var i=tryCatch(a,t.iterator,r.arg);if("throw"===i.type)return r.method="throw",r.arg=i.arg,r.delegate=null,p;var l=i.arg;return l?l.done?(r[t.resultName]=l.value,r.next=t.nextLoc,"return"!==r.method&&(r.method="next",r.arg=void 0),r.delegate=null,p):l:(r.method="throw",r.arg=new TypeError("iterator result is not an object"),r.delegate=null,p)}function pushTryEntry(t){var r={tryLoc:t[0]};1 in t&&(r.catchLoc=t[1]),2 in t&&(r.finallyLoc=t[2],r.afterLoc=t[3]),this.tryEntries.push(r)}function resetTryEntry(t){var r=t.completion||{};r.type="normal",delete r.arg,t.completion=r}function Context(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(pushTryEntry,this),this.reset(!0)}function values(t){if(t){var r=t[l];if(r)return r.call(t);if("function"==typeof t.next)return t;if(!isNaN(t.length)){var a=-1,i=function next(){for(;++a<t.length;)if(o.call(t,a))return next.value=t[a],next.done=!1,next;return next.value=void 0,next.done=!0,next};return i.next=i}}return{next:doneResult}}function doneResult(){return{value:void 0,done:!0}}return GeneratorFunction.prototype=GeneratorFunctionPrototype,a(g,"constructor",{value:GeneratorFunctionPrototype,configurable:!0}),a(GeneratorFunctionPrototype,"constructor",{value:GeneratorFunction,configurable:!0}),GeneratorFunction.displayName=define(GeneratorFunctionPrototype,u,"GeneratorFunction"),t.isGeneratorFunction=function(t){var r="function"==typeof t&&t.constructor;return!!r&&(r===GeneratorFunction||"GeneratorFunction"===(r.displayName||r.name))},t.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,GeneratorFunctionPrototype):(t.__proto__=GeneratorFunctionPrototype,define(t,u,"GeneratorFunction")),t.prototype=Object.create(g),t},t.awrap=function(t){return{__await:t}},defineIteratorMethods(AsyncIterator.prototype),define(AsyncIterator.prototype,c,(function(){return this})),t.AsyncIterator=AsyncIterator,t.async=function(r,o,a,i,l){void 0===l&&(l=Promise);var c=new AsyncIterator(wrap(r,o,a,i),l);return t.isGeneratorFunction(o)?c:c.next().then((function(t){return t.done?t.value:c.next()}))},defineIteratorMethods(g),define(g,u,"Generator"),define(g,l,(function(){return this})),define(g,"toString",(function(){return"[object Generator]"})),t.keys=function(t){var r=Object(t),o=[];for(var a in r)o.push(a);return o.reverse(),function next(){for(;o.length;){var t=o.pop();if(t in r)return next.value=t,next.done=!1,next}return next.done=!0,next}},t.values=values,Context.prototype={constructor:Context,reset:function reset(t){if(this.prev=0,this.next=0,this.sent=this._sent=void 0,this.done=!1,this.delegate=null,this.method="next",this.arg=void 0,this.tryEntries.forEach(resetTryEntry),!t)for(var r in this)"t"===r.charAt(0)&&o.call(this,r)&&!isNaN(+r.slice(1))&&(this[r]=void 0)},stop:function stop(){this.done=!0;var t=this.tryEntries[0].completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function dispatchException(t){if(this.done)throw t;var r=this;function handle(o,a){return l.type="throw",l.arg=t,r.next=o,a&&(r.method="next",r.arg=void 0),!!a}for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a],l=i.completion;if("root"===i.tryLoc)return handle("end");if(i.tryLoc<=this.prev){var c=o.call(i,"catchLoc"),u=o.call(i,"finallyLoc");if(c&&u){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0);if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}else if(c){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0)}else{if(!u)throw new Error("try statement without catch or finally");if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}}}},abrupt:function abrupt(t,r){for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a];if(i.tryLoc<=this.prev&&o.call(i,"finallyLoc")&&this.prev<i.finallyLoc){var l=i;break}}l&&("break"===t||"continue"===t)&&l.tryLoc<=r&&r<=l.finallyLoc&&(l=null);var c=l?l.completion:{};return c.type=t,c.arg=r,l?(this.method="next",this.next=l.finallyLoc,p):this.complete(c)},complete:function complete(t,r){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&r&&(this.next=r),p},finish:function finish(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.finallyLoc===t)return this.complete(o.completion,o.afterLoc),resetTryEntry(o),p}},catch:function _catch(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.tryLoc===t){var a=o.completion;if("throw"===a.type){var i=a.arg;resetTryEntry(o)}return i}}throw new Error("illegal catch attempt")},delegateYield:function delegateYield(t,r,o){return this.delegate={iterator:values(t),resultName:r,nextLoc:o},"next"===this.method&&(this.arg=void 0),p}},t}function mapImage_asyncGeneratorStep(t,r,o,a,i,l,c){try{var u=t[l](c),p=u.value}catch(t){return void o(t)}u.done?r(p):Promise.resolve(p).then(a,i)}function mapImage_asyncToGenerator(t){return function(){var r=this,o=arguments;return new Promise((function(a,i){var l=t.apply(r,o);function _next(t){mapImage_asyncGeneratorStep(l,a,i,_next,_throw,"next",t)}function _throw(t){mapImage_asyncGeneratorStep(l,a,i,_next,_throw,"throw",t)}_next(void 0)}))}}function _createForOfIteratorHelper(t,r){var o="undefined"!=typeof Symbol&&t[Symbol.iterator]||t["@@iterator"];if(!o){if(Array.isArray(t)||(o=mapImage_unsupportedIterableToArray(t))||r&&t&&"number"==typeof t.length){o&&(t=o);var a=0,i=function F(){};return{s:i,n:function n(){return a>=t.length?{done:!0}:{done:!1,value:t[a++]}},e:function e(t){throw t},f:i}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var l,c=!0,u=!1;return{s:function s(){o=o.call(t)},n:function n(){var t=o.next();return c=t.done,t},e:function e(t){u=!0,l=t},f:function f(){try{c||null==o.return||o.return()}finally{if(u)throw l}}}}function mapImage_unsupportedIterableToArray(t,r){if(t){if("string"==typeof t)return mapImage_arrayLikeToArray(t,r);var o=Object.prototype.toString.call(t).slice(8,-1);return"Object"===o&&t.constructor&&(o=t.constructor.name),"Map"===o||"Set"===o?Array.from(t):"Arguments"===o||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(o)?mapImage_arrayLikeToArray(t,r):void 0}}function mapImage_arrayLikeToArray(t,r){(null==r||r>t.length)&&(r=t.length);for(var o=0,a=new Array(r);o<r;o++)a[o]=t[o];return a}function mapImage_classCallCheck(t,r){if(!(t instanceof r))throw new TypeError("Cannot call a class as a function")}function mapImage_defineProperties(t,r){for(var o=0;o<r.length;o++){var a=r[o];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(t,mapImage_toPropertyKey(a.key),a)}}function mapImage_createClass(t,r,o){return r&&mapImage_defineProperties(t.prototype,r),o&&mapImage_defineProperties(t,o),Object.defineProperty(t,"prototype",{writable:!1}),t}function mapImage_toPropertyKey(t){var r=function mapImage_toPrimitive(t,r){if("object"!==mapImage_typeof(t)||null===t)return t;var o=t[Symbol.toPrimitive];if(void 0!==o){var a=o.call(t,r||"default");if("object"!==mapImage_typeof(a))return a;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===r?String:Number)(t)}(t,"string");return"symbol"===mapImage_typeof(r)?r:String(r)}var p=function(){function MapImage(t,r,o,a){var i;mapImage_classCallCheck(this,MapImage),this.src=t,this.page=r,this.multiSource=o,this._lockPins=a,this.isMultiSource=o.length>1,this.element=document.createElement("div"),this.element.classList.add("foundry-quest-log-ru-map-image"),this.element.style.overflow="hidden",this.element.style.position="relative",this.element.style.width="100%",this.element.style.height="100%",this.element.style.setProperty("--zoom-level",1),this.element.style.cursor=this.grabCursor,this.element.style.maskImage="linear-gradient(rgba(0, 0, 0, 0) 0%, black 10%, black 90%, rgba(0, 0, 0, 0) 100%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, black 10%, black 90%, rgba(0, 0, 0, 0) 100%)",this.element.style.webkitMaskImage="linear-gradient(rgba(0, 0, 0, 0) 0%, black 10%, black 90%, rgba(0, 0, 0, 0) 100%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, black 10%, black 90%, rgba(0, 0, 0, 0) 100%)",this.element.style.webkitMaskComposite="source-in",this.element.style.opacity=0,this.aspectRatio=1,this._exploredPolygon=null!==(i=this.page.getFlag(Xe,"fogOfWar"))&&void 0!==i?i:[],this._fowMaskImage=this.page.getFlag(Xe,"fowMask")||null,this.create(),this.initMarkers(),this._loadPosition();var l=JSON.stringify(this._exploredPolygon).length/1e3;console.log("Estimated size of fog of war for ".concat(this.page.name,": ").concat(l," KB"))}var t,r;return mapImage_createClass(MapImage,[{key:"grabCursor",get:function get(){return"grab"}},{key:"grabCursorActive",get:function get(){return"grabbing"}},{key:"addCircleFogOfWar",value:function addCircleFogOfWar(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:.1,r=arguments.length>1?arguments[1]:void 0,o=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if(game.user.isGM){var a=[];t*=this.fowBrushSize/100;for(var i=Math.max(8,200*t),l=this.mousePositionToRelative(r.x,r.y),c=this.FoWSize.width/this.FoWSize.height,u=0;u<i;u++){var p=2*u*Math.PI/i,d=l.x+t*Math.cos(p),h=l.y+t*Math.sin(p)*c;a.push({x:d,y:h})}for(var m=this._exploredPolygon,g=new ClipperLib.Clipper,y=new ClipperLib.Path,v=0,b=a;v<b.length;v++){var _=b[v];y.push(new ClipperLib.IntPoint(parseInt(_.x*this.FoWSize.width),parseInt(_.y*this.FoWSize.height)))}if(m){g.AddPath(y,o?ClipperLib.PolyType.ptClip:ClipperLib.PolyType.ptSubject,!0),m.forEach((function(t){g.AddPath(t.path,o?ClipperLib.PolyType.ptSubject:ClipperLib.PolyType.ptClip,!0)}));var w=new ClipperLib.PolyTree,S=o?ClipperLib.ClipType.ctDifference:ClipperLib.ClipType.ctUnion;g.Execute(S,w,ClipperLib.PolyFillType.pftNonZero,ClipperLib.PolyFillType.pftNonZero);var x=w.m_AllPolys.map((function(t){return{path:t.m_polygon,isHole:t.IsHole()}}));this._exploredPolygon=x}else{g.AddPath(y,ClipperLib.PolyType.ptSubject,!0),g.AddPath(y,ClipperLib.PolyType.ptClip,!0);var k=new ClipperLib.PolyTree;g.Execute(ClipperLib.ClipType.ctUnion,k,ClipperLib.PolyFillType.pftNonZero,ClipperLib.PolyFillType.pftNonZero);var E=k.m_AllPolys.map((function(t){return{path:t.m_polygon,isHole:t.IsHole()}}));this._exploredPolygon=E}this._exploredPolygon=this._exploredPolygon.sort((function(t,r){var o,a;if(null!==(o=t.area)&&void 0!==o||(t.area=Math.abs(ClipperLib.Clipper.Area(t.path))),null!==(a=r.area)&&void 0!==a||(r.area=Math.abs(ClipperLib.Clipper.Area(r.path))),t.area<r.area)return 1})),this._exploredPolygon.forEach((function(t){return delete t.area})),this.updateFoWSVG(),this._fowNeedsSaving=!0}}},{key:"updateFoWSVG",value:function updateFoWSVG(){if(this._fowMaskImage)return this.updateFoWSVGWithImage();var t=this.image.querySelector("svg");t&&t.remove();var r=this._exploredPolygon;if(r){var o=document.createElementNS("http://www.w3.org/2000/svg","svg");o.style.width="100%",o.style.height="100%",o.style.filter="blur(5px)",o.style.mixBlendMode="multiply",o.style.position="absolute",o.style.pointerEvents="none",o.style.opacity=game.user.isGM?.7:1,o.setAttribute("viewBox","0 0 ".concat(this.FoWSize.width," ").concat(this.FoWSize.height)),o.setAttribute("preserveAspectRatio","none"),this.image.appendChild(o);var a=document.createElementNS("http://www.w3.org/2000/svg","rect");a.setAttribute("x",0),a.setAttribute("y",0),a.setAttribute("width",this.FoWSize.width),a.setAttribute("height",this.FoWSize.height),a.setAttribute("fill","white"),o.appendChild(a);var i,l=_createForOfIteratorHelper(r);try{for(l.s();!(i=l.n()).done;){var c,u=i.value,p=document.createElementNS("http://www.w3.org/2000/svg","polygon"),d=_createForOfIteratorHelper(u.path);try{for(d.s();!(c=d.n()).done;){var h=c.value,m=o.createSVGPoint();m.x=h.X,m.y=h.Y,p.points.appendItem(m)}}catch(t){d.e(t)}finally{d.f()}p.setAttribute("fill",u.isHole?"white":"black"),o.appendChild(p)}}catch(t){l.e(t)}finally{l.f()}this._svgFow=o,this.setFOWBlur()}}},{key:"updateFoWSVGWithImage",value:function updateFoWSVGWithImage(){var t=this.image.querySelector("svg");t&&t.remove();var r=this._exploredPolygon;if(r){var o=document.createElementNS("http://www.w3.org/2000/svg","svg");o.style.width="100%",o.style.height="100%",o.style.position="absolute",o.style.pointerEvents="none",o.style.opacity=game.user.isGM?.7:1,o.setAttribute("viewBox","0 0 ".concat(this.FoWSize.width," ").concat(this.FoWSize.height)),o.setAttribute("preserveAspectRatio","none"),this.image.appendChild(o);var a=document.createElementNS("http://www.w3.org/2000/svg","rect");a.setAttribute("x",0),a.setAttribute("y",0),a.setAttribute("width",this.FoWSize.width),a.setAttribute("height",this.FoWSize.height),a.setAttribute("fill","black");var i=document.createElementNS("http://www.w3.org/2000/svg","mask");i.setAttribute("id","fow-mask"),i.setAttribute("x",0),i.setAttribute("y",0),i.setAttribute("width",this.FoWSize.width),i.setAttribute("height",this.FoWSize.height),o.appendChild(i),i.appendChild(a);var l,c=_createForOfIteratorHelper(r);try{for(c.s();!(l=c.n()).done;){var u,p=l.value,d=document.createElementNS("http://www.w3.org/2000/svg","polygon"),h=_createForOfIteratorHelper(p.path);try{for(h.s();!(u=h.n()).done;){var m=u.value,g=o.createSVGPoint();g.x=m.X,g.y=m.Y,d.points.appendItem(g)}}catch(t){h.e(t)}finally{h.f()}d.setAttribute("fill",p.isHole?"black":"white"),i.appendChild(d)}}catch(t){c.e(t)}finally{c.f()}var y=document.createElementNS("http://www.w3.org/2000/svg","image");y.setAttribute("href",this._fowMaskImage),y.setAttribute("width",this.FoWSize.width),y.setAttribute("height",this.FoWSize.height),y.setAttribute("preserveAspectRatio","none"),y.setAttribute("mask","url(#fow-mask)"),o.appendChild(y),this._svgFow=o,this.setFOWBlur()}}},{key:"setFOWBlur",value:function setFOWBlur(){var t;this._svgFow&&(this._svgFow.style.filter="blur(".concat(Math.max(1.5,Math.min(null!==(t=this._zoomLevel)&&void 0!==t?t:1,5)),"px)"))}},{key:"saveFoW",value:function saveFoW(){if(this._fowNeedsSaving){this._fowNeedsSaving=!1;var t=this._exploredPolygon;t&&this.page.setFlag(Xe,"fogOfWar",t)}}},{key:"resetFow",value:function resetFow(){var t=this;Dialog.confirm({title:game.i18n.localize("".concat(Xe,".resetFow.title")),content:game.i18n.localize("".concat(Xe,".resetFow.content")),yes:function yes(){var r=[{isHole:!1,path:[{X:0,Y:0},{X:t.FoWSize.width,Y:0},{X:t.FoWSize.width,Y:t.FoWSize.height},{X:0,Y:t.FoWSize.height}]}];t.page.setFlag(Xe,"fogOfWar",r),t._exploredPolygon=r},no:function no(){},defaultYes:!1})}},{key:"mousePositionToRelative",value:function mousePositionToRelative(t,r){var o=this.image.getBoundingClientRect();return t-=o.left,r-=o.top,{x:t/o.width,y:r/o.height}}},{key:"preloadFowMask",value:(r=mapImage_asyncToGenerator(mapImage_regeneratorRuntime().mark((function _callee(){var t;return mapImage_regeneratorRuntime().wrap((function _callee$(r){for(;;)switch(r.prev=r.next){case 0:if(this._fowMaskImage){r.next=2;break}return r.abrupt("return");case 2:if((t=new Image).src=this._fowMaskImage,!t.complete){r.next=6;break}return r.abrupt("return");case 6:return r.next=8,new Promise((function(r){return t.onload=r}));case 8:case"end":return r.stop()}}),_callee,this)}))),function preloadFowMask(){return r.apply(this,arguments)})},{key:"create",value:function create(){var t=this,r=document.createElement("div");r.style.backgroundImage="url('".concat(this.src,"')"),r.style.backgroundSize="contain",r.style.backgroundPosition="center",r.style.overflow="hidden";var o=new Image;o.src=this.src,o.style.opacity=0,r.style.position="absolute",this.image=r,this.image.appendChild(o),this.loadMultiSource();var a,i,l,c,u=!1,p=!1,d=0,h=0,m=!1,g=0,y=0,v=function onLoadedImage(){t.preloadFowMask().then((function(){t.element.style.opacity=1})),t.aspectRatio=o.naturalWidth/o.naturalHeight,t.FoWSize={width:o.naturalWidth,height:o.naturalHeight},t.updateFoWSVG();var r=t.element.offsetWidth||.5*window.innerWidth;t.image.style.width=r+"px",t.image.style.height=r/t.aspectRatio+"px",t.image.style.maxWidth="unset",t.image.style.maxHeight="unset";var a=t._loadPosition();o.remove();var i=function(){var r=mapImage_asyncToGenerator(mapImage_regeneratorRuntime().mark((function _callee2(){var r,o,i,l,c,u,p,m,v,b,_;return mapImage_regeneratorRuntime().wrap((function _callee2$(w){for(;;)switch(w.prev=w.next){case 0:r=t.image.getBoundingClientRect();case 1:if(r.width&&r.height){w.next=7;break}return w.next=4,new Promise((function(t){return setTimeout(t,1)}));case 4:r=t.image.getBoundingClientRect(),w.next=1;break;case 7:o=t.element.getBoundingClientRect(),i=r.width,l=r.height,c=o.width,u=o.height,p=c/i,m=u/l,v=Math.min(p,m),y=l*v,g=i*v,a?(d=null!==(b=a.imgX)&&void 0!==b?b:0,h=null!==(_=a.imgY)&&void 0!==_?_:0,t.setMultiSourceVisibility(g,y,a.width,a.height)):(t.image.style.width=i*v+"px",t.image.style.height=l*v+"px",t.image.style.left=(c-i*v)/2+"px",t.image.style.top=(u-l*v)/2+"px",d=(c-i*v)/2,h=(u-l*v)/2);case 18:case"end":return w.stop()}}),_callee2)})));return function doAsync(){return r.apply(this,arguments)}}();i()};this.element.appendChild(r),o.complete?v():o.onload=v,r.addEventListener("mouseup",this._addMarker.bind(this));var b=document.createElement("div");b.classList.add("foundry-quest-log-ru-marker"),b.style.position="absolute";var _=document.createElement("i");_.classList.add("fas","fa-location-dot"),b.appendChild(_),b.style.transform="translate(-50%, -50%)",b.style.color="red",b.style.pointerEvents="none";var w=document.createElement("div");w.style.position="absolute",w.style.borderRadius="50%",w.style.pointerEvents="none",w.style.transform="translate(-50%, -50%)",w.style.border="2px dashed",w.style.zIndex=100,w.style.boxShadow="0 0 5px var(--foundry-quest-log-ru-background), 0 0 5px var(--foundry-quest-log-ru-background), 0 0 5px var(--foundry-quest-log-ru-background), 0 0 5px var(--foundry-quest-log-ru-background), 0 0 5px var(--foundry-quest-log-ru-background), inset 0 0 5px var(--foundry-quest-log-ru-background), inset 0 0 5px var(--foundry-quest-log-ru-background), inset 0 0 5px var(--foundry-quest-log-ru-background), inset 0 0 5px var(--foundry-quest-log-ru-background), inset 0 0 5px var(--foundry-quest-log-ru-background)",w.style.display="none";var S=document.createElement("div");S.style.position="absolute",S.style.transform="translate(-50%, -85%)",S.style.pointerEvents="none",S.style.zIndex=100,S.style.display="none",S.style.fontSize="3vh",S.className="foundry-quest-log-ru-ruler-anchor",S.innerHTML='<i class="fas fa-map-pin"></i>',this._rulerAnchor=S;var x=document.createElement("div");x.style.position="absolute",x.style.transform="translate(-50%, -100%)",x.style.pointerEvents="none",x.style.zIndex=1e5,x.style.fontSize="3vh",x.classList.add("foundry-quest-log-ru-pointer-tooltip");var k=document.createElement("div");k.style.position="absolute",k.style.pointerEvents="none",k.style.height="3px",k.style.background="var(--foundry-quest-log-ru-text-1)",k.style.transformOrigin="left center",k.style.boxShadow="0 0 5px var(--foundry-quest-log-ru-background), 0 0 5px var(--foundry-quest-log-ru-background), 0 0 5px var(--foundry-quest-log-ru-background), 0 0 5px var(--foundry-quest-log-ru-background)",k.style.borderRadius="5px",k.style.width="100%",k.style.zIndex=50,this.image.appendChild(w),this.element.addEventListener("mousedown",(function(r){var o=r.shiftKey,m=0===r.button;if(r.ctrlKey){t.image.appendChild(S),t.image.appendChild(k),document.body.appendChild(x),S.style.display="block",S._enabled=!0;var g=t.image.getBoundingClientRect(),y=(r.pageX-g.left)/g.width,v=(r.pageY-g.top)/g.height;S.dataset.leftPercent=y,S.dataset.topPercent=v,S.style.left=100*y+"%",S.style.top=100*v+"%"}if(m){if(u=t.page.isOwner,o)return;!t._movingMarker&&t.image.appendChild(b)}else{if(p=!0,o)return;t.element.style.cursor=t.grabCursorActive,a=r.pageX-t.element.offsetLeft,i=r.pageY-t.element.offsetTop,l=d,c=h,t._savePosition()}})),this.element.addEventListener("mouseleave",(function(){u=!1,p=!1,b.remove(),S.remove(),k.remove(),S._enabled=!1,x.remove(),t.element.style.cursor=t.grabCursor,t._savePosition()})),this.element.addEventListener("mouseup",(function(){u=!1,p=!1,b.remove(),S.remove(),k.remove(),S._enabled=!1,x.remove(),t.element.style.cursor=t.grabCursor,t._savePosition(),t.saveFoW()})),this.element.addEventListener("mousemove",(function(m){var g=m.shiftKey,y=m.ctrlKey;t.element.classList.toggle("prevent-icon-interaction",y);var v=t.image.getBoundingClientRect(),_=(m.pageX-v.left)/v.width,E=(m.pageY-v.top)/v.height;if(game.user.isGM&&(g?(w.style.left=100*_+"%",w.style.top=100*E+"%",w.style.width=.2*t.fowBrushSize+"%",w.style.height=.2*t.fowBrushSize*t.aspectRatio+"%",w.style.display="block",t.element.style.cursor="none"):(w.style.display="none","none"==t.element.style.cursor&&(t.element.style.cursor=t.grabCursor))),g&&(u||p))t.addCircleFogOfWar(.1,{x:m.pageX,y:m.pageY},p);else{if(u&&!t._movingMarker&&!S._enabled){m.preventDefault();var T=t.image.getBoundingClientRect(),P=m.pageX-T.left,O=m.pageY-T.top;b.style.left=P+"px",b.style.top=O+"px",t.element.style.cursor="none"}if(t._movingMarker&&(m.preventDefault(),t._movingMarker.style.left=100*_+"%",t._movingMarker.style.top=100*E+"%",t._movingMarker.dataset.leftPercent=_,t._movingMarker.dataset.topPercent=E),S._enabled){var C=_-parseFloat(S.dataset.leftPercent),L=E-parseFloat(S.dataset.topPercent),A=C*o.naturalWidth,I=L*o.naturalHeight,j=Math.atan2(I,A),M=Math.sqrt(A*A+I*I),R=M/o.naturalWidth,q=(M*(t._measure/100)).toFixed(2)+" "+t._measureUnits+".";k.style.width=100*R+"%",k.style.left=100*parseFloat(S.dataset.leftPercent)+"%",k.style.top=100*parseFloat(S.dataset.topPercent)+"%",k.style.transformOrigin="left center",k.style.transform="rotate(".concat(j,"rad)"),x.innerHTML='<i class="fas fa-ruler"></i> '.concat(q),x.style.left=m.pageX+"px",x.style.top=m.pageY+"px",t.element.style.cursor="pointer"}if(p&&!S._enabled){m.preventDefault();var G=m.pageX-t.element.offsetLeft,D=m.pageY-t.element.offsetTop;d=l+(G-a),h=c+(D-i),r.style.left=d+"px",r.style.top=h+"px"}}}));var E=function onWheel(r){var o,a=arguments.length>1&&void 0!==arguments[1]&&arguments[1];r.preventDefault();var i=Math.min(Math.max(.1,1+-.001*(null!==(o=r.deltaY)&&void 0!==o?o:1)),4);if(r.shiftKey){var l=-1*Math.sign(r.deltaY);return t._fowBrushSizeInput.value=parseInt(t._fowBrushSizeInput.value)+5*l,t._fowBrushSizeInput.dispatchEvent(new Event("change")),w.style.width=.2*t.fowBrushSize+"%",void(w.style.height=.2*t.fowBrushSize*t.aspectRatio+"%")}var c=t.image,u=t.aspectRatio,p=c.getBoundingClientRect(),v=p.width,b=p.height;m||g||y||(g=v,y=b,m=!0);var _=v*i,S=_/u;if(t._zoomLevel=_/g,t.setFOWBlur(),!(t._zoomLevel<.7||t._zoomLevel>20||(t.element.style.setProperty("--zoom-level",t._zoomLevel),a))){var x=(r.pageX-p.left)/v,k=(r.pageY-p.top)/b;c.style.width=_+"px",c.style.height=S+"px",d-=(_-v)*x,h-=(S-b)*k,c.style.left=d+"px",c.style.top=h+"px",t._savePosition(),t.setMultiSourceVisibility(g,y,_,S)}};setTimeout((function(){E(new MouseEvent("wheel",{deltaY:10}),!0)}),1),this.element.addEventListener("wheel",E),this.element.addEventListener("drop",function(){var r=mapImage_asyncToGenerator(mapImage_regeneratorRuntime().mark((function _callee3(r){var o,a,i,l,c,u,p,d,h,m,g,y,v,b,_,w,S;return mapImage_regeneratorRuntime().wrap((function _callee3$(x){for(;;)switch(x.prev=x.next){case 0:if(x.prev=0,i=t.image.getBoundingClientRect(),l=(r.pageX-i.left)/i.width,c=(r.pageY-i.top)/i.height,u=r.altKey,p=JSON.parse(r.dataTransfer.getData("text/plain")),d="New Marker",h="fas fa-location-dot",m=p.uuid,g=null==p||null===(o=p.texture)||void 0===o?void 0:o.src,!m){x.next=17;break}return x.next=13,fromUuid(m);case 13:_=x.sent,d=null!==(y=null!==(v=_.name)&&void 0!==v?v:_.title)&&void 0!==y?y:"New Marker",h=null!==(b=_.img)&&void 0!==b?b:"fas fa-location-dot",p.anchor&&(d.value=p.anchor.name,m+="#"+p.anchor.slug);case 17:g&&(h=g),w=null!==(a=t.page.getFlag(Xe,"markers"))&&void 0!==a?a:{},S=foundry.utils.randomID(),w[S]={title:d,icon:h,x:l,y:c,journal:m,hidden:u,color:"#ff0000"},t.page.setFlag(Xe,"markers",w),x.next=26;break;case 24:x.prev=24,x.t0=x.catch(0);case 26:case"end":return x.stop()}}),_callee3,null,[[0,24]])})));return function(t){return r.apply(this,arguments)}}())}},{key:"_savePosition",value:function _savePosition(){var t=this.image.style.left,r=this.image.style.top,o=this.image.style.width,a=this.image.style.height;t&&r&&o&&a&&(this.page._mapPositions={left:t,top:r,width:o,height:a})}},{key:"_loadPosition",value:function _loadPosition(){var t=this.page._mapPositions;if(t&&t.left&&t.top&&t.width&&t.height)return this.image.style.left=t.left,this.image.style.top=t.top,this.image.style.width=t.width,this.image.style.height=t.height,{imgX:parseFloat(t.left),imgY:parseFloat(t.top),width:parseFloat(t.width),height:parseFloat(t.height)}}},{key:"_addMarker",value:function _addMarker(t){if(this.page.isOwner&&!this._lockPins&&!this._rulerAnchor._enabled&&(0===t.button&&!t.shiftKey&&!this._movingMarker)){var r=this.image.getBoundingClientRect(),o=t.pageX-r.left,a=t.pageY-r.top,i=o/r.width,l=a/r.height;this.mousePercent={x:i,y:l},new d(this,this.page).render(!0)}}},{key:"initMarkers",value:function initMarkers(){var t,r=this;this.image.querySelectorAll(".foundry-quest-log-ru-marker").forEach((function(t){t.remove()}));var o=this.page,a=null!==(t=o.getFlag(Xe,"markers"))&&void 0!==t?t:{},i="none"!==getSetting("labelColor")?getSetting("labelColor"):null;if(a)for(var l=function _loop(){var t,a,l,p=mapImage_slicedToArray(u[c],2),h=p[0],m=p[1];if(null==m)return"continue";if(!o.isOwner&&m.hidden)return"continue";var g=document.createElement("div");g.classList.add("foundry-quest-log-ru-marker"),m.hidden&&(g.style.border="3px dashed"),g.style.position="absolute",g.style.left=100*m.x+"%",g.style.top=100*m.y+"%",g.style.color=m.color,g.style.transform=m.fixedScale?"translate(-50%, -50%) scale(calc(".concat(null!==(t=m.scale)&&void 0!==t?t:1," * var(--zoom-level)))"):"translate(-50%, -50%) scale(".concat(null!==(a=m.scale)&&void 0!==a?a:1,")"),g.style.display="flex",g.style.alignItems="center",g.style.justifyContent="center",null!==(l=m.icon)&&void 0!==l||(m.icon="fas fa-location-dot");var y=m.icon.split(".").pop().toLowerCase(),v=["mp4","webm"].includes(y),b=!v&&m.icon.includes("."),_=m.icon.includes("fa-")&&!b,w=!b&&!_&&!v;v&&(g.innerHTML='<video class="marker-image" src="'.concat(m.icon,'" autoplay loop muted></video>')),w&&(g.innerHTML='<i class="emoji">'.concat(m.icon,"</i>")),b&&(g.innerHTML='<i class="marker-image" style="background-image: url(\''.concat(m.icon,"')\"></i>")),_&&(g.innerHTML='<i class="'.concat(m.icon,'"></i>')),g.dataset.tooltipDirection="UP",g.dataset.tooltipClass="foundry-quest-log-ru-marker-tooltip",m.displayLabel?g.dataset.tooltip="":g.dataset.tooltip='\n                <h4 style="margin: 0">'.concat(m.title,"</h4>\n                "),m.description&&(g.dataset.tooltip+="\n                <p>".concat(m.description,"</p>\n                ")),g.style.cursor=m.journal?"pointer":"default";var S=document.createElement("span");if(S.innerText=m.title,S.style.position="absolute",S.style.width="max-content",S.style.bottom="100%",S.style.fontSize="calc(var(--foundry-quest-log-ru-font-size)*0.75)",S.style.pointerEvents="none",i&&(S.style.color=i),m.displayLabel&&g.appendChild(S),o.isOwner&&!r._lockPins){var x=0;g.addEventListener("mousedown",(function(t){(t.stopPropagation(),t.shiftKey)||2===t.button&&(r._movingMarker=g,x=Date.now())})),g.addEventListener("mouseup",(function(t){var a;if(t.stopPropagation(),!t.shiftKey){var i=2===t.button;if(t.altKey){var l,c=null!==(l=o.getFlag(Xe,"markers"))&&void 0!==l?l:{};return c[h].hidden=!c[h].hidden,void o.setFlag(Xe,"markers",c)}if(i){r._movingMarker=null;var u=parseFloat(g.dataset.leftPercent),p=parseFloat(g.dataset.topPercent),y=Math.abs(u-m.x),v=Math.abs(p-m.y);if(Date.now()-x<500&&y<5e-4&&v<5e-4||u<=0||p<=0||isNaN(u)||isNaN(p))return g.style.left=100*m.x+"%",g.style.top=100*m.y+"%",new d(r,r.page,h).render(!0);var b=null!==(a=o.getFlag(Xe,"markers"))&&void 0!==a?a:{};b[h].x=u,b[h].y=p,o.setFlag(Xe,"markers",b)}}}))}m.journal&&g.addEventListener("click",function(){var t=mapImage_asyncToGenerator(mapImage_regeneratorRuntime().mark((function _callee4(t){var o,a,i,l,c,u,p,d,g,y,v,b;return mapImage_regeneratorRuntime().wrap((function _callee4$(_){for(;;)switch(_.prev=_.next){case 0:if(!t.altKey){_.next=2;break}return _.abrupt("return");case 2:return t.preventDefault(),t.stopPropagation(),o=m.journal,m.journal.split("#")[1]&&(o=m.journal.split("#")[0]),_.next=9,fromUuid(o);case 9:if(a=_.sent,i=a instanceof Scene,l=a instanceof Macro,!i){_.next=15;break}return ui.simpleQuest.toggle(),_.abrupt("return",a.view());case 15:if(!l){_.next=18;break}return c=mapImage_objectSpread(mapImage_objectSpread({},m),{},{id:h,map:r.page}),_.abrupt("return",a.execute(c));case 18:u=ui.simpleQuest._questJournals,p=r.page.parent,d=!1,g=Array.from(p.pages).some((function(t){return t.uuid==a.uuid})),y=_createForOfIteratorHelper(u);try{for(y.s();!(v=y.n()).done;)v.value.pages.forEach((function(t){t.uuid==a.uuid&&(d=!0)}))}catch(t){y.e(t)}finally{y.f()}if(!d&&!g){_.next=28;break}ui.simpleQuest.openToPage(a.uuid),_.next=33;break;case 28:if(b=a instanceof JournalEntryPage,a.testUserPermission(game.user,CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER)){_.next=32;break}return _.abrupt("return",ui.notifications.error(game.i18n.localize("".concat(Xe,".noPermission"))));case 32:b&&getSetting("openJournalPinsAsModals")?r.openModalJournal(a,m.journal):a.sheet.render(!0);case 33:case"end":return _.stop()}}),_callee4)})));return function(r){return t.apply(this,arguments)}}()),r.image.appendChild(g)},c=0,u=Object.entries(a);c<u.length;c++)l()}},{key:"openModalJournal",value:(t=mapImage_asyncToGenerator(mapImage_regeneratorRuntime().mark((function _callee5(t,r){var o,a,i,l,c,u,p,d,h,m,g;return mapImage_regeneratorRuntime().wrap((function _callee5$(y){for(;;)switch(y.prev=y.next){case 0:if(o=r.split("#")[1],t.testUserPermission(game.user,CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER)){y.next=4;break}return y.abrupt("return",ui.notifications.error(game.i18n.localize("".concat(Xe,".noPermission"))));case 4:if(a="","text"!==t.type){y.next=11;break}return y.next=8,foundry.applications.ux.TextEditor.implementation.enrichHTML(t.text.content,{secrets:game.user.isGM,relativeTo:t,async:!0});case 8:a=y.sent,y.next=12;break;case 11:a="image"===t.type?'<div class="foundry-quest-log-ru-image-journal" style="max-height: 50vh;"><img src="'.concat(t.src,'" alt="').concat(t.name,'"><p>').concat(t.image.caption,"</p></div>"):"<p>This Page Type is not Supported in Simple Quest</p>";case 12:(i=document.createElement("div")).classList.add("foundry-quest-log-ru-modal"),i.style.opacity=0,l="<h1>".concat(t.name,"</h1>"),i.innerHTML='<div class="foundry-quest-log-ru-modal-content">'.concat(l+a,"</div>"),i.addEventListener("mousedown",(function(t){i.animate([{opacity:1},{opacity:0}],{duration:200,easing:"ease-in-out"}).onfinish=function(){i.remove()}})),i.addEventListener("wheel",(function(t){t.stopPropagation()})),i.addEventListener("mousemove",(function(t){t.stopPropagation()})),this.element.appendChild(i),c=this.element.getBoundingClientRect().height,i.querySelector(".foundry-quest-log-ru-modal-content").getBoundingClientRect().height<c&&(i.style.display="flex",i.style.justifyContent="center",i.style.flexDirection="column"),i.animate([{opacity:0},{opacity:1}],{duration:200,easing:"ease-in-out",fill:"forwards"}),o&&(u=t.toc[o],p=u.text.trim(),d=i.querySelectorAll("h1, h2, h3"),m=o.includes("$")?parseInt(o.split("$")[1]):0,g=Array.from(d).filter((function(t){return t.innerText.trim()===p})),(h=g[m])&&h.scrollIntoView({block:"start"}));case 26:case"end":return y.stop()}}),_callee5,this)}))),function openModalJournal(r,o){return t.apply(this,arguments)})},{key:"loadMultiSource",value:function loadMultiSource(){if(!this.isMultiSource)return!1;var t=Math.sqrt(this.multiSource.length),r=t%1==0,o=Math.sqrt(this.multiSource.length-1)%1==0&&!r;if(!r&&!o)return!1;this.multiImageElements=[],o&&(t=Math.sqrt(this.multiSource.length-1),this.multiSourceHasLowRes=!0),this.multiSourceSQRT=t;var a={x:t,y:t};this.image.style.display="grid",this.image.style.gridTemplateColumns="repeat(".concat(a.x,", 1fr)"),this.image.style.gridTemplateRows="repeat(".concat(a.y,", 1fr)");var i,l=_createForOfIteratorHelper(this.multiSource);try{for(l.s();!(i=l.n()).done;){var c=i.value;if(!o||0!=this.multiSource.indexOf(c)){var u=document.createElement("div");o&&(u.style.display="none"),u.style.backgroundImage="url('".concat(c,"')"),u.style.backgroundSize="cover",u.style.backgroundPosition="center",u.style.width="100%",u.style.height="100%",u.style.pointerEvents="none",this.multiImageElements.push(u),this.image.appendChild(u)}}}catch(t){l.e(t)}finally{l.f()}}},{key:"setMultiSourceVisibility",value:function setMultiSourceVisibility(t,r,o,a){if(this.multiImageElements&&this.multiSourceHasLowRes){var i=o/t>this.multiSourceSQRT;this.multiImageElements.forEach((function(t){t.style.display=i?"block":"none"}))}}}]),MapImage}(),d=function(t){!function mapImage_inherits(t,r){if("function"!=typeof r&&null!==r)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(r&&r.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),Object.defineProperty(t,"prototype",{writable:!1}),r&&mapImage_setPrototypeOf(t,r)}(MarkerConfig,FormApplication);var r,o=mapImage_createSuper(MarkerConfig);function MarkerConfig(t,r){var a,i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:null;return mapImage_classCallCheck(this,MarkerConfig),(a=o.call(this)).mapImage=t,a.page=r,a.edit=i,a}return mapImage_createClass(MarkerConfig,[{key:"defaultMarkerData",get:function get(){return{title:"New Marker",icon:"fas fa-location-dot",color:"#ff0000",scale:1}}},{key:"markerIcons",get:function get(){return["modules/foundry-quest-log-ru/assets/icons/altar1.webp","modules/foundry-quest-log-ru/assets/icons/beer1.webp","modules/foundry-quest-log-ru/assets/icons/beer2.webp","modules/foundry-quest-log-ru/assets/icons/beer3.webp","modules/foundry-quest-log-ru/assets/icons/book1.webp","modules/foundry-quest-log-ru/assets/icons/book2.webp","modules/foundry-quest-log-ru/assets/icons/book3.webp","modules/foundry-quest-log-ru/assets/icons/book4.webp","modules/foundry-quest-log-ru/assets/icons/book5.webp","modules/foundry-quest-log-ru/assets/icons/boss1.webp","modules/foundry-quest-log-ru/assets/icons/boss2.webp","modules/foundry-quest-log-ru/assets/icons/boss3.webp","modules/foundry-quest-log-ru/assets/icons/boss4.webp","modules/foundry-quest-log-ru/assets/icons/coin1.webp","modules/foundry-quest-log-ru/assets/icons/coin2.webp","modules/foundry-quest-log-ru/assets/icons/coin3.webp","modules/foundry-quest-log-ru/assets/icons/coin4.webp","modules/foundry-quest-log-ru/assets/icons/combat1.webp","modules/foundry-quest-log-ru/assets/icons/combat2.webp","modules/foundry-quest-log-ru/assets/icons/combat3.webp","modules/foundry-quest-log-ru/assets/icons/doorway1.webp","modules/foundry-quest-log-ru/assets/icons/doorway2.webp","modules/foundry-quest-log-ru/assets/icons/doorway3.webp","modules/foundry-quest-log-ru/assets/icons/doorway4.webp","modules/foundry-quest-log-ru/assets/icons/doorway5.webp","modules/foundry-quest-log-ru/assets/icons/exclamation1.webp","modules/foundry-quest-log-ru/assets/icons/exclamation2.webp","modules/foundry-quest-log-ru/assets/icons/exclamation3.webp","modules/foundry-quest-log-ru/assets/icons/exclamation4.webp","modules/foundry-quest-log-ru/assets/icons/food1.webp","modules/foundry-quest-log-ru/assets/icons/food2.webp","modules/foundry-quest-log-ru/assets/icons/food3.webp","modules/foundry-quest-log-ru/assets/icons/key1.webp","modules/foundry-quest-log-ru/assets/icons/key2.webp","modules/foundry-quest-log-ru/assets/icons/location1.webp","modules/foundry-quest-log-ru/assets/icons/location10.webp","modules/foundry-quest-log-ru/assets/icons/location2.webp","modules/foundry-quest-log-ru/assets/icons/location3.webp","modules/foundry-quest-log-ru/assets/icons/location4.webp","modules/foundry-quest-log-ru/assets/icons/location5.webp","modules/foundry-quest-log-ru/assets/icons/location6.webp","modules/foundry-quest-log-ru/assets/icons/location7.webp","modules/foundry-quest-log-ru/assets/icons/location8.webp","modules/foundry-quest-log-ru/assets/icons/location9.webp","modules/foundry-quest-log-ru/assets/icons/map1.webp","modules/foundry-quest-log-ru/assets/icons/map2.webp","modules/foundry-quest-log-ru/assets/icons/map3.webp","modules/foundry-quest-log-ru/assets/icons/monster1.webp","modules/foundry-quest-log-ru/assets/icons/monster2.webp","modules/foundry-quest-log-ru/assets/icons/monster3.webp","modules/foundry-quest-log-ru/assets/icons/monster4.webp","modules/foundry-quest-log-ru/assets/icons/note1.webp","modules/foundry-quest-log-ru/assets/icons/note2.webp","modules/foundry-quest-log-ru/assets/icons/note3.webp","modules/foundry-quest-log-ru/assets/icons/note4.webp","modules/foundry-quest-log-ru/assets/icons/ore1.webp","modules/foundry-quest-log-ru/assets/icons/ore2.webp","modules/foundry-quest-log-ru/assets/icons/ore3.webp","modules/foundry-quest-log-ru/assets/icons/ore4.webp","modules/foundry-quest-log-ru/assets/icons/ore5.webp","modules/foundry-quest-log-ru/assets/icons/ore6.webp","modules/foundry-quest-log-ru/assets/icons/ore7.webp","modules/foundry-quest-log-ru/assets/icons/painting1.webp","modules/foundry-quest-log-ru/assets/icons/painting2.webp","modules/foundry-quest-log-ru/assets/icons/painting3.webp","modules/foundry-quest-log-ru/assets/icons/pendant1.webp","modules/foundry-quest-log-ru/assets/icons/pendant2.webp","modules/foundry-quest-log-ru/assets/icons/pendant3.webp","modules/foundry-quest-log-ru/assets/icons/plant1.webp","modules/foundry-quest-log-ru/assets/icons/plant2.webp","modules/foundry-quest-log-ru/assets/icons/plant3.webp","modules/foundry-quest-log-ru/assets/icons/plant4.webp","modules/foundry-quest-log-ru/assets/icons/plant5.webp","modules/foundry-quest-log-ru/assets/icons/plant6.webp","modules/foundry-quest-log-ru/assets/icons/plant7.webp","modules/foundry-quest-log-ru/assets/icons/plant8.webp","modules/foundry-quest-log-ru/assets/icons/portal1.webp","modules/foundry-quest-log-ru/assets/icons/portal2.webp","modules/foundry-quest-log-ru/assets/icons/portal3.webp","modules/foundry-quest-log-ru/assets/icons/portal4.webp","modules/foundry-quest-log-ru/assets/icons/pouch1.webp","modules/foundry-quest-log-ru/assets/icons/pouch2.webp","modules/foundry-quest-log-ru/assets/icons/pouch3.webp","modules/foundry-quest-log-ru/assets/icons/pouch4.webp","modules/foundry-quest-log-ru/assets/icons/question1.webp","modules/foundry-quest-log-ru/assets/icons/question2.webp","modules/foundry-quest-log-ru/assets/icons/question3.webp","modules/foundry-quest-log-ru/assets/icons/question4.webp","modules/foundry-quest-log-ru/assets/icons/scroll1.webp","modules/foundry-quest-log-ru/assets/icons/scroll2.webp","modules/foundry-quest-log-ru/assets/icons/scroll3.webp","modules/foundry-quest-log-ru/assets/icons/shield1.webp","modules/foundry-quest-log-ru/assets/icons/shield2.webp","modules/foundry-quest-log-ru/assets/icons/shield3.webp","modules/foundry-quest-log-ru/assets/icons/shield4.webp","modules/foundry-quest-log-ru/assets/icons/skull1.webp","modules/foundry-quest-log-ru/assets/icons/skull2.webp","modules/foundry-quest-log-ru/assets/icons/skull3.webp","modules/foundry-quest-log-ru/assets/icons/spell1.webp","modules/foundry-quest-log-ru/assets/icons/spell2.webp","modules/foundry-quest-log-ru/assets/icons/spell3.webp","modules/foundry-quest-log-ru/assets/icons/spell4.webp","modules/foundry-quest-log-ru/assets/icons/spell5.webp","modules/foundry-quest-log-ru/assets/icons/spell6.webp","modules/foundry-quest-log-ru/assets/icons/spell7.webp","modules/foundry-quest-log-ru/assets/icons/spell8.webp","modules/foundry-quest-log-ru/assets/icons/tree1.webp","modules/foundry-quest-log-ru/assets/icons/tree2.webp","modules/foundry-quest-log-ru/assets/icons/tree3.webp","modules/foundry-quest-log-ru/assets/icons/tree4.webp","fas fa-location-dot","fa-solid fa-exclamation","fa-solid fa-question","fas fa-dragon","fas fa-sword","fas fa-shield-alt","fas fa-helmet-battle","fas fa-axe","fas fa-scroll","fas fa-scroll-old","fas fa-treasure-chest","fas fa-magic","fas fa-crystal-ball","fas fa-book-dead","fas fa-bone","fas fa-flask-round-potion","fas fa-flask-round-poison","fas fa-ring","fas fa-crown","fas fa-dice","fas fa-hourglass-end","fas fa-bow-arrow","fas fa-meteor","fas fa-moon","fas fa-sun","fas fa-cloud-moon","fas fa-cloud-sun","fas fa-coin","fas fa-skull-crossbones","fas fa-dungeon","fas fa-mountain","fas fa-tree","fas fa-campfire","fas fa-compass","fa-solid fa-bullseye","fas fa-feather-alt","fas fa-bug","fas fa-paw","fas fa-fish","fas fa-bird","fas fa-horse","fas fa-spider","fas fa-ghost","fas fa-bat","fas fa-wand-magic","fas fa-hat-wizard","fas fa-staff","fas fa-flag-checkered","fas fa-map","fas fa-anchor","fas fa-ship","fas fa-skull","fas fa-cross","fas fa-ban","fas fa-gem","fas fa-leaf","fas fa-flower","fas fa-mushroom","fas fa-paw-claws","fas fa-star","fas fa-fire","fa-solid fa-fire-flame-curved","fas fa-water","fas fa-wind","fas fa-earth","fas fa-heart","fas fa-mind-share","fas fa-sword-laser","fas fa-moon-stars","fas fa-cloud","fas fa-rainbow","fas fa-axe-battle","fas fa-brain","fas fa-crow","fas fa-dagger","fas fa-frog","fas fa-globe","fas fa-hammer","fas fa-hat-witch","fas fa-pumpkin","fas fa-candle-holder","fas fa-broom","fas fa-dice-d20","fas fa-tornado","fas fa-cloud-showers-heavy"]}},{key:"activateListeners",value:function activateListeners(t){var r=this;mapImage_get(mapImage_getPrototypeOf(MarkerConfig.prototype),"activateListeners",this).call(this,t),t[0].querySelector("#delete-marker").addEventListener("click",(function(t){t.preventDefault(),t.stopPropagation(),r.page.update(mapImage_defineProperty({},"flags.".concat(Xe,".markers.-=").concat(r.edit),null)),r.close()})),t[0].querySelectorAll(".quest-icons i").forEach((function(r){r.addEventListener("click",(function(o){o.preventDefault(),o.stopPropagation(),t[0].querySelector("#icon").value=r.classList.value}))})),t[0].querySelector("#journal").addEventListener("drop",function(){var r=mapImage_asyncToGenerator(mapImage_regeneratorRuntime().mark((function _callee6(r){var o,a,i,l,c,u;return mapImage_regeneratorRuntime().wrap((function _callee6$(p){for(;;)switch(p.prev=p.next){case 0:return r.preventDefault(),r.stopPropagation(),p.prev=2,a=JSON.parse(r.dataTransfer.getData("text/plain")),i=a.uuid,p.next=7,fromUuid(i);case 7:l=p.sent,c=null!==(o=l.name)&&void 0!==o?o:l.title,(u=t[0].querySelector("#title")).value&&"New Marker"!=u.value||(u.value=c),t[0].querySelector("#journal").value=i,a.anchor&&(u.value=a.anchor.name,t[0].querySelector("#journal").value+="#"+a.anchor.slug),p.next=17;break;case 15:p.prev=15,p.t0=p.catch(2);case 17:case"end":return p.stop()}}),_callee6,null,[[2,15]])})));return function(t){return r.apply(this,arguments)}}())}},{key:"getData",value:function getData(){var t,r,o=null!==(t=this.page.getFlag(Xe,"markers"))&&void 0!==t?t:{},a=null!==(r=(null!=o?o:{})[this.edit])&&void 0!==r?r:{};return mapImage_objectSpread(mapImage_objectSpread({},foundry.utils.mergeObject(this.defaultMarkerData,a)),{},{id:this.edit,icons:this.markerIcons.map((function(t){return{icon:t,isImage:t.includes(".")}}))})}},{key:"_updateObject",value:(r=mapImage_asyncToGenerator(mapImage_regeneratorRuntime().mark((function _callee7(t,r){var o,a,i;return mapImage_regeneratorRuntime().wrap((function _callee7$(l){for(;;)switch(l.prev=l.next){case 0:return t.preventDefault(),r=expandObject(r),this.edit||(r.x=this.mapImage.mousePercent.x,r.y=this.mapImage.mousePercent.y),(i=null!==(o=this.page.getFlag(Xe,"markers"))&&void 0!==o?o:{})[null!==(a=this.edit)&&void 0!==a?a:foundry.utils.randomID(20)]=r,l.next=7,this.page.setFlag(Xe,"markers",i);case 7:case"end":return l.stop()}}),_callee7,this)}))),function _updateObject(t,o){return r.apply(this,arguments)})}],[{key:"defaultOptions",get:function get(){return foundry.utils.mergeObject(mapImage_get(mapImage_getPrototypeOf(MarkerConfig),"defaultOptions",this),{id:"foundry-quest-log-ru-marker-config",template:"modules/foundry-quest-log-ru/templates/marker-config.hbs",title:game.i18n.localize("".concat(Xe,".markerConfig.title")),classes:[],width:400,height:"auto",resizable:!1,closeOnSubmit:!0})}}]),MarkerConfig}();function Sortable_ownKeys(t,r){var o=Object.keys(t);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(t);r&&(a=a.filter((function(r){return Object.getOwnPropertyDescriptor(t,r).enumerable}))),o.push.apply(o,a)}return o}function _objectSpread2(t){for(var r=1;r<arguments.length;r++){var o=null!=arguments[r]?arguments[r]:{};r%2?Sortable_ownKeys(Object(o),!0).forEach((function(r){Sortable_defineProperty(t,r,o[r])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(o)):Sortable_ownKeys(Object(o)).forEach((function(r){Object.defineProperty(t,r,Object.getOwnPropertyDescriptor(o,r))}))}return t}function Sortable_typeof(t){return Sortable_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function _typeof(t){return typeof t}:function _typeof(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},Sortable_typeof(t)}function Sortable_defineProperty(t,r,o){return r in t?Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}):t[r]=o,t}function _extends(){return _extends=Object.assign||function(t){for(var r=1;r<arguments.length;r++){var o=arguments[r];for(var a in o)Object.prototype.hasOwnProperty.call(o,a)&&(t[a]=o[a])}return t},_extends.apply(this,arguments)}function _objectWithoutProperties(t,r){if(null==t)return{};var o,a,i=function _objectWithoutPropertiesLoose(t,r){if(null==t)return{};var o,a,i={},l=Object.keys(t);for(a=0;a<l.length;a++)o=l[a],r.indexOf(o)>=0||(i[o]=t[o]);return i}(t,r);if(Object.getOwnPropertySymbols){var l=Object.getOwnPropertySymbols(t);for(a=0;a<l.length;a++)o=l[a],r.indexOf(o)>=0||Object.prototype.propertyIsEnumerable.call(t,o)&&(i[o]=t[o])}return i}function userAgent(t){if("undefined"!=typeof window&&window.navigator)return!!navigator.userAgent.match(t)}var h=userAgent(/(?:Trident.*rv[ :]?11\.|msie|iemobile|Windows Phone)/i),m=userAgent(/Edge/i),g=userAgent(/firefox/i),y=userAgent(/safari/i)&&!userAgent(/chrome/i)&&!userAgent(/android/i),v=userAgent(/iP(ad|od|hone)/i),b=userAgent(/chrome/i)&&userAgent(/android/i),_={capture:!1,passive:!1};function on(t,r,o){t.addEventListener(r,o,!h&&_)}function off(t,r,o){t.removeEventListener(r,o,!h&&_)}function matches(t,r){if(r){if(">"===r[0]&&(r=r.substring(1)),t)try{if(t.matches)return t.matches(r);if(t.msMatchesSelector)return t.msMatchesSelector(r);if(t.webkitMatchesSelector)return t.webkitMatchesSelector(r)}catch(t){return!1}return!1}}function getParentOrHost(t){return t.host&&t!==document&&t.host.nodeType?t.host:t.parentNode}function closest(t,r,o,a){if(t){o=o||document;do{if(null!=r&&(">"===r[0]?t.parentNode===o&&matches(t,r):matches(t,r))||a&&t===o)return t;if(t===o)break}while(t=getParentOrHost(t))}return null}var w,S=/\s+/g;function toggleClass(t,r,o){if(t&&r)if(t.classList)t.classList[o?"add":"remove"](r);else{var a=(" "+t.className+" ").replace(S," ").replace(" "+r+" "," ");t.className=(a+(o?" "+r:"")).replace(S," ")}}function css(t,r,o){var a=t&&t.style;if(a){if(void 0===o)return document.defaultView&&document.defaultView.getComputedStyle?o=document.defaultView.getComputedStyle(t,""):t.currentStyle&&(o=t.currentStyle),void 0===r?o:o[r];r in a||-1!==r.indexOf("webkit")||(r="-webkit-"+r),a[r]=o+("string"==typeof o?"":"px")}}function matrix(t,r){var o="";if("string"==typeof t)o=t;else do{var a=css(t,"transform");a&&"none"!==a&&(o=a+" "+o)}while(!r&&(t=t.parentNode));var i=window.DOMMatrix||window.WebKitCSSMatrix||window.CSSMatrix||window.MSCSSMatrix;return i&&new i(o)}function find(t,r,o){if(t){var a=t.getElementsByTagName(r),i=0,l=a.length;if(o)for(;i<l;i++)o(a[i],i);return a}return[]}function getWindowScrollingElement(){var t=document.scrollingElement;return t||document.documentElement}function getRect(t,r,o,a,i){if(t.getBoundingClientRect||t===window){var l,c,u,p,d,m,g;if(t!==window&&t.parentNode&&t!==getWindowScrollingElement()?(c=(l=t.getBoundingClientRect()).top,u=l.left,p=l.bottom,d=l.right,m=l.height,g=l.width):(c=0,u=0,p=window.innerHeight,d=window.innerWidth,m=window.innerHeight,g=window.innerWidth),(r||o)&&t!==window&&(i=i||t.parentNode,!h))do{if(i&&i.getBoundingClientRect&&("none"!==css(i,"transform")||o&&"static"!==css(i,"position"))){var y=i.getBoundingClientRect();c-=y.top+parseInt(css(i,"border-top-width")),u-=y.left+parseInt(css(i,"border-left-width")),p=c+l.height,d=u+l.width;break}}while(i=i.parentNode);if(a&&t!==window){var v=matrix(i||t),b=v&&v.a,_=v&&v.d;v&&(p=(c/=_)+(m/=_),d=(u/=b)+(g/=b))}return{top:c,left:u,bottom:p,right:d,width:g,height:m}}}function isScrolledPast(t,r,o){for(var a=getParentAutoScrollElement(t,!0),i=getRect(t)[r];a;){var l=getRect(a)[o];if(!("top"===o||"left"===o?i>=l:i<=l))return a;if(a===getWindowScrollingElement())break;a=getParentAutoScrollElement(a,!1)}return!1}function getChild(t,r,o,a){for(var i=0,l=0,c=t.children;l<c.length;){if("none"!==c[l].style.display&&c[l]!==Sortable.ghost&&(a||c[l]!==Sortable.dragged)&&closest(c[l],o.draggable,t,!1)){if(i===r)return c[l];i++}l++}return null}function lastChild(t,r){for(var o=t.lastElementChild;o&&(o===Sortable.ghost||"none"===css(o,"display")||r&&!matches(o,r));)o=o.previousElementSibling;return o||null}function index(t,r){var o=0;if(!t||!t.parentNode)return-1;for(;t=t.previousElementSibling;)"TEMPLATE"===t.nodeName.toUpperCase()||t===Sortable.clone||r&&!matches(t,r)||o++;return o}function getRelativeScrollOffset(t){var r=0,o=0,a=getWindowScrollingElement();if(t)do{var i=matrix(t),l=i.a,c=i.d;r+=t.scrollLeft*l,o+=t.scrollTop*c}while(t!==a&&(t=t.parentNode));return[r,o]}function getParentAutoScrollElement(t,r){if(!t||!t.getBoundingClientRect)return getWindowScrollingElement();var o=t,a=!1;do{if(o.clientWidth<o.scrollWidth||o.clientHeight<o.scrollHeight){var i=css(o);if(o.clientWidth<o.scrollWidth&&("auto"==i.overflowX||"scroll"==i.overflowX)||o.clientHeight<o.scrollHeight&&("auto"==i.overflowY||"scroll"==i.overflowY)){if(!o.getBoundingClientRect||o===document.body)return getWindowScrollingElement();if(a||r)return o;a=!0}}}while(o=o.parentNode);return getWindowScrollingElement()}function isRectEqual(t,r){return Math.round(t.top)===Math.round(r.top)&&Math.round(t.left)===Math.round(r.left)&&Math.round(t.height)===Math.round(r.height)&&Math.round(t.width)===Math.round(r.width)}function throttle(t,r){return function(){if(!w){var o=arguments;1===o.length?t.call(this,o[0]):t.apply(this,o),w=setTimeout((function(){w=void 0}),r)}}}function scrollBy(t,r,o){t.scrollLeft+=r,t.scrollTop+=o}function clone(t){var r=window.Polymer,o=window.jQuery||window.Zepto;return r&&r.dom?r.dom(t).cloneNode(!0):o?o(t).clone(!0)[0]:t.cloneNode(!0)}var x="Sortable"+(new Date).getTime();function AnimationStateManager(){var t,r=[];return{captureAnimationState:function captureAnimationState(){(r=[],this.options.animation)&&[].slice.call(this.el.children).forEach((function(t){if("none"!==css(t,"display")&&t!==Sortable.ghost){r.push({target:t,rect:getRect(t)});var o=_objectSpread2({},r[r.length-1].rect);if(t.thisAnimationDuration){var a=matrix(t,!0);a&&(o.top-=a.f,o.left-=a.e)}t.fromRect=o}}))},addAnimationState:function addAnimationState(t){r.push(t)},removeAnimationState:function removeAnimationState(t){r.splice(function indexOfObject(t,r){for(var o in t)if(t.hasOwnProperty(o))for(var a in r)if(r.hasOwnProperty(a)&&r[a]===t[o][a])return Number(o);return-1}(r,{target:t}),1)},animateAll:function animateAll(o){var a=this;if(!this.options.animation)return clearTimeout(t),void("function"==typeof o&&o());var i=!1,l=0;r.forEach((function(t){var r=0,o=t.target,c=o.fromRect,u=getRect(o),p=o.prevFromRect,d=o.prevToRect,h=t.rect,m=matrix(o,!0);m&&(u.top-=m.f,u.left-=m.e),o.toRect=u,o.thisAnimationDuration&&isRectEqual(p,u)&&!isRectEqual(c,u)&&(h.top-u.top)/(h.left-u.left)==(c.top-u.top)/(c.left-u.left)&&(r=function calculateRealTime(t,r,o,a){return Math.sqrt(Math.pow(r.top-t.top,2)+Math.pow(r.left-t.left,2))/Math.sqrt(Math.pow(r.top-o.top,2)+Math.pow(r.left-o.left,2))*a.animation}(h,p,d,a.options)),isRectEqual(u,c)||(o.prevFromRect=c,o.prevToRect=u,r||(r=a.options.animation),a.animate(o,h,u,r)),r&&(i=!0,l=Math.max(l,r),clearTimeout(o.animationResetTimer),o.animationResetTimer=setTimeout((function(){o.animationTime=0,o.prevFromRect=null,o.fromRect=null,o.prevToRect=null,o.thisAnimationDuration=null}),r),o.thisAnimationDuration=r)})),clearTimeout(t),i?t=setTimeout((function(){"function"==typeof o&&o()}),l):"function"==typeof o&&o(),r=[]},animate:function animate(t,r,o,a){if(a){css(t,"transition",""),css(t,"transform","");var i=matrix(this.el),l=i&&i.a,c=i&&i.d,u=(r.left-o.left)/(l||1),p=(r.top-o.top)/(c||1);t.animatingX=!!u,t.animatingY=!!p,css(t,"transform","translate3d("+u+"px,"+p+"px,0)"),this.forRepaintDummy=function repaint(t){return t.offsetWidth}(t),css(t,"transition","transform "+a+"ms"+(this.options.easing?" "+this.options.easing:"")),css(t,"transform","translate3d(0,0,0)"),"number"==typeof t.animated&&clearTimeout(t.animated),t.animated=setTimeout((function(){css(t,"transition",""),css(t,"transform",""),t.animated=!1,t.animatingX=!1,t.animatingY=!1}),a)}}}}var k=[],E={initializeByDefault:!0},T={mount:function mount(t){for(var r in E)E.hasOwnProperty(r)&&!(r in t)&&(t[r]=E[r]);k.forEach((function(r){if(r.pluginName===t.pluginName)throw"Sortable: Cannot mount plugin ".concat(t.pluginName," more than once")})),k.push(t)},pluginEvent:function pluginEvent(t,r,o){var a=this;this.eventCanceled=!1,o.cancel=function(){a.eventCanceled=!0};var i=t+"Global";k.forEach((function(a){r[a.pluginName]&&(r[a.pluginName][i]&&r[a.pluginName][i](_objectSpread2({sortable:r},o)),r.options[a.pluginName]&&r[a.pluginName][t]&&r[a.pluginName][t](_objectSpread2({sortable:r},o)))}))},initializePlugins:function initializePlugins(t,r,o,a){for(var i in k.forEach((function(a){var i=a.pluginName;if(t.options[i]||a.initializeByDefault){var l=new a(t,r,t.options);l.sortable=t,l.options=t.options,t[i]=l,_extends(o,l.defaults)}})),t.options)if(t.options.hasOwnProperty(i)){var l=this.modifyOption(t,i,t.options[i]);void 0!==l&&(t.options[i]=l)}},getEventProperties:function getEventProperties(t,r){var o={};return k.forEach((function(a){"function"==typeof a.eventProperties&&_extends(o,a.eventProperties.call(r[a.pluginName],t))})),o},modifyOption:function modifyOption(t,r,o){var a;return k.forEach((function(i){t[i.pluginName]&&i.optionListeners&&"function"==typeof i.optionListeners[r]&&(a=i.optionListeners[r].call(t[i.pluginName],o))})),a}};function dispatchEvent(t){var r=t.sortable,o=t.rootEl,a=t.name,i=t.targetEl,l=t.cloneEl,c=t.toEl,u=t.fromEl,p=t.oldIndex,d=t.newIndex,g=t.oldDraggableIndex,y=t.newDraggableIndex,v=t.originalEvent,b=t.putSortable,_=t.extraEventProperties;if(r=r||o&&o[x]){var w,S=r.options,k="on"+a.charAt(0).toUpperCase()+a.substr(1);!window.CustomEvent||h||m?(w=document.createEvent("Event")).initEvent(a,!0,!0):w=new CustomEvent(a,{bubbles:!0,cancelable:!0}),w.to=c||o,w.from=u||o,w.item=i||o,w.clone=l,w.oldIndex=p,w.newIndex=d,w.oldDraggableIndex=g,w.newDraggableIndex=y,w.originalEvent=v,w.pullMode=b?b.lastPutMode:void 0;var E=_objectSpread2(_objectSpread2({},_),T.getEventProperties(a,r));for(var P in E)w[P]=E[P];o&&o.dispatchEvent(w),S[k]&&S[k].call(r,w)}}var P=["evt"],O=function pluginEvent(t,r){var o=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{},a=o.evt,i=_objectWithoutProperties(o,P);T.pluginEvent.bind(Sortable)(t,r,_objectSpread2({dragEl:C,parentEl:L,ghostEl:A,rootEl:I,nextEl:j,lastDownEl:M,cloneEl:R,cloneHidden:q,dragStarted:V,putSortable:$,activeSortable:Sortable.active,originalEvent:a,oldIndex:G,oldDraggableIndex:N,newIndex:D,newDraggableIndex:H,hideGhostForTarget:ge,unhideGhostForTarget:ye,cloneNowHidden:function cloneNowHidden(){q=!0},cloneNowShown:function cloneNowShown(){q=!1},dispatchSortableEvent:function dispatchSortableEvent(t){_dispatchEvent({sortable:r,name:t,originalEvent:a})}},i))};function _dispatchEvent(t){dispatchEvent(_objectSpread2({putSortable:$,cloneEl:R,targetEl:C,rootEl:I,oldIndex:G,oldDraggableIndex:N,newIndex:D,newDraggableIndex:H},t))}var C,L,A,I,j,M,R,q,G,D,N,H,W,$,z,J,Q,U,B,Y,V,X,K,Z,ee,te=!1,ne=!1,re=[],oe=!1,ae=!1,ie=[],se=!1,le=[],ce="undefined"!=typeof document,ue=v,pe=m||h?"cssFloat":"float",fe=ce&&!b&&!v&&"draggable"in document.createElement("div"),de=function(){if(ce){if(h)return!1;var t=document.createElement("x");return t.style.cssText="pointer-events:auto","auto"===t.style.pointerEvents}}(),he=function _detectDirection(t,r){var o=css(t),a=parseInt(o.width)-parseInt(o.paddingLeft)-parseInt(o.paddingRight)-parseInt(o.borderLeftWidth)-parseInt(o.borderRightWidth),i=getChild(t,0,r),l=getChild(t,1,r),c=i&&css(i),u=l&&css(l),p=c&&parseInt(c.marginLeft)+parseInt(c.marginRight)+getRect(i).width,d=u&&parseInt(u.marginLeft)+parseInt(u.marginRight)+getRect(l).width;if("flex"===o.display)return"column"===o.flexDirection||"column-reverse"===o.flexDirection?"vertical":"horizontal";if("grid"===o.display)return o.gridTemplateColumns.split(" ").length<=1?"vertical":"horizontal";if(i&&c.float&&"none"!==c.float){var h="left"===c.float?"left":"right";return!l||"both"!==u.clear&&u.clear!==h?"horizontal":"vertical"}return i&&("block"===c.display||"flex"===c.display||"table"===c.display||"grid"===c.display||p>=a&&"none"===o[pe]||l&&"none"===o[pe]&&p+d>a)?"vertical":"horizontal"},me=function _prepareGroup(t){function toFn(t,r){return function(o,a,i,l){var c=o.options.group.name&&a.options.group.name&&o.options.group.name===a.options.group.name;if(null==t&&(r||c))return!0;if(null==t||!1===t)return!1;if(r&&"clone"===t)return t;if("function"==typeof t)return toFn(t(o,a,i,l),r)(o,a,i,l);var u=(r?o:a).options.group.name;return!0===t||"string"==typeof t&&t===u||t.join&&t.indexOf(u)>-1}}var r={},o=t.group;o&&"object"==Sortable_typeof(o)||(o={name:o}),r.name=o.name,r.checkPull=toFn(o.pull,!0),r.checkPut=toFn(o.put),r.revertClone=o.revertClone,t.group=r},ge=function _hideGhostForTarget(){!de&&A&&css(A,"display","none")},ye=function _unhideGhostForTarget(){!de&&A&&css(A,"display","")};ce&&!b&&document.addEventListener("click",(function(t){if(ne)return t.preventDefault(),t.stopPropagation&&t.stopPropagation(),t.stopImmediatePropagation&&t.stopImmediatePropagation(),ne=!1,!1}),!0);var ve=function nearestEmptyInsertDetectEvent(t){if(C){var r=function _detectNearestEmptySortable(t,r){var o;return re.some((function(a){var i=a[x].options.emptyInsertThreshold;if(i&&!lastChild(a)){var l=getRect(a),c=t>=l.left-i&&t<=l.right+i,u=r>=l.top-i&&r<=l.bottom+i;return c&&u?o=a:void 0}})),o}((t=t.touches?t.touches[0]:t).clientX,t.clientY);if(r){var o={};for(var a in t)t.hasOwnProperty(a)&&(o[a]=t[a]);o.target=o.rootEl=r,o.preventDefault=void 0,o.stopPropagation=void 0,r[x]._onDragOver(o)}}},be=function _checkOutsideTargetEl(t){C&&C.parentNode[x]._isOutsideThisEl(t.target)};function Sortable(t,r){if(!t||!t.nodeType||1!==t.nodeType)throw"Sortable: `el` must be an HTMLElement, not ".concat({}.toString.call(t));this.el=t,this.options=r=_extends({},r),t[x]=this;var o={group:null,sort:!0,disabled:!1,store:null,handle:null,draggable:/^[uo]l$/i.test(t.nodeName)?">li":">*",swapThreshold:1,invertSwap:!1,invertedSwapThreshold:null,removeCloneOnHide:!0,direction:function direction(){return he(t,this.options)},ghostClass:"sortable-ghost",chosenClass:"sortable-chosen",dragClass:"sortable-drag",ignore:"a, img",filter:null,preventOnFilter:!0,animation:0,easing:null,setData:function setData(t,r){t.setData("Text",r.textContent)},dropBubble:!1,dragoverBubble:!1,dataIdAttr:"data-id",delay:0,delayOnTouchOnly:!1,touchStartThreshold:(Number.parseInt?Number:window).parseInt(window.devicePixelRatio,10)||1,forceFallback:!1,fallbackClass:"sortable-fallback",fallbackOnBody:!1,fallbackTolerance:0,fallbackOffset:{x:0,y:0},supportPointer:!1!==Sortable.supportPointer&&"PointerEvent"in window&&!y,emptyInsertThreshold:5};for(var a in T.initializePlugins(this,t,o),o)!(a in r)&&(r[a]=o[a]);for(var i in me(r),this)"_"===i.charAt(0)&&"function"==typeof this[i]&&(this[i]=this[i].bind(this));this.nativeDraggable=!r.forceFallback&&fe,this.nativeDraggable&&(this.options.touchStartThreshold=1),r.supportPointer?on(t,"pointerdown",this._onTapStart):(on(t,"mousedown",this._onTapStart),on(t,"touchstart",this._onTapStart)),this.nativeDraggable&&(on(t,"dragover",this),on(t,"dragenter",this)),re.push(this.el),r.store&&r.store.get&&this.sort(r.store.get(this)||[]),_extends(this,AnimationStateManager())}function _onMove(t,r,o,a,i,l,c,u){var p,d,g=t[x],y=g.options.onMove;return!window.CustomEvent||h||m?(p=document.createEvent("Event")).initEvent("move",!0,!0):p=new CustomEvent("move",{bubbles:!0,cancelable:!0}),p.to=r,p.from=t,p.dragged=o,p.draggedRect=a,p.related=i||r,p.relatedRect=l||getRect(r),p.willInsertAfter=u,p.originalEvent=c,t.dispatchEvent(p),y&&(d=y.call(g,p,c)),d}function _disableDraggable(t){t.draggable=!1}function _unsilent(){se=!1}function _generateId(t){for(var r=t.tagName+t.className+t.src+t.href+t.textContent,o=r.length,a=0;o--;)a+=r.charCodeAt(o);return a.toString(36)}function _nextTick(t){return setTimeout(t,0)}function _cancelNextTick(t){return clearTimeout(t)}Sortable.prototype={constructor:Sortable,_isOutsideThisEl:function _isOutsideThisEl(t){this.el.contains(t)||t===this.el||(X=null)},_getDirection:function _getDirection(t,r){return"function"==typeof this.options.direction?this.options.direction.call(this,t,r,C):this.options.direction},_onTapStart:function _onTapStart(t){if(t.cancelable){var r=this,o=this.el,a=this.options,i=a.preventOnFilter,l=t.type,c=t.touches&&t.touches[0]||t.pointerType&&"touch"===t.pointerType&&t,u=(c||t).target,p=t.target.shadowRoot&&(t.path&&t.path[0]||t.composedPath&&t.composedPath()[0])||u,d=a.filter;if(function _saveInputCheckedState(t){le.length=0;var r=t.getElementsByTagName("input"),o=r.length;for(;o--;){var a=r[o];a.checked&&le.push(a)}}(o),!C&&!(/mousedown|pointerdown/.test(l)&&0!==t.button||a.disabled)&&!p.isContentEditable&&(this.nativeDraggable||!y||!u||"SELECT"!==u.tagName.toUpperCase())&&!((u=closest(u,a.draggable,o,!1))&&u.animated||M===u)){if(G=index(u),N=index(u,a.draggable),"function"==typeof d){if(d.call(this,t,u,this))return _dispatchEvent({sortable:r,rootEl:p,name:"filter",targetEl:u,toEl:o,fromEl:o}),O("filter",r,{evt:t}),void(i&&t.cancelable&&t.preventDefault())}else if(d&&(d=d.split(",").some((function(a){if(a=closest(p,a.trim(),o,!1))return _dispatchEvent({sortable:r,rootEl:a,name:"filter",targetEl:u,fromEl:o,toEl:o}),O("filter",r,{evt:t}),!0}))))return void(i&&t.cancelable&&t.preventDefault());a.handle&&!closest(p,a.handle,o,!1)||this._prepareDragStart(t,c,u)}}},_prepareDragStart:function _prepareDragStart(t,r,o){var a,i=this,l=i.el,c=i.options,u=l.ownerDocument;if(o&&!C&&o.parentNode===l){var p=getRect(o);if(I=l,L=(C=o).parentNode,j=C.nextSibling,M=o,W=c.group,Sortable.dragged=C,z={target:C,clientX:(r||t).clientX,clientY:(r||t).clientY},B=z.clientX-p.left,Y=z.clientY-p.top,this._lastX=(r||t).clientX,this._lastY=(r||t).clientY,C.style["will-change"]="all",a=function dragStartFn(){O("delayEnded",i,{evt:t}),Sortable.eventCanceled?i._onDrop():(i._disableDelayedDragEvents(),!g&&i.nativeDraggable&&(C.draggable=!0),i._triggerDragStart(t,r),_dispatchEvent({sortable:i,name:"choose",originalEvent:t}),toggleClass(C,c.chosenClass,!0))},c.ignore.split(",").forEach((function(t){find(C,t.trim(),_disableDraggable)})),on(u,"dragover",ve),on(u,"mousemove",ve),on(u,"touchmove",ve),on(u,"mouseup",i._onDrop),on(u,"touchend",i._onDrop),on(u,"touchcancel",i._onDrop),g&&this.nativeDraggable&&(this.options.touchStartThreshold=4,C.draggable=!0),O("delayStart",this,{evt:t}),!c.delay||c.delayOnTouchOnly&&!r||this.nativeDraggable&&(m||h))a();else{if(Sortable.eventCanceled)return void this._onDrop();on(u,"mouseup",i._disableDelayedDrag),on(u,"touchend",i._disableDelayedDrag),on(u,"touchcancel",i._disableDelayedDrag),on(u,"mousemove",i._delayedDragTouchMoveHandler),on(u,"touchmove",i._delayedDragTouchMoveHandler),c.supportPointer&&on(u,"pointermove",i._delayedDragTouchMoveHandler),i._dragStartTimer=setTimeout(a,c.delay)}}},_delayedDragTouchMoveHandler:function _delayedDragTouchMoveHandler(t){var r=t.touches?t.touches[0]:t;Math.max(Math.abs(r.clientX-this._lastX),Math.abs(r.clientY-this._lastY))>=Math.floor(this.options.touchStartThreshold/(this.nativeDraggable&&window.devicePixelRatio||1))&&this._disableDelayedDrag()},_disableDelayedDrag:function _disableDelayedDrag(){C&&_disableDraggable(C),clearTimeout(this._dragStartTimer),this._disableDelayedDragEvents()},_disableDelayedDragEvents:function _disableDelayedDragEvents(){var t=this.el.ownerDocument;off(t,"mouseup",this._disableDelayedDrag),off(t,"touchend",this._disableDelayedDrag),off(t,"touchcancel",this._disableDelayedDrag),off(t,"mousemove",this._delayedDragTouchMoveHandler),off(t,"touchmove",this._delayedDragTouchMoveHandler),off(t,"pointermove",this._delayedDragTouchMoveHandler)},_triggerDragStart:function _triggerDragStart(t,r){r=r||"touch"==t.pointerType&&t,!this.nativeDraggable||r?this.options.supportPointer?on(document,"pointermove",this._onTouchMove):on(document,r?"touchmove":"mousemove",this._onTouchMove):(on(C,"dragend",this),on(I,"dragstart",this._onDragStart));try{document.selection?_nextTick((function(){document.selection.empty()})):window.getSelection().removeAllRanges()}catch(t){}},_dragStarted:function _dragStarted(t,r){if(te=!1,I&&C){O("dragStarted",this,{evt:r}),this.nativeDraggable&&on(document,"dragover",be);var o=this.options;!t&&toggleClass(C,o.dragClass,!1),toggleClass(C,o.ghostClass,!0),Sortable.active=this,t&&this._appendGhost(),_dispatchEvent({sortable:this,name:"start",originalEvent:r})}else this._nulling()},_emulateDragOver:function _emulateDragOver(){if(J){this._lastX=J.clientX,this._lastY=J.clientY,ge();for(var t=document.elementFromPoint(J.clientX,J.clientY),r=t;t&&t.shadowRoot&&(t=t.shadowRoot.elementFromPoint(J.clientX,J.clientY))!==r;)r=t;if(C.parentNode[x]._isOutsideThisEl(t),r)do{if(r[x]){if(r[x]._onDragOver({clientX:J.clientX,clientY:J.clientY,target:t,rootEl:r})&&!this.options.dragoverBubble)break}t=r}while(r=r.parentNode);ye()}},_onTouchMove:function _onTouchMove(t){if(z){var r=this.options,o=r.fallbackTolerance,a=r.fallbackOffset,i=t.touches?t.touches[0]:t,l=A&&matrix(A,!0),c=A&&l&&l.a,u=A&&l&&l.d,p=ue&&ee&&getRelativeScrollOffset(ee),d=(i.clientX-z.clientX+a.x)/(c||1)+(p?p[0]-ie[0]:0)/(c||1),h=(i.clientY-z.clientY+a.y)/(u||1)+(p?p[1]-ie[1]:0)/(u||1);if(!Sortable.active&&!te){if(o&&Math.max(Math.abs(i.clientX-this._lastX),Math.abs(i.clientY-this._lastY))<o)return;this._onDragStart(t,!0)}if(A){l?(l.e+=d-(Q||0),l.f+=h-(U||0)):l={a:1,b:0,c:0,d:1,e:d,f:h};var m="matrix(".concat(l.a,",").concat(l.b,",").concat(l.c,",").concat(l.d,",").concat(l.e,",").concat(l.f,")");css(A,"webkitTransform",m),css(A,"mozTransform",m),css(A,"msTransform",m),css(A,"transform",m),Q=d,U=h,J=i}t.cancelable&&t.preventDefault()}},_appendGhost:function _appendGhost(){if(!A){var t=this.options.fallbackOnBody?document.body:I,r=getRect(C,!0,ue,!0,t),o=this.options;if(ue){for(ee=t;"static"===css(ee,"position")&&"none"===css(ee,"transform")&&ee!==document;)ee=ee.parentNode;ee!==document.body&&ee!==document.documentElement?(ee===document&&(ee=getWindowScrollingElement()),r.top+=ee.scrollTop,r.left+=ee.scrollLeft):ee=getWindowScrollingElement(),ie=getRelativeScrollOffset(ee)}toggleClass(A=C.cloneNode(!0),o.ghostClass,!1),toggleClass(A,o.fallbackClass,!0),toggleClass(A,o.dragClass,!0),css(A,"transition",""),css(A,"transform",""),css(A,"box-sizing","border-box"),css(A,"margin",0),css(A,"top",r.top),css(A,"left",r.left),css(A,"width",r.width),css(A,"height",r.height),css(A,"opacity","0.8"),css(A,"position",ue?"absolute":"fixed"),css(A,"zIndex","100000"),css(A,"pointerEvents","none"),Sortable.ghost=A,t.appendChild(A),css(A,"transform-origin",B/parseInt(A.style.width)*100+"% "+Y/parseInt(A.style.height)*100+"%")}},_onDragStart:function _onDragStart(t,r){var o=this,a=t.dataTransfer,i=o.options;O("dragStart",this,{evt:t}),Sortable.eventCanceled?this._onDrop():(O("setupClone",this),Sortable.eventCanceled||((R=clone(C)).removeAttribute("id"),R.draggable=!1,R.style["will-change"]="",this._hideClone(),toggleClass(R,this.options.chosenClass,!1),Sortable.clone=R),o.cloneId=_nextTick((function(){O("clone",o),Sortable.eventCanceled||(o.options.removeCloneOnHide||I.insertBefore(R,C),o._hideClone(),_dispatchEvent({sortable:o,name:"clone"}))})),!r&&toggleClass(C,i.dragClass,!0),r?(ne=!0,o._loopId=setInterval(o._emulateDragOver,50)):(off(document,"mouseup",o._onDrop),off(document,"touchend",o._onDrop),off(document,"touchcancel",o._onDrop),a&&(a.effectAllowed="move",i.setData&&i.setData.call(o,a,C)),on(document,"drop",o),css(C,"transform","translateZ(0)")),te=!0,o._dragStartId=_nextTick(o._dragStarted.bind(o,r,t)),on(document,"selectstart",o),V=!0,y&&css(document.body,"user-select","none"))},_onDragOver:function _onDragOver(t){var r,o,a,i,l=this.el,c=t.target,u=this.options,p=u.group,d=Sortable.active,h=W===p,m=u.sort,g=$||d,y=this,v=!1;if(!se){if(void 0!==t.preventDefault&&t.cancelable&&t.preventDefault(),c=closest(c,u.draggable,l,!0),dragOverEvent("dragOver"),Sortable.eventCanceled)return v;if(C.contains(t.target)||c.animated&&c.animatingX&&c.animatingY||y._ignoreWhileAnimating===c)return completed(!1);if(ne=!1,d&&!u.disabled&&(h?m||(a=L!==I):$===this||(this.lastPutMode=W.checkPull(this,d,C,t))&&p.checkPut(this,d,C,t))){if(i="vertical"===this._getDirection(t,c),r=getRect(C),dragOverEvent("dragOverValid"),Sortable.eventCanceled)return v;if(a)return L=I,capture(),this._hideClone(),dragOverEvent("revert"),Sortable.eventCanceled||(j?I.insertBefore(C,j):I.appendChild(C)),completed(!0);var b=lastChild(l,u.draggable);if(!b||function _ghostIsLast(t,r,o){var a=getRect(lastChild(o.el,o.options.draggable)),i=10;return r?t.clientX>a.right+i||t.clientX<=a.right&&t.clientY>a.bottom&&t.clientX>=a.left:t.clientX>a.right&&t.clientY>a.top||t.clientX<=a.right&&t.clientY>a.bottom+i}(t,i,this)&&!b.animated){if(b===C)return completed(!1);if(b&&l===t.target&&(c=b),c&&(o=getRect(c)),!1!==_onMove(I,l,C,r,c,o,t,!!c))return capture(),b&&b.nextSibling?l.insertBefore(C,b.nextSibling):l.appendChild(C),L=l,changed(),completed(!0)}else if(b&&function _ghostIsFirst(t,r,o){var a=getRect(getChild(o.el,0,o.options,!0)),i=10;return r?t.clientX<a.left-i||t.clientY<a.top&&t.clientX<a.right:t.clientY<a.top-i||t.clientY<a.bottom&&t.clientX<a.left}(t,i,this)){var _=getChild(l,0,u,!0);if(_===C)return completed(!1);if(o=getRect(c=_),!1!==_onMove(I,l,C,r,c,o,t,!1))return capture(),l.insertBefore(C,_),L=l,changed(),completed(!0)}else if(c.parentNode===l){o=getRect(c);var w,S,k,E=C.parentNode!==l,T=!function _dragElInRowColumn(t,r,o){var a=o?t.left:t.top,i=o?t.right:t.bottom,l=o?t.width:t.height,c=o?r.left:r.top,u=o?r.right:r.bottom,p=o?r.width:r.height;return a===c||i===u||a+l/2===c+p/2}(C.animated&&C.toRect||r,c.animated&&c.toRect||o,i),P=i?"top":"left",M=isScrolledPast(c,"top","top")||isScrolledPast(C,"top","top"),R=M?M.scrollTop:void 0;if(X!==c&&(S=o[P],oe=!1,ae=!T&&u.invertSwap||E),w=function _getSwapDirection(t,r,o,a,i,l,c,u){var p=a?t.clientY:t.clientX,d=a?o.height:o.width,h=a?o.top:o.left,m=a?o.bottom:o.right,g=!1;if(!c)if(u&&Z<d*i){if(!oe&&(1===K?p>h+d*l/2:p<m-d*l/2)&&(oe=!0),oe)g=!0;else if(1===K?p<h+Z:p>m-Z)return-K}else if(p>h+d*(1-i)/2&&p<m-d*(1-i)/2)return function _getInsertDirection(t){return index(C)<index(t)?1:-1}(r);if((g=g||c)&&(p<h+d*l/2||p>m-d*l/2))return p>h+d/2?1:-1;return 0}(t,c,o,i,T?1:u.swapThreshold,null==u.invertedSwapThreshold?u.swapThreshold:u.invertedSwapThreshold,ae,X===c),0!==w){var q=index(C);do{q-=w,k=L.children[q]}while(k&&("none"===css(k,"display")||k===A))}if(0===w||k===c)return completed(!1);X=c,K=w;var G=c.nextElementSibling,N=!1,z=_onMove(I,l,C,r,c,o,t,N=1===w);if(!1!==z)return 1!==z&&-1!==z||(N=1===z),se=!0,setTimeout(_unsilent,30),capture(),N&&!G?l.appendChild(C):c.parentNode.insertBefore(C,N?G:c),M&&scrollBy(M,0,R-M.scrollTop),L=C.parentNode,void 0===S||ae||(Z=Math.abs(S-getRect(c)[P])),changed(),completed(!0)}if(l.contains(C))return completed(!1)}return!1}function dragOverEvent(u,p){O(u,y,_objectSpread2({evt:t,isOwner:h,axis:i?"vertical":"horizontal",revert:a,dragRect:r,targetRect:o,canSort:m,fromSortable:g,target:c,completed,onMove:function onMove(o,a){return _onMove(I,l,C,r,o,getRect(o),t,a)},changed},p))}function capture(){dragOverEvent("dragOverAnimationCapture"),y.captureAnimationState(),y!==g&&g.captureAnimationState()}function completed(r){return dragOverEvent("dragOverCompleted",{insertion:r}),r&&(h?d._hideClone():d._showClone(y),y!==g&&(toggleClass(C,$?$.options.ghostClass:d.options.ghostClass,!1),toggleClass(C,u.ghostClass,!0)),$!==y&&y!==Sortable.active?$=y:y===Sortable.active&&$&&($=null),g===y&&(y._ignoreWhileAnimating=c),y.animateAll((function(){dragOverEvent("dragOverAnimationComplete"),y._ignoreWhileAnimating=null})),y!==g&&(g.animateAll(),g._ignoreWhileAnimating=null)),(c===C&&!C.animated||c===l&&!c.animated)&&(X=null),u.dragoverBubble||t.rootEl||c===document||(C.parentNode[x]._isOutsideThisEl(t.target),!r&&ve(t)),!u.dragoverBubble&&t.stopPropagation&&t.stopPropagation(),v=!0}function changed(){D=index(C),H=index(C,u.draggable),_dispatchEvent({sortable:y,name:"change",toEl:l,newIndex:D,newDraggableIndex:H,originalEvent:t})}},_ignoreWhileAnimating:null,_offMoveEvents:function _offMoveEvents(){off(document,"mousemove",this._onTouchMove),off(document,"touchmove",this._onTouchMove),off(document,"pointermove",this._onTouchMove),off(document,"dragover",ve),off(document,"mousemove",ve),off(document,"touchmove",ve)},_offUpEvents:function _offUpEvents(){var t=this.el.ownerDocument;off(t,"mouseup",this._onDrop),off(t,"touchend",this._onDrop),off(t,"pointerup",this._onDrop),off(t,"touchcancel",this._onDrop),off(document,"selectstart",this)},_onDrop:function _onDrop(t){var r=this.el,o=this.options;D=index(C),H=index(C,o.draggable),O("drop",this,{evt:t}),L=C&&C.parentNode,D=index(C),H=index(C,o.draggable),Sortable.eventCanceled||(te=!1,ae=!1,oe=!1,clearInterval(this._loopId),clearTimeout(this._dragStartTimer),_cancelNextTick(this.cloneId),_cancelNextTick(this._dragStartId),this.nativeDraggable&&(off(document,"drop",this),off(r,"dragstart",this._onDragStart)),this._offMoveEvents(),this._offUpEvents(),y&&css(document.body,"user-select",""),css(C,"transform",""),t&&(V&&(t.cancelable&&t.preventDefault(),!o.dropBubble&&t.stopPropagation()),A&&A.parentNode&&A.parentNode.removeChild(A),(I===L||$&&"clone"!==$.lastPutMode)&&R&&R.parentNode&&R.parentNode.removeChild(R),C&&(this.nativeDraggable&&off(C,"dragend",this),_disableDraggable(C),C.style["will-change"]="",V&&!te&&toggleClass(C,$?$.options.ghostClass:this.options.ghostClass,!1),toggleClass(C,this.options.chosenClass,!1),_dispatchEvent({sortable:this,name:"unchoose",toEl:L,newIndex:null,newDraggableIndex:null,originalEvent:t}),I!==L?(D>=0&&(_dispatchEvent({rootEl:L,name:"add",toEl:L,fromEl:I,originalEvent:t}),_dispatchEvent({sortable:this,name:"remove",toEl:L,originalEvent:t}),_dispatchEvent({rootEl:L,name:"sort",toEl:L,fromEl:I,originalEvent:t}),_dispatchEvent({sortable:this,name:"sort",toEl:L,originalEvent:t})),$&&$.save()):D!==G&&D>=0&&(_dispatchEvent({sortable:this,name:"update",toEl:L,originalEvent:t}),_dispatchEvent({sortable:this,name:"sort",toEl:L,originalEvent:t})),Sortable.active&&(null!=D&&-1!==D||(D=G,H=N),_dispatchEvent({sortable:this,name:"end",toEl:L,originalEvent:t}),this.save())))),this._nulling()},_nulling:function _nulling(){O("nulling",this),I=C=L=A=j=R=M=q=z=J=V=D=H=G=N=X=K=$=W=Sortable.dragged=Sortable.ghost=Sortable.clone=Sortable.active=null,le.forEach((function(t){t.checked=!0})),le.length=Q=U=0},handleEvent:function handleEvent(t){switch(t.type){case"drop":case"dragend":this._onDrop(t);break;case"dragenter":case"dragover":C&&(this._onDragOver(t),function _globalDragOver(t){t.dataTransfer&&(t.dataTransfer.dropEffect="move");t.cancelable&&t.preventDefault()}(t));break;case"selectstart":t.preventDefault()}},toArray:function toArray(){for(var t,r=[],o=this.el.children,a=0,i=o.length,l=this.options;a<i;a++)closest(t=o[a],l.draggable,this.el,!1)&&r.push(t.getAttribute(l.dataIdAttr)||_generateId(t));return r},sort:function sort(t,r){var o={},a=this.el;this.toArray().forEach((function(t,r){var i=a.children[r];closest(i,this.options.draggable,a,!1)&&(o[t]=i)}),this),r&&this.captureAnimationState(),t.forEach((function(t){o[t]&&(a.removeChild(o[t]),a.appendChild(o[t]))})),r&&this.animateAll()},save:function save(){var t=this.options.store;t&&t.set&&t.set(this)},closest:function closest$1(t,r){return closest(t,r||this.options.draggable,this.el,!1)},option:function option(t,r){var o=this.options;if(void 0===r)return o[t];var a=T.modifyOption(this,t,r);o[t]=void 0!==a?a:r,"group"===t&&me(o)},destroy:function destroy(){O("destroy",this);var t=this.el;t[x]=null,off(t,"mousedown",this._onTapStart),off(t,"touchstart",this._onTapStart),off(t,"pointerdown",this._onTapStart),this.nativeDraggable&&(off(t,"dragover",this),off(t,"dragenter",this)),Array.prototype.forEach.call(t.querySelectorAll("[draggable]"),(function(t){t.removeAttribute("draggable")})),this._onDrop(),this._disableDelayedDragEvents(),re.splice(re.indexOf(this.el),1),this.el=t=null},_hideClone:function _hideClone(){if(!q){if(O("hideClone",this),Sortable.eventCanceled)return;css(R,"display","none"),this.options.removeCloneOnHide&&R.parentNode&&R.parentNode.removeChild(R),q=!0}},_showClone:function _showClone(t){if("clone"===t.lastPutMode){if(q){if(O("showClone",this),Sortable.eventCanceled)return;C.parentNode!=I||this.options.group.revertClone?j?I.insertBefore(R,j):I.appendChild(R):I.insertBefore(R,C),this.options.group.revertClone&&this.animate(C,R),css(R,"display",""),q=!1}}else this._hideClone()}},ce&&on(document,"touchmove",(function(t){(Sortable.active||te)&&t.cancelable&&t.preventDefault()})),Sortable.utils={on,off,css,find,is:function is(t,r){return!!closest(t,r,t,!1)},extend:function extend(t,r){if(t&&r)for(var o in r)r.hasOwnProperty(o)&&(t[o]=r[o]);return t},throttle,closest,toggleClass,clone,index,nextTick:_nextTick,cancelNextTick:_cancelNextTick,detectDirection:he,getChild},Sortable.get=function(t){return t[x]},Sortable.mount=function(){for(var t=arguments.length,r=new Array(t),o=0;o<t;o++)r[o]=arguments[o];r[0].constructor===Array&&(r=r[0]),r.forEach((function(t){if(!t.prototype||!t.prototype.constructor)throw"Sortable: Mounted plugin must be a constructor function, not ".concat({}.toString.call(t));t.utils&&(Sortable.utils=_objectSpread2(_objectSpread2({},Sortable.utils),t.utils)),T.mount(t)}))},Sortable.create=function(t,r){return new Sortable(t,r)},Sortable.version="1.15.0";var _e,we,Se,xe,ke,Ee,Te=[],Pe=!1;function clearAutoScrolls(){Te.forEach((function(t){clearInterval(t.pid)})),Te=[]}function clearPointerElemChangedInterval(){clearInterval(Ee)}var Oe=throttle((function(t,r,o,a){if(r.scroll){var i,l=(t.touches?t.touches[0]:t).clientX,c=(t.touches?t.touches[0]:t).clientY,u=r.scrollSensitivity,p=r.scrollSpeed,d=getWindowScrollingElement(),h=!1;we!==o&&(we=o,clearAutoScrolls(),_e=r.scroll,i=r.scrollFn,!0===_e&&(_e=getParentAutoScrollElement(o,!0)));var m=0,g=_e;do{var y=g,v=getRect(y),b=v.top,_=v.bottom,w=v.left,S=v.right,k=v.width,E=v.height,T=void 0,P=void 0,O=y.scrollWidth,C=y.scrollHeight,L=css(y),A=y.scrollLeft,I=y.scrollTop;y===d?(T=k<O&&("auto"===L.overflowX||"scroll"===L.overflowX||"visible"===L.overflowX),P=E<C&&("auto"===L.overflowY||"scroll"===L.overflowY||"visible"===L.overflowY)):(T=k<O&&("auto"===L.overflowX||"scroll"===L.overflowX),P=E<C&&("auto"===L.overflowY||"scroll"===L.overflowY));var j=T&&(Math.abs(S-l)<=u&&A+k<O)-(Math.abs(w-l)<=u&&!!A),M=P&&(Math.abs(_-c)<=u&&I+E<C)-(Math.abs(b-c)<=u&&!!I);if(!Te[m])for(var R=0;R<=m;R++)Te[R]||(Te[R]={});Te[m].vx==j&&Te[m].vy==M&&Te[m].el===y||(Te[m].el=y,Te[m].vx=j,Te[m].vy=M,clearInterval(Te[m].pid),0==j&&0==M||(h=!0,Te[m].pid=setInterval(function(){a&&0===this.layer&&Sortable.active._onTouchMove(ke);var r=Te[this.layer].vy?Te[this.layer].vy*p:0,o=Te[this.layer].vx?Te[this.layer].vx*p:0;"function"==typeof i&&"continue"!==i.call(Sortable.dragged.parentNode[x],o,r,t,ke,Te[this.layer].el)||scrollBy(Te[this.layer].el,o,r)}.bind({layer:m}),24))),m++}while(r.bubbleScroll&&g!==d&&(g=getParentAutoScrollElement(g,!1)));Pe=h}}),30),Ce=function drop(t){var r=t.originalEvent,o=t.putSortable,a=t.dragEl,i=t.activeSortable,l=t.dispatchSortableEvent,c=t.hideGhostForTarget,u=t.unhideGhostForTarget;if(r){var p=o||i;c();var d=r.changedTouches&&r.changedTouches.length?r.changedTouches[0]:r,h=document.elementFromPoint(d.clientX,d.clientY);u(),p&&!p.el.contains(h)&&(l("spill"),this.onSpill({dragEl:a,putSortable:o}))}};function Revert(){}function Remove(){}Revert.prototype={startIndex:null,dragStart:function dragStart(t){var r=t.oldDraggableIndex;this.startIndex=r},onSpill:function onSpill(t){var r=t.dragEl,o=t.putSortable;this.sortable.captureAnimationState(),o&&o.captureAnimationState();var a=getChild(this.sortable.el,this.startIndex,this.options);a?this.sortable.el.insertBefore(r,a):this.sortable.el.appendChild(r),this.sortable.animateAll(),o&&o.animateAll()},drop:Ce},_extends(Revert,{pluginName:"revertOnSpill"}),Remove.prototype={onSpill:function onSpill(t){var r=t.dragEl,o=t.putSortable||this.sortable;o.captureAnimationState(),r.parentNode&&r.parentNode.removeChild(r),o.animateAll()},drop:Ce},_extends(Remove,{pluginName:"removeOnSpill"});Sortable.mount(new function AutoScrollPlugin(){function AutoScroll(){for(var t in this.defaults={scroll:!0,forceAutoScrollFallback:!1,scrollSensitivity:30,scrollSpeed:10,bubbleScroll:!0},this)"_"===t.charAt(0)&&"function"==typeof this[t]&&(this[t]=this[t].bind(this))}return AutoScroll.prototype={dragStarted:function dragStarted(t){var r=t.originalEvent;this.sortable.nativeDraggable?on(document,"dragover",this._handleAutoScroll):this.options.supportPointer?on(document,"pointermove",this._handleFallbackAutoScroll):r.touches?on(document,"touchmove",this._handleFallbackAutoScroll):on(document,"mousemove",this._handleFallbackAutoScroll)},dragOverCompleted:function dragOverCompleted(t){var r=t.originalEvent;this.options.dragOverBubble||r.rootEl||this._handleAutoScroll(r)},drop:function drop(){this.sortable.nativeDraggable?off(document,"dragover",this._handleAutoScroll):(off(document,"pointermove",this._handleFallbackAutoScroll),off(document,"touchmove",this._handleFallbackAutoScroll),off(document,"mousemove",this._handleFallbackAutoScroll)),clearPointerElemChangedInterval(),clearAutoScrolls(),function cancelThrottle(){clearTimeout(w),w=void 0}()},nulling:function nulling(){ke=we=_e=Pe=Ee=Se=xe=null,Te.length=0},_handleFallbackAutoScroll:function _handleFallbackAutoScroll(t){this._handleAutoScroll(t,!0)},_handleAutoScroll:function _handleAutoScroll(t,r){var o=this,a=(t.touches?t.touches[0]:t).clientX,i=(t.touches?t.touches[0]:t).clientY,l=document.elementFromPoint(a,i);if(ke=t,r||this.options.forceAutoScrollFallback||m||h||y){Oe(t,this.options,l,r);var c=getParentAutoScrollElement(l,!0);!Pe||Ee&&a===Se&&i===xe||(Ee&&clearPointerElemChangedInterval(),Ee=setInterval((function(){var l=getParentAutoScrollElement(document.elementFromPoint(a,i),!0);l!==c&&(c=l,clearAutoScrolls()),Oe(t,o.options,l,r)}),10),Se=a,xe=i)}else{if(!this.options.bubbleScroll||getParentAutoScrollElement(l,!0)===getWindowScrollingElement())return void clearAutoScrolls();Oe(t,this.options,getParentAutoScrollElement(l,!1),!1)}}},_extends(AutoScroll,{pluginName:"scroll",initializeByDefault:!0})}),Sortable.mount(Remove,Revert);function socket_typeof(t){return socket_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},socket_typeof(t)}function socket_createForOfIteratorHelper(t,r){var o="undefined"!=typeof Symbol&&t[Symbol.iterator]||t["@@iterator"];if(!o){if(Array.isArray(t)||(o=function socket_unsupportedIterableToArray(t,r){if(!t)return;if("string"==typeof t)return socket_arrayLikeToArray(t,r);var o=Object.prototype.toString.call(t).slice(8,-1);"Object"===o&&t.constructor&&(o=t.constructor.name);if("Map"===o||"Set"===o)return Array.from(t);if("Arguments"===o||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(o))return socket_arrayLikeToArray(t,r)}(t))||r&&t&&"number"==typeof t.length){o&&(t=o);var a=0,i=function F(){};return{s:i,n:function n(){return a>=t.length?{done:!0}:{done:!1,value:t[a++]}},e:function e(t){throw t},f:i}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var l,c=!0,u=!1;return{s:function s(){o=o.call(t)},n:function n(){var t=o.next();return c=t.done,t},e:function e(t){u=!0,l=t},f:function f(){try{c||null==o.return||o.return()}finally{if(u)throw l}}}}function socket_arrayLikeToArray(t,r){(null==r||r>t.length)&&(r=t.length);for(var o=0,a=new Array(r);o<r;o++)a[o]=t[o];return a}function socket_ownKeys(t,r){var o=Object.keys(t);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(t);r&&(a=a.filter((function(r){return Object.getOwnPropertyDescriptor(t,r).enumerable}))),o.push.apply(o,a)}return o}function socket_objectSpread(t){for(var r=1;r<arguments.length;r++){var o=null!=arguments[r]?arguments[r]:{};r%2?socket_ownKeys(Object(o),!0).forEach((function(r){socket_defineProperty(t,r,o[r])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(o)):socket_ownKeys(Object(o)).forEach((function(r){Object.defineProperty(t,r,Object.getOwnPropertyDescriptor(o,r))}))}return t}function socket_regeneratorRuntime(){socket_regeneratorRuntime=function _regeneratorRuntime(){return t};var t={},r=Object.prototype,o=r.hasOwnProperty,a=Object.defineProperty||function(t,r,o){t[r]=o.value},i="function"==typeof Symbol?Symbol:{},l=i.iterator||"@@iterator",c=i.asyncIterator||"@@asyncIterator",u=i.toStringTag||"@@toStringTag";function define(t,r,o){return Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}),t[r]}try{define({},"")}catch(t){define=function define(t,r,o){return t[r]=o}}function wrap(t,r,o,i){var l=r&&r.prototype instanceof Generator?r:Generator,c=Object.create(l.prototype),u=new Context(i||[]);return a(c,"_invoke",{value:makeInvokeMethod(t,o,u)}),c}function tryCatch(t,r,o){try{return{type:"normal",arg:t.call(r,o)}}catch(t){return{type:"throw",arg:t}}}t.wrap=wrap;var p={};function Generator(){}function GeneratorFunction(){}function GeneratorFunctionPrototype(){}var d={};define(d,l,(function(){return this}));var h=Object.getPrototypeOf,m=h&&h(h(values([])));m&&m!==r&&o.call(m,l)&&(d=m);var g=GeneratorFunctionPrototype.prototype=Generator.prototype=Object.create(d);function defineIteratorMethods(t){["next","throw","return"].forEach((function(r){define(t,r,(function(t){return this._invoke(r,t)}))}))}function AsyncIterator(t,r){function invoke(a,i,l,c){var u=tryCatch(t[a],t,i);if("throw"!==u.type){var p=u.arg,d=p.value;return d&&"object"==socket_typeof(d)&&o.call(d,"__await")?r.resolve(d.__await).then((function(t){invoke("next",t,l,c)}),(function(t){invoke("throw",t,l,c)})):r.resolve(d).then((function(t){p.value=t,l(p)}),(function(t){return invoke("throw",t,l,c)}))}c(u.arg)}var i;a(this,"_invoke",{value:function value(t,o){function callInvokeWithMethodAndArg(){return new r((function(r,a){invoke(t,o,r,a)}))}return i=i?i.then(callInvokeWithMethodAndArg,callInvokeWithMethodAndArg):callInvokeWithMethodAndArg()}})}function makeInvokeMethod(t,r,o){var a="suspendedStart";return function(i,l){if("executing"===a)throw new Error("Generator is already running");if("completed"===a){if("throw"===i)throw l;return doneResult()}for(o.method=i,o.arg=l;;){var c=o.delegate;if(c){var u=maybeInvokeDelegate(c,o);if(u){if(u===p)continue;return u}}if("next"===o.method)o.sent=o._sent=o.arg;else if("throw"===o.method){if("suspendedStart"===a)throw a="completed",o.arg;o.dispatchException(o.arg)}else"return"===o.method&&o.abrupt("return",o.arg);a="executing";var d=tryCatch(t,r,o);if("normal"===d.type){if(a=o.done?"completed":"suspendedYield",d.arg===p)continue;return{value:d.arg,done:o.done}}"throw"===d.type&&(a="completed",o.method="throw",o.arg=d.arg)}}}function maybeInvokeDelegate(t,r){var o=r.method,a=t.iterator[o];if(void 0===a)return r.delegate=null,"throw"===o&&t.iterator.return&&(r.method="return",r.arg=void 0,maybeInvokeDelegate(t,r),"throw"===r.method)||"return"!==o&&(r.method="throw",r.arg=new TypeError("The iterator does not provide a '"+o+"' method")),p;var i=tryCatch(a,t.iterator,r.arg);if("throw"===i.type)return r.method="throw",r.arg=i.arg,r.delegate=null,p;var l=i.arg;return l?l.done?(r[t.resultName]=l.value,r.next=t.nextLoc,"return"!==r.method&&(r.method="next",r.arg=void 0),r.delegate=null,p):l:(r.method="throw",r.arg=new TypeError("iterator result is not an object"),r.delegate=null,p)}function pushTryEntry(t){var r={tryLoc:t[0]};1 in t&&(r.catchLoc=t[1]),2 in t&&(r.finallyLoc=t[2],r.afterLoc=t[3]),this.tryEntries.push(r)}function resetTryEntry(t){var r=t.completion||{};r.type="normal",delete r.arg,t.completion=r}function Context(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(pushTryEntry,this),this.reset(!0)}function values(t){if(t){var r=t[l];if(r)return r.call(t);if("function"==typeof t.next)return t;if(!isNaN(t.length)){var a=-1,i=function next(){for(;++a<t.length;)if(o.call(t,a))return next.value=t[a],next.done=!1,next;return next.value=void 0,next.done=!0,next};return i.next=i}}return{next:doneResult}}function doneResult(){return{value:void 0,done:!0}}return GeneratorFunction.prototype=GeneratorFunctionPrototype,a(g,"constructor",{value:GeneratorFunctionPrototype,configurable:!0}),a(GeneratorFunctionPrototype,"constructor",{value:GeneratorFunction,configurable:!0}),GeneratorFunction.displayName=define(GeneratorFunctionPrototype,u,"GeneratorFunction"),t.isGeneratorFunction=function(t){var r="function"==typeof t&&t.constructor;return!!r&&(r===GeneratorFunction||"GeneratorFunction"===(r.displayName||r.name))},t.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,GeneratorFunctionPrototype):(t.__proto__=GeneratorFunctionPrototype,define(t,u,"GeneratorFunction")),t.prototype=Object.create(g),t},t.awrap=function(t){return{__await:t}},defineIteratorMethods(AsyncIterator.prototype),define(AsyncIterator.prototype,c,(function(){return this})),t.AsyncIterator=AsyncIterator,t.async=function(r,o,a,i,l){void 0===l&&(l=Promise);var c=new AsyncIterator(wrap(r,o,a,i),l);return t.isGeneratorFunction(o)?c:c.next().then((function(t){return t.done?t.value:c.next()}))},defineIteratorMethods(g),define(g,u,"Generator"),define(g,l,(function(){return this})),define(g,"toString",(function(){return"[object Generator]"})),t.keys=function(t){var r=Object(t),o=[];for(var a in r)o.push(a);return o.reverse(),function next(){for(;o.length;){var t=o.pop();if(t in r)return next.value=t,next.done=!1,next}return next.done=!0,next}},t.values=values,Context.prototype={constructor:Context,reset:function reset(t){if(this.prev=0,this.next=0,this.sent=this._sent=void 0,this.done=!1,this.delegate=null,this.method="next",this.arg=void 0,this.tryEntries.forEach(resetTryEntry),!t)for(var r in this)"t"===r.charAt(0)&&o.call(this,r)&&!isNaN(+r.slice(1))&&(this[r]=void 0)},stop:function stop(){this.done=!0;var t=this.tryEntries[0].completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function dispatchException(t){if(this.done)throw t;var r=this;function handle(o,a){return l.type="throw",l.arg=t,r.next=o,a&&(r.method="next",r.arg=void 0),!!a}for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a],l=i.completion;if("root"===i.tryLoc)return handle("end");if(i.tryLoc<=this.prev){var c=o.call(i,"catchLoc"),u=o.call(i,"finallyLoc");if(c&&u){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0);if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}else if(c){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0)}else{if(!u)throw new Error("try statement without catch or finally");if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}}}},abrupt:function abrupt(t,r){for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a];if(i.tryLoc<=this.prev&&o.call(i,"finallyLoc")&&this.prev<i.finallyLoc){var l=i;break}}l&&("break"===t||"continue"===t)&&l.tryLoc<=r&&r<=l.finallyLoc&&(l=null);var c=l?l.completion:{};return c.type=t,c.arg=r,l?(this.method="next",this.next=l.finallyLoc,p):this.complete(c)},complete:function complete(t,r){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&r&&(this.next=r),p},finish:function finish(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.finallyLoc===t)return this.complete(o.completion,o.afterLoc),resetTryEntry(o),p}},catch:function _catch(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.tryLoc===t){var a=o.completion;if("throw"===a.type){var i=a.arg;resetTryEntry(o)}return i}}throw new Error("illegal catch attempt")},delegateYield:function delegateYield(t,r,o){return this.delegate={iterator:values(t),resultName:r,nextLoc:o},"next"===this.method&&(this.arg=void 0),p}},t}function socket_asyncGeneratorStep(t,r,o,a,i,l,c){try{var u=t[l](c),p=u.value}catch(t){return void o(t)}u.done?r(p):Promise.resolve(p).then(a,i)}function socket_asyncToGenerator(t){return function(){var r=this,o=arguments;return new Promise((function(a,i){var l=t.apply(r,o);function _next(t){socket_asyncGeneratorStep(l,a,i,_next,_throw,"next",t)}function _throw(t){socket_asyncGeneratorStep(l,a,i,_next,_throw,"throw",t)}_next(void 0)}))}}function socket_classCallCheck(t,r){if(!(t instanceof r))throw new TypeError("Cannot call a class as a function")}function socket_defineProperties(t,r){for(var o=0;o<r.length;o++){var a=r[o];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(t,socket_toPropertyKey(a.key),a)}}function socket_createClass(t,r,o){return r&&socket_defineProperties(t.prototype,r),o&&socket_defineProperties(t,o),Object.defineProperty(t,"prototype",{writable:!1}),t}function socket_defineProperty(t,r,o){return(r=socket_toPropertyKey(r))in t?Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}):t[r]=o,t}function socket_toPropertyKey(t){var r=function socket_toPrimitive(t,r){if("object"!==socket_typeof(t)||null===t)return t;var o=t[Symbol.toPrimitive];if(void 0!==o){var a=o.call(t,r||"default");if("object"!==socket_typeof(a))return a;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===r?String:Number)(t)}(t,"string");return"symbol"===socket_typeof(r)?r:String(r)}var Le=function(){function Socket(){socket_classCallCheck(this,Socket)}var t;return socket_createClass(Socket,null,[{key:"__$onMessage",value:(t=socket_asyncToGenerator(socket_regeneratorRuntime().mark((function _callee(t){var r,o,a,i,l,c,u;return socket_regeneratorRuntime().wrap((function _callee$(p){for(;;)switch(p.prev=p.next){case 0:if(!(r=t.__$socketOptions).__$storeName){p.next=12;break}if(!r.__$request){p.next=10;break}if((o=this.__$stores[r.__$storeName])._isLive){p.next=7;break}return p.abrupt("return");case 7:game.socket.emit("module.".concat(Xe),{__$socketOptions:{__$storeName:r.__$storeName,user:game.user.id},data:o.getData()}),p.next=11;break;case 10:this.__$stores[r.__$storeName].synchronize(t.data,game.users.get(r.user));case 11:return p.abrupt("return");case 12:if("__$response"!==r.__$eventName){p.next=16;break}return a=r.__$responseKey,this.__$promises[a]&&(this.__$promises[a].resolve({user:game.users.get(r.__$userId),response:t.result}),delete this.__$promises[a]),p.abrupt("return");case 16:if(r.users.includes(game.user.id)){p.next=18;break}return p.abrupt("return");case 18:return i=this.__$callbacks[r.__$eventName],delete t.__$socketOptions,p.next=22,i(t);case 22:l=p.sent,r.response&&(c="".concat(r.__$eventId,".").concat(game.user.id),u={__$socketOptions:{__$eventName:"__$response",__$responseKey:c,__$userId:game.user.id},result:l},this.__$socket.emit("module.".concat(Xe),u));case 24:case"end":return p.stop()}}),_callee,this)}))),function __$onMessage(r){return t.apply(this,arguments)})},{key:"__$parseUsers",value:function __$parseUsers(t){var r;if(Array.isArray(null===(r=t)||void 0===r?void 0:r.users))return t;"string"==typeof t&&(t={users:t}),Array.isArray(t)&&(t={users:t}),t.users=t.users||this.USERS.ALL;var o=game.users.filter((function(t){return t.active})),a=t.users;return a===this.USERS.ALL?t.users=o.map((function(t){return t.id})):a===this.USERS.GMS?t.users=o.filter((function(t){return t.isGM})).map((function(t){return t.id})):a===this.USERS.PLAYERS?t.users=o.filter((function(t){return!t.isGM})).map((function(t){return t.id})):a===this.USERS.OTHERS?t.users=o.filter((function(t){return t.id!==game.user.id})).map((function(t){return t.id})):a===this.USERS.FIRSTGM?t.users=game.users.activeGM.id:a===this.USERS.SELF&&(t.users=[game.user.id]),t}},{key:"register",value:function register(t,r){var o=this,a=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};if(this.__$socket||(this.__$socket=game.socket,game.socket.on("module.".concat(Xe),this.__$onMessage.bind(this))),this.__$reserved.includes(t))throw new Error("Socket event name ".concat(t," is reserved"));this.__$callbacks[t]=r;var i=function(){var i=socket_asyncToGenerator(socket_regeneratorRuntime().mark((function _callee3(i){var l,c,u,p,d,h,m,g,y,v,b,_,w,S=arguments;return socket_regeneratorRuntime().wrap((function _callee3$(x){for(;;)switch(x.prev=x.next){case 0:if(l=S.length>1&&void 0!==S[1]?S[1]:{},l=o.__$parseUsers(l),l=socket_objectSpread(socket_objectSpread({},a),l),c=foundry.utils.randomID(),l.__$eventId=c,l.__$eventName=t,u=[],p=l.users.includes(game.user.id),l.users=l.users.filter((function(t){return t!==game.user.id})),!l.response){x.next=27;break}d=socket_createForOfIteratorHelper(l.users),x.prev=11,m=socket_regeneratorRuntime().mark((function _loop(){var t;return socket_regeneratorRuntime().wrap((function _loop$(r){for(;;)switch(r.prev=r.next){case 0:t=h.value,u.push(new Promise((function(r,a){var i="".concat(c,".").concat(t);o.__$promises[i]={resolve:r,reject:a}})));case 2:case"end":return r.stop()}}),_loop)})),d.s();case 14:if((h=d.n()).done){x.next=18;break}return x.delegateYield(m(),"t0",16);case 16:x.next=14;break;case 18:x.next=23;break;case 20:x.prev=20,x.t1=x.catch(11),d.e(x.t1);case 23:return x.prev=23,d.f(),x.finish(23);case 26:setTimeout((function(){var t,r=socket_createForOfIteratorHelper(l.users);try{for(r.s();!(t=r.n()).done;){var a=t.value,i="".concat(c,".").concat(a);o.__$promises[i]&&(o.__$promises[i].reject({user:game.users.get(a),response:"timeout"}),delete o.__$promises[i])}}catch(t){r.e(t)}finally{r.f()}}),l.timeout||3e4);case 27:return i.__$socketOptions=l,o.__$socket.emit("module.".concat(Xe),i),g=[],p&&(y=function(){var t=socket_asyncToGenerator(socket_regeneratorRuntime().mark((function _callee2(){return socket_regeneratorRuntime().wrap((function _callee2$(t){for(;;)switch(t.prev=t.next){case 0:return t.t0=game.user,t.next=3,r(i);case 3:return t.t1=t.sent,t.abrupt("return",{user:t.t0,response:t.t1});case 5:case"end":return t.stop()}}),_callee2)})));return function localWrapper(){return t.apply(this,arguments)}}(),u.push(y())),x.next=33,Promise.all(u);case 33:v=x.sent,b=socket_createForOfIteratorHelper(v);try{for(b.s();!(_=b.n()).done;)w=_.value,g.push(w)}catch(t){b.e(t)}finally{b.f()}return x.abrupt("return",g);case 37:case"end":return x.stop()}}),_callee3,null,[[11,20,23,26]])})));return function wrappedCallback(t){return i.apply(this,arguments)}}();this[t]=i.bind(this)}},{key:"registerStore",value:function registerStore(t){var r=this,o=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},a=arguments.length>2&&void 0!==arguments[2]?arguments[2]:null;if(this.__$reserved.includes(t))throw new Error("Store name ".concat(t," is reserved"));if("object"!==socket_typeof(o))throw new Error("Initial value for store must be an object");return this.__$stores[t]=new Ae(t,o,a),Object.defineProperty(this,t,{get:function get(){return r.__$stores[t].getData()},set:function set(o){r.__$stores[t].setData(o)}}),this.__$stores[t]}}]),Socket}();socket_defineProperty(Le,"__$callbacks",{}),socket_defineProperty(Le,"__$stores",{}),socket_defineProperty(Le,"__$promises",{}),socket_defineProperty(Le,"USERS",{GMS:"gms",PLAYERS:"players",ALL:"all",OTHERS:"others",FIRSTGM:"firstGM",SELF:"self"}),socket_defineProperty(Le,"__$reserved",["__$eventName","__$response","__$onMessage","__$parseUsers","register","USERS"]);var Ae=function(){function SynchronizedStore(t,r,o){socket_classCallCheck(this,SynchronizedStore),this._storeName=t,this._onChange=o,this._data=r,this._timestamp=Date.now(),this._isLive=!1,game.socket.emit("module.".concat(Xe),{__$socketOptions:{__$storeName:this._storeName,__$request:!0,user:game.user.id}})}return socket_createClass(SynchronizedStore,[{key:"synchronize",value:function synchronize(t){var r;this._data=t,this._timestamp=Date.now(),this._isLive=!0,null===(r=this._onChange)||void 0===r||r.call(this,this.data)}},{key:"getData",value:function getData(){return this._data}},{key:"setData",value:function setData(t){this.synchronize(t),game.socket.emit("module.".concat(Xe),{__$socketOptions:{__$storeName:this._storeName,user:game.user.id},data:t})}}]),SynchronizedStore}();function timeline_typeof(t){return timeline_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},timeline_typeof(t)}function timeline_ownKeys(t,r){var o=Object.keys(t);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(t);r&&(a=a.filter((function(r){return Object.getOwnPropertyDescriptor(t,r).enumerable}))),o.push.apply(o,a)}return o}function timeline_objectSpread(t){for(var r=1;r<arguments.length;r++){var o=null!=arguments[r]?arguments[r]:{};r%2?timeline_ownKeys(Object(o),!0).forEach((function(r){timeline_defineProperty(t,r,o[r])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(o)):timeline_ownKeys(Object(o)).forEach((function(r){Object.defineProperty(t,r,Object.getOwnPropertyDescriptor(o,r))}))}return t}function timeline_defineProperty(t,r,o){return(r=timeline_toPropertyKey(r))in t?Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}):t[r]=o,t}function timeline_regeneratorRuntime(){timeline_regeneratorRuntime=function _regeneratorRuntime(){return t};var t={},r=Object.prototype,o=r.hasOwnProperty,a=Object.defineProperty||function(t,r,o){t[r]=o.value},i="function"==typeof Symbol?Symbol:{},l=i.iterator||"@@iterator",c=i.asyncIterator||"@@asyncIterator",u=i.toStringTag||"@@toStringTag";function define(t,r,o){return Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}),t[r]}try{define({},"")}catch(t){define=function define(t,r,o){return t[r]=o}}function wrap(t,r,o,i){var l=r&&r.prototype instanceof Generator?r:Generator,c=Object.create(l.prototype),u=new Context(i||[]);return a(c,"_invoke",{value:makeInvokeMethod(t,o,u)}),c}function tryCatch(t,r,o){try{return{type:"normal",arg:t.call(r,o)}}catch(t){return{type:"throw",arg:t}}}t.wrap=wrap;var p={};function Generator(){}function GeneratorFunction(){}function GeneratorFunctionPrototype(){}var d={};define(d,l,(function(){return this}));var h=Object.getPrototypeOf,m=h&&h(h(values([])));m&&m!==r&&o.call(m,l)&&(d=m);var g=GeneratorFunctionPrototype.prototype=Generator.prototype=Object.create(d);function defineIteratorMethods(t){["next","throw","return"].forEach((function(r){define(t,r,(function(t){return this._invoke(r,t)}))}))}function AsyncIterator(t,r){function invoke(a,i,l,c){var u=tryCatch(t[a],t,i);if("throw"!==u.type){var p=u.arg,d=p.value;return d&&"object"==timeline_typeof(d)&&o.call(d,"__await")?r.resolve(d.__await).then((function(t){invoke("next",t,l,c)}),(function(t){invoke("throw",t,l,c)})):r.resolve(d).then((function(t){p.value=t,l(p)}),(function(t){return invoke("throw",t,l,c)}))}c(u.arg)}var i;a(this,"_invoke",{value:function value(t,o){function callInvokeWithMethodAndArg(){return new r((function(r,a){invoke(t,o,r,a)}))}return i=i?i.then(callInvokeWithMethodAndArg,callInvokeWithMethodAndArg):callInvokeWithMethodAndArg()}})}function makeInvokeMethod(t,r,o){var a="suspendedStart";return function(i,l){if("executing"===a)throw new Error("Generator is already running");if("completed"===a){if("throw"===i)throw l;return doneResult()}for(o.method=i,o.arg=l;;){var c=o.delegate;if(c){var u=maybeInvokeDelegate(c,o);if(u){if(u===p)continue;return u}}if("next"===o.method)o.sent=o._sent=o.arg;else if("throw"===o.method){if("suspendedStart"===a)throw a="completed",o.arg;o.dispatchException(o.arg)}else"return"===o.method&&o.abrupt("return",o.arg);a="executing";var d=tryCatch(t,r,o);if("normal"===d.type){if(a=o.done?"completed":"suspendedYield",d.arg===p)continue;return{value:d.arg,done:o.done}}"throw"===d.type&&(a="completed",o.method="throw",o.arg=d.arg)}}}function maybeInvokeDelegate(t,r){var o=r.method,a=t.iterator[o];if(void 0===a)return r.delegate=null,"throw"===o&&t.iterator.return&&(r.method="return",r.arg=void 0,maybeInvokeDelegate(t,r),"throw"===r.method)||"return"!==o&&(r.method="throw",r.arg=new TypeError("The iterator does not provide a '"+o+"' method")),p;var i=tryCatch(a,t.iterator,r.arg);if("throw"===i.type)return r.method="throw",r.arg=i.arg,r.delegate=null,p;var l=i.arg;return l?l.done?(r[t.resultName]=l.value,r.next=t.nextLoc,"return"!==r.method&&(r.method="next",r.arg=void 0),r.delegate=null,p):l:(r.method="throw",r.arg=new TypeError("iterator result is not an object"),r.delegate=null,p)}function pushTryEntry(t){var r={tryLoc:t[0]};1 in t&&(r.catchLoc=t[1]),2 in t&&(r.finallyLoc=t[2],r.afterLoc=t[3]),this.tryEntries.push(r)}function resetTryEntry(t){var r=t.completion||{};r.type="normal",delete r.arg,t.completion=r}function Context(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(pushTryEntry,this),this.reset(!0)}function values(t){if(t){var r=t[l];if(r)return r.call(t);if("function"==typeof t.next)return t;if(!isNaN(t.length)){var a=-1,i=function next(){for(;++a<t.length;)if(o.call(t,a))return next.value=t[a],next.done=!1,next;return next.value=void 0,next.done=!0,next};return i.next=i}}return{next:doneResult}}function doneResult(){return{value:void 0,done:!0}}return GeneratorFunction.prototype=GeneratorFunctionPrototype,a(g,"constructor",{value:GeneratorFunctionPrototype,configurable:!0}),a(GeneratorFunctionPrototype,"constructor",{value:GeneratorFunction,configurable:!0}),GeneratorFunction.displayName=define(GeneratorFunctionPrototype,u,"GeneratorFunction"),t.isGeneratorFunction=function(t){var r="function"==typeof t&&t.constructor;return!!r&&(r===GeneratorFunction||"GeneratorFunction"===(r.displayName||r.name))},t.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,GeneratorFunctionPrototype):(t.__proto__=GeneratorFunctionPrototype,define(t,u,"GeneratorFunction")),t.prototype=Object.create(g),t},t.awrap=function(t){return{__await:t}},defineIteratorMethods(AsyncIterator.prototype),define(AsyncIterator.prototype,c,(function(){return this})),t.AsyncIterator=AsyncIterator,t.async=function(r,o,a,i,l){void 0===l&&(l=Promise);var c=new AsyncIterator(wrap(r,o,a,i),l);return t.isGeneratorFunction(o)?c:c.next().then((function(t){return t.done?t.value:c.next()}))},defineIteratorMethods(g),define(g,u,"Generator"),define(g,l,(function(){return this})),define(g,"toString",(function(){return"[object Generator]"})),t.keys=function(t){var r=Object(t),o=[];for(var a in r)o.push(a);return o.reverse(),function next(){for(;o.length;){var t=o.pop();if(t in r)return next.value=t,next.done=!1,next}return next.done=!0,next}},t.values=values,Context.prototype={constructor:Context,reset:function reset(t){if(this.prev=0,this.next=0,this.sent=this._sent=void 0,this.done=!1,this.delegate=null,this.method="next",this.arg=void 0,this.tryEntries.forEach(resetTryEntry),!t)for(var r in this)"t"===r.charAt(0)&&o.call(this,r)&&!isNaN(+r.slice(1))&&(this[r]=void 0)},stop:function stop(){this.done=!0;var t=this.tryEntries[0].completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function dispatchException(t){if(this.done)throw t;var r=this;function handle(o,a){return l.type="throw",l.arg=t,r.next=o,a&&(r.method="next",r.arg=void 0),!!a}for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a],l=i.completion;if("root"===i.tryLoc)return handle("end");if(i.tryLoc<=this.prev){var c=o.call(i,"catchLoc"),u=o.call(i,"finallyLoc");if(c&&u){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0);if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}else if(c){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0)}else{if(!u)throw new Error("try statement without catch or finally");if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}}}},abrupt:function abrupt(t,r){for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a];if(i.tryLoc<=this.prev&&o.call(i,"finallyLoc")&&this.prev<i.finallyLoc){var l=i;break}}l&&("break"===t||"continue"===t)&&l.tryLoc<=r&&r<=l.finallyLoc&&(l=null);var c=l?l.completion:{};return c.type=t,c.arg=r,l?(this.method="next",this.next=l.finallyLoc,p):this.complete(c)},complete:function complete(t,r){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&r&&(this.next=r),p},finish:function finish(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.finallyLoc===t)return this.complete(o.completion,o.afterLoc),resetTryEntry(o),p}},catch:function _catch(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.tryLoc===t){var a=o.completion;if("throw"===a.type){var i=a.arg;resetTryEntry(o)}return i}}throw new Error("illegal catch attempt")},delegateYield:function delegateYield(t,r,o){return this.delegate={iterator:values(t),resultName:r,nextLoc:o},"next"===this.method&&(this.arg=void 0),p}},t}function timeline_asyncGeneratorStep(t,r,o,a,i,l,c){try{var u=t[l](c),p=u.value}catch(t){return void o(t)}u.done?r(p):Promise.resolve(p).then(a,i)}function timeline_asyncToGenerator(t){return function(){var r=this,o=arguments;return new Promise((function(a,i){var l=t.apply(r,o);function _next(t){timeline_asyncGeneratorStep(l,a,i,_next,_throw,"next",t)}function _throw(t){timeline_asyncGeneratorStep(l,a,i,_next,_throw,"throw",t)}_next(void 0)}))}}function timeline_classCallCheck(t,r){if(!(t instanceof r))throw new TypeError("Cannot call a class as a function")}function timeline_defineProperties(t,r){for(var o=0;o<r.length;o++){var a=r[o];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(t,timeline_toPropertyKey(a.key),a)}}function timeline_createClass(t,r,o){return r&&timeline_defineProperties(t.prototype,r),o&&timeline_defineProperties(t,o),Object.defineProperty(t,"prototype",{writable:!1}),t}function timeline_toPropertyKey(t){var r=function timeline_toPrimitive(t,r){if("object"!==timeline_typeof(t)||null===t)return t;var o=t[Symbol.toPrimitive];if(void 0!==o){var a=o.call(t,r||"default");if("object"!==timeline_typeof(a))return a;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===r?String:Number)(t)}(t,"string");return"symbol"===timeline_typeof(r)?r:String(r)}function timeline_get(){return timeline_get="undefined"!=typeof Reflect&&Reflect.get?Reflect.get.bind():function _get(t,r,o){var a=function timeline_superPropBase(t,r){for(;!Object.prototype.hasOwnProperty.call(t,r)&&null!==(t=timeline_getPrototypeOf(t)););return t}(t,r);if(a){var i=Object.getOwnPropertyDescriptor(a,r);return i.get?i.get.call(arguments.length<3?t:o):i.value}},timeline_get.apply(this,arguments)}function timeline_inherits(t,r){if("function"!=typeof r&&null!==r)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(r&&r.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),Object.defineProperty(t,"prototype",{writable:!1}),r&&timeline_setPrototypeOf(t,r)}function timeline_setPrototypeOf(t,r){return timeline_setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(t,r){return t.__proto__=r,t},timeline_setPrototypeOf(t,r)}function timeline_createSuper(t){var r=function timeline_isNativeReflectConstruct(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(t){return!1}}();return function _createSuperInternal(){var o,a=timeline_getPrototypeOf(t);if(r){var i=timeline_getPrototypeOf(this).constructor;o=Reflect.construct(a,arguments,i)}else o=a.apply(this,arguments);return function timeline_possibleConstructorReturn(t,r){if(r&&("object"===timeline_typeof(r)||"function"==typeof r))return r;if(void 0!==r)throw new TypeError("Derived constructors may only return object or undefined");return function timeline_assertThisInitialized(t){if(void 0===t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}(t)}(this,o)}}function timeline_getPrototypeOf(t){return timeline_getPrototypeOf=Object.setPrototypeOf?Object.getPrototypeOf.bind():function _getPrototypeOf(t){return t.__proto__||Object.getPrototypeOf(t)},timeline_getPrototypeOf(t)}var Ie='<i class="fa-thin fa-arrow-right"></i>',je=function(t){timeline_inherits(Timeline,Application);var r,o=timeline_createSuper(Timeline);function Timeline(t){var r,a;timeline_classCallCheck(this,Timeline),(a=o.call(this)).container=t;var i=getSetting("timelineJournalName");return a.journal=Array.from(game.journal).find((function(t){return t.name===i})),a.scrollPosition=null!==(r=getSetting("timelineScroll"))&&void 0!==r?r:0,a}return timeline_createClass(Timeline,[{key:"APP_ID",get:function get(){return this.constructor.APP_ID}},{key:"getData",value:(r=timeline_asyncToGenerator(timeline_regeneratorRuntime().mark((function _callee(){var t,r,o,a,i,l,c,u,p,d,h,m,g,y,v,b,_,w,S,x,k,E,T,P,O,C,L,A,I,j,M,R,q,G,D,N,H,W,$,z,J,Q,U,B,Y,V;return timeline_regeneratorRuntime().wrap((function _callee$(X){for(;;)switch(X.prev=X.next){case 0:Ie=game.i18n.localize("".concat(Xe,".timeline-config.to")),c=Math.max(null!==(t=this.journal.getFlag(Xe,"timeScale"))&&void 0!==t?t:10,.1),u=null!==(r=this.journal.getFlag(Xe,"dynamicTimeScale"))&&void 0!==r&&r,p={},d=Array.from(this.journal.pages),h=null!==(o=this.journal.getFlag(Xe,"negativeAbb"))&&void 0!==o?o:"BC",m=null!==(a=this.journal.getFlag(Xe,"positiveAbb"))&&void 0!==a?a:"AC",g=null!==(i=this.journal.getFlag(Xe,"showMinus"))&&void 0!==i&&i,y=[],v={left:[],right:[]},b=[],_=d.filter((function(t){var r;return null===(r=t.flags[Xe])||void 0===r||null===(r=r.timeline)||void 0===r?void 0:r.isEra})).sort((function(t,r){return t.getFlag(Xe,"timeline").eraStart-r.getFlag(Xe,"timeline").eraStart})),w=d.filter((function(t){var r,o;return!(null!==(r=t.flags[Xe])&&void 0!==r&&null!==(r=r.timeline)&&void 0!==r&&r.isEra)&&(!0!==(null===(o=t.flags[Xe])||void 0===o?void 0:o.hidden)||game.user.isGM)})).sort((function(t,r){var o,a;return(null===(o=t.flags[Xe])||void 0===o||null===(o=o.timeline)||void 0===o?void 0:o.year)-(null===(a=r.flags[Xe])||void 0===a||null===(a=a.timeline)||void 0===a?void 0:a.year)})),S="",_.forEach((function(t){var r,o,a=w.filter((function(r){var o,a,i,l;return(null===(o=r.flags[Xe])||void 0===o||null===(o=o.timeline)||void 0===o?void 0:o.year)>=(null===(a=t.flags[Xe])||void 0===a||null===(a=a.timeline)||void 0===a?void 0:a.eraStart)&&(null===(i=r.flags[Xe])||void 0===i||null===(i=i.timeline)||void 0===i?void 0:i.year)<=(null===(l=t.flags[Xe])||void 0===l||null===(l=l.timeline)||void 0===l?void 0:l.eraEnd)})).length,i=(null===(r=t.flags[Xe])||void 0===r||null===(r=r.timeline)||void 0===r?void 0:r.eraEnd)-(null===(o=t.flags[Xe])||void 0===o||null===(o=o.timeline)||void 0===o?void 0:o.eraStart);p[t.uuid]=u?300*(a+1)*c:i*c})),x=Object.values(p).reduce((function(t,r){return t+r}),0),k=0;case 17:if(!(k<_.length)){X.next=51;break}return j=_[k],M=_[k+1],R=null===(E=j.flags[Xe])||void 0===E||null===(E=E.timeline)||void 0===E?void 0:E.eraStart,q=(null===(T=j.flags[Xe])||void 0===T||null===(T=T.timeline)||void 0===T?void 0:T.eraEnd)||(null==M||null===(P=M.flags[Xe])||void 0===P||null===(P=P.timeline)||void 0===P?void 0:P.eraStart),G=null===(O=j.flags[Xe])||void 0===O||null===(O=O.timeline)||void 0===O?void 0:O.color,D=null===(C=y[k-1])||void 0===C?void 0:C.endPx,N=null!=D?D:0,H=p[j.uuid]+N,W=N/x,$=H/x*100,S+="".concat(G," ").concat(W,"%, ").concat(G," ").concat($,"%, "),z=R>0?"".concat(R," ").concat(m):"".concat(Math.abs(R)," ").concat(h),J=q>0?"".concat(q," ").concat(m):"".concat(Math.abs(q)," ").concat(h),R<0&&(!h||g)&&(z="-"+z),q<0&&(!h||g)&&(J="-"+J),X.t0=y,X.t1=z,X.t2=J,X.t3=j.name,X.t4=N,X.t5=H,X.next=41,foundry.applications.ux.TextEditor.implementation.enrichHTML(j.text.content,{secrets:game.user.isGM,relativeTo:j,async:!0});case 41:X.t6=X.sent,X.t7=null===(L=j.flags[Xe])||void 0===L||null===(L=L.timeline)||void 0===L?void 0:L.banner,X.t8=null===(A=j.flags[Xe])||void 0===A||null===(A=A.timeline)||void 0===A?void 0:A.color,X.t9=j.uuid,X.t10=null===(I=j.flags[Xe])||void 0===I||null===(I=I.timeline)||void 0===I?void 0:I.label,X.t11={start:X.t1,end:X.t2,name:X.t3,top:X.t4,endPx:X.t5,content:X.t6,banner:X.t7,color:X.t8,uuid:X.t9,label:X.t10},X.t0.push.call(X.t0,X.t11);case 48:k++,X.next=17;break;case 51:Q=timeline_regeneratorRuntime().mark((function _loop(){var t,r,o,a,i,l,c,u,d,S,k,E,T,P,O,C,L,A,I,j,M,R,q,G,D,N,H,W,$,z,J,Q,B,Y;return timeline_regeneratorRuntime().wrap((function _loop$(V){for(;;)switch(V.prev=V.next){case 0:if(A=w[U],I=null===(t=A.flags[Xe])||void 0===t||null===(t=t.timeline)||void 0===t?void 0:t.year,j=_.find((function(t){var r,o;return(null===(r=t.flags[Xe])||void 0===r||null===(r=r.timeline)||void 0===r?void 0:r.eraStart)<=I&&(null===(o=t.flags[Xe])||void 0===o||null===(o=o.timeline)||void 0===o?void 0:o.eraEnd)>=I}))){V.next=5;break}return V.abrupt("return","continue");case 5:return M=null===(r=j.flags[Xe])||void 0===r||null===(r=r.timeline)||void 0===r?void 0:r.color,R=(I-(null===(o=j.flags[Xe])||void 0===o||null===(o=o.timeline)||void 0===o?void 0:o.eraStart))/((null===(a=j.flags[Xe])||void 0===a||null===(a=a.timeline)||void 0===a?void 0:a.eraEnd)-(null===(i=j.flags[Xe])||void 0===i||null===(i=i.timeline)||void 0===i?void 0:i.eraStart)),q=null!==(l=null===(c=A.flags[Xe])||void 0===c||null===(c=c.timeline)||void 0===c?void 0:c.duration)&&void 0!==l?l:0,G=(I+q-(null===(u=j.flags[Xe])||void 0===u||null===(u=u.timeline)||void 0===u?void 0:u.eraStart))/((null===(d=j.flags[Xe])||void 0===d||null===(d=d.timeline)||void 0===d?void 0:d.eraEnd)-(null===(S=j.flags[Xe])||void 0===S||null===(S=S.timeline)||void 0===S?void 0:S.eraStart)),D=p[j.uuid]*R+y.find((function(t){return t.uuid===j.uuid})).top,N=D/x*100,H=p[j.uuid]*G+y.find((function(t){return t.uuid===j.uuid})).top,W=Math.round(H-D),$=I>0?"".concat(I," ").concat(m):"".concat(g?"-":"").concat(Math.abs(I)," ").concat(h),z=I+q>0?"".concat(I+q," ").concat(m):"".concat(g?"-":"").concat(Math.abs(I+q)," ").concat(h),V.next=17,foundry.applications.ux.TextEditor.implementation.enrichHTML(A.text.content,{secrets:game.user.isGM,relativeTo:j,async:!0});case 17:J=V.sent,Q=null===(k=A.flags[Xe])||void 0===k||null===(k=k.timeline)||void 0===k?void 0:k.banner,B=A.uuid,Y={name:A.name,content:J,banner:Q,color:M,uuid:B,top:D+(null!==(E=null===(T=A.flags[Xe])||void 0===T||null===(T=T.timeline)||void 0===T?void 0:T.offset)&&void 0!==E?E:0),year:$,yearEnd:q?z:null,era:j.name,eraUuid:j.uuid,hidden:null===(P=A.flags[Xe])||void 0===P?void 0:P.hidden,icon:null===(O=A.flags[Xe])||void 0===O||null===(O=O.timeline)||void 0===O?void 0:O.icon,flipped:null===(C=A.flags[Xe])||void 0===C||null===(C=C.timeline)||void 0===C?void 0:C.flipped,duration:W,label:null===(L=A.flags[Xe])||void 0===L||null===(L=L.timeline)||void 0===L?void 0:L.label},U%2==0?v.left.push(Y):v.right.push(Y),b.push({top:N,uuid:A.uuid});case 23:case"end":return V.stop()}}),_loop)})),U=0;case 53:if(!(U<w.length)){X.next=61;break}return X.delegateYield(Q(),"t12",55);case 55:if("continue"!==X.t12){X.next=58;break}return X.abrupt("continue",58);case 58:U++,X.next=53;break;case 61:return S=S.slice(0,-2),B=null!==(l=this.journal.getFlag(Xe,"content"))&&void 0!==l?l:"always",Y="always"!==B,V="toggleOff"===B,X.abrupt("return",{height:x,erasData:y,eventsData:v,erasCssGradient:S,scrollbarDots:b,isGM:game.user.isGM,showContentToggle:Y,collapsed:V,YEAR_SEPARATOR:Ie});case 66:case"end":return X.stop()}}),_callee,this)}))),function getData(){return r.apply(this,arguments)})},{key:"activateListeners",value:function activateListeners(t){var r,o=this;timeline_get(timeline_getPrototypeOf(Timeline.prototype),"activateListeners",this).call(this,t),t=null!==(r=t[0])&&void 0!==r?r:t,this.container.appendChild(t),t.querySelector("main section").scrollTo({top:this.scrollPosition}),t.querySelectorAll(".event-era").forEach((function(t){var r=t.dataset.uuid;t.addEventListener("click",(function(t){t.preventDefault(),o.goTo(r)}))})),t.querySelectorAll(".timeline-scrollbar-dot").forEach((function(t){var r=t.dataset.uuid;t.addEventListener("click",(function(t){t.preventDefault(),o.goTo(r)}))})),t.querySelectorAll(".content-collapse").forEach((function(t){var r=t.closest(".timeline-era, .timeline-event").querySelector(".timeline-content");t.addEventListener("click",(function(t){t.preventDefault(),r.classList.toggle("collapsed")}))})),t.querySelectorAll(".timeline-event, .timeline-era").forEach((function(t){t.addEventListener("click",(function(r){var o=r.target.closest(".timeline-center, .timeline-right, .timeline-left");o&&(o.querySelectorAll(".on-top").forEach((function(t){return t.classList.remove("on-top")})),t.classList.add("on-top"))}))})),game.user.isGM&&(t.querySelector("#add-timeline").addEventListener("click",function(){var t=timeline_asyncToGenerator(timeline_regeneratorRuntime().mark((function _callee2(t){var r;return timeline_regeneratorRuntime().wrap((function _callee2$(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,o.journal.createEmbeddedDocuments("JournalEntryPage",[{name:"New Event",type:"text"}]);case 2:r=t.sent,new Me(r[0]).render(!0);case 4:case"end":return t.stop()}}),_callee2)})));return function(r){return t.apply(this,arguments)}}()),this.addConfigIcons(t))}},{key:"addConfigIcons",value:function addConfigIcons(t){t.querySelectorAll(".timeline-era, .timeline-event").forEach((function(t){var r=t.querySelector("header");if(r){var o=document.createElement("i");o.classList.add("fas","fa-cog","timeline-config-icon"),o.addEventListener("click",(function(t){t.preventDefault(),t.stopPropagation();var r=fromUuidSync(t.currentTarget.closest(".timeline-era, .timeline-event").dataset.uuid);new Me(r).render(!0)})),r.appendChild(o)}}))}},{key:"goTo",value:function goTo(t){var r=this.element[0].querySelector('.timeline-era[data-uuid="'.concat(t,'"], .timeline-event[data-uuid="').concat(t,'"]'));this.element[0].querySelector("main section").scrollTo({top:r.offsetTop-r.offsetHeight,behavior:"smooth"})}},{key:"configTimeline",value:function configTimeline(t){var r=fromUuidSync(t);new Me(r).render(!0)}},{key:"saveScrollPosition",value:function saveScrollPosition(){setSetting("timelineScroll",this.element[0].querySelector("main section").scrollTop)}}],[{key:"APP_ID",get:function get(){return this.name.split(/(?=[A-Z])/).join("-").toLowerCase()}},{key:"defaultOptions",get:function get(){return foundry.utils.mergeObject(timeline_get(timeline_getPrototypeOf(Timeline),"defaultOptions",this),{id:this.APP_ID,template:"modules/".concat(Xe,"/templates/").concat(this.APP_ID,".hbs"),popOut:!1,minimizable:!1,title:game.i18n.localize("".concat(Xe,".").concat(this.APP_ID,".title")),closeOnSubmit:!1})}}]),Timeline}(),Me=function(t){timeline_inherits(TimelineConfig,FormApplication);var r,o,a=timeline_createSuper(TimelineConfig);function TimelineConfig(t){var r;return timeline_classCallCheck(this,TimelineConfig),(r=a.call(this)).document=t,r}return timeline_createClass(TimelineConfig,[{key:"APP_ID",get:function get(){return this.constructor.APP_ID}},{key:"getData",value:(o=timeline_asyncToGenerator(timeline_regeneratorRuntime().mark((function _callee3(){var t,r,o,a,i,l,c,u,p,d,h,m,g,y,v,b;return timeline_regeneratorRuntime().wrap((function _callee3$(_){for(;;)switch(_.prev=_.next){case 0:return u=null!==(t=this.document.getFlag(Xe,"timeline"))&&void 0!==t?t:{},p=null!==(r=this.document.getFlag(Xe,"hidden"))&&void 0!==r&&r,d=null!==(o=this.document.parent.getFlag(Xe,"timeScale"))&&void 0!==o?o:10,h=null!==(a=this.document.parent.getFlag(Xe,"negativeAbb"))&&void 0!==a?a:"BC",m=null!==(i=this.document.parent.getFlag(Xe,"positiveAbb"))&&void 0!==i?i:"AC",g=null!==(l=this.document.parent.getFlag(Xe,"dynamicTimeScale"))&&void 0!==l&&l,y=this.document.parent.getFlag(Xe,"content"),v=null!==(c=this.document.parent.getFlag(Xe,"showMinus"))&&void 0!==c&&c,u.color=u.color||"#ff0000",b={always:"".concat(Xe,".timeline-config.contentChoices.always"),toggleOff:"".concat(Xe,".timeline-config.contentChoices.toggleOff"),toggleOn:"".concat(Xe,".timeline-config.contentChoices.toggleOn")},_.abrupt("return",timeline_objectSpread(timeline_objectSpread({},u),{},{title:this.document.name,hidden:p,negativeAbb:h,positiveAbb:m,timeScale:d,dynamicTimeScale:g,content:y,contentChoices:b,showMinus:v}));case 11:case"end":return _.stop()}}),_callee3,this)}))),function getData(){return o.apply(this,arguments)})},{key:"activateListeners",value:function activateListeners(t){var r,o=this;timeline_get(timeline_getPrototypeOf(TimelineConfig.prototype),"activateListeners",this).call(this,t),(t=null!==(r=t[0])&&void 0!==r?r:t).querySelector("#edit-contents").addEventListener("click",(function(t){o.document.sheet.render(!0)})),t.querySelector("#delete").addEventListener("click",function(){var t=timeline_asyncToGenerator(timeline_regeneratorRuntime().mark((function _callee5(t){return timeline_regeneratorRuntime().wrap((function _callee5$(t){for(;;)switch(t.prev=t.next){case 0:Dialog.confirm({title:game.i18n.localize("".concat(Xe,".deletePage.title"))+" ".concat(o.document.name),content:game.i18n.localize("".concat(Xe,".deletePage.content")),yes:function(){var t=timeline_asyncToGenerator(timeline_regeneratorRuntime().mark((function _callee4(){return timeline_regeneratorRuntime().wrap((function _callee4$(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,o.document.parent.deleteEmbeddedDocuments("JournalEntryPage",[o.document.id]);case 2:o.close();case 3:case"end":return t.stop()}}),_callee4)})));return function yes(){return t.apply(this,arguments)}}(),no:function no(){},defaultYes:!1});case 1:case"end":return t.stop()}}),_callee5)})));return function(r){return t.apply(this,arguments)}}()),t.querySelectorAll(".era-event-switch span").forEach((function(r){r.addEventListener("click",(function(a){a.preventDefault(),t.querySelector(".era-event-switch .selected").classList.remove("selected"),r.classList.add("selected"),o.setTypeVisibility()}))})),this.setTypeVisibility()}},{key:"setTypeVisibility",value:function setTypeVisibility(){var t=this.element[0].querySelector(".era-event-switch .selected").dataset.type,r=this.element[0].querySelector("fieldset.".concat("era"===t?"event":"era","-fieldset")),o=this.element[0].querySelector("fieldset.".concat(t,"-fieldset"));r.style.filter="grayscale(1)",r.style.pointerEvents="none",r.style.opacity="0.5",o.style.filter="none",o.style.pointerEvents="auto",o.style.opacity="1"}},{key:"_updateObject",value:(r=timeline_asyncToGenerator(timeline_regeneratorRuntime().mark((function _callee6(t,r){var o,a,i,l,c,u,p,d,h,m,g;return timeline_regeneratorRuntime().wrap((function _callee6$(t){for(;;)switch(t.prev=t.next){case 0:if((r=foundry.utils.expandObject(r)).isEra="era"===this.element[0].querySelector(".era-event-switch .selected").dataset.type,r.ignoreDataValidation){t.next=11;break}t.prev=3,this.validateData(r),t.next=11;break;case 7:return t.prev=7,t.t0=t.catch(3),console.error(t.t0),t.abrupt("return");case 11:return delete r.ignoreDataValidation,o=["negativeAbb","positiveAbb","timeScale","dynamicTimeScale","content","showMinus"],t.next=15,this.document.parent.update({flags:timeline_defineProperty({},Xe,o.reduce((function(t,o){return t[o]=r[o],t}),{}))});case 15:return o.forEach((function(t){return delete r[t]})),a=r.hidden,delete r.hidden,t.next=20,this.document.update({name:r.title,flags:timeline_defineProperty({},Xe,{timeline:r,hidden:a})});case 20:for(i=[],l=this.document.parent,c=Array.from(l.pages),u=0,p=c;u<p.length;u++)h=p[u],m=null!==(d=h.getFlag(Xe,"timeline"))&&void 0!==d?d:{},g=m.isEra?m.eraStart:m.year,i.push({_id:h.id,sort:g});return t.next=26,l.updateEmbeddedDocuments("JournalEntryPage",i);case 26:this.close();case 27:case"end":return t.stop()}}),_callee6,this,[[3,7]])}))),function _updateObject(t,o){return r.apply(this,arguments)})},{key:"validateData",value:function validateData(t){var r=this,o=Array.from(this.document.parent.pages).filter((function(t){var r;return null===(r=t.getFlag(Xe,"timeline"))||void 0===r?void 0:r.isEra})).filter((function(t){return t.id!==r.document.id}));if(0===o.length&&!t.isEra){var a=game.i18n.localize("".concat(Xe,".timeline-config.errors.noEra"));throw ui.notifications.error(a),new Error(a)}var i=0===o.length&&t.isEra;if(!t.isEra){var l=t.year;if(null==l||""===l){var c=game.i18n.localize("".concat(Xe,".timeline-config.errors.noYear"));throw ui.notifications.error(c),new Error(c)}if(!o.find((function(t){return t.getFlag(Xe,"timeline").eraStart<=l&&t.getFlag(Xe,"timeline").eraEnd>=l}))){var u=game.i18n.localize("".concat(Xe,".timeline-config.errors.yearOutOfBounds"));throw ui.notifications.error(u),new Error(u)}}if(t.isEra){var p=t.eraStart,d=t.eraEnd;if(null==p||""===p){var h=game.i18n.localize("".concat(Xe,".timeline-config.errors.noEraStart"));throw ui.notifications.error(h),new Error(h)}if(null==d||""===d){var m=game.i18n.localize("".concat(Xe,".timeline-config.errors.noEraEnd"));throw ui.notifications.error(m),new Error(m)}if(p>=d){var g=game.i18n.localize("".concat(Xe,".timeline-config.errors.eraStartAfterEnd"));throw ui.notifications.error(g),new Error(g)}if(!i){var y=o.find((function(t){return t.getFlag(Xe,"timeline").eraEnd===p})),v=o.find((function(t){return t.getFlag(Xe,"timeline").eraStart===d}));if(!y&&!v){var b=game.i18n.localize("".concat(Xe,".timeline-config.errors.eraNotConnected"));throw ui.notifications.error(b),new Error(b)}if(o.find((function(t){return t.getFlag(Xe,"timeline").eraStart<p&&t.getFlag(Xe,"timeline").eraEnd>p||t.getFlag(Xe,"timeline").eraStart<d&&t.getFlag(Xe,"timeline").eraEnd>d}))){var _=game.i18n.localize("".concat(Xe,".timeline-config.errors.eraOverlap"));throw ui.notifications.error(_),new Error(_)}}}}}],[{key:"APP_ID",get:function get(){return this.name.split(/(?=[A-Z])/).join("-").toLowerCase()}},{key:"defaultOptions",get:function get(){return foundry.utils.mergeObject(timeline_get(timeline_getPrototypeOf(TimelineConfig),"defaultOptions",this),{id:this.APP_ID,template:"modules/".concat(Xe,"/templates/").concat(this.APP_ID,".hbs"),popOut:!0,minimizable:!0,title:game.i18n.localize("".concat(Xe,".").concat(this.APP_ID,".title")),closeOnSubmit:!1})}}]),TimelineConfig}();function app_typeof(t){return app_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},app_typeof(t)}function app_slicedToArray(t,r){return function app_arrayWithHoles(t){if(Array.isArray(t))return t}(t)||function app_iterableToArrayLimit(t,r){var o=null==t?null:"undefined"!=typeof Symbol&&t[Symbol.iterator]||t["@@iterator"];if(null!=o){var a,i,l,c,u=[],p=!0,d=!1;try{if(l=(o=o.call(t)).next,0===r){if(Object(o)!==o)return;p=!1}else for(;!(p=(a=l.call(o)).done)&&(u.push(a.value),u.length!==r);p=!0);}catch(t){d=!0,i=t}finally{try{if(!p&&null!=o.return&&(c=o.return(),Object(c)!==c))return}finally{if(d)throw i}}return u}}(t,r)||app_unsupportedIterableToArray(t,r)||function app_nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function app_toConsumableArray(t){return function app_arrayWithoutHoles(t){if(Array.isArray(t))return app_arrayLikeToArray(t)}(t)||function app_iterableToArray(t){if("undefined"!=typeof Symbol&&null!=t[Symbol.iterator]||null!=t["@@iterator"])return Array.from(t)}(t)||app_unsupportedIterableToArray(t)||function app_nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function app_defineProperty(t,r,o){return(r=app_toPropertyKey(r))in t?Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}):t[r]=o,t}function app_regeneratorRuntime(){app_regeneratorRuntime=function _regeneratorRuntime(){return t};var t={},r=Object.prototype,o=r.hasOwnProperty,a=Object.defineProperty||function(t,r,o){t[r]=o.value},i="function"==typeof Symbol?Symbol:{},l=i.iterator||"@@iterator",c=i.asyncIterator||"@@asyncIterator",u=i.toStringTag||"@@toStringTag";function define(t,r,o){return Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}),t[r]}try{define({},"")}catch(t){define=function define(t,r,o){return t[r]=o}}function wrap(t,r,o,i){var l=r&&r.prototype instanceof Generator?r:Generator,c=Object.create(l.prototype),u=new Context(i||[]);return a(c,"_invoke",{value:makeInvokeMethod(t,o,u)}),c}function tryCatch(t,r,o){try{return{type:"normal",arg:t.call(r,o)}}catch(t){return{type:"throw",arg:t}}}t.wrap=wrap;var p={};function Generator(){}function GeneratorFunction(){}function GeneratorFunctionPrototype(){}var d={};define(d,l,(function(){return this}));var h=Object.getPrototypeOf,m=h&&h(h(values([])));m&&m!==r&&o.call(m,l)&&(d=m);var g=GeneratorFunctionPrototype.prototype=Generator.prototype=Object.create(d);function defineIteratorMethods(t){["next","throw","return"].forEach((function(r){define(t,r,(function(t){return this._invoke(r,t)}))}))}function AsyncIterator(t,r){function invoke(a,i,l,c){var u=tryCatch(t[a],t,i);if("throw"!==u.type){var p=u.arg,d=p.value;return d&&"object"==app_typeof(d)&&o.call(d,"__await")?r.resolve(d.__await).then((function(t){invoke("next",t,l,c)}),(function(t){invoke("throw",t,l,c)})):r.resolve(d).then((function(t){p.value=t,l(p)}),(function(t){return invoke("throw",t,l,c)}))}c(u.arg)}var i;a(this,"_invoke",{value:function value(t,o){function callInvokeWithMethodAndArg(){return new r((function(r,a){invoke(t,o,r,a)}))}return i=i?i.then(callInvokeWithMethodAndArg,callInvokeWithMethodAndArg):callInvokeWithMethodAndArg()}})}function makeInvokeMethod(t,r,o){var a="suspendedStart";return function(i,l){if("executing"===a)throw new Error("Generator is already running");if("completed"===a){if("throw"===i)throw l;return doneResult()}for(o.method=i,o.arg=l;;){var c=o.delegate;if(c){var u=maybeInvokeDelegate(c,o);if(u){if(u===p)continue;return u}}if("next"===o.method)o.sent=o._sent=o.arg;else if("throw"===o.method){if("suspendedStart"===a)throw a="completed",o.arg;o.dispatchException(o.arg)}else"return"===o.method&&o.abrupt("return",o.arg);a="executing";var d=tryCatch(t,r,o);if("normal"===d.type){if(a=o.done?"completed":"suspendedYield",d.arg===p)continue;return{value:d.arg,done:o.done}}"throw"===d.type&&(a="completed",o.method="throw",o.arg=d.arg)}}}function maybeInvokeDelegate(t,r){var o=r.method,a=t.iterator[o];if(void 0===a)return r.delegate=null,"throw"===o&&t.iterator.return&&(r.method="return",r.arg=void 0,maybeInvokeDelegate(t,r),"throw"===r.method)||"return"!==o&&(r.method="throw",r.arg=new TypeError("The iterator does not provide a '"+o+"' method")),p;var i=tryCatch(a,t.iterator,r.arg);if("throw"===i.type)return r.method="throw",r.arg=i.arg,r.delegate=null,p;var l=i.arg;return l?l.done?(r[t.resultName]=l.value,r.next=t.nextLoc,"return"!==r.method&&(r.method="next",r.arg=void 0),r.delegate=null,p):l:(r.method="throw",r.arg=new TypeError("iterator result is not an object"),r.delegate=null,p)}function pushTryEntry(t){var r={tryLoc:t[0]};1 in t&&(r.catchLoc=t[1]),2 in t&&(r.finallyLoc=t[2],r.afterLoc=t[3]),this.tryEntries.push(r)}function resetTryEntry(t){var r=t.completion||{};r.type="normal",delete r.arg,t.completion=r}function Context(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(pushTryEntry,this),this.reset(!0)}function values(t){if(t){var r=t[l];if(r)return r.call(t);if("function"==typeof t.next)return t;if(!isNaN(t.length)){var a=-1,i=function next(){for(;++a<t.length;)if(o.call(t,a))return next.value=t[a],next.done=!1,next;return next.value=void 0,next.done=!0,next};return i.next=i}}return{next:doneResult}}function doneResult(){return{value:void 0,done:!0}}return GeneratorFunction.prototype=GeneratorFunctionPrototype,a(g,"constructor",{value:GeneratorFunctionPrototype,configurable:!0}),a(GeneratorFunctionPrototype,"constructor",{value:GeneratorFunction,configurable:!0}),GeneratorFunction.displayName=define(GeneratorFunctionPrototype,u,"GeneratorFunction"),t.isGeneratorFunction=function(t){var r="function"==typeof t&&t.constructor;return!!r&&(r===GeneratorFunction||"GeneratorFunction"===(r.displayName||r.name))},t.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,GeneratorFunctionPrototype):(t.__proto__=GeneratorFunctionPrototype,define(t,u,"GeneratorFunction")),t.prototype=Object.create(g),t},t.awrap=function(t){return{__await:t}},defineIteratorMethods(AsyncIterator.prototype),define(AsyncIterator.prototype,c,(function(){return this})),t.AsyncIterator=AsyncIterator,t.async=function(r,o,a,i,l){void 0===l&&(l=Promise);var c=new AsyncIterator(wrap(r,o,a,i),l);return t.isGeneratorFunction(o)?c:c.next().then((function(t){return t.done?t.value:c.next()}))},defineIteratorMethods(g),define(g,u,"Generator"),define(g,l,(function(){return this})),define(g,"toString",(function(){return"[object Generator]"})),t.keys=function(t){var r=Object(t),o=[];for(var a in r)o.push(a);return o.reverse(),function next(){for(;o.length;){var t=o.pop();if(t in r)return next.value=t,next.done=!1,next}return next.done=!0,next}},t.values=values,Context.prototype={constructor:Context,reset:function reset(t){if(this.prev=0,this.next=0,this.sent=this._sent=void 0,this.done=!1,this.delegate=null,this.method="next",this.arg=void 0,this.tryEntries.forEach(resetTryEntry),!t)for(var r in this)"t"===r.charAt(0)&&o.call(this,r)&&!isNaN(+r.slice(1))&&(this[r]=void 0)},stop:function stop(){this.done=!0;var t=this.tryEntries[0].completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function dispatchException(t){if(this.done)throw t;var r=this;function handle(o,a){return l.type="throw",l.arg=t,r.next=o,a&&(r.method="next",r.arg=void 0),!!a}for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a],l=i.completion;if("root"===i.tryLoc)return handle("end");if(i.tryLoc<=this.prev){var c=o.call(i,"catchLoc"),u=o.call(i,"finallyLoc");if(c&&u){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0);if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}else if(c){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0)}else{if(!u)throw new Error("try statement without catch or finally");if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}}}},abrupt:function abrupt(t,r){for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a];if(i.tryLoc<=this.prev&&o.call(i,"finallyLoc")&&this.prev<i.finallyLoc){var l=i;break}}l&&("break"===t||"continue"===t)&&l.tryLoc<=r&&r<=l.finallyLoc&&(l=null);var c=l?l.completion:{};return c.type=t,c.arg=r,l?(this.method="next",this.next=l.finallyLoc,p):this.complete(c)},complete:function complete(t,r){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&r&&(this.next=r),p},finish:function finish(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.finallyLoc===t)return this.complete(o.completion,o.afterLoc),resetTryEntry(o),p}},catch:function _catch(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.tryLoc===t){var a=o.completion;if("throw"===a.type){var i=a.arg;resetTryEntry(o)}return i}}throw new Error("illegal catch attempt")},delegateYield:function delegateYield(t,r,o){return this.delegate={iterator:values(t),resultName:r,nextLoc:o},"next"===this.method&&(this.arg=void 0),p}},t}function app_createForOfIteratorHelper(t,r){var o="undefined"!=typeof Symbol&&t[Symbol.iterator]||t["@@iterator"];if(!o){if(Array.isArray(t)||(o=app_unsupportedIterableToArray(t))||r&&t&&"number"==typeof t.length){o&&(t=o);var a=0,i=function F(){};return{s:i,n:function n(){return a>=t.length?{done:!0}:{done:!1,value:t[a++]}},e:function e(t){throw t},f:i}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var l,c=!0,u=!1;return{s:function s(){o=o.call(t)},n:function n(){var t=o.next();return c=t.done,t},e:function e(t){u=!0,l=t},f:function f(){try{c||null==o.return||o.return()}finally{if(u)throw l}}}}function app_unsupportedIterableToArray(t,r){if(t){if("string"==typeof t)return app_arrayLikeToArray(t,r);var o=Object.prototype.toString.call(t).slice(8,-1);return"Object"===o&&t.constructor&&(o=t.constructor.name),"Map"===o||"Set"===o?Array.from(t):"Arguments"===o||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(o)?app_arrayLikeToArray(t,r):void 0}}function app_arrayLikeToArray(t,r){(null==r||r>t.length)&&(r=t.length);for(var o=0,a=new Array(r);o<r;o++)a[o]=t[o];return a}function app_asyncGeneratorStep(t,r,o,a,i,l,c){try{var u=t[l](c),p=u.value}catch(t){return void o(t)}u.done?r(p):Promise.resolve(p).then(a,i)}function app_asyncToGenerator(t){return function(){var r=this,o=arguments;return new Promise((function(a,i){var l=t.apply(r,o);function _next(t){app_asyncGeneratorStep(l,a,i,_next,_throw,"next",t)}function _throw(t){app_asyncGeneratorStep(l,a,i,_next,_throw,"throw",t)}_next(void 0)}))}}function app_classCallCheck(t,r){if(!(t instanceof r))throw new TypeError("Cannot call a class as a function")}function app_defineProperties(t,r){for(var o=0;o<r.length;o++){var a=r[o];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(t,app_toPropertyKey(a.key),a)}}function app_createClass(t,r,o){return r&&app_defineProperties(t.prototype,r),o&&app_defineProperties(t,o),Object.defineProperty(t,"prototype",{writable:!1}),t}function app_toPropertyKey(t){var r=function app_toPrimitive(t,r){if("object"!==app_typeof(t)||null===t)return t;var o=t[Symbol.toPrimitive];if(void 0!==o){var a=o.call(t,r||"default");if("object"!==app_typeof(a))return a;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===r?String:Number)(t)}(t,"string");return"symbol"===app_typeof(r)?r:String(r)}function app_get(){return app_get="undefined"!=typeof Reflect&&Reflect.get?Reflect.get.bind():function _get(t,r,o){var a=function app_superPropBase(t,r){for(;!Object.prototype.hasOwnProperty.call(t,r)&&null!==(t=app_getPrototypeOf(t)););return t}(t,r);if(a){var i=Object.getOwnPropertyDescriptor(a,r);return i.get?i.get.call(arguments.length<3?t:o):i.value}},app_get.apply(this,arguments)}function app_setPrototypeOf(t,r){return app_setPrototypeOf=Object.setPrototypeOf?Object.setPrototypeOf.bind():function _setPrototypeOf(t,r){return t.__proto__=r,t},app_setPrototypeOf(t,r)}function app_createSuper(t){var r=function app_isNativeReflectConstruct(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(t){return!1}}();return function _createSuperInternal(){var o,a=app_getPrototypeOf(t);if(r){var i=app_getPrototypeOf(this).constructor;o=Reflect.construct(a,arguments,i)}else o=a.apply(this,arguments);return function app_possibleConstructorReturn(t,r){if(r&&("object"===app_typeof(r)||"function"==typeof r))return r;if(void 0!==r)throw new TypeError("Derived constructors may only return object or undefined");return app_assertThisInitialized(t)}(this,o)}}function app_assertThisInitialized(t){if(void 0===t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}function app_getPrototypeOf(t){return app_getPrototypeOf=Object.setPrototypeOf?Object.getPrototypeOf.bind():function _getPrototypeOf(t){return t.__proto__||Object.getPrototypeOf(t)},app_getPrototypeOf(t)}var Re=function getHistory(){var t;return null!==(t=game.user.getFlag(Xe,"history"))&&void 0!==t?t:[]},Fe=0,qe=1,Ge=2,De={quests:{sel:".quest-list",scroll:0},lore:{sel:".quest-list",scroll:0},timeline:{sel:".quest-list",scroll:0},map:{sel:".maps-list",scroll:0},achievements:{sel:".achievements-list",scroll:0},"my-journal":{sel:".journal-container",scroll:0},"party-journal":{sel:".journal-container",scroll:0}},Ne={achievements:{name:"New Achievement",src:"icons/commodities/treasure/cup-trophy-gold.webp"}},He=!0,We=50,$e={quests:{saveSelected:function saveSelected(t){return setSetting("lastQuest",t)}},lore:{saveSelected:function saveSelected(t){return setSetting("lastLore",t)}},map:{saveSelected:function saveSelected(t){return setSetting("lastMap",t)}},"my-journal":{saveSelected:function saveSelected(t){return setSetting("lastMyJournal",t)}},"party-journal":{saveSelected:function saveSelected(t){return setSetting("lastPartyJournal",t)}},timeline:{saveSelected:function saveSelected(t){return setSetting("lastTimeline",t)}},achievements:{saveSelected:function saveSelected(t){return setSetting("lastAchievements",t)},selected:!1}};var ze=function(t){!function app_inherits(t,r){if("function"!=typeof r&&null!==r)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(r&&r.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),Object.defineProperty(t,"prototype",{writable:!1}),r&&app_setPrototypeOf(t,r)}(SimpleQuest,Application);var o,i,l,u,d,h,m,g,y,v,b,_,w,S,x,k=app_createSuper(SimpleQuest);function SimpleQuest(){var t;return app_classCallCheck(this,SimpleQuest),(t=k.call(this))._questScroll={},SimpleQuest.setHooks(),$e.quests.selected=getSetting("lastQuest"),$e.map.selected=getSetting("lastMap"),$e.lore.selected=getSetting("lastLore"),$e["my-journal"].selected=getSetting("lastMyJournal"),$e["party-journal"].selected=getSetting("lastPartyJournal"),t._search={},t.updateStyle(),t.refresh=foundry.utils.debounce(t.refresh.bind(app_assertThisInitialized(t)),30),t}return app_createClass(SimpleQuest,[{key:"APP_ID",get:function get(){return this.constructor.APP_ID}},{key:"activeTab",get:function get(){var t;return null===(t=this._tabs[0])||void 0===t?void 0:t.active}},{key:"getActiveJournal",value:function getActiveJournal(t){var r,o,a,i;if($e[t].active)return $e[t].active;if(!$e[t].selected)return null!==(r=null!==(o=$e[t].active)&&void 0!==o?o:null===(a=$e[t].journals)||void 0===a?void 0:a[0])&&void 0!==r?r:$e[t].journal;var l=fromUuidSync($e[t].selected);return l?l.parent:null!==(i=$e[t].active)&&void 0!==i?i:$e[t].journals[0]}},{key:"_getHeaderButtons",value:function _getHeaderButtons(){var t=this,r=app_get(app_getPrototypeOf(SimpleQuest.prototype),"_getHeaderButtons",this).call(this);return r.unshift({class:"windowed-mode",icon:"fas fa-expand",onclick:function onclick(){return t.toggleWindowedMode()},title:game.i18n.localize("".concat(Xe,".").concat(this.APP_ID,".windowedModeToggle"))}),r}},{key:"getData",value:(x=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee(){var t,r,o,a,i,l,c,u,p,d,h,m,g,y,v,b,_,w,S,x,k,E,T,P,O,C,L,A,I,j,M,R,q,G,D,N,H,W,$,z,J,Q,U=this;return app_regeneratorRuntime().wrap((function _callee$(B){for(;;)switch(B.prev=B.next){case 0:return t=getSetting("detailsStatus"),r=getSetting("seenQuests"),o=getSetting("folderName"),B.next=5,createLoreFolder();case 5:if(a=B.sent,i=getSetting("matchJournalPermission"),l=Array.from(game.folders).find((function(t){return t.name===o&&"JournalEntry"===t.type})),c=Array.from(game.folders).find((function(t){return t.name===getSetting("partyJournalName")&&"JournalEntry"===t.type&&t.folder===l})),u=Array.from(game.journal).find((function(t){return t.folder===l&&t.name===getSetting("mapsJournalName")})),p=Array.from(game.journal).find((function(t){return t.folder===l&&t.name===getSetting("timelineJournalName")})),d=Array.from(game.journal).find((function(t){return t.folder===l&&t.name===getSetting("achievementsJournalName")})),h=Array.from(game.journal).filter((function(t){var r,o,a;return t.folder===l&&t.name!==(null===(r=u)||void 0===r?void 0:r.name)&&t.name!==(null===(o=p)||void 0===o?void 0:o.name)&&t.name!==(null===(a=d)||void 0===a?void 0:a.name)})).sort((function(t,r){return t.sort-r.sort})),m=Array.from(game.journal).filter((function(t){var r;return t.folder===a&&t.name!==(null===(r=u)||void 0===r?void 0:r.name)})).sort((function(t,r){return t.sort-r.sort})),u){B.next=18;break}return B.next=17,JournalEntry.create({name:getSetting("mapsJournalName"),folder:l.id});case 17:u=B.sent;case 18:if(p){B.next=22;break}return B.next=21,JournalEntry.create({name:getSetting("timelineJournalName"),folder:l.id});case 21:p=B.sent;case 22:if(d){B.next=26;break}return B.next=25,JournalEntry.create({name:getSetting("achievementsJournalName"),folder:l.id});case 25:d=B.sent;case 26:g=Array.from(game.folders).find((function(t){return t.name===game.user.name&&"JournalEntry"===t.type&&t.folder===c})),y=Array.from(game.journal).filter((function(t){return t.folder===g})).sort((function(t,r){return t.sort-r.sort})),v=Array.from(game.folders).find((function(t){return t.folder===c&&t.name===getSetting("sharedJournalName")})),b=Array.from(game.journal).filter((function(t){return t.folder===v})).sort((function(t,r){return t.sort-r.sort})),this._questJournals=h,this._questFolder=l,this._loreFolder=a,this._mapsJournal=u,this._loreJournals=m,this._achievementsJournal=d,$e.quests.journals=h,$e.lore.journals=m,$e.quests.folder=l,$e.lore.folder=a,$e["my-journal"].journals=y,$e["party-journal"].journals=b,$e["my-journal"].folder=g,$e["party-journal"].folder=v,$e.map.journal=u,$e.timeline.journal=p,$e.achievements.journal=d,p.sortedPages=Array.from(p.pages).sort((function(t,r){return t.sort-r.sort})),_="",w=app_createForOfIteratorHelper(h),B.prev=50,x=app_regeneratorRuntime().mark((function _loop(){var o,a,l;return app_regeneratorRuntime().wrap((function _loop$(c){for(;;)switch(c.prev=c.next){case 0:a=S.value,l=0,a._simpleQuestDetails=null===(o=t[a.uuid])||void 0===o||o,Array.from(a.pages).forEach((function(o){var a,c,u=o.getFlag(Xe,"hidden"),p=null!==(a=o.getFlag(Xe,"completedSubquests"))&&void 0!==a?a:{};u||_||(_=o.uuid),o._seen=!!r[o.uuid],o.canUserSee=!i||o.testUserPermission(game.user,CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER),o.canUserSee&&!u&&l++;var d=o.getFlag(Xe,"lastUpdated");r[o.uuid]&&d&&(o._seen=r[o.uuid]>d),o._tocArray=Object.values(o.toc),o._tocArray.forEach((function(t){var r,a;t._hidden=null!==(r=o.getFlag(Xe,"secret.".concat(t.slug)))&&void 0!==r&&r,t._completed=null!==(a=p[t.slug])&&void 0!==a&&a})),o._simpleQuestDetails=null===(c=t[o.uuid])||void 0===c||c})),a.questCount=l,a.sortedPages=Array.from(a.pages).sort((function(t,r){return t.sort-r.sort}));case 7:case"end":return c.stop()}}),_loop)})),w.s();case 53:if((S=w.n()).done){B.next=57;break}return B.delegateYield(x(),"t0",55);case 55:B.next=53;break;case 57:B.next=62;break;case 59:B.prev=59,B.t1=B.catch(50),w.e(B.t1);case 62:return B.prev=62,w.f(),B.finish(62);case 65:k=app_createForOfIteratorHelper(m),B.prev=66,T=app_regeneratorRuntime().mark((function _loop2(){var o,a,i,l;return app_regeneratorRuntime().wrap((function _loop2$(c){for(;;)switch(c.prev=c.next){case 0:a=E.value,i=Array.from(a.pages),l=!1,i.forEach((function(o){var a,i;o.canPlayerSee=U.getDefaultUserPermission(o)>=CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER,o.canUserSee=o.testUserPermission(game.user,CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER),o.canUserSee&&(l=!0);var c=null!==(a=o.getFlag(Xe,"lastUpdated"))&&void 0!==a?a:1;r[o.uuid]&&c&&(o._seen=r[o.uuid]>c),o._tocArray=Object.values(o.toc),o._simpleQuestDetails=null===(i=t[o.uuid])||void 0===i||i})),a.sortedPages=Array.from(a.pages).sort((function(t,r){return t.sort-r.sort})),a._simpleQuestDetails=null===(o=t[a.uuid])||void 0===o||o,a.canUserSee=a.testUserPermission(game.user,CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER)||l;case 7:case"end":return c.stop()}}),_loop2)})),k.s();case 69:if((E=k.n()).done){B.next=73;break}return B.delegateYield(T(),"t2",71);case 71:B.next=69;break;case 73:B.next=78;break;case 75:B.prev=75,B.t3=B.catch(66),k.e(B.t3);case 78:return B.prev=78,k.f(),B.finish(78);case 81:P=app_createForOfIteratorHelper(y.concat(b)),B.prev=82,C=app_regeneratorRuntime().mark((function _loop3(){var r,o;return app_regeneratorRuntime().wrap((function _loop3$(a){for(;;)switch(a.prev=a.next){case 0:o=O.value,Array.from(o.pages).forEach((function(r){var a,i;r._simpleQuestDetails=null===(a=t[r.uuid])||void 0===a||a,r._tocArray=Object.values(r.toc),o._simpleQuestDetails=null===(i=t[o.uuid])||void 0===i||i})),o.sortedPages=Array.from(o.pages).sort((function(t,r){return t.sort-r.sort})),o._simpleQuestDetails=null===(r=t[o.uuid])||void 0===r||r;case 5:case"end":return a.stop()}}),_loop3)})),P.s();case 85:if((O=P.n()).done){B.next=89;break}return B.delegateYield(C(),"t4",87);case 87:B.next=85;break;case 89:B.next=94;break;case 91:B.prev=91,B.t5=B.catch(82),P.e(B.t5);case 94:return B.prev=94,P.f(),B.finish(94);case 97:if(u&&(u.sortedPages=Array.from(u.pages).sort((function(t,r){return t.sort-r.sort}))),!d){B.next=130;break}d.sortedPages=Array.from(d.pages).sort((function(t,r){return t.sort-r.sort})),d.sortedPages=d.sortedPages.sort((function(t,r){return t.isOwner&&!r.isOwner?-1:!t.isOwner&&r.isOwner?1:t.sort-r.sort})),L=Array.from(game.users).filter((function(t){return!t.isGM&&t.character})),A=app_createForOfIteratorHelper(d.sortedPages),B.prev=103,A.s();case 105:if((I=A.n()).done){B.next=122;break}return M=I.value,R=!M.isOwner&&M.getUserLevel(game.user)===CONST.DOCUMENT_OWNERSHIP_LEVELS.LIMITED,B.next=110,foundry.applications.ux.TextEditor.implementation.enrichHTML(M.text.content,{secrets:game.user.isGM,relativeTo:M,async:!0});case 110:M.enrichedText=B.sent,M.canUserSee=this.getUserPermission(M)>=CONST.DOCUMENT_OWNERSHIP_LEVELS.LIMITED,M.isAwarded=!game.user.isGM&&this.getUserPermission(M)>=CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER,M.isHiddenAchievement=R,q=null!==(j=M.getFlag(Xe,"color"))&&void 0!==j?j:"#000000",M.achievementColor="#000000"===q?"var(--foundry-quest-log-ru-text-4)":q,G=[],D=app_createForOfIteratorHelper(L);try{for(D.s();!(N=D.n()).done;)W=N.value,$=this.getUserPermission(M,W),z=Math.max(null!==(H=M.ownership[W.id])&&void 0!==H?H:0,$),J=z>=CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER,Q=z>=CONST.DOCUMENT_OWNERSHIP_LEVELS.LIMITED,G.push({user:W,isOwner:J,isObserver:Q,isLimited:R})}catch(t){D.e(t)}finally{D.f()}M._userOwnership=G;case 120:B.next=105;break;case 122:B.next=127;break;case 124:B.prev=124,B.t6=B.catch(103),A.e(B.t6);case 127:return B.prev=127,A.f(),B.finish(127);case 130:return $e.quests.selected||($e.quests.selected=_),B.abrupt("return",{showHistory:getSetting("showHistory"),history:Re(),hideCheckboxAutoHide:getSetting("hideCheckboxAutoHide"),matchJournalStyle:getSetting("matchJournalStyle"),achievementsJournal:d,timelineJournal:p,questJournals:h,myJournals:y,sharedJournals:b,mapsJournal:u,isGM:game.user.isGM,popOut:He,loreJournals:m,enableQuests:getSetting("enableQuests"),enablePartyJournal:getSetting("enablePartyJournal"),enableMyJournal:getSetting("enableMyJournal"),enableMaps:getSetting("enableMaps"),enableLore:getSetting("enableLore"),enableTimeline:getSetting("enableTimeline"),enableAchievements:getSetting("enableAchievements"),matchJournalPermission:getSetting("matchJournalPermission"),tabNames:getTabNames(),showCompleted:getSetting("showCompleted")});case 132:case"end":return B.stop()}}),_callee,this,[[50,59,62,65],[66,75,78,81],[82,91,94,97],[103,124,127,130]])}))),function getData(){return x.apply(this,arguments)})},{key:"getDefaultUserPermission",value:function getDefaultUserPermission(t,r){return t.ownership.default===CONST.DOCUMENT_OWNERSHIP_LEVELS.INHERIT?t.parent.ownership.default:t.ownership.default}},{key:"getUserPermission",value:function getUserPermission(t,r){return t.getUserLevel(null!=r?r:game.user)}},{key:"_onChangeTab",value:function _onChangeTab(t,r,o){setSetting("lastTab",o),game.user.isGM||"map"!=o||showWelcomeMaps(),game.user.isGM&&this.checkTour(o);var a=app_get(app_getPrototypeOf(SimpleQuest.prototype),"_onChangeTab",this).call(this,t,r,o);$e.map.selected&&this._onSelectMap(null,$e.map.selected);var i=De[o].scroll;return i&&(this.element[0].querySelector(".tab[data-tab='".concat(o,"'] ").concat(De[o].sel)).scrollTop=i,De[o].scroll=0),a}},{key:"activateListeners",value:(S=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee28(t){var o,i,l,c=this;return app_regeneratorRuntime().wrap((function _callee28$(u){for(;;)switch(u.prev=u.next){case 0:if(app_get(app_getPrototypeOf(SimpleQuest.prototype),"activateListeners",this).call(this,t),t=null!==(o=t[0])&&void 0!==o?o:t,i=t.querySelector(".tab[data-tab='timeline'] .quest-details"),this.timeline=new je(i),this.timeline.render(!0),this._storedScrollPositions&&(this._scrollPositions=this._storedScrollPositions,delete this._storedScrollPositions),game.user.isGM&&(getSetting("themeConfigShown")||(null===(l=game.tours.get(Xe+".interface"))||void 0===l?void 0:l.status)===foundry.nue.Tour.STATUS.UNSTARTED||(new a).render(!0),t.querySelectorAll(".item").forEach((function(t){t.addEventListener("contextmenu",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee2(t){return app_regeneratorRuntime().wrap((function _callee2$(t){for(;;)switch(t.prev=t.next){case 0:(new r).render(!0);case 1:case"end":return t.stop()}}),_callee2)})));return function(r){return t.apply(this,arguments)}}())}))),t.querySelectorAll(".quest-item").forEach((function(t){t.classList.contains("has-details")||t.addEventListener("click",c._onSelectQuest.bind(c))})),t.querySelectorAll(".timeline-item").forEach((function(t){t.addEventListener("click",c._onSelectTimeline.bind(c))})),t.querySelectorAll("input[type='search']").forEach((function(t){t.addEventListener("focus",(function(t){t.currentTarget.select()})),t.addEventListener("input",c._onSearch.bind(c))})),t.querySelector("#toggle-completed").addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee3(t){return app_regeneratorRuntime().wrap((function _callee3$(t){for(;;)switch(t.prev=t.next){case 0:setSetting("showCompleted",!getSetting("showCompleted")),c.render(!0);case 2:case"end":return t.stop()}}),_callee3)})));return function(r){return t.apply(this,arguments)}}()),!$e.quests.selected){u.next=14;break}return u.next=14,this._onSelectQuest(null,$e.quests.selected,!0);case 14:if(!$e.map.selected){u.next=17;break}return u.next=17,this._onSelectMap(null,$e.map.selected,!0);case 17:if(!$e.lore.selected){u.next=20;break}return u.next=20,this._onSelectQuest(null,$e.lore.selected,!0);case 20:if(!$e["my-journal"].selected){u.next=23;break}return u.next=23,this._onSelectQuest(null,$e["my-journal"].selected,!0);case 23:if(!$e["party-journal"].selected){u.next=26;break}return u.next=26,this._onSelectQuest(null,$e["party-journal"].selected,!0);case 26:t.querySelectorAll("#edit").forEach((function(t){t.addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee4(t){var r,o;return app_regeneratorRuntime().wrap((function _callee4$(a){for(;;)switch(a.prev=a.next){case 0:return r=t.currentTarget.closest(".tab").dataset.tab,o=$e[r].selected,a.next=4,fromUuid(o);case 4:a.sent.sheet.render(!0);case 6:case"end":return a.stop()}}),_callee4)})));return function(r){return t.apply(this,arguments)}}())})),t.querySelector("#configure-lore-permissions").addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee5(t){var r,o;return app_regeneratorRuntime().wrap((function _callee5$(a){for(;;)switch(a.prev=a.next){case 0:return r=t.currentTarget.closest(".quest-controls").dataset.uuid,a.next=3,fromUuid(r);case 3:o=a.sent,new foundry.applications.apps.DocumentOwnershipConfig({document:o}).render(!0);case 5:case"end":return a.stop()}}),_callee5)})));return function(r){return t.apply(this,arguments)}}()),t.querySelector("#mark-updated").addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee6(t){var r,o;return app_regeneratorRuntime().wrap((function _callee6$(a){for(;;)switch(a.prev=a.next){case 0:return r=t.currentTarget.closest(".quest-controls").dataset.uuid,a.next=3,fromUuid(r);case 3:return o=a.sent,a.next=6,o.setFlag(Xe,"lastUpdated",Date.now());case 6:case"end":return a.stop()}}),_callee6)})));return function(r){return t.apply(this,arguments)}}()),t.querySelector("#share-quest").addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee8(t){var r,o;return app_regeneratorRuntime().wrap((function _callee8$(a){for(;;)switch(a.prev=a.next){case 0:return r=t.currentTarget.closest(".quest-controls").dataset.uuid,a.next=3,fromUuid(r);case 3:if(o=a.sent){a.next=6;break}return a.abrupt("return");case 6:return a.next=8,Dialog.confirm({title:game.i18n.localize("".concat(Xe,".shareQuest.title")),content:game.i18n.localize("".concat(Xe,".shareQuest.content")),yes:function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee7(){return app_regeneratorRuntime().wrap((function _callee7$(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,ChatMessage.create({content:'<div class="dnd5e2"><h2 id="foundry-quest-log-ru-image-override" class="'.concat(getSetting("useMessageTheme")?"foundry-quest-log-ru-message":"",'">').concat(game.i18n.localize("".concat(Xe,".shareQuest.chatMessage")),'</h2><hr><button data-uuid="').concat(r,'" class="share-quest-button"><i style="pointer-events: none;" class="fa-duotone fa-scroll-old"></i> ').concat(o.name,"</button><hr></div>"),speaker:{alias:"Simple Quest"},flags:app_defineProperty({},Xe,{simpleQuestMessage:r})});case 2:case"end":return t.stop()}}),_callee7)})));return function yes(){return t.apply(this,arguments)}}(),no:function no(){},defaultYes:!1});case 8:a.sent;case 9:case"end":return a.stop()}}),_callee8)})));return function(r){return t.apply(this,arguments)}}()),t.querySelectorAll("#delete").forEach((function(t){t.addEventListener("click",function(){var r=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee10(r){var o,a,i,l;return app_regeneratorRuntime().wrap((function _callee10$(u){for(;;)switch(u.prev=u.next){case 0:return o=r.currentTarget.closest(".tab").dataset.tab,a=$e[o].selected||t.dataset.uuid,u.next=4,fromUuid(a);case 4:if(i=u.sent){u.next=7;break}return u.abrupt("return",ui.notifications.warn(game.i18n.localize("".concat(Xe,".notifications.noPage"))));case 7:return l=i.parent,u.next=10,Dialog.confirm({title:game.i18n.localize("".concat(Xe,".deletePage.title"))+" ".concat(i.name),content:game.i18n.localize("".concat(Xe,".deletePage.content")),yes:function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee9(){return app_regeneratorRuntime().wrap((function _callee9$(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,l.deleteEmbeddedDocuments("JournalEntryPage",[i.id]);case 2:c.render(!0);case 3:case"end":return t.stop()}}),_callee9)})));return function yes(){return t.apply(this,arguments)}}(),no:function no(){},defaultYes:!1});case 10:u.sent;case 11:case"end":return u.stop()}}),_callee10)})));return function(t){return r.apply(this,arguments)}}())})),t.querySelectorAll(".foundry-quest-log-ru-show-players").forEach((function(t){t.addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee11(t){var r;return app_regeneratorRuntime().wrap((function _callee11$(o){for(;;)switch(o.prev=o.next){case 0:r=t.currentTarget.closest(".quest-controls").dataset.uuid,c.showQuest(r);case 2:case"end":return o.stop()}}),_callee11)})));return function(r){return t.apply(this,arguments)}}())})),t.querySelectorAll("#duplicate").forEach((function(t){t.addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee12(t){var r,o,a,i;return app_regeneratorRuntime().wrap((function _callee12$(l){for(;;)switch(l.prev=l.next){case 0:return r=t.currentTarget.closest(".tab").dataset.tab,o=$e[r].selected,l.next=4,fromUuid(o);case 4:return a=l.sent,i=a.parent,l.next=8,i.createEmbeddedDocuments("JournalEntryPage",[a.toObject()]);case 8:l.sent,c.render(!0);case 10:case"end":return l.stop()}}),_callee12)})));return function(r){return t.apply(this,arguments)}}())})),t.querySelectorAll("#move").forEach((function(t){t.addEventListener("change",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee13(t){var r,o,a,i,l,u;return app_regeneratorRuntime().wrap((function _callee13$(p){for(;;)switch(p.prev=p.next){case 0:if(r=t.currentTarget.closest(".tab").dataset.tab,"none"!==(o=t.currentTarget.value)){p.next=4;break}return p.abrupt("return");case 4:return p.next=6,fromUuid($e[r].selected);case 6:if(a=p.sent,i=a.parent,l=$e[r].journals.find((function(t){return t.name===o}))){p.next=11;break}return p.abrupt("return");case 11:if(l.isOwner||i.isOwner){p.next=13;break}return p.abrupt("return",ui.notifications.error(game.i18n.localize("".concat(Xe,".").concat(Xe,".moveQuest.error"))));case 13:return p.next=15,l.createEmbeddedDocuments("JournalEntryPage",[a.toObject()]);case 15:if((u=p.sent)[0]){p.next=18;break}return p.abrupt("return");case 18:return p.next=20,i.deleteEmbeddedDocuments("JournalEntryPage",[a.id]);case 20:$e[r].selected=u[0].uuid,c.render(!0);case 22:case"end":return p.stop()}}),_callee13)})));return function(r){return t.apply(this,arguments)}}())})),t.querySelectorAll("#add-category").forEach((function(t){t.addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee14(t){var r,o,a,i,l;return app_regeneratorRuntime().wrap((function _callee14$(u){for(;;)switch(u.prev=u.next){case 0:return r=t.currentTarget.closest(".tab").dataset.tab,o="party-journal"===r,a=$e[r].journals,i=a.reduce((function(t,r){return Math.max(t,r.sort)}),0),u.next=6,JournalEntry.create({name:"New Category",folder:$e[r].folder,sort:i+1e3,ownership:o?{default:CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER}:null});case 6:(l=u.sent).sheet.render(!0),$e[r].selected=l.uuid,c.render(!0);case 10:case"end":return u.stop()}}),_callee14)})));return function(r){return t.apply(this,arguments)}}())})),t.querySelectorAll("#add-page").forEach((function(t){t.addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee15(t){var r,o,a,i,l,u;return app_regeneratorRuntime().wrap((function _callee15$(p){for(;;)switch(p.prev=p.next){case 0:if(o=t.currentTarget.closest(".tab").dataset.tab,a=c.getActiveJournal(o)){p.next=4;break}return p.abrupt("return");case 4:return i={name:"New Page",sort:Math.max.apply(Math,[0].concat(app_toConsumableArray(Array.from(a.pages).map((function(t){return t.sort})))))+1e3},l=null!==(r=Ne[o])&&void 0!==r?r:{},p.next=8,a.createEmbeddedDocuments("JournalEntryPage",[foundry.utils.mergeObject(i,l)]);case 8:(u=p.sent)[0].sheet.render(!0),!1!==$e[o].selected&&($e[o].selected=u[0].uuid),c.render(!0);case 12:case"end":return p.stop()}}),_callee15)})));return function(r){return t.apply(this,arguments)}}())})),t.querySelector("#add-map").addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee16(t){var r;return app_regeneratorRuntime().wrap((function _callee16$(t){for(;;)switch(t.prev=t.next){case 0:if(r=c._mapsJournal){t.next=3;break}return t.abrupt("return");case 3:return t.next=5,r.createEmbeddedDocuments("JournalEntryPage",[{name:"New Map",type:"image"}]);case 5:t.sent[0].sheet.render(!0);case 7:case"end":return t.stop()}}),_callee16)})));return function(r){return t.apply(this,arguments)}}()),t.querySelector("#map-help").addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee17(t){return app_regeneratorRuntime().wrap((function _callee17$(t){for(;;)switch(t.prev=t.next){case 0:showWelcomeMaps(!0);case 1:case"end":return t.stop()}}),_callee17)})));return function(r){return t.apply(this,arguments)}}()),t.querySelectorAll(".quest-category-summary").forEach((function(t){t.addEventListener("click",function(){var r=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee18(r){var o,a;return app_regeneratorRuntime().wrap((function _callee18$(r){for(;;)switch(r.prev=r.next){case 0:o=t.closest(".tab").dataset.tab,a=t.dataset.uuid,$e[o].active=fromUuidSync(a),c._setSelectedCategory();case 4:case"end":return r.stop()}}),_callee18)})));return function(t){return r.apply(this,arguments)}}())})),t.querySelectorAll(".tab[data-tab='quests'] .quest-item .quest-checkbox.secret,.tab[data-tab='map'] .map-item .quest-checkbox.secret, .timeline-item .quest-checkbox.secret").forEach((function(t){t.addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee19(t){var r,o,a,i,l,c;return app_regeneratorRuntime().wrap((function _callee19$(u){for(;;)switch(u.prev=u.next){case 0:return t.preventDefault(),t.stopPropagation(),r=t.currentTarget.dataset.uuid,o=t.currentTarget.dataset.anchor,u.next=6,fromUuid(r);case 6:if(a=u.sent,i=!t.currentTarget.classList.contains("checked"),!o){u.next=15;break}return(c=null!==(l=a.getFlag(Xe,"secret"))&&void 0!==l?l:{})[o]=i,u.next=13,a.setFlag(Xe,"secret",c);case 13:u.next=17;break;case 15:return u.next=17,a.setFlag(Xe,"hidden",i);case 17:case"end":return u.stop()}}),_callee19)})));return function(r){return t.apply(this,arguments)}}())})),t.querySelectorAll(".tab[data-tab='lore'] .quest-item .quest-checkbox.secret").forEach((function(t){t.addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee20(t){var r,o,a;return app_regeneratorRuntime().wrap((function _callee20$(i){for(;;)switch(i.prev=i.next){case 0:return t.preventDefault(),t.stopPropagation(),r=t.currentTarget.dataset.uuid,i.next=5,fromUuid(r);case 5:o=i.sent,a=c.getDefaultUserPermission(o)>=CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER,o.update({ownership:{default:a?CONST.DOCUMENT_OWNERSHIP_LEVELS.NONE:CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER}});case 8:case"end":return i.stop()}}),_callee20)})));return function(r){return t.apply(this,arguments)}}())})),t.querySelector("#windowed-mode").addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee21(t){return app_regeneratorRuntime().wrap((function _callee21$(t){for(;;)switch(t.prev=t.next){case 0:c.toggleWindowedMode();case 1:case"end":return t.stop()}}),_callee21)})));return function(r){return t.apply(this,arguments)}}()),t.querySelector("#font-size-decrease").addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee22(t){var r;return app_regeneratorRuntime().wrap((function _callee22$(t){for(;;)switch(t.prev=t.next){case 0:if(!((r=getSetting("fontSize"))>1)){t.next=4;break}return t.next=4,setSetting("fontSize",r-.25);case 4:case"end":return t.stop()}}),_callee22)})));return function(r){return t.apply(this,arguments)}}()),t.querySelector("#font-size-increase").addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee23(t){var r;return app_regeneratorRuntime().wrap((function _callee23$(t){for(;;)switch(t.prev=t.next){case 0:if(!((r=getSetting("fontSize"))<3)){t.next=4;break}return t.next=4,setSetting("fontSize",r+.25);case 4:case"end":return t.stop()}}),_callee23)})));return function(r){return t.apply(this,arguments)}}()),t.querySelector("#theme-config").addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee24(t){return app_regeneratorRuntime().wrap((function _callee24$(t){for(;;)switch(t.prev=t.next){case 0:(new a).render(!0);case 1:case"end":return t.stop()}}),_callee24)})));return function(r){return t.apply(this,arguments)}}()),t.querySelectorAll("details").forEach((function(t){t.addEventListener("toggle",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee25(t){var r,o,a,i;return app_regeneratorRuntime().wrap((function _callee25$(l){for(;;)switch(l.prev=l.next){case 0:if(!(r=t.currentTarget)._temporarilyOpen){l.next=4;break}return delete r._temporarilyOpen,l.abrupt("return");case 4:if(o=r.open,a=r.dataset.uuid){l.next=8;break}return l.abrupt("return");case 8:return(i=getSetting("detailsStatus"))[a]=o,l.next=12,setSetting("detailsStatus",i);case 12:case"end":return l.stop()}}),_callee25)})));return function(r){return t.apply(this,arguments)}}())})),t.querySelectorAll(".map-item").forEach((function(t){t.addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee26(t){var r;return app_regeneratorRuntime().wrap((function _callee26$(o){for(;;)switch(o.prev=o.next){case 0:r=t.currentTarget.dataset.uuid,c._onSelectMap(t,r);case 2:case"end":return o.stop()}}),_callee26)})));return function(r){return t.apply(this,arguments)}}())})),t.querySelectorAll(".journal-toc").forEach((function(t){t.addEventListener("click",function(){var r=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee27(r){var o,a,i,l,c,u,p;return app_regeneratorRuntime().wrap((function _callee27$(r){for(;;)switch(r.prev=r.next){case 0:o=t.closest(".tab").querySelector(".journal-container"),a=t.dataset.slug,i=t.dataset.toc,l=o.querySelectorAll("h1, h2, h3"),u=a.includes("$")?parseInt(a.split("$")[1]):0,p=Array.from(l).filter((function(t){return t.innerText.trim()===i})),(c=p[u])&&c.scrollIntoView({behavior:"smooth",block:"start"});case 8:case"end":return r.stop()}}),_callee27)})));return function(t){return r.apply(this,arguments)}}())})),t.addEventListener("click",(function(t){if(t.target.classList.contains("content-link")&&!t.ctrlKey&&!t.metaKey){var r=c.isSimpleQuestPage(t.target.dataset.uuid);r&&(t.preventDefault(),t.stopPropagation(),"map"===c.activeTab&&"lore"===r&&c._mapImage?c._mapImage.openModalJournal(fromUuidSync(t.target.dataset.uuid)):c.openToPage(t.target.dataset.uuid))}})),game.user.isGM&&(t.querySelectorAll(".user-image-wrapper img").forEach((function(t){t.style.cursor="pointer",t.addEventListener("click",(function(r){r.preventDefault(),r.stopPropagation();var o=t.closest(".achievement-item").dataset.uuid,a=fromUuidSync(o);new foundry.applications.apps.DocumentOwnershipConfig({document:a}).render(!0)}))})),t.querySelectorAll(".quest-header").forEach((function(t){t.style.cursor="pointer",t.addEventListener("click",(function(r){r.preventDefault(),r.stopPropagation();var o=t.closest(".achievement-item").dataset.uuid;fromUuidSync(o).sheet.render(!0)}))}))),document.addEventListener("keydown",this._onEscape.bind(this)),this._makeSortable(t),this._setSelectedCategory(),this.restoreSearch(),this.updateHistory(),this._initialTab&&(this._skipFirstTourCheck=!0,this.activateTab(this._initialTab),this._initialTab=null),this.element[0].querySelector(".achievements-list").scrollTop=De.achievements.scroll,this.checkTour(null,"interface"),this.element[0].dataset.hasContextMenu||(new foundry.applications.ux.ContextMenu.implementation(this.element[0],"[data-uuid]",this._getContextEntries(),{jQuery:!1}),this.element[0].dataset.hasContextMenu=!0);case 59:case"end":return u.stop()}}),_callee28,this)}))),function activateListeners(t){return S.apply(this,arguments)})},{key:"_getContextEntries",value:function _getContextEntries(){var t=function getDocument(t){return fromUuidSync(t.dataset.uuid)};return[{name:"OWNERSHIP.Configure",icon:'<i class="far fa-lock"></i>',condition:function condition(){return game.user.isGM},callback:function callback(r){return new foundry.applications.apps.DocumentOwnershipConfig({document:t(r)}).render(!0)}},{name:"SIDEBAR.Edit",icon:'<i class="far fa-edit"></i>',condition:function condition(r){return t(r).isOwner},callback:function callback(r){return t(r).sheet.render(!0)}},{name:"SIDEBAR.Delete",icon:'<i class="far fa-trash"></i>',condition:function condition(r){return t(r).isOwner},callback:function callback(r){return t(r).deleteDialog()}},{name:"SIDEBAR.Duplicate",icon:'<i class="far fa-copy"></i>',condition:function condition(r){return t(r).isOwner},callback:function callback(r){return t(r).clone({name:"".concat(t(r)._source.name," (Copy)")},{save:!0,addSource:!0})}}]}},{key:"checkTour",value:function checkTour(t,r){if(this._skipFirstTourCheck)delete this._skipFirstTourCheck;else{var o=t?"".concat(Xe,".").concat(t,"-tab"):"".concat(Xe,".").concat(r),a=game.tours.get(o);(null==a?void 0:a.status)===foundry.nue.Tour.STATUS.UNSTARTED&&a.start()}}},{key:"_makeSortable",value:function _makeSortable(t){var r=this;game.user.isGM&&(t.querySelectorAll(".quest-category-list").forEach((function(t){new Sortable(t,{dragSelector:".quest-item",dropSelector:".quest-item",animation:100,onEnd:r._sortQuestListAndSave.bind(r)})})),t.querySelectorAll(".quest-list").forEach((function(t){new Sortable(t,{dragSelector:".quest-category",dropSelector:".quest-category",animation:100,onEnd:r._sortCategoryListAndSave.bind(r)})})),new Sortable(t.querySelector(".maps-list-element"),{dragSelector:".map-item",dropSelector:".map-item",animation:100,onEnd:this._sortMapListAndSave.bind(this)}),new Sortable(t.querySelector(".achievements-wrapper"),{dragSelector:".achievement-item",dropSelector:".achievement-item",animation:100,onEnd:this._sortAchievementListAndSave.bind(this)}))}},{key:"restoreSearch",value:function restoreSearch(){var t=this;this.element[0].querySelectorAll("input[type='search']").forEach((function(r){var o;r.value=null!==(o=t._search[r.closest(".tab").dataset.tab])&&void 0!==o?o:"",r.value&&r.dispatchEvent(new Event("input"))}))}},{key:"_onSearch",value:function _onSearch(t){var r=t.currentTarget.value.toLowerCase(),o=t.currentTarget.parentElement.parentElement,a=o.closest(".tab").dataset.tab;"lore"==a&&this.updateGlobalSearch(r,t.currentTarget),this._search[a]=r,o.querySelectorAll("li").forEach((function(t){var o=t.textContent.toLowerCase().includes(r);if(t.classList.toggle("not-match",!o),o){var a=t.closest("details");a&&(a._temporarilyOpen=!0,a.open=!0)}})),o.querySelectorAll("details").forEach((function(t){var o=t.textContent.toLowerCase().includes(r);t.classList.toggle("not-match",!o)})),r||this.refresh()}},{key:"updateGlobalSearch",value:function updateGlobalSearch(t,r){var o=this,a=r.parentElement.parentElement.querySelectorAll(".global-search-results");if(a.length&&a.forEach((function(t){return t.remove()})),t){t=t.toLowerCase();var i=new Qe(t,this._loreJournals);if(!(t.length<4)){var l=i.getResults(),c=document.createElement("ul");c.classList.add("global-search-results"),c.style.display=t?null:"none",l.forEach((function(a){var i=document.createElement("li"),l=a.bestMatch,u=l.toLowerCase().indexOf(t),p=l.substring(0,u),d=l.substring(u+t.length);i.innerHTML="<h3>".concat(a.page.name,"</h3><p>").concat(p,'<span class="highlight">').concat(t,"</span>").concat(d,"</p>"),c.append(i),i.addEventListener("click",function(){var l=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee29(l){var c,u,p,d;return app_regeneratorRuntime().wrap((function _callee29$(l){for(;;)switch(l.prev=l.next){case 0:return l.next=2,o._onSelectQuest(null,a.page.uuid);case 2:if(c=r.closest(".tab").querySelector(".quest-details"),u=c.querySelectorAll("h1, h2, h3, h4, h5, h6, p"),p=[],u.forEach((function(r){(r.textContent.toLowerCase().match(new RegExp(t,"g"))||[]).forEach((function(t){p.push(r)}))})),p.length){l.next=8;break}return l.abrupt("return");case 8:d=p[a.matchIndex],setTimeout((function(){d.classList.add("search-highlight"),d.scrollIntoView({behavior:"smooth",block:"center"})}),300),i.scrollIntoView({behavior:"smooth",block:"center"});case 11:case"end":return l.stop()}}),_callee29)})));return function(t){return l.apply(this,arguments)}}())})),c.style.width=r.clientWidth+"px",r.parentElement.after(c)}}}},{key:"_sortQuestListAndSave",value:(w=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee30(t){var r,o,a,i;return app_regeneratorRuntime().wrap((function _callee30$(l){for(;;)switch(l.prev=l.next){case 0:return r=t.from,o=Array.from(r.children).map((function(t){return t.dataset.uuid})),l.next=4,fromUuid(r.dataset.uuid);case 4:return a=l.sent,i=a.pages.map((function(t){return{_id:t.id,sort:1e3*o.indexOf(t.uuid)}})),l.next=8,a.updateEmbeddedDocuments("JournalEntryPage",i);case 8:case"end":return l.stop()}}),_callee30)}))),function _sortQuestListAndSave(t){return w.apply(this,arguments)})},{key:"_sortCategoryListAndSave",value:(_=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee31(t){var r,o,a,i;return app_regeneratorRuntime().wrap((function _callee31$(l){for(;;)switch(l.prev=l.next){case 0:return r=t.from,o=r.closest(".tab").dataset.tab,a=Array.from(r.children).map((function(t){return t.dataset.uuid})),i=$e[o].journals.map((function(t){return{_id:t.id,sort:1e3*a.indexOf(t.uuid)}})),l.next=6,JournalEntry.updateDocuments(i);case 6:case"end":return l.stop()}}),_callee31)}))),function _sortCategoryListAndSave(t){return _.apply(this,arguments)})},{key:"_sortMapListAndSave",value:(b=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee32(t){var r,o,a,i;return app_regeneratorRuntime().wrap((function _callee32$(l){for(;;)switch(l.prev=l.next){case 0:return r=t.from,o=Array.from(r.children).map((function(t){return t.dataset.uuid})),a=this._mapsJournal,i=a.pages.map((function(t){return{_id:t.id,sort:1e3*o.indexOf(t.uuid)}})),l.next=6,a.updateEmbeddedDocuments("JournalEntryPage",i);case 6:case"end":return l.stop()}}),_callee32,this)}))),function _sortMapListAndSave(t){return b.apply(this,arguments)})},{key:"_sortAchievementListAndSave",value:(v=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee33(t){var r,o,a,i;return app_regeneratorRuntime().wrap((function _callee33$(l){for(;;)switch(l.prev=l.next){case 0:return r=t.from,o=Array.from(r.children).map((function(t){return t.dataset.uuid})),a=this._achievementsJournal,i=a.pages.map((function(t){return{_id:t.id,sort:1e3*o.indexOf(t.uuid)}})),l.next=6,a.updateEmbeddedDocuments("JournalEntryPage",i);case 6:case"end":return l.stop()}}),_callee33,this)}))),function _sortAchievementListAndSave(t){return v.apply(this,arguments)})},{key:"_onEscape",value:function _onEscape(t){"Escape"===t.key&&this.rendered&&(t.preventDefault(),t.stopPropagation(),this.close())}},{key:"_setSelectedCategory",value:(y=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee34(){var t,r,o;return app_regeneratorRuntime().wrap((function _callee34$(a){for(;;)switch(a.prev=a.next){case 0:if((t=this.element[0]).querySelectorAll(".quest-category-summary").forEach((function(t){return t.classList.remove("selected")})),r=this.getActiveJournal("quests")){a.next=6;break}return a.abrupt("return");case 6:if(o=t.querySelector('.quest-category-summary[data-uuid="'.concat(r.uuid,'"]'))){a.next=9;break}return a.abrupt("return");case 9:o.classList.add("selected");case 10:case"end":return a.stop()}}),_callee34,this)}))),function _setSelectedCategory(){return y.apply(this,arguments)})},{key:"_addCheckboxes",value:function _addCheckboxes(t,r){t.querySelectorAll("li").forEach((function(o){var a=document.createElement("div");r.isOwner||(a.style.pointerEvents="none"),a.classList.add("quest-checkbox");var i=document.createElement("div");i.classList.add("quest-checkbox-marker"),a.append(i);var l=SimpleQuest.getKeyFromLi(o),c=r.getFlag(Xe,"checkboxes.".concat(l));c&&(a.classList.add("checked"),o.classList.add("checked"),c===Ge&&(a.classList.add("failed"),o.classList.add("failed"))),a.addEventListener("mouseup",function(){var i=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee35(i){var c,u,p,d,h,m,g,y,v,b,_,w,S,x,k,E,T,P,O,C,L,A,I,j,M;return app_regeneratorRuntime().wrap((function _callee35$(R){for(;;)switch(R.prev=R.next){case 0:if(u=0===i.button,p=2===i.button,u||p){R.next=4;break}return R.abrupt("return");case 4:for((d=!a.classList.contains("checked"))&&p&&(d=Ge),d&&u&&(d=qe),a.classList.toggle("checked"),a.classList.toggle("failed",d===Ge),h=app_defineProperty({},"".concat(l),d),m=a.closest("ul, ol").closest("li"),g=a.closest("li").querySelectorAll("li"),m&&(y=a.closest("ul").querySelectorAll("li"),v=Array.from(y).every((function(t){return t.querySelector(".quest-checkbox:not(.secret)").classList.contains("checked")})),b=Array.from(y).every((function(t){return t.querySelector(".quest-checkbox:not(.secret)").classList.contains("failed")})),_=SimpleQuest.getKeyFromLi(m),h[_]=v?b?Ge:qe:Fe,m.querySelector(".quest-checkbox:not(.secret)").classList.toggle("checked",v)),a.classList.toggle("checked"),g.length&&d&&g.forEach((function(t){var r=SimpleQuest.getKeyFromLi(t);h[r]=d,t.querySelector(".quest-checkbox:not(.secret)").classList.toggle("checked",d!==Fe)})),w=null!==(c=r.getFlag(Xe,"checkboxes"))&&void 0!==c?c:{},S=app_defineProperty({},"flags.".concat(Xe,".checkboxes"),foundry.utils.mergeObject(w,h)),a.closest(".secret")||(S["flags.".concat(Xe,".lastUpdated")]=Date.now()),x=o.closest("ol, ul"),k=0;k<10;k++)T="UL"===x.tagName||"OL"===x.tagName,(P=T?null===(E=x.parentElement)||void 0===E?void 0:E.closest("ol, ul"):x.closest("ol, ul"))&&(x=P);O=x;case 22:if(!x.previousElementSibling){R.next=29;break}if(!(C=x.previousElementSibling).tagName.startsWith("H")){R.next=26;break}return R.abrupt("break",29);case 26:x=x.previousElementSibling,R.next=22;break;case 29:return C.tagName.startsWith("H")||(C=null),a.classList.toggle("checked"),L=Array.from(O.querySelectorAll("li")).every((function(t){return t.querySelector(".quest-checkbox:not(.secret)").classList.contains("checked")})),C&&(I=C.innerText.slugify({strict:!0}),j=null!==(A=r.getFlag(Xe,"completedSubquests"))&&void 0!==A?A:{},S["flags.".concat(Xe,".completedSubquests")]=foundry.utils.mergeObject(j,app_defineProperty({},I,L))),M=Array.from(t.querySelectorAll("li")).every((function(t){return t.querySelector(".quest-checkbox:not(.secret)").classList.contains("checked")})),a.classList.toggle("checked"),S["flags.".concat(Xe,".completed")]=M,R.next=38,r.update(S);case 38:case"end":return R.stop()}}),_callee35)})));return function(t){return i.apply(this,arguments)}}()),o.prepend(a);var u=document.createElement("div");u.classList.add("quest-checkbox"),u.classList.add("secret");var p=document.createElement("div"),d=document.createElement("i");d.classList.add("fas"),d.classList.add("fa-eye-slash"),p.append(d),p.classList.add("quest-checkbox-marker"),u.append(p);var h=l;r.getFlag(Xe,"secret.".concat(h))&&(u.classList.add("checked"),o.classList.add("secret"),game.user.isGM||(o.style.display="none")),u.addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee36(t){var o,i,l,c,p,d,m,g;return app_regeneratorRuntime().wrap((function _callee36$(t){for(;;)switch(t.prev=t.next){case 0:return l=!u.classList.contains("checked"),c=app_defineProperty({},"".concat(h),l),"boolean"==typeof(p=null!==(o=r.getFlag(Xe,"secret"))&&void 0!==o?o:{})&&(p={}),d=Object.values(c).some((function(t){return!t})),m=app_defineProperty({},"flags.".concat(Xe,".secret"),foundry.utils.mergeObject(p,c)),g=null!==(i=a.classList.contains("secret"))&&void 0!==i?i:a.closest(".secret"),d&&!g&&(m["flags.".concat(Xe,".lastUpdated")]=Date.now()),t.next=10,r.update(m);case 10:case"end":return t.stop()}}),_callee36)})));return function(r){return t.apply(this,arguments)}}()),game.user.isGM&&o.prepend(u)}))}},{key:"_onSelectQuest",value:(g=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee37(t,r){var o,a,i,l,c,u,p,d,h,m,g,y,v,b,_,w,S,x,k,E,T,P,O,C,L,A,I,j,M,R,q,G,D,N,H,W=arguments;return app_regeneratorRuntime().wrap((function _callee37$($){for(;;)switch($.prev=$.next){case 0:return i=W.length>2&&void 0!==W[2]&&W[2],l=null!=r?r:t.currentTarget.dataset.uuid,$.next=4,fromUuid(l);case 4:if(c=$.sent){$.next=7;break}return $.abrupt("return");case 7:if(u=this.isSimpleQuestPage(l)){$.next=10;break}return $.abrupt("return");case 10:return p=this.element[0].querySelector('.tab[data-tab="'.concat(u,'"]')),$e[u].active=c.parent,$.next=14,this._setSelectedCategory();case 14:if(p.querySelectorAll(".quest-selected").forEach((function(t){return t.classList.remove("quest-selected")})),t?t.currentTarget.classList.add("quest-selected"):(h=null!==(d=p.querySelector('summary.quest-item[data-uuid="'.concat(l,'"]')))&&void 0!==d?d:p.querySelector('.quest-item[data-uuid="'.concat(l,'"]')))&&h.classList.add("quest-selected"),$e[u].selected=l,(m=p.querySelector(".quest-contents")).innerHTML="","text"!==c.type){$.next=25;break}return $.next=22,foundry.applications.ux.TextEditor.implementation.enrichHTML(c.text.content,{secrets:c.isOwner,relativeTo:c,async:!0});case 22:g=$.sent,$.next=41;break;case 25:if("image"!==c.type){$.next=31;break}y=getSetting("imagePageMask"),v=y?"style=\"mask-image: url('".concat(y,"');-webkit-mask-image: url('").concat(y,"');\""):"",g='<div class="foundry-quest-log-ru-image-journal"><img '.concat(v,' src="').concat(c.src,'" alt="').concat(c.name,'"><p>').concat(c.image.caption,"</p></div>"),$.next=41;break;case 31:if("pdf"!==c.type){$.next=38;break}console.log("Loading PDF"),b=c.sheet._getViewerParams(),_='<iframe src="scripts/pdfjs/web/viewer.html?'.concat(b,'" style="width: 100%; height: 95%;"></iframe>'),g=_,$.next=41;break;case 38:return $.next=40,foundry.applications.ux.TextEditor.implementation.enrichHTML("@Embed[".concat(c.uuid,"]"),{secrets:c.isOwner,relativeTo:c,async:!0});case 40:g=$.sent;case 41:return m.innerHTML='<h1 class="quest-header">'.concat(c.name,"</h1>")+g,m.querySelectorAll("secret-block").forEach((function(t){return t.addEventListener("change",(function(t){c.update({"text.content":t.target.toggleRevealed(c.text.content)})}))})),r||(p.querySelector(".quest-details").scrollTop=null!==(w=this._questScroll[l])&&void 0!==w?w:0),p.querySelectorAll("img").forEach((function(t){return t.addEventListener("click",(function(t){return new ImagePopout(t.currentTarget.getAttribute("src"),{}).render(!0)}))})),(S=p.querySelector(".quest-controls")).classList.toggle("foundry-quest-log-ru-hidden",!c.isOwner),S.dataset.uuid=l,$e[u].saveSelected(l),(x=getSetting("seenQuests"))[l]=Date.now(),$.next=53,setSetting("seenQuests",x);case 53:if("quests"===u&&this._addCheckboxes(m,c),k=$e[u].anchor,E=null!=k?k:null==t||null===(o=t.currentTarget)||void 0===o||null===(o=o.dataset)||void 0===o?void 0:o.anchor,this.updateHistory(l,E),(t&&null!==(a=t.currentTarget)&&void 0!==a&&a.classList.contains("sub-quest")||k&&c.toc[E])&&($e[u].anchor=null,T=c.toc[E],P=T.text.trim(),O=m.querySelectorAll("h1, h2, h3"),L=E.includes("$")?parseInt(E.split("$")[1]):0,A=Array.from(O).filter((function(t){return t.innerText.trim()===P})),(C=A[L])&&setTimeout((function(){return C.scrollIntoView({behavior:"smooth",block:"start"})}),0)),null!=(I=c._tocArray)&&I.some((function(t){return t._hidden}))){j=m.querySelectorAll("h1, h2, h3"),M=I.filter((function(t){return t._hidden})).map((function(t){return t.text})),R=Array.from(j).filter((function(t){return M.includes(t.innerText)})),q=app_createForOfIteratorHelper(R);try{for(q.s();!(G=q.n()).done;){for(D=G.value,N=D.nextElementSibling;N&&!N.matches("h1, h2, h3");)N.style.display="none",N=N.nextElementSibling;D.style.display="none"}}catch(t){q.e(t)}finally{q.f()}}i&&(p.querySelector(".quest-details").scrollTop=null!==(H=this._questScroll[$e[u].selected])&&void 0!==H?H:0),Hooks.callAll("".concat(Xe,".onSelectQuest"),c,m);case 62:case"end":return $.stop()}}),_callee37,this)}))),function _onSelectQuest(t,r){return g.apply(this,arguments)})},{key:"_onSelectMap",value:(m=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee44(t,r){var o,a,i,l,c,u,d,h,m,g,y,v,b,_,w,S,x,k,E,T,P,O,C,L,A,I,j=this;return app_regeneratorRuntime().wrap((function _callee44$(M){for(;;)switch(M.prev=M.next){case 0:return c=null!=r?r:t.currentTarget.dataset.uuid,M.next=4,fromUuid(c);case 4:if(u=M.sent,d=this.element[0],u){M.next=8;break}return M.abrupt("return");case 8:this.updateHistory(c),h=d.querySelector(".map-details"),(m=document.createElement("div")).innerHTML=u.text.content,g=u.src||(null===(o=m.querySelector("img"))||void 0===o?void 0:o.src),y=Array.from(m.querySelectorAll("img")).map((function(t){return t.src})),v=new p(g,u,y,null!==(a=u.getFlag(Xe,"pinsLocked"))&&void 0!==a&&a),this._mapImage=v,h.innerHTML="",h.append(v.element),b=u.getFlag(Xe,"measure")||"1mi",_=parseFloat(b)||1,w=null!==(i=null===(l=b.match(/[a-z]+/))||void 0===l?void 0:l[0])&&void 0!==i?i:"mi",v._measureUnits=w,v._measure=_,u.isOwner&&((S=document.createElement("div")).classList.add("map-controls"),h.append(S),game.user.isGM&&((E=document.createElement("i")).classList.add("fa-duotone"),E.classList.add("fa-cloud"),E.id="reset-fow",E.dataset.tooltip="foundry-quest-log-ru.simple-quest.tooltip.reset-fow",E.dataset.tooltipDirection="UP",E.addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee38(t){return app_regeneratorRuntime().wrap((function _callee38$(t){for(;;)switch(t.prev=t.next){case 0:v.resetFow();case 1:case"end":return t.stop()}}),_callee38)})));return function(r){return t.apply(this,arguments)}}()),(T=document.createElement("input")).type="range",T.min=0,T.max=100,T.value=We,T.id="fow-brush-size",T.dataset.tooltip="foundry-quest-log-ru.simple-quest.tooltip.fow-brush-size",T.dataset.tooltipDirection="UP",T.addEventListener("change",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee39(t){return app_regeneratorRuntime().wrap((function _callee39$(r){for(;;)switch(r.prev=r.next){case 0:We=t.currentTarget.value;case 1:case"end":return r.stop()}}),_callee39)})));return function(r){return t.apply(this,arguments)}}()),(P=document.createElement("input")).type="text",P.id="measure-input",P.dataset.tooltip="foundry-quest-log-ru.simple-quest.tooltip.measure",P.dataset.tooltipDirection="UP",P.placeholder="foundry-quest-log-ru.simple-quest.tooltip.measure",P.value=null!==(x=u.getFlag(Xe,"measure"))&&void 0!==x?x:"1mi",P.style.width="8rem",P.addEventListener("change",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee40(t){var r;return app_regeneratorRuntime().wrap((function _callee40$(o){for(;;)switch(o.prev=o.next){case 0:r=t.currentTarget.value,u.setFlag(Xe,"measure",r);case 2:case"end":return o.stop()}}),_callee40)})));return function(r){return t.apply(this,arguments)}}()),O=null!==(k=u.getFlag(Xe,"pinsLocked"))&&void 0!==k&&k,(C=document.createElement("i")).classList.add("fa-duotone"),C.classList.add(O?"fa-location-pin-slash":"fa-location-pin"),C.id="lock-pins",C.style.minWidth="2.2rem",C.style.textAlign="center",C.dataset.tooltip="foundry-quest-log-ru.simple-quest.tooltip.lock-pins",C.dataset.tooltipDirection="UP",C.addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee41(t){return app_regeneratorRuntime().wrap((function _callee41$(t){for(;;)switch(t.prev=t.next){case 0:u.setFlag(Xe,"pinsLocked",!O);case 1:case"end":return t.stop()}}),_callee41)})));return function(r){return t.apply(this,arguments)}}()),(L=document.createElement("i")).classList.add("fa-duotone"),L.classList.add("fa-eye"),L.id="show-players",L.dataset.tooltip="foundry-quest-log-ru.simple-quest.tooltip.show-players",L.dataset.tooltipDirection="UP",L.addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee42(t){return app_regeneratorRuntime().wrap((function _callee42$(t){for(;;)switch(t.prev=t.next){case 0:j.showQuest(c);case 1:case"end":return t.stop()}}),_callee42)})));return function(r){return t.apply(this,arguments)}}()),S.append(P),S.append(C),S.append(T),S.append(E),S.append(L),Object.defineProperty(v,"fowBrushSize",{get:function get(){return We}}),v._fowBrushSizeInput=T),(A=document.createElement("i")).classList.add("fa-duotone"),A.classList.add("fa-pen-to-square"),A.id="edit-map",A.dataset.tooltip="foundry-quest-log-ru.simple-quest.tooltip.edit-map",A.dataset.tooltipDirection="UP",A.addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee43(t){return app_regeneratorRuntime().wrap((function _callee43$(t){for(;;)switch(t.prev=t.next){case 0:u.sheet.render(!0);case 1:case"end":return t.stop()}}),_callee43)})));return function(r){return t.apply(this,arguments)}}()),S.append(A)),setSetting("lastMap",c),d.querySelectorAll(".map-selected").forEach((function(t){return t.classList.remove("map-selected")})),(I=this.element[0].querySelector('.map-item[data-uuid="'.concat(c,'"]')))&&I.classList.add("map-selected"),$e.map.selected=c;case 29:case"end":return M.stop()}}),_callee44,this)}))),function _onSelectMap(t,r){return m.apply(this,arguments)})},{key:"_onSelectTimeline",value:(h=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee45(t,r){var o;return app_regeneratorRuntime().wrap((function _callee45$(a){for(;;)switch(a.prev=a.next){case 0:return o=null!=r?r:t.currentTarget.dataset.uuid,a.next=3,fromUuid(o);case 3:if(a.sent){a.next=6;break}return a.abrupt("return");case 6:$e.timeline.selected=o,this.timeline.goTo(o);case 8:case"end":return a.stop()}}),_callee45,this)}))),function _onSelectTimeline(t,r){return h.apply(this,arguments)})},{key:"toggle",value:function toggle(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:null;this.rendered?($e.quests.selected&&(this._questScroll[$e.quests.selected]=this.element[0].querySelector(".quest-details").scrollTop),this.close()):(this._initialTab=null!=t?t:getSetting("lastTab"),this.render(!0))}},{key:"toggleWindowedMode",value:(d=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee46(){return app_regeneratorRuntime().wrap((function _callee46$(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,this.close();case 2:setSetting("windowedMode",!getSetting("windowedMode")),He=!He,ui.simpleQuest=new SimpleQuest,ui.simpleQuest._initialTab=getSetting("lastTab"),ui.simpleQuest.render(!0);case 7:case"end":return t.stop()}}),_callee46,this)}))),function toggleWindowedMode(){return d.apply(this,arguments)})},{key:"openToTab",value:function openToTab(t){this._initialTab=t,this.render(!0)}},{key:"openToPage",value:function openToPage(t,r){var o=this.isSimpleQuestPage(t);if(!this.hasPermission(t))return ui.notifications.error(game.i18n.localize("".concat(Xe,".noPermission")));$e[o]&&($e[o].selected=t,r&&($e[o].anchor=r)),this._initialTab=o,this.updateHistory(t,r),this.render(!0)}},{key:"updateHistory",value:function updateHistory(t,r){var o=this,a=Re();if(t){var i=a.find((function(o){return o.uuid===t&&o.anchor===r}));i?(i.label=fromUuidSync(t).name,i.anchor=r,i.uuid=t):(a.unshift({uuid:t,label:fromUuidSync(t).name,anchor:r}),a.splice(10)),function setHistory(t){game.user.setFlag(Xe,"history",t)}(a)}if(this.element[0]){var l=this.element[0].querySelector("#history");if(l){l.innerHTML="";var c,u=app_createForOfIteratorHelper(a);try{var p=function _loop4(){var t=c.value,r=a.findIndex((function(r){return r===t}))===a.length-1,i=document.createElement("div");if(i.classList.add("history-item"),i.innerHTML="<span>".concat(t.label).concat(t.anchor?" (".concat(t.anchor.split("-").map((function(t){return t.charAt(0).toUpperCase()+t.slice(1)})).join(" "),")"):"","</span>"),l.append(i),i.addEventListener("click",(function(){o.openToPage(t.uuid,t.anchor)})),!r){var u=document.createElement("i");u.classList.add("fa-thin"),u.classList.add("fa-chevron-right"),l.append(u)}};for(u.s();!(c=u.n()).done;)p()}catch(t){u.e(t)}finally{u.f()}}}}},{key:"showQuest",value:(u=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee48(t){var r,o;return app_regeneratorRuntime().wrap((function _callee48$(a){for(;;)switch(a.prev=a.next){case 0:return r=Array.from(game.users).filter((function(t){return t.active&&t!==game.user})),a.next=3,renderTemplate("modules/foundry-quest-log-ru/templates/show-quest.hbs",{users:r});case 3:o=a.sent,Dialog.prompt({title:game.i18n.localize("".concat(Xe,".showQuest.title")),content:o,label:game.i18n.localize("JOURNAL.ActionShow"),render:function render(t){var r=(t=t[0]).querySelector('input[name="allPlayers"]'),o=t.querySelectorAll('input[name="players"]');r.addEventListener("change",(function(t){var r=t.currentTarget.checked;o.forEach((function(t){return t.disabled=r}))})),t.closest(".app").classList.add("foundry-quest-log-ru-dialog")},callback:function(){var o=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee47(o){var a,i,l;return app_regeneratorRuntime().wrap((function _callee47$(c){for(;;)switch(c.prev=c.next){case 0:o=o[0],a=o.querySelector('input[name="allPlayers"]').checked,i=r.map((function(t){return t.id})),l=Array.from(o.querySelectorAll('input[name="players"]:checked')).map((function(t){return t.value})),Le.openToPage({uuid:t},{users:a?i:l});case 5:case"end":return c.stop()}}),_callee47)})));return function callback(t){return o.apply(this,arguments)}}(),close:function close(){}});case 5:case"end":return a.stop()}}),_callee48)}))),function showQuest(t){return u.apply(this,arguments)})},{key:"isSimpleQuestPage",value:function isSimpleQuestPage(t){var r;try{r=fromUuidSync(t)}catch(t){return!1}if(!r)return!1;if(!(r instanceof JournalEntryPage))return!1;var o=r.parent,a=Array.from(game.folders).find((function(t){return t.name===getSetting("folderName")&&"JournalEntry"===t.type})),i=Array.from(game.folders).find((function(t){return t.name===getSetting("loreFolderName")&&"JournalEntry"===t.type})),l=Array.from(game.journal).find((function(t){return t.folder===a&&t.name===getSetting("mapsJournalName")})),c=Array.from(l.pages).some((function(r){return r.uuid===t})),u=o.folder===i,p=o.folder===a;if(o.folder===a&&o.name===getSetting("achievementsJournalName"))return"achievements";if(c)return"map";if(u)return"lore";if(p)return"quests";var d=Array.from(game.folders).find((function(t){return t.name===getSetting("partyJournalName")&&"JournalEntry"===t.type&&t.folder===a})),h=Array.from(game.folders).find((function(t){return t.name===getSetting("sharedJournalName")&&"JournalEntry"===t.type&&t.folder===d})),m=Array.from(game.folders).find((function(t){return t.name===game.user.name&&"JournalEntry"===t.type&&t.folder===d}));return o.folder===h?"party-journal":o.folder===m&&"my-journal"}},{key:"hasPermission",value:function hasPermission(t){if(game.user.isGM)return!0;var r=fromUuidSync(t);if(!r)return!1;var o=r.getFlag(Xe,"hidden");if(o)return!1;var a=this.isSimpleQuestPage(t);if(("map"===a||"quests"===a)&&!o)return!0;if(r.isOwner)return!0;var i=r.parent.permission;return r.permission===CONST.DOCUMENT_OWNERSHIP_LEVELS.INHERIT?i:r.permission}},{key:"sceneToMap",value:function sceneToMap(){var t=this,r=canvas.scene,o=r.background.src,a=100/r.dimensions.distancePixels,i={},l=r.dimensions.sceneX,c=r.dimensions.sceneY,u=r.dimensions.sceneWidth,p=r.dimensions.sceneHeight;canvas.notes.placeables.forEach((function(t){var r,o,a,d=t.center,h=(d.x-l)/u,m=(d.y-c)/p,g=t.document;i[foundry.utils.randomID()]={title:g.label,icon:g.texture.src,journal:null!==(r=null===(o=g.page)||void 0===o?void 0:o.uuid)&&void 0!==r?r:null===(a=g.entry)||void 0===a?void 0:a.uuid,x:h,y:m,hidden:!1,color:g.texture.tint||"#ff0000"}}));Array.from(game.journal).find((function(r){return r.folder===t._questFolder&&r.name===getSetting("mapsJournalName")})).createEmbeddedDocuments("JournalEntryPage",[{name:r.name,type:"image",src:o,flags:{"foundry-quest-log-ru":{markers:i,measure:"".concat(a).concat(r.grid.units)}}}])}},{key:"refresh",value:function refresh(){var t;this.rendered&&(null===(t=this.timeline)||void 0===t||t.saveScrollPosition(),this.render(!0))}},{key:"updateStyle",value:function updateStyle(){var t,r,o=getSetting("backgroundColor")||getDefaultSetting("backgroundColor"),a=getSetting("textColor")||getDefaultSetting("textColor"),i=getSetting("secretColor")||getDefaultSetting("secretColor"),l=getSetting("failedColor")||getDefaultSetting("failedColor"),c=getSetting("fontSize"),u=getSetting("fontFamily"),p="default"===getSetting("headerOnlyFont")?u:getSetting("headerOnlyFont"),d=getSetting("invertTheme"),h=o.length>10?o:o+"eb",m=o.length>10?null!==(t=null===(r=h.match(/#(?:[0-9a-fA-F]{3}){1,2}/g))||void 0===r?void 0:r[0])&&void 0!==t?t:"#ffffff":h;document.documentElement.style.setProperty("--foundry-quest-log-ru-font-family",u),document.documentElement.style.setProperty("--foundry-quest-log-ru-header-font-family",p),document.documentElement.style.setProperty("--foundry-quest-log-ru-background",h),document.documentElement.style.setProperty("--foundry-quest-log-ru-background-color",m),document.documentElement.style.setProperty("--foundry-quest-log-ru-hidden-color",i),document.documentElement.style.setProperty("--foundry-quest-log-ru-failed-color",l),document.documentElement.style.setProperty("--foundry-quest-log-ru-font-size",c+"rem"),document.documentElement.style.setProperty("--foundry-quest-log-ru-invert",d?1:0);var g=new Je(a),y=g.l<.5,v=y?g.saturate(1.5):g.saturate(.5),b=y?g.brightness(.7):g.brightness(1.3),_=y?g.brightness(1.5):g.brightness(.5),w=y?g.saturate(.5):g.saturate(1.5);document.documentElement.style.setProperty("--foundry-quest-log-ru-text-0",b),document.documentElement.style.setProperty("--foundry-quest-log-ru-text-1",a),document.documentElement.style.setProperty("--foundry-quest-log-ru-text-2",v),document.documentElement.style.setProperty("--foundry-quest-log-ru-text-3",w),document.documentElement.style.setProperty("--foundry-quest-log-ru-text-4",_)}},{key:"render",value:(l=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee49(){var t,r,o,a,i,l,c,u,p=arguments;return app_regeneratorRuntime().wrap((function _callee49$(d){for(;;)switch(d.prev=d.next){case 0:for(r=0,o=Object.keys($e);r<o.length;r++)a=o[r],$e[a].selected&&this.element[0]&&(i=this.element[0].querySelector('.tab[data-tab="'.concat(a,'"] .quest-details')))&&(this._questScroll[$e[a].selected]=i.scrollTop);for(this.element[0]&&(De.achievements.scroll=this.element[0].querySelector(".achievements-list").scrollTop),l=p.length,c=new Array(l),u=0;u<l;u++)c[u]=p[u];return d.abrupt("return",(t=app_get(app_getPrototypeOf(SimpleQuest.prototype),"render",this)).call.apply(t,[this].concat(c)));case 4:case"end":return d.stop()}}),_callee49,this)}))),function render(){return l.apply(this,arguments)})},{key:"close",value:(i=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee50(){var t,r,o,a,i,l,c,u,p,d,h,m,g,y,v=this,b=arguments;return app_regeneratorRuntime().wrap((function _callee50$(_){for(;;)switch(_.prev=_.next){case 0:for(r=b.length>0&&void 0!==b[0]?b[0]:{},this.element[0].querySelectorAll(".tab").forEach((function(t){return t.classList.add("active")})),this._saveScrollPositions(this.element),this._storedScrollPositions=this._scrollPositions,null===(t=this.timeline)||void 0===t||t.saveScrollPosition(),o=0,a=Object.entries(De);o<a.length;o++)i=app_slicedToArray(a[o],2),l=i[0],c=i[1],u=this.element[0].querySelector('.tab[data-tab="'.concat(l,'"] ').concat(c.sel)),De[l].scroll=u?u.scrollTop:0;if(document.removeEventListener("keydown",this._onEscape.bind(this)),p=Application.RENDER_STATES,r.force||[p.RENDERED,p.ERROR].includes(this._state)){_.next=10;break}return _.abrupt("return");case 10:if(this._state=p.CLOSING,d=this.element){_.next=14;break}return _.abrupt("return",this._state=p.CLOSED);case 14:h=app_createForOfIteratorHelper(this.constructor._getInheritanceChain());try{for(h.s();!(m=h.n()).done;)g=m.value,Hooks.call("close".concat(g.name),this,d)}catch(t){h.e(t)}finally{h.f()}return y=this.element[0],_.abrupt("return",new Promise((function(t){y.animate([{opacity:1},{opacity:0}],{duration:200,easing:"ease-in-out",fill:"forwards"}).onfinish=function(){y.remove(),v._element=null,delete ui.windows[v.appId],v._minimized=!1,v._state=p.CLOSED,t()}})));case 18:case"end":return _.stop()}}),_callee50,this)}))),function close(){return i.apply(this,arguments)})},{key:"createDemoQuest",value:function createDemoQuest(){!function helpers_createDemoQuest(){var t=game.journal.getName(game.i18n.localize("foundry-quest-log-ru.default-structure.in-progress"));t&&t.createEmbeddedDocuments("JournalEntryPage",[c])}()}},{key:"importQuests",value:(o=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee51(t,r){var o,a,i,l,c,u,p,d=arguments;return app_regeneratorRuntime().wrap((function _callee51$(h){for(;;)switch(h.prev=h.next){case 0:return o=(d.length>2&&void 0!==d[2]?d[2]:{}).silent,a=void 0!==o&&o,h.next=3,this.getData();case 3:if(i=this._questJournals.find((function(t){return t.name===r})),h.t0=a,h.t0){h.next=9;break}return h.next=8,foundry.applications.api.DialogV2.confirm({window:{title:game.i18n.localize("".concat(Xe,".importQuests.title"))+r},content:game.i18n.localize("".concat(Xe,".importQuests.content"))});case 8:h.t0=h.sent;case 9:if(h.t0){h.next=12;break}return h.abrupt("return");case 12:if(l=this._questFolder,null==i){h.next=17;break}h.t1=i,h.next=20;break;case 17:return h.next=19,JournalEntry.create({name:r,folder:l});case 19:h.t1=h.sent;case 20:return c=h.t1,u=Array.from(t.pages).map((function(t){return t.toObject()})),h.next=24,c.createEmbeddedDocuments("JournalEntryPage",u);case 24:return p=h.sent,h.next=27,t.delete();case 27:this.openToPage(p[0].uuid);case 28:case"end":return h.stop()}}),_callee51,this)}))),function importQuests(t,r){return o.apply(this,arguments)})}],[{key:"APP_ID",get:function get(){return this.name.split(/(?=[A-Z])/).join("-").toLowerCase()}},{key:"defaultOptions",get:function get(){return foundry.utils.mergeObject(app_get(app_getPrototypeOf(SimpleQuest),"defaultOptions",this),{id:this.APP_ID,template:"modules/".concat(Xe,"/templates/").concat(this.APP_ID,".hbs"),popOut:He,resizable:He,minimizable:He,width:He?.6*window.innerWidth:window.innerWidth,height:He?.8*window.innerHeight:window.innerHeight,title:game.i18n.localize("".concat(Xe,".").concat(this.APP_ID,".title")),tabs:[{navSelector:".tabs",contentSelector:".content",initial:"quests"}],scrollY:[".quest-list",".quest-contents",".maps-list"]})}},{key:"getKeyFromLi",value:function getKeyFromLi(t){return t.innerText.replace(/\s/g,"").replace(/\./g,"").substring(0,50)}},{key:"setHooks",value:function setHooks(){this._hooksRegistered||(this._hooksRegistered=!0,Hooks.on("createJournalEntry",(function(t,r){ui.simpleQuest.refresh()})),Hooks.on("deleteJournalEntry",(function(t,r){ui.simpleQuest.refresh()})),Hooks.on("createJournalEntryPage",(function(t,r){ui.simpleQuest.refresh()})),Hooks.on("deleteJournalEntryPage",(function(t,r){ui.simpleQuest.refresh()})),Hooks.on("updateJournalEntry",(function(t,r){ui.simpleQuest.refresh()})),Hooks.on("preUpdateJournalEntryPage",(function(t,r){r.text&&t.updateSource({flags:app_defineProperty({},Xe,{lastUpdated:Date.now()})})})),Hooks.on("updateJournalEntryPage",(function(t,r){var o,a,i,l;(ui.simpleQuest.refresh(),(null==r||null===(o=r.ownership)||void 0===o?void 0:o.default)>=CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER)&&("lore"===ui.simpleQuest.isSimpleQuestPage(t.uuid)&&showQuestNotification(t,!0,!0));if((null==r||null===(a=r.ownership)||void 0===a?void 0:a[game.user.id])>=CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER||(null==r||null===(i=r.ownership)||void 0===i?void 0:i.default)>=CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER){var c="achievements"===ui.simpleQuest.isSimpleQuestPage(t.uuid);!game.user.isGM&&c&&showQuestNotification(t,!0,!1,!0)}null!=r&&null!==(l=r.flags)&&void 0!==l&&null!==(l=l[Xe])&&void 0!==l&&l.lastUpdated&&("quests"===ui.simpleQuest.isSimpleQuestPage(t.uuid)&&showQuestNotification(t))})),document.addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee52(t){var r,o;return app_regeneratorRuntime().wrap((function _callee52$(a){for(;;)switch(a.prev=a.next){case 0:if(null!==(r=t.target)&&void 0!==r&&null!==(r=r.classList)&&void 0!==r&&r.contains("share-quest-button")){a.next=2;break}return a.abrupt("return");case 2:t.preventDefault(),o=t.target.dataset.uuid,ui.simpleQuest.openToPage(o);case 5:case"end":return a.stop()}}),_callee52)})));return function(r){return t.apply(this,arguments)}}()),Hooks.on("createChatMessage",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee53(t,r){var o;return app_regeneratorRuntime().wrap((function _callee53$(r){for(;;)switch(r.prev=r.next){case 0:if(null===(o=t.flags)||void 0===o||null===(o=o[Xe])||void 0===o||!o.simpleQuestMessage){r.next=5;break}return r.next=3,fromUuid(t.flags[Xe].simpleQuestMessage);case 3:showQuestNotification(r.sent,!0);case 5:case"end":return r.stop()}}),_callee53)})));return function(r,o){return t.apply(this,arguments)}}()),Hooks.on("renderJournalEntryPageTextSheet",(function(t,r,o){if(o.editable&&t.document.parent===$e.achievements.journal){var a=document.createElement("file-picker");a.type="image",a.name="src",a._value=t.document.src||"icons/commodities/treasure/cup-trophy-gold.webp",a.style.display="none";var i=document.createElement("img");i.src=t.document.src||"icons/commodities/treasure/cup-trophy-gold.webp",i.style.height="50px",i.style.maxWidth="50px",i.style.marginRight="0.5rem",i.style.cursor="pointer",i.style.borderRadius="5px",i.addEventListener("click",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee54(t){return app_regeneratorRuntime().wrap((function _callee54$(t){for(;;)switch(t.prev=t.next){case 0:a.button.click();case 1:case"end":return t.stop()}}),_callee54)})));return function(r){return t.apply(this,arguments)}}()),a.addEventListener("change",function(){var t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee55(t){var r;return app_regeneratorRuntime().wrap((function _callee55$(t){for(;;)switch(t.prev=t.next){case 0:r=a.value,i.src=r||"icons/commodities/treasure/cup-trophy-gold.webp";case 2:case"end":return t.stop()}}),_callee55)})));return function(r){return t.apply(this,arguments)}}());var l=document.createElement("input");l.type="color",l.name="flags.foundry-quest-log-ru.color",l.value=t.document.getFlag(Xe,"color")||"#000000",l.style.maxWidth="50px",l.style.minHeight="50px",l.style.marginRight="0.5rem",r.querySelector(".journal-header .heading-level").before(a,i,l)}})))}}]),SimpleQuest}(),Je=function(){function ColorHelper(t){app_classCallCheck(this,ColorHelper),this._color=new PIXI.Color(t),this.r=this._color.red,this.g=this._color.green,this.b=this._color.blue,this.a=this._color.alpha,this._hsl=ColorHelper.rgbToHsl(this.r,this.g,this.b),this.h=this._hsl[0],this.s=this._hsl[1],this.l=this._hsl[2]}return app_createClass(ColorHelper,[{key:"saturate",value:function saturate(t){return ColorHelper.rgbToHexString.apply(ColorHelper,app_toConsumableArray(ColorHelper.hslToRgb(this.h,Math.min(1,this.s*t),this.l)))}},{key:"brightness",value:function brightness(t){return ColorHelper.rgbToHexString.apply(ColorHelper,app_toConsumableArray(ColorHelper.hslToRgb(this.h,this.s,Math.min(1,this.l*t))))}}],[{key:"rgbToHsl",value:function rgbToHsl(t,r,o){var a,i,l=Math.max(t,r,o),c=Math.min(t,r,o),u=(l+c)/2;if(l==c)a=i=0;else{var p=l-c;switch(i=u>.5?p/(2-l-c):p/(l+c),l){case t:a=(r-o)/p+(r<o?6:0);break;case r:a=(o-t)/p+2;break;case o:a=(t-r)/p+4}a/=6}return[a,i,u]}},{key:"hslToRgb",value:function hslToRgb(t,r,o){var a,i,l;if(0==r)a=i=l=o;else{var c=function hue2rgb(t,r,o){return o<0&&(o+=1),o>1&&(o-=1),o<1/6?t+6*(r-t)*o:o<.5?r:o<2/3?t+(r-t)*(2/3-o)*6:t},u=o<.5?o*(1+r):o+r-o*r,p=2*o-u;a=c(p,u,t+1/3),i=c(p,u,t),l=c(p,u,t-1/3)}return[a,i,l]}},{key:"rgbToHexString",value:function rgbToHexString(t,r,o){return"#"+((1<<24)+((t*=255)<<16)+((r*=255)<<8)+(o*=255)).toString(16).slice(1).substring(0,6)}}]),ColorHelper}(),Qe=function(){function GlobalSearch(t,r){var o;app_classCallCheck(this,GlobalSearch),this.term=t.toLowerCase(),this.journals=r,this.textContentIndex=null!==(o=GlobalSearch.textContentIndex)&&void 0!==o?o:new Map,GlobalSearch.textContentIndex&&!this.expired||this.buildIndex()}var t;return app_createClass(GlobalSearch,[{key:"expired",get:function get(){return!GlobalSearch._lastIndex||Date.now()-GlobalSearch._lastIndex>12e4}},{key:"buildIndex",value:(t=app_asyncToGenerator(app_regeneratorRuntime().mark((function _callee56(){var t,r,o,a,i,l,c,u,p,d;return app_regeneratorRuntime().wrap((function _callee56$(h){for(;;)switch(h.prev=h.next){case 0:if(!GlobalSearch._indexing){h.next=2;break}return h.abrupt("return");case 2:GlobalSearch._indexing=!0,t=new Map,r=app_createForOfIteratorHelper(this.journals),h.prev=5,r.s();case 7:if((o=r.n()).done){h.next=37;break}a=o.value,i=a.pages,l=app_createForOfIteratorHelper(i),h.prev=11,l.s();case 13:if((c=l.n()).done){h.next=27;break}if((u=c.value).isOwner){h.next=19;break}if(ui.simpleQuest.hasPermission(u.uuid)){h.next=19;break}return h.abrupt("continue",25);case 19:return p=document.createElement("div"),h.next=22,foundry.applications.ux.TextEditor.implementation.enrichHTML(u.text.content,{secrets:game.user.isGM,relativeTo:u,async:!0});case 22:p.innerHTML=h.sent,d=p.textContent.toLowerCase(),t.set(u,d);case 25:h.next=13;break;case 27:h.next=32;break;case 29:h.prev=29,h.t0=h.catch(11),l.e(h.t0);case 32:return h.prev=32,l.f(),h.finish(32);case 35:h.next=7;break;case 37:h.next=42;break;case 39:h.prev=39,h.t1=h.catch(5),r.e(h.t1);case 42:return h.prev=42,r.f(),h.finish(42);case 45:GlobalSearch.textContentIndex=t,GlobalSearch._indexing=!1,GlobalSearch._lastIndex=Date.now();case 48:case"end":return h.stop()}}),_callee56,this,[[5,39,42,45],[11,29,32,35]])}))),function buildIndex(){return t.apply(this,arguments)})},{key:"getResults",value:function getResults(){var t=this;if(GlobalSearch._indexing||void 0===GlobalSearch._indexing)return[{page:{name:"Indexing"},bestMatch:"",matchIndex:-1}];var r,o=[],a=app_createForOfIteratorHelper(this.textContentIndex);try{var i=function _loop5(){var a=app_slicedToArray(r.value,2),i=a[0],l=a[1],c=t.getMatches(l);if(c.length&&c.forEach((function(t){var r=Math.max(0,t.index-100),a=Math.min(l.length,t.index+100),u=l.substring(r,a),p=u.indexOf(" "),d=u.lastIndexOf(" ");u=(u=u.substring(p,d)).trim(),u="...".concat(u,"..."),o.push({page:i,bestMatch:u,matchIndex:c.indexOf(t)})})),o.length>50)return"break"};for(a.s();!(r=a.n()).done;){if("break"===i())break}}catch(t){a.e(t)}finally{a.f()}return o}},{key:"getMatches",value:function getMatches(t){for(var r,o=[],a=new RegExp(this.term,"gi");null!==(r=a.exec(t));)o.push(r);return o}}]),GlobalSearch}();function journalTemplates_typeof(t){return journalTemplates_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},journalTemplates_typeof(t)}function journalTemplates_createForOfIteratorHelper(t,r){var o="undefined"!=typeof Symbol&&t[Symbol.iterator]||t["@@iterator"];if(!o){if(Array.isArray(t)||(o=function journalTemplates_unsupportedIterableToArray(t,r){if(!t)return;if("string"==typeof t)return journalTemplates_arrayLikeToArray(t,r);var o=Object.prototype.toString.call(t).slice(8,-1);"Object"===o&&t.constructor&&(o=t.constructor.name);if("Map"===o||"Set"===o)return Array.from(t);if("Arguments"===o||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(o))return journalTemplates_arrayLikeToArray(t,r)}(t))||r&&t&&"number"==typeof t.length){o&&(t=o);var a=0,i=function F(){};return{s:i,n:function n(){return a>=t.length?{done:!0}:{done:!1,value:t[a++]}},e:function e(t){throw t},f:i}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var l,c=!0,u=!1;return{s:function s(){o=o.call(t)},n:function n(){var t=o.next();return c=t.done,t},e:function e(t){u=!0,l=t},f:function f(){try{c||null==o.return||o.return()}finally{if(u)throw l}}}}function journalTemplates_arrayLikeToArray(t,r){(null==r||r>t.length)&&(r=t.length);for(var o=0,a=new Array(r);o<r;o++)a[o]=t[o];return a}function journalTemplates_regeneratorRuntime(){journalTemplates_regeneratorRuntime=function _regeneratorRuntime(){return t};var t={},r=Object.prototype,o=r.hasOwnProperty,a=Object.defineProperty||function(t,r,o){t[r]=o.value},i="function"==typeof Symbol?Symbol:{},l=i.iterator||"@@iterator",c=i.asyncIterator||"@@asyncIterator",u=i.toStringTag||"@@toStringTag";function define(t,r,o){return Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}),t[r]}try{define({},"")}catch(t){define=function define(t,r,o){return t[r]=o}}function wrap(t,r,o,i){var l=r&&r.prototype instanceof Generator?r:Generator,c=Object.create(l.prototype),u=new Context(i||[]);return a(c,"_invoke",{value:makeInvokeMethod(t,o,u)}),c}function tryCatch(t,r,o){try{return{type:"normal",arg:t.call(r,o)}}catch(t){return{type:"throw",arg:t}}}t.wrap=wrap;var p={};function Generator(){}function GeneratorFunction(){}function GeneratorFunctionPrototype(){}var d={};define(d,l,(function(){return this}));var h=Object.getPrototypeOf,m=h&&h(h(values([])));m&&m!==r&&o.call(m,l)&&(d=m);var g=GeneratorFunctionPrototype.prototype=Generator.prototype=Object.create(d);function defineIteratorMethods(t){["next","throw","return"].forEach((function(r){define(t,r,(function(t){return this._invoke(r,t)}))}))}function AsyncIterator(t,r){function invoke(a,i,l,c){var u=tryCatch(t[a],t,i);if("throw"!==u.type){var p=u.arg,d=p.value;return d&&"object"==journalTemplates_typeof(d)&&o.call(d,"__await")?r.resolve(d.__await).then((function(t){invoke("next",t,l,c)}),(function(t){invoke("throw",t,l,c)})):r.resolve(d).then((function(t){p.value=t,l(p)}),(function(t){return invoke("throw",t,l,c)}))}c(u.arg)}var i;a(this,"_invoke",{value:function value(t,o){function callInvokeWithMethodAndArg(){return new r((function(r,a){invoke(t,o,r,a)}))}return i=i?i.then(callInvokeWithMethodAndArg,callInvokeWithMethodAndArg):callInvokeWithMethodAndArg()}})}function makeInvokeMethod(t,r,o){var a="suspendedStart";return function(i,l){if("executing"===a)throw new Error("Generator is already running");if("completed"===a){if("throw"===i)throw l;return doneResult()}for(o.method=i,o.arg=l;;){var c=o.delegate;if(c){var u=maybeInvokeDelegate(c,o);if(u){if(u===p)continue;return u}}if("next"===o.method)o.sent=o._sent=o.arg;else if("throw"===o.method){if("suspendedStart"===a)throw a="completed",o.arg;o.dispatchException(o.arg)}else"return"===o.method&&o.abrupt("return",o.arg);a="executing";var d=tryCatch(t,r,o);if("normal"===d.type){if(a=o.done?"completed":"suspendedYield",d.arg===p)continue;return{value:d.arg,done:o.done}}"throw"===d.type&&(a="completed",o.method="throw",o.arg=d.arg)}}}function maybeInvokeDelegate(t,r){var o=r.method,a=t.iterator[o];if(void 0===a)return r.delegate=null,"throw"===o&&t.iterator.return&&(r.method="return",r.arg=void 0,maybeInvokeDelegate(t,r),"throw"===r.method)||"return"!==o&&(r.method="throw",r.arg=new TypeError("The iterator does not provide a '"+o+"' method")),p;var i=tryCatch(a,t.iterator,r.arg);if("throw"===i.type)return r.method="throw",r.arg=i.arg,r.delegate=null,p;var l=i.arg;return l?l.done?(r[t.resultName]=l.value,r.next=t.nextLoc,"return"!==r.method&&(r.method="next",r.arg=void 0),r.delegate=null,p):l:(r.method="throw",r.arg=new TypeError("iterator result is not an object"),r.delegate=null,p)}function pushTryEntry(t){var r={tryLoc:t[0]};1 in t&&(r.catchLoc=t[1]),2 in t&&(r.finallyLoc=t[2],r.afterLoc=t[3]),this.tryEntries.push(r)}function resetTryEntry(t){var r=t.completion||{};r.type="normal",delete r.arg,t.completion=r}function Context(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(pushTryEntry,this),this.reset(!0)}function values(t){if(t){var r=t[l];if(r)return r.call(t);if("function"==typeof t.next)return t;if(!isNaN(t.length)){var a=-1,i=function next(){for(;++a<t.length;)if(o.call(t,a))return next.value=t[a],next.done=!1,next;return next.value=void 0,next.done=!0,next};return i.next=i}}return{next:doneResult}}function doneResult(){return{value:void 0,done:!0}}return GeneratorFunction.prototype=GeneratorFunctionPrototype,a(g,"constructor",{value:GeneratorFunctionPrototype,configurable:!0}),a(GeneratorFunctionPrototype,"constructor",{value:GeneratorFunction,configurable:!0}),GeneratorFunction.displayName=define(GeneratorFunctionPrototype,u,"GeneratorFunction"),t.isGeneratorFunction=function(t){var r="function"==typeof t&&t.constructor;return!!r&&(r===GeneratorFunction||"GeneratorFunction"===(r.displayName||r.name))},t.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,GeneratorFunctionPrototype):(t.__proto__=GeneratorFunctionPrototype,define(t,u,"GeneratorFunction")),t.prototype=Object.create(g),t},t.awrap=function(t){return{__await:t}},defineIteratorMethods(AsyncIterator.prototype),define(AsyncIterator.prototype,c,(function(){return this})),t.AsyncIterator=AsyncIterator,t.async=function(r,o,a,i,l){void 0===l&&(l=Promise);var c=new AsyncIterator(wrap(r,o,a,i),l);return t.isGeneratorFunction(o)?c:c.next().then((function(t){return t.done?t.value:c.next()}))},defineIteratorMethods(g),define(g,u,"Generator"),define(g,l,(function(){return this})),define(g,"toString",(function(){return"[object Generator]"})),t.keys=function(t){var r=Object(t),o=[];for(var a in r)o.push(a);return o.reverse(),function next(){for(;o.length;){var t=o.pop();if(t in r)return next.value=t,next.done=!1,next}return next.done=!0,next}},t.values=values,Context.prototype={constructor:Context,reset:function reset(t){if(this.prev=0,this.next=0,this.sent=this._sent=void 0,this.done=!1,this.delegate=null,this.method="next",this.arg=void 0,this.tryEntries.forEach(resetTryEntry),!t)for(var r in this)"t"===r.charAt(0)&&o.call(this,r)&&!isNaN(+r.slice(1))&&(this[r]=void 0)},stop:function stop(){this.done=!0;var t=this.tryEntries[0].completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function dispatchException(t){if(this.done)throw t;var r=this;function handle(o,a){return l.type="throw",l.arg=t,r.next=o,a&&(r.method="next",r.arg=void 0),!!a}for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a],l=i.completion;if("root"===i.tryLoc)return handle("end");if(i.tryLoc<=this.prev){var c=o.call(i,"catchLoc"),u=o.call(i,"finallyLoc");if(c&&u){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0);if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}else if(c){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0)}else{if(!u)throw new Error("try statement without catch or finally");if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}}}},abrupt:function abrupt(t,r){for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a];if(i.tryLoc<=this.prev&&o.call(i,"finallyLoc")&&this.prev<i.finallyLoc){var l=i;break}}l&&("break"===t||"continue"===t)&&l.tryLoc<=r&&r<=l.finallyLoc&&(l=null);var c=l?l.completion:{};return c.type=t,c.arg=r,l?(this.method="next",this.next=l.finallyLoc,p):this.complete(c)},complete:function complete(t,r){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&r&&(this.next=r),p},finish:function finish(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.finallyLoc===t)return this.complete(o.completion,o.afterLoc),resetTryEntry(o),p}},catch:function _catch(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.tryLoc===t){var a=o.completion;if("throw"===a.type){var i=a.arg;resetTryEntry(o)}return i}}throw new Error("illegal catch attempt")},delegateYield:function delegateYield(t,r,o){return this.delegate={iterator:values(t),resultName:r,nextLoc:o},"next"===this.method&&(this.arg=void 0),p}},t}function journalTemplates_asyncGeneratorStep(t,r,o,a,i,l,c){try{var u=t[l](c),p=u.value}catch(t){return void o(t)}u.done?r(p):Promise.resolve(p).then(a,i)}function journalTemplates_asyncToGenerator(t){return function(){var r=this,o=arguments;return new Promise((function(a,i){var l=t.apply(r,o);function _next(t){journalTemplates_asyncGeneratorStep(l,a,i,_next,_throw,"next",t)}function _throw(t){journalTemplates_asyncGeneratorStep(l,a,i,_next,_throw,"throw",t)}_next(void 0)}))}}var Ue={banner:"fad fa-scroll-old",character:"fad fa-user","dynamic-columns":"fad fa-columns","image-text-left":"fad fa-image","image-text-right":"fad fa-image",location:"fad fa-place-of-worship","boxed-text":"fad fa-paragraph","description-text":"fad fa-text","character-grid-1x2":"fad fa-user","character-grid-1x3":"fad fa-user",wiki:"fad fa-book",event:"fad fa-calendar",custom:"fad fa-file-invoice"};function applyTemplate(t,r,o){return _applyTemplate.apply(this,arguments)}function _applyTemplate(){return _applyTemplate=journalTemplates_asyncToGenerator(journalTemplates_regeneratorRuntime().mark((function _callee3(t,r,o){var a,i,l,c,u,p,d,h,m,g;return journalTemplates_regeneratorRuntime().wrap((function _callee3$(y){for(;;)switch(y.prev=y.next){case 0:return y.next=2,o.close({force:!0});case 2:return a=r.text.content,y.next=5,fetch(t).then((function(t){return t.text()}));case 5:if(i=y.sent,i.includes("https://source.unsplash.com/random")){y.next=13;break}return l=a+"\n"+i,y.next=11,r.update({"text.content":l});case 11:return o.render(!0),y.abrupt("return");case 13:c=i.match(/https:\/\/source\.unsplash\.com\/random/g),u=[],p=journalTemplates_createForOfIteratorHelper(c),y.prev=16,p.s();case 18:if((d=p.n()).done){y.next=26;break}return d.value,y.next=22,getFile();case 22:h=y.sent,u.push(h);case 24:y.next=18;break;case 26:y.next=31;break;case 28:y.prev=28,y.t0=y.catch(16),p.e(y.t0);case 31:return y.prev=31,p.f(),y.finish(31);case 34:return m=c.reduce((function(t,r,o){return t.replace(r,u[o]||r)}),i),g=a+"\n"+m,y.next=38,r.update({"text.content":g});case 38:o.render(!0);case 39:case"end":return y.stop()}}),_callee3,null,[[16,28,31,34]])}))),_applyTemplate.apply(this,arguments)}function getFile(){return _getFile.apply(this,arguments)}function _getFile(){return(_getFile=journalTemplates_asyncToGenerator(journalTemplates_regeneratorRuntime().mark((function _callee5(){var t,r,o,a;return journalTemplates_regeneratorRuntime().wrap((function _callee5$(i){for(;;)switch(i.prev=i.next){case 0:return r=new Promise((function(r){return t=r})),o=new FilePicker({type:"image",callback:function callback(r){t(r)}}),a=o.close,o.close=journalTemplates_asyncToGenerator(journalTemplates_regeneratorRuntime().mark((function _callee4(){return journalTemplates_regeneratorRuntime().wrap((function _callee4$(r){for(;;)switch(r.prev=r.next){case 0:return t(null),r.next=3,a.bind(o)();case 3:case"end":return r.stop()}}),_callee4)}))),o.browse(),i.abrupt("return",r);case 6:case"end":return i.stop()}}),_callee5)})))).apply(this,arguments)}function overrides_createForOfIteratorHelper(t,r){var o="undefined"!=typeof Symbol&&t[Symbol.iterator]||t["@@iterator"];if(!o){if(Array.isArray(t)||(o=function overrides_unsupportedIterableToArray(t,r){if(!t)return;if("string"==typeof t)return overrides_arrayLikeToArray(t,r);var o=Object.prototype.toString.call(t).slice(8,-1);"Object"===o&&t.constructor&&(o=t.constructor.name);if("Map"===o||"Set"===o)return Array.from(t);if("Arguments"===o||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(o))return overrides_arrayLikeToArray(t,r)}(t))||r&&t&&"number"==typeof t.length){o&&(t=o);var a=0,i=function F(){};return{s:i,n:function n(){return a>=t.length?{done:!0}:{done:!1,value:t[a++]}},e:function e(t){throw t},f:i}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var l,c=!0,u=!1;return{s:function s(){o=o.call(t)},n:function n(){var t=o.next();return c=t.done,t},e:function e(t){u=!0,l=t},f:function f(){try{c||null==o.return||o.return()}finally{if(u)throw l}}}}function overrides_arrayLikeToArray(t,r){(null==r||r>t.length)&&(r=t.length);for(var o=0,a=new Array(r);o<r;o++)a[o]=t[o];return a}function mindmap_typeof(t){return mindmap_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},mindmap_typeof(t)}function mindmap_regeneratorRuntime(){mindmap_regeneratorRuntime=function _regeneratorRuntime(){return t};var t={},r=Object.prototype,o=r.hasOwnProperty,a=Object.defineProperty||function(t,r,o){t[r]=o.value},i="function"==typeof Symbol?Symbol:{},l=i.iterator||"@@iterator",c=i.asyncIterator||"@@asyncIterator",u=i.toStringTag||"@@toStringTag";function define(t,r,o){return Object.defineProperty(t,r,{value:o,enumerable:!0,configurable:!0,writable:!0}),t[r]}try{define({},"")}catch(t){define=function define(t,r,o){return t[r]=o}}function wrap(t,r,o,i){var l=r&&r.prototype instanceof Generator?r:Generator,c=Object.create(l.prototype),u=new Context(i||[]);return a(c,"_invoke",{value:makeInvokeMethod(t,o,u)}),c}function tryCatch(t,r,o){try{return{type:"normal",arg:t.call(r,o)}}catch(t){return{type:"throw",arg:t}}}t.wrap=wrap;var p={};function Generator(){}function GeneratorFunction(){}function GeneratorFunctionPrototype(){}var d={};define(d,l,(function(){return this}));var h=Object.getPrototypeOf,m=h&&h(h(values([])));m&&m!==r&&o.call(m,l)&&(d=m);var g=GeneratorFunctionPrototype.prototype=Generator.prototype=Object.create(d);function defineIteratorMethods(t){["next","throw","return"].forEach((function(r){define(t,r,(function(t){return this._invoke(r,t)}))}))}function AsyncIterator(t,r){function invoke(a,i,l,c){var u=tryCatch(t[a],t,i);if("throw"!==u.type){var p=u.arg,d=p.value;return d&&"object"==mindmap_typeof(d)&&o.call(d,"__await")?r.resolve(d.__await).then((function(t){invoke("next",t,l,c)}),(function(t){invoke("throw",t,l,c)})):r.resolve(d).then((function(t){p.value=t,l(p)}),(function(t){return invoke("throw",t,l,c)}))}c(u.arg)}var i;a(this,"_invoke",{value:function value(t,o){function callInvokeWithMethodAndArg(){return new r((function(r,a){invoke(t,o,r,a)}))}return i=i?i.then(callInvokeWithMethodAndArg,callInvokeWithMethodAndArg):callInvokeWithMethodAndArg()}})}function makeInvokeMethod(t,r,o){var a="suspendedStart";return function(i,l){if("executing"===a)throw new Error("Generator is already running");if("completed"===a){if("throw"===i)throw l;return doneResult()}for(o.method=i,o.arg=l;;){var c=o.delegate;if(c){var u=maybeInvokeDelegate(c,o);if(u){if(u===p)continue;return u}}if("next"===o.method)o.sent=o._sent=o.arg;else if("throw"===o.method){if("suspendedStart"===a)throw a="completed",o.arg;o.dispatchException(o.arg)}else"return"===o.method&&o.abrupt("return",o.arg);a="executing";var d=tryCatch(t,r,o);if("normal"===d.type){if(a=o.done?"completed":"suspendedYield",d.arg===p)continue;return{value:d.arg,done:o.done}}"throw"===d.type&&(a="completed",o.method="throw",o.arg=d.arg)}}}function maybeInvokeDelegate(t,r){var o=r.method,a=t.iterator[o];if(void 0===a)return r.delegate=null,"throw"===o&&t.iterator.return&&(r.method="return",r.arg=void 0,maybeInvokeDelegate(t,r),"throw"===r.method)||"return"!==o&&(r.method="throw",r.arg=new TypeError("The iterator does not provide a '"+o+"' method")),p;var i=tryCatch(a,t.iterator,r.arg);if("throw"===i.type)return r.method="throw",r.arg=i.arg,r.delegate=null,p;var l=i.arg;return l?l.done?(r[t.resultName]=l.value,r.next=t.nextLoc,"return"!==r.method&&(r.method="next",r.arg=void 0),r.delegate=null,p):l:(r.method="throw",r.arg=new TypeError("iterator result is not an object"),r.delegate=null,p)}function pushTryEntry(t){var r={tryLoc:t[0]};1 in t&&(r.catchLoc=t[1]),2 in t&&(r.finallyLoc=t[2],r.afterLoc=t[3]),this.tryEntries.push(r)}function resetTryEntry(t){var r=t.completion||{};r.type="normal",delete r.arg,t.completion=r}function Context(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(pushTryEntry,this),this.reset(!0)}function values(t){if(t){var r=t[l];if(r)return r.call(t);if("function"==typeof t.next)return t;if(!isNaN(t.length)){var a=-1,i=function next(){for(;++a<t.length;)if(o.call(t,a))return next.value=t[a],next.done=!1,next;return next.value=void 0,next.done=!0,next};return i.next=i}}return{next:doneResult}}function doneResult(){return{value:void 0,done:!0}}return GeneratorFunction.prototype=GeneratorFunctionPrototype,a(g,"constructor",{value:GeneratorFunctionPrototype,configurable:!0}),a(GeneratorFunctionPrototype,"constructor",{value:GeneratorFunction,configurable:!0}),GeneratorFunction.displayName=define(GeneratorFunctionPrototype,u,"GeneratorFunction"),t.isGeneratorFunction=function(t){var r="function"==typeof t&&t.constructor;return!!r&&(r===GeneratorFunction||"GeneratorFunction"===(r.displayName||r.name))},t.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,GeneratorFunctionPrototype):(t.__proto__=GeneratorFunctionPrototype,define(t,u,"GeneratorFunction")),t.prototype=Object.create(g),t},t.awrap=function(t){return{__await:t}},defineIteratorMethods(AsyncIterator.prototype),define(AsyncIterator.prototype,c,(function(){return this})),t.AsyncIterator=AsyncIterator,t.async=function(r,o,a,i,l){void 0===l&&(l=Promise);var c=new AsyncIterator(wrap(r,o,a,i),l);return t.isGeneratorFunction(o)?c:c.next().then((function(t){return t.done?t.value:c.next()}))},defineIteratorMethods(g),define(g,u,"Generator"),define(g,l,(function(){return this})),define(g,"toString",(function(){return"[object Generator]"})),t.keys=function(t){var r=Object(t),o=[];for(var a in r)o.push(a);return o.reverse(),function next(){for(;o.length;){var t=o.pop();if(t in r)return next.value=t,next.done=!1,next}return next.done=!0,next}},t.values=values,Context.prototype={constructor:Context,reset:function reset(t){if(this.prev=0,this.next=0,this.sent=this._sent=void 0,this.done=!1,this.delegate=null,this.method="next",this.arg=void 0,this.tryEntries.forEach(resetTryEntry),!t)for(var r in this)"t"===r.charAt(0)&&o.call(this,r)&&!isNaN(+r.slice(1))&&(this[r]=void 0)},stop:function stop(){this.done=!0;var t=this.tryEntries[0].completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function dispatchException(t){if(this.done)throw t;var r=this;function handle(o,a){return l.type="throw",l.arg=t,r.next=o,a&&(r.method="next",r.arg=void 0),!!a}for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a],l=i.completion;if("root"===i.tryLoc)return handle("end");if(i.tryLoc<=this.prev){var c=o.call(i,"catchLoc"),u=o.call(i,"finallyLoc");if(c&&u){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0);if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}else if(c){if(this.prev<i.catchLoc)return handle(i.catchLoc,!0)}else{if(!u)throw new Error("try statement without catch or finally");if(this.prev<i.finallyLoc)return handle(i.finallyLoc)}}}},abrupt:function abrupt(t,r){for(var a=this.tryEntries.length-1;a>=0;--a){var i=this.tryEntries[a];if(i.tryLoc<=this.prev&&o.call(i,"finallyLoc")&&this.prev<i.finallyLoc){var l=i;break}}l&&("break"===t||"continue"===t)&&l.tryLoc<=r&&r<=l.finallyLoc&&(l=null);var c=l?l.completion:{};return c.type=t,c.arg=r,l?(this.method="next",this.next=l.finallyLoc,p):this.complete(c)},complete:function complete(t,r){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&r&&(this.next=r),p},finish:function finish(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.finallyLoc===t)return this.complete(o.completion,o.afterLoc),resetTryEntry(o),p}},catch:function _catch(t){for(var r=this.tryEntries.length-1;r>=0;--r){var o=this.tryEntries[r];if(o.tryLoc===t){var a=o.completion;if("throw"===a.type){var i=a.arg;resetTryEntry(o)}return i}}throw new Error("illegal catch attempt")},delegateYield:function delegateYield(t,r,o){return this.delegate={iterator:values(t),resultName:r,nextLoc:o},"next"===this.method&&(this.arg=void 0),p}},t}function mindmap_asyncGeneratorStep(t,r,o,a,i,l,c){try{var u=t[l](c),p=u.value}catch(t){return void o(t)}u.done?r(p):Promise.resolve(p).then(a,i)}function mindmap_asyncToGenerator(t){return function(){var r=this,o=arguments;return new Promise((function(a,i){var l=t.apply(r,o);function _next(t){mindmap_asyncGeneratorStep(l,a,i,_next,_throw,"next",t)}function _throw(t){mindmap_asyncGeneratorStep(l,a,i,_next,_throw,"throw",t)}_next(void 0)}))}}var Be=null,Ye=".mermaid";function loadMermaid(){return _loadMermaid.apply(this,arguments)}function _loadMermaid(){return(_loadMermaid=mindmap_asyncToGenerator(mindmap_regeneratorRuntime().mark((function _callee(){var t,r;return mindmap_regeneratorRuntime().wrap((function _callee$(o){for(;;)switch(o.prev=o.next){case 0:return t=new Function("url","return import(url)"),o.next=3,t("https://cdn.jsdelivr.net/npm/mermaid/+esm");case 3:r=o.sent,(Be=r.default).initialize({startOnLoad:!1,theme:"base",themeVariables:{primaryColor:getComputedStyle(document.documentElement).getPropertyValue("--foundry-quest-log-ru-background-color"),primaryTextColor:getComputedStyle(document.documentElement).getPropertyValue("--foundry-quest-log-ru-text-0"),primaryBorderColor:getComputedStyle(document.documentElement).getPropertyValue("--foundry-quest-log-ru-text-4"),lineColor:getComputedStyle(document.documentElement).getPropertyValue("--foundry-quest-log-ru-text-4"),secondaryColor:getComputedStyle(document.documentElement).getPropertyValue("--foundry-quest-log-ru-background-color"),tertiaryColor:getComputedStyle(document.documentElement).getPropertyValue("--foundry-quest-log-ru-background-color")}});case 6:case"end":return o.stop()}}),_callee)})))).apply(this,arguments)}function setupMermaid(){return _setupMermaid.apply(this,arguments)}function _setupMermaid(){return(_setupMermaid=mindmap_asyncToGenerator(mindmap_regeneratorRuntime().mark((function _callee2(){return mindmap_regeneratorRuntime().wrap((function _callee2$(t){for(;;)switch(t.prev=t.next){case 0:if(Be){t.next=3;break}return t.next=3,loadMermaid();case 3:Promise.resolve(Be.run({querySelector:Ye})).catch((function(){return ui.notifications?.warn("Mermaid не загрузился. Текст mindmap сохранён без визуализации.")}));case 4:case"end":return t.stop()}}),_callee2)})))).apply(this,arguments)}function enrichers_toConsumableArray(t){return function enrichers_arrayWithoutHoles(t){if(Array.isArray(t))return enrichers_arrayLikeToArray(t)}(t)||function enrichers_iterableToArray(t){if("undefined"!=typeof Symbol&&null!=t[Symbol.iterator]||null!=t["@@iterator"])return Array.from(t)}(t)||enrichers_unsupportedIterableToArray(t)||function enrichers_nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function enrichers_slicedToArray(t,r){return function enrichers_arrayWithHoles(t){if(Array.isArray(t))return t}(t)||function enrichers_iterableToArrayLimit(t,r){var o=null==t?null:"undefined"!=typeof Symbol&&t[Symbol.iterator]||t["@@iterator"];if(null!=o){var a,i,l,c,u=[],p=!0,d=!1;try{if(l=(o=o.call(t)).next,0===r){if(Object(o)!==o)return;p=!1}else for(;!(p=(a=l.call(o)).done)&&(u.push(a.value),u.length!==r);p=!0);}catch(t){d=!0,i=t}finally{try{if(!p&&null!=o.return&&(c=o.return(),Object(c)!==c))return}finally{if(d)throw i}}return u}}(t,r)||enrichers_unsupportedIterableToArray(t,r)||function enrichers_nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function enrichers_unsupportedIterableToArray(t,r){if(t){if("string"==typeof t)return enrichers_arrayLikeToArray(t,r);var o=Object.prototype.toString.call(t).slice(8,-1);return"Object"===o&&t.constructor&&(o=t.constructor.name),"Map"===o||"Set"===o?Array.from(t):"Arguments"===o||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(o)?enrichers_arrayLikeToArray(t,r):void 0}}function enrichers_arrayLikeToArray(t,r){(null==r||r>t.length)&&(r=t.length);for(var o=0,a=new Array(r);o<r;o++)a[o]=t[o];return a}function lerp(t,r,o){return t*(1-o)+r*o}function getRGBfromCSSColor(t){var r=document.createElement("div");r.style.color=t,document.body.appendChild(r);var o=window.getComputedStyle(r).color;document.body.removeChild(r);var a=o.match(/\d+/g);return{r:parseInt(a[0]),g:parseInt(a[1]),b:parseInt(a[2])}}function autoImport_slicedToArray(t,r){return function autoImport_arrayWithHoles(t){if(Array.isArray(t))return t}(t)||function autoImport_iterableToArrayLimit(t,r){var o=null==t?null:"undefined"!=typeof Symbol&&t[Symbol.iterator]||t["@@iterator"];if(null!=o){var a,i,l,c,u=[],p=!0,d=!1;try{if(l=(o=o.call(t)).next,0===r){if(Object(o)!==o)return;p=!1}else for(;!(p=(a=l.call(o)).done)&&(u.push(a.value),u.length!==r);p=!0);}catch(t){d=!0,i=t}finally{try{if(!p&&null!=o.return&&(c=o.return(),Object(c)!==c))return}finally{if(d)throw i}}return u}}(t,r)||function autoImport_unsupportedIterableToArray(t,r){if(!t)return;if("string"==typeof t)return autoImport_arrayLikeToArray(t,r);var o=Object.prototype.toString.call(t).slice(8,-1);"Object"===o&&t.constructor&&(o=t.constructor.name);if("Map"===o||"Set"===o)return Array.from(t);if("Arguments"===o||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(o))return autoImport_arrayLikeToArray(t,r)}(t,r)||function autoImport_nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function autoImport_arrayLikeToArray(t,r){(null==r||r>t.length)&&(r=t.length);for(var o=0,a=new Array(r);o<r;o++)a[o]=t[o];return a}var Ve="SimpleQuestAutoImport$";var Xe="foundry-quest-log-ru";!function initJournalTemplates(){Hooks.on("getHeaderControlsJournalEntryPageProseMirrorSheet",(function(t,r){var o;r.push({class:"foundry-quest-log-ru-page-template",icon:"fas fa-scroll-old",label:game.i18n.localize("".concat(Xe,".page-template.label")),onClick:(o=journalTemplates_asyncToGenerator(journalTemplates_regeneratorRuntime().mark((function _callee2(){var r,o,a;return journalTemplates_regeneratorRuntime().wrap((function _callee2$(i){for(;;)switch(i.prev=i.next){case 0:return i.next=2,FilePicker.browse("data","modules/".concat(Xe,"/templates/JournalTemplates"));case 2:return r=i.sent.files,o=[],i.prev=4,i.next=7,FilePicker.browse("user","modules/".concat(Xe,"/storage"),{extensions:[".html"]});case 7:o=i.sent.files,i.next=14;break;case 10:i.prev=10,i.t0=i.catch(4),console.error(i.t0),o=[];case 14:a=r.concat(o).map((function(r){var o,a;return{label:r.split("/").pop().split(".").slice(0,-1).join(".").split("-").map((function(t){return t.charAt(0).toUpperCase()+t.slice(1)})).join(" "),icon:'<i class="'.concat(null!==(o=Ue[r.split("/").pop().split(".").slice(0,-1).join(".")])&&void 0!==o?o:Ue.custom,'"></i>'),callback:(a=journalTemplates_asyncToGenerator(journalTemplates_regeneratorRuntime().mark((function _callee(){return journalTemplates_regeneratorRuntime().wrap((function _callee$(o){for(;;)switch(o.prev=o.next){case 0:return o.next=2,applyTemplate(r,t.document,t);case 2:case"end":return o.stop()}}),_callee)}))),function callback(){return a.apply(this,arguments)})}})),new Dialog({title:game.i18n.localize("".concat(Xe,".page-template.label")),content:"<p>".concat(game.i18n.localize("".concat(Xe,".page-template.description")),"</p>"),buttons:a,render:function render(t){t[0].closest(".app").classList.add("foundry-quest-log-ru-dialog"),t[0].closest(".app").classList.add("page-template-dialog")}}).render(!0);case 16:case"end":return i.stop()}}),_callee2,null,[[4,10]])}))),function onClick(){return o.apply(this,arguments)})})}))}(),Hooks.on("setup",(function(){!function registerSettings(){game.settings.registerMenu(Xe,"tabConfig",{name:"".concat(Xe,".settings.tabConfig.name"),label:"".concat(Xe,".settings.tabConfig.label"),hint:"".concat(Xe,".settings.tabConfig.hint"),icon:"fas fa-cog",type:r,restricted:!0}),game.settings.registerMenu(Xe,"themeConfig",{name:"".concat(Xe,".settings.themeConfig.name"),label:"".concat(Xe,".settings.themeConfig.label"),hint:"".concat(Xe,".settings.themeConfig.hint"),icon:"fas fa-palette",type:a,restricted:!0}),registerSettingsArray({showHistory:{name:"".concat(Xe,".settings.showHistory.name"),hint:"".concat(Xe,".settings.showHistory.hint"),scope:"world",config:!0,type:Boolean,default:!0},hideCheckboxAutoHide:{name:"".concat(Xe,".settings.hideCheckboxAutoHide.name"),hint:"".concat(Xe,".settings.hideCheckboxAutoHide.hint"),scope:"world",config:!0,type:Boolean,default:!1},folderName:{name:"".concat(Xe,".settings.folderName.name"),hint:"".concat(Xe,".settings.folderName.hint"),scope:"world",config:!0,type:String,default:"Квесты"},loreFolderName:{name:"".concat(Xe,".settings.loreFolderName.name"),hint:"".concat(Xe,".settings.loreFolderName.hint"),scope:"world",config:!0,type:String,default:"Лор"},mapsJournalName:{name:"".concat(Xe,".settings.mapsJournalName.name"),hint:"".concat(Xe,".settings.mapsJournalName.hint"),scope:"world",config:!0,type:String,default:"Карты"},timelineJournalName:{name:"".concat(Xe,".settings.timelineJournalName.name"),hint:"".concat(Xe,".settings.timelineJournalName.hint"),scope:"world",config:!0,type:String,default:"Хронология"},achievementsJournalName:{name:"".concat(Xe,".settings.achievementsJournalName.name"),hint:"".concat(Xe,".settings.achievementsJournalName.hint"),scope:"world",config:!0,type:String,default:"Достижения"},partyJournalName:{name:"".concat(Xe,".settings.partyJournalName.name"),hint:"".concat(Xe,".settings.partyJournalName.hint"),scope:"world",config:!0,type:String,default:"Группа"},sharedJournalName:{name:"".concat(Xe,".settings.sharedJournalName.name"),hint:"".concat(Xe,".settings.sharedJournalName.hint"),scope:"world",config:!0,type:String,default:"Общий"},backgroundColor:{name:"".concat(Xe,".settings.backgroundColor.name"),hint:"".concat(Xe,".settings.backgroundColor.hint"),scope:"world",config:!0,type:String,default:"#1b130d",onChange:function onChange(){ui.simpleQuest.updateStyle()}},textColor:{name:"".concat(Xe,".settings.textColor.name"),hint:"".concat(Xe,".settings.textColor.hint"),scope:"world",config:!0,type:String,default:"#f5deb3",onChange:function onChange(){ui.simpleQuest.updateStyle()}},secretColor:{name:"".concat(Xe,".settings.secretColor.name"),hint:"".concat(Xe,".settings.secretColor.hint"),scope:"world",config:!0,type:String,default:"#ff00ff",onChange:function onChange(){ui.simpleQuest.updateStyle()}},failedColor:{name:"".concat(Xe,".settings.failedColor.name"),hint:"".concat(Xe,".settings.failedColor.hint"),scope:"world",config:!0,type:String,default:"#ff0000",onChange:function onChange(){ui.simpleQuest.updateStyle()}},labelColor:{name:"".concat(Xe,".settings.labelColor.name"),hint:"".concat(Xe,".settings.labelColor.hint"),scope:"world",config:!0,type:String,default:"none",onChange:function onChange(){ui.simpleQuest.refresh()}},invertTheme:{name:"".concat(Xe,".settings.invertTheme.name"),hint:"".concat(Xe,".settings.invertTheme.hint"),scope:"world",config:!0,type:Boolean,default:!1,onChange:function onChange(){ui.simpleQuest.updateStyle()}},matchJournalStyle:{name:"".concat(Xe,".settings.matchJournalStyle.name"),hint:"".concat(Xe,".settings.matchJournalStyle.hint"),scope:"world",config:!0,type:Boolean,default:!1,onChange:function onChange(){ui.simpleQuest.updateStyle()}},hideFolderFromPlayers:{name:"".concat(Xe,".settings.hideFolderFromPlayers.name"),hint:"".concat(Xe,".settings.hideFolderFromPlayers.hint"),scope:"world",config:!0,type:Boolean,default:!0},useMessageTheme:{name:"".concat(Xe,".settings.useMessageTheme.name"),hint:"".concat(Xe,".settings.useMessageTheme.hint"),scope:"world",config:!0,type:Boolean,default:!0},showQuestNotifications:{name:"".concat(Xe,".settings.showQuestNotifications.name"),hint:"".concat(Xe,".settings.showQuestNotifications.hint"),scope:"world",config:!0,type:Boolean,default:!0},newQuestSoundEffect:{name:"".concat(Xe,".settings.newQuestSoundEffect.name"),hint:"".concat(Xe,".settings.newQuestSoundEffect.hint"),scope:"world",config:!0,type:String,filePicker:"audio",default:""},updateQuestSoundEffect:{name:"".concat(Xe,".settings.updateQuestSoundEffect.name"),hint:"".concat(Xe,".settings.updateQuestSoundEffect.hint"),scope:"world",config:!0,type:String,filePicker:"audio",default:""},openJournalPinsAsModals:{name:"".concat(Xe,".settings.openJournalPinsAsModals.name"),hint:"".concat(Xe,".settings.openJournalPinsAsModals.hint"),scope:"world",config:!0,type:Boolean,default:!0},enableQuests:{name:"".concat(Xe,".settings.enableQuests.name"),hint:"".concat(Xe,".settings.enableQuests.hint"),scope:"world",config:!0,type:Boolean,default:!0},enablePartyJournal:{name:"".concat(Xe,".settings.enablePartyJournal.name"),hint:"".concat(Xe,".settings.enablePartyJournal.hint"),scope:"world",config:!0,type:Boolean,default:!0},enableMyJournal:{name:"".concat(Xe,".settings.enableMyJournal.name"),hint:"".concat(Xe,".settings.enableMyJournal.hint"),scope:"world",config:!0,type:Boolean,default:!0},enableMaps:{name:"".concat(Xe,".settings.enableMaps.name"),hint:"".concat(Xe,".settings.enableMaps.hint"),scope:"world",config:!0,type:Boolean,default:!0},enableLore:{name:"".concat(Xe,".settings.enableLore.name"),hint:"".concat(Xe,".settings.enableLore.hint"),scope:"world",config:!0,type:Boolean,default:!0},enableTimeline:{name:"".concat(Xe,".settings.enableTimeline.name"),hint:"".concat(Xe,".settings.enableTimeline.hint"),scope:"world",config:!0,type:Boolean,default:!0},enableAchievements:{name:"".concat(Xe,".settings.enableAchievements.name"),hint:"".concat(Xe,".settings.enableAchievements.hint"),scope:"world",config:!0,type:Boolean,default:!0},imagePageMask:{name:"".concat(Xe,".settings.imagePageMask.name"),hint:"".concat(Xe,".settings.imagePageMask.hint"),scope:"world",config:!0,type:String,filePicker:"image",default:"modules/foundry-quest-log-ru/assets/mask/mask1.webp"},matchJournalPermission:{name:"".concat(Xe,".settings.matchJournalPermission.name"),hint:"".concat(Xe,".settings.matchJournalPermission.hint"),scope:"world",config:!0,type:Boolean,default:!1},ttmSrc:{scope:"world",config:!1,type:Object,default:null,onChange:function onChange(t){return setTTM(t)}},lastQuest:{scope:"client",config:!1,type:String,default:""},lastMap:{scope:"client",config:!1,type:String,default:""},lastLore:{scope:"client",config:!1,type:String,default:""},lastAchievements:{scope:"client",config:!1,type:String,default:""},lastTimeline:{scope:"client",config:!1,type:String,default:""},lastMyJournal:{scope:"client",config:!1,type:String,default:""},lastPartyJournal:{scope:"client",config:!1,type:String,default:""},timelineScroll:{scope:"client",config:!1,type:Number,default:0},lastTab:{scope:"client",config:!1,type:String,default:"quests"},seenQuests:{scope:"client",config:!1,type:Object,default:{}},showCompleted:{scope:"client",config:!1,type:Boolean,default:!0},welcomeMessage:{scope:"client",config:!1,type:Boolean,default:!1},welcomeMaps:{scope:"client",config:!1,type:Boolean,default:!1},detailsStatus:{scope:"client",config:!1,type:Object,default:{}},windowedMode:{scope:"client",config:!1,type:Boolean,default:!1},themeConfigShown:{scope:"client",config:!1,type:Boolean,default:!1},fontSize:{scope:"client",config:!1,type:Number,default:1.5,onChange:function onChange(){ui.simpleQuest.updateStyle()}},tabNames:{scope:"world",config:!1,type:Object,default:settings_objectSpread({},l),onChange:function onChange(){ui.simpleQuest.refresh()}}}),Hooks.on("renderSettingsConfig",(function(t,r,o){colorPicker("backgroundColor",r),colorPicker("textColor",r),colorPicker("secretColor",r),colorPicker("failedColor",r),colorPicker("labelColor",r),r.querySelector('select[name="'.concat(Xe,'.fontFamily"]')).querySelectorAll("option").forEach((function(t){t.style.fontFamily=t.value})),r.querySelector('select[name="'.concat(Xe,'.headerOnlyFont"]')).querySelectorAll("option").forEach((function(t){t.style.fontFamily=t.value}))}))}(),function initConfig(){Hooks.on("getSceneControlButtons",(function(t){t.notes.tools.toggleSimpleQuest={name:"toggleSimpleQuest",title:game.i18n.localize("".concat(Xe,".hotkeys.toggleSimpleQuest.name")),icon:"fas fa-scroll-old",button:!0,onChange:function onChange(){ui.simpleQuest.toggle()}}})),Hooks.on("renderJournalDirectory",(function(t,r){var o=r.querySelector(".header-actions.action-buttons"),a=document.createElement("button");if(a.classList.add("".concat(Xe,"-open-quest-app")),a.type="button",a.innerHTML='<i class="fas fa-scroll-old"></i><span>'.concat(game.i18n.localize("".concat(Xe,".foundry-quest-log-ru.title")),"</span>"),a.onclick=function(){ui.simpleQuest.toggle()},o.appendChild(a),!game.user.isGM&&getSetting("hideFolderFromPlayers")){var i=Array.from(game.folders).find((function(t){return t.name===getSetting("folderName")&&"JournalEntry"===t.type}));if(i){var l=r.querySelector('li[data-uuid="'.concat(i.uuid,'"]'));l&&l.classList.add("foundry-quest-log-ru-hide-folder")}}}));var t={CALLOUT:[{id:"callout-lore",class:"notification lore"},{id:"callout-creature",class:"notification creature"},{id:"callout-npc",class:"notification npc"},{id:"callout-location",class:"notification location"},{id:"callout-magic",class:"notification magic"},{id:"callout-item",class:"notification item"},{id:"callout-event",class:"notification event"},{id:"callout-time",class:"notification time"}],PAGE_INSERT:[{id:"parchment-note-1",class:"parchment-note-1"},{id:"parchment-note-2",class:"parchment-note-2"},{id:"parchment-note-3",class:"parchment-note-3"},{id:"parchment-note-4",class:"parchment-note-4"},{id:"parchment-book-1",class:"parchment-book-1"},{id:"parchment-book-2",class:"parchment-book-2"},{id:"parchment-scroll-1",class:"parchment-scroll-1"}],TEXT:[{id:"paragraph-initial",class:"initial"}]},r={CALLOUT:t.CALLOUT.map((function(t){return t.class})),PAGE_INSERT:t.PAGE_INSERT.map((function(t){return t.class})),COMBINED:[].concat(_toConsumableArray(t.CALLOUT.map((function(t){return t.class}))),_toConsumableArray(t.PAGE_INSERT.map((function(t){return t.class}))))};function handleToggleClass(t,r){var o=arguments.length>2&&void 0!==arguments[2]?arguments[2]:[],a=t.view,i=a.state,l=a.dispatch,c=i.selection,u=c.from,p=(c.to,c.$from,function findClosestAncestorOfType(t,r){for(var o=t.depth;o>0;o--){var a=t.node(o);if(a.type===r)return{pos:t.before(o),node:a,originalPos:o}}return null}(i.doc.resolve(u),i.schema.nodes.paragraph));if(!p)return!1;var d=(p.node.attrs._preserve.class||"").split(" ").filter((function(t){return t})).join(" ");o.forEach((function(t){d=d.replace(t,"")}));var h=(d=d.split(" ").filter((function(t){return t})).join(" ")).includes(r)?d.replace(r,""):d+" "+r,m=foundry.utils.deepClone(p.node.attrs),g=foundry.utils.deepClone(p.node.attrs),y=foundry.utils.mergeObject(m,{_preserve:{class:h.trim()}});return l(i.tr.setNodeMarkup(p.pos,void 0,y)),i.tr.setNodeMarkup(p.pos,void 0,foundry.utils.mergeObject(g,{_preserve:{class:""}})),!0}Hooks.on("getProseMirrorMenuDropDowns",(function(o,a){var i={action:"".concat(Xe,"-callout"),title:"".concat(Xe,".proseMirrorMenu.callout.title"),children:t.CALLOUT.map((function(t){return{action:t.id,title:"".concat(Xe,".proseMirrorMenu.callout.").concat(t.id),priority:3,cmd:function cmd(){handleToggleClass(o,t.class,r.COMBINED.filter((function(r){return r!==t.class})))}}}))},l={action:"".concat(Xe,"-page-insert"),title:"".concat(Xe,".proseMirrorMenu.pageInsert.title"),children:t.PAGE_INSERT.map((function(t){return{action:t.id,title:"".concat(Xe,".proseMirrorMenu.pageInsert.").concat(t.id),priority:3,cmd:function cmd(){handleToggleClass(o,t.class,r.COMBINED.filter((function(r){return r!==t.class})))}}}))};a.format.entries.push(i,l),a.format.entries.find((function(t){return"inline"===t.action})).children.push({action:"".concat(Xe,"-initial"),title:"".concat(Xe,".proseMirrorMenu.text.initial"),priority:3,cmd:function cmd(){handleToggleClass(o,"initial")}})})),Hooks.on("renderJournalEntryPageImageSheet",(function(t,r,o){var a;if(null!==(a=ui.simpleQuest)&&void 0!==a&&a.rendered&&game.user.isGM){var i=r.querySelectorAll(".form-group"),l=i[i.length-1],c=t.document.getFlag(Xe,"fowMask")||"";l.insertAdjacentHTML("afterend",'<div class="form-group">\n        <label>'.concat(game.i18n.localize("".concat(Xe,".injected.fowMask.label")),'</label>\n        <file-picker name="flags.foundry-quest-log-ru.fowMask" type="image" value="').concat(c,'"></file-picker>\n    </div>')),t.setPosition({height:"auto"})}}))}(),Le.register("openToPage",(function(t){var r=t.uuid;ui.simpleQuest.openToPage(r)}))})),Hooks.on("init",(function(){game.keybindings.register(Xe,"toggleSimpleQuest",{name:"".concat(Xe,".hotkeys.toggleSimpleQuest.name"),editable:[{key:"KeyJ"}],restricted:!1,precedence:CONST.KEYBINDING_PRECEDENCE.PRIORITY,onDown:function onDown(){ui.simpleQuest.toggle()}}),function setMermaidHooks(){window.runMermaid=function(){return setupMermaid()},Hooks.on("renderJournalPageSheet",(function(t,r,o){r.find(Ye)&&setTimeout((function(){setupMermaid().catch((function(){}))}),1)})),Hooks.on("".concat(Xe,".onSelectQuest"),(function(t,r){r.querySelector(Ye)&&setupMermaid().catch((function(){}))}))}(),function applyTOCOverride(){JournalEntryPage.buildTOC=function(t){var r=this,o=(arguments.length>1&&void 0!==arguments[1]?arguments[1]:{}).includeElement,a=void 0===o||o,i={level:0,children:[]},l=[i],c=function searchHeadings(t){if(t instanceof HTMLHeadingElement){var o=r._makeHeadingNode(t,{includeElement:a});o.secret=!!t.closest(".secret:not(.revealed)")&&!game.user.isGM;var i=l.at(-1);o.level<=i.level&&(l.pop(),i=l.at(-1)),i.children.push(o),l.push(o)}var c,u=overrides_createForOfIteratorHelper(t.children||[]);try{for(u.s();!(c=u.n()).done;)searchHeadings(c.value)}catch(t){u.e(t)}finally{u.f()}};return Array.isArray(t)?t.forEach(c):c(t),this._flattenTOC(i.children)}}()})),Hooks.on("ready",(function(){!function registerTours(){game.tours.register(Xe,"interface",new foundry.nue.Tour({title:"".concat(Xe,".tours.interface.name"),description:"".concat(Xe,".tours.interface.description"),canBeResumed:!1,display:!0,steps:[{id:"".concat(Xe,".tours.interface.1"),title:"".concat(Xe,".tours.interface.1.title"),content:"".concat(Xe,".tours.interface.1.content"),selector:"#foundry-quest-log-ru .sheet-tabs.tabs"},{id:"".concat(Xe,".tours.interface.2"),title:"".concat(Xe,".tours.interface.2.title"),content:"".concat(Xe,".tours.interface.2.content"),selector:"#foundry-quest-log-ru .tab[data-tab='quests'] .quest-list",tooltipDirection:"RIGHT"},{id:"".concat(Xe,".tours.interface.3"),title:"".concat(Xe,".tours.interface.3.title"),content:"".concat(Xe,".tours.interface.3.content"),selector:"#foundry-quest-log-ru .tab[data-tab='quests'] .quest-details",tooltipDirection:"LEFT"},{id:"".concat(Xe,".tours.interface.4"),title:"".concat(Xe,".tours.interface.4.title"),content:"".concat(Xe,".tours.interface.4.content"),selector:"#foundry-quest-log-ru .font-controls"}]})),game.tours.register(Xe,"lore-tab",new foundry.nue.Tour({title:"".concat(Xe,".tours.lore-tab.name"),description:"".concat(Xe,".tours.lore-tab.description"),canBeResumed:!1,display:!0,steps:[{id:"".concat(Xe,".tours.lore-tab.1"),title:"".concat(Xe,".tours.lore-tab.1.title"),content:"".concat(Xe,".tours.lore-tab.1.content"),selector:"#foundry-quest-log-ru-tabs",tooltipDirection:"UP"},{id:"".concat(Xe,".tours.lore-tab.2"),title:"".concat(Xe,".tours.lore-tab.2.title"),content:"".concat(Xe,".tours.lore-tab.2.content"),selector:"#foundry-quest-log-ru .tab[data-tab='lore'] .quest-list",tooltipDirection:"RIGHT"},{id:"".concat(Xe,".tours.lore-tab.3"),title:"".concat(Xe,".tours.lore-tab.3.title"),content:"".concat(Xe,".tours.lore-tab.3.content"),selector:"#foundry-quest-log-ru .tab[data-tab='lore'] .quest-details",tooltipDirection:"LEFT"}]})),game.tours.register(Xe,"map-tab",new foundry.nue.Tour({title:"".concat(Xe,".tours.map-tab.name"),description:"".concat(Xe,".tours.map-tab.description"),canBeResumed:!1,display:!0,steps:[{id:"".concat(Xe,".tours.map-tab.1"),title:"".concat(Xe,".tours.map-tab.1.title"),content:"".concat(Xe,".tours.map-tab.1.content"),selector:"#foundry-quest-log-ru-tabs",tooltipDirection:"UP"},{id:"".concat(Xe,".tours.map-tab.2"),title:"".concat(Xe,".tours.map-tab.2.title"),content:"".concat(Xe,".tours.map-tab.2.content"),selector:"#foundry-quest-log-ru .tab[data-tab='map'] .maps-list",tooltipDirection:"RIGHT"},{id:"".concat(Xe,".tours.map-tab.3"),title:"".concat(Xe,".tours.map-tab.3.title"),content:"".concat(Xe,".tours.map-tab.3.content"),selector:"#foundry-quest-log-ru .tab[data-tab='map'] .map-details",tooltipDirection:"LEFT"},{id:"".concat(Xe,".tours.map-tab.4"),title:"".concat(Xe,".tours.map-tab.4.title"),content:"".concat(Xe,".tours.map-tab.4.content"),selector:"#foundry-quest-log-ru .tab[data-tab='map'] .map-details",tooltipDirection:"LEFT"},{id:"".concat(Xe,".tours.map-tab.5"),title:"".concat(Xe,".tours.map-tab.5.title"),content:"".concat(Xe,".tours.map-tab.5.content"),selector:"#foundry-quest-log-ru .tab[data-tab='map'] .map-details",tooltipDirection:"LEFT"},{id:"".concat(Xe,".tours.map-tab.6"),title:"".concat(Xe,".tours.map-tab.6.title"),content:"".concat(Xe,".tours.map-tab.6.content"),selector:"#foundry-quest-log-ru .tab[data-tab='map'] .map-details",tooltipDirection:"LEFT"}]})),game.tours.register(Xe,"my-journal-tab",new foundry.nue.Tour({title:"".concat(Xe,".tours.my-journal-tab.name"),description:"".concat(Xe,".tours.my-journal-tab.description"),canBeResumed:!1,display:!0,steps:[{id:"".concat(Xe,".tours.my-journal-tab.1"),title:"".concat(Xe,".tours.my-journal-tab.1.title"),content:"".concat(Xe,".tours.my-journal-tab.1.content"),selector:"#foundry-quest-log-ru-tabs",tooltipDirection:"UP"},{id:"".concat(Xe,".tours.my-journal-tab.2"),title:"".concat(Xe,".tours.my-journal-tab.2.title"),content:"".concat(Xe,".tours.my-journal-tab.2.content"),selector:"#foundry-quest-log-ru .tab[data-tab='my-journal'] .journal-toc-list",tooltipDirection:"RIGHT"},{id:"".concat(Xe,".tours.my-journal-tab.3"),title:"".concat(Xe,".tours.my-journal-tab.3.title"),content:"".concat(Xe,".tours.my-journal-tab.3.content"),selector:"#foundry-quest-log-ru .tab[data-tab='my-journal'] .journal-container",tooltipDirection:"LEFT"}]})),game.tours.register(Xe,"party-journal-tab",new foundry.nue.Tour({title:"".concat(Xe,".tours.party-journal-tab.name"),description:"".concat(Xe,".tours.party-journal-tab.description"),canBeResumed:!1,display:!0,steps:[{id:"".concat(Xe,".tours.party-journal-tab.1"),title:"".concat(Xe,".tours.party-journal-tab.1.title"),content:"".concat(Xe,".tours.party-journal-tab.1.content"),selector:"#foundry-quest-log-ru-tabs",tooltipDirection:"UP"},{id:"".concat(Xe,".tours.party-journal-tab.2"),title:"".concat(Xe,".tours.party-journal-tab.2.title"),content:"".concat(Xe,".tours.party-journal-tab.2.content"),selector:"#foundry-quest-log-ru .tab[data-tab='party-journal'] .journal-toc-list",tooltipDirection:"RIGHT"},{id:"".concat(Xe,".tours.party-journal-tab.3"),title:"".concat(Xe,".tours.party-journal-tab.3.title"),content:"".concat(Xe,".tours.party-journal-tab.3.content"),selector:"#foundry-quest-log-ru .tab[data-tab='party-journal'] .journal-container",tooltipDirection:"LEFT"}]})),game.tours.register(Xe,"journal-page",new foundry.nue.Tour({title:"".concat(Xe,".tours.journal-page.name"),description:"".concat(Xe,".tours.journal-page.description"),canBeResumed:!1,display:!0,steps:[{id:"".concat(Xe,".tours.journal-page.1"),title:"".concat(Xe,".tours.journal-page.1.title"),content:"".concat(Xe,".tours.journal-page.1.content"),selector:".foundry-quest-log-ru-page-template",tooltipDirection:"RIGHT"},{id:"".concat(Xe,".tours.journal-page.2"),title:"".concat(Xe,".tours.journal-page.2.title"),content:"".concat(Xe,".tours.journal-page.2.content"),selector:".pm-dropdown.format",tooltipDirection:"LEFT"}]})),game.tours.register(Xe,"timeline-tab",new foundry.nue.Tour({title:"".concat(Xe,".tours.timeline-tab.name"),description:"".concat(Xe,".tours.timeline-tab.description"),canBeResumed:!1,display:!0,steps:[{id:"".concat(Xe,".tours.timeline-tab.1"),title:"".concat(Xe,".tours.timeline-tab.1.title"),content:"".concat(Xe,".tours.timeline-tab.1.content"),selector:"#foundry-quest-log-ru-tabs",tooltipDirection:"UP"},{id:"".concat(Xe,".tours.timeline-tab.2"),title:"".concat(Xe,".tours.timeline-tab.2.title"),content:"".concat(Xe,".tours.timeline-tab.2.content"),selector:"#foundry-quest-log-ru .tab[data-tab='timeline'] .quest-list",tooltipDirection:"RIGHT"},{id:"".concat(Xe,".tours.timeline-tab.3"),title:"".concat(Xe,".tours.timeline-tab.3.title"),content:"".concat(Xe,".tours.timeline-tab.3.content"),selector:"#foundry-quest-log-ru .tab[data-tab='timeline'] nav",tooltipDirection:"LEFT",restricted:!0}]}))}(),function registerOnReadySettings(){registerSettingsArray({fontFamily:{name:"".concat(Xe,".settings.fontFamily.name"),hint:"".concat(Xe,".settings.fontFamily.hint"),scope:"world",config:!0,type:String,choices:foundry.applications.settings.menus.FontConfig.getAvailableFontChoices(),default:"Times New Roman",onChange:function onChange(){ui.simpleQuest.updateStyle()}},headerOnlyFont:{name:"".concat(Xe,".settings.headerOnlyFont.name"),hint:"".concat(Xe,".settings.headerOnlyFont.hint"),scope:"world",config:!0,type:String,choices:settings_objectSpread({default:"Default"},foundry.applications.settings.menus.FontConfig.getAvailableFontChoices()),default:"default",onChange:function onChange(){ui.simpleQuest.updateStyle()}}})}(),function showWelcomeScreen(){var t=arguments.length>0&&void 0!==arguments[0]&&arguments[0];getSetting("welcomeMessage")&&!t||Dialog.prompt({title:game.i18n.localize("".concat(Xe,".welcomeScreen.title")),content:game.i18n.localize("".concat(Xe,".welcomeScreen.content")),callback:function callback(){setSetting("welcomeMessage",!0)},render:function render(t){t[0].closest(".app").classList.add("foundry-quest-log-ru-welcome-screen")}})}(),setTTM(),function initAutoImport(){game.user.isGM&&Hooks.on("createJournalEntry",(function(t){if(!t.pack&&t.name.startsWith(Ve)){var r=autoImport_slicedToArray(t.name.replace(Ve,"").split("|"),2),o=r[0],a=r[1];ui.simpleQuest.importQuests(t,o,{silent:"silent"===a})}}))}(),game.users.find((function(t){return t.isGM&&t.active}))===game.user&&function createDefaultStructure(){return _createDefaultStructure.apply(this,arguments)}(),function setWindowedMode(){He=getSetting("windowedMode")}(),ui.simpleQuest=new ze,document.addEventListener("mouseup",(function(t){var r=0===t.button,o=2===t.button;if(r&&t.target.classList.contains("foundry-quest-log-ru-content-link")&&ui.simpleQuest.openToPage(t.target.dataset.uuid,t.target.dataset.anchor),game.user.isGM&&r&&t.target.classList.contains("foundry-quest-log-ru-ttm")&&setSetting("ttmSrc",{src:t.target.dataset.src,title:t.target.dataset.title}),(o||r)&&t.target.classList.contains("foundry-quest-log-ru-counter")){var a,i,l,c=t.target.dataset.uuid,u=t.target.dataset.id,p=fromUuidSync(c);if(!p.isOwner)return;var d=null!==(a=p.getFlag(Xe,"counters"))&&void 0!==a?a:{},h=null!==(i=d[u])&&void 0!==i?i:0,m=(r?h+1:h-1)%(parseInt(t.target.dataset.count)+1);d[u]=Math.max(null!==(l=t.target.dataset.min)&&void 0!==l?l:0,m),p.setFlag(Xe,"counters",d)}})),game.user.isGM&&Hooks.once("renderJournalTextPageSheet",(function(){var t=game.tours.get(Xe+".journal-page");t.status===Tour.STATUS.UNSTARTED&&t.start()}))})),Hooks.once("setup",(function(){!function initEnrichers(){var t=function questEnricher(t){return function(r,o){var a,i=enrichers_slicedToArray(r[1].split("#"),2),l=i[0],c=i[1];l=null===(a=fromUuidSync(l,{relative:o.relativeTo}))||void 0===a?void 0:a.uuid;var u=r[2]||"Quest",p=document.createElement("a");return p.classList.add("foundry-quest-log-ru-content-link"),p.draggable=!1,p.dataset.uuid=l,p.dataset.id=l,p.dataset.anchor=c,p.dataset.tooltip=u,p.dataset.tooltipDirection="UP",p.innerHTML='<i class="fas '.concat(l?t:"fa-link-slash",'"></i>').concat(u),p}};CONFIG.TextEditor.enrichers.push({id:Xe,pattern:/@time\[(.*?)\]/g,enricher:function enricher(t,r){try{var o,a=document.createElement("a");if(a.classList.add("foundry-quest-log-ru-time"),a.draggable=!1,!window.SimpleCalendar)return a.innerHTML='<i class="fa-duotone fa-hourglass-start"></i> Simple Calendar Not Installed',a;var i=t[1];if(/^\d+$/.test(i))o=parseInt(t[1]);else if(o=Date.parse(t[1]),window.SimpleCalendar){var l=i.split(","),c=l[0].trim().split("/"),u=(l[1]||"00:00").trim().split(":"),p=parseInt(c[0]),d=parseInt(c[1])-1,h=parseInt(c[2])-1,m=parseInt(u[0]),g=parseInt(u[1]);o=window.SimpleCalendar.api.dateToTimestamp({year:p,month:d,day:h,hour:m,minute:g})}var y=window.SimpleCalendar.api.timestampToDate(o);a.dataset.tooltip="".concat(y.display.date," ").concat(y.display.time),a.dataset.tooltipDirection="UP";var v=o-window.SimpleCalendar.api.timestamp();if(v<0)return a.innerHTML='<i class="fa-duotone fa-hourglass-start"></i> '.concat(game.i18n.localize("".concat(Xe,".time-enricher.expired"))),a;var b=window.SimpleCalendar.api.secondsToInterval(v),_="";return b.year&&(_+="".concat(b.year,"y ")),(b.month||b.year)&&(_+="".concat(b.month,"m ")),(b.day||b.month||b.year)&&(_+="".concat(b.day,"d ")),(b.hour||b.day||b.month||b.year)&&(_+="".concat(b.hour,"h ")),(b.minute||b.hour||b.day||b.month||b.year)&&(_+="".concat(b.minute,"m ")),a.innerHTML='<i class="fa-duotone fa-hourglass-start"></i> '.concat(_),a}catch(t){console.error(t);var w=document.createElement("a");return w.innerHTML='<i class="fa-duotone fa-hourglass-start"></i> Error Parsing Time',w}}},{id:Xe+"-quest",pattern:/@QUEST\[(.*?)\]{(.*?)\}/g,enricher:t("fa-scroll-old")},{id:Xe+"-map",pattern:/@MAP\[(.*?)\]{(.*?)\}/g,enricher:t("fa-map")},{id:Xe+"-lore",pattern:/@LORE\[(.*?)\]{(.*?)\}/g,enricher:t("fa-books")},{id:Xe+"-ttm",pattern:/@TTM\[(.*?)\]{(.*?)\}/g,enricher:function enricher(t,r){var o=t[1];o.split("/")[0].includes(".")&&(o="https://"+o);var a=t[2].split("|"),i=a[0],l=a[1]||"",c=document.createElement("a");return c.classList.add("foundry-quest-log-ru-ttm"),c.dataset.src=o,game.user.isGM&&(c.dataset.tooltip=l+'<img src="'.concat(o,'">')),c.dataset.tooltipDirection="UP",c.dataset.title=l,c.draggable=!1,c.innerHTML='<i class="fas fa-theater-masks"></i> '.concat(i),c}},{id:Xe+"-counter",pattern:/@COUNT\[(.*?)\]{(.*?)\}/g,enricher:function enricher(t,r){var o,a,i=t[1],l=parseInt(t[2]),c=r.relativeTo,u=null!==(a=(null!==(o=c.getFlag(Xe,"counters"))&&void 0!==o?o:{})[i])&&void 0!==a?a:0,p=document.createElement("a");return p.classList.add("foundry-quest-log-ru-counter"),p.dataset.uuid=c.uuid,p.dataset.id=i,p.dataset.count=l,p.draggable=!1,p.innerHTML="(".concat(u," / ").concat(l,")"),p}},{id:Xe+"-counter-rep",pattern:/@REPUTATION\[(.*?)\]{(.*?)\}/g,enricher:function enricher(t,r){var o,a,i=enrichers_slicedToArray(t[1].split(","),3),l=i[0],c=i[1],u=i[2],p=l.includes("$bar");p&&(l=l.replace("$bar","")),p||!u||u.trim().includes(" ")||(u="fas fa-".concat(u.trim()));var d=enrichers_slicedToArray(t[2].split(","),2),h=d[0],m=d[1];m||(m=h,h=0),h=parseInt(h);var g=m=parseInt(m),y=r.relativeTo,v=null!==(a=(null!==(o=y.getFlag(Xe,"counters"))&&void 0!==o?o:{})[l])&&void 0!==a?a:0,b=document.createElement("div");if(b.classList.add("foundry-quest-log-ru-counter"),b.classList.add("reputation-container"),b.dataset.uuid=y.uuid,b.dataset.id=l,b.dataset.count=g,b.dataset.min=h,b.dataset.tooltip="".concat(v," / ").concat(g),b.draggable=!1,p){var _=document.createElement("div");_.classList.add("reputation-bar");var w=(v-h)/(m-h);_.style.width="".concat(100*w,"%");var S="rgb(".concat(w<.5?255:Math.floor(255-2*(w-.5)*255),", ").concat(w>.5?255:Math.floor(2*w*255),", 0)");if(c&&u){var x=getRGBfromCSSColor(c),k=getRGBfromCSSColor(u),E="rgb(".concat(Math.floor(lerp(x.r,k.r,w)),", ").concat(Math.floor(lerp(x.g,k.g,w)),", ").concat(Math.floor(lerp(x.b,k.b,w)),")");c="linear-gradient(to right, ".concat(c,", ").concat(E,")")}_.style.background=c||"linear-gradient(to right, ".concat("rgb(255, 0, 0)",", ").concat(S,")"),b.appendChild(_);var T="".concat(v," / ").concat(g),P=document.createElement("i");P.classList.add("reputation-bar-text"),P.innerText=T;var O=document.createElement("i");O.classList.add("reputation-bar-text"),O.classList.add("overlay-text"),O.innerText=T,b.appendChild(P),b.appendChild(O)}else for(var C=h;C<m;C++){var L,A=u?document.createElement("i"):document.createElement("div");A.classList.add("reputation-point"),u&&(L=A.classList).add.apply(L,enrichers_toConsumableArray(u.split(" ")).concat(["is-fontawesome"]));var I=(C-h)/(m-h),j=c||"rgb(".concat(I<.5?255:Math.floor(255-2*(I-.5)*255),", ").concat(I>.5?255:Math.floor(2*I*255),", 0)");A.style.setProperty("--reputation-color",C<v?j:"inherit"),C<v&&(A.classList.add("active"),u||(A.style.backgroundColor=j)),b.appendChild(A)}return b}})}()}));
+// scripts/app/tabConfig.js
+var TabConfig = class extends FormApplication {
+  constructor() {
+    super();
+  }
+  static get APP_ID() {
+    return this.name.split(/(?=[A-Z])/).join("-").toLowerCase();
+  }
+  get APP_ID() {
+    return this.constructor.APP_ID;
+  }
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      id: this.APP_ID,
+      template: `modules/${MODULE_ID}/templates/${this.APP_ID}.hbs`,
+      popOut: true,
+      minimizable: true,
+      title: game.i18n.localize(`${MODULE_ID}.${this.APP_ID}.title`),
+      closeOnSubmit: true,
+      width: 400
+    });
+  }
+  async getData() {
+    return { ...getTabNames() };
+  }
+  async _updateObject(event, formData) {
+    formData = foundry.utils.expandObject(formData);
+    return setSetting("tabNames", formData);
+  }
+};
+
+// scripts/app/themeConfig.js
+var THEMES = {
+  default: {
+    backgroundColor: "#1b130d",
+    textColor: "#f5deb3",
+    secretColor: "#ff00ff",
+    failedColor: "#ff0000",
+    fontFamily: "Times New Roman"
+  },
+  redDragon: {
+    backgroundColor: "#1b130d",
+    textColor: "#e6415a",
+    secretColor: "#0091ff",
+    failedColor: "#ff7b00",
+    fontFamily: "Signika",
+    headerOnlyFont: "Modesto Condensed"
+  },
+  whiteDragon: {
+    backgroundColor: "#f1ebe8",
+    textColor: "#1c1c1c",
+    secretColor: "#0091ff",
+    failedColor: "#ff0000",
+    fontFamily: "Signika",
+    headerOnlyFont: "Modesto Condensed"
+  },
+  "D&D": {
+    backgroundColor: `url("/systems/dnd5e/ui/texture1.webp") no-repeat top center / 150% auto, #f1ebe8 url("/systems/dnd5e/ui/texture2.webp") no-repeat bottom center / 150% auto`,
+    textColor: "#1c1c1c",
+    secretColor: "#0091ff",
+    failedColor: "#ff0000",
+    fontFamily: "Roboto Condensed",
+    headerOnlyFont: "Modesto Condensed"
+  },
+  typewriter: {
+    backgroundColor: "#d9ccc4",
+    textColor: "#1c1c1c",
+    secretColor: "#834b16",
+    failedColor: "#ff0000",
+    fontFamily: "Courier New"
+  },
+  postApocalypticWasteland: {
+    backgroundColor: "#5c5c5c",
+    textColor: "#bfbfbf",
+    secretColor: "#008080",
+    failedColor: "#cc3300",
+    fontFamily: "Courier New"
+  },
+  cyberpunkCity: {
+    backgroundColor: "#000000",
+    textColor: "#00ffcc",
+    secretColor: "#ff66b2",
+    failedColor: "#ff3300",
+    fontFamily: "Modesto Condensed"
+  },
+  galacticAdventure: {
+    backgroundColor: "#0e0e0e",
+    textColor: "#ffffff",
+    secretColor: "#00ffcc",
+    failedColor: "#ff0000",
+    fontFamily: "Signika",
+    headerOnlyFont: "Bruno Ace"
+  },
+  steampunkWorkshop: {
+    backgroundColor: "#2b2b2b",
+    textColor: "#b98946",
+    secretColor: "#00ccff",
+    failedColor: "#a52a2a",
+    fontFamily: "Modesto Condensed"
+  },
+  dystopianFuture: {
+    backgroundColor: "#333333",
+    textColor: "#ff6666",
+    secretColor: "#00ccff",
+    failedColor: "#990000",
+    fontFamily: "Currier New"
+  },
+  virtualRealityOasis: {
+    backgroundColor: "#111111",
+    textColor: "#00ffcc",
+    secretColor: "#ff00ff",
+    failedColor: "#ff3300",
+    fontFamily: "Modesto Condensed"
+  },
+  mysticForest: {
+    backgroundColor: "#003300",
+    textColor: "#99cc66",
+    secretColor: "#9933ff",
+    failedColor: "#cc0000",
+    fontFamily: "Amiri"
+  },
+  vintageFilmNoir: {
+    backgroundColor: "#000000",
+    textColor: "#ffffff",
+    secretColor: "#9900cc",
+    failedColor: "#cc0000",
+    fontFamily: "Signika",
+    headerOnlyFont: "Courier New"
+  },
+  sciFiConsole: {
+    backgroundColor: "#000000",
+    textColor: "#00ffcc",
+    secretColor: "#ff66b2",
+    failedColor: "#ff3300",
+    fontFamily: "Courier"
+  },
+  futuristicTech: {
+    backgroundColor: "#1a1a1a",
+    textColor: "#99cc66",
+    secretColor: "#3366ff",
+    failedColor: "#cc0000",
+    fontFamily: "Roboto"
+  },
+  alienInvasion: {
+    backgroundColor: "#0a0a0a",
+    textColor: "#00ccff",
+    secretColor: "#ff00ff",
+    failedColor: "#ff3300",
+    fontFamily: "Signika"
+  },
+  ancientScrolls: {
+    backgroundColor: "#f5e6cc",
+    textColor: "#663300",
+    secretColor: "#9933ff",
+    failedColor: "#cc0000",
+    fontFamily: "Times"
+  },
+  steampunkAdventure: {
+    backgroundColor: "#2b2b2b",
+    textColor: "#ffd700",
+    secretColor: "#00ccff",
+    failedColor: "#a52a2a",
+    fontFamily: "Roboto Slab"
+  }
+};
+var ThemeConfig = class extends FormApplication {
+  constructor() {
+    super();
+    ui.simpleQuest.render(true);
+    setSetting("themeConfigShown", true);
+  }
+  static get APP_ID() {
+    return this.name.split(/(?=[A-Z])/).join("-").toLowerCase();
+  }
+  get APP_ID() {
+    return this.constructor.APP_ID;
+  }
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      id: MODULE_ID + "-" + this.APP_ID,
+      template: `modules/${MODULE_ID}/templates/${this.APP_ID}.hbs`,
+      popOut: true,
+      minimizable: true,
+      title: game.i18n.localize(`${MODULE_ID}.${this.APP_ID}.title`),
+      closeOnSubmit: true,
+      width: 400
+    });
+  }
+  activateListeners(html) {
+    super.activateListeners(html);
+    html = html[0];
+    html.querySelectorAll("button").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const theme = event.target.dataset.theme;
+        this.setTheme(theme);
+      });
+    });
+  }
+  async setTheme(theme) {
+    const themeConfig = THEMES[theme];
+    if (themeConfig.headerOnlyFont === void 0) themeConfig.headerOnlyFont = "default";
+    for (let key of Object.keys(themeConfig)) {
+      await setSetting(key, themeConfig[key]);
+    }
+    this.setPosition({ height: "auto" });
+  }
+  async getData() {
+    return {
+      themes: Object.keys(THEMES).map((theme) => {
+        return {
+          id: theme,
+          label: game.i18n.localize(`${MODULE_ID}.${this.APP_ID}.themes.${theme}`)
+        };
+      })
+    };
+  }
+  async _updateObject(event, formData) {
+  }
+};
+
+// scripts/app/theaterOfTheMind.js
+var TheaterOfTheMind = class extends Application {
+  constructor(src) {
+    super();
+    this.src = src.src;
+    this.ttmTitle = src.title;
+    this.isVideo = this.src.toLowerCase().endsWith(".mp4") || this.src.toLowerCase().endsWith(".webm");
+    ui.theaterOfTheMind?.close();
+    ui.theaterOfTheMind = this;
+  }
+  static get APP_ID() {
+    return this.name.split(/(?=[A-Z])/).join("-").toLowerCase();
+  }
+  get APP_ID() {
+    return this.constructor.APP_ID;
+  }
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      id: this.APP_ID,
+      template: `modules/${MODULE_ID}/templates/${this.APP_ID}.hbs`,
+      popOut: false,
+      minimizable: false,
+      title: game.i18n.localize(`${MODULE_ID}.${this.APP_ID}.title`)
+    });
+  }
+  async getData() {
+    return { src: this.src, isVideo: this.isVideo, title: this.ttmTitle };
+  }
+  activateListeners(html) {
+    super.activateListeners(html);
+    html = html[0] ?? html;
+    document.querySelector("#interface").appendChild(html);
+    html.onclick = () => html.classList.toggle("minimized");
+    if (game.user.isGM) html.oncontextmenu = (e) => setSetting("ttmSrc", null);
+  }
+  async close() {
+    ui.theaterOfTheMind = null;
+    return super.close();
+  }
+};
+function setTTM(src) {
+  src = src || getSetting("ttmSrc");
+  if (!src?.src) return ui.theaterOfTheMind?.close();
+  new TheaterOfTheMind(src).render(true);
+}
+
+// scripts/settings.js
+var DEFAULT_TAB_NAMES = {
+  quests: "foundry-quest-log-ru.simple-quest.tabs.quests",
+  map: "foundry-quest-log-ru.simple-quest.tabs.map",
+  timeline: "foundry-quest-log-ru.simple-quest.tabs.timeline",
+  lore: "foundry-quest-log-ru.simple-quest.tabs.lore",
+  achievements: "foundry-quest-log-ru.simple-quest.tabs.achievements",
+  "my-journal": "foundry-quest-log-ru.simple-quest.tabs.my-journal",
+  "party-journal": "foundry-quest-log-ru.simple-quest.tabs.party-journal"
+};
+function registerSettings() {
+  game.settings.registerMenu(MODULE_ID, "tabConfig", {
+    name: `${MODULE_ID}.settings.tabConfig.name`,
+    label: `${MODULE_ID}.settings.tabConfig.label`,
+    hint: `${MODULE_ID}.settings.tabConfig.hint`,
+    icon: "fas fa-cog",
+    type: TabConfig,
+    restricted: true
+  });
+  game.settings.registerMenu(MODULE_ID, "themeConfig", {
+    name: `${MODULE_ID}.settings.themeConfig.name`,
+    label: `${MODULE_ID}.settings.themeConfig.label`,
+    hint: `${MODULE_ID}.settings.themeConfig.hint`,
+    icon: "fas fa-palette",
+    type: ThemeConfig,
+    restricted: true
+  });
+  const settings = {
+    showHistory: {
+      name: `${MODULE_ID}.settings.showHistory.name`,
+      hint: `${MODULE_ID}.settings.showHistory.hint`,
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: true
+    },
+    hideCheckboxAutoHide: {
+      name: `${MODULE_ID}.settings.hideCheckboxAutoHide.name`,
+      hint: `${MODULE_ID}.settings.hideCheckboxAutoHide.hint`,
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: false
+    },
+    folderName: {
+      name: `${MODULE_ID}.settings.folderName.name`,
+      hint: `${MODULE_ID}.settings.folderName.hint`,
+      scope: "world",
+      config: true,
+      type: String,
+      default: "\u041A\u0432\u0435\u0441\u0442\u044B"
+    },
+    loreFolderName: {
+      name: `${MODULE_ID}.settings.loreFolderName.name`,
+      hint: `${MODULE_ID}.settings.loreFolderName.hint`,
+      scope: "world",
+      config: true,
+      type: String,
+      default: "\u041B\u043E\u0440"
+    },
+    mapsJournalName: {
+      name: `${MODULE_ID}.settings.mapsJournalName.name`,
+      hint: `${MODULE_ID}.settings.mapsJournalName.hint`,
+      scope: "world",
+      config: true,
+      type: String,
+      default: "\u041A\u0430\u0440\u0442\u044B"
+    },
+    timelineJournalName: {
+      name: `${MODULE_ID}.settings.timelineJournalName.name`,
+      hint: `${MODULE_ID}.settings.timelineJournalName.hint`,
+      scope: "world",
+      config: true,
+      type: String,
+      default: "\u0425\u0440\u043E\u043D\u043E\u043B\u043E\u0433\u0438\u044F"
+    },
+    achievementsJournalName: {
+      name: `${MODULE_ID}.settings.achievementsJournalName.name`,
+      hint: `${MODULE_ID}.settings.achievementsJournalName.hint`,
+      scope: "world",
+      config: true,
+      type: String,
+      default: "\u0414\u043E\u0441\u0442\u0438\u0436\u0435\u043D\u0438\u044F"
+    },
+    partyJournalName: {
+      name: `${MODULE_ID}.settings.partyJournalName.name`,
+      hint: `${MODULE_ID}.settings.partyJournalName.hint`,
+      scope: "world",
+      config: true,
+      type: String,
+      default: "\u0413\u0440\u0443\u043F\u043F\u0430"
+    },
+    sharedJournalName: {
+      name: `${MODULE_ID}.settings.sharedJournalName.name`,
+      hint: `${MODULE_ID}.settings.sharedJournalName.hint`,
+      scope: "world",
+      config: true,
+      type: String,
+      default: "\u041E\u0431\u0449\u0438\u0439"
+    },
+    backgroundColor: {
+      name: `${MODULE_ID}.settings.backgroundColor.name`,
+      hint: `${MODULE_ID}.settings.backgroundColor.hint`,
+      scope: "world",
+      config: true,
+      type: String,
+      default: "#1b130d",
+      onChange: () => {
+        ui.simpleQuest.updateStyle();
+      }
+    },
+    textColor: {
+      name: `${MODULE_ID}.settings.textColor.name`,
+      hint: `${MODULE_ID}.settings.textColor.hint`,
+      scope: "world",
+      config: true,
+      type: String,
+      default: "#f5deb3",
+      onChange: () => {
+        ui.simpleQuest.updateStyle();
+      }
+    },
+    secretColor: {
+      name: `${MODULE_ID}.settings.secretColor.name`,
+      hint: `${MODULE_ID}.settings.secretColor.hint`,
+      scope: "world",
+      config: true,
+      type: String,
+      default: "#ff00ff",
+      onChange: () => {
+        ui.simpleQuest.updateStyle();
+      }
+    },
+    failedColor: {
+      name: `${MODULE_ID}.settings.failedColor.name`,
+      hint: `${MODULE_ID}.settings.failedColor.hint`,
+      scope: "world",
+      config: true,
+      type: String,
+      default: "#ff0000",
+      onChange: () => {
+        ui.simpleQuest.updateStyle();
+      }
+    },
+    labelColor: {
+      name: `${MODULE_ID}.settings.labelColor.name`,
+      hint: `${MODULE_ID}.settings.labelColor.hint`,
+      scope: "world",
+      config: true,
+      type: String,
+      default: "none",
+      onChange: () => {
+        ui.simpleQuest.refresh();
+      }
+    },
+    invertTheme: {
+      name: `${MODULE_ID}.settings.invertTheme.name`,
+      hint: `${MODULE_ID}.settings.invertTheme.hint`,
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: false,
+      onChange: () => {
+        ui.simpleQuest.updateStyle();
+      }
+    },
+    matchJournalStyle: {
+      name: `${MODULE_ID}.settings.matchJournalStyle.name`,
+      hint: `${MODULE_ID}.settings.matchJournalStyle.hint`,
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: false,
+      onChange: () => {
+        ui.simpleQuest.updateStyle();
+      }
+    },
+    hideFolderFromPlayers: {
+      name: `${MODULE_ID}.settings.hideFolderFromPlayers.name`,
+      hint: `${MODULE_ID}.settings.hideFolderFromPlayers.hint`,
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: true
+    },
+    useMessageTheme: {
+      name: `${MODULE_ID}.settings.useMessageTheme.name`,
+      hint: `${MODULE_ID}.settings.useMessageTheme.hint`,
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: true
+    },
+    showQuestNotifications: {
+      name: `${MODULE_ID}.settings.showQuestNotifications.name`,
+      hint: `${MODULE_ID}.settings.showQuestNotifications.hint`,
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: true
+    },
+    newQuestSoundEffect: {
+      name: `${MODULE_ID}.settings.newQuestSoundEffect.name`,
+      hint: `${MODULE_ID}.settings.newQuestSoundEffect.hint`,
+      scope: "world",
+      config: true,
+      type: String,
+      filePicker: "audio",
+      default: ""
+    },
+    updateQuestSoundEffect: {
+      name: `${MODULE_ID}.settings.updateQuestSoundEffect.name`,
+      hint: `${MODULE_ID}.settings.updateQuestSoundEffect.hint`,
+      scope: "world",
+      config: true,
+      type: String,
+      filePicker: "audio",
+      default: ""
+    },
+    openJournalPinsAsModals: {
+      name: `${MODULE_ID}.settings.openJournalPinsAsModals.name`,
+      hint: `${MODULE_ID}.settings.openJournalPinsAsModals.hint`,
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: true
+    },
+    enableQuests: {
+      name: `${MODULE_ID}.settings.enableQuests.name`,
+      hint: `${MODULE_ID}.settings.enableQuests.hint`,
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: true
+    },
+    enablePartyJournal: {
+      name: `${MODULE_ID}.settings.enablePartyJournal.name`,
+      hint: `${MODULE_ID}.settings.enablePartyJournal.hint`,
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: true
+    },
+    enableMyJournal: {
+      name: `${MODULE_ID}.settings.enableMyJournal.name`,
+      hint: `${MODULE_ID}.settings.enableMyJournal.hint`,
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: true
+    },
+    enableMaps: {
+      name: `${MODULE_ID}.settings.enableMaps.name`,
+      hint: `${MODULE_ID}.settings.enableMaps.hint`,
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: true
+    },
+    enableLore: {
+      name: `${MODULE_ID}.settings.enableLore.name`,
+      hint: `${MODULE_ID}.settings.enableLore.hint`,
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: true
+    },
+    enableTimeline: {
+      name: `${MODULE_ID}.settings.enableTimeline.name`,
+      hint: `${MODULE_ID}.settings.enableTimeline.hint`,
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: true
+    },
+    enableAchievements: {
+      name: `${MODULE_ID}.settings.enableAchievements.name`,
+      hint: `${MODULE_ID}.settings.enableAchievements.hint`,
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: true
+    },
+    imagePageMask: {
+      name: `${MODULE_ID}.settings.imagePageMask.name`,
+      hint: `${MODULE_ID}.settings.imagePageMask.hint`,
+      scope: "world",
+      config: true,
+      type: String,
+      filePicker: "image",
+      default: "modules/foundry-quest-log-ru/assets/mask/mask1.webp"
+    },
+    matchJournalPermission: {
+      name: `${MODULE_ID}.settings.matchJournalPermission.name`,
+      hint: `${MODULE_ID}.settings.matchJournalPermission.hint`,
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: false
+    },
+    ttmSrc: {
+      scope: "world",
+      config: false,
+      type: Object,
+      default: null,
+      onChange: (val) => setTTM(val)
+    },
+    lastQuest: {
+      scope: "client",
+      config: false,
+      type: String,
+      default: ""
+    },
+    lastMap: {
+      scope: "client",
+      config: false,
+      type: String,
+      default: ""
+    },
+    lastLore: {
+      scope: "client",
+      config: false,
+      type: String,
+      default: ""
+    },
+    lastAchievements: {
+      scope: "client",
+      config: false,
+      type: String,
+      default: ""
+    },
+    lastTimeline: {
+      scope: "client",
+      config: false,
+      type: String,
+      default: ""
+    },
+    lastMyJournal: {
+      scope: "client",
+      config: false,
+      type: String,
+      default: ""
+    },
+    lastPartyJournal: {
+      scope: "client",
+      config: false,
+      type: String,
+      default: ""
+    },
+    timelineScroll: {
+      scope: "client",
+      config: false,
+      type: Number,
+      default: 0
+    },
+    lastTab: {
+      scope: "client",
+      config: false,
+      type: String,
+      default: "quests"
+    },
+    seenQuests: {
+      scope: "client",
+      config: false,
+      type: Object,
+      default: {}
+    },
+    showCompleted: {
+      scope: "client",
+      config: false,
+      type: Boolean,
+      default: true
+    },
+    welcomeMessage: {
+      scope: "client",
+      config: false,
+      type: Boolean,
+      default: false
+    },
+    welcomeMaps: {
+      scope: "client",
+      config: false,
+      type: Boolean,
+      default: false
+    },
+    detailsStatus: {
+      scope: "client",
+      config: false,
+      type: Object,
+      default: {}
+    },
+    windowedMode: {
+      scope: "client",
+      config: false,
+      type: Boolean,
+      default: false
+    },
+    themeConfigShown: {
+      scope: "client",
+      config: false,
+      type: Boolean,
+      default: false
+    },
+    fontSize: {
+      scope: "client",
+      config: false,
+      type: Number,
+      default: 1.5,
+      onChange: () => {
+        ui.simpleQuest.updateStyle();
+      }
+    },
+    tabNames: {
+      scope: "world",
+      config: false,
+      type: Object,
+      default: { ...DEFAULT_TAB_NAMES },
+      onChange: () => {
+        ui.simpleQuest.refresh();
+      }
+    }
+  };
+  registerSettingsArray(settings);
+  Hooks.on("renderSettingsConfig", (app, html, data) => {
+    colorPicker("backgroundColor", html);
+    colorPicker("textColor", html);
+    colorPicker("secretColor", html);
+    colorPicker("failedColor", html);
+    colorPicker("labelColor", html);
+    html.querySelector(`select[name="${MODULE_ID}.fontFamily"]`).querySelectorAll("option").forEach((option2) => {
+      option2.style.fontFamily = option2.value;
+    });
+    html.querySelector(`select[name="${MODULE_ID}.headerOnlyFont"]`).querySelectorAll("option").forEach((option2) => {
+      option2.style.fontFamily = option2.value;
+    });
+  });
+}
+function registerOnReadySettings() {
+  const settings = {
+    fontFamily: {
+      name: `${MODULE_ID}.settings.fontFamily.name`,
+      hint: `${MODULE_ID}.settings.fontFamily.hint`,
+      scope: "world",
+      config: true,
+      type: String,
+      choices: foundry.applications.settings.menus.FontConfig.getAvailableFontChoices(),
+      //Object.keys(CONFIG.fontDefinitions).reduce((obj, key) => {obj[key] = key; return obj}, {}),
+      default: "Times New Roman",
+      onChange: () => {
+        ui.simpleQuest.updateStyle();
+      }
+    },
+    headerOnlyFont: {
+      name: `${MODULE_ID}.settings.headerOnlyFont.name`,
+      hint: `${MODULE_ID}.settings.headerOnlyFont.hint`,
+      scope: "world",
+      config: true,
+      type: String,
+      choices: { default: "Default", ...foundry.applications.settings.menus.FontConfig.getAvailableFontChoices() },
+      default: "default",
+      onChange: () => {
+        ui.simpleQuest.updateStyle();
+      }
+    }
+  };
+  registerSettingsArray(settings);
+}
+function getSetting(key) {
+  return game.settings.get(MODULE_ID, key);
+}
+async function setSetting(key, value) {
+  return await game.settings.set(MODULE_ID, key, value);
+}
+function getDefaultSetting(key) {
+  return game.settings.settings.get(MODULE_ID + "." + key).default;
+}
+function getTabNames() {
+  const setting = getSetting("tabNames");
+  for (const [key, value] of Object.entries(DEFAULT_TAB_NAMES)) {
+    if (!setting[key]) setting[key] = value;
+  }
+  return setting;
+}
+function registerSettingsArray(settings) {
+  for (const [key, value] of Object.entries(settings)) {
+    game.settings.register(MODULE_ID, key, value);
+  }
+}
+function colorPicker(settingId, html) {
+  const colorPickerElement = document.createElement("input");
+  colorPickerElement.setAttribute("type", "color");
+  colorPickerElement.setAttribute("data-edit", MODULE_ID + "." + settingId);
+  colorPickerElement.value = game.settings.get(MODULE_ID, settingId) || game.settings.settings.get(MODULE_ID + "." + settingId).default;
+  const stringInputElement = html.querySelector(`input[name="${MODULE_ID}.${settingId}"]`);
+  if (!stringInputElement.value) stringInputElement.value = colorPickerElement.value;
+  stringInputElement.classList.add("color");
+  stringInputElement.after(colorPickerElement);
+}
+
+// scripts/config.js
+function initConfig() {
+  Hooks.on("getSceneControlButtons", (buttons) => {
+    buttons.notes.tools.toggleSimpleQuest = {
+      name: "toggleSimpleQuest",
+      title: game.i18n.localize(`${MODULE_ID}.hotkeys.toggleSimpleQuest.name`),
+      icon: "fas fa-scroll-old",
+      button: true,
+      onChange: () => {
+        ui.simpleQuest.toggle();
+      }
+    };
+  });
+  Hooks.on("renderJournalDirectory", (app, html) => {
+    const buttonContainer = html.querySelector(".header-actions.action-buttons");
+    const button = document.createElement("button");
+    button.classList.add(`${MODULE_ID}-open-quest-app`);
+    button.type = "button";
+    button.innerHTML = `<i class="fas fa-scroll-old"></i><span>${game.i18n.localize(`${MODULE_ID}.foundry-quest-log-ru.title`)}</span>`;
+    button.onclick = () => {
+      ui.simpleQuest.toggle();
+    };
+    buttonContainer.appendChild(button);
+    if (game.user.isGM) return;
+    const hideForPlayers = getSetting("hideFolderFromPlayers");
+    if (!hideForPlayers) return;
+    const folder = Array.from(game.folders).find((f) => f.name === getSetting("folderName") && f.type === "JournalEntry");
+    if (!folder) return;
+    const folderEl = html.querySelector(`li[data-uuid="${folder.uuid}"]`);
+    if (folderEl) folderEl.classList.add("foundry-quest-log-ru-hide-folder");
+  });
+  const PROSE_MIRROR_MENUS = {
+    CALLOUT: [
+      {
+        id: "callout-lore",
+        class: "notification lore"
+      },
+      {
+        id: "callout-creature",
+        class: "notification creature"
+      },
+      {
+        id: "callout-npc",
+        class: "notification npc"
+      },
+      {
+        id: "callout-location",
+        class: "notification location"
+      },
+      {
+        id: "callout-magic",
+        class: "notification magic"
+      },
+      {
+        id: "callout-item",
+        class: "notification item"
+      },
+      {
+        id: "callout-event",
+        class: "notification event"
+      },
+      {
+        id: "callout-time",
+        class: "notification time"
+      }
+    ],
+    PAGE_INSERT: [
+      {
+        id: "parchment-note-1",
+        class: "parchment-note-1"
+      },
+      {
+        id: "parchment-note-2",
+        class: "parchment-note-2"
+      },
+      {
+        id: "parchment-note-3",
+        class: "parchment-note-3"
+      },
+      {
+        id: "parchment-note-4",
+        class: "parchment-note-4"
+      },
+      {
+        id: "parchment-book-1",
+        class: "parchment-book-1"
+      },
+      {
+        id: "parchment-book-2",
+        class: "parchment-book-2"
+      },
+      {
+        id: "parchment-scroll-1",
+        class: "parchment-scroll-1"
+      }
+    ],
+    TEXT: [
+      {
+        id: "paragraph-initial",
+        class: "initial"
+      }
+    ]
+  };
+  const ALL_CLASSES = {
+    CALLOUT: PROSE_MIRROR_MENUS.CALLOUT.map((c) => c.class),
+    PAGE_INSERT: PROSE_MIRROR_MENUS.PAGE_INSERT.map((c) => c.class),
+    COMBINED: [...PROSE_MIRROR_MENUS.CALLOUT.map((c) => c.class), ...PROSE_MIRROR_MENUS.PAGE_INSERT.map((c) => c.class)]
+  };
+  Hooks.on("getProseMirrorMenuDropDowns", (proseMirrorMenu, menus) => {
+    const calloutMenu = {
+      action: `${MODULE_ID}-callout`,
+      title: `${MODULE_ID}.proseMirrorMenu.callout.title`,
+      children: PROSE_MIRROR_MENUS.CALLOUT.map((c) => {
+        return {
+          action: c.id,
+          title: `${MODULE_ID}.proseMirrorMenu.callout.${c.id}`,
+          priority: 3,
+          cmd: () => {
+            handleToggleClass(
+              proseMirrorMenu,
+              c.class,
+              ALL_CLASSES.COMBINED.filter((cc) => cc !== c.class)
+            );
+          }
+        };
+      })
+    };
+    const pageInsertMenu = {
+      action: `${MODULE_ID}-page-insert`,
+      title: `${MODULE_ID}.proseMirrorMenu.pageInsert.title`,
+      children: PROSE_MIRROR_MENUS.PAGE_INSERT.map((c) => {
+        return {
+          action: c.id,
+          title: `${MODULE_ID}.proseMirrorMenu.pageInsert.${c.id}`,
+          priority: 3,
+          cmd: () => {
+            handleToggleClass(
+              proseMirrorMenu,
+              c.class,
+              ALL_CLASSES.COMBINED.filter((cc) => cc !== c.class)
+            );
+          }
+        };
+      })
+    };
+    menus.format.entries.push(calloutMenu, pageInsertMenu);
+    const inline = menus.format.entries.find((e) => e.action === "inline");
+    inline.children.push({
+      action: `${MODULE_ID}-initial`,
+      title: `${MODULE_ID}.proseMirrorMenu.text.initial`,
+      priority: 3,
+      cmd: () => {
+        handleToggleClass(proseMirrorMenu, "initial");
+      }
+    });
+  });
+  function handleToggleClass(menu, className, removeClasses = []) {
+    const view = menu.view;
+    const { state, dispatch } = view;
+    const { from, to, $from } = state.selection;
+    const paragraphInfo = findClosestAncestorOfType(state.doc.resolve(from), state.schema.nodes.paragraph);
+    if (!paragraphInfo) return false;
+    let currentClass = (paragraphInfo.node.attrs._preserve.class || "").split(" ").filter((c) => c).join(" ");
+    removeClasses.forEach((c) => {
+      currentClass = currentClass.replace(c, "");
+    });
+    currentClass = currentClass.split(" ").filter((c) => c).join(" ");
+    const newClass = currentClass.includes(className) ? currentClass.replace(className, "") : currentClass + " " + className;
+    const prevAttrs = foundry.utils.deepClone(paragraphInfo.node.attrs);
+    const prevAttrsClone = foundry.utils.deepClone(paragraphInfo.node.attrs);
+    const newState = foundry.utils.mergeObject(prevAttrs, { _preserve: { class: newClass.trim() } });
+    const tr = state.tr.setNodeMarkup(paragraphInfo.pos, void 0, newState);
+    dispatch(tr);
+    state.tr.setNodeMarkup(paragraphInfo.pos, void 0, foundry.utils.mergeObject(prevAttrsClone, { _preserve: { class: "" } }));
+    return true;
+  }
+  function findClosestAncestorOfType($pos, nodeType) {
+    for (let depth = $pos.depth; depth > 0; depth--) {
+      const node = $pos.node(depth);
+      if (node.type === nodeType) {
+        return { pos: $pos.before(depth), node, originalPos: depth };
+      }
+    }
+    return null;
+  }
+  Hooks.on("renderJournalEntryPageImageSheet", (app, html, data) => {
+    if (!ui.simpleQuest?.rendered || !game.user.isGM) return;
+    const formGroups = html.querySelectorAll(".form-group");
+    const lastFormGroup = formGroups[formGroups.length - 1];
+    const currentMask = app.document.getFlag(MODULE_ID, "fowMask") || "";
+    lastFormGroup.insertAdjacentHTML(
+      "afterend",
+      `<div class="form-group">
+        <label>${game.i18n.localize(`${MODULE_ID}.injected.fowMask.label`)}</label>
+        <file-picker name="flags.foundry-quest-log-ru.fowMask" type="image" value="${currentMask}"></file-picker>
+    </div>`
+    );
+    app.setPosition({ height: "auto" });
+  });
+}
+
+// scripts/helpers.js
+async function createDefaultStructure() {
+  const folderName = getSetting("folderName");
+  const folder = Array.from(game.folders).find((f) => f.name === folderName && f.type === "JournalEntry");
+  if (folder) return createPlayerJournal(folder);
+  const folderDocument = await Folder.create({
+    name: folderName,
+    color: "#03bafc",
+    sorting: "m",
+    type: "JournalEntry",
+    folder: null
+  });
+  const loreFolder = await createLoreFolder();
+  await createPlayerJournal(folderDocument);
+  ui.notifications.info(game.i18n.localize(`${MODULE_ID}.notifications.defaultStructureCreated`));
+}
+async function createPlayerJournal(folder) {
+  const partyFolderName = getSetting("partyJournalName");
+  let partyFolder = Array.from(game.folders).find((f) => f.name === partyFolderName && f.type === "JournalEntry" && f.folder === folder);
+  if (!partyFolder) {
+    partyFolder = await Folder.create({ name: partyFolderName, type: "JournalEntry", color: "#1fa87f", sorting: "m", folder });
+  }
+  let updated = false;
+  const players = Array.from(game.users);
+  const oldPlayerJournal = Array.from(game.journal).find((j) => j.name === partyFolderName && j.folder === folder);
+  let migrated = false;
+  for (const player of players) {
+    let playerFolder = Array.from(game.folders).find((f) => f.name === player.name && f.type === "JournalEntry" && f.folder === partyFolder);
+    if (!playerFolder) {
+      updated = true;
+      playerFolder = await Folder.create({ name: player.name, type: "JournalEntry", color: player.color, sorting: "m", folder: partyFolder.id });
+      if (oldPlayerJournal) {
+        const oldPage = oldPlayerJournal.pages.getName(player.name);
+        const defaultJournal = await JournalEntry.create({
+          name: "Default",
+          folder: playerFolder,
+          ownership: {
+            default: 0,
+            [player.id]: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER
+          },
+          pages: [oldPage.toObject()]
+        });
+        migrated = true;
+      }
+    }
+  }
+  const sharedFolderName = getSetting("sharedJournalName");
+  let sharedFolder = Array.from(game.folders).find((f) => f.name === sharedFolderName && f.type === "JournalEntry" && f.folder === partyFolder);
+  if (!sharedFolder) {
+    updated = true;
+    sharedFolder = await Folder.create({ name: sharedFolderName, type: "JournalEntry", sorting: "m", folder: partyFolder.id });
+    if (oldPlayerJournal) {
+      const oldSharedPage = oldPlayerJournal.pages.getName(sharedFolderName);
+      const sharedJournal = await JournalEntry.create({
+        name: "Default",
+        folder: sharedFolder,
+        ownership: {
+          default: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER
+        },
+        pages: [oldSharedPage.toObject()]
+      });
+    }
+  }
+  if (migrated) {
+    oldPlayerJournal.update({ folder: null });
+    ui.notifications.info("\u041A\u0432\u0435\u0441\u0442\u043E\u0432\u044B\u0439 \u0436\u0443\u0440\u043D\u0430\u043B: \u0441\u0442\u0430\u0440\u044B\u0435 \u0436\u0443\u0440\u043D\u0430\u043B\u044B \u0433\u0440\u0443\u043F\u043F\u044B \u0438 \u0438\u0433\u0440\u043E\u043A\u043E\u0432 \u043F\u0435\u0440\u0435\u043D\u0435\u0441\u0435\u043D\u044B \u0432 \u043D\u043E\u0432\u0443\u044E \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u0443. \u041F\u043E\u0441\u043B\u0435 \u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0438 \u043C\u0438\u0433\u0440\u0430\u0446\u0438\u0438 \u0441\u0442\u0430\u0440\u044B\u0439 \u0436\u0443\u0440\u043D\u0430\u043B \u043C\u043E\u0436\u043D\u043E \u0443\u0434\u0430\u043B\u0438\u0442\u044C.", { permanent: true });
+  }
+  if (updated) ui.notifications.info(game.i18n.localize(`${MODULE_ID}.notifications.playerJournalUpdated`));
+}
+async function createLoreFolder() {
+  const loreFolderName = getSetting("loreFolderName");
+  let loreFolder = Array.from(game.folders).find((f) => f.name === loreFolderName && f.type === "JournalEntry");
+  if (!loreFolder) {
+    loreFolder = await Folder.create({ name: loreFolderName, type: "JournalEntry", color: "#a85d1f", sorting: "m" });
+  }
+  return loreFolder;
+}
+function showWelcomeScreen(force = false) {
+  const welcomeMessage = getSetting("welcomeMessage");
+  if (welcomeMessage && !force) return;
+  Dialog.prompt({
+    title: game.i18n.localize(`${MODULE_ID}.welcomeScreen.title`),
+    content: game.i18n.localize(`${MODULE_ID}.welcomeScreen.content`),
+    callback: () => {
+      setSetting("welcomeMessage", true);
+    },
+    render: (html) => {
+      html[0].closest(".app").classList.add("foundry-quest-log-ru-welcome-screen");
+    }
+  });
+}
+function showWelcomeMaps(force = false) {
+  const welcomeMaps = getSetting("welcomeMaps");
+  if (welcomeMaps && !force) return;
+  Dialog.prompt({
+    title: game.i18n.localize(`${MODULE_ID}.welcomeMaps.title`),
+    content: game.i18n.localize(`${MODULE_ID}.welcomeMaps.content`),
+    options: {
+      width: 600
+    },
+    callback: () => {
+      setSetting("welcomeMaps", true);
+    },
+    render: (html) => {
+      html[0].closest(".app").classList.add("foundry-quest-log-ru-welcome-screen");
+      html[0].closest(".app").classList.add("foundry-quest-log-ru-welcome-maps");
+    },
+    close: () => {
+    }
+  });
+}
+function createDemoQuest() {
+  ui.notifications.warn("PF2e Journal: \u0434\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u0430\u044F \u0437\u0430\u043F\u0438\u0441\u044C \u0437\u0430\u043C\u0435\u043D\u0435\u043D\u0430 \u0441\u0442\u0430\u0440\u0442\u043E\u0432\u044B\u043C \u043D\u0430\u0431\u043E\u0440\u043E\u043C \xAB\u0420\u0430\u0441\u0442\u0445\u0435\u043D\u0434\u0436\xBB.");
+}
+function showQuestNotification(page2, newQuest = false, isLore = false, isAchievement = false) {
+  if (!getSetting("showQuestNotifications")) return;
+  const isHidden = page2.getFlag(MODULE_ID, "hidden");
+  if (isHidden) return;
+  const existing = document.querySelector(`.foundry-quest-log-ru-notification[data-uuid="${page2.uuid}"]`);
+  if (existing) return;
+  const notificationContainer = document.getElementById("foundry-quest-log-ru-notification-container") || document.createElement("div");
+  notificationContainer.id = "foundry-quest-log-ru-notification-container";
+  document.body.appendChild(notificationContainer);
+  const notification = document.createElement("div");
+  notification.dataset.uuid = page2.uuid;
+  notification.classList.add("foundry-quest-log-ru-notification");
+  const questName = `<span class="foundry-quest-log-ru-notification-quest-name">${page2.name}</span>`;
+  if (newQuest) {
+    const sound = getSetting("newQuestSoundEffect");
+    if (sound) foundry.audio.AudioHelper.play({ src: sound, volume: game.settings.get("core", "globalInterfaceVolume"), loop: false });
+    if (isLore) {
+      notification.innerHTML = `<i class="fas fa-scroll-old"></i> ${game.i18n.localize(`${MODULE_ID}.shareLore.chatMessage`) + " " + questName}`;
+    } else if (isAchievement) {
+      notification.innerHTML = `<i class="fas fa-trophy"></i> ${game.i18n.localize(`${MODULE_ID}.shareAchievement.chatMessage`) + " " + questName}`;
+    } else {
+      notification.innerHTML = `<i class="fas fa-exclamation"></i> ${game.i18n.localize(`${MODULE_ID}.shareQuest.chatMessage`) + " " + questName}`;
+    }
+  } else {
+    const sound = getSetting("updateQuestSoundEffect");
+    if (sound) foundry.audio.AudioHelper.play({ src: sound, volume: game.settings.get("core", "globalInterfaceVolume"), loop: false });
+    notification.innerHTML = `<i class="fas fa-exclamation"></i> ${game.i18n.localize(`${MODULE_ID}.questNotification.text`).replace("%q", questName)}`;
+  }
+  notificationContainer.appendChild(notification);
+  const fontSize = getSetting("fontSize") * 2.5 + "rem";
+  notification.animate(
+    [
+      { opacity: 0, height: "0rem" },
+      { opacity: 1, height: fontSize }
+    ],
+    {
+      duration: 500,
+      easing: "ease-in-out"
+    }
+  );
+  let dismissed = false;
+  const dismiss = () => {
+    if (dismissed) return;
+    dismissed = true;
+    notification.animate(
+      [
+        { opacity: 1, height: fontSize },
+        { opacity: 0, height: "0rem" }
+      ],
+      {
+        duration: 500,
+        easing: "ease-in-out"
+      }
+    ).onfinish = () => {
+      notificationContainer.removeChild(notification);
+      if (notificationContainer.children.length === 0) {
+        notificationContainer.remove();
+      }
+    };
+  };
+  notification.onmouseup = (e) => {
+    dismiss();
+    if (e.button === 0) {
+      ui.simpleQuest.openToPage(page2.uuid);
+    }
+  };
+  setTimeout(
+    () => {
+      dismiss();
+    },
+    newQuest ? 1e4 : 5e3
+  );
+}
+
+// scripts/mapImage.js
+var MapImage = class {
+  constructor(src, page2, multiSource, lockPins) {
+    this.src = src;
+    this.page = page2;
+    this.multiSource = multiSource;
+    this._lockPins = lockPins;
+    this.isMultiSource = multiSource.length > 1;
+    this.element = document.createElement("div");
+    this.element.classList.add("foundry-quest-log-ru-map-image");
+    this.element.style.overflow = "hidden";
+    this.element.style.position = "relative";
+    this.element.style.width = "100%";
+    this.element.style.height = "100%";
+    this.element.style.setProperty("--zoom-level", 1);
+    this.element.style.cursor = this.grabCursor;
+    this.element.style.maskImage = "linear-gradient(rgba(0, 0, 0, 0) 0%, black 10%, black 90%, rgba(0, 0, 0, 0) 100%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, black 10%, black 90%, rgba(0, 0, 0, 0) 100%)";
+    this.element.style.webkitMaskImage = "linear-gradient(rgba(0, 0, 0, 0) 0%, black 10%, black 90%, rgba(0, 0, 0, 0) 100%), linear-gradient(to right, rgba(0, 0, 0, 0) 0%, black 10%, black 90%, rgba(0, 0, 0, 0) 100%)";
+    this.element.style.webkitMaskComposite = "source-in";
+    this.element.style.opacity = 0;
+    this.aspectRatio = 1;
+    this._exploredPolygon = this.page.getFlag(MODULE_ID, "fogOfWar") ?? [];
+    this._fowMaskImage = this.page.getFlag(MODULE_ID, "fowMask") || null;
+    this.create();
+    this.initMarkers();
+    this._loadPosition();
+    const size = JSON.stringify(this._exploredPolygon).length / 1e3;
+    console.log(`Estimated size of fog of war for ${this.page.name}: ${size} KB`);
+  }
+  get grabCursor() {
+    return "grab";
+  }
+  get grabCursorActive() {
+    return "grabbing";
+  }
+  addCircleFogOfWar(radius = 0.1, c, subtract = false) {
+    if (!game.user.isGM) return;
+    const polygonPoints = [];
+    radius *= this.fowBrushSize / 100;
+    const nPoints = Math.max(8, radius * 200);
+    const center = this.mousePositionToRelative(c.x, c.y);
+    const width = this.FoWSize.width;
+    const height = this.FoWSize.height;
+    const aspectRatio = width / height;
+    for (let i = 0; i < nPoints; i++) {
+      const angle = i * 2 * Math.PI / nPoints;
+      const x = center.x + radius * Math.cos(angle);
+      const y = center.y + radius * Math.sin(angle) * aspectRatio;
+      polygonPoints.push({ x, y });
+    }
+    const currentExploredPolygon = this._exploredPolygon;
+    const clipper = new ClipperLib.Clipper();
+    const clipperPolygon = new ClipperLib.Path();
+    for (const point of polygonPoints) {
+      clipperPolygon.push(new ClipperLib.IntPoint(parseInt(point.x * this.FoWSize.width), parseInt(point.y * this.FoWSize.height)));
+    }
+    if (currentExploredPolygon) {
+      clipper.AddPath(clipperPolygon, subtract ? ClipperLib.PolyType.ptClip : ClipperLib.PolyType.ptSubject, true);
+      currentExploredPolygon.forEach((path) => {
+        clipper.AddPath(path.path, subtract ? ClipperLib.PolyType.ptSubject : ClipperLib.PolyType.ptClip, true);
+      });
+      const solutionPaths = new ClipperLib.PolyTree();
+      const mode = subtract ? ClipperLib.ClipType.ctDifference : ClipperLib.ClipType.ctUnion;
+      clipper.Execute(mode, solutionPaths, ClipperLib.PolyFillType.pftNonZero, ClipperLib.PolyFillType.pftNonZero);
+      const allPolygons = solutionPaths.m_AllPolys.map((poly) => {
+        return { path: poly.m_polygon, isHole: poly.IsHole() };
+      });
+      this._exploredPolygon = allPolygons;
+    } else {
+      clipper.AddPath(clipperPolygon, ClipperLib.PolyType.ptSubject, true);
+      clipper.AddPath(clipperPolygon, ClipperLib.PolyType.ptClip, true);
+      const solutionPaths = new ClipperLib.PolyTree();
+      clipper.Execute(ClipperLib.ClipType.ctUnion, solutionPaths, ClipperLib.PolyFillType.pftNonZero, ClipperLib.PolyFillType.pftNonZero);
+      const allPolygons = solutionPaths.m_AllPolys.map((poly) => {
+        return { path: poly.m_polygon, isHole: poly.IsHole() };
+      });
+      this._exploredPolygon = allPolygons;
+    }
+    this._exploredPolygon = this._exploredPolygon.sort((a, b) => {
+      a.area ??= Math.abs(ClipperLib.Clipper.Area(a.path));
+      b.area ??= Math.abs(ClipperLib.Clipper.Area(b.path));
+      if (a.area < b.area) return 1;
+    });
+    this._exploredPolygon.forEach((polygon) => delete polygon.area);
+    this.updateFoWSVG();
+    this._fowNeedsSaving = true;
+  }
+  updateFoWSVG() {
+    if (this._fowMaskImage) return this.updateFoWSVGWithImage();
+    const oldSVG = this.image.querySelector("svg");
+    if (oldSVG) oldSVG.remove();
+    const polygon = this._exploredPolygon;
+    if (!polygon) return;
+    const svgContainer = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svgContainer.style.width = "100%";
+    svgContainer.style.height = "100%";
+    svgContainer.style.filter = "blur(5px)";
+    svgContainer.style.mixBlendMode = "multiply";
+    svgContainer.style.position = "absolute";
+    svgContainer.style.pointerEvents = "none";
+    svgContainer.style.opacity = game.user.isGM ? 0.7 : 1;
+    svgContainer.setAttribute("viewBox", `0 0 ${this.FoWSize.width} ${this.FoWSize.height}`);
+    svgContainer.setAttribute("preserveAspectRatio", "none");
+    this.image.appendChild(svgContainer);
+    const svgRect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    svgRect.setAttribute("x", 0);
+    svgRect.setAttribute("y", 0);
+    svgRect.setAttribute("width", this.FoWSize.width);
+    svgRect.setAttribute("height", this.FoWSize.height);
+    svgRect.setAttribute("fill", "white");
+    svgContainer.appendChild(svgRect);
+    for (const path of polygon) {
+      const svgPolygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+      for (const point of path.path) {
+        const svgPoint = svgContainer.createSVGPoint();
+        svgPoint.x = point.X;
+        svgPoint.y = point.Y;
+        svgPolygon.points.appendItem(svgPoint);
+      }
+      svgPolygon.setAttribute("fill", path.isHole ? "white" : "black");
+      svgContainer.appendChild(svgPolygon);
+    }
+    this._svgFow = svgContainer;
+    this.setFOWBlur();
+  }
+  updateFoWSVGWithImage() {
+    const oldSVG = this.image.querySelector("svg");
+    if (oldSVG) oldSVG.remove();
+    const polygon = this._exploredPolygon;
+    if (!polygon) return;
+    const svgContainer = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svgContainer.style.width = "100%";
+    svgContainer.style.height = "100%";
+    svgContainer.style.position = "absolute";
+    svgContainer.style.pointerEvents = "none";
+    svgContainer.style.opacity = game.user.isGM ? 0.7 : 1;
+    svgContainer.setAttribute("viewBox", `0 0 ${this.FoWSize.width} ${this.FoWSize.height}`);
+    svgContainer.setAttribute("preserveAspectRatio", "none");
+    this.image.appendChild(svgContainer);
+    const svgRect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    svgRect.setAttribute("x", 0);
+    svgRect.setAttribute("y", 0);
+    svgRect.setAttribute("width", this.FoWSize.width);
+    svgRect.setAttribute("height", this.FoWSize.height);
+    svgRect.setAttribute("fill", "black");
+    const maskElement = document.createElementNS("http://www.w3.org/2000/svg", "mask");
+    maskElement.setAttribute("id", "fow-mask");
+    maskElement.setAttribute("x", 0);
+    maskElement.setAttribute("y", 0);
+    maskElement.setAttribute("width", this.FoWSize.width);
+    maskElement.setAttribute("height", this.FoWSize.height);
+    svgContainer.appendChild(maskElement);
+    maskElement.appendChild(svgRect);
+    for (const path of polygon) {
+      const svgPolygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+      for (const point of path.path) {
+        const svgPoint = svgContainer.createSVGPoint();
+        svgPoint.x = point.X;
+        svgPoint.y = point.Y;
+        svgPolygon.points.appendItem(svgPoint);
+      }
+      svgPolygon.setAttribute("fill", path.isHole ? "black" : "white");
+      maskElement.appendChild(svgPolygon);
+    }
+    const svgImage = document.createElementNS("http://www.w3.org/2000/svg", "image");
+    svgImage.setAttribute("href", this._fowMaskImage);
+    svgImage.setAttribute("width", this.FoWSize.width);
+    svgImage.setAttribute("height", this.FoWSize.height);
+    svgImage.setAttribute("preserveAspectRatio", "none");
+    svgImage.setAttribute("mask", "url(#fow-mask)");
+    svgContainer.appendChild(svgImage);
+    this._svgFow = svgContainer;
+    this.setFOWBlur();
+  }
+  setFOWBlur() {
+    if (!this._svgFow) return;
+    this._svgFow.style.filter = `blur(${Math.max(1.5, Math.min(this._zoomLevel ?? 1, 5))}px)`;
+  }
+  saveFoW() {
+    if (!this._fowNeedsSaving) return;
+    this._fowNeedsSaving = false;
+    const polygon = this._exploredPolygon;
+    if (!polygon) return;
+    this.page.setFlag(MODULE_ID, "fogOfWar", polygon);
+  }
+  resetFow() {
+    Dialog.confirm({
+      title: game.i18n.localize(`${MODULE_ID}.resetFow.title`),
+      content: game.i18n.localize(`${MODULE_ID}.resetFow.content`),
+      yes: () => {
+        const fow = [
+          {
+            isHole: false,
+            path: [
+              { X: 0, Y: 0 },
+              { X: this.FoWSize.width, Y: 0 },
+              { X: this.FoWSize.width, Y: this.FoWSize.height },
+              { X: 0, Y: this.FoWSize.height }
+            ]
+          }
+        ];
+        this.page.setFlag(MODULE_ID, "fogOfWar", fow);
+        this._exploredPolygon = fow;
+      },
+      no: () => {
+        return;
+      },
+      defaultYes: false
+    });
+  }
+  mousePositionToRelative(x, y) {
+    const imageBoundingRect = this.image.getBoundingClientRect();
+    x -= imageBoundingRect.left;
+    y -= imageBoundingRect.top;
+    const xPercent = x / imageBoundingRect.width;
+    const yPercent = y / imageBoundingRect.height;
+    return { x: xPercent, y: yPercent };
+  }
+  async preloadFowMask() {
+    if (!this._fowMaskImage) return;
+    const img = new Image();
+    img.src = this._fowMaskImage;
+    if (img.complete) return;
+    await new Promise((resolve) => img.onload = resolve);
+  }
+  create() {
+    const image = document.createElement("div");
+    image.style.backgroundImage = `url('${this.src}')`;
+    image.style.backgroundSize = "contain";
+    image.style.backgroundPosition = "center";
+    image.style.overflow = "hidden";
+    const img = new Image();
+    img.src = this.src;
+    img.style.opacity = 0;
+    image.style.position = "absolute";
+    this.image = image;
+    this.image.appendChild(img);
+    this.loadMultiSource();
+    let isDown = false;
+    let isRightDown = false;
+    let startX;
+    let startY;
+    let startImgX;
+    let startImgY;
+    let imgX = 0;
+    let imgY = 0;
+    let hasZoomed = false;
+    let originalWidth = 0;
+    let originalHeight = 0;
+    let currentZoom = 1;
+    const onLoadedImage = () => {
+      this.preloadFowMask().then(() => {
+        this.element.style.opacity = 1;
+      });
+      this.aspectRatio = img.naturalWidth / img.naturalHeight;
+      this.FoWSize = { width: img.naturalWidth, height: img.naturalHeight };
+      this.updateFoWSVG();
+      const width = this.element.offsetWidth || window.innerWidth * 0.5;
+      this.image.style.width = width + "px";
+      this.image.style.height = width / this.aspectRatio + "px";
+      this.image.style.maxWidth = "unset";
+      this.image.style.maxHeight = "unset";
+      const loaded = this._loadPosition();
+      img.remove();
+      const doAsync = async () => {
+        let imageBoundingRect = this.image.getBoundingClientRect();
+        while (!imageBoundingRect.width || !imageBoundingRect.height) {
+          await new Promise((resolve) => setTimeout(resolve, 1));
+          imageBoundingRect = this.image.getBoundingClientRect();
+        }
+        const elementBoundingRect = this.element.getBoundingClientRect();
+        const bWidth = imageBoundingRect.width;
+        const bHeight = imageBoundingRect.height;
+        const elementWidth = elementBoundingRect.width;
+        const elementHeight = elementBoundingRect.height;
+        const widthScale = elementWidth / bWidth;
+        const heightScale = elementHeight / bHeight;
+        const scale = Math.min(widthScale, heightScale);
+        originalHeight = bHeight * scale;
+        originalWidth = bWidth * scale;
+        if (loaded) {
+          imgX = loaded.imgX ?? 0;
+          imgY = loaded.imgY ?? 0;
+          this.setMultiSourceVisibility(originalWidth, originalHeight, loaded.width, loaded.height);
+        } else {
+          this.image.style.width = bWidth * scale + "px";
+          this.image.style.height = bHeight * scale + "px";
+          this.image.style.left = (elementWidth - bWidth * scale) / 2 + "px";
+          this.image.style.top = (elementHeight - bHeight * scale) / 2 + "px";
+          imgX = (elementWidth - bWidth * scale) / 2;
+          imgY = (elementHeight - bHeight * scale) / 2;
+        }
+      };
+      doAsync();
+    };
+    this.element.appendChild(image);
+    if (!img.complete) img.onload = onLoadedImage;
+    else onLoadedImage();
+    image.addEventListener("mouseup", this._addMarker.bind(this));
+    const markerPreview = document.createElement("div");
+    markerPreview.classList.add("foundry-quest-log-ru-marker");
+    markerPreview.style.position = "absolute";
+    const i = document.createElement("i");
+    i.classList.add("fas", "fa-location-dot");
+    markerPreview.appendChild(i);
+    markerPreview.style.transform = "translate(-50%, -50%)";
+    markerPreview.style.color = "red";
+    markerPreview.style.pointerEvents = "none";
+    const brushPreview = document.createElement("div");
+    brushPreview.style.position = "absolute";
+    brushPreview.style.borderRadius = "50%";
+    brushPreview.style.pointerEvents = "none";
+    brushPreview.style.transform = "translate(-50%, -50%)";
+    brushPreview.style.border = "2px dashed";
+    brushPreview.style.zIndex = 100;
+    brushPreview.style.boxShadow = "0 0 5px var(--foundry-quest-log-ru-background), 0 0 5px var(--foundry-quest-log-ru-background), 0 0 5px var(--foundry-quest-log-ru-background), 0 0 5px var(--foundry-quest-log-ru-background), 0 0 5px var(--foundry-quest-log-ru-background), inset 0 0 5px var(--foundry-quest-log-ru-background), inset 0 0 5px var(--foundry-quest-log-ru-background), inset 0 0 5px var(--foundry-quest-log-ru-background), inset 0 0 5px var(--foundry-quest-log-ru-background), inset 0 0 5px var(--foundry-quest-log-ru-background)";
+    brushPreview.style.display = "none";
+    const rulerAnchor = document.createElement("div");
+    rulerAnchor.style.position = "absolute";
+    rulerAnchor.style.transform = "translate(-50%, -85%)";
+    rulerAnchor.style.pointerEvents = "none";
+    rulerAnchor.style.zIndex = 100;
+    rulerAnchor.style.display = "none";
+    rulerAnchor.style.fontSize = "3vh";
+    rulerAnchor.className = "foundry-quest-log-ru-ruler-anchor";
+    rulerAnchor.innerHTML = `<i class="fas fa-map-pin"></i>`;
+    this._rulerAnchor = rulerAnchor;
+    const mouseTooltip = document.createElement("div");
+    mouseTooltip.style.position = "absolute";
+    mouseTooltip.style.transform = "translate(-50%, -100%)";
+    mouseTooltip.style.pointerEvents = "none";
+    mouseTooltip.style.zIndex = 1e5;
+    mouseTooltip.style.fontSize = "3vh";
+    mouseTooltip.classList.add("foundry-quest-log-ru-pointer-tooltip");
+    const rulerLine = document.createElement("div");
+    rulerLine.style.position = "absolute";
+    rulerLine.style.pointerEvents = "none";
+    rulerLine.style.height = "3px";
+    rulerLine.style.background = "var(--foundry-quest-log-ru-text-1)";
+    rulerLine.style.transformOrigin = "left center";
+    rulerLine.style.boxShadow = "0 0 5px var(--foundry-quest-log-ru-background), 0 0 5px var(--foundry-quest-log-ru-background), 0 0 5px var(--foundry-quest-log-ru-background), 0 0 5px var(--foundry-quest-log-ru-background)";
+    rulerLine.style.borderRadius = "5px";
+    rulerLine.style.width = "100%";
+    rulerLine.style.zIndex = 50;
+    this.image.appendChild(brushPreview);
+    this.element.addEventListener("mousedown", (e) => {
+      const isShiftDown = e.shiftKey;
+      const isLeftClick = e.button === 0;
+      const isCtrlDown = e.ctrlKey;
+      if (isCtrlDown) {
+        this.image.appendChild(rulerAnchor);
+        this.image.appendChild(rulerLine);
+        document.body.appendChild(mouseTooltip);
+        rulerAnchor.style.display = "block";
+        rulerAnchor._enabled = true;
+        const imageBoundingRect = this.image.getBoundingClientRect();
+        const xPercent = (e.pageX - imageBoundingRect.left) / imageBoundingRect.width;
+        const yPercent = (e.pageY - imageBoundingRect.top) / imageBoundingRect.height;
+        rulerAnchor.dataset.leftPercent = xPercent;
+        rulerAnchor.dataset.topPercent = yPercent;
+        rulerAnchor.style.left = xPercent * 100 + "%";
+        rulerAnchor.style.top = yPercent * 100 + "%";
+      }
+      if (isLeftClick) {
+        isDown = this.page.isOwner;
+        if (isShiftDown) return;
+        !!!this._movingMarker && this.image.appendChild(markerPreview);
+      } else {
+        isRightDown = true;
+        if (isShiftDown) return;
+        this.element.style.cursor = this.grabCursorActive;
+        startX = e.pageX - this.element.offsetLeft;
+        startY = e.pageY - this.element.offsetTop;
+        startImgX = imgX;
+        startImgY = imgY;
+        this._savePosition();
+      }
+    });
+    this.element.addEventListener("mouseleave", () => {
+      isDown = false;
+      isRightDown = false;
+      markerPreview.remove();
+      rulerAnchor.remove();
+      rulerLine.remove();
+      rulerAnchor._enabled = false;
+      mouseTooltip.remove();
+      this.element.style.cursor = this.grabCursor;
+      this._savePosition();
+    });
+    this.element.addEventListener("mouseup", () => {
+      isDown = false;
+      isRightDown = false;
+      markerPreview.remove();
+      rulerAnchor.remove();
+      rulerLine.remove();
+      rulerAnchor._enabled = false;
+      mouseTooltip.remove();
+      this.element.style.cursor = this.grabCursor;
+      this._savePosition();
+      this.saveFoW();
+    });
+    this.element.addEventListener("mousemove", (e) => {
+      const isShiftDown = e.shiftKey;
+      const isCtrlDown = e.ctrlKey;
+      this.element.classList.toggle("prevent-icon-interaction", isCtrlDown);
+      const imageBoundingRect = this.image.getBoundingClientRect();
+      const xPercent = (e.pageX - imageBoundingRect.left) / imageBoundingRect.width;
+      const yPercent = (e.pageY - imageBoundingRect.top) / imageBoundingRect.height;
+      if (game.user.isGM) {
+        if (isShiftDown) {
+          brushPreview.style.left = xPercent * 100 + "%";
+          brushPreview.style.top = yPercent * 100 + "%";
+          brushPreview.style.width = this.fowBrushSize * 0.2 + "%";
+          brushPreview.style.height = this.fowBrushSize * 0.2 * this.aspectRatio + "%";
+          brushPreview.style.display = "block";
+          this.element.style.cursor = "none";
+        } else {
+          brushPreview.style.display = "none";
+          if (this.element.style.cursor == "none") this.element.style.cursor = this.grabCursor;
+        }
+      }
+      if (isShiftDown && (isDown || isRightDown)) {
+        this.addCircleFogOfWar(0.1, { x: e.pageX, y: e.pageY }, isRightDown);
+        return;
+      }
+      if (isDown && !this._movingMarker && !rulerAnchor._enabled) {
+        e.preventDefault();
+        const imageBoundingRect2 = this.image.getBoundingClientRect();
+        const x2 = e.pageX - imageBoundingRect2.left;
+        const y2 = e.pageY - imageBoundingRect2.top;
+        markerPreview.style.left = x2 + "px";
+        markerPreview.style.top = y2 + "px";
+        this.element.style.cursor = "none";
+      }
+      if (this._movingMarker) {
+        e.preventDefault();
+        this._movingMarker.style.left = xPercent * 100 + "%";
+        this._movingMarker.style.top = yPercent * 100 + "%";
+        this._movingMarker.dataset.leftPercent = xPercent;
+        this._movingMarker.dataset.topPercent = yPercent;
+      }
+      if (rulerAnchor._enabled) {
+        const deltaX2 = xPercent - parseFloat(rulerAnchor.dataset.leftPercent);
+        const deltaY2 = yPercent - parseFloat(rulerAnchor.dataset.topPercent);
+        const pxX = deltaX2 * img.naturalWidth;
+        const pxY = deltaY2 * img.naturalHeight;
+        const angle = Math.atan2(pxY, pxX);
+        const pxDistance = Math.sqrt(pxX * pxX + pxY * pxY);
+        const percentDistance = pxDistance / img.naturalWidth;
+        const units = (pxDistance * (this._measure / 100)).toFixed(2) + " " + this._measureUnits + ".";
+        rulerLine.style.width = percentDistance * 100 + "%";
+        rulerLine.style.left = parseFloat(rulerAnchor.dataset.leftPercent) * 100 + "%";
+        rulerLine.style.top = parseFloat(rulerAnchor.dataset.topPercent) * 100 + "%";
+        rulerLine.style.transformOrigin = "left center";
+        rulerLine.style.transform = `rotate(${angle}rad)`;
+        mouseTooltip.innerHTML = `<i class="fas fa-ruler"></i> ${units}`;
+        mouseTooltip.style.left = e.pageX + "px";
+        mouseTooltip.style.top = e.pageY + "px";
+        this.element.style.cursor = "pointer";
+      }
+      if (!isRightDown || rulerAnchor._enabled) return;
+      e.preventDefault();
+      const x = e.pageX - this.element.offsetLeft;
+      const y = e.pageY - this.element.offsetTop;
+      const deltaX = x - startX;
+      const deltaY = y - startY;
+      imgX = startImgX + deltaX;
+      imgY = startImgY + deltaY;
+      image.style.left = imgX + "px";
+      image.style.top = imgY + "px";
+    });
+    const onWheel = (e, force = false) => {
+      e.preventDefault();
+      const scale = Math.min(Math.max(0.1, 1 + (e.deltaY ?? 1) * -1e-3), 4);
+      if (e.shiftKey) {
+        const deltaSign = -1 * Math.sign(e.deltaY);
+        this._fowBrushSizeInput.value = parseInt(this._fowBrushSizeInput.value) + deltaSign * 5;
+        this._fowBrushSizeInput.dispatchEvent(new Event("change"));
+        brushPreview.style.width = this.fowBrushSize * 0.2 + "%";
+        brushPreview.style.height = this.fowBrushSize * 0.2 * this.aspectRatio + "%";
+        return;
+      }
+      const image2 = this.image;
+      const originalAspect = this.aspectRatio;
+      const boundingRect = image2.getBoundingClientRect();
+      const oldWidth = boundingRect.width;
+      const oldHeight = boundingRect.height;
+      if (!hasZoomed && !originalWidth && !originalHeight) {
+        originalWidth = oldWidth;
+        originalHeight = oldHeight;
+        hasZoomed = true;
+      }
+      const newWidth = oldWidth * scale;
+      const newHeight = newWidth / originalAspect;
+      this._zoomLevel = newWidth / originalWidth;
+      this.setFOWBlur();
+      if (this._zoomLevel < 0.7 || this._zoomLevel > 20) return;
+      this.element.style.setProperty("--zoom-level", this._zoomLevel);
+      if (force) return;
+      const cursorXPercent = (e.pageX - boundingRect.left) / oldWidth;
+      const cursorYPercent = (e.pageY - boundingRect.top) / oldHeight;
+      image2.style.width = newWidth + "px";
+      image2.style.height = newHeight + "px";
+      const deltaX = (newWidth - oldWidth) * cursorXPercent;
+      const deltaY = (newHeight - oldHeight) * cursorYPercent;
+      imgX -= deltaX;
+      imgY -= deltaY;
+      image2.style.left = imgX + "px";
+      image2.style.top = imgY + "px";
+      this._savePosition();
+      this.setMultiSourceVisibility(originalWidth, originalHeight, newWidth, newHeight);
+    };
+    setTimeout(() => {
+      onWheel(new MouseEvent("wheel", { deltaY: 10 }), true);
+    }, 1);
+    this.element.addEventListener("wheel", onWheel);
+    this.element.addEventListener("drop", async (e) => {
+      try {
+        const imageBoundingRect = this.image.getBoundingClientRect();
+        const xPercent = (e.pageX - imageBoundingRect.left) / imageBoundingRect.width;
+        const yPercent = (e.pageY - imageBoundingRect.top) / imageBoundingRect.height;
+        const isAlt = e.altKey;
+        const dragData = JSON.parse(e.dataTransfer.getData("text/plain"));
+        let title = "New Marker";
+        let icon = "fas fa-location-dot";
+        let uuid = dragData.uuid;
+        const image2 = dragData?.texture?.src;
+        if (uuid) {
+          const doc = await fromUuid(uuid);
+          title = doc.name ?? doc.title ?? "New Marker";
+          icon = doc.img ?? "fas fa-location-dot";
+          if (dragData.anchor) {
+            title.value = dragData.anchor.name;
+            uuid += "#" + dragData.anchor.slug;
+          }
+        }
+        if (image2) {
+          icon = image2;
+        }
+        const markersData = this.page.getFlag(MODULE_ID, "markers") ?? {};
+        const id = foundry.utils.randomID();
+        markersData[id] = { title, icon, x: xPercent, y: yPercent, journal: uuid, hidden: isAlt, color: "#ff0000" };
+        this.page.setFlag(MODULE_ID, "markers", markersData);
+      } catch (e2) {
+      }
+    });
+  }
+  _savePosition() {
+    const left = this.image.style.left;
+    const top = this.image.style.top;
+    const width = this.image.style.width;
+    const height = this.image.style.height;
+    if (!left || !top || !width || !height) return;
+    this.page._mapPositions = { left, top, width, height };
+  }
+  _loadPosition() {
+    const position = this.page._mapPositions;
+    if (!position) return;
+    if (!position.left || !position.top || !position.width || !position.height) return;
+    this.image.style.left = position.left;
+    this.image.style.top = position.top;
+    this.image.style.width = position.width;
+    this.image.style.height = position.height;
+    return { imgX: parseFloat(position.left), imgY: parseFloat(position.top), width: parseFloat(position.width), height: parseFloat(position.height) };
+  }
+  _addMarker(event) {
+    if (!this.page.isOwner || this._lockPins || this._rulerAnchor._enabled) return;
+    const isLeftClick = event.button === 0;
+    if (!isLeftClick) return;
+    const isShiftDown = event.shiftKey;
+    if (isShiftDown || this._movingMarker) return;
+    const imageBoundingRect = this.image.getBoundingClientRect();
+    const x = event.pageX - imageBoundingRect.left;
+    const y = event.pageY - imageBoundingRect.top;
+    const xPercent = x / imageBoundingRect.width;
+    const yPercent = y / imageBoundingRect.height;
+    this.mousePercent = { x: xPercent, y: yPercent };
+    new MarkerConfig(this, this.page).render(true);
+  }
+  initMarkers() {
+    this.image.querySelectorAll(".foundry-quest-log-ru-marker").forEach((marker) => {
+      marker.remove();
+    });
+    const page2 = this.page;
+    const markersFlag = page2.getFlag(MODULE_ID, "markers") ?? {};
+    const markers = markersFlag;
+    const globalLabelColor = getSetting("labelColor") !== "none" ? getSetting("labelColor") : null;
+    if (!markers) return;
+    for (const [id, markerData] of Object.entries(markers)) {
+      if (markerData == null) continue;
+      if (!page2.isOwner && markerData.hidden) continue;
+      const marker = document.createElement("div");
+      marker.classList.add("foundry-quest-log-ru-marker");
+      if (markerData.hidden) marker.style.border = "3px dashed";
+      marker.style.position = "absolute";
+      marker.style.left = markerData.x * 100 + "%";
+      marker.style.top = markerData.y * 100 + "%";
+      marker.style.color = markerData.color;
+      marker.style.transform = markerData.fixedScale ? `translate(-50%, -50%) scale(calc(${markerData.scale ?? 1} * var(--zoom-level)))` : `translate(-50%, -50%) scale(${markerData.scale ?? 1})`;
+      marker.style.display = "flex";
+      marker.style.alignItems = "center";
+      marker.style.justifyContent = "center";
+      markerData.icon ??= "fas fa-location-dot";
+      const ext = markerData.icon.split(".").pop().toLowerCase();
+      const isVideo = ["mp4", "webm"].includes(ext);
+      const isImage = !isVideo && markerData.icon.includes(".");
+      const isFaIcon = markerData.icon.includes("fa-") && !isImage;
+      const isText = !isImage && !isFaIcon && !isVideo;
+      if (isVideo) marker.innerHTML = `<video class="marker-image" src="${markerData.icon}" autoplay loop muted></video>`;
+      if (isText) marker.innerHTML = `<i class="emoji">${markerData.icon}</i>`;
+      if (isImage) marker.innerHTML = `<i class="marker-image" style="background-image: url('${markerData.icon}')"></i>`;
+      if (isFaIcon) marker.innerHTML = `<i class="${markerData.icon}"></i>`;
+      marker.dataset.tooltipDirection = "UP";
+      marker.dataset.tooltipClass = "foundry-quest-log-ru-marker-tooltip";
+      if (markerData.displayLabel) {
+        marker.dataset.tooltip = "";
+      } else {
+        marker.dataset.tooltip = `
+                <h4 style="margin: 0">${markerData.title}</h4>
+                `;
+      }
+      if (markerData.description) {
+        marker.dataset.tooltip += `
+                <p>${markerData.description}</p>
+                `;
+      }
+      marker.style.cursor = markerData.journal ? "pointer" : "default";
+      const markerLabel = document.createElement("span");
+      markerLabel.innerText = markerData.title;
+      markerLabel.style.position = "absolute";
+      markerLabel.style.width = "max-content";
+      markerLabel.style.bottom = "100%";
+      markerLabel.style.fontSize = "calc(var(--foundry-quest-log-ru-font-size)*0.75)";
+      markerLabel.style.pointerEvents = "none";
+      if (globalLabelColor) markerLabel.style.color = globalLabelColor;
+      if (markerData.displayLabel) marker.appendChild(markerLabel);
+      if (page2.isOwner && !this._lockPins) {
+        let moveTime = 0;
+        marker.addEventListener("mousedown", (e) => {
+          e.stopPropagation();
+          if (e.shiftKey) return;
+          const isRightClick = e.button === 2;
+          if (!isRightClick) return;
+          this._movingMarker = marker;
+          moveTime = Date.now();
+        });
+        marker.addEventListener("mouseup", (e) => {
+          e.stopPropagation();
+          if (e.shiftKey) return;
+          const isRightClick = e.button === 2;
+          if (e.altKey) {
+            const markersData = page2.getFlag(MODULE_ID, "markers") ?? {};
+            markersData[id].hidden = !markersData[id].hidden;
+            page2.setFlag(MODULE_ID, "markers", markersData);
+            return;
+          }
+          if (!isRightClick) return;
+          this._movingMarker = null;
+          const xPercent = parseFloat(marker.dataset.leftPercent);
+          const yPercent = parseFloat(marker.dataset.topPercent);
+          const diffX = Math.abs(xPercent - markerData.x);
+          const diffY = Math.abs(yPercent - markerData.y);
+          const deltaTime = Date.now() - moveTime;
+          if (deltaTime < 500 && diffX < 5e-4 && diffY < 5e-4 || xPercent <= 0 || yPercent <= 0 || isNaN(xPercent) || isNaN(yPercent)) {
+            marker.style.left = markerData.x * 100 + "%";
+            marker.style.top = markerData.y * 100 + "%";
+            return new MarkerConfig(this, this.page, id).render(true);
+          }
+          const markers2 = page2.getFlag(MODULE_ID, "markers") ?? {};
+          markers2[id].x = xPercent;
+          markers2[id].y = yPercent;
+          page2.setFlag(MODULE_ID, "markers", markers2);
+        });
+      }
+      if (markerData.journal) {
+        marker.addEventListener("click", async (e) => {
+          if (e.altKey) return;
+          e.preventDefault();
+          e.stopPropagation();
+          let uuid = markerData.journal;
+          const anchor = markerData.journal.split("#")[1];
+          if (anchor) uuid = markerData.journal.split("#")[0];
+          const journal = await fromUuid(uuid);
+          const isScene = journal instanceof Scene;
+          const isMacro = journal instanceof Macro;
+          if (isScene) {
+            ui.simpleQuest.toggle();
+            return journal.view();
+          }
+          if (isMacro) {
+            const macroArgs = { ...markerData, id, map: this.page };
+            return journal.execute(macroArgs);
+          }
+          const questJournals = ui.simpleQuest._questJournals;
+          const mapsJournal = this.page.parent;
+          let isQuest = false;
+          const isMap = Array.from(mapsJournal.pages).some((page3) => page3.uuid == journal.uuid);
+          for (const qJournal of questJournals) {
+            qJournal.pages.forEach((page3) => {
+              if (page3.uuid == journal.uuid) isQuest = true;
+            });
+          }
+          if (isQuest || isMap) {
+            ui.simpleQuest.openToPage(journal.uuid);
+          } else {
+            const isJournalPage = journal instanceof JournalEntryPage;
+            const hasPermission = journal.testUserPermission(game.user, CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER);
+            if (!hasPermission) return ui.notifications.error(game.i18n.localize(`${MODULE_ID}.noPermission`));
+            if (isJournalPage && getSetting("openJournalPinsAsModals")) this.openModalJournal(journal, markerData.journal);
+            else journal.sheet.render(true);
+          }
+        });
+      }
+      this.image.appendChild(marker);
+    }
+  }
+  async openModalJournal(journal, uuid) {
+    const anchor = uuid.split("#")[1];
+    const hasPermission = journal.testUserPermission(game.user, CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER);
+    if (!hasPermission) return ui.notifications.error(game.i18n.localize(`${MODULE_ID}.noPermission`));
+    let content = "";
+    if (journal.type === "text") {
+      content = await foundry.applications.ux.TextEditor.implementation.enrichHTML(journal.text.content, { secrets: game.user.isGM, relativeTo: journal, async: true });
+    } else if (journal.type === "image") {
+      content = `<div class="foundry-quest-log-ru-image-journal" style="max-height: 50vh;"><img src="${journal.src}" alt="${journal.name}"><p>${journal.image.caption}</p></div>`;
+    } else {
+      content = `<p>This Page Type is not Supported in Simple Quest</p>`;
+    }
+    const modal = document.createElement("div");
+    modal.classList.add("foundry-quest-log-ru-modal");
+    modal.style.opacity = 0;
+    const title = `<h1>${journal.name}</h1>`;
+    modal.innerHTML = `<div class="foundry-quest-log-ru-modal-content">${title + content}</div>`;
+    modal.addEventListener("mousedown", (e) => {
+      modal.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 200, easing: "ease-in-out" }).onfinish = () => {
+        modal.remove();
+      };
+    });
+    modal.addEventListener("wheel", (e) => {
+      e.stopPropagation();
+    });
+    modal.addEventListener("mousemove", (e) => {
+      e.stopPropagation();
+    });
+    this.element.appendChild(modal);
+    const height = this.element.getBoundingClientRect().height;
+    const modalContentHeight = modal.querySelector(".foundry-quest-log-ru-modal-content").getBoundingClientRect().height;
+    if (modalContentHeight < height) {
+      modal.style.display = "flex";
+      modal.style.justifyContent = "center";
+      modal.style.flexDirection = "column";
+    }
+    modal.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 200, easing: "ease-in-out", fill: "forwards" });
+    if (anchor) {
+      const toc = journal.toc[anchor];
+      const tocText = toc.text.trim();
+      const headers = modal.querySelectorAll("h1, h2, h3");
+      let header;
+      const sameNameHeaderIndex = anchor.includes("$") ? parseInt(anchor.split("$")[1]) : 0;
+      const matchingHeaders = Array.from(headers).filter((h) => h.innerText.trim() === tocText);
+      header = matchingHeaders[sameNameHeaderIndex];
+      if (header) {
+        header.scrollIntoView({ block: "start" });
+      }
+    }
+  }
+  loadMultiSource() {
+    if (!this.isMultiSource) return false;
+    let squareRoot = Math.sqrt(this.multiSource.length);
+    const isInteger = squareRoot % 1 === 0;
+    const isMinusOneInteger = Math.sqrt(this.multiSource.length - 1) % 1 === 0 && !isInteger;
+    if (!isInteger && !isMinusOneInteger) return false;
+    this.multiImageElements = [];
+    if (isMinusOneInteger) {
+      squareRoot = Math.sqrt(this.multiSource.length - 1);
+      this.multiSourceHasLowRes = true;
+    }
+    this.multiSourceSQRT = squareRoot;
+    const gridSize = { x: squareRoot, y: squareRoot };
+    this.image.style.display = "grid";
+    this.image.style.gridTemplateColumns = `repeat(${gridSize.x}, 1fr)`;
+    this.image.style.gridTemplateRows = `repeat(${gridSize.y}, 1fr)`;
+    for (const src of this.multiSource) {
+      if (isMinusOneInteger && this.multiSource.indexOf(src) == 0) continue;
+      const image = document.createElement("div");
+      if (isMinusOneInteger) image.style.display = "none";
+      image.style.backgroundImage = `url('${src}')`;
+      image.style.backgroundSize = "cover";
+      image.style.backgroundPosition = "center";
+      image.style.width = "100%";
+      image.style.height = "100%";
+      image.style.pointerEvents = "none";
+      this.multiImageElements.push(image);
+      this.image.appendChild(image);
+    }
+  }
+  setMultiSourceVisibility(originalWidth, originalHeight, newWidth, newHeight) {
+    if (!this.multiImageElements || !this.multiSourceHasLowRes) return;
+    const zoomFactor = newWidth / originalWidth;
+    const visible = zoomFactor > this.multiSourceSQRT;
+    this.multiImageElements.forEach((image) => {
+      image.style.display = visible ? "block" : "none";
+    });
+  }
+};
+var MarkerConfig = class extends FormApplication {
+  constructor(mapImage, page2, edit = null) {
+    super();
+    this.mapImage = mapImage;
+    this.page = page2;
+    this.edit = edit;
+  }
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      id: "foundry-quest-log-ru-marker-config",
+      template: "modules/foundry-quest-log-ru/templates/marker-config.hbs",
+      title: game.i18n.localize(`${MODULE_ID}.markerConfig.title`),
+      classes: [],
+      width: 400,
+      height: "auto",
+      resizable: false,
+      closeOnSubmit: true
+    });
+  }
+  get defaultMarkerData() {
+    return {
+      title: "New Marker",
+      icon: "fas fa-location-dot",
+      color: "#ff0000",
+      scale: 1
+    };
+  }
+  get markerIcons() {
+    return [
+      "modules/foundry-quest-log-ru/assets/icons/altar1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/beer1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/beer2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/beer3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/book1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/book2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/book3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/book4.webp",
+      "modules/foundry-quest-log-ru/assets/icons/book5.webp",
+      "modules/foundry-quest-log-ru/assets/icons/boss1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/boss2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/boss3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/boss4.webp",
+      "modules/foundry-quest-log-ru/assets/icons/coin1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/coin2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/coin3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/coin4.webp",
+      "modules/foundry-quest-log-ru/assets/icons/combat1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/combat2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/combat3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/doorway1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/doorway2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/doorway3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/doorway4.webp",
+      "modules/foundry-quest-log-ru/assets/icons/doorway5.webp",
+      "modules/foundry-quest-log-ru/assets/icons/exclamation1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/exclamation2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/exclamation3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/exclamation4.webp",
+      "modules/foundry-quest-log-ru/assets/icons/food1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/food2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/food3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/key1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/key2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/location1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/location10.webp",
+      "modules/foundry-quest-log-ru/assets/icons/location2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/location3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/location4.webp",
+      "modules/foundry-quest-log-ru/assets/icons/location5.webp",
+      "modules/foundry-quest-log-ru/assets/icons/location6.webp",
+      "modules/foundry-quest-log-ru/assets/icons/location7.webp",
+      "modules/foundry-quest-log-ru/assets/icons/location8.webp",
+      "modules/foundry-quest-log-ru/assets/icons/location9.webp",
+      "modules/foundry-quest-log-ru/assets/icons/map1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/map2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/map3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/monster1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/monster2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/monster3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/monster4.webp",
+      "modules/foundry-quest-log-ru/assets/icons/note1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/note2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/note3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/note4.webp",
+      "modules/foundry-quest-log-ru/assets/icons/ore1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/ore2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/ore3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/ore4.webp",
+      "modules/foundry-quest-log-ru/assets/icons/ore5.webp",
+      "modules/foundry-quest-log-ru/assets/icons/ore6.webp",
+      "modules/foundry-quest-log-ru/assets/icons/ore7.webp",
+      "modules/foundry-quest-log-ru/assets/icons/painting1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/painting2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/painting3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/pendant1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/pendant2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/pendant3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/plant1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/plant2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/plant3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/plant4.webp",
+      "modules/foundry-quest-log-ru/assets/icons/plant5.webp",
+      "modules/foundry-quest-log-ru/assets/icons/plant6.webp",
+      "modules/foundry-quest-log-ru/assets/icons/plant7.webp",
+      "modules/foundry-quest-log-ru/assets/icons/plant8.webp",
+      "modules/foundry-quest-log-ru/assets/icons/portal1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/portal2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/portal3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/portal4.webp",
+      "modules/foundry-quest-log-ru/assets/icons/pouch1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/pouch2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/pouch3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/pouch4.webp",
+      "modules/foundry-quest-log-ru/assets/icons/question1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/question2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/question3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/question4.webp",
+      "modules/foundry-quest-log-ru/assets/icons/scroll1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/scroll2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/scroll3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/shield1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/shield2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/shield3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/shield4.webp",
+      "modules/foundry-quest-log-ru/assets/icons/skull1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/skull2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/skull3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/spell1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/spell2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/spell3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/spell4.webp",
+      "modules/foundry-quest-log-ru/assets/icons/spell5.webp",
+      "modules/foundry-quest-log-ru/assets/icons/spell6.webp",
+      "modules/foundry-quest-log-ru/assets/icons/spell7.webp",
+      "modules/foundry-quest-log-ru/assets/icons/spell8.webp",
+      "modules/foundry-quest-log-ru/assets/icons/tree1.webp",
+      "modules/foundry-quest-log-ru/assets/icons/tree2.webp",
+      "modules/foundry-quest-log-ru/assets/icons/tree3.webp",
+      "modules/foundry-quest-log-ru/assets/icons/tree4.webp",
+      "fas fa-location-dot",
+      "fa-solid fa-exclamation",
+      "fa-solid fa-question",
+      "fas fa-dragon",
+      "fas fa-sword",
+      "fas fa-shield-alt",
+      "fas fa-helmet-battle",
+      "fas fa-axe",
+      "fas fa-scroll",
+      "fas fa-scroll-old",
+      "fas fa-treasure-chest",
+      "fas fa-magic",
+      "fas fa-crystal-ball",
+      "fas fa-book-dead",
+      "fas fa-bone",
+      "fas fa-flask-round-potion",
+      "fas fa-flask-round-poison",
+      "fas fa-ring",
+      "fas fa-crown",
+      "fas fa-dice",
+      "fas fa-hourglass-end",
+      "fas fa-bow-arrow",
+      "fas fa-meteor",
+      "fas fa-moon",
+      "fas fa-sun",
+      "fas fa-cloud-moon",
+      "fas fa-cloud-sun",
+      "fas fa-coin",
+      "fas fa-skull-crossbones",
+      "fas fa-dungeon",
+      "fas fa-mountain",
+      "fas fa-tree",
+      "fas fa-campfire",
+      "fas fa-compass",
+      "fa-solid fa-bullseye",
+      "fas fa-feather-alt",
+      "fas fa-bug",
+      "fas fa-paw",
+      "fas fa-fish",
+      "fas fa-bird",
+      "fas fa-horse",
+      "fas fa-spider",
+      "fas fa-ghost",
+      "fas fa-bat",
+      "fas fa-wand-magic",
+      "fas fa-hat-wizard",
+      "fas fa-staff",
+      "fas fa-flag-checkered",
+      "fas fa-map",
+      "fas fa-anchor",
+      "fas fa-ship",
+      "fas fa-skull",
+      "fas fa-cross",
+      "fas fa-ban",
+      "fas fa-gem",
+      "fas fa-leaf",
+      "fas fa-flower",
+      "fas fa-mushroom",
+      "fas fa-paw-claws",
+      "fas fa-star",
+      "fas fa-fire",
+      "fa-solid fa-fire-flame-curved",
+      "fas fa-water",
+      "fas fa-wind",
+      "fas fa-earth",
+      "fas fa-heart",
+      "fas fa-mind-share",
+      "fas fa-sword-laser",
+      "fas fa-moon-stars",
+      "fas fa-cloud",
+      "fas fa-rainbow",
+      "fas fa-axe-battle",
+      "fas fa-brain",
+      "fas fa-crow",
+      "fas fa-dagger",
+      "fas fa-frog",
+      "fas fa-globe",
+      "fas fa-hammer",
+      "fas fa-hat-witch",
+      "fas fa-pumpkin",
+      "fas fa-candle-holder",
+      "fas fa-broom",
+      "fas fa-dice-d20",
+      "fas fa-tornado",
+      "fas fa-cloud-showers-heavy"
+    ];
+  }
+  activateListeners(html) {
+    super.activateListeners(html);
+    html[0].querySelector("#delete-marker").addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      this.page.update({ [`flags.${MODULE_ID}.markers.-=${this.edit}`]: null });
+      this.close();
+    });
+    html[0].querySelectorAll(".quest-icons i").forEach((icon) => {
+      icon.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const iconInput = html[0].querySelector("#icon");
+        iconInput.value = icon.classList.value;
+      });
+    });
+    html[0].querySelector("#journal").addEventListener("drop", async (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      try {
+        const dragData = JSON.parse(e.dataTransfer.getData("text/plain"));
+        const uuid = dragData.uuid;
+        const journal = await fromUuid(uuid);
+        const title = journal.name ?? journal.title;
+        const titleInput = html[0].querySelector("#title");
+        if (!titleInput.value || titleInput.value == "New Marker") titleInput.value = title;
+        html[0].querySelector("#journal").value = uuid;
+        if (dragData.anchor) {
+          titleInput.value = dragData.anchor.name;
+          html[0].querySelector("#journal").value += "#" + dragData.anchor.slug;
+        }
+      } catch (e2) {
+      }
+    });
+  }
+  getData() {
+    const markersFlag = this.page.getFlag(MODULE_ID, "markers") ?? {};
+    const markers = markersFlag ?? {};
+    const markerData = markers[this.edit] ?? {};
+    return {
+      ...foundry.utils.mergeObject(this.defaultMarkerData, markerData),
+      id: this.edit,
+      icons: this.markerIcons.map((icon) => {
+        return {
+          icon,
+          isImage: icon.includes(".")
+        };
+      })
+    };
+  }
+  async _updateObject(event, formData) {
+    event.preventDefault();
+    formData = expandObject(formData);
+    if (!this.edit) {
+      formData.x = this.mapImage.mousePercent.x;
+      formData.y = this.mapImage.mousePercent.y;
+    }
+    const markers = this.page.getFlag(MODULE_ID, "markers") ?? {};
+    markers[this.edit ?? foundry.utils.randomID(20)] = formData;
+    await this.page.setFlag(MODULE_ID, "markers", markers);
+  }
+};
+
+// scripts/lib/Sortable.js
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) {
+      symbols = symbols.filter(function(sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+    }
+    keys.push.apply(keys, symbols);
+  }
+  return keys;
+}
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    if (i % 2) {
+      ownKeys(Object(source), true).forEach(function(key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(Object(source)).forEach(function(key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+  return target;
+}
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function(obj2) {
+      return typeof obj2;
+    };
+  } else {
+    _typeof = function(obj2) {
+      return obj2 && typeof Symbol === "function" && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
+    };
+  }
+  return _typeof(obj);
+}
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+function _extends() {
+  _extends = Object.assign || function(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends.apply(this, arguments);
+}
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+  return target;
+}
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+var version = "1.15.0";
+function userAgent(pattern) {
+  if (typeof window !== "undefined" && window.navigator) {
+    return !!/* @__PURE__ */ navigator.userAgent.match(pattern);
+  }
+}
+var IE11OrLess = userAgent(/(?:Trident.*rv[ :]?11\.|msie|iemobile|Windows Phone)/i);
+var Edge = userAgent(/Edge/i);
+var FireFox = userAgent(/firefox/i);
+var Safari = userAgent(/safari/i) && !userAgent(/chrome/i) && !userAgent(/android/i);
+var IOS = userAgent(/iP(ad|od|hone)/i);
+var ChromeForAndroid = userAgent(/chrome/i) && userAgent(/android/i);
+var captureMode = {
+  capture: false,
+  passive: false
+};
+function on(el, event, fn) {
+  el.addEventListener(event, fn, !IE11OrLess && captureMode);
+}
+function off(el, event, fn) {
+  el.removeEventListener(event, fn, !IE11OrLess && captureMode);
+}
+function matches(el, selector2) {
+  if (!selector2) return;
+  selector2[0] === ">" && (selector2 = selector2.substring(1));
+  if (el) {
+    try {
+      if (el.matches) {
+        return el.matches(selector2);
+      } else if (el.msMatchesSelector) {
+        return el.msMatchesSelector(selector2);
+      } else if (el.webkitMatchesSelector) {
+        return el.webkitMatchesSelector(selector2);
+      }
+    } catch (_) {
+      return false;
+    }
+  }
+  return false;
+}
+function getParentOrHost(el) {
+  return el.host && el !== document && el.host.nodeType ? el.host : el.parentNode;
+}
+function closest(el, selector2, ctx, includeCTX) {
+  if (el) {
+    ctx = ctx || document;
+    do {
+      if (selector2 != null && (selector2[0] === ">" ? el.parentNode === ctx && matches(el, selector2) : matches(el, selector2)) || includeCTX && el === ctx) {
+        return el;
+      }
+      if (el === ctx) break;
+    } while (el = getParentOrHost(el));
+  }
+  return null;
+}
+var R_SPACE = /\s+/g;
+function toggleClass(el, name, state) {
+  if (el && name) {
+    if (el.classList) {
+      el.classList[state ? "add" : "remove"](name);
+    } else {
+      var className = (" " + el.className + " ").replace(R_SPACE, " ").replace(" " + name + " ", " ");
+      el.className = (className + (state ? " " + name : "")).replace(R_SPACE, " ");
+    }
+  }
+}
+function css(el, prop, val) {
+  var style = el && el.style;
+  if (style) {
+    if (val === void 0) {
+      if (document.defaultView && document.defaultView.getComputedStyle) {
+        val = document.defaultView.getComputedStyle(el, "");
+      } else if (el.currentStyle) {
+        val = el.currentStyle;
+      }
+      return prop === void 0 ? val : val[prop];
+    } else {
+      if (!(prop in style) && prop.indexOf("webkit") === -1) {
+        prop = "-webkit-" + prop;
+      }
+      style[prop] = val + (typeof val === "string" ? "" : "px");
+    }
+  }
+}
+function matrix(el, selfOnly) {
+  var appliedTransforms = "";
+  if (typeof el === "string") {
+    appliedTransforms = el;
+  } else {
+    do {
+      var transform = css(el, "transform");
+      if (transform && transform !== "none") {
+        appliedTransforms = transform + " " + appliedTransforms;
+      }
+    } while (!selfOnly && (el = el.parentNode));
+  }
+  var matrixFn = window.DOMMatrix || window.WebKitCSSMatrix || window.CSSMatrix || window.MSCSSMatrix;
+  return matrixFn && new matrixFn(appliedTransforms);
+}
+function find(ctx, tagName, iterator) {
+  if (ctx) {
+    var list = ctx.getElementsByTagName(tagName), i = 0, n = list.length;
+    if (iterator) {
+      for (; i < n; i++) {
+        iterator(list[i], i);
+      }
+    }
+    return list;
+  }
+  return [];
+}
+function getWindowScrollingElement() {
+  var scrollingElement = document.scrollingElement;
+  if (scrollingElement) {
+    return scrollingElement;
+  } else {
+    return document.documentElement;
+  }
+}
+function getRect(el, relativeToContainingBlock, relativeToNonStaticParent, undoScale, container) {
+  if (!el.getBoundingClientRect && el !== window) return;
+  var elRect, top, left, bottom, right, height, width;
+  if (el !== window && el.parentNode && el !== getWindowScrollingElement()) {
+    elRect = el.getBoundingClientRect();
+    top = elRect.top;
+    left = elRect.left;
+    bottom = elRect.bottom;
+    right = elRect.right;
+    height = elRect.height;
+    width = elRect.width;
+  } else {
+    top = 0;
+    left = 0;
+    bottom = window.innerHeight;
+    right = window.innerWidth;
+    height = window.innerHeight;
+    width = window.innerWidth;
+  }
+  if ((relativeToContainingBlock || relativeToNonStaticParent) && el !== window) {
+    container = container || el.parentNode;
+    if (!IE11OrLess) {
+      do {
+        if (container && container.getBoundingClientRect && (css(container, "transform") !== "none" || relativeToNonStaticParent && css(container, "position") !== "static")) {
+          var containerRect = container.getBoundingClientRect();
+          top -= containerRect.top + parseInt(css(container, "border-top-width"));
+          left -= containerRect.left + parseInt(css(container, "border-left-width"));
+          bottom = top + elRect.height;
+          right = left + elRect.width;
+          break;
+        }
+      } while (container = container.parentNode);
+    }
+  }
+  if (undoScale && el !== window) {
+    var elMatrix = matrix(container || el), scaleX = elMatrix && elMatrix.a, scaleY = elMatrix && elMatrix.d;
+    if (elMatrix) {
+      top /= scaleY;
+      left /= scaleX;
+      width /= scaleX;
+      height /= scaleY;
+      bottom = top + height;
+      right = left + width;
+    }
+  }
+  return {
+    top,
+    left,
+    bottom,
+    right,
+    width,
+    height
+  };
+}
+function isScrolledPast(el, elSide, parentSide) {
+  var parent = getParentAutoScrollElement(el, true), elSideVal = getRect(el)[elSide];
+  while (parent) {
+    var parentSideVal = getRect(parent)[parentSide], visible = void 0;
+    if (parentSide === "top" || parentSide === "left") {
+      visible = elSideVal >= parentSideVal;
+    } else {
+      visible = elSideVal <= parentSideVal;
+    }
+    if (!visible) return parent;
+    if (parent === getWindowScrollingElement()) break;
+    parent = getParentAutoScrollElement(parent, false);
+  }
+  return false;
+}
+function getChild(el, childNum, options, includeDragEl) {
+  var currentChild = 0, i = 0, children = el.children;
+  while (i < children.length) {
+    if (children[i].style.display !== "none" && children[i] !== Sortable.ghost && (includeDragEl || children[i] !== Sortable.dragged) && closest(children[i], options.draggable, el, false)) {
+      if (currentChild === childNum) {
+        return children[i];
+      }
+      currentChild++;
+    }
+    i++;
+  }
+  return null;
+}
+function lastChild(el, selector2) {
+  var last = el.lastElementChild;
+  while (last && (last === Sortable.ghost || css(last, "display") === "none" || selector2 && !matches(last, selector2))) {
+    last = last.previousElementSibling;
+  }
+  return last || null;
+}
+function index(el, selector2) {
+  var index2 = 0;
+  if (!el || !el.parentNode) {
+    return -1;
+  }
+  while (el = el.previousElementSibling) {
+    if (el.nodeName.toUpperCase() !== "TEMPLATE" && el !== Sortable.clone && (!selector2 || matches(el, selector2))) {
+      index2++;
+    }
+  }
+  return index2;
+}
+function getRelativeScrollOffset(el) {
+  var offsetLeft = 0, offsetTop = 0, winScroller = getWindowScrollingElement();
+  if (el) {
+    do {
+      var elMatrix = matrix(el), scaleX = elMatrix.a, scaleY = elMatrix.d;
+      offsetLeft += el.scrollLeft * scaleX;
+      offsetTop += el.scrollTop * scaleY;
+    } while (el !== winScroller && (el = el.parentNode));
+  }
+  return [offsetLeft, offsetTop];
+}
+function indexOfObject(arr, obj) {
+  for (var i in arr) {
+    if (!arr.hasOwnProperty(i)) continue;
+    for (var key in obj) {
+      if (obj.hasOwnProperty(key) && obj[key] === arr[i][key]) return Number(i);
+    }
+  }
+  return -1;
+}
+function getParentAutoScrollElement(el, includeSelf) {
+  if (!el || !el.getBoundingClientRect) return getWindowScrollingElement();
+  var elem = el;
+  var gotSelf = false;
+  do {
+    if (elem.clientWidth < elem.scrollWidth || elem.clientHeight < elem.scrollHeight) {
+      var elemCSS = css(elem);
+      if (elem.clientWidth < elem.scrollWidth && (elemCSS.overflowX == "auto" || elemCSS.overflowX == "scroll") || elem.clientHeight < elem.scrollHeight && (elemCSS.overflowY == "auto" || elemCSS.overflowY == "scroll")) {
+        if (!elem.getBoundingClientRect || elem === document.body) return getWindowScrollingElement();
+        if (gotSelf || includeSelf) return elem;
+        gotSelf = true;
+      }
+    }
+  } while (elem = elem.parentNode);
+  return getWindowScrollingElement();
+}
+function extend(dst, src) {
+  if (dst && src) {
+    for (var key in src) {
+      if (src.hasOwnProperty(key)) {
+        dst[key] = src[key];
+      }
+    }
+  }
+  return dst;
+}
+function isRectEqual(rect1, rect2) {
+  return Math.round(rect1.top) === Math.round(rect2.top) && Math.round(rect1.left) === Math.round(rect2.left) && Math.round(rect1.height) === Math.round(rect2.height) && Math.round(rect1.width) === Math.round(rect2.width);
+}
+var _throttleTimeout;
+function throttle(callback, ms) {
+  return function() {
+    if (!_throttleTimeout) {
+      var args = arguments, _this = this;
+      if (args.length === 1) {
+        callback.call(_this, args[0]);
+      } else {
+        callback.apply(_this, args);
+      }
+      _throttleTimeout = setTimeout(function() {
+        _throttleTimeout = void 0;
+      }, ms);
+    }
+  };
+}
+function cancelThrottle() {
+  clearTimeout(_throttleTimeout);
+  _throttleTimeout = void 0;
+}
+function scrollBy(el, x, y) {
+  el.scrollLeft += x;
+  el.scrollTop += y;
+}
+function clone(el) {
+  var Polymer = window.Polymer;
+  var $ = window.jQuery || window.Zepto;
+  if (Polymer && Polymer.dom) {
+    return Polymer.dom(el).cloneNode(true);
+  } else if ($) {
+    return $(el).clone(true)[0];
+  } else {
+    return el.cloneNode(true);
+  }
+}
+var expando = "Sortable" + (/* @__PURE__ */ new Date()).getTime();
+function AnimationStateManager() {
+  var animationStates = [], animationCallbackId;
+  return {
+    captureAnimationState: function captureAnimationState() {
+      animationStates = [];
+      if (!this.options.animation) return;
+      var children = [].slice.call(this.el.children);
+      children.forEach(function(child) {
+        if (css(child, "display") === "none" || child === Sortable.ghost) return;
+        animationStates.push({
+          target: child,
+          rect: getRect(child)
+        });
+        var fromRect = _objectSpread2({}, animationStates[animationStates.length - 1].rect);
+        if (child.thisAnimationDuration) {
+          var childMatrix = matrix(child, true);
+          if (childMatrix) {
+            fromRect.top -= childMatrix.f;
+            fromRect.left -= childMatrix.e;
+          }
+        }
+        child.fromRect = fromRect;
+      });
+    },
+    addAnimationState: function addAnimationState(state) {
+      animationStates.push(state);
+    },
+    removeAnimationState: function removeAnimationState(target) {
+      animationStates.splice(indexOfObject(animationStates, {
+        target
+      }), 1);
+    },
+    animateAll: function animateAll(callback) {
+      var _this = this;
+      if (!this.options.animation) {
+        clearTimeout(animationCallbackId);
+        if (typeof callback === "function") callback();
+        return;
+      }
+      var animating = false, animationTime = 0;
+      animationStates.forEach(function(state) {
+        var time = 0, target = state.target, fromRect = target.fromRect, toRect = getRect(target), prevFromRect = target.prevFromRect, prevToRect = target.prevToRect, animatingRect = state.rect, targetMatrix = matrix(target, true);
+        if (targetMatrix) {
+          toRect.top -= targetMatrix.f;
+          toRect.left -= targetMatrix.e;
+        }
+        target.toRect = toRect;
+        if (target.thisAnimationDuration) {
+          if (isRectEqual(prevFromRect, toRect) && !isRectEqual(fromRect, toRect) && // Make sure animatingRect is on line between toRect & fromRect
+          (animatingRect.top - toRect.top) / (animatingRect.left - toRect.left) === (fromRect.top - toRect.top) / (fromRect.left - toRect.left)) {
+            time = calculateRealTime(animatingRect, prevFromRect, prevToRect, _this.options);
+          }
+        }
+        if (!isRectEqual(toRect, fromRect)) {
+          target.prevFromRect = fromRect;
+          target.prevToRect = toRect;
+          if (!time) {
+            time = _this.options.animation;
+          }
+          _this.animate(target, animatingRect, toRect, time);
+        }
+        if (time) {
+          animating = true;
+          animationTime = Math.max(animationTime, time);
+          clearTimeout(target.animationResetTimer);
+          target.animationResetTimer = setTimeout(function() {
+            target.animationTime = 0;
+            target.prevFromRect = null;
+            target.fromRect = null;
+            target.prevToRect = null;
+            target.thisAnimationDuration = null;
+          }, time);
+          target.thisAnimationDuration = time;
+        }
+      });
+      clearTimeout(animationCallbackId);
+      if (!animating) {
+        if (typeof callback === "function") callback();
+      } else {
+        animationCallbackId = setTimeout(function() {
+          if (typeof callback === "function") callback();
+        }, animationTime);
+      }
+      animationStates = [];
+    },
+    animate: function animate(target, currentRect, toRect, duration) {
+      if (duration) {
+        css(target, "transition", "");
+        css(target, "transform", "");
+        var elMatrix = matrix(this.el), scaleX = elMatrix && elMatrix.a, scaleY = elMatrix && elMatrix.d, translateX = (currentRect.left - toRect.left) / (scaleX || 1), translateY = (currentRect.top - toRect.top) / (scaleY || 1);
+        target.animatingX = !!translateX;
+        target.animatingY = !!translateY;
+        css(target, "transform", "translate3d(" + translateX + "px," + translateY + "px,0)");
+        this.forRepaintDummy = repaint(target);
+        css(target, "transition", "transform " + duration + "ms" + (this.options.easing ? " " + this.options.easing : ""));
+        css(target, "transform", "translate3d(0,0,0)");
+        typeof target.animated === "number" && clearTimeout(target.animated);
+        target.animated = setTimeout(function() {
+          css(target, "transition", "");
+          css(target, "transform", "");
+          target.animated = false;
+          target.animatingX = false;
+          target.animatingY = false;
+        }, duration);
+      }
+    }
+  };
+}
+function repaint(target) {
+  return target.offsetWidth;
+}
+function calculateRealTime(animatingRect, fromRect, toRect, options) {
+  return Math.sqrt(Math.pow(fromRect.top - animatingRect.top, 2) + Math.pow(fromRect.left - animatingRect.left, 2)) / Math.sqrt(Math.pow(fromRect.top - toRect.top, 2) + Math.pow(fromRect.left - toRect.left, 2)) * options.animation;
+}
+var plugins = [];
+var defaults = {
+  initializeByDefault: true
+};
+var PluginManager = {
+  mount: function mount(plugin) {
+    for (var option2 in defaults) {
+      if (defaults.hasOwnProperty(option2) && !(option2 in plugin)) {
+        plugin[option2] = defaults[option2];
+      }
+    }
+    plugins.forEach(function(p) {
+      if (p.pluginName === plugin.pluginName) {
+        throw "Sortable: Cannot mount plugin ".concat(plugin.pluginName, " more than once");
+      }
+    });
+    plugins.push(plugin);
+  },
+  pluginEvent: function pluginEvent(eventName, sortable, evt) {
+    var _this = this;
+    this.eventCanceled = false;
+    evt.cancel = function() {
+      _this.eventCanceled = true;
+    };
+    var eventNameGlobal = eventName + "Global";
+    plugins.forEach(function(plugin) {
+      if (!sortable[plugin.pluginName]) return;
+      if (sortable[plugin.pluginName][eventNameGlobal]) {
+        sortable[plugin.pluginName][eventNameGlobal](_objectSpread2({
+          sortable
+        }, evt));
+      }
+      if (sortable.options[plugin.pluginName] && sortable[plugin.pluginName][eventName]) {
+        sortable[plugin.pluginName][eventName](_objectSpread2({
+          sortable
+        }, evt));
+      }
+    });
+  },
+  initializePlugins: function initializePlugins(sortable, el, defaults2, options) {
+    plugins.forEach(function(plugin) {
+      var pluginName = plugin.pluginName;
+      if (!sortable.options[pluginName] && !plugin.initializeByDefault) return;
+      var initialized = new plugin(sortable, el, sortable.options);
+      initialized.sortable = sortable;
+      initialized.options = sortable.options;
+      sortable[pluginName] = initialized;
+      _extends(defaults2, initialized.defaults);
+    });
+    for (var option2 in sortable.options) {
+      if (!sortable.options.hasOwnProperty(option2)) continue;
+      var modified = this.modifyOption(sortable, option2, sortable.options[option2]);
+      if (typeof modified !== "undefined") {
+        sortable.options[option2] = modified;
+      }
+    }
+  },
+  getEventProperties: function getEventProperties(name, sortable) {
+    var eventProperties = {};
+    plugins.forEach(function(plugin) {
+      if (typeof plugin.eventProperties !== "function") return;
+      _extends(eventProperties, plugin.eventProperties.call(sortable[plugin.pluginName], name));
+    });
+    return eventProperties;
+  },
+  modifyOption: function modifyOption(sortable, name, value) {
+    var modifiedValue;
+    plugins.forEach(function(plugin) {
+      if (!sortable[plugin.pluginName]) return;
+      if (plugin.optionListeners && typeof plugin.optionListeners[name] === "function") {
+        modifiedValue = plugin.optionListeners[name].call(sortable[plugin.pluginName], value);
+      }
+    });
+    return modifiedValue;
+  }
+};
+function dispatchEvent(_ref) {
+  var sortable = _ref.sortable, rootEl2 = _ref.rootEl, name = _ref.name, targetEl = _ref.targetEl, cloneEl2 = _ref.cloneEl, toEl = _ref.toEl, fromEl = _ref.fromEl, oldIndex2 = _ref.oldIndex, newIndex2 = _ref.newIndex, oldDraggableIndex2 = _ref.oldDraggableIndex, newDraggableIndex2 = _ref.newDraggableIndex, originalEvent = _ref.originalEvent, putSortable2 = _ref.putSortable, extraEventProperties = _ref.extraEventProperties;
+  sortable = sortable || rootEl2 && rootEl2[expando];
+  if (!sortable) return;
+  var evt, options = sortable.options, onName = "on" + name.charAt(0).toUpperCase() + name.substr(1);
+  if (window.CustomEvent && !IE11OrLess && !Edge) {
+    evt = new CustomEvent(name, {
+      bubbles: true,
+      cancelable: true
+    });
+  } else {
+    evt = document.createEvent("Event");
+    evt.initEvent(name, true, true);
+  }
+  evt.to = toEl || rootEl2;
+  evt.from = fromEl || rootEl2;
+  evt.item = targetEl || rootEl2;
+  evt.clone = cloneEl2;
+  evt.oldIndex = oldIndex2;
+  evt.newIndex = newIndex2;
+  evt.oldDraggableIndex = oldDraggableIndex2;
+  evt.newDraggableIndex = newDraggableIndex2;
+  evt.originalEvent = originalEvent;
+  evt.pullMode = putSortable2 ? putSortable2.lastPutMode : void 0;
+  var allEventProperties = _objectSpread2(_objectSpread2({}, extraEventProperties), PluginManager.getEventProperties(name, sortable));
+  for (var option2 in allEventProperties) {
+    evt[option2] = allEventProperties[option2];
+  }
+  if (rootEl2) {
+    rootEl2.dispatchEvent(evt);
+  }
+  if (options[onName]) {
+    options[onName].call(sortable, evt);
+  }
+}
+var _excluded = ["evt"];
+var pluginEvent2 = function pluginEvent3(eventName, sortable) {
+  var _ref = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {}, originalEvent = _ref.evt, data = _objectWithoutProperties(_ref, _excluded);
+  PluginManager.pluginEvent.bind(Sortable)(eventName, sortable, _objectSpread2({
+    dragEl,
+    parentEl,
+    ghostEl,
+    rootEl,
+    nextEl,
+    lastDownEl,
+    cloneEl,
+    cloneHidden,
+    dragStarted: moved,
+    putSortable,
+    activeSortable: Sortable.active,
+    originalEvent,
+    oldIndex,
+    oldDraggableIndex,
+    newIndex,
+    newDraggableIndex,
+    hideGhostForTarget: _hideGhostForTarget,
+    unhideGhostForTarget: _unhideGhostForTarget,
+    cloneNowHidden: function cloneNowHidden() {
+      cloneHidden = true;
+    },
+    cloneNowShown: function cloneNowShown() {
+      cloneHidden = false;
+    },
+    dispatchSortableEvent: function dispatchSortableEvent(name) {
+      _dispatchEvent({
+        sortable,
+        name,
+        originalEvent
+      });
+    }
+  }, data));
+};
+function _dispatchEvent(info) {
+  dispatchEvent(_objectSpread2({
+    putSortable,
+    cloneEl,
+    targetEl: dragEl,
+    rootEl,
+    oldIndex,
+    oldDraggableIndex,
+    newIndex,
+    newDraggableIndex
+  }, info));
+}
+var dragEl;
+var parentEl;
+var ghostEl;
+var rootEl;
+var nextEl;
+var lastDownEl;
+var cloneEl;
+var cloneHidden;
+var oldIndex;
+var newIndex;
+var oldDraggableIndex;
+var newDraggableIndex;
+var activeGroup;
+var putSortable;
+var awaitingDragStarted = false;
+var ignoreNextClick = false;
+var sortables = [];
+var tapEvt;
+var touchEvt;
+var lastDx;
+var lastDy;
+var tapDistanceLeft;
+var tapDistanceTop;
+var moved;
+var lastTarget;
+var lastDirection;
+var pastFirstInvertThresh = false;
+var isCircumstantialInvert = false;
+var targetMoveDistance;
+var ghostRelativeParent;
+var ghostRelativeParentInitialScroll = [];
+var _silent = false;
+var savedInputChecked = [];
+var documentExists = typeof document !== "undefined";
+var PositionGhostAbsolutely = IOS;
+var CSSFloatProperty = Edge || IE11OrLess ? "cssFloat" : "float";
+var supportDraggable = documentExists && !ChromeForAndroid && !IOS && "draggable" in document.createElement("div");
+var supportCssPointerEvents = (function() {
+  if (!documentExists) return;
+  if (IE11OrLess) {
+    return false;
+  }
+  var el = document.createElement("x");
+  el.style.cssText = "pointer-events:auto";
+  return el.style.pointerEvents === "auto";
+})();
+var _detectDirection = function _detectDirection2(el, options) {
+  var elCSS = css(el), elWidth = parseInt(elCSS.width) - parseInt(elCSS.paddingLeft) - parseInt(elCSS.paddingRight) - parseInt(elCSS.borderLeftWidth) - parseInt(elCSS.borderRightWidth), child1 = getChild(el, 0, options), child2 = getChild(el, 1, options), firstChildCSS = child1 && css(child1), secondChildCSS = child2 && css(child2), firstChildWidth = firstChildCSS && parseInt(firstChildCSS.marginLeft) + parseInt(firstChildCSS.marginRight) + getRect(child1).width, secondChildWidth = secondChildCSS && parseInt(secondChildCSS.marginLeft) + parseInt(secondChildCSS.marginRight) + getRect(child2).width;
+  if (elCSS.display === "flex") {
+    return elCSS.flexDirection === "column" || elCSS.flexDirection === "column-reverse" ? "vertical" : "horizontal";
+  }
+  if (elCSS.display === "grid") {
+    return elCSS.gridTemplateColumns.split(" ").length <= 1 ? "vertical" : "horizontal";
+  }
+  if (child1 && firstChildCSS["float"] && firstChildCSS["float"] !== "none") {
+    var touchingSideChild2 = firstChildCSS["float"] === "left" ? "left" : "right";
+    return child2 && (secondChildCSS.clear === "both" || secondChildCSS.clear === touchingSideChild2) ? "vertical" : "horizontal";
+  }
+  return child1 && (firstChildCSS.display === "block" || firstChildCSS.display === "flex" || firstChildCSS.display === "table" || firstChildCSS.display === "grid" || firstChildWidth >= elWidth && elCSS[CSSFloatProperty] === "none" || child2 && elCSS[CSSFloatProperty] === "none" && firstChildWidth + secondChildWidth > elWidth) ? "vertical" : "horizontal";
+};
+var _dragElInRowColumn = function _dragElInRowColumn2(dragRect, targetRect, vertical) {
+  var dragElS1Opp = vertical ? dragRect.left : dragRect.top, dragElS2Opp = vertical ? dragRect.right : dragRect.bottom, dragElOppLength = vertical ? dragRect.width : dragRect.height, targetS1Opp = vertical ? targetRect.left : targetRect.top, targetS2Opp = vertical ? targetRect.right : targetRect.bottom, targetOppLength = vertical ? targetRect.width : targetRect.height;
+  return dragElS1Opp === targetS1Opp || dragElS2Opp === targetS2Opp || dragElS1Opp + dragElOppLength / 2 === targetS1Opp + targetOppLength / 2;
+};
+var _detectNearestEmptySortable = function _detectNearestEmptySortable2(x, y) {
+  var ret;
+  sortables.some(function(sortable) {
+    var threshold = sortable[expando].options.emptyInsertThreshold;
+    if (!threshold || lastChild(sortable)) return;
+    var rect = getRect(sortable), insideHorizontally = x >= rect.left - threshold && x <= rect.right + threshold, insideVertically = y >= rect.top - threshold && y <= rect.bottom + threshold;
+    if (insideHorizontally && insideVertically) {
+      return ret = sortable;
+    }
+  });
+  return ret;
+};
+var _prepareGroup = function _prepareGroup2(options) {
+  function toFn(value, pull) {
+    return function(to, from, dragEl2, evt) {
+      var sameGroup = to.options.group.name && from.options.group.name && to.options.group.name === from.options.group.name;
+      if (value == null && (pull || sameGroup)) {
+        return true;
+      } else if (value == null || value === false) {
+        return false;
+      } else if (pull && value === "clone") {
+        return value;
+      } else if (typeof value === "function") {
+        return toFn(value(to, from, dragEl2, evt), pull)(to, from, dragEl2, evt);
+      } else {
+        var otherGroup = (pull ? to : from).options.group.name;
+        return value === true || typeof value === "string" && value === otherGroup || value.join && value.indexOf(otherGroup) > -1;
+      }
+    };
+  }
+  var group = {};
+  var originalGroup = options.group;
+  if (!originalGroup || _typeof(originalGroup) != "object") {
+    originalGroup = {
+      name: originalGroup
+    };
+  }
+  group.name = originalGroup.name;
+  group.checkPull = toFn(originalGroup.pull, true);
+  group.checkPut = toFn(originalGroup.put);
+  group.revertClone = originalGroup.revertClone;
+  options.group = group;
+};
+var _hideGhostForTarget = function _hideGhostForTarget2() {
+  if (!supportCssPointerEvents && ghostEl) {
+    css(ghostEl, "display", "none");
+  }
+};
+var _unhideGhostForTarget = function _unhideGhostForTarget2() {
+  if (!supportCssPointerEvents && ghostEl) {
+    css(ghostEl, "display", "");
+  }
+};
+if (documentExists && !ChromeForAndroid) {
+  document.addEventListener("click", function(evt) {
+    if (ignoreNextClick) {
+      evt.preventDefault();
+      evt.stopPropagation && evt.stopPropagation();
+      evt.stopImmediatePropagation && evt.stopImmediatePropagation();
+      ignoreNextClick = false;
+      return false;
+    }
+  }, true);
+}
+var nearestEmptyInsertDetectEvent = function nearestEmptyInsertDetectEvent2(evt) {
+  if (dragEl) {
+    evt = evt.touches ? evt.touches[0] : evt;
+    var nearest = _detectNearestEmptySortable(evt.clientX, evt.clientY);
+    if (nearest) {
+      var event = {};
+      for (var i in evt) {
+        if (evt.hasOwnProperty(i)) {
+          event[i] = evt[i];
+        }
+      }
+      event.target = event.rootEl = nearest;
+      event.preventDefault = void 0;
+      event.stopPropagation = void 0;
+      nearest[expando]._onDragOver(event);
+    }
+  }
+};
+var _checkOutsideTargetEl = function _checkOutsideTargetEl2(evt) {
+  if (dragEl) {
+    dragEl.parentNode[expando]._isOutsideThisEl(evt.target);
+  }
+};
+function Sortable(el, options) {
+  if (!(el && el.nodeType && el.nodeType === 1)) {
+    throw "Sortable: `el` must be an HTMLElement, not ".concat({}.toString.call(el));
+  }
+  this.el = el;
+  this.options = options = _extends({}, options);
+  el[expando] = this;
+  var defaults2 = {
+    group: null,
+    sort: true,
+    disabled: false,
+    store: null,
+    handle: null,
+    draggable: /^[uo]l$/i.test(el.nodeName) ? ">li" : ">*",
+    swapThreshold: 1,
+    // percentage; 0 <= x <= 1
+    invertSwap: false,
+    // invert always
+    invertedSwapThreshold: null,
+    // will be set to same as swapThreshold if default
+    removeCloneOnHide: true,
+    direction: function direction() {
+      return _detectDirection(el, this.options);
+    },
+    ghostClass: "sortable-ghost",
+    chosenClass: "sortable-chosen",
+    dragClass: "sortable-drag",
+    ignore: "a, img",
+    filter: null,
+    preventOnFilter: true,
+    animation: 0,
+    easing: null,
+    setData: function setData(dataTransfer, dragEl2) {
+      dataTransfer.setData("Text", dragEl2.textContent);
+    },
+    dropBubble: false,
+    dragoverBubble: false,
+    dataIdAttr: "data-id",
+    delay: 0,
+    delayOnTouchOnly: false,
+    touchStartThreshold: (Number.parseInt ? Number : window).parseInt(window.devicePixelRatio, 10) || 1,
+    forceFallback: false,
+    fallbackClass: "sortable-fallback",
+    fallbackOnBody: false,
+    fallbackTolerance: 0,
+    fallbackOffset: {
+      x: 0,
+      y: 0
+    },
+    supportPointer: Sortable.supportPointer !== false && "PointerEvent" in window && !Safari,
+    emptyInsertThreshold: 5
+  };
+  PluginManager.initializePlugins(this, el, defaults2);
+  for (var name in defaults2) {
+    !(name in options) && (options[name] = defaults2[name]);
+  }
+  _prepareGroup(options);
+  for (var fn in this) {
+    if (fn.charAt(0) === "_" && typeof this[fn] === "function") {
+      this[fn] = this[fn].bind(this);
+    }
+  }
+  this.nativeDraggable = options.forceFallback ? false : supportDraggable;
+  if (this.nativeDraggable) {
+    this.options.touchStartThreshold = 1;
+  }
+  if (options.supportPointer) {
+    on(el, "pointerdown", this._onTapStart);
+  } else {
+    on(el, "mousedown", this._onTapStart);
+    on(el, "touchstart", this._onTapStart);
+  }
+  if (this.nativeDraggable) {
+    on(el, "dragover", this);
+    on(el, "dragenter", this);
+  }
+  sortables.push(this.el);
+  options.store && options.store.get && this.sort(options.store.get(this) || []);
+  _extends(this, AnimationStateManager());
+}
+Sortable.prototype = /** @lends Sortable.prototype */
+{
+  constructor: Sortable,
+  _isOutsideThisEl: function _isOutsideThisEl(target) {
+    if (!this.el.contains(target) && target !== this.el) {
+      lastTarget = null;
+    }
+  },
+  _getDirection: function _getDirection(evt, target) {
+    return typeof this.options.direction === "function" ? this.options.direction.call(this, evt, target, dragEl) : this.options.direction;
+  },
+  _onTapStart: function _onTapStart(evt) {
+    if (!evt.cancelable) return;
+    var _this = this, el = this.el, options = this.options, preventOnFilter = options.preventOnFilter, type = evt.type, touch = evt.touches && evt.touches[0] || evt.pointerType && evt.pointerType === "touch" && evt, target = (touch || evt).target, originalTarget = evt.target.shadowRoot && (evt.path && evt.path[0] || evt.composedPath && evt.composedPath()[0]) || target, filter = options.filter;
+    _saveInputCheckedState(el);
+    if (dragEl) {
+      return;
+    }
+    if (/mousedown|pointerdown/.test(type) && evt.button !== 0 || options.disabled) {
+      return;
+    }
+    if (originalTarget.isContentEditable) {
+      return;
+    }
+    if (!this.nativeDraggable && Safari && target && target.tagName.toUpperCase() === "SELECT") {
+      return;
+    }
+    target = closest(target, options.draggable, el, false);
+    if (target && target.animated) {
+      return;
+    }
+    if (lastDownEl === target) {
+      return;
+    }
+    oldIndex = index(target);
+    oldDraggableIndex = index(target, options.draggable);
+    if (typeof filter === "function") {
+      if (filter.call(this, evt, target, this)) {
+        _dispatchEvent({
+          sortable: _this,
+          rootEl: originalTarget,
+          name: "filter",
+          targetEl: target,
+          toEl: el,
+          fromEl: el
+        });
+        pluginEvent2("filter", _this, {
+          evt
+        });
+        preventOnFilter && evt.cancelable && evt.preventDefault();
+        return;
+      }
+    } else if (filter) {
+      filter = filter.split(",").some(function(criteria) {
+        criteria = closest(originalTarget, criteria.trim(), el, false);
+        if (criteria) {
+          _dispatchEvent({
+            sortable: _this,
+            rootEl: criteria,
+            name: "filter",
+            targetEl: target,
+            fromEl: el,
+            toEl: el
+          });
+          pluginEvent2("filter", _this, {
+            evt
+          });
+          return true;
+        }
+      });
+      if (filter) {
+        preventOnFilter && evt.cancelable && evt.preventDefault();
+        return;
+      }
+    }
+    if (options.handle && !closest(originalTarget, options.handle, el, false)) {
+      return;
+    }
+    this._prepareDragStart(evt, touch, target);
+  },
+  _prepareDragStart: function _prepareDragStart(evt, touch, target) {
+    var _this = this, el = _this.el, options = _this.options, ownerDocument = el.ownerDocument, dragStartFn;
+    if (target && !dragEl && target.parentNode === el) {
+      var dragRect = getRect(target);
+      rootEl = el;
+      dragEl = target;
+      parentEl = dragEl.parentNode;
+      nextEl = dragEl.nextSibling;
+      lastDownEl = target;
+      activeGroup = options.group;
+      Sortable.dragged = dragEl;
+      tapEvt = {
+        target: dragEl,
+        clientX: (touch || evt).clientX,
+        clientY: (touch || evt).clientY
+      };
+      tapDistanceLeft = tapEvt.clientX - dragRect.left;
+      tapDistanceTop = tapEvt.clientY - dragRect.top;
+      this._lastX = (touch || evt).clientX;
+      this._lastY = (touch || evt).clientY;
+      dragEl.style["will-change"] = "all";
+      dragStartFn = function dragStartFn2() {
+        pluginEvent2("delayEnded", _this, {
+          evt
+        });
+        if (Sortable.eventCanceled) {
+          _this._onDrop();
+          return;
+        }
+        _this._disableDelayedDragEvents();
+        if (!FireFox && _this.nativeDraggable) {
+          dragEl.draggable = true;
+        }
+        _this._triggerDragStart(evt, touch);
+        _dispatchEvent({
+          sortable: _this,
+          name: "choose",
+          originalEvent: evt
+        });
+        toggleClass(dragEl, options.chosenClass, true);
+      };
+      options.ignore.split(",").forEach(function(criteria) {
+        find(dragEl, criteria.trim(), _disableDraggable);
+      });
+      on(ownerDocument, "dragover", nearestEmptyInsertDetectEvent);
+      on(ownerDocument, "mousemove", nearestEmptyInsertDetectEvent);
+      on(ownerDocument, "touchmove", nearestEmptyInsertDetectEvent);
+      on(ownerDocument, "mouseup", _this._onDrop);
+      on(ownerDocument, "touchend", _this._onDrop);
+      on(ownerDocument, "touchcancel", _this._onDrop);
+      if (FireFox && this.nativeDraggable) {
+        this.options.touchStartThreshold = 4;
+        dragEl.draggable = true;
+      }
+      pluginEvent2("delayStart", this, {
+        evt
+      });
+      if (options.delay && (!options.delayOnTouchOnly || touch) && (!this.nativeDraggable || !(Edge || IE11OrLess))) {
+        if (Sortable.eventCanceled) {
+          this._onDrop();
+          return;
+        }
+        on(ownerDocument, "mouseup", _this._disableDelayedDrag);
+        on(ownerDocument, "touchend", _this._disableDelayedDrag);
+        on(ownerDocument, "touchcancel", _this._disableDelayedDrag);
+        on(ownerDocument, "mousemove", _this._delayedDragTouchMoveHandler);
+        on(ownerDocument, "touchmove", _this._delayedDragTouchMoveHandler);
+        options.supportPointer && on(ownerDocument, "pointermove", _this._delayedDragTouchMoveHandler);
+        _this._dragStartTimer = setTimeout(dragStartFn, options.delay);
+      } else {
+        dragStartFn();
+      }
+    }
+  },
+  _delayedDragTouchMoveHandler: function _delayedDragTouchMoveHandler(e) {
+    var touch = e.touches ? e.touches[0] : e;
+    if (Math.max(Math.abs(touch.clientX - this._lastX), Math.abs(touch.clientY - this._lastY)) >= Math.floor(this.options.touchStartThreshold / (this.nativeDraggable && window.devicePixelRatio || 1))) {
+      this._disableDelayedDrag();
+    }
+  },
+  _disableDelayedDrag: function _disableDelayedDrag() {
+    dragEl && _disableDraggable(dragEl);
+    clearTimeout(this._dragStartTimer);
+    this._disableDelayedDragEvents();
+  },
+  _disableDelayedDragEvents: function _disableDelayedDragEvents() {
+    var ownerDocument = this.el.ownerDocument;
+    off(ownerDocument, "mouseup", this._disableDelayedDrag);
+    off(ownerDocument, "touchend", this._disableDelayedDrag);
+    off(ownerDocument, "touchcancel", this._disableDelayedDrag);
+    off(ownerDocument, "mousemove", this._delayedDragTouchMoveHandler);
+    off(ownerDocument, "touchmove", this._delayedDragTouchMoveHandler);
+    off(ownerDocument, "pointermove", this._delayedDragTouchMoveHandler);
+  },
+  _triggerDragStart: function _triggerDragStart(evt, touch) {
+    touch = touch || evt.pointerType == "touch" && evt;
+    if (!this.nativeDraggable || touch) {
+      if (this.options.supportPointer) {
+        on(document, "pointermove", this._onTouchMove);
+      } else if (touch) {
+        on(document, "touchmove", this._onTouchMove);
+      } else {
+        on(document, "mousemove", this._onTouchMove);
+      }
+    } else {
+      on(dragEl, "dragend", this);
+      on(rootEl, "dragstart", this._onDragStart);
+    }
+    try {
+      if (document.selection) {
+        _nextTick(function() {
+          document.selection.empty();
+        });
+      } else {
+        window.getSelection().removeAllRanges();
+      }
+    } catch (err) {
+    }
+  },
+  _dragStarted: function _dragStarted(fallback, evt) {
+    awaitingDragStarted = false;
+    if (rootEl && dragEl) {
+      pluginEvent2("dragStarted", this, {
+        evt
+      });
+      if (this.nativeDraggable) {
+        on(document, "dragover", _checkOutsideTargetEl);
+      }
+      var options = this.options;
+      !fallback && toggleClass(dragEl, options.dragClass, false);
+      toggleClass(dragEl, options.ghostClass, true);
+      Sortable.active = this;
+      fallback && this._appendGhost();
+      _dispatchEvent({
+        sortable: this,
+        name: "start",
+        originalEvent: evt
+      });
+    } else {
+      this._nulling();
+    }
+  },
+  _emulateDragOver: function _emulateDragOver() {
+    if (touchEvt) {
+      this._lastX = touchEvt.clientX;
+      this._lastY = touchEvt.clientY;
+      _hideGhostForTarget();
+      var target = document.elementFromPoint(touchEvt.clientX, touchEvt.clientY);
+      var parent = target;
+      while (target && target.shadowRoot) {
+        target = target.shadowRoot.elementFromPoint(touchEvt.clientX, touchEvt.clientY);
+        if (target === parent) break;
+        parent = target;
+      }
+      dragEl.parentNode[expando]._isOutsideThisEl(target);
+      if (parent) {
+        do {
+          if (parent[expando]) {
+            var inserted = void 0;
+            inserted = parent[expando]._onDragOver({
+              clientX: touchEvt.clientX,
+              clientY: touchEvt.clientY,
+              target,
+              rootEl: parent
+            });
+            if (inserted && !this.options.dragoverBubble) {
+              break;
+            }
+          }
+          target = parent;
+        } while (parent = parent.parentNode);
+      }
+      _unhideGhostForTarget();
+    }
+  },
+  _onTouchMove: function _onTouchMove(evt) {
+    if (tapEvt) {
+      var options = this.options, fallbackTolerance = options.fallbackTolerance, fallbackOffset = options.fallbackOffset, touch = evt.touches ? evt.touches[0] : evt, ghostMatrix = ghostEl && matrix(ghostEl, true), scaleX = ghostEl && ghostMatrix && ghostMatrix.a, scaleY = ghostEl && ghostMatrix && ghostMatrix.d, relativeScrollOffset = PositionGhostAbsolutely && ghostRelativeParent && getRelativeScrollOffset(ghostRelativeParent), dx = (touch.clientX - tapEvt.clientX + fallbackOffset.x) / (scaleX || 1) + (relativeScrollOffset ? relativeScrollOffset[0] - ghostRelativeParentInitialScroll[0] : 0) / (scaleX || 1), dy = (touch.clientY - tapEvt.clientY + fallbackOffset.y) / (scaleY || 1) + (relativeScrollOffset ? relativeScrollOffset[1] - ghostRelativeParentInitialScroll[1] : 0) / (scaleY || 1);
+      if (!Sortable.active && !awaitingDragStarted) {
+        if (fallbackTolerance && Math.max(Math.abs(touch.clientX - this._lastX), Math.abs(touch.clientY - this._lastY)) < fallbackTolerance) {
+          return;
+        }
+        this._onDragStart(evt, true);
+      }
+      if (ghostEl) {
+        if (ghostMatrix) {
+          ghostMatrix.e += dx - (lastDx || 0);
+          ghostMatrix.f += dy - (lastDy || 0);
+        } else {
+          ghostMatrix = {
+            a: 1,
+            b: 0,
+            c: 0,
+            d: 1,
+            e: dx,
+            f: dy
+          };
+        }
+        var cssMatrix = "matrix(".concat(ghostMatrix.a, ",").concat(ghostMatrix.b, ",").concat(ghostMatrix.c, ",").concat(ghostMatrix.d, ",").concat(ghostMatrix.e, ",").concat(ghostMatrix.f, ")");
+        css(ghostEl, "webkitTransform", cssMatrix);
+        css(ghostEl, "mozTransform", cssMatrix);
+        css(ghostEl, "msTransform", cssMatrix);
+        css(ghostEl, "transform", cssMatrix);
+        lastDx = dx;
+        lastDy = dy;
+        touchEvt = touch;
+      }
+      evt.cancelable && evt.preventDefault();
+    }
+  },
+  _appendGhost: function _appendGhost() {
+    if (!ghostEl) {
+      var container = this.options.fallbackOnBody ? document.body : rootEl, rect = getRect(dragEl, true, PositionGhostAbsolutely, true, container), options = this.options;
+      if (PositionGhostAbsolutely) {
+        ghostRelativeParent = container;
+        while (css(ghostRelativeParent, "position") === "static" && css(ghostRelativeParent, "transform") === "none" && ghostRelativeParent !== document) {
+          ghostRelativeParent = ghostRelativeParent.parentNode;
+        }
+        if (ghostRelativeParent !== document.body && ghostRelativeParent !== document.documentElement) {
+          if (ghostRelativeParent === document) ghostRelativeParent = getWindowScrollingElement();
+          rect.top += ghostRelativeParent.scrollTop;
+          rect.left += ghostRelativeParent.scrollLeft;
+        } else {
+          ghostRelativeParent = getWindowScrollingElement();
+        }
+        ghostRelativeParentInitialScroll = getRelativeScrollOffset(ghostRelativeParent);
+      }
+      ghostEl = dragEl.cloneNode(true);
+      toggleClass(ghostEl, options.ghostClass, false);
+      toggleClass(ghostEl, options.fallbackClass, true);
+      toggleClass(ghostEl, options.dragClass, true);
+      css(ghostEl, "transition", "");
+      css(ghostEl, "transform", "");
+      css(ghostEl, "box-sizing", "border-box");
+      css(ghostEl, "margin", 0);
+      css(ghostEl, "top", rect.top);
+      css(ghostEl, "left", rect.left);
+      css(ghostEl, "width", rect.width);
+      css(ghostEl, "height", rect.height);
+      css(ghostEl, "opacity", "0.8");
+      css(ghostEl, "position", PositionGhostAbsolutely ? "absolute" : "fixed");
+      css(ghostEl, "zIndex", "100000");
+      css(ghostEl, "pointerEvents", "none");
+      Sortable.ghost = ghostEl;
+      container.appendChild(ghostEl);
+      css(ghostEl, "transform-origin", tapDistanceLeft / parseInt(ghostEl.style.width) * 100 + "% " + tapDistanceTop / parseInt(ghostEl.style.height) * 100 + "%");
+    }
+  },
+  _onDragStart: function _onDragStart(evt, fallback) {
+    var _this = this;
+    var dataTransfer = evt.dataTransfer;
+    var options = _this.options;
+    pluginEvent2("dragStart", this, {
+      evt
+    });
+    if (Sortable.eventCanceled) {
+      this._onDrop();
+      return;
+    }
+    pluginEvent2("setupClone", this);
+    if (!Sortable.eventCanceled) {
+      cloneEl = clone(dragEl);
+      cloneEl.removeAttribute("id");
+      cloneEl.draggable = false;
+      cloneEl.style["will-change"] = "";
+      this._hideClone();
+      toggleClass(cloneEl, this.options.chosenClass, false);
+      Sortable.clone = cloneEl;
+    }
+    _this.cloneId = _nextTick(function() {
+      pluginEvent2("clone", _this);
+      if (Sortable.eventCanceled) return;
+      if (!_this.options.removeCloneOnHide) {
+        rootEl.insertBefore(cloneEl, dragEl);
+      }
+      _this._hideClone();
+      _dispatchEvent({
+        sortable: _this,
+        name: "clone"
+      });
+    });
+    !fallback && toggleClass(dragEl, options.dragClass, true);
+    if (fallback) {
+      ignoreNextClick = true;
+      _this._loopId = setInterval(_this._emulateDragOver, 50);
+    } else {
+      off(document, "mouseup", _this._onDrop);
+      off(document, "touchend", _this._onDrop);
+      off(document, "touchcancel", _this._onDrop);
+      if (dataTransfer) {
+        dataTransfer.effectAllowed = "move";
+        options.setData && options.setData.call(_this, dataTransfer, dragEl);
+      }
+      on(document, "drop", _this);
+      css(dragEl, "transform", "translateZ(0)");
+    }
+    awaitingDragStarted = true;
+    _this._dragStartId = _nextTick(_this._dragStarted.bind(_this, fallback, evt));
+    on(document, "selectstart", _this);
+    moved = true;
+    if (Safari) {
+      css(document.body, "user-select", "none");
+    }
+  },
+  // Returns true - if no further action is needed (either inserted or another condition)
+  _onDragOver: function _onDragOver(evt) {
+    var el = this.el, target = evt.target, dragRect, targetRect, revert, options = this.options, group = options.group, activeSortable = Sortable.active, isOwner = activeGroup === group, canSort = options.sort, fromSortable = putSortable || activeSortable, vertical, _this = this, completedFired = false;
+    if (_silent) return;
+    function dragOverEvent(name, extra) {
+      pluginEvent2(name, _this, _objectSpread2({
+        evt,
+        isOwner,
+        axis: vertical ? "vertical" : "horizontal",
+        revert,
+        dragRect,
+        targetRect,
+        canSort,
+        fromSortable,
+        target,
+        completed,
+        onMove: function onMove(target2, after2) {
+          return _onMove(rootEl, el, dragEl, dragRect, target2, getRect(target2), evt, after2);
+        },
+        changed
+      }, extra));
+    }
+    function capture() {
+      dragOverEvent("dragOverAnimationCapture");
+      _this.captureAnimationState();
+      if (_this !== fromSortable) {
+        fromSortable.captureAnimationState();
+      }
+    }
+    function completed(insertion) {
+      dragOverEvent("dragOverCompleted", {
+        insertion
+      });
+      if (insertion) {
+        if (isOwner) {
+          activeSortable._hideClone();
+        } else {
+          activeSortable._showClone(_this);
+        }
+        if (_this !== fromSortable) {
+          toggleClass(dragEl, putSortable ? putSortable.options.ghostClass : activeSortable.options.ghostClass, false);
+          toggleClass(dragEl, options.ghostClass, true);
+        }
+        if (putSortable !== _this && _this !== Sortable.active) {
+          putSortable = _this;
+        } else if (_this === Sortable.active && putSortable) {
+          putSortable = null;
+        }
+        if (fromSortable === _this) {
+          _this._ignoreWhileAnimating = target;
+        }
+        _this.animateAll(function() {
+          dragOverEvent("dragOverAnimationComplete");
+          _this._ignoreWhileAnimating = null;
+        });
+        if (_this !== fromSortable) {
+          fromSortable.animateAll();
+          fromSortable._ignoreWhileAnimating = null;
+        }
+      }
+      if (target === dragEl && !dragEl.animated || target === el && !target.animated) {
+        lastTarget = null;
+      }
+      if (!options.dragoverBubble && !evt.rootEl && target !== document) {
+        dragEl.parentNode[expando]._isOutsideThisEl(evt.target);
+        !insertion && nearestEmptyInsertDetectEvent(evt);
+      }
+      !options.dragoverBubble && evt.stopPropagation && evt.stopPropagation();
+      return completedFired = true;
+    }
+    function changed() {
+      newIndex = index(dragEl);
+      newDraggableIndex = index(dragEl, options.draggable);
+      _dispatchEvent({
+        sortable: _this,
+        name: "change",
+        toEl: el,
+        newIndex,
+        newDraggableIndex,
+        originalEvent: evt
+      });
+    }
+    if (evt.preventDefault !== void 0) {
+      evt.cancelable && evt.preventDefault();
+    }
+    target = closest(target, options.draggable, el, true);
+    dragOverEvent("dragOver");
+    if (Sortable.eventCanceled) return completedFired;
+    if (dragEl.contains(evt.target) || target.animated && target.animatingX && target.animatingY || _this._ignoreWhileAnimating === target) {
+      return completed(false);
+    }
+    ignoreNextClick = false;
+    if (activeSortable && !options.disabled && (isOwner ? canSort || (revert = parentEl !== rootEl) : putSortable === this || (this.lastPutMode = activeGroup.checkPull(this, activeSortable, dragEl, evt)) && group.checkPut(this, activeSortable, dragEl, evt))) {
+      vertical = this._getDirection(evt, target) === "vertical";
+      dragRect = getRect(dragEl);
+      dragOverEvent("dragOverValid");
+      if (Sortable.eventCanceled) return completedFired;
+      if (revert) {
+        parentEl = rootEl;
+        capture();
+        this._hideClone();
+        dragOverEvent("revert");
+        if (!Sortable.eventCanceled) {
+          if (nextEl) {
+            rootEl.insertBefore(dragEl, nextEl);
+          } else {
+            rootEl.appendChild(dragEl);
+          }
+        }
+        return completed(true);
+      }
+      var elLastChild = lastChild(el, options.draggable);
+      if (!elLastChild || _ghostIsLast(evt, vertical, this) && !elLastChild.animated) {
+        if (elLastChild === dragEl) {
+          return completed(false);
+        }
+        if (elLastChild && el === evt.target) {
+          target = elLastChild;
+        }
+        if (target) {
+          targetRect = getRect(target);
+        }
+        if (_onMove(rootEl, el, dragEl, dragRect, target, targetRect, evt, !!target) !== false) {
+          capture();
+          if (elLastChild && elLastChild.nextSibling) {
+            el.insertBefore(dragEl, elLastChild.nextSibling);
+          } else {
+            el.appendChild(dragEl);
+          }
+          parentEl = el;
+          changed();
+          return completed(true);
+        }
+      } else if (elLastChild && _ghostIsFirst(evt, vertical, this)) {
+        var firstChild = getChild(el, 0, options, true);
+        if (firstChild === dragEl) {
+          return completed(false);
+        }
+        target = firstChild;
+        targetRect = getRect(target);
+        if (_onMove(rootEl, el, dragEl, dragRect, target, targetRect, evt, false) !== false) {
+          capture();
+          el.insertBefore(dragEl, firstChild);
+          parentEl = el;
+          changed();
+          return completed(true);
+        }
+      } else if (target.parentNode === el) {
+        targetRect = getRect(target);
+        var direction = 0, targetBeforeFirstSwap, differentLevel = dragEl.parentNode !== el, differentRowCol = !_dragElInRowColumn(dragEl.animated && dragEl.toRect || dragRect, target.animated && target.toRect || targetRect, vertical), side1 = vertical ? "top" : "left", scrolledPastTop = isScrolledPast(target, "top", "top") || isScrolledPast(dragEl, "top", "top"), scrollBefore = scrolledPastTop ? scrolledPastTop.scrollTop : void 0;
+        if (lastTarget !== target) {
+          targetBeforeFirstSwap = targetRect[side1];
+          pastFirstInvertThresh = false;
+          isCircumstantialInvert = !differentRowCol && options.invertSwap || differentLevel;
+        }
+        direction = _getSwapDirection(evt, target, targetRect, vertical, differentRowCol ? 1 : options.swapThreshold, options.invertedSwapThreshold == null ? options.swapThreshold : options.invertedSwapThreshold, isCircumstantialInvert, lastTarget === target);
+        var sibling;
+        if (direction !== 0) {
+          var dragIndex = index(dragEl);
+          do {
+            dragIndex -= direction;
+            sibling = parentEl.children[dragIndex];
+          } while (sibling && (css(sibling, "display") === "none" || sibling === ghostEl));
+        }
+        if (direction === 0 || sibling === target) {
+          return completed(false);
+        }
+        lastTarget = target;
+        lastDirection = direction;
+        var nextSibling = target.nextElementSibling, after = false;
+        after = direction === 1;
+        var moveVector = _onMove(rootEl, el, dragEl, dragRect, target, targetRect, evt, after);
+        if (moveVector !== false) {
+          if (moveVector === 1 || moveVector === -1) {
+            after = moveVector === 1;
+          }
+          _silent = true;
+          setTimeout(_unsilent, 30);
+          capture();
+          if (after && !nextSibling) {
+            el.appendChild(dragEl);
+          } else {
+            target.parentNode.insertBefore(dragEl, after ? nextSibling : target);
+          }
+          if (scrolledPastTop) {
+            scrollBy(scrolledPastTop, 0, scrollBefore - scrolledPastTop.scrollTop);
+          }
+          parentEl = dragEl.parentNode;
+          if (targetBeforeFirstSwap !== void 0 && !isCircumstantialInvert) {
+            targetMoveDistance = Math.abs(targetBeforeFirstSwap - getRect(target)[side1]);
+          }
+          changed();
+          return completed(true);
+        }
+      }
+      if (el.contains(dragEl)) {
+        return completed(false);
+      }
+    }
+    return false;
+  },
+  _ignoreWhileAnimating: null,
+  _offMoveEvents: function _offMoveEvents() {
+    off(document, "mousemove", this._onTouchMove);
+    off(document, "touchmove", this._onTouchMove);
+    off(document, "pointermove", this._onTouchMove);
+    off(document, "dragover", nearestEmptyInsertDetectEvent);
+    off(document, "mousemove", nearestEmptyInsertDetectEvent);
+    off(document, "touchmove", nearestEmptyInsertDetectEvent);
+  },
+  _offUpEvents: function _offUpEvents() {
+    var ownerDocument = this.el.ownerDocument;
+    off(ownerDocument, "mouseup", this._onDrop);
+    off(ownerDocument, "touchend", this._onDrop);
+    off(ownerDocument, "pointerup", this._onDrop);
+    off(ownerDocument, "touchcancel", this._onDrop);
+    off(document, "selectstart", this);
+  },
+  _onDrop: function _onDrop(evt) {
+    var el = this.el, options = this.options;
+    newIndex = index(dragEl);
+    newDraggableIndex = index(dragEl, options.draggable);
+    pluginEvent2("drop", this, {
+      evt
+    });
+    parentEl = dragEl && dragEl.parentNode;
+    newIndex = index(dragEl);
+    newDraggableIndex = index(dragEl, options.draggable);
+    if (Sortable.eventCanceled) {
+      this._nulling();
+      return;
+    }
+    awaitingDragStarted = false;
+    isCircumstantialInvert = false;
+    pastFirstInvertThresh = false;
+    clearInterval(this._loopId);
+    clearTimeout(this._dragStartTimer);
+    _cancelNextTick(this.cloneId);
+    _cancelNextTick(this._dragStartId);
+    if (this.nativeDraggable) {
+      off(document, "drop", this);
+      off(el, "dragstart", this._onDragStart);
+    }
+    this._offMoveEvents();
+    this._offUpEvents();
+    if (Safari) {
+      css(document.body, "user-select", "");
+    }
+    css(dragEl, "transform", "");
+    if (evt) {
+      if (moved) {
+        evt.cancelable && evt.preventDefault();
+        !options.dropBubble && evt.stopPropagation();
+      }
+      ghostEl && ghostEl.parentNode && ghostEl.parentNode.removeChild(ghostEl);
+      if (rootEl === parentEl || putSortable && putSortable.lastPutMode !== "clone") {
+        cloneEl && cloneEl.parentNode && cloneEl.parentNode.removeChild(cloneEl);
+      }
+      if (dragEl) {
+        if (this.nativeDraggable) {
+          off(dragEl, "dragend", this);
+        }
+        _disableDraggable(dragEl);
+        dragEl.style["will-change"] = "";
+        if (moved && !awaitingDragStarted) {
+          toggleClass(dragEl, putSortable ? putSortable.options.ghostClass : this.options.ghostClass, false);
+        }
+        toggleClass(dragEl, this.options.chosenClass, false);
+        _dispatchEvent({
+          sortable: this,
+          name: "unchoose",
+          toEl: parentEl,
+          newIndex: null,
+          newDraggableIndex: null,
+          originalEvent: evt
+        });
+        if (rootEl !== parentEl) {
+          if (newIndex >= 0) {
+            _dispatchEvent({
+              rootEl: parentEl,
+              name: "add",
+              toEl: parentEl,
+              fromEl: rootEl,
+              originalEvent: evt
+            });
+            _dispatchEvent({
+              sortable: this,
+              name: "remove",
+              toEl: parentEl,
+              originalEvent: evt
+            });
+            _dispatchEvent({
+              rootEl: parentEl,
+              name: "sort",
+              toEl: parentEl,
+              fromEl: rootEl,
+              originalEvent: evt
+            });
+            _dispatchEvent({
+              sortable: this,
+              name: "sort",
+              toEl: parentEl,
+              originalEvent: evt
+            });
+          }
+          putSortable && putSortable.save();
+        } else {
+          if (newIndex !== oldIndex) {
+            if (newIndex >= 0) {
+              _dispatchEvent({
+                sortable: this,
+                name: "update",
+                toEl: parentEl,
+                originalEvent: evt
+              });
+              _dispatchEvent({
+                sortable: this,
+                name: "sort",
+                toEl: parentEl,
+                originalEvent: evt
+              });
+            }
+          }
+        }
+        if (Sortable.active) {
+          if (newIndex == null || newIndex === -1) {
+            newIndex = oldIndex;
+            newDraggableIndex = oldDraggableIndex;
+          }
+          _dispatchEvent({
+            sortable: this,
+            name: "end",
+            toEl: parentEl,
+            originalEvent: evt
+          });
+          this.save();
+        }
+      }
+    }
+    this._nulling();
+  },
+  _nulling: function _nulling() {
+    pluginEvent2("nulling", this);
+    rootEl = dragEl = parentEl = ghostEl = nextEl = cloneEl = lastDownEl = cloneHidden = tapEvt = touchEvt = moved = newIndex = newDraggableIndex = oldIndex = oldDraggableIndex = lastTarget = lastDirection = putSortable = activeGroup = Sortable.dragged = Sortable.ghost = Sortable.clone = Sortable.active = null;
+    savedInputChecked.forEach(function(el) {
+      el.checked = true;
+    });
+    savedInputChecked.length = lastDx = lastDy = 0;
+  },
+  handleEvent: function handleEvent(evt) {
+    switch (evt.type) {
+      case "drop":
+      case "dragend":
+        this._onDrop(evt);
+        break;
+      case "dragenter":
+      case "dragover":
+        if (dragEl) {
+          this._onDragOver(evt);
+          _globalDragOver(evt);
+        }
+        break;
+      case "selectstart":
+        evt.preventDefault();
+        break;
+    }
+  },
+  /**
+   * Serializes the item into an array of string.
+   * @returns {String[]}
+   */
+  toArray: function toArray() {
+    var order = [], el, children = this.el.children, i = 0, n = children.length, options = this.options;
+    for (; i < n; i++) {
+      el = children[i];
+      if (closest(el, options.draggable, this.el, false)) {
+        order.push(el.getAttribute(options.dataIdAttr) || _generateId(el));
+      }
+    }
+    return order;
+  },
+  /**
+   * Sorts the elements according to the array.
+   * @param  {String[]}  order  order of the items
+   */
+  sort: function sort(order, useAnimation) {
+    var items = {}, rootEl2 = this.el;
+    this.toArray().forEach(function(id, i) {
+      var el = rootEl2.children[i];
+      if (closest(el, this.options.draggable, rootEl2, false)) {
+        items[id] = el;
+      }
+    }, this);
+    useAnimation && this.captureAnimationState();
+    order.forEach(function(id) {
+      if (items[id]) {
+        rootEl2.removeChild(items[id]);
+        rootEl2.appendChild(items[id]);
+      }
+    });
+    useAnimation && this.animateAll();
+  },
+  /**
+   * Save the current sorting
+   */
+  save: function save() {
+    var store = this.options.store;
+    store && store.set && store.set(this);
+  },
+  /**
+   * For each element in the set, get the first element that matches the selector by testing the element itself and traversing up through its ancestors in the DOM tree.
+   * @param   {HTMLElement}  el
+   * @param   {String}       [selector]  default: `options.draggable`
+   * @returns {HTMLElement|null}
+   */
+  closest: function closest$1(el, selector2) {
+    return closest(el, selector2 || this.options.draggable, this.el, false);
+  },
+  /**
+   * Set/get option
+   * @param   {string} name
+   * @param   {*}      [value]
+   * @returns {*}
+   */
+  option: function option(name, value) {
+    var options = this.options;
+    if (value === void 0) {
+      return options[name];
+    } else {
+      var modifiedValue = PluginManager.modifyOption(this, name, value);
+      if (typeof modifiedValue !== "undefined") {
+        options[name] = modifiedValue;
+      } else {
+        options[name] = value;
+      }
+      if (name === "group") {
+        _prepareGroup(options);
+      }
+    }
+  },
+  /**
+   * Destroy
+   */
+  destroy: function destroy() {
+    pluginEvent2("destroy", this);
+    var el = this.el;
+    el[expando] = null;
+    off(el, "mousedown", this._onTapStart);
+    off(el, "touchstart", this._onTapStart);
+    off(el, "pointerdown", this._onTapStart);
+    if (this.nativeDraggable) {
+      off(el, "dragover", this);
+      off(el, "dragenter", this);
+    }
+    Array.prototype.forEach.call(el.querySelectorAll("[draggable]"), function(el2) {
+      el2.removeAttribute("draggable");
+    });
+    this._onDrop();
+    this._disableDelayedDragEvents();
+    sortables.splice(sortables.indexOf(this.el), 1);
+    this.el = el = null;
+  },
+  _hideClone: function _hideClone() {
+    if (!cloneHidden) {
+      pluginEvent2("hideClone", this);
+      if (Sortable.eventCanceled) return;
+      css(cloneEl, "display", "none");
+      if (this.options.removeCloneOnHide && cloneEl.parentNode) {
+        cloneEl.parentNode.removeChild(cloneEl);
+      }
+      cloneHidden = true;
+    }
+  },
+  _showClone: function _showClone(putSortable2) {
+    if (putSortable2.lastPutMode !== "clone") {
+      this._hideClone();
+      return;
+    }
+    if (cloneHidden) {
+      pluginEvent2("showClone", this);
+      if (Sortable.eventCanceled) return;
+      if (dragEl.parentNode == rootEl && !this.options.group.revertClone) {
+        rootEl.insertBefore(cloneEl, dragEl);
+      } else if (nextEl) {
+        rootEl.insertBefore(cloneEl, nextEl);
+      } else {
+        rootEl.appendChild(cloneEl);
+      }
+      if (this.options.group.revertClone) {
+        this.animate(dragEl, cloneEl);
+      }
+      css(cloneEl, "display", "");
+      cloneHidden = false;
+    }
+  }
+};
+function _globalDragOver(evt) {
+  if (evt.dataTransfer) {
+    evt.dataTransfer.dropEffect = "move";
+  }
+  evt.cancelable && evt.preventDefault();
+}
+function _onMove(fromEl, toEl, dragEl2, dragRect, targetEl, targetRect, originalEvent, willInsertAfter) {
+  var evt, sortable = fromEl[expando], onMoveFn = sortable.options.onMove, retVal;
+  if (window.CustomEvent && !IE11OrLess && !Edge) {
+    evt = new CustomEvent("move", {
+      bubbles: true,
+      cancelable: true
+    });
+  } else {
+    evt = document.createEvent("Event");
+    evt.initEvent("move", true, true);
+  }
+  evt.to = toEl;
+  evt.from = fromEl;
+  evt.dragged = dragEl2;
+  evt.draggedRect = dragRect;
+  evt.related = targetEl || toEl;
+  evt.relatedRect = targetRect || getRect(toEl);
+  evt.willInsertAfter = willInsertAfter;
+  evt.originalEvent = originalEvent;
+  fromEl.dispatchEvent(evt);
+  if (onMoveFn) {
+    retVal = onMoveFn.call(sortable, evt, originalEvent);
+  }
+  return retVal;
+}
+function _disableDraggable(el) {
+  el.draggable = false;
+}
+function _unsilent() {
+  _silent = false;
+}
+function _ghostIsFirst(evt, vertical, sortable) {
+  var rect = getRect(getChild(sortable.el, 0, sortable.options, true));
+  var spacer = 10;
+  return vertical ? evt.clientX < rect.left - spacer || evt.clientY < rect.top && evt.clientX < rect.right : evt.clientY < rect.top - spacer || evt.clientY < rect.bottom && evt.clientX < rect.left;
+}
+function _ghostIsLast(evt, vertical, sortable) {
+  var rect = getRect(lastChild(sortable.el, sortable.options.draggable));
+  var spacer = 10;
+  return vertical ? evt.clientX > rect.right + spacer || evt.clientX <= rect.right && evt.clientY > rect.bottom && evt.clientX >= rect.left : evt.clientX > rect.right && evt.clientY > rect.top || evt.clientX <= rect.right && evt.clientY > rect.bottom + spacer;
+}
+function _getSwapDirection(evt, target, targetRect, vertical, swapThreshold, invertedSwapThreshold, invertSwap, isLastTarget) {
+  var mouseOnAxis = vertical ? evt.clientY : evt.clientX, targetLength = vertical ? targetRect.height : targetRect.width, targetS1 = vertical ? targetRect.top : targetRect.left, targetS2 = vertical ? targetRect.bottom : targetRect.right, invert = false;
+  if (!invertSwap) {
+    if (isLastTarget && targetMoveDistance < targetLength * swapThreshold) {
+      if (!pastFirstInvertThresh && (lastDirection === 1 ? mouseOnAxis > targetS1 + targetLength * invertedSwapThreshold / 2 : mouseOnAxis < targetS2 - targetLength * invertedSwapThreshold / 2)) {
+        pastFirstInvertThresh = true;
+      }
+      if (!pastFirstInvertThresh) {
+        if (lastDirection === 1 ? mouseOnAxis < targetS1 + targetMoveDistance : mouseOnAxis > targetS2 - targetMoveDistance) {
+          return -lastDirection;
+        }
+      } else {
+        invert = true;
+      }
+    } else {
+      if (mouseOnAxis > targetS1 + targetLength * (1 - swapThreshold) / 2 && mouseOnAxis < targetS2 - targetLength * (1 - swapThreshold) / 2) {
+        return _getInsertDirection(target);
+      }
+    }
+  }
+  invert = invert || invertSwap;
+  if (invert) {
+    if (mouseOnAxis < targetS1 + targetLength * invertedSwapThreshold / 2 || mouseOnAxis > targetS2 - targetLength * invertedSwapThreshold / 2) {
+      return mouseOnAxis > targetS1 + targetLength / 2 ? 1 : -1;
+    }
+  }
+  return 0;
+}
+function _getInsertDirection(target) {
+  if (index(dragEl) < index(target)) {
+    return 1;
+  } else {
+    return -1;
+  }
+}
+function _generateId(el) {
+  var str = el.tagName + el.className + el.src + el.href + el.textContent, i = str.length, sum = 0;
+  while (i--) {
+    sum += str.charCodeAt(i);
+  }
+  return sum.toString(36);
+}
+function _saveInputCheckedState(root) {
+  savedInputChecked.length = 0;
+  var inputs = root.getElementsByTagName("input");
+  var idx = inputs.length;
+  while (idx--) {
+    var el = inputs[idx];
+    el.checked && savedInputChecked.push(el);
+  }
+}
+function _nextTick(fn) {
+  return setTimeout(fn, 0);
+}
+function _cancelNextTick(id) {
+  return clearTimeout(id);
+}
+if (documentExists) {
+  on(document, "touchmove", function(evt) {
+    if ((Sortable.active || awaitingDragStarted) && evt.cancelable) {
+      evt.preventDefault();
+    }
+  });
+}
+Sortable.utils = {
+  on,
+  off,
+  css,
+  find,
+  is: function is(el, selector2) {
+    return !!closest(el, selector2, el, false);
+  },
+  extend,
+  throttle,
+  closest,
+  toggleClass,
+  clone,
+  index,
+  nextTick: _nextTick,
+  cancelNextTick: _cancelNextTick,
+  detectDirection: _detectDirection,
+  getChild
+};
+Sortable.get = function(element) {
+  return element[expando];
+};
+Sortable.mount = function() {
+  for (var _len = arguments.length, plugins2 = new Array(_len), _key = 0; _key < _len; _key++) {
+    plugins2[_key] = arguments[_key];
+  }
+  if (plugins2[0].constructor === Array) plugins2 = plugins2[0];
+  plugins2.forEach(function(plugin) {
+    if (!plugin.prototype || !plugin.prototype.constructor) {
+      throw "Sortable: Mounted plugin must be a constructor function, not ".concat({}.toString.call(plugin));
+    }
+    if (plugin.utils) Sortable.utils = _objectSpread2(_objectSpread2({}, Sortable.utils), plugin.utils);
+    PluginManager.mount(plugin);
+  });
+};
+Sortable.create = function(el, options) {
+  return new Sortable(el, options);
+};
+Sortable.version = version;
+var autoScrolls = [];
+var scrollEl;
+var scrollRootEl;
+var scrolling = false;
+var lastAutoScrollX;
+var lastAutoScrollY;
+var touchEvt$1;
+var pointerElemChangedInterval;
+function AutoScrollPlugin() {
+  function AutoScroll() {
+    this.defaults = {
+      scroll: true,
+      forceAutoScrollFallback: false,
+      scrollSensitivity: 30,
+      scrollSpeed: 10,
+      bubbleScroll: true
+    };
+    for (var fn in this) {
+      if (fn.charAt(0) === "_" && typeof this[fn] === "function") {
+        this[fn] = this[fn].bind(this);
+      }
+    }
+  }
+  AutoScroll.prototype = {
+    dragStarted: function dragStarted(_ref) {
+      var originalEvent = _ref.originalEvent;
+      if (this.sortable.nativeDraggable) {
+        on(document, "dragover", this._handleAutoScroll);
+      } else {
+        if (this.options.supportPointer) {
+          on(document, "pointermove", this._handleFallbackAutoScroll);
+        } else if (originalEvent.touches) {
+          on(document, "touchmove", this._handleFallbackAutoScroll);
+        } else {
+          on(document, "mousemove", this._handleFallbackAutoScroll);
+        }
+      }
+    },
+    dragOverCompleted: function dragOverCompleted(_ref2) {
+      var originalEvent = _ref2.originalEvent;
+      if (!this.options.dragOverBubble && !originalEvent.rootEl) {
+        this._handleAutoScroll(originalEvent);
+      }
+    },
+    drop: function drop3() {
+      if (this.sortable.nativeDraggable) {
+        off(document, "dragover", this._handleAutoScroll);
+      } else {
+        off(document, "pointermove", this._handleFallbackAutoScroll);
+        off(document, "touchmove", this._handleFallbackAutoScroll);
+        off(document, "mousemove", this._handleFallbackAutoScroll);
+      }
+      clearPointerElemChangedInterval();
+      clearAutoScrolls();
+      cancelThrottle();
+    },
+    nulling: function nulling() {
+      touchEvt$1 = scrollRootEl = scrollEl = scrolling = pointerElemChangedInterval = lastAutoScrollX = lastAutoScrollY = null;
+      autoScrolls.length = 0;
+    },
+    _handleFallbackAutoScroll: function _handleFallbackAutoScroll(evt) {
+      this._handleAutoScroll(evt, true);
+    },
+    _handleAutoScroll: function _handleAutoScroll(evt, fallback) {
+      var _this = this;
+      var x = (evt.touches ? evt.touches[0] : evt).clientX, y = (evt.touches ? evt.touches[0] : evt).clientY, elem = document.elementFromPoint(x, y);
+      touchEvt$1 = evt;
+      if (fallback || this.options.forceAutoScrollFallback || Edge || IE11OrLess || Safari) {
+        autoScroll(evt, this.options, elem, fallback);
+        var ogElemScroller = getParentAutoScrollElement(elem, true);
+        if (scrolling && (!pointerElemChangedInterval || x !== lastAutoScrollX || y !== lastAutoScrollY)) {
+          pointerElemChangedInterval && clearPointerElemChangedInterval();
+          pointerElemChangedInterval = setInterval(function() {
+            var newElem = getParentAutoScrollElement(document.elementFromPoint(x, y), true);
+            if (newElem !== ogElemScroller) {
+              ogElemScroller = newElem;
+              clearAutoScrolls();
+            }
+            autoScroll(evt, _this.options, newElem, fallback);
+          }, 10);
+          lastAutoScrollX = x;
+          lastAutoScrollY = y;
+        }
+      } else {
+        if (!this.options.bubbleScroll || getParentAutoScrollElement(elem, true) === getWindowScrollingElement()) {
+          clearAutoScrolls();
+          return;
+        }
+        autoScroll(evt, this.options, getParentAutoScrollElement(elem, false), false);
+      }
+    }
+  };
+  return _extends(AutoScroll, {
+    pluginName: "scroll",
+    initializeByDefault: true
+  });
+}
+function clearAutoScrolls() {
+  autoScrolls.forEach(function(autoScroll2) {
+    clearInterval(autoScroll2.pid);
+  });
+  autoScrolls = [];
+}
+function clearPointerElemChangedInterval() {
+  clearInterval(pointerElemChangedInterval);
+}
+var autoScroll = throttle(function(evt, options, rootEl2, isFallback) {
+  if (!options.scroll) return;
+  var x = (evt.touches ? evt.touches[0] : evt).clientX, y = (evt.touches ? evt.touches[0] : evt).clientY, sens = options.scrollSensitivity, speed = options.scrollSpeed, winScroller = getWindowScrollingElement();
+  var scrollThisInstance = false, scrollCustomFn;
+  if (scrollRootEl !== rootEl2) {
+    scrollRootEl = rootEl2;
+    clearAutoScrolls();
+    scrollEl = options.scroll;
+    scrollCustomFn = options.scrollFn;
+    if (scrollEl === true) {
+      scrollEl = getParentAutoScrollElement(rootEl2, true);
+    }
+  }
+  var layersOut = 0;
+  var currentParent = scrollEl;
+  do {
+    var el = currentParent, rect = getRect(el), top = rect.top, bottom = rect.bottom, left = rect.left, right = rect.right, width = rect.width, height = rect.height, canScrollX = void 0, canScrollY = void 0, scrollWidth = el.scrollWidth, scrollHeight = el.scrollHeight, elCSS = css(el), scrollPosX = el.scrollLeft, scrollPosY = el.scrollTop;
+    if (el === winScroller) {
+      canScrollX = width < scrollWidth && (elCSS.overflowX === "auto" || elCSS.overflowX === "scroll" || elCSS.overflowX === "visible");
+      canScrollY = height < scrollHeight && (elCSS.overflowY === "auto" || elCSS.overflowY === "scroll" || elCSS.overflowY === "visible");
+    } else {
+      canScrollX = width < scrollWidth && (elCSS.overflowX === "auto" || elCSS.overflowX === "scroll");
+      canScrollY = height < scrollHeight && (elCSS.overflowY === "auto" || elCSS.overflowY === "scroll");
+    }
+    var vx = canScrollX && (Math.abs(right - x) <= sens && scrollPosX + width < scrollWidth) - (Math.abs(left - x) <= sens && !!scrollPosX);
+    var vy = canScrollY && (Math.abs(bottom - y) <= sens && scrollPosY + height < scrollHeight) - (Math.abs(top - y) <= sens && !!scrollPosY);
+    if (!autoScrolls[layersOut]) {
+      for (var i = 0; i <= layersOut; i++) {
+        if (!autoScrolls[i]) {
+          autoScrolls[i] = {};
+        }
+      }
+    }
+    if (autoScrolls[layersOut].vx != vx || autoScrolls[layersOut].vy != vy || autoScrolls[layersOut].el !== el) {
+      autoScrolls[layersOut].el = el;
+      autoScrolls[layersOut].vx = vx;
+      autoScrolls[layersOut].vy = vy;
+      clearInterval(autoScrolls[layersOut].pid);
+      if (vx != 0 || vy != 0) {
+        scrollThisInstance = true;
+        autoScrolls[layersOut].pid = setInterval(function() {
+          if (isFallback && this.layer === 0) {
+            Sortable.active._onTouchMove(touchEvt$1);
+          }
+          var scrollOffsetY = autoScrolls[this.layer].vy ? autoScrolls[this.layer].vy * speed : 0;
+          var scrollOffsetX = autoScrolls[this.layer].vx ? autoScrolls[this.layer].vx * speed : 0;
+          if (typeof scrollCustomFn === "function") {
+            if (scrollCustomFn.call(Sortable.dragged.parentNode[expando], scrollOffsetX, scrollOffsetY, evt, touchEvt$1, autoScrolls[this.layer].el) !== "continue") {
+              return;
+            }
+          }
+          scrollBy(autoScrolls[this.layer].el, scrollOffsetX, scrollOffsetY);
+        }.bind({
+          layer: layersOut
+        }), 24);
+      }
+    }
+    layersOut++;
+  } while (options.bubbleScroll && currentParent !== winScroller && (currentParent = getParentAutoScrollElement(currentParent, false)));
+  scrolling = scrollThisInstance;
+}, 30);
+var drop = function drop2(_ref) {
+  var originalEvent = _ref.originalEvent, putSortable2 = _ref.putSortable, dragEl2 = _ref.dragEl, activeSortable = _ref.activeSortable, dispatchSortableEvent = _ref.dispatchSortableEvent, hideGhostForTarget = _ref.hideGhostForTarget, unhideGhostForTarget = _ref.unhideGhostForTarget;
+  if (!originalEvent) return;
+  var toSortable = putSortable2 || activeSortable;
+  hideGhostForTarget();
+  var touch = originalEvent.changedTouches && originalEvent.changedTouches.length ? originalEvent.changedTouches[0] : originalEvent;
+  var target = document.elementFromPoint(touch.clientX, touch.clientY);
+  unhideGhostForTarget();
+  if (toSortable && !toSortable.el.contains(target)) {
+    dispatchSortableEvent("spill");
+    this.onSpill({
+      dragEl: dragEl2,
+      putSortable: putSortable2
+    });
+  }
+};
+function Revert() {
+}
+Revert.prototype = {
+  startIndex: null,
+  dragStart: function dragStart(_ref2) {
+    var oldDraggableIndex2 = _ref2.oldDraggableIndex;
+    this.startIndex = oldDraggableIndex2;
+  },
+  onSpill: function onSpill(_ref3) {
+    var dragEl2 = _ref3.dragEl, putSortable2 = _ref3.putSortable;
+    this.sortable.captureAnimationState();
+    if (putSortable2) {
+      putSortable2.captureAnimationState();
+    }
+    var nextSibling = getChild(this.sortable.el, this.startIndex, this.options);
+    if (nextSibling) {
+      this.sortable.el.insertBefore(dragEl2, nextSibling);
+    } else {
+      this.sortable.el.appendChild(dragEl2);
+    }
+    this.sortable.animateAll();
+    if (putSortable2) {
+      putSortable2.animateAll();
+    }
+  },
+  drop
+};
+_extends(Revert, {
+  pluginName: "revertOnSpill"
+});
+function Remove() {
+}
+Remove.prototype = {
+  onSpill: function onSpill2(_ref4) {
+    var dragEl2 = _ref4.dragEl, putSortable2 = _ref4.putSortable;
+    var parentSortable = putSortable2 || this.sortable;
+    parentSortable.captureAnimationState();
+    dragEl2.parentNode && dragEl2.parentNode.removeChild(dragEl2);
+    parentSortable.animateAll();
+  },
+  drop
+};
+_extends(Remove, {
+  pluginName: "removeOnSpill"
+});
+Sortable.mount(new AutoScrollPlugin());
+Sortable.mount(Remove, Revert);
+
+// scripts/lib/socket.js
+var Socket = class {
+  static __$callbacks = {};
+  static __$stores = {};
+  static __$promises = {};
+  static USERS = {
+    GMS: "gms",
+    PLAYERS: "players",
+    ALL: "all",
+    OTHERS: "others",
+    FIRSTGM: "firstGM",
+    SELF: "self"
+  };
+  static __$reserved = ["__$eventName", "__$response", "__$onMessage", "__$parseUsers", "register", "USERS"];
+  static async __$onMessage(data) {
+    const options = data.__$socketOptions;
+    if (options.__$storeName) {
+      if (options.__$request) {
+        const store = this.__$stores[options.__$storeName];
+        const _isLive = store._isLive;
+        if (!_isLive) return;
+        game.socket.emit(`module.${MODULE_ID}`, { __$socketOptions: { __$storeName: options.__$storeName, user: game.user.id }, data: store.getData() });
+      } else {
+        this.__$stores[options.__$storeName].synchronize(data.data, game.users.get(options.user));
+      }
+      return;
+    }
+    if (options.__$eventName === "__$response") {
+      const key = options.__$responseKey;
+      if (this.__$promises[key]) {
+        this.__$promises[key].resolve({ user: game.users.get(options.__$userId), response: data.result });
+        delete this.__$promises[key];
+      }
+      return;
+    }
+    if (!options.users.includes(game.user.id)) return;
+    const callback = this.__$callbacks[options.__$eventName];
+    delete data.__$socketOptions;
+    const result = await callback(data);
+    if (options.response) {
+      const key = `${options.__$eventId}.${game.user.id}`;
+      const data2 = { __$socketOptions: { __$eventName: "__$response", __$responseKey: key, __$userId: game.user.id }, result };
+      this.__$socket.emit(`module.${MODULE_ID}`, data2);
+    }
+  }
+  static __$parseUsers(options) {
+    if (Array.isArray(options?.users)) return options;
+    if (typeof options === "string") options = { users: options };
+    if (Array.isArray(options)) options = { users: options };
+    options.users = options.users || this.USERS.ALL;
+    const active = game.users.filter((u) => u.active);
+    const users = options.users;
+    if (users === this.USERS.ALL) {
+      options.users = active.map((u) => u.id);
+    } else if (users === this.USERS.GMS) {
+      options.users = active.filter((u) => u.isGM).map((u) => u.id);
+    } else if (users === this.USERS.PLAYERS) {
+      options.users = active.filter((u) => !u.isGM).map((u) => u.id);
+    } else if (users === this.USERS.OTHERS) {
+      options.users = active.filter((u) => u.id !== game.user.id).map((u) => u.id);
+    } else if (users === this.USERS.FIRSTGM) {
+      options.users = game.users.activeGM.id;
+    } else if (users === this.USERS.SELF) {
+      options.users = [game.user.id];
+    }
+    return options;
+  }
+  static register(eventName, callback, defaultOptions = {}) {
+    if (!this.__$socket) {
+      this.__$socket = game.socket;
+      game.socket.on(`module.${MODULE_ID}`, this.__$onMessage.bind(this));
+    }
+    if (this.__$reserved.includes(eventName)) {
+      throw new Error(`Socket event name ${eventName} is reserved`);
+    }
+    this.__$callbacks[eventName] = callback;
+    const wrappedCallback = async (data, options = {}) => {
+      options = this.__$parseUsers(options);
+      options = { ...defaultOptions, ...options };
+      const eventId = foundry.utils.randomID();
+      options.__$eventId = eventId;
+      options.__$eventName = eventName;
+      const promises = [];
+      const local = options.users.includes(game.user.id);
+      options.users = options.users.filter((u) => u !== game.user.id);
+      if (options.response) {
+        for (const user of options.users) {
+          promises.push(
+            new Promise((resolve, reject) => {
+              const key = `${eventId}.${user}`;
+              this.__$promises[key] = { resolve, reject };
+            })
+          );
+        }
+        setTimeout(() => {
+          for (const user of options.users) {
+            const key = `${eventId}.${user}`;
+            if (this.__$promises[key]) {
+              this.__$promises[key].reject({ user: game.users.get(user), response: "timeout" });
+              delete this.__$promises[key];
+            }
+          }
+        }, options.timeout || 3e4);
+      }
+      data.__$socketOptions = options;
+      this.__$socket.emit(`module.${MODULE_ID}`, data);
+      const results = [];
+      if (local) {
+        const localWrapper = async () => {
+          return { user: game.user, response: await callback(data) };
+        };
+        promises.push(localWrapper());
+      }
+      const allPromises = await Promise.all(promises);
+      for (const promise of allPromises) {
+        results.push(promise);
+      }
+      return results;
+    };
+    this[eventName] = wrappedCallback.bind(this);
+  }
+  static registerStore(storeName, initialValue = {}, callback = null) {
+    if (this.__$reserved.includes(storeName)) {
+      throw new Error(`Store name ${storeName} is reserved`);
+    }
+    if (typeof initialValue !== "object") {
+      throw new Error("Initial value for store must be an object");
+    }
+    this.__$stores[storeName] = new SynchronizedStore(storeName, initialValue, callback);
+    Object.defineProperty(this, storeName, {
+      get: () => {
+        return this.__$stores[storeName].getData();
+      },
+      set: (value) => {
+        this.__$stores[storeName].setData(value);
+      }
+    });
+    return this.__$stores[storeName];
+  }
+};
+var SynchronizedStore = class {
+  constructor(storeName, initialValue, callback) {
+    this._storeName = storeName;
+    this._onChange = callback;
+    this._data = initialValue;
+    this._timestamp = Date.now();
+    this._isLive = false;
+    game.socket.emit(`module.${MODULE_ID}`, { __$socketOptions: { __$storeName: this._storeName, __$request: true, user: game.user.id } });
+  }
+  synchronize(data) {
+    this._data = data;
+    this._timestamp = Date.now();
+    this._isLive = true;
+    this._onChange?.(this.data);
+  }
+  getData() {
+    return this._data;
+  }
+  setData(value) {
+    this.synchronize(value);
+    game.socket.emit(`module.${MODULE_ID}`, { __$socketOptions: { __$storeName: this._storeName, user: game.user.id }, data: value });
+  }
+};
+
+// scripts/app/timeline.js
+var YEAR_SEPARATOR = `<i class="fa-thin fa-arrow-right"></i>`;
+var Timeline = class extends Application {
+  constructor(container) {
+    super();
+    this.container = container;
+    const journalName = getSetting("timelineJournalName");
+    this.journal = Array.from(game.journal).find((j) => j.name === journalName);
+    this.scrollPosition = getSetting("timelineScroll") ?? 0;
+  }
+  static get APP_ID() {
+    return this.name.split(/(?=[A-Z])/).join("-").toLowerCase();
+  }
+  get APP_ID() {
+    return this.constructor.APP_ID;
+  }
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      id: this.APP_ID,
+      template: `modules/${MODULE_ID}/templates/${this.APP_ID}.hbs`,
+      popOut: false,
+      minimizable: false,
+      title: game.i18n.localize(`${MODULE_ID}.${this.APP_ID}.title`),
+      closeOnSubmit: false
+    });
+  }
+  async getData() {
+    YEAR_SEPARATOR = game.i18n.localize(`${MODULE_ID}.timeline-config.to`);
+    const YEAR_PIXEL_SCALE = Math.max(this.journal.getFlag(MODULE_ID, "timeScale") ?? 10, 0.1);
+    const USE_DYNAMIC = this.journal.getFlag(MODULE_ID, "dynamicTimeScale") ?? false;
+    const ERA_SCALES = {};
+    const pages = Array.from(this.journal.pages);
+    const negativeAbb = this.journal.getFlag(MODULE_ID, "negativeAbb") ?? "BC";
+    const positiveAbb = this.journal.getFlag(MODULE_ID, "positiveAbb") ?? "AC";
+    const showMinus = this.journal.getFlag(MODULE_ID, "showMinus") ?? false;
+    const erasData = [];
+    const eventsData = {
+      left: [],
+      right: []
+    };
+    const scrollbarDots = [];
+    const eras = pages.filter((p) => p.flags[MODULE_ID]?.timeline?.isEra).sort((a, b) => a.getFlag(MODULE_ID, "timeline").eraStart - b.getFlag(MODULE_ID, "timeline").eraStart);
+    const events = pages.filter((p) => !p.flags[MODULE_ID]?.timeline?.isEra && (p.flags[MODULE_ID]?.hidden !== true || game.user.isGM)).sort((a, b) => a.flags[MODULE_ID]?.timeline?.year - b.flags[MODULE_ID]?.timeline?.year);
+    let erasCssGradient = "";
+    eras.forEach((era) => {
+      const eraEventsCount = events.filter((e) => e.flags[MODULE_ID]?.timeline?.year >= era.flags[MODULE_ID]?.timeline?.eraStart && e.flags[MODULE_ID]?.timeline?.year <= era.flags[MODULE_ID]?.timeline?.eraEnd).length;
+      const eraLength = era.flags[MODULE_ID]?.timeline?.eraEnd - era.flags[MODULE_ID]?.timeline?.eraStart;
+      if (USE_DYNAMIC) {
+        ERA_SCALES[era.uuid] = (eraEventsCount + 1) * 300 * YEAR_PIXEL_SCALE;
+      } else {
+        ERA_SCALES[era.uuid] = eraLength * YEAR_PIXEL_SCALE;
+      }
+    });
+    const totalHeight = Object.values(ERA_SCALES).reduce((a, b) => a + b, 0);
+    for (let i = 0; i < eras.length; i++) {
+      const era = eras[i];
+      const nextEra = eras[i + 1];
+      const eraStart = era.flags[MODULE_ID]?.timeline?.eraStart;
+      const eraEnd = era.flags[MODULE_ID]?.timeline?.eraEnd || nextEra?.flags[MODULE_ID]?.timeline?.eraStart;
+      const color = era.flags[MODULE_ID]?.timeline?.color;
+      const prevEndPx = erasData[i - 1]?.endPx;
+      const startPx = prevEndPx ?? 0;
+      const endPx = ERA_SCALES[era.uuid] + startPx;
+      const startPercent = startPx / totalHeight;
+      const endPercent = endPx / totalHeight * 100;
+      erasCssGradient += `${color} ${startPercent}%, ${color} ${endPercent}%, `;
+      let startText = eraStart > 0 ? `${eraStart} ${positiveAbb}` : `${Math.abs(eraStart)} ${negativeAbb}`;
+      let endText = eraEnd > 0 ? `${eraEnd} ${positiveAbb}` : `${Math.abs(eraEnd)} ${negativeAbb}`;
+      if (eraStart < 0 && (!negativeAbb || showMinus)) startText = "-" + startText;
+      if (eraEnd < 0 && (!negativeAbb || showMinus)) endText = "-" + endText;
+      erasData.push({
+        start: startText,
+        end: endText,
+        name: era.name,
+        top: startPx,
+        endPx,
+        content: await foundry.applications.ux.TextEditor.implementation.enrichHTML(era.text.content, { secrets: game.user.isGM, relativeTo: era, async: true }),
+        banner: era.flags[MODULE_ID]?.timeline?.banner,
+        color: era.flags[MODULE_ID]?.timeline?.color,
+        uuid: era.uuid,
+        label: era.flags[MODULE_ID]?.timeline?.label
+      });
+    }
+    for (let i = 0; i < events.length; i++) {
+      const event = events[i];
+      const year = event.flags[MODULE_ID]?.timeline?.year;
+      const era = eras.find((e) => e.flags[MODULE_ID]?.timeline?.eraStart <= year && e.flags[MODULE_ID]?.timeline?.eraEnd >= year);
+      if (!era) continue;
+      const color = era.flags[MODULE_ID]?.timeline?.color;
+      const percentYearInEra = (year - era.flags[MODULE_ID]?.timeline?.eraStart) / (era.flags[MODULE_ID]?.timeline?.eraEnd - era.flags[MODULE_ID]?.timeline?.eraStart);
+      const duration = event.flags[MODULE_ID]?.timeline?.duration ?? 0;
+      const percentYearInEraEnd = (year + duration - era.flags[MODULE_ID]?.timeline?.eraStart) / (era.flags[MODULE_ID]?.timeline?.eraEnd - era.flags[MODULE_ID]?.timeline?.eraStart);
+      const top = ERA_SCALES[era.uuid] * percentYearInEra + erasData.find((e) => e.uuid === era.uuid).top;
+      const percent = top / totalHeight * 100;
+      const durationTop = ERA_SCALES[era.uuid] * percentYearInEraEnd + erasData.find((e) => e.uuid === era.uuid).top;
+      const durationDelta = Math.round(durationTop - top);
+      const yearText = year > 0 ? `${year} ${positiveAbb}` : `${showMinus ? "-" : ""}${Math.abs(year)} ${negativeAbb}`;
+      const yearEndText = year + duration > 0 ? `${year + duration} ${positiveAbb}` : `${showMinus ? "-" : ""}${Math.abs(year + duration)} ${negativeAbb}`;
+      const content = await foundry.applications.ux.TextEditor.implementation.enrichHTML(event.text.content, { secrets: game.user.isGM, relativeTo: era, async: true });
+      const banner = event.flags[MODULE_ID]?.timeline?.banner;
+      const uuid = event.uuid;
+      const data = {
+        name: event.name,
+        content,
+        banner,
+        color,
+        uuid,
+        top: top + (event.flags[MODULE_ID]?.timeline?.offset ?? 0),
+        year: yearText,
+        yearEnd: duration ? yearEndText : null,
+        era: era.name,
+        eraUuid: era.uuid,
+        hidden: event.flags[MODULE_ID]?.hidden,
+        icon: event.flags[MODULE_ID]?.timeline?.icon,
+        flipped: event.flags[MODULE_ID]?.timeline?.flipped,
+        duration: durationDelta,
+        label: event.flags[MODULE_ID]?.timeline?.label
+      };
+      if (i % 2 === 0) {
+        eventsData.left.push(data);
+      } else {
+        eventsData.right.push(data);
+      }
+      scrollbarDots.push({
+        top: percent,
+        uuid: event.uuid
+      });
+    }
+    erasCssGradient = erasCssGradient.slice(0, -2);
+    const contentSetting = this.journal.getFlag(MODULE_ID, "content") ?? "always";
+    const showContentToggle = contentSetting !== "always";
+    const collapsed = contentSetting === "toggleOff";
+    return { height: totalHeight, erasData, eventsData, erasCssGradient, scrollbarDots, isGM: game.user.isGM, showContentToggle, collapsed, YEAR_SEPARATOR };
+  }
+  activateListeners(html) {
+    super.activateListeners(html);
+    html = html[0] ?? html;
+    this.container.appendChild(html);
+    html.querySelector("main section").scrollTo({ top: this.scrollPosition });
+    html.querySelectorAll(".event-era").forEach((era) => {
+      const uuid = era.dataset.uuid;
+      era.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.goTo(uuid);
+      });
+    });
+    html.querySelectorAll(".timeline-scrollbar-dot").forEach((event) => {
+      const uuid = event.dataset.uuid;
+      event.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.goTo(uuid);
+      });
+    });
+    html.querySelectorAll(".content-collapse").forEach((el) => {
+      const content = el.closest(".timeline-era, .timeline-event").querySelector(".timeline-content");
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        content.classList.toggle("collapsed");
+      });
+    });
+    html.querySelectorAll(".timeline-event, .timeline-era").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        const closestContainer = e.target.closest(".timeline-center, .timeline-right, .timeline-left");
+        if (!closestContainer) return;
+        closestContainer.querySelectorAll(".on-top").forEach((el2) => el2.classList.remove("on-top"));
+        el.classList.add("on-top");
+      });
+    });
+    if (!game.user.isGM) return;
+    html.querySelector("#add-timeline").addEventListener("click", async (e) => {
+      const page2 = await this.journal.createEmbeddedDocuments("JournalEntryPage", [{ name: "New Event", type: "text" }]);
+      new TimelineConfig(page2[0]).render(true);
+    });
+    this.addConfigIcons(html);
+  }
+  addConfigIcons(html) {
+    html.querySelectorAll(".timeline-era, .timeline-event").forEach((el) => {
+      let target = el.querySelector("header");
+      if (!target) return;
+      const cogIcon = document.createElement("i");
+      cogIcon.classList.add("fas", "fa-cog", "timeline-config-icon");
+      cogIcon.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const page2 = fromUuidSync(e.currentTarget.closest(".timeline-era, .timeline-event").dataset.uuid);
+        new TimelineConfig(page2).render(true);
+      });
+      target.appendChild(cogIcon);
+    });
+  }
+  goTo(pageUuid) {
+    const target = this.element[0].querySelector(`.timeline-era[data-uuid="${pageUuid}"], .timeline-event[data-uuid="${pageUuid}"]`);
+    this.element[0].querySelector("main section").scrollTo({ top: target.offsetTop - target.offsetHeight, behavior: "smooth" });
+  }
+  configTimeline(uuid) {
+    const page2 = fromUuidSync(uuid);
+    new TimelineConfig(page2).render(true);
+  }
+  saveScrollPosition() {
+    const scroll = this.element[0].querySelector("main section").scrollTop;
+    setSetting("timelineScroll", scroll);
+  }
+};
+var TimelineConfig = class extends FormApplication {
+  constructor(document2) {
+    super();
+    this.document = document2;
+  }
+  static get APP_ID() {
+    return this.name.split(/(?=[A-Z])/).join("-").toLowerCase();
+  }
+  get APP_ID() {
+    return this.constructor.APP_ID;
+  }
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      id: this.APP_ID,
+      template: `modules/${MODULE_ID}/templates/${this.APP_ID}.hbs`,
+      popOut: true,
+      minimizable: true,
+      title: game.i18n.localize(`${MODULE_ID}.${this.APP_ID}.title`),
+      closeOnSubmit: false
+    });
+  }
+  async getData() {
+    const timelineFlag = this.document.getFlag(MODULE_ID, "timeline") ?? {};
+    const hidden = this.document.getFlag(MODULE_ID, "hidden") ?? false;
+    const timeScale = this.document.parent.getFlag(MODULE_ID, "timeScale") ?? 10;
+    const negativeAbb = this.document.parent.getFlag(MODULE_ID, "negativeAbb") ?? "BC";
+    const positiveAbb = this.document.parent.getFlag(MODULE_ID, "positiveAbb") ?? "AC";
+    const dynamicTimeScale = this.document.parent.getFlag(MODULE_ID, "dynamicTimeScale") ?? false;
+    const content = this.document.parent.getFlag(MODULE_ID, "content");
+    const showMinus = this.document.parent.getFlag(MODULE_ID, "showMinus") ?? false;
+    timelineFlag.color = timelineFlag.color || "#ff0000";
+    const contentChoices = {
+      always: `${MODULE_ID}.timeline-config.contentChoices.always`,
+      toggleOff: `${MODULE_ID}.timeline-config.contentChoices.toggleOff`,
+      toggleOn: `${MODULE_ID}.timeline-config.contentChoices.toggleOn`
+    };
+    return { ...timelineFlag, title: this.document.name, hidden, negativeAbb, positiveAbb, timeScale, dynamicTimeScale, content, contentChoices, showMinus };
+  }
+  activateListeners(html) {
+    super.activateListeners(html);
+    html = html[0] ?? html;
+    html.querySelector("#edit-contents").addEventListener("click", (e) => {
+      this.document.sheet.render(true);
+    });
+    html.querySelector("#delete").addEventListener("click", async (e) => {
+      Dialog.confirm({
+        title: game.i18n.localize(`${MODULE_ID}.deletePage.title`) + ` ${this.document.name}`,
+        content: game.i18n.localize(`${MODULE_ID}.deletePage.content`),
+        yes: async () => {
+          await this.document.parent.deleteEmbeddedDocuments("JournalEntryPage", [this.document.id]);
+          this.close();
+        },
+        no: () => {
+        },
+        defaultYes: false
+      });
+    });
+    html.querySelectorAll(".era-event-switch span").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        html.querySelector(".era-event-switch .selected").classList.remove("selected");
+        el.classList.add("selected");
+        this.setTypeVisibility();
+      });
+    });
+    this.setTypeVisibility();
+  }
+  setTypeVisibility() {
+    const selectedType = this.element[0].querySelector(".era-event-switch .selected").dataset.type;
+    const targetFieldset = this.element[0].querySelector(`fieldset.${selectedType === "era" ? "event" : "era"}-fieldset`);
+    const otherFieldset = this.element[0].querySelector(`fieldset.${selectedType}-fieldset`);
+    targetFieldset.style.filter = "grayscale(1)";
+    targetFieldset.style.pointerEvents = "none";
+    targetFieldset.style.opacity = "0.5";
+    otherFieldset.style.filter = "none";
+    otherFieldset.style.pointerEvents = "auto";
+    otherFieldset.style.opacity = "1";
+  }
+  async _updateObject(event, formData) {
+    formData = foundry.utils.expandObject(formData);
+    formData.isEra = this.element[0].querySelector(".era-event-switch .selected").dataset.type === "era";
+    if (!formData.ignoreDataValidation) {
+      try {
+        this.validateData(formData);
+      } catch (error) {
+        console.error(error);
+        return;
+      }
+    }
+    delete formData.ignoreDataValidation;
+    const journalFlags = ["negativeAbb", "positiveAbb", "timeScale", "dynamicTimeScale", "content", "showMinus"];
+    await this.document.parent.update({
+      flags: {
+        [MODULE_ID]: journalFlags.reduce((acc, flag) => {
+          acc[flag] = formData[flag];
+          return acc;
+        }, {})
+      }
+    });
+    journalFlags.forEach((flag) => delete formData[flag]);
+    const hidden = formData.hidden;
+    delete formData.hidden;
+    await this.document.update({
+      name: formData.title,
+      flags: {
+        [MODULE_ID]: {
+          timeline: formData,
+          hidden
+        }
+      }
+    });
+    const updates = [];
+    const journal = this.document.parent;
+    const pages = Array.from(journal.pages);
+    for (const page2 of pages) {
+      const flagData = page2.getFlag(MODULE_ID, "timeline") ?? {};
+      const sort2 = flagData.isEra ? flagData.eraStart : flagData.year;
+      updates.push({ _id: page2.id, sort: sort2 });
+    }
+    await journal.updateEmbeddedDocuments("JournalEntryPage", updates);
+    this.close();
+  }
+  validateData(expanded) {
+    const eras = Array.from(this.document.parent.pages).filter((p) => p.getFlag(MODULE_ID, "timeline")?.isEra).filter((p) => p.id !== this.document.id);
+    if (eras.length === 0 && !expanded.isEra) {
+      const errorString = game.i18n.localize(`${MODULE_ID}.timeline-config.errors.noEra`);
+      ui.notifications.error(errorString);
+      throw new Error(errorString);
+    }
+    const isFirstEra = eras.length === 0 && expanded.isEra;
+    if (!expanded.isEra) {
+      const year = expanded.year;
+      if (year === void 0 || year === null || year === "") {
+        const errorString = game.i18n.localize(`${MODULE_ID}.timeline-config.errors.noYear`);
+        ui.notifications.error(errorString);
+        throw new Error(errorString);
+      }
+      const era = eras.find((e) => e.getFlag(MODULE_ID, "timeline").eraStart <= year && e.getFlag(MODULE_ID, "timeline").eraEnd >= year);
+      if (!era) {
+        const errorString = game.i18n.localize(`${MODULE_ID}.timeline-config.errors.yearOutOfBounds`);
+        ui.notifications.error(errorString);
+        throw new Error(errorString);
+      }
+    }
+    if (expanded.isEra) {
+      const eraStart = expanded.eraStart;
+      const eraEnd = expanded.eraEnd;
+      if (eraStart === void 0 || eraStart === null || eraStart === "") {
+        const errorString = game.i18n.localize(`${MODULE_ID}.timeline-config.errors.noEraStart`);
+        ui.notifications.error(errorString);
+        throw new Error(errorString);
+      }
+      if (eraEnd === void 0 || eraEnd === null || eraEnd === "") {
+        const errorString = game.i18n.localize(`${MODULE_ID}.timeline-config.errors.noEraEnd`);
+        ui.notifications.error(errorString);
+        throw new Error(errorString);
+      }
+      if (eraStart >= eraEnd) {
+        const errorString = game.i18n.localize(`${MODULE_ID}.timeline-config.errors.eraStartAfterEnd`);
+        ui.notifications.error(errorString);
+        throw new Error(errorString);
+      }
+      if (!isFirstEra) {
+        const previousEra = eras.find((e) => e.getFlag(MODULE_ID, "timeline").eraEnd === eraStart);
+        const nextEra = eras.find((e) => e.getFlag(MODULE_ID, "timeline").eraStart === eraEnd);
+        if (!previousEra && !nextEra) {
+          const errorString = game.i18n.localize(`${MODULE_ID}.timeline-config.errors.eraNotConnected`);
+          ui.notifications.error(errorString);
+          throw new Error(errorString);
+        }
+        const overlappingEra = eras.find((e) => e.getFlag(MODULE_ID, "timeline").eraStart < eraStart && e.getFlag(MODULE_ID, "timeline").eraEnd > eraStart || e.getFlag(MODULE_ID, "timeline").eraStart < eraEnd && e.getFlag(MODULE_ID, "timeline").eraEnd > eraEnd);
+        if (overlappingEra) {
+          const errorString = game.i18n.localize(`${MODULE_ID}.timeline-config.errors.eraOverlap`);
+          ui.notifications.error(errorString);
+          throw new Error(errorString);
+        }
+      }
+    }
+  }
+};
+
+// scripts/app/app.js
+var getHistory = () => {
+  return game.user.getFlag(MODULE_ID, "history") ?? [];
+};
+var setHistory = (history) => {
+  return game.user.setFlag(MODULE_ID, "history", history);
+};
+var CHECKBOX_STATE = {
+  UNCHECKED: 0,
+  CHECKED: 1,
+  FAILED: 2
+};
+var TAB_SCROLL_STATES = {
+  quests: { sel: ".quest-list", scroll: 0 },
+  lore: { sel: ".quest-list", scroll: 0 },
+  timeline: { sel: ".quest-list", scroll: 0 },
+  map: { sel: ".maps-list", scroll: 0 },
+  achievements: { sel: ".achievements-list", scroll: 0 },
+  "my-journal": { sel: ".journal-container", scroll: 0 },
+  "party-journal": { sel: ".journal-container", scroll: 0 }
+};
+var JOURNAL_DEFAULTS = {
+  achievements: {
+    name: "New Achievement",
+    src: "icons/commodities/treasure/cup-trophy-gold.webp"
+  }
+};
+var isPopOut = true;
+var fowBrushSize = 50;
+var STATES = {
+  quests: {
+    saveSelected: (uuid) => setSetting("lastQuest", uuid)
+  },
+  lore: {
+    saveSelected: (uuid) => setSetting("lastLore", uuid)
+  },
+  map: {
+    saveSelected: (uuid) => setSetting("lastMap", uuid)
+  },
+  "my-journal": {
+    saveSelected: (uuid) => setSetting("lastMyJournal", uuid)
+  },
+  "party-journal": {
+    saveSelected: (uuid) => setSetting("lastPartyJournal", uuid)
+  },
+  timeline: {
+    saveSelected: (uuid) => setSetting("lastTimeline", uuid)
+  },
+  achievements: {
+    saveSelected: (uuid) => setSetting("lastAchievements", uuid),
+    selected: false
+  }
+};
+function setWindowedMode() {
+  isPopOut = getSetting("windowedMode");
+}
+var SimpleQuest = class _SimpleQuest extends Application {
+  constructor() {
+    super();
+    this._questScroll = {};
+    _SimpleQuest.setHooks();
+    STATES.quests.selected = getSetting("lastQuest");
+    STATES.map.selected = getSetting("lastMap");
+    STATES.lore.selected = getSetting("lastLore");
+    STATES["my-journal"].selected = getSetting("lastMyJournal");
+    STATES["party-journal"].selected = getSetting("lastPartyJournal");
+    this._search = {};
+    this.updateStyle();
+    this.refresh = foundry.utils.debounce(this.refresh.bind(this), 30);
+  }
+  static get APP_ID() {
+    return this.name.split(/(?=[A-Z])/).join("-").toLowerCase();
+  }
+  get APP_ID() {
+    return this.constructor.APP_ID;
+  }
+  get activeTab() {
+    return this._tabs[0]?.active;
+  }
+  getActiveJournal(type) {
+    if (STATES[type].active) return STATES[type].active;
+    if (!STATES[type].selected) return STATES[type].active ?? STATES[type].journals?.[0] ?? STATES[type].journal;
+    const activePage = fromUuidSync(STATES[type].selected);
+    if (!activePage) return STATES[type].active ?? STATES[type].journals[0];
+    return activePage.parent;
+  }
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      id: this.APP_ID,
+      template: `modules/${MODULE_ID}/templates/${this.APP_ID}.hbs`,
+      popOut: isPopOut,
+      resizable: isPopOut,
+      minimizable: isPopOut,
+      width: isPopOut ? window.innerWidth * 0.6 : window.innerWidth,
+      height: isPopOut ? window.innerHeight * 0.8 : window.innerHeight,
+      title: game.i18n.localize(`${MODULE_ID}.${this.APP_ID}.title`),
+      tabs: [{ navSelector: ".tabs", contentSelector: ".content", initial: "quests" }],
+      scrollY: [".quest-list", ".quest-contents", ".maps-list"]
+    });
+  }
+  _getHeaderButtons() {
+    const buttons = super._getHeaderButtons();
+    buttons.unshift({
+      class: "windowed-mode",
+      icon: "fas fa-expand",
+      onclick: () => this.toggleWindowedMode(),
+      title: game.i18n.localize(`${MODULE_ID}.${this.APP_ID}.windowedModeToggle`)
+    });
+    return buttons;
+  }
+  async getData() {
+    const detailsStatus = getSetting("detailsStatus");
+    const seenQuests = getSetting("seenQuests");
+    const folderName = getSetting("folderName");
+    const loreFolder = await createLoreFolder();
+    const matchJournalPermission = getSetting("matchJournalPermission");
+    const simpleQuestFolder = Array.from(game.folders).find((f) => f.name === folderName && f.type === "JournalEntry");
+    const partyFolder = Array.from(game.folders).find((f) => f.name === getSetting("partyJournalName") && f.type === "JournalEntry" && f.folder === simpleQuestFolder);
+    let mapsJournal = Array.from(game.journal).find((j) => j.folder === simpleQuestFolder && j.name === getSetting("mapsJournalName"));
+    let timelineJournal = Array.from(game.journal).find((j) => j.folder === simpleQuestFolder && j.name === getSetting("timelineJournalName"));
+    let achievementsJournal = Array.from(game.journal).find((j) => j.folder === simpleQuestFolder && j.name === getSetting("achievementsJournalName"));
+    const questJournals = Array.from(game.journal).filter((j) => j.folder === simpleQuestFolder && j.name !== mapsJournal?.name && j.name !== timelineJournal?.name && j.name !== achievementsJournal?.name).sort((a, b) => a.sort - b.sort);
+    const loreJournals = Array.from(game.journal).filter((j) => j.folder === loreFolder && j.name !== mapsJournal?.name).sort((a, b) => a.sort - b.sort);
+    if (!mapsJournal) {
+      mapsJournal = await JournalEntry.create({
+        name: getSetting("mapsJournalName"),
+        folder: simpleQuestFolder.id
+      });
+    }
+    if (!timelineJournal) {
+      timelineJournal = await JournalEntry.create({
+        name: getSetting("timelineJournalName"),
+        folder: simpleQuestFolder.id
+      });
+    }
+    if (!achievementsJournal) {
+      achievementsJournal = await JournalEntry.create({
+        name: getSetting("achievementsJournalName"),
+        folder: simpleQuestFolder.id
+      });
+    }
+    const myFolder = Array.from(game.folders).find((f) => f.name === game.user.name && f.type === "JournalEntry" && f.folder === partyFolder);
+    const myJournals = Array.from(game.journal).filter((j) => j.folder === myFolder).sort((a, b) => a.sort - b.sort);
+    const sharedFolder = Array.from(game.folders).find((j) => j.folder === partyFolder && j.name === getSetting("sharedJournalName"));
+    const sharedJournals = Array.from(game.journal).filter((j) => j.folder === sharedFolder).sort((a, b) => a.sort - b.sort);
+    this._questJournals = questJournals;
+    this._questFolder = simpleQuestFolder;
+    this._loreFolder = loreFolder;
+    this._mapsJournal = mapsJournal;
+    this._loreJournals = loreJournals;
+    this._achievementsJournal = achievementsJournal;
+    STATES.quests.journals = questJournals;
+    STATES.lore.journals = loreJournals;
+    STATES.quests.folder = simpleQuestFolder;
+    STATES.lore.folder = loreFolder;
+    STATES["my-journal"].journals = myJournals;
+    STATES["party-journal"].journals = sharedJournals;
+    STATES["my-journal"].folder = myFolder;
+    STATES["party-journal"].folder = sharedFolder;
+    STATES.map.journal = mapsJournal;
+    STATES.timeline.journal = timelineJournal;
+    STATES.achievements.journal = achievementsJournal;
+    timelineJournal.sortedPages = Array.from(timelineJournal.pages).sort((a, b) => a.sort - b.sort);
+    let defaultQuest = "";
+    for (const j of questJournals) {
+      let count = 0;
+      j._simpleQuestDetails = detailsStatus[j.uuid] ?? true;
+      const pages = Array.from(j.pages);
+      pages.forEach((p) => {
+        const isSecret = p.getFlag(MODULE_ID, "hidden");
+        const completedSubquests = p.getFlag(MODULE_ID, "completedSubquests") ?? {};
+        if (!isSecret) {
+          if (!defaultQuest) defaultQuest = p.uuid;
+        }
+        p._seen = !!seenQuests[p.uuid];
+        p.canUserSee = matchJournalPermission ? p.testUserPermission(game.user, CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER) : true;
+        if (p.canUserSee && !isSecret) count++;
+        const lastUpdated = p.getFlag(MODULE_ID, "lastUpdated");
+        if (seenQuests[p.uuid] && lastUpdated) {
+          p._seen = seenQuests[p.uuid] > lastUpdated;
+        }
+        p._tocArray = Object.values(p.toc);
+        p._tocArray.forEach((t) => {
+          t._hidden = p.getFlag(MODULE_ID, `secret.${t.slug}`) ?? false;
+          t._completed = completedSubquests[t.slug] ?? false;
+        });
+        p._simpleQuestDetails = detailsStatus[p.uuid] ?? true;
+      });
+      j.questCount = count;
+      j.sortedPages = Array.from(j.pages).sort((a, b) => a.sort - b.sort);
+    }
+    for (const j of loreJournals) {
+      const pages = Array.from(j.pages);
+      let isOnePageVisible = false;
+      pages.forEach((p) => {
+        p.canPlayerSee = this.getDefaultUserPermission(p) >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER;
+        p.canUserSee = p.testUserPermission(game.user, CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER);
+        if (p.canUserSee) isOnePageVisible = true;
+        const lastUpdated = p.getFlag(MODULE_ID, "lastUpdated") ?? 1;
+        if (seenQuests[p.uuid] && lastUpdated) {
+          p._seen = seenQuests[p.uuid] > lastUpdated;
+        }
+        p._tocArray = Object.values(p.toc);
+        p._simpleQuestDetails = detailsStatus[p.uuid] ?? true;
+      });
+      j.sortedPages = Array.from(j.pages).sort((a, b) => a.sort - b.sort);
+      j._simpleQuestDetails = detailsStatus[j.uuid] ?? true;
+      j.canUserSee = j.testUserPermission(game.user, CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER) || isOnePageVisible;
+    }
+    for (const j of myJournals.concat(sharedJournals)) {
+      const pages = Array.from(j.pages);
+      pages.forEach((p) => {
+        p._simpleQuestDetails = detailsStatus[p.uuid] ?? true;
+        p._tocArray = Object.values(p.toc);
+        j._simpleQuestDetails = detailsStatus[j.uuid] ?? true;
+      });
+      j.sortedPages = Array.from(j.pages).sort((a, b) => a.sort - b.sort);
+      j._simpleQuestDetails = detailsStatus[j.uuid] ?? true;
+    }
+    if (mapsJournal) {
+      mapsJournal.sortedPages = Array.from(mapsJournal.pages).sort((a, b) => a.sort - b.sort);
+    }
+    if (achievementsJournal) {
+      achievementsJournal.sortedPages = Array.from(achievementsJournal.pages).sort((a, b) => a.sort - b.sort);
+      achievementsJournal.sortedPages = achievementsJournal.sortedPages.sort((a, b) => {
+        if (a.isOwner && !b.isOwner) return -1;
+        if (!a.isOwner && b.isOwner) return 1;
+        return a.sort - b.sort;
+      });
+      const users = Array.from(game.users).filter((u) => !u.isGM && u.character);
+      for (const page2 of achievementsJournal.sortedPages) {
+        const isLimited = !page2.isOwner && page2.getUserLevel(game.user) === CONST.DOCUMENT_OWNERSHIP_LEVELS.LIMITED;
+        page2.enrichedText = await foundry.applications.ux.TextEditor.implementation.enrichHTML(page2.text.content, { secrets: game.user.isGM, relativeTo: page2, async: true });
+        page2.canUserSee = this.getUserPermission(page2) >= CONST.DOCUMENT_OWNERSHIP_LEVELS.LIMITED;
+        page2.isAwarded = !game.user.isGM && this.getUserPermission(page2) >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER;
+        page2.isHiddenAchievement = isLimited;
+        const color = page2.getFlag(MODULE_ID, "color") ?? "#000000";
+        page2.achievementColor = color === "#000000" ? "var(--foundry-quest-log-ru-text-4)" : color;
+        const userOwnership = [];
+        for (const user of users) {
+          const userPermission = this.getUserPermission(page2, user);
+          const userPagePermission = Math.max(page2.ownership[user.id] ?? 0, userPermission);
+          const isOwner = userPagePermission >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER;
+          const isObserver = userPagePermission >= CONST.DOCUMENT_OWNERSHIP_LEVELS.LIMITED;
+          userOwnership.push({ user, isOwner, isObserver, isLimited });
+        }
+        page2._userOwnership = userOwnership;
+      }
+    }
+    if (!STATES.quests.selected) STATES.quests.selected = defaultQuest;
+    return { showHistory: getSetting("showHistory"), history: getHistory(), hideCheckboxAutoHide: getSetting("hideCheckboxAutoHide"), matchJournalStyle: getSetting("matchJournalStyle"), achievementsJournal, timelineJournal, questJournals, myJournals, sharedJournals, mapsJournal, isGM: game.user.isGM, popOut: isPopOut, loreJournals, enableQuests: getSetting("enableQuests"), enablePartyJournal: getSetting("enablePartyJournal"), enableMyJournal: getSetting("enableMyJournal"), enableMaps: getSetting("enableMaps"), enableLore: getSetting("enableLore"), enableTimeline: getSetting("enableTimeline"), enableAchievements: getSetting("enableAchievements"), matchJournalPermission: getSetting("matchJournalPermission"), tabNames: getTabNames(), showCompleted: getSetting("showCompleted") };
+  }
+  getDefaultUserPermission(page2, user) {
+    const isInherited = page2.ownership.default === CONST.DOCUMENT_OWNERSHIP_LEVELS.INHERIT;
+    return isInherited ? page2.parent.ownership.default : page2.ownership.default;
+  }
+  getUserPermission(page2, user) {
+    return page2.getUserLevel(user ?? game.user);
+  }
+  _onChangeTab(event, tabs, active) {
+    setSetting("lastTab", active);
+    if (!game.user.isGM && active == "map") showWelcomeMaps();
+    if (game.user.isGM) this.checkTour(active);
+    const res = super._onChangeTab(event, tabs, active);
+    if (STATES.map.selected) {
+      this._onSelectMap(null, STATES.map.selected);
+    }
+    const tScroll = TAB_SCROLL_STATES[active].scroll;
+    if (tScroll) {
+      this.element[0].querySelector(`.tab[data-tab='${active}'] ${TAB_SCROLL_STATES[active].sel}`).scrollTop = tScroll;
+      TAB_SCROLL_STATES[active].scroll = 0;
+    }
+    return res;
+  }
+  async activateListeners(html) {
+    super.activateListeners(html);
+    html = html[0] ?? html;
+    const timelineContainer = html.querySelector(`.tab[data-tab='timeline'] .quest-details`);
+    this.timeline = new Timeline(timelineContainer);
+    this.timeline.render(true);
+    if (this._storedScrollPositions) {
+      this._scrollPositions = this._storedScrollPositions;
+      delete this._storedScrollPositions;
+    }
+    if (game.user.isGM) {
+      if (!getSetting("themeConfigShown") && game.tours.get(MODULE_ID + ".interface")?.status !== foundry.nue.Tour.STATUS.UNSTARTED) new ThemeConfig().render(true);
+      html.querySelectorAll(".item").forEach((el) => {
+        el.addEventListener("contextmenu", async (e) => {
+          new TabConfig().render(true);
+        });
+      });
+    }
+    html.querySelectorAll(".quest-item").forEach((el) => {
+      if (!el.classList.contains("has-details")) el.addEventListener("click", this._onSelectQuest.bind(this));
+    });
+    html.querySelectorAll(".timeline-item").forEach((el) => {
+      el.addEventListener("click", this._onSelectTimeline.bind(this));
+    });
+    html.querySelectorAll("input[type='search']").forEach((el) => {
+      el.addEventListener("focus", (e) => {
+        e.currentTarget.select();
+      });
+      el.addEventListener("input", this._onSearch.bind(this));
+    });
+    html.querySelector("#toggle-completed").addEventListener("click", async (e) => {
+      setSetting("showCompleted", !getSetting("showCompleted"));
+      this.render(true);
+    });
+    if (STATES.quests.selected) {
+      await this._onSelectQuest(null, STATES.quests.selected, true);
+    }
+    if (STATES.map.selected) {
+      await this._onSelectMap(null, STATES.map.selected, true);
+    }
+    if (STATES.lore.selected) {
+      await this._onSelectQuest(null, STATES.lore.selected, true);
+    }
+    if (STATES["my-journal"].selected) {
+      await this._onSelectQuest(null, STATES["my-journal"].selected, true);
+    }
+    if (STATES["party-journal"].selected) {
+      await this._onSelectQuest(null, STATES["party-journal"].selected, true);
+    }
+    html.querySelectorAll("#edit").forEach((el) => {
+      el.addEventListener("click", async (e) => {
+        const tab = e.currentTarget.closest(".tab").dataset.tab;
+        const uuid = STATES[tab].selected;
+        const page2 = await fromUuid(uuid);
+        page2.sheet.render(true);
+      });
+    });
+    html.querySelector("#configure-lore-permissions").addEventListener("click", async (e) => {
+      const uuid = e.currentTarget.closest(".quest-controls").dataset.uuid;
+      const page2 = await fromUuid(uuid);
+      new foundry.applications.apps.DocumentOwnershipConfig({ document: page2 }).render(true);
+    });
+    html.querySelector("#mark-updated").addEventListener("click", async (e) => {
+      const uuid = e.currentTarget.closest(".quest-controls").dataset.uuid;
+      const page2 = await fromUuid(uuid);
+      await page2.setFlag(MODULE_ID, "lastUpdated", Date.now());
+    });
+    html.querySelector("#share-quest").addEventListener("click", async (e) => {
+      const uuid = e.currentTarget.closest(".quest-controls").dataset.uuid;
+      const page2 = await fromUuid(uuid);
+      if (!page2) return;
+      const response = await Dialog.confirm({
+        title: game.i18n.localize(`${MODULE_ID}.shareQuest.title`),
+        content: game.i18n.localize(`${MODULE_ID}.shareQuest.content`),
+        yes: async () => {
+          await ChatMessage.create({
+            content: `<div class="dnd5e2"><h2 id="foundry-quest-log-ru-image-override" class="${getSetting("useMessageTheme") ? "foundry-quest-log-ru-message" : ""}">${game.i18n.localize(`${MODULE_ID}.shareQuest.chatMessage`)}</h2><hr><button data-uuid="${uuid}" class="share-quest-button"><i style="pointer-events: none;" class="fa-duotone fa-scroll-old"></i> ${page2.name}</button><hr></div>`,
+            speaker: { alias: "Simple Quest" },
+            flags: {
+              [MODULE_ID]: {
+                simpleQuestMessage: uuid
+              }
+            }
+          });
+        },
+        no: () => {
+        },
+        defaultYes: false
+      });
+    });
+    html.querySelectorAll("#delete").forEach((el) => {
+      el.addEventListener("click", async (e) => {
+        const tab = e.currentTarget.closest(".tab").dataset.tab;
+        const uuid = STATES[tab].selected || el.dataset.uuid;
+        const page2 = await fromUuid(uuid);
+        if (!page2) return ui.notifications.warn(game.i18n.localize(`${MODULE_ID}.notifications.noPage`));
+        const journal = page2.parent;
+        const response = await Dialog.confirm({
+          title: game.i18n.localize(`${MODULE_ID}.deletePage.title`) + ` ${page2.name}`,
+          content: game.i18n.localize(`${MODULE_ID}.deletePage.content`),
+          yes: async () => {
+            await journal.deleteEmbeddedDocuments("JournalEntryPage", [page2.id]);
+            this.render(true);
+          },
+          no: () => {
+          },
+          defaultYes: false
+        });
+      });
+    });
+    html.querySelectorAll(".foundry-quest-log-ru-show-players").forEach((el) => {
+      el.addEventListener("click", async (e) => {
+        const uuid = e.currentTarget.closest(".quest-controls").dataset.uuid;
+        this.showQuest(uuid);
+      });
+    });
+    html.querySelectorAll("#duplicate").forEach((el) => {
+      el.addEventListener("click", async (e) => {
+        const tab = e.currentTarget.closest(".tab").dataset.tab;
+        const uuid = STATES[tab].selected;
+        const page2 = await fromUuid(uuid);
+        const journal = page2.parent;
+        const newPage = await journal.createEmbeddedDocuments("JournalEntryPage", [page2.toObject()]);
+        this.render(true);
+      });
+    });
+    html.querySelectorAll("#move").forEach((el) => {
+      el.addEventListener("change", async (e) => {
+        const tab = e.currentTarget.closest(".tab").dataset.tab;
+        const selected = e.currentTarget.value;
+        if (selected === "none") return;
+        const page2 = await fromUuid(STATES[tab].selected);
+        const pageJournal = page2.parent;
+        const newJournal = STATES[tab].journals.find((j) => j.name === selected);
+        if (!newJournal) return;
+        if (!newJournal.isOwner && !pageJournal.isOwner) return ui.notifications.error(game.i18n.localize(`${MODULE_ID}.${MODULE_ID}.moveQuest.error`));
+        const moved2 = await newJournal.createEmbeddedDocuments("JournalEntryPage", [page2.toObject()]);
+        if (!moved2[0]) return;
+        await pageJournal.deleteEmbeddedDocuments("JournalEntryPage", [page2.id]);
+        STATES[tab].selected = moved2[0].uuid;
+        this.render(true);
+      });
+    });
+    html.querySelectorAll("#add-category").forEach((el) => {
+      el.addEventListener("click", async (e) => {
+        const tab = e.currentTarget.closest(".tab").dataset.tab;
+        const isPartyJournal = tab === "party-journal";
+        const journals = STATES[tab].journals;
+        const highestSort = journals.reduce((acc, j) => Math.max(acc, j.sort), 0);
+        const newJournal = await JournalEntry.create({ name: "New Category", folder: STATES[tab].folder, sort: highestSort + 1e3, ownership: isPartyJournal ? { default: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER } : null });
+        newJournal.sheet.render(true);
+        STATES[tab].selected = newJournal.uuid;
+        this.render(true);
+      });
+    });
+    html.querySelectorAll("#add-page").forEach((el) => {
+      el.addEventListener("click", async (e) => {
+        const tab = e.currentTarget.closest(".tab").dataset.tab;
+        const journal = this.getActiveJournal(tab);
+        if (!journal) return;
+        const baseData = { name: "New Page", sort: Math.max(0, ...Array.from(journal.pages).map((p) => p.sort)) + 1e3 };
+        const specialData = JOURNAL_DEFAULTS[tab] ?? {};
+        const newPage = await journal.createEmbeddedDocuments("JournalEntryPage", [foundry.utils.mergeObject(baseData, specialData)]);
+        newPage[0].sheet.render(true);
+        if (STATES[tab].selected !== false) STATES[tab].selected = newPage[0].uuid;
+        this.render(true);
+      });
+    });
+    html.querySelector("#add-map").addEventListener("click", async (e) => {
+      const journal = this._mapsJournal;
+      if (!journal) return;
+      const newPage = await journal.createEmbeddedDocuments("JournalEntryPage", [{ name: "New Map", type: "image" }]);
+      newPage[0].sheet.render(true);
+    });
+    html.querySelector("#map-help").addEventListener("click", async (e) => {
+      showWelcomeMaps(true);
+    });
+    html.querySelectorAll(".quest-category-summary").forEach((el) => {
+      el.addEventListener("click", async (e) => {
+        const tab = el.closest(".tab").dataset.tab;
+        const uuid = el.dataset.uuid;
+        STATES[tab].active = fromUuidSync(uuid);
+        this._setSelectedCategory();
+      });
+    });
+    html.querySelectorAll(".tab[data-tab='quests'] .quest-item .quest-checkbox.secret,.tab[data-tab='map'] .map-item .quest-checkbox.secret, .timeline-item .quest-checkbox.secret").forEach((el) => {
+      el.addEventListener("click", async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const uuid = e.currentTarget.dataset.uuid;
+        const anchor = e.currentTarget.dataset.anchor;
+        const page2 = await fromUuid(uuid);
+        const checked = !e.currentTarget.classList.contains("checked");
+        if (anchor) {
+          const oldChecked = page2.getFlag(MODULE_ID, `secret`) ?? {};
+          oldChecked[anchor] = checked;
+          await page2.setFlag(MODULE_ID, `secret`, oldChecked);
+        } else {
+          await page2.setFlag(MODULE_ID, "hidden", checked);
+        }
+      });
+    });
+    html.querySelectorAll(".tab[data-tab='lore'] .quest-item .quest-checkbox.secret").forEach((el) => {
+      el.addEventListener("click", async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const uuid = e.currentTarget.dataset.uuid;
+        const page2 = await fromUuid(uuid);
+        const playerPermission = this.getDefaultUserPermission(page2) >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER;
+        page2.update({
+          ownership: {
+            default: playerPermission ? CONST.DOCUMENT_OWNERSHIP_LEVELS.NONE : CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER
+          }
+        });
+      });
+    });
+    html.querySelector("#windowed-mode").addEventListener("click", async (e) => {
+      this.toggleWindowedMode();
+    });
+    html.querySelector("#font-size-decrease").addEventListener("click", async (e) => {
+      const fontSize = getSetting("fontSize");
+      if (fontSize > 1) {
+        await setSetting("fontSize", fontSize - 0.25);
+      }
+    });
+    html.querySelector("#font-size-increase").addEventListener("click", async (e) => {
+      const fontSize = getSetting("fontSize");
+      if (fontSize < 3) {
+        await setSetting("fontSize", fontSize + 0.25);
+      }
+    });
+    html.querySelector("#theme-config").addEventListener("click", async (e) => {
+      new ThemeConfig().render(true);
+    });
+    html.querySelectorAll("details").forEach((el) => {
+      el.addEventListener("toggle", async (e) => {
+        const details = e.currentTarget;
+        if (details._temporarilyOpen) {
+          delete details._temporarilyOpen;
+          return;
+        }
+        const isOpen = details.open;
+        const uuid = details.dataset.uuid;
+        if (!uuid) return;
+        const sett = getSetting("detailsStatus");
+        sett[uuid] = isOpen;
+        await setSetting("detailsStatus", sett);
+      });
+    });
+    html.querySelectorAll(".map-item").forEach((el) => {
+      el.addEventListener("click", async (e) => {
+        const uuid = e.currentTarget.dataset.uuid;
+        this._onSelectMap(e, uuid);
+      });
+    });
+    html.querySelectorAll(".journal-toc").forEach((el) => {
+      el.addEventListener("click", async (e) => {
+        const journalContainer = el.closest(".tab").querySelector(".journal-container");
+        const anchor = el.dataset.slug;
+        const tocText = el.dataset.toc;
+        const headers = journalContainer.querySelectorAll("h1, h2, h3");
+        let header;
+        const sameNameHeaderIndex = anchor.includes("$") ? parseInt(anchor.split("$")[1]) : 0;
+        const matchingHeaders = Array.from(headers).filter((h) => h.innerText.trim() === tocText);
+        header = matchingHeaders[sameNameHeaderIndex];
+        if (header) {
+          header.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+    html.addEventListener("click", (e) => {
+      if (!e.target.classList.contains("content-link") || e.ctrlKey || e.metaKey) return;
+      const isSimpleQuestPage = this.isSimpleQuestPage(e.target.dataset.uuid);
+      if (!isSimpleQuestPage) return;
+      e.preventDefault();
+      e.stopPropagation();
+      if (this.activeTab === "map" && isSimpleQuestPage === "lore" && this._mapImage) {
+        this._mapImage.openModalJournal(fromUuidSync(e.target.dataset.uuid));
+      } else {
+        this.openToPage(e.target.dataset.uuid);
+      }
+    });
+    if (game.user.isGM) {
+      html.querySelectorAll(".user-image-wrapper img").forEach((el) => {
+        el.style.cursor = "pointer";
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const pageUuid = el.closest(".achievement-item").dataset.uuid;
+          const page2 = fromUuidSync(pageUuid);
+          new foundry.applications.apps.DocumentOwnershipConfig({ document: page2 }).render(true);
+        });
+      });
+      html.querySelectorAll(".quest-header").forEach((el) => {
+        el.style.cursor = "pointer";
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const pageUuid = el.closest(".achievement-item").dataset.uuid;
+          const page2 = fromUuidSync(pageUuid);
+          page2.sheet.render(true);
+        });
+      });
+    }
+    document.addEventListener("keydown", this._onEscape.bind(this));
+    this._makeSortable(html);
+    this._setSelectedCategory();
+    this.restoreSearch();
+    this.updateHistory();
+    if (this._initialTab) {
+      this._skipFirstTourCheck = true;
+      this.activateTab(this._initialTab);
+      this._initialTab = null;
+    }
+    this.element[0].querySelector(".achievements-list").scrollTop = TAB_SCROLL_STATES.achievements.scroll;
+    this.checkTour(null, "interface");
+    if (!this.element[0].dataset.hasContextMenu) {
+      new foundry.applications.ux.ContextMenu.implementation(this.element[0], "[data-uuid]", this._getContextEntries(), { jQuery: false });
+      this.element[0].dataset.hasContextMenu = true;
+    }
+  }
+  _getContextEntries() {
+    const getDocument = (el) => fromUuidSync(el.dataset.uuid);
+    return [
+      {
+        name: "OWNERSHIP.Configure",
+        icon: '<i class="far fa-lock"></i>',
+        condition: () => game.user.isGM,
+        callback: (el) => new foundry.applications.apps.DocumentOwnershipConfig({ document: getDocument(el) }).render(true)
+      },
+      {
+        name: "SIDEBAR.Edit",
+        icon: '<i class="far fa-edit"></i>',
+        condition: (el) => getDocument(el).isOwner,
+        callback: (el) => getDocument(el).sheet.render(true)
+      },
+      {
+        name: "SIDEBAR.Delete",
+        icon: '<i class="far fa-trash"></i>',
+        condition: (el) => getDocument(el).isOwner,
+        callback: (el) => getDocument(el).deleteDialog()
+      },
+      {
+        name: "SIDEBAR.Duplicate",
+        icon: '<i class="far fa-copy"></i>',
+        condition: (el) => getDocument(el).isOwner,
+        callback: (el) => getDocument(el).clone({ name: `${getDocument(el)._source.name} (Copy)` }, { save: true, addSource: true })
+      }
+    ];
+  }
+  checkTour(tab, tourId) {
+    if (this._skipFirstTourCheck) {
+      delete this._skipFirstTourCheck;
+      return;
+    }
+    const tourName = tab ? `${MODULE_ID}.${tab}-tab` : `${MODULE_ID}.${tourId}`;
+    const t = game.tours.get(tourName);
+    if (t?.status === foundry.nue.Tour.STATUS.UNSTARTED) {
+      t.start();
+    }
+  }
+  _makeSortable(html) {
+    if (!game.user.isGM) return;
+    html.querySelectorAll(".quest-category-list").forEach((el) => {
+      new Sortable(el, {
+        dragSelector: ".quest-item",
+        dropSelector: ".quest-item",
+        animation: 100,
+        onEnd: this._sortQuestListAndSave.bind(this)
+      });
+    });
+    html.querySelectorAll(".quest-list").forEach((el) => {
+      new Sortable(el, {
+        dragSelector: ".quest-category",
+        dropSelector: ".quest-category",
+        animation: 100,
+        onEnd: this._sortCategoryListAndSave.bind(this)
+      });
+    });
+    new Sortable(html.querySelector(".maps-list-element"), {
+      dragSelector: ".map-item",
+      dropSelector: ".map-item",
+      animation: 100,
+      onEnd: this._sortMapListAndSave.bind(this)
+    });
+    new Sortable(html.querySelector(".achievements-wrapper"), {
+      dragSelector: ".achievement-item",
+      dropSelector: ".achievement-item",
+      animation: 100,
+      onEnd: this._sortAchievementListAndSave.bind(this)
+    });
+  }
+  restoreSearch() {
+    const searchInputs = this.element[0].querySelectorAll("input[type='search']");
+    searchInputs.forEach((s) => {
+      s.value = this._search[s.closest(".tab").dataset.tab] ?? "";
+      if (s.value) s.dispatchEvent(new Event("input"));
+    });
+  }
+  _onSearch(e) {
+    const term = e.currentTarget.value.toLowerCase();
+    const html = e.currentTarget.parentElement.parentElement;
+    const tab = html.closest(".tab").dataset.tab;
+    if (tab == "lore") this.updateGlobalSearch(term, e.currentTarget);
+    this._search[tab] = term;
+    const listItems = html.querySelectorAll("li");
+    listItems.forEach((li) => {
+      const text = li.textContent.toLowerCase();
+      const isMatch = text.includes(term);
+      li.classList.toggle("not-match", !isMatch);
+      if (isMatch) {
+        const cd = li.closest("details");
+        if (cd) {
+          cd._temporarilyOpen = true;
+          cd.open = true;
+        }
+      }
+    });
+    const details = html.querySelectorAll("details");
+    details.forEach((d) => {
+      const text = d.textContent.toLowerCase();
+      const isMatch = text.includes(term);
+      d.classList.toggle("not-match", !isMatch);
+    });
+    if (!term) this.refresh();
+  }
+  updateGlobalSearch(term, input) {
+    const oldResults = input.parentElement.parentElement.querySelectorAll(".global-search-results");
+    if (oldResults.length) oldResults.forEach((r) => r.remove());
+    if (!term) return;
+    term = term.toLowerCase();
+    const global = new GlobalSearch(term, this._loreJournals);
+    if (term.length < 4) return;
+    const res = global.getResults();
+    const resultsEl = document.createElement("ul");
+    resultsEl.classList.add("global-search-results");
+    resultsEl.style.display = term ? null : "none";
+    res.forEach((r) => {
+      const li = document.createElement("li");
+      const text = r.bestMatch;
+      const index2 = text.toLowerCase().indexOf(term);
+      const before = text.substring(0, index2);
+      const after = text.substring(index2 + term.length);
+      li.innerHTML = `<h3>${r.page.name}</h3><p>${before}<span class="highlight">${term}</span>${after}</p>`;
+      resultsEl.append(li);
+      li.addEventListener("click", async (e) => {
+        await this._onSelectQuest(null, r.page.uuid);
+        const journalContainer = input.closest(".tab").querySelector(".quest-details");
+        const allEls = journalContainer.querySelectorAll("h1, h2, h3, h4, h5, h6, p");
+        let el = [];
+        allEls.forEach((e2) => {
+          const inner = e2.textContent.toLowerCase();
+          (inner.match(new RegExp(term, "g")) || []).forEach((m) => {
+            el.push(e2);
+          });
+        });
+        if (!el.length) return;
+        const targetEl = el[r.matchIndex];
+        setTimeout(() => {
+          targetEl.classList.add("search-highlight");
+          targetEl.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 300);
+        li.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    });
+    resultsEl.style.width = input.clientWidth + "px";
+    input.parentElement.after(resultsEl);
+  }
+  async _sortQuestListAndSave(sortEvent) {
+    const list = sortEvent.from;
+    const pages = Array.from(list.children).map((li) => li.dataset.uuid);
+    const journal = await fromUuid(list.dataset.uuid);
+    const updates = journal.pages.map((p) => {
+      return {
+        _id: p.id,
+        sort: pages.indexOf(p.uuid) * 1e3
+      };
+    });
+    await journal.updateEmbeddedDocuments("JournalEntryPage", updates);
+  }
+  async _sortCategoryListAndSave(sortEvent) {
+    const list = sortEvent.from;
+    const tab = list.closest(".tab").dataset.tab;
+    const journals = Array.from(list.children).map((li) => li.dataset.uuid);
+    const updates = STATES[tab].journals.map((j) => {
+      return {
+        _id: j.id,
+        sort: journals.indexOf(j.uuid) * 1e3
+      };
+    });
+    await JournalEntry.updateDocuments(updates);
+  }
+  async _sortMapListAndSave(sortEvent) {
+    const list = sortEvent.from;
+    const pages = Array.from(list.children).map((li) => li.dataset.uuid);
+    const journal = this._mapsJournal;
+    const updates = journal.pages.map((p) => {
+      return {
+        _id: p.id,
+        sort: pages.indexOf(p.uuid) * 1e3
+      };
+    });
+    await journal.updateEmbeddedDocuments("JournalEntryPage", updates);
+  }
+  async _sortAchievementListAndSave(sortEvent) {
+    const list = sortEvent.from;
+    const pages = Array.from(list.children).map((li) => li.dataset.uuid);
+    const journal = this._achievementsJournal;
+    const updates = journal.pages.map((p) => {
+      return {
+        _id: p.id,
+        sort: pages.indexOf(p.uuid) * 1e3
+      };
+    });
+    await journal.updateEmbeddedDocuments("JournalEntryPage", updates);
+  }
+  _onEscape(e) {
+    if (e.key === "Escape" && this.rendered) {
+      e.preventDefault();
+      e.stopPropagation();
+      this.close();
+    }
+  }
+  async _setSelectedCategory() {
+    const html = this.element[0];
+    const categories = html.querySelectorAll(".quest-category-summary");
+    categories.forEach((c) => c.classList.remove("selected"));
+    const selected = this.getActiveJournal("quests");
+    if (!selected) return;
+    const category = html.querySelector(`.quest-category-summary[data-uuid="${selected.uuid}"]`);
+    if (!category) return;
+    category.classList.add("selected");
+  }
+  _addCheckboxes(html, page2) {
+    const listItems = html.querySelectorAll("li");
+    listItems.forEach((li) => {
+      const checkbox = document.createElement("div");
+      if (!page2.isOwner) checkbox.style.pointerEvents = "none";
+      checkbox.classList.add("quest-checkbox");
+      const marker = document.createElement("div");
+      marker.classList.add("quest-checkbox-marker");
+      checkbox.append(marker);
+      const key = _SimpleQuest.getKeyFromLi(li);
+      const checked = page2.getFlag(MODULE_ID, `checkboxes.${key}`);
+      if (checked) {
+        checkbox.classList.add("checked");
+        li.classList.add("checked");
+        if (checked === CHECKBOX_STATE.FAILED) {
+          checkbox.classList.add("failed");
+          li.classList.add("failed");
+        }
+      }
+      checkbox.addEventListener("mouseup", async (e) => {
+        const isLeftClick = e.button === 0;
+        const isRightClick = e.button === 2;
+        if (!isLeftClick && !isRightClick) return;
+        let checked2 = !checkbox.classList.contains("checked");
+        if (checked2 && isRightClick) checked2 = CHECKBOX_STATE.FAILED;
+        if (checked2 && isLeftClick) checked2 = CHECKBOX_STATE.CHECKED;
+        checkbox.classList.toggle("checked");
+        checkbox.classList.toggle("failed", checked2 === CHECKBOX_STATE.FAILED);
+        const keysToUpdate = { [`${key}`]: checked2 };
+        const parentLi = checkbox.closest("ul, ol").closest("li");
+        const childLis = checkbox.closest("li").querySelectorAll("li");
+        if (parentLi) {
+          const siblings = checkbox.closest("ul").querySelectorAll("li");
+          const allChecked2 = Array.from(siblings).every((s) => s.querySelector(".quest-checkbox:not(.secret)").classList.contains("checked"));
+          const allFailed = Array.from(siblings).every((s) => s.querySelector(".quest-checkbox:not(.secret)").classList.contains("failed"));
+          const parentKey = _SimpleQuest.getKeyFromLi(parentLi);
+          if (allChecked2) {
+            keysToUpdate[parentKey] = allFailed ? CHECKBOX_STATE.FAILED : CHECKBOX_STATE.CHECKED;
+          } else {
+            keysToUpdate[parentKey] = CHECKBOX_STATE.UNCHECKED;
+          }
+          parentLi.querySelector(".quest-checkbox:not(.secret)").classList.toggle("checked", allChecked2);
+        }
+        checkbox.classList.toggle("checked");
+        if (childLis.length && checked2) {
+          childLis.forEach((li2) => {
+            const childKey = _SimpleQuest.getKeyFromLi(li2);
+            keysToUpdate[childKey] = checked2;
+            li2.querySelector(".quest-checkbox:not(.secret)").classList.toggle("checked", checked2 !== CHECKBOX_STATE.UNCHECKED);
+          });
+        }
+        const oldChecked = page2.getFlag(MODULE_ID, `checkboxes`) ?? {};
+        const update = { [`flags.${MODULE_ID}.checkboxes`]: foundry.utils.mergeObject(oldChecked, keysToUpdate) };
+        const isSecretUpdate = checkbox.closest(".secret");
+        if (!isSecretUpdate) update[`flags.${MODULE_ID}.lastUpdated`] = Date.now();
+        let furtherList = li.closest("ol, ul");
+        for (let i = 0; i < 10; i++) {
+          const isUlorOl = furtherList.tagName === "UL" || furtherList.tagName === "OL";
+          const closest2 = !isUlorOl ? furtherList.closest("ol, ul") : furtherList.parentElement?.closest("ol, ul");
+          if (closest2) furtherList = closest2;
+        }
+        const _furthestList = furtherList;
+        let upperBoundHeader;
+        while (furtherList.previousElementSibling) {
+          upperBoundHeader = furtherList.previousElementSibling;
+          if (upperBoundHeader.tagName.startsWith("H")) break;
+          furtherList = furtherList.previousElementSibling;
+        }
+        if (!upperBoundHeader.tagName.startsWith("H")) upperBoundHeader = null;
+        checkbox.classList.toggle("checked");
+        const allChecked = Array.from(_furthestList.querySelectorAll("li")).every((li2) => li2.querySelector(".quest-checkbox:not(.secret)").classList.contains("checked"));
+        if (upperBoundHeader) {
+          const headerKey = upperBoundHeader.innerText.slugify({ strict: true });
+          const oldCompleted = page2.getFlag(MODULE_ID, `completedSubquests`) ?? {};
+          update[`flags.${MODULE_ID}.completedSubquests`] = foundry.utils.mergeObject(oldCompleted, { [headerKey]: allChecked });
+        }
+        const allCheckedOnQuest = Array.from(html.querySelectorAll("li")).every((li2) => li2.querySelector(".quest-checkbox:not(.secret)").classList.contains("checked"));
+        checkbox.classList.toggle("checked");
+        update[`flags.${MODULE_ID}.completed`] = allCheckedOnQuest;
+        await page2.update(update);
+      });
+      li.prepend(checkbox);
+      const secretCheckbox = document.createElement("div");
+      secretCheckbox.classList.add("quest-checkbox");
+      secretCheckbox.classList.add("secret");
+      const secretMarker = document.createElement("div");
+      const secretMarkerIcon = document.createElement("i");
+      secretMarkerIcon.classList.add("fas");
+      secretMarkerIcon.classList.add("fa-eye-slash");
+      secretMarker.append(secretMarkerIcon);
+      secretMarker.classList.add("quest-checkbox-marker");
+      secretCheckbox.append(secretMarker);
+      const secretKey = key;
+      const secretChecked = page2.getFlag(MODULE_ID, `secret.${secretKey}`);
+      if (secretChecked) {
+        secretCheckbox.classList.add("checked");
+        li.classList.add("secret");
+        if (!game.user.isGM) {
+          li.style.display = "none";
+        }
+      }
+      secretCheckbox.addEventListener("click", async (e) => {
+        const checked2 = !secretCheckbox.classList.contains("checked");
+        const keysToUpdate = { [`${secretKey}`]: checked2 };
+        let oldChecked = page2.getFlag(MODULE_ID, `secret`) ?? {};
+        if (typeof oldChecked === "boolean") oldChecked = {};
+        const isAnyUnSecret = Object.values(keysToUpdate).some((v) => !v);
+        const update = { [`flags.${MODULE_ID}.secret`]: foundry.utils.mergeObject(oldChecked, keysToUpdate) };
+        const isSecretUpdate = checkbox.classList.contains("secret") ?? checkbox.closest(".secret");
+        if (isAnyUnSecret && !isSecretUpdate) {
+          update[`flags.${MODULE_ID}.lastUpdated`] = Date.now();
+        }
+        await page2.update(update);
+      });
+      if (game.user.isGM) li.prepend(secretCheckbox);
+    });
+  }
+  async _onSelectQuest(event, uuid, firstRender = false) {
+    const pageUuid = uuid ?? event.currentTarget.dataset.uuid;
+    const page2 = await fromUuid(pageUuid);
+    if (!page2) return;
+    const pageType = this.isSimpleQuestPage(pageUuid);
+    if (!pageType) return;
+    const html = this.element[0].querySelector(`.tab[data-tab="${pageType}"]`);
+    STATES[pageType].active = page2.parent;
+    await this._setSelectedCategory();
+    html.querySelectorAll(".quest-selected").forEach((el) => el.classList.remove("quest-selected"));
+    if (event) event.currentTarget.classList.add("quest-selected");
+    else {
+      const el = html.querySelector(`summary.quest-item[data-uuid="${pageUuid}"]`) ?? html.querySelector(`.quest-item[data-uuid="${pageUuid}"]`);
+      if (el) el.classList.add("quest-selected");
+    }
+    STATES[pageType].selected = pageUuid;
+    const container = html.querySelector(".quest-contents");
+    container.innerHTML = "";
+    let content;
+    if (page2.type === "text") {
+      content = await foundry.applications.ux.TextEditor.implementation.enrichHTML(page2.text.content, { secrets: page2.isOwner, relativeTo: page2, async: true });
+    } else if (page2.type === "image") {
+      const maskImage = getSetting("imagePageMask");
+      const maskImageStyle = maskImage ? `style="mask-image: url('${maskImage}');-webkit-mask-image: url('${maskImage}');"` : "";
+      content = `<div class="foundry-quest-log-ru-image-journal"><img ${maskImageStyle} src="${page2.src}" alt="${page2.name}"><p>${page2.image.caption}</p></div>`;
+    } else if (page2.type === "pdf") {
+      console.log("Loading PDF");
+      const params = page2.sheet._getViewerParams();
+      const frame = `<iframe src="scripts/pdfjs/web/viewer.html?${params}" style="width: 100%; height: 95%;"></iframe>`;
+      content = frame;
+    } else {
+      content = await foundry.applications.ux.TextEditor.implementation.enrichHTML(`@Embed[${page2.uuid}]`, { secrets: page2.isOwner, relativeTo: page2, async: true });
+    }
+    container.innerHTML = `<h1 class="quest-header">${page2.name}</h1>` + content;
+    container.querySelectorAll("secret-block").forEach((s) => s.addEventListener("change", (event2) => {
+      page2.update({ "text.content": event2.target.toggleRevealed(page2.text.content) });
+    }));
+    if (!uuid) {
+      html.querySelector(".quest-details").scrollTop = this._questScroll[pageUuid] ?? 0;
+    }
+    html.querySelectorAll("img").forEach((img) => img.addEventListener("click", (event2) => new ImagePopout(event2.currentTarget.getAttribute("src"), {}).render(true)));
+    const questControls = html.querySelector(".quest-controls");
+    questControls.classList.toggle("foundry-quest-log-ru-hidden", !page2.isOwner);
+    questControls.dataset.uuid = pageUuid;
+    STATES[pageType].saveSelected(pageUuid);
+    const seenQuests = getSetting("seenQuests");
+    seenQuests[pageUuid] = Date.now();
+    await setSetting("seenQuests", seenQuests);
+    if (pageType === "quests") this._addCheckboxes(container, page2);
+    const onOpenAnchor = STATES[pageType].anchor;
+    const anchor = onOpenAnchor ?? event?.currentTarget?.dataset?.anchor;
+    this.updateHistory(pageUuid, anchor);
+    if (event && event.currentTarget?.classList.contains("sub-quest") || onOpenAnchor && page2.toc[anchor]) {
+      STATES[pageType].anchor = null;
+      const toc2 = page2.toc[anchor];
+      const tocText = toc2.text.trim();
+      const headers = container.querySelectorAll("h1, h2, h3");
+      let header;
+      const sameNameHeaderIndex = anchor.includes("$") ? parseInt(anchor.split("$")[1]) : 0;
+      const matchingHeaders = Array.from(headers).filter((h) => h.innerText.trim() === tocText);
+      header = matchingHeaders[sameNameHeaderIndex];
+      if (header) {
+        setTimeout(() => header.scrollIntoView({ behavior: "smooth", block: "start" }), 0);
+      }
+    }
+    const toc = page2._tocArray;
+    if (toc?.some((t) => t._hidden)) {
+      const h1h2h3 = container.querySelectorAll("h1, h2, h3");
+      const hiddenTocInnerText = toc.filter((t) => t._hidden).map((t) => t.text);
+      const toHide = Array.from(h1h2h3).filter((h) => hiddenTocInnerText.includes(h.innerText));
+      for (const h of toHide) {
+        let next = h.nextElementSibling;
+        while (next && !next.matches("h1, h2, h3")) {
+          next.style.display = "none";
+          next = next.nextElementSibling;
+        }
+        h.style.display = "none";
+      }
+    }
+    if (firstRender) {
+      html.querySelector(".quest-details").scrollTop = this._questScroll[STATES[pageType].selected] ?? 0;
+    }
+    Hooks.callAll(`${MODULE_ID}.onSelectQuest`, page2, container);
+  }
+  async _onSelectMap(event, uuid, firstRender = false) {
+    const pageUuid = uuid ?? event.currentTarget.dataset.uuid;
+    const page2 = await fromUuid(pageUuid);
+    const html = this.element[0];
+    if (!page2) return;
+    this.updateHistory(pageUuid);
+    const mapContainer = html.querySelector(".map-details");
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = page2.text.content;
+    const firstImageSrc = page2.src || tempDiv.querySelector("img")?.src;
+    const multiSource = Array.from(tempDiv.querySelectorAll("img")).map((i) => i.src);
+    const mapImage = new MapImage(firstImageSrc, page2, multiSource, page2.getFlag(MODULE_ID, "pinsLocked") ?? false);
+    this._mapImage = mapImage;
+    mapContainer.innerHTML = "";
+    mapContainer.append(mapImage.element);
+    const measureFlag = page2.getFlag(MODULE_ID, "measure") || "1mi";
+    const numericPart = parseFloat(measureFlag) || 1;
+    const unitPart = measureFlag.match(/[a-z]+/)?.[0] ?? "mi";
+    mapImage._measureUnits = unitPart;
+    mapImage._measure = numericPart;
+    if (page2.isOwner) {
+      const buttonContainer = document.createElement("div");
+      buttonContainer.classList.add("map-controls");
+      mapContainer.append(buttonContainer);
+      if (game.user.isGM) {
+        const resetFowButton = document.createElement("i");
+        resetFowButton.classList.add("fa-duotone");
+        resetFowButton.classList.add("fa-cloud");
+        resetFowButton.id = "reset-fow";
+        resetFowButton.dataset.tooltip = "foundry-quest-log-ru.simple-quest.tooltip.reset-fow";
+        resetFowButton.dataset.tooltipDirection = "UP";
+        resetFowButton.addEventListener("click", async (e) => {
+          mapImage.resetFow();
+        });
+        const fowBrushSizeSlider = document.createElement("input");
+        fowBrushSizeSlider.type = "range";
+        fowBrushSizeSlider.min = 0;
+        fowBrushSizeSlider.max = 100;
+        fowBrushSizeSlider.value = fowBrushSize;
+        fowBrushSizeSlider.id = "fow-brush-size";
+        fowBrushSizeSlider.dataset.tooltip = "foundry-quest-log-ru.simple-quest.tooltip.fow-brush-size";
+        fowBrushSizeSlider.dataset.tooltipDirection = "UP";
+        fowBrushSizeSlider.addEventListener("change", async (e) => {
+          fowBrushSize = e.currentTarget.value;
+        });
+        const measureInput = document.createElement("input");
+        measureInput.type = "text";
+        measureInput.id = "measure-input";
+        measureInput.dataset.tooltip = "foundry-quest-log-ru.simple-quest.tooltip.measure";
+        measureInput.dataset.tooltipDirection = "UP";
+        measureInput.placeholder = "foundry-quest-log-ru.simple-quest.tooltip.measure";
+        measureInput.value = page2.getFlag(MODULE_ID, "measure") ?? "1mi";
+        measureInput.style.width = "8rem";
+        measureInput.addEventListener("change", async (e) => {
+          const value = e.currentTarget.value;
+          page2.setFlag(MODULE_ID, "measure", value);
+        });
+        const pinsLocked = page2.getFlag(MODULE_ID, "pinsLocked") ?? false;
+        const lockPins = document.createElement("i");
+        lockPins.classList.add("fa-duotone");
+        lockPins.classList.add(pinsLocked ? "fa-location-pin-slash" : "fa-location-pin");
+        lockPins.id = "lock-pins";
+        lockPins.style.minWidth = "2.2rem";
+        lockPins.style.textAlign = "center";
+        lockPins.dataset.tooltip = "foundry-quest-log-ru.simple-quest.tooltip.lock-pins";
+        lockPins.dataset.tooltipDirection = "UP";
+        lockPins.addEventListener("click", async (e) => {
+          page2.setFlag(MODULE_ID, "pinsLocked", !pinsLocked);
+        });
+        const showPlayersButton = document.createElement("i");
+        showPlayersButton.classList.add("fa-duotone");
+        showPlayersButton.classList.add("fa-eye");
+        showPlayersButton.id = "show-players";
+        showPlayersButton.dataset.tooltip = "foundry-quest-log-ru.simple-quest.tooltip.show-players";
+        showPlayersButton.dataset.tooltipDirection = "UP";
+        showPlayersButton.addEventListener("click", async (e) => {
+          this.showQuest(pageUuid);
+        });
+        buttonContainer.append(measureInput);
+        buttonContainer.append(lockPins);
+        buttonContainer.append(fowBrushSizeSlider);
+        buttonContainer.append(resetFowButton);
+        buttonContainer.append(showPlayersButton);
+        Object.defineProperty(mapImage, "fowBrushSize", {
+          get: () => fowBrushSize
+        });
+        mapImage._fowBrushSizeInput = fowBrushSizeSlider;
+      }
+      const editButton = document.createElement("i");
+      editButton.classList.add("fa-duotone");
+      editButton.classList.add("fa-pen-to-square");
+      editButton.id = "edit-map";
+      editButton.dataset.tooltip = "foundry-quest-log-ru.simple-quest.tooltip.edit-map";
+      editButton.dataset.tooltipDirection = "UP";
+      editButton.addEventListener("click", async (e) => {
+        page2.sheet.render(true);
+      });
+      buttonContainer.append(editButton);
+    }
+    setSetting("lastMap", pageUuid);
+    html.querySelectorAll(".map-selected").forEach((el) => el.classList.remove("map-selected"));
+    const mapEl = this.element[0].querySelector(`.map-item[data-uuid="${pageUuid}"]`);
+    if (mapEl) mapEl.classList.add("map-selected");
+    STATES.map.selected = pageUuid;
+  }
+  async _onSelectTimeline(event, uuid) {
+    const pageUuid = uuid ?? event.currentTarget.dataset.uuid;
+    const page2 = await fromUuid(pageUuid);
+    if (!page2) return;
+    STATES.timeline.selected = pageUuid;
+    this.timeline.goTo(pageUuid);
+  }
+  toggle(tab = null) {
+    if (this.rendered) {
+      if (STATES.quests.selected) {
+        this._questScroll[STATES.quests.selected] = this.element[0].querySelector(".quest-details").scrollTop;
+      }
+      this.close();
+    } else {
+      this._initialTab = tab ?? getSetting("lastTab");
+      this.render(true);
+    }
+  }
+  async toggleWindowedMode() {
+    await this.close();
+    setSetting("windowedMode", !getSetting("windowedMode"));
+    isPopOut = !isPopOut;
+    ui.simpleQuest = new _SimpleQuest();
+    ui.simpleQuest._initialTab = getSetting("lastTab");
+    ui.simpleQuest.render(true);
+  }
+  openToTab(tab) {
+    this._initialTab = tab;
+    this.render(true);
+  }
+  openToPage(uuid, anchor, options = {}) {
+    const isSimpleQuestPage = this.isSimpleQuestPage(uuid);
+    const hasPermission = this.hasPermission(uuid);
+    if (!hasPermission) return ui.notifications.error(game.i18n.localize(`${MODULE_ID}.noPermission`));
+    if (STATES[isSimpleQuestPage]) {
+      STATES[isSimpleQuestPage].selected = uuid;
+      if (anchor) STATES[isSimpleQuestPage].anchor = anchor;
+    }
+    this._initialTab = isSimpleQuestPage;
+    this.updateHistory(uuid, anchor);
+    this.render(true);
+  }
+  updateHistory(uuid, anchor) {
+    const history = getHistory();
+    if (uuid) {
+      const existing = history.find((h) => h.uuid === uuid && h.anchor === anchor);
+      if (!existing) {
+        history.unshift({ uuid, label: fromUuidSync(uuid).name, anchor });
+        history.splice(10);
+      } else {
+        existing.label = fromUuidSync(uuid).name;
+        existing.anchor = anchor;
+        existing.uuid = uuid;
+      }
+      setHistory(history);
+    }
+    if (!this.element[0]) return;
+    const historyEl = this.element[0].querySelector("#history");
+    if (!historyEl) return;
+    historyEl.innerHTML = "";
+    for (const h of history) {
+      const isLast = history.findIndex((i) => i === h) === history.length - 1;
+      const el = document.createElement("div");
+      el.classList.add("history-item");
+      el.innerHTML = `<span>${h.label}${h.anchor ? ` (${h.anchor.split("-").map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join(" ")})` : ""}</span>`;
+      historyEl.append(el);
+      el.addEventListener("click", () => {
+        this.openToPage(h.uuid, h.anchor);
+      });
+      if (!isLast) {
+        const arrow = document.createElement("i");
+        arrow.classList.add("fa-thin");
+        arrow.classList.add("fa-chevron-right");
+        historyEl.append(arrow);
+      }
+    }
+  }
+  async showQuest(uuid) {
+    const users = Array.from(game.users).filter((u) => u.active && u !== game.user);
+    const template = await renderTemplate("modules/foundry-quest-log-ru/templates/show-quest.hbs", { users });
+    Dialog.prompt({
+      title: game.i18n.localize(`${MODULE_ID}.showQuest.title`),
+      content: template,
+      label: game.i18n.localize(`JOURNAL.ActionShow`),
+      render: (html) => {
+        html = html[0];
+        const all = html.querySelector(`input[name="allPlayers"]`);
+        const otherCheckboxes = html.querySelectorAll(`input[name="players"]`);
+        all.addEventListener("change", (e) => {
+          const disabled = e.currentTarget.checked;
+          otherCheckboxes.forEach((c) => c.disabled = disabled);
+        });
+        html.closest(".app").classList.add("foundry-quest-log-ru-dialog");
+      },
+      callback: async (html) => {
+        html = html[0];
+        const all = html.querySelector(`input[name="allPlayers"]`).checked;
+        const allUsers = users.map((u) => u.id);
+        const selected = Array.from(html.querySelectorAll(`input[name="players"]:checked`)).map((i) => i.value);
+        Socket.openToPage({ uuid }, { users: all ? allUsers : selected });
+      },
+      close: () => {
+      }
+    });
+  }
+  isSimpleQuestPage(uuid) {
+    let page2;
+    try {
+      page2 = fromUuidSync(uuid);
+    } catch (e) {
+      return false;
+    }
+    if (!page2) return false;
+    if (!(page2 instanceof JournalEntryPage)) return false;
+    const journal = page2.parent;
+    const folder = Array.from(game.folders).find((f) => f.name === getSetting("folderName") && f.type === "JournalEntry");
+    const loreFolder = Array.from(game.folders).find((f) => f.name === getSetting("loreFolderName") && f.type === "JournalEntry");
+    const mapsJournal = Array.from(game.journal).find((j) => j.folder === folder && j.name === getSetting("mapsJournalName"));
+    const isMap = Array.from(mapsJournal.pages).some((p) => p.uuid === uuid);
+    const isLore = journal.folder === loreFolder;
+    const isQuest = journal.folder === folder;
+    const isAchievements = journal.folder === folder && journal.name === getSetting("achievementsJournalName");
+    if (isAchievements) return "achievements";
+    if (isMap) return "map";
+    if (isLore) return "lore";
+    if (isQuest) return "quests";
+    const partyFolder = Array.from(game.folders).find((f) => f.name === getSetting("partyJournalName") && f.type === "JournalEntry" && f.folder === folder);
+    const sharedFolder = Array.from(game.folders).find((f) => f.name === getSetting("sharedJournalName") && f.type === "JournalEntry" && f.folder === partyFolder);
+    const playerFolder = Array.from(game.folders).find((f) => f.name === game.user.name && f.type === "JournalEntry" && f.folder === partyFolder);
+    if (journal.folder === sharedFolder) return "party-journal";
+    if (journal.folder === playerFolder) return "my-journal";
+    return false;
+  }
+  hasPermission(uuid) {
+    if (game.user.isGM) return true;
+    const page2 = fromUuidSync(uuid);
+    if (!page2) return false;
+    const simpleQuestHidden = page2.getFlag(MODULE_ID, "hidden");
+    if (simpleQuestHidden) return false;
+    const type = this.isSimpleQuestPage(uuid);
+    const isValid = type === "map" || type === "quests";
+    if (isValid && !simpleQuestHidden) return true;
+    if (page2.isOwner) return true;
+    const journal = page2.parent;
+    const journalDefaultPermission = journal.permission;
+    return page2.permission === CONST.DOCUMENT_OWNERSHIP_LEVELS.INHERIT ? journalDefaultPermission : page2.permission;
+  }
+  sceneToMap() {
+    const scene = canvas.scene;
+    const img = scene.background.src;
+    const distance = 100 / scene.dimensions.distancePixels;
+    const markers = {};
+    const origin = { x: scene.dimensions.sceneX, y: scene.dimensions.sceneY };
+    const size = { x: scene.dimensions.sceneWidth, y: scene.dimensions.sceneHeight };
+    canvas.notes.placeables.forEach((n) => {
+      const pos = n.center;
+      const x = (pos.x - origin.x) / size.x;
+      const y = (pos.y - origin.y) / size.y;
+      const d = n.document;
+      markers[foundry.utils.randomID()] = {
+        title: d.label,
+        icon: d.texture.src,
+        journal: d.page?.uuid ?? d.entry?.uuid,
+        x,
+        y,
+        hidden: false,
+        color: d.texture.tint || "#ff0000"
+      };
+    });
+    const mapsJournal = Array.from(game.journal).find((j) => j.folder === this._questFolder && j.name === getSetting("mapsJournalName"));
+    const newPage = mapsJournal.createEmbeddedDocuments("JournalEntryPage", [
+      {
+        name: scene.name,
+        type: "image",
+        src: img,
+        flags: {
+          "foundry-quest-log-ru": {
+            markers,
+            measure: `${distance}${scene.grid.units}`
+          }
+        }
+      }
+    ]);
+  }
+  refresh() {
+    if (this.rendered) {
+      this.timeline?.saveScrollPosition();
+      this.render(true);
+    }
+  }
+  updateStyle() {
+    const backgroundColor = getSetting("backgroundColor") || getDefaultSetting("backgroundColor");
+    const textColor = getSetting("textColor") || getDefaultSetting("textColor");
+    const secretColor = getSetting("secretColor") || getDefaultSetting("secretColor");
+    const failedColor = getSetting("failedColor") || getDefaultSetting("failedColor");
+    const fontSize = getSetting("fontSize");
+    const fontFamily = getSetting("fontFamily");
+    const headerOnlyFont = getSetting("headerOnlyFont") === "default" ? fontFamily : getSetting("headerOnlyFont");
+    const invertTheme = getSetting("invertTheme");
+    const computedBackground = backgroundColor.length > 10 ? backgroundColor : backgroundColor + "eb";
+    const computedBackgroundColorOnly = backgroundColor.length > 10 ? computedBackground.match(/#(?:[0-9a-fA-F]{3}){1,2}/g)?.[0] ?? "#ffffff" : computedBackground;
+    document.documentElement.style.setProperty("--foundry-quest-log-ru-font-family", fontFamily);
+    document.documentElement.style.setProperty("--foundry-quest-log-ru-header-font-family", headerOnlyFont);
+    document.documentElement.style.setProperty("--foundry-quest-log-ru-background", computedBackground);
+    document.documentElement.style.setProperty("--foundry-quest-log-ru-background-color", computedBackgroundColorOnly);
+    document.documentElement.style.setProperty("--foundry-quest-log-ru-hidden-color", secretColor);
+    document.documentElement.style.setProperty("--foundry-quest-log-ru-failed-color", failedColor);
+    document.documentElement.style.setProperty("--foundry-quest-log-ru-font-size", fontSize + "rem");
+    document.documentElement.style.setProperty("--foundry-quest-log-ru-invert", invertTheme ? 1 : 0);
+    const baseTextColor = new ColorHelper(textColor);
+    const isDark = baseTextColor.l < 0.5;
+    const textDesaturated = isDark ? baseTextColor.saturate(1.5) : baseTextColor.saturate(0.5);
+    const textBright = isDark ? baseTextColor.brightness(0.7) : baseTextColor.brightness(1.3);
+    const textDark = isDark ? baseTextColor.brightness(1.5) : baseTextColor.brightness(0.5);
+    const textSaturated = isDark ? baseTextColor.saturate(0.5) : baseTextColor.saturate(1.5);
+    document.documentElement.style.setProperty("--foundry-quest-log-ru-text-0", textBright);
+    document.documentElement.style.setProperty("--foundry-quest-log-ru-text-1", textColor);
+    document.documentElement.style.setProperty("--foundry-quest-log-ru-text-2", textDesaturated);
+    document.documentElement.style.setProperty("--foundry-quest-log-ru-text-3", textSaturated);
+    document.documentElement.style.setProperty("--foundry-quest-log-ru-text-4", textDark);
+  }
+  async render(...args) {
+    for (const tabType of Object.keys(STATES)) {
+      if (STATES[tabType].selected && this.element[0]) {
+        const el = this.element[0].querySelector(`.tab[data-tab="${tabType}"] .quest-details`);
+        if (el) {
+          this._questScroll[STATES[tabType].selected] = el.scrollTop;
+        }
+      }
+    }
+    if (this.element[0]) {
+      TAB_SCROLL_STATES.achievements.scroll = this.element[0].querySelector(".achievements-list").scrollTop;
+    }
+    return super.render(...args);
+  }
+  async close(options = {}) {
+    this.element[0].querySelectorAll(".tab").forEach((t) => t.classList.add("active"));
+    this._saveScrollPositions(this.element);
+    this._storedScrollPositions = this._scrollPositions;
+    this.timeline?.saveScrollPosition();
+    for (const [tabId, scrollData] of Object.entries(TAB_SCROLL_STATES)) {
+      const tabEl = this.element[0].querySelector(`.tab[data-tab="${tabId}"] ${scrollData.sel}`);
+      TAB_SCROLL_STATES[tabId].scroll = tabEl ? tabEl.scrollTop : 0;
+    }
+    document.removeEventListener("keydown", this._onEscape.bind(this));
+    const states = Application.RENDER_STATES;
+    if (!options.force && ![states.RENDERED, states.ERROR].includes(this._state)) return;
+    this._state = states.CLOSING;
+    let el = this.element;
+    if (!el) return this._state = states.CLOSED;
+    for (let cls of this.constructor._getInheritanceChain()) {
+      Hooks.call(`close${cls.name}`, this, el);
+    }
+    const html = this.element[0];
+    return new Promise((resolve) => {
+      html.animate([{ opacity: 1 }, { opacity: 0 }], {
+        duration: 200,
+        easing: "ease-in-out",
+        fill: "forwards"
+      }).onfinish = () => {
+        html.remove();
+        this._element = null;
+        delete ui.windows[this.appId];
+        this._minimized = false;
+        this._state = states.CLOSED;
+        resolve();
+      };
+    });
+  }
+  createDemoQuest() {
+    createDemoQuest();
+  }
+  async importQuests(journal, name, { silent = false } = {}) {
+    await this.getData();
+    const existing = this._questJournals.find((j) => j.name === name);
+    const proceed = silent || await foundry.applications.api.DialogV2.confirm({ window: { title: game.i18n.localize(`${MODULE_ID}.importQuests.title`) + name }, content: game.i18n.localize(`${MODULE_ID}.importQuests.content`) });
+    if (!proceed) return;
+    const folder = this._questFolder;
+    const targetJournal = existing ?? await JournalEntry.create({ name, folder });
+    const pages = Array.from(journal.pages).map((p) => p.toObject());
+    const createdPages = await targetJournal.createEmbeddedDocuments("JournalEntryPage", pages);
+    await journal.delete();
+    this.openToPage(createdPages[0].uuid);
+  }
+  static getKeyFromLi(li) {
+    return li.innerText.replace(/\s/g, "").replace(/\./g, "").substring(0, 50);
+  }
+  static setHooks() {
+    if (this._hooksRegistered) return;
+    this._hooksRegistered = true;
+    Hooks.on("createJournalEntry", (document2, options) => {
+      ui.simpleQuest.refresh();
+    });
+    Hooks.on("deleteJournalEntry", (document2, options) => {
+      ui.simpleQuest.refresh();
+    });
+    Hooks.on("createJournalEntryPage", (document2, options) => {
+      ui.simpleQuest.refresh();
+    });
+    Hooks.on("deleteJournalEntryPage", (document2, options) => {
+      ui.simpleQuest.refresh();
+    });
+    Hooks.on("updateJournalEntry", (document2, updates) => {
+      ui.simpleQuest.refresh();
+    });
+    Hooks.on("preUpdateJournalEntryPage", (document2, updates) => {
+      if (updates.text) document2.updateSource({ flags: { [MODULE_ID]: { lastUpdated: Date.now() } } });
+    });
+    Hooks.on("updateJournalEntryPage", (document2, updates) => {
+      ui.simpleQuest.refresh();
+      if (updates?.ownership?.default >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER) {
+        const isLore = ui.simpleQuest.isSimpleQuestPage(document2.uuid) === "lore";
+        isLore && showQuestNotification(document2, true, true);
+      }
+      if (updates?.ownership?.[game.user.id] >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER || updates?.ownership?.default >= CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER) {
+        const isAchievements = ui.simpleQuest.isSimpleQuestPage(document2.uuid) === "achievements";
+        !game.user.isGM && isAchievements && showQuestNotification(document2, true, false, true);
+      }
+      if (updates?.flags?.[MODULE_ID]?.lastUpdated) {
+        const isQuest = ui.simpleQuest.isSimpleQuestPage(document2.uuid) === "quests";
+        isQuest && showQuestNotification(document2);
+      }
+    });
+    document.addEventListener("click", async (e) => {
+      if (!e.target?.classList?.contains("share-quest-button")) return;
+      e.preventDefault();
+      const uuid = e.target.dataset.uuid;
+      ui.simpleQuest.openToPage(uuid);
+    });
+    Hooks.on("createChatMessage", async (document2, updates) => {
+      if (document2.flags?.[MODULE_ID]?.simpleQuestMessage) {
+        const page2 = await fromUuid(document2.flags[MODULE_ID].simpleQuestMessage);
+        showQuestNotification(page2, true);
+      }
+    });
+    Hooks.on("renderJournalEntryPageTextSheet", (app, html, data) => {
+      if (!data.editable) return;
+      const journal = app.document.parent;
+      if (journal !== STATES.achievements.journal) return;
+      const filePickerInput = document.createElement("file-picker");
+      filePickerInput.type = "image";
+      filePickerInput.name = "src";
+      filePickerInput._value = app.document.src || "icons/commodities/treasure/cup-trophy-gold.webp";
+      filePickerInput.style.display = "none";
+      const imagePreview = document.createElement("img");
+      imagePreview.src = app.document.src || "icons/commodities/treasure/cup-trophy-gold.webp";
+      imagePreview.style.height = "50px";
+      imagePreview.style.maxWidth = "50px";
+      imagePreview.style.marginRight = "0.5rem";
+      imagePreview.style.cursor = "pointer";
+      imagePreview.style.borderRadius = "5px";
+      imagePreview.addEventListener("click", async (e) => {
+        filePickerInput.button.click();
+      });
+      filePickerInput.addEventListener("change", async (e) => {
+        const image = filePickerInput.value;
+        imagePreview.src = image || "icons/commodities/treasure/cup-trophy-gold.webp";
+      });
+      const colorPicker2 = document.createElement("input");
+      colorPicker2.type = "color";
+      colorPicker2.name = "flags.foundry-quest-log-ru.color";
+      colorPicker2.value = app.document.getFlag(MODULE_ID, "color") || "#000000";
+      colorPicker2.style.maxWidth = "50px";
+      colorPicker2.style.minHeight = "50px";
+      colorPicker2.style.marginRight = "0.5rem";
+      const header = html.querySelector(".journal-header .heading-level");
+      header.before(filePickerInput, imagePreview, colorPicker2);
+    });
+  }
+};
+var ColorHelper = class _ColorHelper {
+  constructor(hexColor) {
+    this._color = new PIXI.Color(hexColor);
+    this.r = this._color.red;
+    this.g = this._color.green;
+    this.b = this._color.blue;
+    this.a = this._color.alpha;
+    this._hsl = _ColorHelper.rgbToHsl(this.r, this.g, this.b);
+    this.h = this._hsl[0];
+    this.s = this._hsl[1];
+    this.l = this._hsl[2];
+  }
+  saturate(n) {
+    return _ColorHelper.rgbToHexString(..._ColorHelper.hslToRgb(this.h, Math.min(1, this.s * n), this.l));
+  }
+  brightness(n) {
+    return _ColorHelper.rgbToHexString(..._ColorHelper.hslToRgb(this.h, this.s, Math.min(1, this.l * n)));
+  }
+  static rgbToHsl(r, g, b) {
+    let max = Math.max(r, g, b), min = Math.min(r, g, b);
+    let h, s, l = (max + min) / 2;
+    if (max == min) {
+      h = s = 0;
+    } else {
+      let d = max - min;
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+      switch (max) {
+        case r:
+          h = (g - b) / d + (g < b ? 6 : 0);
+          break;
+        case g:
+          h = (b - r) / d + 2;
+          break;
+        case b:
+          h = (r - g) / d + 4;
+          break;
+      }
+      h /= 6;
+    }
+    return [h, s, l];
+  }
+  static hslToRgb(h, s, l) {
+    let r, g, b;
+    if (s == 0) {
+      r = g = b = l;
+    } else {
+      let hue2rgb = function(p2, q2, t) {
+        if (t < 0) t += 1;
+        if (t > 1) t -= 1;
+        if (t < 1 / 6) return p2 + (q2 - p2) * 6 * t;
+        if (t < 1 / 2) return q2;
+        if (t < 2 / 3) return p2 + (q2 - p2) * (2 / 3 - t) * 6;
+        return p2;
+      };
+      let q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+      let p = 2 * l - q;
+      r = hue2rgb(p, q, h + 1 / 3);
+      g = hue2rgb(p, q, h);
+      b = hue2rgb(p, q, h - 1 / 3);
+    }
+    return [r, g, b];
+  }
+  static rgbToHexString(r, g, b) {
+    r *= 255, g *= 255, b *= 255;
+    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).substring(0, 6);
+  }
+};
+var GlobalSearch = class _GlobalSearch {
+  constructor(term, journals) {
+    this.term = term.toLowerCase();
+    this.journals = journals;
+    this.textContentIndex = _GlobalSearch.textContentIndex ?? /* @__PURE__ */ new Map();
+    if (!_GlobalSearch.textContentIndex || this.expired) this.buildIndex();
+  }
+  get expired() {
+    if (!_GlobalSearch._lastIndex) return true;
+    return Date.now() - _GlobalSearch._lastIndex > 12e4;
+  }
+  async buildIndex() {
+    if (_GlobalSearch._indexing) return;
+    _GlobalSearch._indexing = true;
+    const newIndex2 = /* @__PURE__ */ new Map();
+    for (const j of this.journals) {
+      const pages = j.pages;
+      for (const p of pages) {
+        if (!p.isOwner) {
+          const perm = ui.simpleQuest.hasPermission(p.uuid);
+          if (!perm) continue;
+        }
+        const el = document.createElement("div");
+        el.innerHTML = await foundry.applications.ux.TextEditor.implementation.enrichHTML(p.text.content, { secrets: game.user.isGM, relativeTo: p, async: true });
+        const textContent = el.textContent.toLowerCase();
+        newIndex2.set(p, textContent);
+      }
+    }
+    _GlobalSearch.textContentIndex = newIndex2;
+    _GlobalSearch._indexing = false;
+    _GlobalSearch._lastIndex = Date.now();
+  }
+  getResults() {
+    if (_GlobalSearch._indexing || _GlobalSearch._indexing === void 0) return [{ page: { name: "Indexing" }, bestMatch: "", matchIndex: -1 }];
+    const results = [];
+    for (const [page2, text] of this.textContentIndex) {
+      const matches2 = this.getMatches(text);
+      if (matches2.length) {
+        matches2.forEach((m) => {
+          const start = Math.max(0, m.index - 100);
+          const end = Math.min(text.length, m.index + 100);
+          let surroundingText = text.substring(start, end);
+          const firstSpace = surroundingText.indexOf(" ");
+          const lastSpace = surroundingText.lastIndexOf(" ");
+          surroundingText = surroundingText.substring(firstSpace, lastSpace);
+          surroundingText = surroundingText.trim();
+          surroundingText = `...${surroundingText}...`;
+          results.push({ page: page2, bestMatch: surroundingText, matchIndex: matches2.indexOf(m) });
+        });
+      }
+      if (results.length > 50) break;
+    }
+    return results;
+  }
+  getMatches(text) {
+    const matches2 = [];
+    const regex = new RegExp(this.term, "gi");
+    let match;
+    while ((match = regex.exec(text)) !== null) {
+      matches2.push(match);
+    }
+    return matches2;
+  }
+};
+
+// scripts/journalTemplates.js
+var TEMPLATE_ICONS = {
+  banner: "fad fa-scroll-old",
+  character: "fad fa-user",
+  "dynamic-columns": "fad fa-columns",
+  "image-text-left": "fad fa-image",
+  "image-text-right": "fad fa-image",
+  location: "fad fa-place-of-worship",
+  "boxed-text": "fad fa-paragraph",
+  "description-text": "fad fa-text",
+  "character-grid-1x2": "fad fa-user",
+  "character-grid-1x3": "fad fa-user",
+  wiki: "fad fa-book",
+  event: "fad fa-calendar",
+  custom: "fad fa-file-invoice"
+};
+async function applyTemplate(t, page2, app) {
+  await app.close({ force: true });
+  const textContent = page2.text.content;
+  const template = await fetch(t).then((r) => r.text());
+  const hasImage = template.includes("https://source.unsplash.com/random");
+  if (!hasImage) {
+    const newContent2 = textContent + "\n" + template;
+    await page2.update({ "text.content": newContent2 });
+    app.render(true);
+    return;
+  }
+  const matches2 = template.match(/https:\/\/source\.unsplash\.com\/random/g);
+  const paths = [];
+  for (const match of matches2) {
+    const path = await getFile();
+    paths.push(path);
+  }
+  const newTemplate = matches2.reduce((acc, m, i) => {
+    return acc.replace(m, paths[i] || m);
+  }, template);
+  const newContent = textContent + "\n" + newTemplate;
+  await page2.update({ "text.content": newContent });
+  app.render(true);
+}
+async function getFile() {
+  let resolve;
+  const promise = new Promise((r) => resolve = r);
+  const picker = new FilePicker({
+    type: "image",
+    callback: (path) => {
+      resolve(path);
+    }
+  });
+  const original = picker.close;
+  picker.close = async () => {
+    resolve(null);
+    await original.bind(picker)();
+  };
+  picker.browse();
+  return promise;
+}
+function initJournalTemplates() {
+  Hooks.on("getHeaderControlsJournalEntryPageProseMirrorSheet", (app, buttons) => {
+    buttons.push({
+      class: "foundry-quest-log-ru-page-template",
+      icon: "fas fa-scroll-old",
+      label: game.i18n.localize(`${MODULE_ID}.page-template.label`),
+      onClick: async () => {
+        const templates = (await FilePicker.browse("data", `modules/${MODULE_ID}/templates/JournalTemplates`)).files;
+        let customTemplates = [];
+        try {
+          customTemplates = (await FilePicker.browse("user", `modules/${MODULE_ID}/storage`, { extensions: [".html"] })).files;
+        } catch (error) {
+          console.error(error);
+          customTemplates = [];
+        }
+        const buttons2 = templates.concat(customTemplates).map((t) => {
+          return {
+            label: t.split("/").pop().split(".").slice(0, -1).join(".").split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
+            icon: `<i class="${TEMPLATE_ICONS[t.split("/").pop().split(".").slice(0, -1).join(".")] ?? TEMPLATE_ICONS.custom}"></i>`,
+            callback: async () => {
+              await applyTemplate(t, app.document, app);
+            }
+          };
+        });
+        new Dialog({
+          title: game.i18n.localize(`${MODULE_ID}.page-template.label`),
+          content: `<p>${game.i18n.localize(`${MODULE_ID}.page-template.description`)}</p>`,
+          buttons: buttons2,
+          render: (html) => {
+            html[0].closest(".app").classList.add("foundry-quest-log-ru-dialog");
+            html[0].closest(".app").classList.add("page-template-dialog");
+          }
+        }).render(true);
+      }
+    });
+  });
+}
+
+// scripts/tours.js
+function registerTours() {
+  game.tours.register(MODULE_ID, "interface", new foundry.nue.Tour({
+    title: `${MODULE_ID}.tours.interface.name`,
+    description: `${MODULE_ID}.tours.interface.description`,
+    canBeResumed: false,
+    display: true,
+    steps: [
+      {
+        id: `${MODULE_ID}.tours.interface.1`,
+        title: `${MODULE_ID}.tours.interface.1.title`,
+        content: `${MODULE_ID}.tours.interface.1.content`,
+        selector: "#foundry-quest-log-ru .sheet-tabs.tabs"
+      },
+      {
+        id: `${MODULE_ID}.tours.interface.2`,
+        title: `${MODULE_ID}.tours.interface.2.title`,
+        content: `${MODULE_ID}.tours.interface.2.content`,
+        selector: "#foundry-quest-log-ru .tab[data-tab='quests'] .quest-list",
+        tooltipDirection: "RIGHT"
+      },
+      {
+        id: `${MODULE_ID}.tours.interface.3`,
+        title: `${MODULE_ID}.tours.interface.3.title`,
+        content: `${MODULE_ID}.tours.interface.3.content`,
+        selector: "#foundry-quest-log-ru .tab[data-tab='quests'] .quest-details",
+        tooltipDirection: "LEFT"
+      },
+      {
+        id: `${MODULE_ID}.tours.interface.4`,
+        title: `${MODULE_ID}.tours.interface.4.title`,
+        content: `${MODULE_ID}.tours.interface.4.content`,
+        selector: "#foundry-quest-log-ru .font-controls"
+      }
+    ]
+  }));
+  game.tours.register(MODULE_ID, "lore-tab", new foundry.nue.Tour({
+    title: `${MODULE_ID}.tours.lore-tab.name`,
+    description: `${MODULE_ID}.tours.lore-tab.description`,
+    canBeResumed: false,
+    display: true,
+    steps: [
+      {
+        id: `${MODULE_ID}.tours.lore-tab.1`,
+        title: `${MODULE_ID}.tours.lore-tab.1.title`,
+        content: `${MODULE_ID}.tours.lore-tab.1.content`,
+        selector: "#foundry-quest-log-ru-tabs",
+        tooltipDirection: "UP"
+      },
+      {
+        id: `${MODULE_ID}.tours.lore-tab.2`,
+        title: `${MODULE_ID}.tours.lore-tab.2.title`,
+        content: `${MODULE_ID}.tours.lore-tab.2.content`,
+        selector: "#foundry-quest-log-ru .tab[data-tab='lore'] .quest-list",
+        tooltipDirection: "RIGHT"
+      },
+      {
+        id: `${MODULE_ID}.tours.lore-tab.3`,
+        title: `${MODULE_ID}.tours.lore-tab.3.title`,
+        content: `${MODULE_ID}.tours.lore-tab.3.content`,
+        selector: "#foundry-quest-log-ru .tab[data-tab='lore'] .quest-details",
+        tooltipDirection: "LEFT"
+      }
+    ]
+  }));
+  game.tours.register(MODULE_ID, "map-tab", new foundry.nue.Tour({
+    title: `${MODULE_ID}.tours.map-tab.name`,
+    description: `${MODULE_ID}.tours.map-tab.description`,
+    canBeResumed: false,
+    display: true,
+    steps: [
+      {
+        id: `${MODULE_ID}.tours.map-tab.1`,
+        title: `${MODULE_ID}.tours.map-tab.1.title`,
+        content: `${MODULE_ID}.tours.map-tab.1.content`,
+        selector: "#foundry-quest-log-ru-tabs",
+        tooltipDirection: "UP"
+      },
+      {
+        id: `${MODULE_ID}.tours.map-tab.2`,
+        title: `${MODULE_ID}.tours.map-tab.2.title`,
+        content: `${MODULE_ID}.tours.map-tab.2.content`,
+        selector: "#foundry-quest-log-ru .tab[data-tab='map'] .maps-list",
+        tooltipDirection: "RIGHT"
+      },
+      {
+        id: `${MODULE_ID}.tours.map-tab.3`,
+        title: `${MODULE_ID}.tours.map-tab.3.title`,
+        content: `${MODULE_ID}.tours.map-tab.3.content`,
+        selector: "#foundry-quest-log-ru .tab[data-tab='map'] .map-details",
+        tooltipDirection: "LEFT"
+      },
+      {
+        id: `${MODULE_ID}.tours.map-tab.4`,
+        title: `${MODULE_ID}.tours.map-tab.4.title`,
+        content: `${MODULE_ID}.tours.map-tab.4.content`,
+        selector: "#foundry-quest-log-ru .tab[data-tab='map'] .map-details",
+        tooltipDirection: "LEFT"
+      },
+      {
+        id: `${MODULE_ID}.tours.map-tab.5`,
+        title: `${MODULE_ID}.tours.map-tab.5.title`,
+        content: `${MODULE_ID}.tours.map-tab.5.content`,
+        selector: "#foundry-quest-log-ru .tab[data-tab='map'] .map-details",
+        tooltipDirection: "LEFT"
+      },
+      {
+        id: `${MODULE_ID}.tours.map-tab.6`,
+        title: `${MODULE_ID}.tours.map-tab.6.title`,
+        content: `${MODULE_ID}.tours.map-tab.6.content`,
+        selector: "#foundry-quest-log-ru .tab[data-tab='map'] .map-details",
+        tooltipDirection: "LEFT"
+      }
+    ]
+  }));
+  game.tours.register(MODULE_ID, "my-journal-tab", new foundry.nue.Tour({
+    title: `${MODULE_ID}.tours.my-journal-tab.name`,
+    description: `${MODULE_ID}.tours.my-journal-tab.description`,
+    canBeResumed: false,
+    display: true,
+    steps: [
+      {
+        id: `${MODULE_ID}.tours.my-journal-tab.1`,
+        title: `${MODULE_ID}.tours.my-journal-tab.1.title`,
+        content: `${MODULE_ID}.tours.my-journal-tab.1.content`,
+        selector: "#foundry-quest-log-ru-tabs",
+        tooltipDirection: "UP"
+      },
+      {
+        id: `${MODULE_ID}.tours.my-journal-tab.2`,
+        title: `${MODULE_ID}.tours.my-journal-tab.2.title`,
+        content: `${MODULE_ID}.tours.my-journal-tab.2.content`,
+        selector: "#foundry-quest-log-ru .tab[data-tab='my-journal'] .journal-toc-list",
+        tooltipDirection: "RIGHT"
+      },
+      {
+        id: `${MODULE_ID}.tours.my-journal-tab.3`,
+        title: `${MODULE_ID}.tours.my-journal-tab.3.title`,
+        content: `${MODULE_ID}.tours.my-journal-tab.3.content`,
+        selector: "#foundry-quest-log-ru .tab[data-tab='my-journal'] .journal-container",
+        tooltipDirection: "LEFT"
+      }
+    ]
+  }));
+  game.tours.register(MODULE_ID, "party-journal-tab", new foundry.nue.Tour({
+    title: `${MODULE_ID}.tours.party-journal-tab.name`,
+    description: `${MODULE_ID}.tours.party-journal-tab.description`,
+    canBeResumed: false,
+    display: true,
+    steps: [
+      {
+        id: `${MODULE_ID}.tours.party-journal-tab.1`,
+        title: `${MODULE_ID}.tours.party-journal-tab.1.title`,
+        content: `${MODULE_ID}.tours.party-journal-tab.1.content`,
+        selector: "#foundry-quest-log-ru-tabs",
+        tooltipDirection: "UP"
+      },
+      {
+        id: `${MODULE_ID}.tours.party-journal-tab.2`,
+        title: `${MODULE_ID}.tours.party-journal-tab.2.title`,
+        content: `${MODULE_ID}.tours.party-journal-tab.2.content`,
+        selector: "#foundry-quest-log-ru .tab[data-tab='party-journal'] .journal-toc-list",
+        tooltipDirection: "RIGHT"
+      },
+      {
+        id: `${MODULE_ID}.tours.party-journal-tab.3`,
+        title: `${MODULE_ID}.tours.party-journal-tab.3.title`,
+        content: `${MODULE_ID}.tours.party-journal-tab.3.content`,
+        selector: "#foundry-quest-log-ru .tab[data-tab='party-journal'] .journal-container",
+        tooltipDirection: "LEFT"
+      }
+    ]
+  }));
+  game.tours.register(MODULE_ID, "journal-page", new foundry.nue.Tour({
+    title: `${MODULE_ID}.tours.journal-page.name`,
+    description: `${MODULE_ID}.tours.journal-page.description`,
+    canBeResumed: false,
+    display: true,
+    steps: [
+      {
+        id: `${MODULE_ID}.tours.journal-page.1`,
+        title: `${MODULE_ID}.tours.journal-page.1.title`,
+        content: `${MODULE_ID}.tours.journal-page.1.content`,
+        selector: ".foundry-quest-log-ru-page-template",
+        tooltipDirection: "RIGHT"
+      },
+      {
+        id: `${MODULE_ID}.tours.journal-page.2`,
+        title: `${MODULE_ID}.tours.journal-page.2.title`,
+        content: `${MODULE_ID}.tours.journal-page.2.content`,
+        selector: ".pm-dropdown.format",
+        tooltipDirection: "LEFT"
+      }
+    ]
+  }));
+  game.tours.register(MODULE_ID, "timeline-tab", new foundry.nue.Tour({
+    title: `${MODULE_ID}.tours.timeline-tab.name`,
+    description: `${MODULE_ID}.tours.timeline-tab.description`,
+    canBeResumed: false,
+    display: true,
+    steps: [
+      {
+        id: `${MODULE_ID}.tours.timeline-tab.1`,
+        title: `${MODULE_ID}.tours.timeline-tab.1.title`,
+        content: `${MODULE_ID}.tours.timeline-tab.1.content`,
+        selector: "#foundry-quest-log-ru-tabs",
+        tooltipDirection: "UP"
+      },
+      {
+        id: `${MODULE_ID}.tours.timeline-tab.2`,
+        title: `${MODULE_ID}.tours.timeline-tab.2.title`,
+        content: `${MODULE_ID}.tours.timeline-tab.2.content`,
+        selector: "#foundry-quest-log-ru .tab[data-tab='timeline'] .quest-list",
+        tooltipDirection: "RIGHT"
+      },
+      {
+        id: `${MODULE_ID}.tours.timeline-tab.3`,
+        title: `${MODULE_ID}.tours.timeline-tab.3.title`,
+        content: `${MODULE_ID}.tours.timeline-tab.3.content`,
+        selector: "#foundry-quest-log-ru .tab[data-tab='timeline'] nav",
+        tooltipDirection: "LEFT",
+        restricted: true
+      }
+    ]
+  }));
+}
+
+// scripts/overrides.js
+function applyTOCOverride() {
+  JournalEntryPage.buildTOC = function(html, { includeElement = true } = {}) {
+    const root = { level: 0, children: [] };
+    const stack = [root];
+    const searchHeadings = (element) => {
+      if (element instanceof HTMLHeadingElement) {
+        const node = this._makeHeadingNode(element, { includeElement });
+        node.secret = !!element.closest(".secret:not(.revealed)") && !game.user.isGM;
+        let parent = stack.at(-1);
+        if (node.level <= parent.level) {
+          stack.pop();
+          parent = stack.at(-1);
+        }
+        parent.children.push(node);
+        stack.push(node);
+      }
+      for (const child of element.children || []) {
+        searchHeadings(child);
+      }
+    };
+    if (Array.isArray(html)) html.forEach(searchHeadings);
+    else searchHeadings(html);
+    return this._flattenTOC(root.children);
+  };
+}
+
+// scripts/mindmap.js
+var mermaid = null;
+var selector = ".mermaid";
+async function loadMermaid() {
+  const dynamicImport = new Function("url", "return import(url)");
+  const esModule = await dynamicImport("https://cdn.jsdelivr.net/npm/mermaid/+esm");
+  mermaid = esModule.default;
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: "base",
+    themeVariables: {
+      primaryColor: getComputedStyle(document.documentElement).getPropertyValue("--foundry-quest-log-ru-background-color"),
+      primaryTextColor: getComputedStyle(document.documentElement).getPropertyValue("--foundry-quest-log-ru-text-0"),
+      primaryBorderColor: getComputedStyle(document.documentElement).getPropertyValue("--foundry-quest-log-ru-text-4"),
+      lineColor: getComputedStyle(document.documentElement).getPropertyValue("--foundry-quest-log-ru-text-4"),
+      secondaryColor: getComputedStyle(document.documentElement).getPropertyValue("--foundry-quest-log-ru-background-color"),
+      tertiaryColor: getComputedStyle(document.documentElement).getPropertyValue("--foundry-quest-log-ru-background-color")
+    }
+  });
+}
+async function setupMermaid() {
+  try {
+    if (!mermaid) await loadMermaid();
+    await mermaid.run({ querySelector: selector });
+  } catch (error) {
+    console.warn(`${MODULE_ID} | Mermaid \u043D\u0435\u0434\u043E\u0441\u0442\u0443\u043F\u0435\u043D, \u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D \u0438\u0441\u0445\u043E\u0434\u043D\u044B\u0439 mindmap`, error);
+    ui.notifications?.warn("Mermaid \u043D\u0435 \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u043B\u0441\u044F. \u0422\u0435\u043A\u0441\u0442 mindmap \u0441\u043E\u0445\u0440\u0430\u043D\u0451\u043D \u0431\u0435\u0437 \u0432\u0438\u0437\u0443\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u0438.");
+  }
+}
+function setMermaidHooks() {
+  window.runMermaid = setupMermaid;
+  Hooks.on("renderJournalPageSheet", (app, html, data) => {
+    if (html.find(selector)) {
+      setTimeout(() => {
+        setupMermaid();
+      }, 1);
+    }
+  });
+  Hooks.on(`${MODULE_ID}.onSelectQuest`, (page2, html) => {
+    if (html.querySelector(selector)) setupMermaid();
+  });
+}
+
+// scripts/enrichers.js
+function initEnrichers() {
+  const questEnricher = (icon) => {
+    return (match, content) => {
+      let [uuid, heading] = match[1].split("#");
+      uuid = fromUuidSync(uuid, { relative: content.relativeTo })?.uuid;
+      const name = match[2] || "Quest";
+      const a = document.createElement("a");
+      a.classList.add("foundry-quest-log-ru-content-link");
+      a.draggable = false;
+      a.dataset.uuid = uuid;
+      a.dataset.id = uuid;
+      a.dataset.anchor = heading;
+      a.dataset.tooltip = name;
+      a.dataset.tooltipDirection = "UP";
+      a.innerHTML = `<i class="fas ${uuid ? icon : "fa-link-slash"}"></i>${name}`;
+      return a;
+    };
+  };
+  CONFIG.TextEditor.enrichers.push(
+    {
+      id: MODULE_ID,
+      pattern: /@time\[(.*?)\]/g,
+      enricher: (match, content) => {
+        try {
+          const a = document.createElement("a");
+          a.classList.add("foundry-quest-log-ru-time");
+          a.draggable = false;
+          if (!window.SimpleCalendar) {
+            a.innerHTML = `<i class="fa-duotone fa-hourglass-start"></i> Simple Calendar Not Installed`;
+            return a;
+          }
+          let time;
+          const matchedTime = match[1];
+          const isOnlyNumbers = /^\d+$/.test(matchedTime);
+          if (isOnlyNumbers) {
+            time = parseInt(match[1]);
+          } else {
+            time = Date.parse(match[1]);
+            if (window.SimpleCalendar) {
+              const dateTimeParts = matchedTime.split(",");
+              const dateParts = dateTimeParts[0].trim().split("/");
+              const timeParts = (dateTimeParts[1] || "00:00").trim().split(":");
+              const year = parseInt(dateParts[0]);
+              const month = parseInt(dateParts[1]) - 1;
+              const day = parseInt(dateParts[2]) - 1;
+              const hour = parseInt(timeParts[0]);
+              const minute = parseInt(timeParts[1]);
+              time = window.SimpleCalendar.api.dateToTimestamp({ year, month, day, hour, minute });
+            }
+          }
+          const scDateTime = window.SimpleCalendar.api.timestampToDate(time);
+          a.dataset.tooltip = `${scDateTime.display.date} ${scDateTime.display.time}`;
+          a.dataset.tooltipDirection = "UP";
+          const delta = time - window.SimpleCalendar.api.timestamp();
+          if (delta < 0) {
+            a.innerHTML = `<i class="fa-duotone fa-hourglass-start"></i> ${game.i18n.localize(`${MODULE_ID}.time-enricher.expired`)}`;
+            return a;
+          }
+          const interval = window.SimpleCalendar.api.secondsToInterval(delta);
+          let timeString = ``;
+          if (interval.year) timeString += `${interval.year}y `;
+          if (interval.month || interval.year) timeString += `${interval.month}m `;
+          if (interval.day || interval.month || interval.year) timeString += `${interval.day}d `;
+          if (interval.hour || interval.day || interval.month || interval.year) timeString += `${interval.hour}h `;
+          if (interval.minute || interval.hour || interval.day || interval.month || interval.year) timeString += `${interval.minute}m `;
+          a.innerHTML = `<i class="fa-duotone fa-hourglass-start"></i> ${timeString}`;
+          return a;
+        } catch (e) {
+          console.error(e);
+          const a = document.createElement("a");
+          a.innerHTML = `<i class="fa-duotone fa-hourglass-start"></i> Error Parsing Time`;
+          return a;
+        }
+      }
+    },
+    {
+      id: MODULE_ID + "-quest",
+      pattern: /@QUEST\[(.*?)\]{(.*?)\}/g,
+      enricher: questEnricher("fa-scroll-old")
+    },
+    {
+      id: MODULE_ID + "-map",
+      pattern: /@MAP\[(.*?)\]{(.*?)\}/g,
+      enricher: questEnricher("fa-map")
+    },
+    {
+      id: MODULE_ID + "-lore",
+      pattern: /@LORE\[(.*?)\]{(.*?)\}/g,
+      enricher: questEnricher("fa-books")
+    },
+    {
+      id: MODULE_ID + "-ttm",
+      pattern: /@TTM\[(.*?)\]{(.*?)\}/g,
+      enricher: (match, content) => {
+        let src = match[1];
+        const srcParts = src.split("/");
+        if (srcParts[0].includes(".")) src = "https://" + src;
+        const titles = match[2].split("|");
+        const title = titles[0];
+        const displayTitle = titles[1] || "";
+        const a = document.createElement("a");
+        a.classList.add("foundry-quest-log-ru-ttm");
+        a.dataset.src = src;
+        if (game.user.isGM) a.dataset.tooltip = displayTitle + `<img src="${src}">`;
+        a.dataset.tooltipDirection = "UP";
+        a.dataset.title = displayTitle;
+        a.draggable = false;
+        a.innerHTML = `<i class="fas fa-theater-masks"></i> ${title}`;
+        return a;
+      }
+    },
+    {
+      id: MODULE_ID + "-counter",
+      pattern: /@COUNT\[(.*?)\]{(.*?)\}/g,
+      enricher: (match, content) => {
+        const id = match[1];
+        const count = parseInt(match[2]);
+        const page2 = content.relativeTo;
+        const flag = page2.getFlag(MODULE_ID, "counters") ?? {};
+        const value = flag[id] ?? 0;
+        const a = document.createElement("a");
+        a.classList.add("foundry-quest-log-ru-counter");
+        a.dataset.uuid = page2.uuid;
+        a.dataset.id = id;
+        a.dataset.count = count;
+        a.draggable = false;
+        a.innerHTML = `(${value} / ${count})`;
+        return a;
+      }
+    },
+    {
+      id: MODULE_ID + "-counter-rep",
+      pattern: /@REPUTATION\[(.*?)\]{(.*?)\}/g,
+      enricher: (match, content) => {
+        let [id, color, fa] = match[1].split(",");
+        const isBar = id.includes("$bar");
+        if (isBar) {
+          id = id.replace("$bar", "");
+        }
+        if (!isBar && fa && !fa.trim().includes(" ")) fa = `fas fa-${fa.trim()}`;
+        let [min, max] = match[2].split(",");
+        if (!max) {
+          max = min;
+          min = 0;
+        }
+        min = parseInt(min);
+        max = parseInt(max);
+        const count = max;
+        const page2 = content.relativeTo;
+        const flag = page2.getFlag(MODULE_ID, "counters") ?? {};
+        const value = flag[id] ?? 0;
+        const repContainer = document.createElement("div");
+        repContainer.classList.add("foundry-quest-log-ru-counter");
+        repContainer.classList.add("reputation-container");
+        repContainer.dataset.uuid = page2.uuid;
+        repContainer.dataset.id = id;
+        repContainer.dataset.count = count;
+        repContainer.dataset.min = min;
+        repContainer.dataset.tooltip = `${value} / ${count}`;
+        repContainer.draggable = false;
+        if (isBar) {
+          const rep = document.createElement("div");
+          rep.classList.add("reputation-bar");
+          const percentage = (value - min) / (max - min);
+          rep.style.width = `${percentage * 100}%`;
+          const startGradientColor = "rgb(255, 0, 0)";
+          const endGradientColor = `rgb(${percentage < 0.5 ? 255 : Math.floor(255 - (percentage - 0.5) * 2 * 255)}, ${percentage > 0.5 ? 255 : Math.floor(percentage * 2 * 255)}, 0)`;
+          if (color && fa) {
+            const color1 = getRGBfromCSSColor(color);
+            const color2 = getRGBfromCSSColor(fa);
+            const interpolatedColor = `rgb(${Math.floor(lerp(color1.r, color2.r, percentage))}, ${Math.floor(lerp(color1.g, color2.g, percentage))}, ${Math.floor(lerp(color1.b, color2.b, percentage))})`;
+            const customGradient = `linear-gradient(to right, ${color}, ${interpolatedColor})`;
+            color = customGradient;
+          }
+          rep.style.background = color || `linear-gradient(to right, ${startGradientColor}, ${endGradientColor})`;
+          repContainer.appendChild(rep);
+          const barText = `${value} / ${count}`;
+          const i = document.createElement("i");
+          i.classList.add("reputation-bar-text");
+          i.innerText = barText;
+          const i2 = document.createElement("i");
+          i2.classList.add("reputation-bar-text");
+          i2.classList.add("overlay-text");
+          i2.innerText = barText;
+          repContainer.appendChild(i);
+          repContainer.appendChild(i2);
+        } else {
+          for (let i = min; i < max; i++) {
+            const rep = fa ? document.createElement("i") : document.createElement("div");
+            rep.classList.add("reputation-point");
+            if (fa) rep.classList.add(...fa.split(" "), "is-fontawesome");
+            const percentage = (i - min) / (max - min);
+            const pipColor = color || `rgb(${percentage < 0.5 ? 255 : Math.floor(255 - (percentage - 0.5) * 2 * 255)}, ${percentage > 0.5 ? 255 : Math.floor(percentage * 2 * 255)}, 0)`;
+            rep.style.setProperty("--reputation-color", i < value ? pipColor : "inherit");
+            if (i < value) {
+              rep.classList.add("active");
+              if (!fa) rep.style.backgroundColor = pipColor;
+            }
+            repContainer.appendChild(rep);
+          }
+        }
+        return repContainer;
+      }
+    }
+  );
+}
+function lerp(start, end, t) {
+  return start * (1 - t) + end * t;
+}
+function getRGBfromCSSColor(color) {
+  const temp = document.createElement("div");
+  temp.style.color = color;
+  document.body.appendChild(temp);
+  const computedColor = window.getComputedStyle(temp).color;
+  document.body.removeChild(temp);
+  const matchRGB = computedColor.match(/\d+/g);
+  return { r: parseInt(matchRGB[0]), g: parseInt(matchRGB[1]), b: parseInt(matchRGB[2]) };
+}
+
+// scripts/autoImport.js
+var AUTO_IMPORT_STRING = "SimpleQuestAutoImport$";
+function initAutoImport() {
+  if (!game.user.isGM) return;
+  Hooks.on("createJournalEntry", (journal) => {
+    if (journal.pack || !journal.name.startsWith(AUTO_IMPORT_STRING)) return;
+    const [name, silent] = journal.name.replace(AUTO_IMPORT_STRING, "").split("|");
+    ui.simpleQuest.importQuests(journal, name, { silent: silent === "silent" });
+  });
+}
+
+// scripts/rusthengePreset.js
+var PRESET_FLAG = "rusthengePreset";
+var PRESET_VERSION = "1";
+var MAP_FLAG = "rusthengeSceneKey";
+var PLAYER = { default: CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER };
+var GM_ONLY = { default: CONST.DOCUMENT_OWNERSHIP_LEVELS.NONE };
+var page = (name, content, { hidden = false, ownership = PLAYER } = {}) => ({
+  name,
+  type: "text",
+  ownership,
+  "text.content": content,
+  flags: {
+    [MODULE_ID]: {
+      [PRESET_FLAG]: PRESET_VERSION,
+      ...hidden ? { hidden: true } : {}
+    }
+  }
+});
+var QUEST_JOURNALS = [
+  {
+    name: "\u041F\u0440\u043E\u043B\u043E\u0433 \u0438 \u0433\u043B\u0430\u0432\u0430 1",
+    pages: [
+      page("\u0420\u0430\u0441\u0442\u0445\u0435\u043D\u0434\u0436 \u2014 \u043D\u0430\u0447\u0430\u043B\u043E \u043F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F", `<p>\u0412\u044B \u043F\u0440\u0438\u0431\u044B\u043B\u0438 \u0432 \u0442\u0438\u0445\u0443\u044E \u0440\u044B\u0431\u0430\u0446\u043A\u0443\u044E \u0434\u0435\u0440\u0435\u0432\u043D\u044E \u0411\u0443\u0445\u0442\u0430 \u0421\u043A\u043E\u043F\u044B \u043D\u0430 \u0441\u0435\u0432\u0435\u0440\u043D\u043E\u043C \u043F\u043E\u0431\u0435\u0440\u0435\u0436\u044C\u0435 \u0412\u0430\u0440\u0438\u0441\u0438\u0438. \u041D\u043E\u0447\u043D\u043E\u0439 \u0448\u0442\u043E\u0440\u043C \u043F\u0440\u0438\u043D\u043E\u0441\u0438\u0442 \u043A \u0435\u0451 \u0431\u0435\u0440\u0435\u0433\u0443 \u0443\u043C\u0438\u0440\u0430\u044E\u0449\u0435\u0433\u043E \u0433\u043E\u043D\u0446\u0430 \u0441 \u043F\u0440\u043E\u0441\u044C\u0431\u043E\u0439 \u043E \u043F\u043E\u043C\u043E\u0449\u0438. \u0415\u0433\u043E \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0435 \u0441\u043B\u043E\u0432\u0430 \u0443\u043A\u0430\u0437\u044B\u0432\u0430\u044E\u0442 \u043D\u0430 \u0416\u0435\u043B\u0435\u0437\u043D\u0443\u044E \u0413\u0430\u0432\u0430\u043D\u044C \u2014 \u043F\u043E\u0441\u0435\u043B\u0435\u043D\u0438\u0435, \u043A\u043E\u0442\u043E\u0440\u043E\u0435 \u0432\u043D\u0435\u0437\u0430\u043F\u043D\u043E \u043F\u0435\u0440\u0435\u0441\u0442\u0430\u043B\u043E \u043E\u0442\u0432\u0435\u0447\u0430\u0442\u044C \u0441\u043E\u0441\u0435\u0434\u044F\u043C.</p>
+<h2>\u0427\u0442\u043E \u043F\u0440\u0435\u0434\u0441\u0442\u043E\u0438\u0442 \u0441\u0434\u0435\u043B\u0430\u0442\u044C</h2><ul><li>\u0412\u044B\u044F\u0441\u043D\u0438\u0442\u044C, \u043A\u0442\u043E \u043F\u043E\u0441\u043B\u0430\u043B \u0433\u043E\u043D\u0446\u0430 \u0438 \u043F\u043E\u0447\u0435\u043C\u0443 \u043E\u043D \u043F\u043E\u0433\u0438\u0431.</li><li>\u0414\u043E\u0431\u0440\u0430\u0442\u044C\u0441\u044F \u0434\u043E \u0416\u0435\u043B\u0435\u0437\u043D\u043E\u0439 \u0413\u0430\u0432\u0430\u043D\u0438 \u0438 \u043F\u043E\u043C\u043E\u0447\u044C \u0435\u0451 \u0436\u0438\u0442\u0435\u043B\u044F\u043C.</li><li>\u041D\u0430\u0439\u0442\u0438 \u0438\u0441\u0442\u043E\u0447\u043D\u0438\u043A \u0441\u0442\u0440\u0430\u043D\u043D\u043E\u0439 \u0440\u0436\u0430\u0432\u0447\u0438\u043D\u044B \u0438 \u043E\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C \u0442\u0435\u0445, \u043A\u0442\u043E \u0435\u0451 \u0440\u0430\u0441\u043F\u0440\u043E\u0441\u0442\u0440\u0430\u043D\u044F\u0435\u0442.</li></ul>
+<h2>\u0414\u043B\u044F \u0438\u0433\u0440\u043E\u043A\u043E\u0432</h2><p>\u041F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435 \u043D\u0430\u0447\u0438\u043D\u0430\u0435\u0442\u0441\u044F \u043D\u0430 1-\u043C \u0443\u0440\u043E\u0432\u043D\u0435 \u0438 \u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F \u043D\u0430 4-\u043C. \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u0431\u044B\u0442\u044C \u043C\u0435\u0441\u0442\u043D\u044B\u043C\u0438 \u0436\u0438\u0442\u0435\u043B\u044F\u043C\u0438, \u043F\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u0438\u043A\u0430\u043C\u0438, \u0437\u043D\u0430\u043A\u043E\u043C\u044B\u043C\u0438 \u0433\u043E\u043D\u0446\u0430 \u0438\u043B\u0438 \u0433\u0435\u0440\u043E\u044F\u043C\u0438, \u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u043E\u0431\u044A\u0435\u0434\u0438\u043D\u0438\u043B\u0430 \u0431\u0443\u0440\u044F.</p>`),
+      page("\u0413\u043B\u0430\u0432\u0430 1 \u2014 \u041F\u043E\u0441\u043B\u0430\u043D\u0438\u0435 \u0432 \u043D\u043E\u0447\u0438", `<p>\u0421\u043B\u0435\u0434 \u0432\u0435\u0434\u0451\u0442 \u043E\u0442 \u0411\u0443\u0445\u0442\u044B \u0421\u043A\u043E\u043F\u044B \u043A \u0416\u0435\u043B\u0435\u0437\u043D\u043E\u0439 \u0413\u0430\u0432\u0430\u043D\u0438. \u041F\u043E\u0441\u0435\u043B\u0435\u043D\u0438\u0435 \u043F\u0435\u0440\u0435\u0436\u0438\u043B\u043E \u043D\u0430\u043F\u0430\u0434\u0435\u043D\u0438\u0435, \u0430 \u0435\u0433\u043E \u0445\u0440\u0430\u043C \u0413\u043E\u0440\u0443\u043C\u0430 \u043E\u043A\u0430\u0437\u0430\u043B\u0441\u044F \u0432 \u0440\u0443\u043A\u0430\u0445 \u0436\u0435\u0441\u0442\u043E\u043A\u043E\u0433\u043E \u043A\u0443\u043B\u044C\u0442\u0430.</p>
+<h2>\u041E\u0441\u043D\u043E\u0432\u043D\u0430\u044F \u0446\u0435\u043B\u044C</h2><ul><li>\u0414\u043E\u0431\u0440\u0430\u0442\u044C\u0441\u044F \u0434\u043E \u0416\u0435\u043B\u0435\u0437\u043D\u043E\u0439 \u0413\u0430\u0432\u0430\u043D\u0438 \u0438 \u043D\u0430\u0439\u0442\u0438 \u0432\u044B\u0436\u0438\u0432\u0448\u0438\u0445.</li><li>\u0421\u043E\u0431\u0440\u0430\u0442\u044C \u0441\u0432\u0435\u0434\u0435\u043D\u0438\u044F \u043E \u043D\u0430\u043F\u0430\u0434\u0435\u043D\u0438\u0438 \u0438 \u043F\u0440\u043E\u043F\u0430\u0432\u0448\u0438\u0445 \u0436\u0438\u0442\u0435\u043B\u044F\u0445.</li><li>\u0418\u0441\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u044C \u0421\u0442\u043E\u0443\u043D\u0445\u043E\u0443\u043C \u0438 \u043F\u0440\u0435\u043A\u0440\u0430\u0442\u0438\u0442\u044C \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F \u043A\u0443\u043B\u044C\u0442\u0438\u0441\u0442\u043E\u0432.</li><li>\u041D\u0430\u0439\u0442\u0438 \u043F\u0443\u0442\u044C \u043A \u0434\u0440\u0435\u0432\u043D\u0438\u043C \u0440\u0436\u0430\u0432\u044B\u043C \u0440\u0443\u0438\u043D\u0430\u043C.</li></ul>
+<h2>\u0418\u0442\u043E\u0433 \u0433\u043B\u0430\u0432\u044B</h2><p>\u041F\u0435\u0440\u0435\u0434 \u0438\u0441\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u043D\u0438\u0435\u043C \u0420\u0430\u0441\u0442\u0445\u0435\u043D\u0434\u0436\u0430 \u0433\u0435\u0440\u043E\u0438 \u0434\u043E\u043B\u0436\u043D\u044B \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C 2-\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C.</p>`)
+    ]
+  },
+  {
+    name: "\u0413\u043B\u0430\u0432\u0430 2 \u2014 \u0420\u0436\u0430\u0432\u044B\u0435 \u0440\u0443\u0438\u043D\u044B",
+    pages: [
+      page("\u0413\u043B\u0430\u0432\u0430 2 \u2014 \u0420\u0436\u0430\u0432\u044B\u0435 \u0440\u0443\u0438\u043D\u044B", `<p>\u0420\u0430\u0441\u043A\u0440\u044B\u0432 \u0442\u0430\u0439\u043D\u0443 \u0421\u0442\u043E\u0443\u043D\u0445\u043E\u0443\u043C\u0430, \u0433\u0435\u0440\u043E\u0438 \u0441\u043F\u0443\u0441\u043A\u0430\u044E\u0442\u0441\u044F \u0432 \u0420\u0430\u0441\u0442\u0445\u0435\u043D\u0434\u0436 \u2014 \u0434\u0440\u0435\u0432\u043D\u0438\u0439 \u043A\u043E\u043C\u043F\u043B\u0435\u043A\u0441 \u043F\u043E\u0434 \u0440\u0436\u0430\u0432\u044B\u043C\u0438 \u043C\u043E\u043D\u043E\u043B\u0438\u0442\u0430\u043C\u0438. \u0417\u0434\u0435\u0441\u044C \u043A\u0443\u043B\u044C\u0442 \u0433\u043E\u0442\u043E\u0432\u0438\u0442 \u0432\u043E\u0437\u0432\u0440\u0430\u0449\u0435\u043D\u0438\u0435 \u0434\u0430\u0432\u043D\u043E \u043F\u043E\u0433\u0438\u0431\u0448\u0435\u0433\u043E \u043F\u043E\u0432\u0435\u043B\u0438\u0442\u0435\u043B\u044F \u0434\u0435\u043C\u043E\u043D\u043E\u0432.</p>
+<h2>\u041E\u0441\u043D\u043E\u0432\u043D\u0430\u044F \u0446\u0435\u043B\u044C</h2><ul><li>\u0418\u0441\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u044C \u043D\u0430\u0437\u0435\u043C\u043D\u044B\u0435 \u0440\u0443\u0438\u043D\u044B \u0438 \u043F\u0435\u0440\u0432\u044B\u0439 \u043F\u043E\u0434\u0437\u0435\u043C\u043D\u044B\u0439 \u044D\u0442\u0430\u0436.</li><li>\u041D\u0430\u0439\u0442\u0438 \u0437\u0430\u043F\u0438\u0441\u0438 \u0438 \u0441\u043B\u0435\u0434\u044B, \u043E\u0431\u044A\u044F\u0441\u043D\u044F\u044E\u0449\u0438\u0435 \u0437\u0430\u043C\u044B\u0441\u0435\u043B \u043A\u0443\u043B\u044C\u0442\u0430.</li><li>\u041E\u0441\u043B\u0430\u0431\u0438\u0442\u044C \u0440\u0435\u0441\u0443\u0440\u0441\u044B \u043A\u0443\u043B\u044C\u0442\u0438\u0441\u0442\u043E\u0432 \u0438 \u043E\u0442\u043A\u0440\u044B\u0442\u044C \u043F\u0443\u0442\u044C \u0434\u0430\u043B\u044C\u0448\u0435.</li><li>\u0423\u0437\u043D\u0430\u0442\u044C, \u0433\u0434\u0435 \u043F\u0440\u043E\u0432\u043E\u0434\u0438\u0442\u0441\u044F \u0440\u0438\u0442\u0443\u0430\u043B.</li></ul>
+<h2>\u0418\u0442\u043E\u0433 \u0433\u043B\u0430\u0432\u044B</h2><p>\u041F\u0435\u0440\u0435\u0434 \u0441\u043F\u0443\u0441\u043A\u043E\u043C \u0432 \u0445\u0440\u0430\u043C \u041A\u0441\u0430\u0440-\u0410\u0437\u043C\u0430\u043A\u0430 \u0433\u0435\u0440\u043E\u0438 \u0434\u043E\u043B\u0436\u043D\u044B \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C 3-\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C.</p>`, { hidden: true })
+    ]
+  },
+  {
+    name: "\u0413\u043B\u0430\u0432\u0430 3 \u2014 \u0412\u043E\u0441\u043A\u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u0440\u0436\u0430\u0432\u0447\u0438\u043D\u044B",
+    pages: [
+      page("\u0413\u043B\u0430\u0432\u0430 3 \u2014 \u0412\u043E\u0441\u043A\u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u0440\u0436\u0430\u0432\u0447\u0438\u043D\u044B", `<p>\u041A\u0443\u043B\u044C\u0442\u0438\u0441\u0442\u044B \u043F\u043E\u0447\u0442\u0438 \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043B\u0438 \u0440\u0438\u0442\u0443\u0430\u043B. \u0413\u0435\u0440\u043E\u044F\u043C \u043D\u0443\u0436\u043D\u043E \u043F\u0440\u043E\u0431\u0438\u0442\u044C\u0441\u044F \u043A \u0433\u0440\u0430\u043D\u0438\u0446\u0435 \u0422\u0451\u043C\u043D\u044B\u0445 \u0437\u0435\u043C\u0435\u043B\u044C, \u0440\u0430\u0437\u0440\u0443\u0448\u0438\u0442\u044C \u0435\u0433\u043E \u043E\u043F\u043E\u0440\u044B \u0438 \u043D\u0435 \u0434\u0430\u0442\u044C \u0434\u0440\u0435\u0432\u043D\u0435\u043C\u0443 \u0437\u043B\u0443 \u0432\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F \u0432 \u043C\u0438\u0440.</p>
+<h2>\u041E\u0441\u043D\u043E\u0432\u043D\u0430\u044F \u0446\u0435\u043B\u044C</h2><ul><li>\u041D\u0430\u0439\u0442\u0438 \u0432\u0445\u043E\u0434 \u0432 \u0433\u043B\u0443\u0431\u0438\u043D\u044B \u043F\u043E\u0434 \u0420\u0430\u0441\u0442\u0445\u0435\u043D\u0434\u0436\u0435\u043C.</li><li>\u0412\u044B\u044F\u0432\u0438\u0442\u044C \u0438 \u043E\u0441\u043B\u0430\u0431\u0438\u0442\u044C \u043E\u043F\u043E\u0440\u044B \u0440\u0438\u0442\u0443\u0430\u043B\u0430.</li><li>\u041E\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C \u043F\u0440\u0435\u0434\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044F \u043A\u0443\u043B\u044C\u0442\u0430.</li><li>\u041D\u0435 \u0434\u043E\u043F\u0443\u0441\u0442\u0438\u0442\u044C \u0432\u043E\u0441\u043A\u0440\u0435\u0448\u0435\u043D\u0438\u044F \u041A\u0441\u0430\u0440-\u0410\u0437\u043C\u0430\u043A\u0430.</li></ul>
+<h2>\u0424\u0438\u043D\u0430\u043B</h2><p>\u0417\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u0435 \u043F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F \u0433\u0435\u0440\u043E\u0438 \u043F\u043E\u043B\u0443\u0447\u0430\u044E\u0442 4-\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C.</p>`, { hidden: true })
+    ]
+  },
+  {
+    name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u044B \u0432\u0435\u0434\u0443\u0449\u0435\u0433\u043E",
+    pages: [
+      page("\u0412\u0435\u0434\u0435\u043D\u0438\u0435 \xAB\u0420\u0430\u0441\u0442\u0445\u0435\u043D\u0434\u0436\u0430\xBB", `<p><strong>\u041F\u043E\u0440\u044F\u0434\u043E\u043A \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043A\u0438.</strong> \u0412\u043A\u043B\u044E\u0447\u0438\u0442\u0435 \u043E\u0444\u0438\u0446\u0438\u0430\u043B\u044C\u043D\u044B\u0439 \u043C\u043E\u0434\u0443\u043B\u044C <em>Pathfinder Adventure: Rusthenge</em> \u0438 \u0435\u0433\u043E \u0440\u0443\u0441\u0441\u043A\u0438\u0439 \u043F\u0435\u0440\u0435\u0432\u043E\u0434, \u0437\u0430\u0442\u0435\u043C \u0438\u043C\u043F\u043E\u0440\u0442\u0438\u0440\u0443\u0439\u0442\u0435 \u043F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435 \u0432 \u0447\u0438\u0441\u0442\u044B\u0439 \u043C\u0438\u0440. PF2e Journal \u0434\u043E\u0431\u0430\u0432\u0438\u0442 \u0441\u044E\u0434\u0430 \u043A\u0432\u0435\u0441\u0442\u044B, \u043B\u043E\u0440, \u0432\u0440\u0435\u043C\u0435\u043D\u043D\u0443\u044E \u0448\u043A\u0430\u043B\u0443 \u0438 \u043A\u043E\u043F\u0438\u0438 \u0444\u043E\u043D\u043E\u0432 \u0438\u043C\u043F\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0445 \u0441\u0446\u0435\u043D \u0434\u043B\u044F \u0432\u043A\u043B\u0430\u0434\u043A\u0438 \xAB\u041A\u0430\u0440\u0442\u044B\xBB.</p>
+<h2>\u041F\u043E\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C</h2><ol><li>\u0413\u043B\u0430\u0432\u0430 1: \u0411\u0443\u0445\u0442\u0430 \u0421\u043A\u043E\u043F\u044B \u2192 \u0416\u0435\u043B\u0435\u0437\u043D\u0430\u044F \u0413\u0430\u0432\u0430\u043D\u044C \u2192 \u0421\u0442\u043E\u0443\u043D\u0445\u043E\u0443\u043C. \u041F\u043E\u0441\u043B\u0435 \u043D\u0435\u0451 \u0434\u0430\u0439\u0442\u0435 2-\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C.</li><li>\u0413\u043B\u0430\u0432\u0430 2: \u0420\u0430\u0441\u0442\u0445\u0435\u043D\u0434\u0436 \u0438 \u0432\u0435\u0440\u0445\u043D\u0438\u0435 \u043F\u043E\u0434\u0437\u0435\u043C\u0435\u043B\u044C\u044F. \u041F\u0435\u0440\u0435\u0434 \u0445\u0440\u0430\u043C\u043E\u043C \u0434\u0430\u0439\u0442\u0435 3-\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C.</li><li>\u0413\u043B\u0430\u0432\u0430 3: \u0422\u0451\u043C\u043D\u044B\u0435 \u0437\u0435\u043C\u043B\u0438, \u0440\u0438\u0442\u0443\u0430\u043B \u0438 \u0444\u0438\u043D\u0430\u043B. \u041F\u043E\u0441\u043B\u0435 \u043D\u0435\u0433\u043E \u2014 4-\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C.</li></ol>
+<h2>\u041E\u0440\u0438\u0433\u0438\u043D\u0430\u043B\u044C\u043D\u044B\u0435 \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u044B</h2><p>@UUID[JournalEntry.pf2sa06401frontm]{\u0412\u0432\u043E\u0434\u043D\u0430\u044F \u0447\u0430\u0441\u0442\u044C} \xB7 @UUID[JournalEntry.pf2sa06402messag]{\u0413\u043B\u0430\u0432\u0430 1} \xB7 @UUID[JournalEntry.pf2sa06403therus]{\u0413\u043B\u0430\u0432\u0430 2} \xB7 @UUID[JournalEntry.pf2sa06404ressur]{\u0413\u043B\u0430\u0432\u0430 3}</p>
+<p>\u0412\u0441\u0435 \u043A\u0430\u0440\u0442\u044B \u0441\u043E\u0437\u0434\u0430\u044E\u0442\u0441\u044F \u0441\u043A\u0440\u044B\u0442\u044B\u043C\u0438, \u0447\u0442\u043E\u0431\u044B \u043D\u0435 \u0440\u0430\u0441\u043A\u0440\u044B\u0432\u0430\u0442\u044C \u043F\u043B\u0430\u043D \u043B\u043E\u043A\u0430\u0446\u0438\u0438 \u0440\u0430\u043D\u044C\u0448\u0435 \u0432\u0440\u0435\u043C\u0435\u043D\u0438. \u041E\u0442\u043A\u0440\u044B\u0432\u0430\u0439\u0442\u0435 \u043D\u0443\u0436\u043D\u0443\u044E \u043A\u0430\u0440\u0442\u0443 \u0438\u0433\u0440\u043E\u043A\u0430\u043C \u0447\u0435\u0440\u0435\u0437 \u0437\u043D\u0430\u0447\u043E\u043A \u0433\u043B\u0430\u0437\u0430 \u0432\u043E \u0432\u043A\u043B\u0430\u0434\u043A\u0435 \xAB\u041A\u0430\u0440\u0442\u044B\xBB.</p>`, { hidden: true, ownership: GM_ONLY })
+    ]
+  }
+];
+var LORE_JOURNALS = [
+  {
+    name: "\u041B\u043E\u043A\u0430\u0446\u0438\u0438",
+    pages: [
+      page("\u0411\u0443\u0445\u0442\u0430 \u0421\u043A\u043E\u043F\u044B", `<p>\u041D\u0435\u0431\u043E\u043B\u044C\u0448\u0430\u044F \u0440\u044B\u0431\u0430\u0446\u043A\u0430\u044F \u0434\u0435\u0440\u0435\u0432\u043D\u044F \u043D\u0430 \u0441\u0435\u0432\u0435\u0440\u043D\u043E\u043C \u043F\u043E\u0431\u0435\u0440\u0435\u0436\u044C\u0435 \u0412\u0430\u0440\u0438\u0441\u0438\u0438. \u041E\u0442\u0441\u044E\u0434\u0430 \u043D\u0430\u0447\u0438\u043D\u0430\u0435\u0442\u0441\u044F \u043F\u0443\u0442\u044C \u0433\u0435\u0440\u043E\u0435\u0432: \u0448\u0442\u043E\u0440\u043C \u0432\u044B\u0431\u0440\u0430\u0441\u044B\u0432\u0430\u0435\u0442 \u043D\u0430 \u0431\u0435\u0440\u0435\u0433 \u0443\u043C\u0438\u0440\u0430\u044E\u0449\u0435\u0433\u043E \u0433\u043E\u043D\u0446\u0430 \u0441 \u043F\u0440\u043E\u0441\u044C\u0431\u043E\u0439 \u043E \u043F\u043E\u043C\u043E\u0449\u0438.</p>`),
+      page("\u0416\u0435\u043B\u0435\u0437\u043D\u0430\u044F \u0413\u0430\u0432\u0430\u043D\u044C", `<p>\u041F\u0440\u0438\u0431\u0440\u0435\u0436\u043D\u043E\u0435 \u043F\u043E\u0441\u0435\u043B\u0435\u043D\u0438\u0435, \u043A\u043E\u0442\u043E\u0440\u043E\u0435 \u043F\u0435\u0440\u0435\u0441\u0442\u0430\u043B\u043E \u043E\u0442\u0432\u0435\u0447\u0430\u0442\u044C \u0441\u043E\u0441\u0435\u0434\u044F\u043C \u043F\u043E\u0441\u043B\u0435 \u043D\u0435\u0434\u0430\u0432\u043D\u0435\u0439 \u0431\u0435\u0434\u044B. \u0415\u0433\u043E \u0436\u0438\u0442\u0435\u043B\u0438 \u043D\u0443\u0436\u0434\u0430\u044E\u0442\u0441\u044F \u0432 \u043F\u043E\u043C\u043E\u0449\u0438, \u0430 \u0441\u043B\u0435\u0434\u044B \u043D\u0430\u043F\u0430\u0434\u0435\u043D\u0438\u044F \u0432\u0435\u0434\u0443\u0442 \u043A \u0421\u0442\u043E\u0443\u043D\u0445\u043E\u0443\u043C\u0443.</p>`),
+      page("\u0421\u0442\u043E\u0443\u043D\u0445\u043E\u0443\u043C", `<p>\u0411\u044B\u0432\u0448\u0430\u044F \u043A\u0440\u0435\u043F\u043E\u0441\u0442\u044C \u0438 \u0445\u0440\u0430\u043C \u0413\u043E\u0440\u0443\u043C\u0430 \u0432 \u0416\u0435\u043B\u0435\u0437\u043D\u043E\u0439 \u0413\u0430\u0432\u0430\u043D\u0438. \u0421\u0435\u0439\u0447\u0430\u0441 \u0437\u0434\u0435\u0441\u044C \u0441\u043A\u0440\u044B\u0432\u0430\u0435\u0442\u0441\u044F \u0438\u0441\u0442\u043E\u0447\u043D\u0438\u043A \u0443\u0433\u0440\u043E\u0437\u044B \u0434\u043B\u044F \u043F\u043E\u0441\u0435\u043B\u0435\u043D\u0438\u044F.</p>`, { hidden: true }),
+      page("\u0420\u0430\u0441\u0442\u0445\u0435\u043D\u0434\u0436", `<p>\u0414\u0440\u0435\u0432\u043D\u0438\u0435 \u0440\u0436\u0430\u0432\u044B\u0435 \u043C\u043E\u043D\u043E\u043B\u0438\u0442\u044B \u0438 \u0441\u043A\u0440\u044B\u0442\u044B\u0439 \u043F\u043E\u0434 \u043D\u0438\u043C\u0438 \u043A\u043E\u043C\u043F\u043B\u0435\u043A\u0441. \u0418\u043C\u0435\u043D\u043D\u043E \u0437\u0434\u0435\u0441\u044C \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F \u0441\u0435\u0440\u0434\u0446\u0435 \u0437\u0430\u043C\u044B\u0441\u043B\u0430 \u043A\u0443\u043B\u044C\u0442\u0438\u0441\u0442\u043E\u0432.</p>`, { hidden: true })
+    ]
+  },
+  {
+    name: "\u041D\u041F\u0421",
+    pages: [
+      page("\u0421\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430 \u041E\u0440\u0434\u0432\u0438", `<p>\u0423\u0432\u0430\u0436\u0430\u0435\u043C\u0430\u044F \u0441\u0442\u0430\u0440\u0435\u0439\u0448\u0438\u043D\u0430 \u0411\u0443\u0445\u0442\u044B \u0421\u043A\u043E\u043F\u044B. \u041E\u043D\u0430 \u043E\u0431\u0435\u0441\u043F\u043E\u043A\u043E\u0435\u043D\u0430 \u0441\u0443\u0434\u044C\u0431\u043E\u0439 \u0441\u043E\u0441\u0435\u0434\u0435\u0439 \u0438 \u043C\u043E\u0436\u0435\u0442 \u043D\u0430\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0433\u0435\u0440\u043E\u0435\u0432 \u043A \u0416\u0435\u043B\u0435\u0437\u043D\u043E\u0439 \u0413\u0430\u0432\u0430\u043D\u0438.</p>`),
+      page("\u0411\u043B\u0430\u043D\u0442\u043E\u043D", `<p>\u0413\u043E\u043D\u0435\u0446, \u043F\u0440\u0438\u0431\u044B\u0432\u0448\u0438\u0439 \u0432 \u0411\u0443\u0445\u0442\u0443 \u0421\u043A\u043E\u043F\u044B \u0432\u043E \u0432\u0440\u0435\u043C\u044F \u0448\u0442\u043E\u0440\u043C\u0430. \u0415\u0433\u043E \u043F\u043E\u0441\u043B\u0430\u043D\u0438\u0435 \u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u0441\u044F \u043F\u0435\u0440\u0432\u043E\u0439 \u043D\u0438\u0442\u044C\u044E \u0440\u0430\u0441\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u043D\u0438\u044F.</p>`),
+      page("\u041C\u0435\u0439\u0442\u0440\u0435\u043C\u0430\u0440", `<p>\u041F\u0440\u0435\u0434\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044C \u043A\u0443\u043B\u044C\u0442\u0430, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0438\u0449\u0435\u0442 \u0441\u043F\u043E\u0441\u043E\u0431 \u0432\u0435\u0440\u043D\u0443\u0442\u044C \u0434\u0440\u0435\u0432\u043D\u044E\u044E \u0441\u0438\u043B\u0443 \u0420\u0430\u0441\u0442\u0445\u0435\u043D\u0434\u0436\u0430.</p>`, { hidden: true })
+    ]
+  },
+  {
+    name: "\u041E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0446\u0438\u0438",
+    pages: [
+      page("\u0410\u0434\u0435\u043F\u0442\u044B \u0420\u0436\u0430\u0432\u0447\u0438\u043D\u044B", `<p>\u0422\u0430\u0439\u043D\u044B\u0439 \u043A\u0443\u043B\u044C\u0442, \u0441\u0432\u044F\u0437\u0430\u043D\u043D\u044B\u0439 \u0441 \u0434\u0440\u0435\u0432\u043D\u0435\u0439 \u0442\u0430\u0441\u0441\u0438\u043B\u043E\u043D\u0441\u043A\u043E\u0439 \u043C\u0430\u0433\u0438\u0435\u0439, \u0440\u0436\u0430\u0432\u0447\u0438\u043D\u043E\u0439 \u0438 \u0440\u0430\u0437\u043B\u043E\u0436\u0435\u043D\u0438\u0435\u043C. \u0415\u0433\u043E \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u0438 \u0434\u0435\u0439\u0441\u0442\u0432\u0443\u044E\u0442 \u0432 \u0416\u0435\u043B\u0435\u0437\u043D\u043E\u0439 \u0413\u0430\u0432\u0430\u043D\u0438 \u0438 \u0420\u0430\u0441\u0442\u0445\u0435\u043D\u0434\u0436\u0435.</p>`, { hidden: true })
+    ]
+  },
+  {
+    name: "\u0418\u0441\u0442\u043E\u0440\u0438\u044F",
+    pages: [
+      page("\u041A\u0441\u0430\u0440-\u0410\u0437\u043C\u0430\u043A", `<p>\u0414\u0430\u0432\u043D\u043E \u043F\u043E\u0433\u0438\u0431\u0448\u0438\u0439 \u043F\u043E\u0432\u0435\u043B\u0438\u0442\u0435\u043B\u044C \u0434\u0435\u043C\u043E\u043D\u043E\u0432, \u0441\u0432\u044F\u0437\u0430\u043D\u043D\u044B\u0439 \u0441 \u0440\u0436\u0430\u0432\u0447\u0438\u043D\u043E\u0439, \u0440\u0430\u0437\u043B\u043E\u0436\u0435\u043D\u0438\u0435\u043C \u0438 \u0441\u043C\u0435\u0440\u0442\u044C\u044E. \u041A\u0443\u043B\u044C\u0442 \u043F\u044B\u0442\u0430\u0435\u0442\u0441\u044F \u0432\u0435\u0440\u043D\u0443\u0442\u044C \u0435\u0433\u043E \u0441\u0438\u043B\u0443 \u0432 \u043C\u0438\u0440.</p>`, { hidden: true }),
+      page("\u041F\u043E\u043B\u0437\u0443\u0447\u0430\u044F \u0440\u0436\u0430\u0432\u0447\u0438\u043D\u0430", `<p>\u0421\u0432\u0435\u0440\u0445\u044A\u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u0431\u043E\u043B\u0435\u0437\u043D\u044C, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043E\u0441\u043B\u0430\u0431\u043B\u044F\u0435\u0442 \u0436\u0438\u0432\u044B\u0445 \u0441\u0443\u0449\u0435\u0441\u0442\u0432 \u0438 \u043F\u043E\u0440\u0442\u0438\u0442 \u0441\u043D\u0430\u0440\u044F\u0436\u0435\u043D\u0438\u0435. \u0415\u0441\u043B\u0438 \u044D\u0442\u0430 \u0442\u0435\u043C\u0430 \u043D\u0435\u043A\u043E\u043C\u0444\u043E\u0440\u0442\u043D\u0430 \u0433\u0440\u0443\u043F\u043F\u0435, \u0432\u0435\u0434\u0443\u0449\u0438\u0439 \u043C\u043E\u0436\u0435\u0442 \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u0435\u0451 \u043A\u0430\u043A \u043F\u0440\u043E\u043A\u043B\u044F\u0442\u0438\u0435, \u044F\u0434 \u0438\u043B\u0438 \u044D\u0444\u0444\u0435\u043A\u0442 \u0442\u0440\u0430\u043D\u0441\u043C\u0443\u0442\u0430\u0446\u0438\u0438.</p>`, { hidden: true })
+    ]
+  },
+  {
+    name: "\u0411\u0435\u0441\u0442\u0438\u0430\u0440\u0438\u0439",
+    pages: [
+      page("\u041E\u043F\u0430\u0441\u043D\u043E\u0441\u0442\u0438 \u0420\u0430\u0441\u0442\u0445\u0435\u043D\u0434\u0436\u0430", `<p>\u0412 \u043F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0438 \u0432\u0441\u0442\u0440\u0435\u0447\u0430\u044E\u0442\u0441\u044F \u043A\u0443\u043B\u044C\u0442\u0438\u0441\u0442\u044B, \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0430 \u043F\u043E\u0434\u0437\u0435\u043C\u0435\u043B\u0438\u0439 \u0438 \u043C\u0430\u0433\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u043E\u043F\u0430\u0441\u043D\u043E\u0441\u0442\u0438. \u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439\u0442\u0435 \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438 \u0430\u043A\u0442\u0451\u0440\u043E\u0432 \u0438\u0437 \u043E\u0444\u0438\u0446\u0438\u0430\u043B\u044C\u043D\u043E \u0438\u043C\u043F\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u043E\u0433\u043E Rusthenge: \u0432 \u043D\u0438\u0445 \u0443\u0436\u0435 \u043D\u0430\u0445\u043E\u0434\u044F\u0442\u0441\u044F \u0442\u043E\u0447\u043D\u044B\u0435 \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043A\u0438 \u0438 \u043F\u0440\u0430\u0432\u0438\u043B\u0430 PF2e.</p>`, { hidden: true, ownership: GM_ONLY })
+    ]
+  }
+];
+var timelineEvent = (name, year, content) => ({
+  ...page(name, `<p>${content}</p>`, { hidden: year > 0 }),
+  flags: {
+    [MODULE_ID]: {
+      [PRESET_FLAG]: PRESET_VERSION,
+      ...year > 0 ? { hidden: true } : {},
+      timeline: { year, color: "#8a3d22", label: "\u0420\u0430\u0441\u0442\u0445\u0435\u043D\u0434\u0436" }
+    }
+  }
+});
+var TIMELINE_PAGES = [
+  {
+    name: "\u041F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435 \xAB\u0420\u0430\u0441\u0442\u0445\u0435\u043D\u0434\u0436\xBB",
+    type: "text",
+    ownership: PLAYER,
+    "text.content": "<p>\u041A\u043E\u0440\u043E\u0442\u043A\u0430\u044F \u0432\u0440\u0435\u043C\u0435\u043D\u043D\u0430\u044F \u0448\u043A\u0430\u043B\u0430 \u0434\u043B\u044F \u043E\u0442\u0441\u043B\u0435\u0436\u0438\u0432\u0430\u043D\u0438\u044F \u0445\u043E\u0434\u0430 \u043F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F. \u041D\u043E\u043C\u0435\u0440\u0430 \u0434\u043D\u0435\u0439 \u0443\u0441\u043B\u043E\u0432\u043D\u044B: \u043F\u0440\u0438 \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E\u0441\u0442\u0438 \u043C\u0435\u043D\u044F\u0439\u0442\u0435 \u0438\u0445 \u0432 \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0430\u0445 \u0441\u043E\u0431\u044B\u0442\u0438\u044F.</p>",
+    flags: { [MODULE_ID]: { [PRESET_FLAG]: PRESET_VERSION, timeline: { isEra: true, eraStart: 0, eraEnd: 3, color: "#8a3d22", label: "\u0420\u0430\u0441\u0442\u0445\u0435\u043D\u0434\u0436" } } }
+  },
+  timelineEvent("\u041D\u043E\u0447\u043D\u043E\u0439 \u0448\u0442\u043E\u0440\u043C", 0, "\u0413\u043E\u043D\u0435\u0446 \u043F\u0440\u0438\u0431\u044B\u0432\u0430\u0435\u0442 \u0432 \u0411\u0443\u0445\u0442\u0443 \u0421\u043A\u043E\u043F\u044B; \u043D\u0430\u0447\u0438\u043D\u0430\u0435\u0442\u0441\u044F \u0440\u0430\u0441\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u043D\u0438\u0435."),
+  timelineEvent("\u0416\u0435\u043B\u0435\u0437\u043D\u0430\u044F \u0413\u0430\u0432\u0430\u043D\u044C", 1, "\u0413\u0435\u0440\u043E\u0438 \u0440\u0430\u0441\u043A\u0440\u044B\u0432\u0430\u044E\u0442 \u0443\u0433\u0440\u043E\u0437\u0443 \u0432 \u043F\u043E\u0441\u0435\u043B\u0435\u043D\u0438\u0438 \u0438 \u0421\u0442\u043E\u0443\u043D\u0445\u043E\u0443\u043C\u0435."),
+  timelineEvent("\u0420\u0436\u0430\u0432\u044B\u0435 \u0440\u0443\u0438\u043D\u044B", 2, "\u042D\u043A\u0441\u043F\u0435\u0434\u0438\u0446\u0438\u044F \u0441\u043F\u0443\u0441\u043A\u0430\u0435\u0442\u0441\u044F \u0432 \u0420\u0430\u0441\u0442\u0445\u0435\u043D\u0434\u0436."),
+  timelineEvent("\u0424\u0438\u043D\u0430\u043B \u0440\u0438\u0442\u0443\u0430\u043B\u0430", 3, "\u0420\u0435\u0448\u0430\u0435\u0442\u0441\u044F \u0441\u0443\u0434\u044C\u0431\u0430 \u0440\u0438\u0442\u0443\u0430\u043B\u0430 \u0438 \u041A\u0441\u0430\u0440-\u0410\u0437\u043C\u0430\u043A\u0430.")
+];
+async function ensureJournal(folder, name) {
+  return Array.from(game.journal).find((journal) => journal.folder === folder && journal.name === name) ?? JournalEntry.create({ name, folder: folder.id, ownership: GM_ONLY });
+}
+async function ensurePages(journal, pages) {
+  const missing = pages.filter((definition) => !Array.from(journal.pages).some((existing) => existing.getFlag(MODULE_ID, PRESET_FLAG) === PRESET_VERSION && existing.name === definition.name));
+  if (missing.length) await journal.createEmbeddedDocuments("JournalEntryPage", missing);
+}
+async function removeLegacyDemoContent(questFolder, loreFolder) {
+  const names = /* @__PURE__ */ new Set(["Welcome to Simple Quest!", "Welcome to the Lore tab!"]);
+  for (const journal of Array.from(game.journal)) {
+    if (journal.folder !== questFolder && journal.folder !== loreFolder) continue;
+    const demoPages = Array.from(journal.pages).filter((document2) => names.has(document2.name));
+    if (demoPages.length) await journal.deleteEmbeddedDocuments("JournalEntryPage", demoPages.map((document2) => document2.id));
+  }
+}
+async function installRusthengePreset() {
+  if (!game.user.isGM) return;
+  const questFolder = Array.from(game.folders).find((folder) => folder.type === "JournalEntry" && folder.name === getSetting("folderName"));
+  if (!questFolder) return;
+  const loreFolder = await createLoreFolder();
+  await removeLegacyDemoContent(questFolder, loreFolder);
+  for (const definition of QUEST_JOURNALS) {
+    const journal = await ensureJournal(questFolder, definition.name);
+    await ensurePages(journal, definition.pages);
+  }
+  for (const definition of LORE_JOURNALS) {
+    const journal = await ensureJournal(loreFolder, definition.name);
+    await ensurePages(journal, definition.pages);
+  }
+  const timeline = await ensureJournal(questFolder, getSetting("timelineJournalName"));
+  await ensurePages(timeline, TIMELINE_PAGES);
+  await syncRusthengeMaps();
+}
+function rusthengeSceneKey(scene) {
+  const source = scene._stats?.compendiumSource ?? scene.flags?.core?.sourceId ?? "";
+  return source || `${scene.name}|${scene.background?.src ?? ""}`;
+}
+function isRusthengeScene(scene) {
+  const source = scene._stats?.compendiumSource ?? scene.flags?.core?.sourceId ?? "";
+  return source.includes("rusthenge") || (scene.background?.src ?? "").includes("modules/pf2e-rusthenge/");
+}
+async function syncRusthengeMaps() {
+  if (!game.user.isGM) return;
+  const questFolder = Array.from(game.folders).find((folder) => folder.type === "JournalEntry" && folder.name === getSetting("folderName"));
+  if (!questFolder) return;
+  const maps = await ensureJournal(questFolder, getSetting("mapsJournalName"));
+  const scenes = Array.from(game.scenes).filter(isRusthengeScene).filter((scene) => scene.background?.src);
+  const pages = Array.from(maps.pages);
+  const missing = scenes.filter((scene) => !pages.some((map) => map.getFlag(MODULE_ID, MAP_FLAG) === rusthengeSceneKey(scene)));
+  if (!missing.length) return;
+  await maps.createEmbeddedDocuments("JournalEntryPage", missing.map((scene) => ({
+    name: scene.name,
+    type: "image",
+    src: scene.background.src,
+    ownership: PLAYER,
+    flags: {
+      [MODULE_ID]: {
+        [PRESET_FLAG]: PRESET_VERSION,
+        [MAP_FLAG]: rusthengeSceneKey(scene),
+        hidden: true,
+        measure: scene.dimensions?.distancePixels ? `${100 / scene.dimensions.distancePixels}${scene.grid.units}` : "1mi"
+      }
+    }
+  })));
+}
+
+// scripts/main.js
+var MODULE_ID = "foundry-quest-log-ru";
+initJournalTemplates();
+Hooks.on("setup", () => {
+  registerSettings();
+  initConfig();
+  Socket.register("openToPage", ({ uuid }) => {
+    ui.simpleQuest.openToPage(uuid);
+  });
+});
+Hooks.on("init", () => {
+  game.keybindings.register(MODULE_ID, "toggleSimpleQuest", {
+    name: `${MODULE_ID}.hotkeys.toggleSimpleQuest.name`,
+    editable: [{ key: "KeyJ" }],
+    restricted: false,
+    precedence: CONST.KEYBINDING_PRECEDENCE.PRIORITY,
+    onDown: () => {
+      ui.simpleQuest.toggle();
+    }
+  });
+  setMermaidHooks();
+  applyTOCOverride();
+});
+Hooks.on("ready", () => {
+  registerTours();
+  registerOnReadySettings();
+  showWelcomeScreen();
+  setTTM();
+  initAutoImport();
+  const isFirstConnectedGM = game.users.find((u) => u.isGM && u.active) === game.user;
+  if (isFirstConnectedGM) {
+    void (async () => {
+      await createDefaultStructure();
+      await installRusthengePreset();
+    })();
+  }
+  setWindowedMode();
+  ui.simpleQuest = new SimpleQuest();
+  document.addEventListener("mouseup", (e) => {
+    const isLeft = e.button === 0;
+    const isRight = e.button === 2;
+    isLeft && e.target.classList.contains("foundry-quest-log-ru-content-link") && ui.simpleQuest.openToPage(e.target.dataset.uuid, e.target.dataset.anchor);
+    game.user.isGM && isLeft && e.target.classList.contains("foundry-quest-log-ru-ttm") && setSetting("ttmSrc", { src: e.target.dataset.src, title: e.target.dataset.title });
+    if ((isRight || isLeft) && e.target.classList.contains("foundry-quest-log-ru-counter")) {
+      const uuid = e.target.dataset.uuid;
+      const id = e.target.dataset.id;
+      const page2 = fromUuidSync(uuid);
+      if (!page2.isOwner) return;
+      const flag = page2.getFlag(MODULE_ID, "counters") ?? {};
+      const value = flag[id] ?? 0;
+      const count = parseInt(e.target.dataset.count);
+      const newValue = (isLeft ? value + 1 : value - 1) % (count + 1);
+      flag[id] = Math.max(e.target.dataset.min ?? 0, newValue);
+      page2.setFlag(MODULE_ID, "counters", flag);
+    }
+  });
+  if (game.user.isGM) {
+    Hooks.once("renderJournalTextPageSheet", () => {
+      const tour = game.tours.get(MODULE_ID + ".journal-page");
+      if (tour.status === Tour.STATUS.UNSTARTED) {
+        tour.start();
+      }
+    });
+  }
+});
+Hooks.on("createScene", (scene) => {
+  if (game.user.isGM) void syncRusthengeMaps(scene);
+});
+Hooks.once("setup", () => {
+  initEnrichers();
+});
+export {
+  MODULE_ID
+};
+/**!
+ * Sortable 1.15.0
+ * @author	RubaXa   <trash@rubaxa.org>
+ * @author	owenm    <owen23355@gmail.com>
+ * @license MIT
+ */
 //# sourceMappingURL=index.js.map

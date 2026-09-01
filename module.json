@@ -1,8 +1,8 @@
 {
   "id": "foundry-quest-log-ru",
-  "title": "Квестовый журнал",
-  "description": "Полноценный русскоязычный журнал Simple Quest: квесты, Lore, карты, Timeline, достижения и личные/групповые заметки.",
-  "version": "2.0.0",
+  "title": "PF2e Journal",
+  "description": "Русскоязычный журнал PF2e с готовым стартовым набором для приключения «Растхендж»: квесты, лор, карты и хронология.",
+  "version": "2.1.0",
   "authors": [
     {
       "name": "Yefim Lopatin",

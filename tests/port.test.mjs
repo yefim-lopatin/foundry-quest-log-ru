@@ -8,6 +8,7 @@ const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const manifest = JSON.parse(readFileSync(resolve(root, "module.json"), "utf8"));
 const locale = JSON.parse(readFileSync(resolve(root, "languages/ru.json"), "utf8"));
 const bundle = readFileSync(resolve(root, "index.js"), "utf8");
+const rusthengePreset = readFileSync(resolve(root, "scripts/rusthengePreset.js"), "utf8");
 
 function leafCount(value) {
   return Object.values(value).reduce((n, item) => n + (item && typeof item === "object" ? leafCount(item) : 1), 0);
@@ -15,7 +16,8 @@ function leafCount(value) {
 
 test("manifest настроен для Foundry 14.366 и не конфликтует с Simple Quest", () => {
   assert.equal(manifest.id, "foundry-quest-log-ru");
-  assert.equal(manifest.version, "2.0.0");
+  assert.equal(manifest.title, "PF2e Journal");
+  assert.equal(manifest.version, "2.1.0");
   assert.deepEqual(manifest.compatibility, { minimum: "14", verified: "14.366", maximum: "14" });
   assert.deepEqual(manifest.esmodules, ["scripts/compat-v14.js", "index.js"]);
   assert.equal(manifest.persistentStorage, true);
@@ -44,6 +46,20 @@ test("бандл содержит функциональные подсисте�
     "SimpleQuestAutoImport",
     "foundry-quest-log-ru",
   ]) assert.match(bundle, new RegExp(marker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), marker);
+});
+
+test("стартовый набор «Растхендж» содержит квесты, лор, скрытые карты и ссылку на исходные журналы", () => {
+  for (const marker of [
+    "Растхендж — начало приключения",
+    "Глава 1 — Послание в ночи",
+    "Глава 2 — Ржавые руины",
+    "Глава 3 — Воскрешение ржавчины",
+    "Материалы ведущего",
+    "hidden: true",
+    "JournalEntry.pf2sa06402messag",
+    "syncRusthengeMaps",
+    "modules/pf2e-rusthenge/",
+  ]) assert.match(rusthengePreset, new RegExp(marker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), marker);
 });
 
 test("присутствуют шаблоны, assets и v14-совместимость", () => {

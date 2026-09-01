@@ -10,6 +10,7 @@ import { applyTOCOverride } from "./overrides.js";
 import {setMermaidHooks} from "./mindmap.js";
 import {initEnrichers} from "./enrichers.js";
 import {initAutoImport} from "./autoImport.js";
+import { installRusthengePreset, syncRusthengeMaps } from "./rusthengePreset.js";
 
 export const MODULE_ID = "foundry-quest-log-ru";
 
@@ -46,7 +47,10 @@ Hooks.on("ready", () => {
     initAutoImport();
     const isFirstConnectedGM = game.users.find((u) => u.isGM && u.active) === game.user;
     if (isFirstConnectedGM) {
-        createDefaultStructure();
+        void (async () => {
+            await createDefaultStructure();
+            await installRusthengePreset();
+        })();
     }
     setWindowedMode();
     ui.simpleQuest = new SimpleQuest();
@@ -79,6 +83,10 @@ Hooks.on("ready", () => {
             }
         });
     }
+});
+
+Hooks.on("createScene", (scene) => {
+    if (game.user.isGM) void syncRusthengeMaps(scene);
 });
 
 Hooks.once("setup", () => {

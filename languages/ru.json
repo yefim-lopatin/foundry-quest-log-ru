@@ -270,11 +270,11 @@
       "title": "Показать квест"
     },
     "welcomeScreen": {
-      "title": "Добро пожаловать в Простой Квест!",
-      "content": "Добро пожаловать в Простой Квест!<hr>Нажмите<span class='hotkey'>J </span>, чтобы открыть окно простого квеста."
+      "title": "Добро пожаловать в PF2e Journal!",
+      "content": "Добро пожаловать в PF2e Journal!<hr>Нажмите<span class='hotkey'>J </span>, чтобы открыть журнал."
     },
     "welcomeMaps": {
-      "title": "Квестовый журнал: вкладка «Карта»",
+      "title": "PF2e Journal: вкладка «Карта»",
       "content": "Добро пожаловать на вкладку «Карты»!<hr><span class='hotkey'> Щелкните правой кнопкой мыши и перетащите </span>, чтобы переместить карту.<br><span class='hotkey'> Прокрутите </span>, чтобы увеличить карту.<br><span class='hotkey'> Щелкните левой кнопкой мыши </span>, чтобы добавить маркер.<br><span class='hotkey'> Щелкните левой кнопкой мыши </span>, чтобы открыть заметки маркера или квест.<br><span class='hotkey'> Щелкните правой кнопкой мыши</span>маркер, чтобы отредактировать его.<hr>Туман войны<hr><span class='hotkey'> Shift + щелчок левой кнопкой мыши </span>, чтобы скрыть карту.<br><span class='hotkey'> Shift + щелкните правой кнопкой мыши </span>, чтобы открыть карту.<hr>Измерьте<hr><span class='hotkey'> Ctrl + щелкните левой кнопкой мыши </span>, чтобы измерить."
     },
     "flags": {},
@@ -291,9 +291,9 @@
       }
     },
     "notifications": {
-      "defaultStructureCreated": "Квестовый журнал: создана структура папок и журнала по умолчанию.",
-      "playerJournalUpdated": "Квестовый журнал: обновлен журнал игрока.",
-      "noPage": "Квестовый журнал: выберите страницу для удаления."
+      "defaultStructureCreated": "PF2e Journal: создана стартовая структура папок и журналов.",
+      "playerJournalUpdated": "PF2e Journal: обновлен журнал игрока.",
+      "noPage": "PF2e Journal: выберите страницу для удаления."
     },
     "resetFow": {
       "title": "Сбросить туман войны?",
@@ -471,7 +471,7 @@
       "bestiary": "Бестиарий"
     },
     "simple-quest": {
-      "title": "Квестовый журнал",
+      "title": "PF2e Journal",
       "windowedModeToggle": "Переключить оконный режим",
       "tabs": {
         "quests": "Квесты",

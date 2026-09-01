@@ -1,15 +1,19 @@
 {
   "name": "foundry-quest-log-ru",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "type": "module",
-  "description": "Русскоязычный квестовый журнал для Foundry VTT v14",
+  "description": "PF2e Journal для Foundry VTT v14 с начальным набором «Растхендж»",
   "scripts": {
-    "test": "node --test && node tools/validate.mjs",
-    "build": "node tools/build.mjs"
+    "bundle": "esbuild scripts/main.js --bundle --format=esm --target=es2022 --sourcemap --outfile=index.js",
+    "test": "npm run bundle && node --test && node tools/validate.mjs",
+    "build": "npm run bundle && node tools/build.mjs"
   },
   "engines": {
     "node": ">=24"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
 }
