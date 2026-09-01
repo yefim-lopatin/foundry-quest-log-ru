@@ -6857,7 +6857,7 @@
         ui.simpleQuest.openToPage(uuid);
       });
       Hooks.on("createChatMessage", async (document2, updates) => {
-        if (document2.flags?.[MODULE_ID]?.simpleQuestMessage) {
+        if (!game.user.isGM && document2.flags?.[MODULE_ID]?.simpleQuestMessage) {
           const page = await fromUuid(document2.flags[MODULE_ID].simpleQuestMessage);
           showQuestNotification(page, true);
         }

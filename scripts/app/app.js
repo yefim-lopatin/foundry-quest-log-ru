@@ -1692,7 +1692,7 @@ export class SimpleQuest extends Application {
         });
 
         Hooks.on("createChatMessage", async (document, updates) => {
-            if (document.flags?.[MODULE_ID]?.simpleQuestMessage) {
+            if (!game.user.isGM && document.flags?.[MODULE_ID]?.simpleQuestMessage) {
                 const page = await fromUuid(document.flags[MODULE_ID].simpleQuestMessage);
                 showQuestNotification(page, true);
             }

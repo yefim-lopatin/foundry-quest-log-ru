@@ -19,7 +19,7 @@ function leafCount(value) {
 
 test("manifest настроен для Foundry 14.367 и не конфликтует с Simple Quest", () => {
   assert.equal(manifest.id, "foundry-quest-log-ru");
-  assert.equal(manifest.version, "2.3.0");
+  assert.equal(manifest.version, "2.3.1");
   assert.deepEqual(manifest.compatibility, { minimum: "14", verified: "14.367", maximum: "14" });
   assert.deepEqual(manifest.esmodules, ["scripts/compat-v14.js", "index.js"]);
   assert.equal(manifest.persistentStorage, true);
