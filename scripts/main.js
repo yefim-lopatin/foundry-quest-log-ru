@@ -26,6 +26,18 @@ export function toggleJournal() {
     }
 }
 
+function registerJournalShortcutFallback() {
+    window.addEventListener("keydown", (event) => {
+        if (event.defaultPrevented || event.code !== "KeyJ" || event.repeat || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+        if (game.keyboard?.hasFocus) return;
+
+        if (toggleJournal()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+    });
+}
+
 initJournalTemplates();
 
 Hooks.on("setup", () => {
@@ -65,6 +77,7 @@ Hooks.on("ready", () => {
     }
     setWindowedMode();
     ui.simpleQuest = new SimpleQuest();
+    registerJournalShortcutFallback();
 
     document.addEventListener("mouseup", (e) => {
         const isLeft = e.button === 0;

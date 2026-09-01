@@ -17,7 +17,7 @@ function leafCount(value) {
 test("manifest настроен для Foundry 14.367 и PF2e 8.4.1", () => {
   assert.equal(manifest.id, "foundry-quest-log-ru");
   assert.equal(manifest.title, "PF2e Journal");
-  assert.equal(manifest.version, "2.1.1");
+  assert.equal(manifest.version, "2.1.2");
   assert.deepEqual(manifest.compatibility, { minimum: "14", verified: "14.367", maximum: "14" });
   assert.deepEqual(manifest.relationships.systems, [{ id: "pf2e", type: "system", compatibility: { minimum: "8.4.1", verified: "8.4.1", maximum: "8.999.999" } }]);
   assert.deepEqual(manifest.esmodules, ["scripts/compat-v14.js", "index.js"]);
@@ -63,11 +63,15 @@ test("стартовый набор «Растхендж» содержит кв
   ]) assert.match(rusthengePreset, new RegExp(marker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), marker);
 });
 
-test("клавиша J открывает журнал и сообщает об ошибке вместо молчаливого сбоя", () => {
+test("клавиша J открывает журнал через назначение Foundry или резервный обработчик", () => {
   const source = readFileSync(resolve(root, "scripts/main.js"), "utf8");
   assert.match(source, /export function toggleJournal\(\)/);
   assert.match(source, /ui\.simpleQuest \?\?= new SimpleQuest\(\)/);
   assert.match(source, /onDown: toggleJournal/);
+  assert.match(source, /window\.addEventListener\("keydown"/);
+  assert.match(source, /event\.code !== "KeyJ"/);
+  assert.match(source, /event\.defaultPrevented/);
+  assert.match(source, /game\.keyboard\?\.hasFocus/);
   assert.match(source, /return true/);
   assert.equal(locale[manifest.id].notifications.openFailed.includes("не удалось открыть"), true);
 });
