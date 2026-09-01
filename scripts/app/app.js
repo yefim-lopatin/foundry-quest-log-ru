@@ -561,9 +561,13 @@ export class SimpleQuest extends Application {
                 if (anchor) {
                     const oldChecked = page.getFlag(MODULE_ID, `secret`) ?? {};
                     oldChecked[anchor] = checked;
-                    await page.setFlag(MODULE_ID, `secret`, oldChecked);
+                    const update = { [`flags.${MODULE_ID}.secret`]: oldChecked };
+                    if (!checked) update[`flags.${MODULE_ID}.lastUpdated`] = Date.now();
+                    await page.update(update);
                 } else {
-                    await page.setFlag(MODULE_ID, "hidden", checked);
+                    const update = { [`flags.${MODULE_ID}.hidden`]: checked };
+                    if (!checked) update[`flags.${MODULE_ID}.lastUpdated`] = Date.now();
+                    await page.update(update);
                 }
             });
         });
@@ -1678,9 +1682,10 @@ export class SimpleQuest extends Application {
                 isPlayer && isAchievements && showQuestNotification(document, true, false, true);
             }
             const questFlags = updates?.flags?.[MODULE_ID];
-            if (isPlayer && (questFlags?.lastUpdated || questFlags?.completed === true)) {
+            if (isPlayer && (questFlags?.hidden === false || questFlags?.lastUpdated || questFlags?.completed === true)) {
                 const isQuest = ui.simpleQuest.isSimpleQuestPage(document.uuid) === "quests";
-                isQuest && showQuestNotification(document, false, false, false, questFlags?.completed === true);
+                const isNewQuest = questFlags?.hidden === false;
+                isQuest && showQuestNotification(document, isNewQuest, false, false, questFlags?.completed === true);
             }
         });
 
