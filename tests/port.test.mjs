@@ -17,10 +17,10 @@ function leafCount(value) {
   return Object.values(value).reduce((n, item) => n + (item && typeof item === "object" ? leafCount(item) : 1), 0);
 }
 
-test("manifest настроен для Foundry 14.367 и не конфликтует с Simple Quest", () => {
+test("manifest настроен для Foundry 14.368 и не конфликтует с Simple Quest", () => {
   assert.equal(manifest.id, "foundry-quest-log-ru");
-  assert.equal(manifest.version, "2.3.7");
-  assert.deepEqual(manifest.compatibility, { minimum: "14", verified: "14.367", maximum: "14" });
+  assert.equal(manifest.version, "2.3.8");
+  assert.deepEqual(manifest.compatibility, { minimum: "14", verified: "14.368", maximum: "14" });
   assert.deepEqual(manifest.esmodules, ["scripts/compat-v14.js", "index.js"]);
   assert.equal(manifest.persistentStorage, true);
   assert.ok(!manifest.esmodules.includes("scripts/main.js"));
