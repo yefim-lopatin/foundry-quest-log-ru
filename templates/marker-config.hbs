@@ -14,7 +14,7 @@
     </div>
 
     <div class="form-group">
-        {{colorPicker name="color" value=color default="#ff0000"}}
+        <color-picker name="color" value="{{#if color}}{{color}}{{else}}#ff0000{{/if}}"></color-picker>
     </div>
 
     <div class="form-group">
